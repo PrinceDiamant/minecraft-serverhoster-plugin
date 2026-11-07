@@ -44,6 +44,12 @@ memoryProtection:
   recoveryPercent: 80
   recoverySamples: 3
   recoveryCooldownSeconds: 180
+# Periodic read-only log at plugins/ServerhosterPlugin/memory-telemetry.log.
+# Missing keys keep these defaults. The log does not change Xms, Xmx, or JVM flags.
+memoryTelemetry:
+  enabled: true
+  intervalSeconds: 60
+  maxBytes: 5000000
 # On JVM shutdown (SIGTERM, panel restart) when onDisable may not run
 shutdownHookTimeoutSeconds: 25
 # Periodic 'save-all' to the child (minutes, 0 = off)
@@ -58,7 +64,7 @@ consoleBufferLines: 4000
 # Web dashboard (JDK HTTP server, optional TLS). Password: plugins/ServerhosterPlugin/dashboard-password.txt
 metadata:
   schemaVersion: 2
-  pluginVersion: 2.0.1
+  pluginVersion: 2.0.2
   migrationState: pending
 dashboard:
   enabled: true

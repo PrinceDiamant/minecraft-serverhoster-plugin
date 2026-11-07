@@ -1,8 +1,11 @@
 package de.aichele.childlauncher;
 
 import java.io.BufferedWriter;
+import java.time.Instant;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /** Runtime of one child process. Downloads and the JVM start only when this slot is launched. */
 final class ChildSlot {
@@ -20,6 +23,17 @@ final class ChildSlot {
     volatile boolean serverReady;
     volatile long startedAt;
     volatile int attempts;
+    volatile SupervisorHealth.Phase phase = SupervisorHealth.Phase.IDLE;
+    final AtomicBoolean watchArmed = new AtomicBoolean();
+    final AtomicBoolean pipeArmed = new AtomicBoolean();
+    final AtomicInteger watchGeneration = new AtomicInteger();
+    final AtomicInteger pipeGeneration = new AtomicInteger();
+    final AtomicBoolean restartQueued = new AtomicBoolean();
+    final AtomicBoolean launchInProgress = new AtomicBoolean();
+    final AtomicInteger scheduleToken = new AtomicInteger();
+    volatile int pipeFailures;
+    volatile long trackedPid = -1;
+    volatile Instant trackedStart;
     volatile String lastStatus = "idle";
     volatile double mspt = -1;
     volatile double tps = -1;

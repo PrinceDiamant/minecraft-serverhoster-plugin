@@ -1,4 +1,4 @@
-# ServerHoster 2.0.1 – Betrieb und Konfiguration
+# ServerHoster 2.0.2 – Betrieb und Konfiguration
 
 ServerHoster ist ein Spigot-26.3-Plugin für Java 25. Es verwaltet genau einen
 separaten Child-Serverprozess und stellt ein Web-Dashboard bereit. Das Plugin
@@ -48,7 +48,10 @@ gemeldet, nicht stillschweigend ersetzt.
 | `autoRestart.maxAttempts` | `5` | Automatische Wiederholungen pro Fehlerfolge, danach Pause und Warnung. Im Dashboard unter Einstellungen änderbar. |
 | `stopTimeoutSeconds` | `60` | Frist für den sauberen Child-Stopp, bevor Fehler gemeldet und der Prozess beendet wird. |
 | `startupStopTimeoutSeconds` | `180` | Beim Stop während des Starts auf die Vanilla-Bereitschaftsmeldung warten. |
-| `memoryProtection.*` | siehe `config.yml` | Lesendes cgroup-Sampling und Schutz, der nur den Child stoppen kann. |
+| `memoryProtection.*` | siehe `config.yml` | Lesendes cgroup-Sampling und Schutz, der nur den Child stoppen kann. Ungültige Schwellen deaktivieren den automatischen Stopp, ohne die Datei umzuschreiben. |
+| `memoryTelemetry.enabled` | `true`, auch wenn der Schlüssel fehlt | Schreibt `memory-telemetry.log`. Heap used/committed/max, RSS, Host-`meminfo` und cgroup bleiben getrennte Spalten. |
+| `memoryTelemetry.intervalSeconds` | `60` | Mindestwert zur Laufzeit 15 Sekunden. Gespeicherte Werte unter 15 oder über 7 Tagen werden nicht in die Datei zurückgeschrieben. |
+| `memoryTelemetry.maxBytes` | `5000000` | Danach wird die bisherige Datei zu `memory-telemetry.log.old`. |
 | `serverProperties` | `{}` | Explizite Child-Overrides; alle übrigen Werte bleiben Minecraft-Defaults. |
 | `schedules` | `[]` | Dashboard-Zeitpläne mit Stunde, Tag oder Woche und geordneten Aktionen. |
 | `backup.storage` | `local` | Lokale ZIP-Dateien als Standard, FTP/FTPS optional. |
@@ -107,6 +110,27 @@ Lokale ZIP-Dateien sind Standard; FTP/FTPS ist optional. JDBC-Einstellungen
 konfigurieren ein externes Metadatenziel. H2 ist nur für Tests vorgesehen und
 nicht im Plugin-Jar enthalten.
 
+## Prozesslebenszyklus ab 2.0.2
+
+Vor einem Start liest das Plugin `plugins/ServerhosterPlugin/child-process.record`.
+Ein dort genannter Prozess wird nur beendet, wenn PID, Startzeitpunkt und
+Jar-Argument oder Arbeitsverzeichnis übereinstimmen. Ein wiederverwendeter PID
+bleibt unangetastet. Schlägt der Start nach dem Erzeugen des Prozesses fehl,
+werden Ausgabe abgeleitet und der Prozess beendet. Konsole und Exit-Watcher
+werden neu verbunden, wenn sie ausfallen. Der automatische Neustart bleibt bei
+höchstens fünf Versuchen, sofern die Konfiguration das nicht anders sagt.
+
+Stopp und Neustart aus Befehl und Dashboard laufen nicht auf dem Spigot-Thread.
+`onDisable` wartet weiterhin auf den Child-Stopp. Der Shutdown-Hook bleibt für
+SIGTERM erhalten und wird nach einem normalen `onDisable` entfernt.
+Speichermessung und ein eventueller Child-Notstopp blockieren nicht mehr den
+Scheduler von `save-all` und Zeitplänen.
+
+`pause-when-empty-seconds` bleibt `0`. Es gibt kein Host-Trimming, keine
+Änderung von Sichtweite oder Welt und keine Laufzeitänderung von JVM-Flags.
+Der Vergleich mit der Minimal-Variante und die Abgrenzung zur Baseline stehen
+in [VERGLEICH-MINIMAL-2026-11.md](VERGLEICH-MINIMAL-2026-11.md).
+
 ## Diagnose und Speicherschutz
 
 Diagnose ist lesend. JVM-Informationen werden mit `jcmd` über `Thread.print`,
@@ -114,7 +138,10 @@ Diagnose ist lesend. JVM-Informationen werden mit `jcmd` über `Thread.print`,
 vom Vanilla-Kommando `tick query`. Es wird kein Diagnose-Mod installiert.
 
 Der Speicher-Monitor liest Host-/Container- und cgroup-Messwerte, ändert diese
-aber nicht. Ein automatischer Child-Notstopp setzt eine bekannte endliche
+aber nicht. Heap belegt, committed und maximal, Prozess-RSS, Host-`meminfo`
+und cgroup-Zähler beschreiben verschiedene Ebenen. Ein voller Host-Swap belegt
+keinen Container-OOM. Die Dauer des letzten GC-Zyklus belegt nicht, ob ein
+Pause-Ziel eingehalten wurde. Ein automatischer Child-Notstopp setzt eine bekannte endliche
 cgroup-Grenze und mehrere aufeinanderfolgende kritische Messungen voraus.
 Fehlende oder unbekannte Grenzen lösen keinen automatischen Stopp aus. Das
 Plugin kann warnen, Speichern anfordern, einen Incident-Bericht schreiben und

@@ -25,7 +25,8 @@ final class MemoryIncidentReport {
         Path report = directory.resolve("memory-emergency-" + FILE_TIME.format(createdAt) + ".log");
         StringBuilder text = new StringBuilder(16_384);
         text.append("ServerHoster memory emergency report\n")
-                .append("Created: ").append(createdAt).append("\n\n")
+                .append("Created: ").append(createdAt).append("\n")
+                .append(MemoryTelemetry.INTERPRETATION).append("\n\n")
                 .append("[Incident facts]\n");
         facts.forEach((key, value) -> text.append(key).append(": ").append(value).append('\n'));
         text.append("\n[Recent memory samples]\n")

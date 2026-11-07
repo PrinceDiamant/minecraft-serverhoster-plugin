@@ -49,7 +49,12 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     private long lastMemoryWarningAt;
     private Dashboard dashboard;
     private Thread shutdownHook;
+    private volatile long shutdownHookTimeoutSeconds = 25;
+    private volatile long lastTelemetryWriteAt;
+    private final ChildProcessRecord.Inspector processes = ChildProcessRecord.liveInspector();
     private final ScheduledExecutorService sched = Executors.newSingleThreadScheduledExecutor(r -> { Thread t = new Thread(r, "ServerhosterPlugin-Save"); t.setDaemon(true); return t; });
+    private final ScheduledExecutorService memorySched = Executors.newSingleThreadScheduledExecutor(r -> { Thread t = new Thread(r, "ServerhosterPlugin-Memory"); t.setDaemon(true); return t; });
+    private final ScheduledExecutorService healthSched = Executors.newSingleThreadScheduledExecutor(r -> { Thread t = new Thread(r, "ServerhosterPlugin-Supervisor"); t.setDaemon(true); return t; });
     private final Object stopLock = new Object();
     private static final java.util.regex.Pattern JOIN = java.util.regex.Pattern.compile("\\]: (\\w{1,16}) joined the game");
     private static final java.util.regex.Pattern LEFT = java.util.regex.Pattern.compile("\\]: (\\w{1,16}) left the game");
@@ -79,13 +84,19 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             catch (Exception e) { getLogger().log(Level.SEVERE, "Dashboard failed to start", e); }
         }
 
-        // JVM shutdown hook: covers SIGTERM / Zap restart where onDisable might not run
+        // JVM shutdown hook: covers SIGTERM / panel restart where onDisable might not run.
+        // The hook is removed from onDisable after the child stop, so a normal disable does not stop twice.
+        shutdownHookTimeoutSeconds = RuntimeLimits.boundedSeconds(getConfig().getLong("shutdownHookTimeoutSeconds", 25), 25).value();
         shutdownHook = new Thread(() -> {
             shuttingDown = true;
-            for (ChildSlot s : slots.values()) { s.wantRunning = false; s.stopRequested = true; }
-            for (ChildSlot s : List.copyOf(slots.values())) if (s.running()) {
+            for (ChildSlot s : slots.values()) {
+                s.wantRunning = false;
+                s.stopRequested = true;
+                invalidateRestarts(s);
+            }
+            for (ChildSlot s : List.copyOf(slots.values())) if (s.running() || s.phase == SupervisorHealth.Phase.PREPARING) {
                 System.out.println("[ServerhosterPlugin] JVM shutdown hook: stopping " + s.id);
-                stopProcess(s, getConfig().getLong("shutdownHookTimeoutSeconds", 25), true);
+                stopProcess(s, shutdownHookTimeoutSeconds, true);
             }
         }, "ServerhosterPlugin-ShutdownHook");
         Runtime.getRuntime().addShutdownHook(shutdownHook);
@@ -94,7 +105,14 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         sched.scheduleAtFixedRate(this::fireDueTasks, 20, 20, TimeUnit.SECONDS);
         sched.scheduleAtFixedRate(this::fireDueSchedules, 20, 20, TimeUnit.SECONDS);
         long memoryInterval = Math.max(15, getConfig().getLong("memoryProtection.sampleIntervalSeconds", 30));
-        sched.scheduleAtFixedRate(this::sampleHostMemory, memoryInterval, memoryInterval, TimeUnit.SECONDS);
+        memorySched.scheduleAtFixedRate(() -> {
+            try { sampleHostMemory(); }
+            catch (Throwable t) { getLogger().log(Level.SEVERE, "Memory sample failed", t); }
+        }, memoryInterval, memoryInterval, TimeUnit.SECONDS);
+        healthSched.scheduleAtFixedRate(() -> {
+            try { recoverChildSupervision(); }
+            catch (Throwable t) { getLogger().log(Level.SEVERE, "Child supervisor health check failed", t); }
+        }, 5, 5, TimeUnit.SECONDS);
         if (setupRequired) {
             getLogger().warning("Setup is required. The child server will not start until the dashboard setup is confirmed.");
         } else if (recoveryBlockedSince == 0) {
@@ -157,6 +175,8 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         shuttingDown = true;
         for (ChildSlot s : slots.values()) { s.wantRunning = false; s.stopRequested = true; }
         for (ChildSlot s : List.copyOf(slots.values())) stopBlocking(s);
+        memorySched.shutdownNow();
+        healthSched.shutdownNow();
         sched.shutdownNow();
         try { if (shutdownHook != null) Runtime.getRuntime().removeShutdownHook(shutdownHook); } catch (IllegalStateException ignored) { /* JVM already shutting down; hook runs/ran */ }
         if (dashboard != null) dashboard.stop();
@@ -793,6 +813,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         m.put("mspt", s.mspt);
         m.put("tps", s.tps);
         if (pid > 0) m.putAll(ProcessProbe.snapshot(pid));
+        m.put("telemetry", memoryTelemetryView(pid));
         ProcessProbe.Disk d = diskCached(s.id);
         m.put("diskBytes", d.bytes());
         m.put("diskFiles", d.files());
@@ -808,6 +829,60 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         view.put("recoveryPending", recoveryBlockedSince != 0 || hostRecoveryStarted);
         view.put("lastIncidentReport", lastMemoryIncidentReport.isBlank() ? "" : "memory-reports/" + lastMemoryIncidentReport);
         return view;
+    }
+
+    Map<String, Object> memoryTelemetryView(long childPid) {
+        long childRss = -1;
+        long childSwap = -1;
+        if (childPid > 0) {
+            Map<String, Object> child = ProcessProbe.snapshot(childPid);
+            childRss = ((Number) child.getOrDefault("rssMb", -1L)).longValue();
+            childSwap = ((Number) child.getOrDefault("swapMb", -1L)).longValue();
+        }
+        Map<String, Object> self = ProcessProbe.snapshot(ProcessHandle.current().pid());
+        long hostRss = ((Number) self.getOrDefault("rssMb", -1L)).longValue();
+        HostMemoryProbe.Snapshot snapshot = hostMemory == null ? HostMemoryProbe.snapshot() : hostMemory;
+        return MemoryTelemetry.view(MemoryTelemetry.Heap.current(), hostRss, snapshot, childRss, childSwap, GcDiagnostics.snapshot());
+    }
+
+    private void maybeWriteTelemetry(HostMemoryProbe.Snapshot snapshot) {
+        if (!getConfig().getBoolean("memoryTelemetry.enabled", true)) return;
+        long configuredInterval = getConfig().getLong("memoryTelemetry.intervalSeconds", 60);
+        long interval = configuredInterval < 15 ? 15 : RuntimeLimits.boundedSeconds(configuredInterval, 60).value();
+        if (configuredInterval > 0 && configuredInterval < 15)
+            warnOnce("telemetry-interval", "memoryTelemetry.intervalSeconds below 15 is raised to 15 in memory. The stored value was not changed.");
+        RuntimeLimits.boundedSeconds(configuredInterval, 60).notes().forEach(note -> warnOnce("telemetry-interval-cap", note));
+        long maxBytes = getConfig().getLong("memoryTelemetry.maxBytes", 5_000_000);
+        if (maxBytes < 100_000) {
+            warnOnce("telemetry-size", "memoryTelemetry.maxBytes below 100000 is raised to 100000 in memory. The stored value was not changed.");
+            maxBytes = 100_000;
+        }
+        long now = System.currentTimeMillis();
+        if (lastTelemetryWriteAt != 0 && now - lastTelemetryWriteAt < interval * 1000L) return;
+        lastTelemetryWriteAt = now;
+        try {
+            long childPid = -1;
+            long childRss = -1;
+            long childSwap = -1;
+            for (ChildSlot slot : slots.values()) {
+                long pid = slot.pid();
+                if (pid > 0) {
+                    childPid = pid;
+                    Map<String, Object> child = ProcessProbe.snapshot(pid);
+                    childRss = ((Number) child.getOrDefault("rssMb", -1L)).longValue();
+                    childSwap = ((Number) child.getOrDefault("swapMb", -1L)).longValue();
+                    break;
+                }
+            }
+            Map<String, Object> self = ProcessProbe.snapshot(ProcessHandle.current().pid());
+            long hostRss = ((Number) self.getOrDefault("rssMb", -1L)).longValue();
+            String line = MemoryTelemetry.line(Instant.now(), MemoryTelemetry.Heap.current(), hostRss, snapshot,
+                    childRss, childSwap, GcDiagnostics.snapshot());
+            if (childPid < 0) line += " childPid=none";
+            MemoryTelemetry.appendRotated(getDataFolder().toPath().resolve("memory-telemetry.log"), line, maxBytes);
+        } catch (IOException e) {
+            warnOnce("telemetry-write", "Could not write memory telemetry: " + e.getMessage());
+        }
     }
 
     private void applyCurrentMemorySettings() {
@@ -874,15 +949,23 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     private void sampleHostMemory() {
         HostMemoryProbe.Snapshot snapshot = HostMemoryProbe.snapshot();
         hostMemory = snapshot;
+        maybeWriteTelemetry(snapshot);
         synchronized (memoryHistory) {
             memoryHistory.addLast(new MemoryIncidentReport.Sample(Instant.now(), snapshot));
             while (memoryHistory.size() > 240) memoryHistory.removeFirst();
         }
         double use = snapshot.cgroupUsePercent();
         long now = System.currentTimeMillis();
-        double warning = getConfig().getDouble("memoryProtection.warningPercent", 85);
-        double critical = getConfig().getDouble("memoryProtection.criticalPercent", 95);
-        double recovery = getConfig().getDouble("memoryProtection.recoveryPercent", 80);
+        RuntimeLimits.MemoryPolicy thresholds = RuntimeLimits.memory(
+                getConfig().getDouble("memoryProtection.warningPercent", 85),
+                getConfig().getDouble("memoryProtection.criticalPercent", 95),
+                getConfig().getDouble("memoryProtection.recoveryPercent", 80),
+                getConfig().getBoolean("memoryProtection.autoStopChild",
+                        getConfig().getBoolean("memoryProtection.autoShutdown", true)));
+        thresholds.notes().forEach(note -> warnOnce("memory-threshold:" + note, note));
+        double warning = thresholds.warning();
+        double critical = thresholds.critical();
+        double recovery = thresholds.recovery();
         if (use >= 0) warnHeapBudget(snapshot);
         if (use >= warning && now - lastMemoryWarningAt >= 300_000) {
             lastMemoryWarningAt = now;
@@ -898,8 +981,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         MemoryProtectionPolicy.Decision decision = memoryProtectionPolicy.sample(use, critical, recovery,
                 getConfig().getInt("memoryProtection.criticalSamples", 3),
                 getConfig().getInt("memoryProtection.recoverySamples", 3), recoveryBlockedSince, now, cooldown,
-                getConfig().getBoolean("memoryProtection.autoStopChild",
-                        getConfig().getBoolean("memoryProtection.autoShutdown", true)));
+                thresholds.autoStop());
         if (decision == MemoryProtectionPolicy.Decision.RELEASE_WITHOUT_MEMORY_GUARANTEE) {
             getLogger().warning("cgroup memory limit is unavailable after recovery cooldown; resuming configured auto-start without a pressure guarantee.");
             clearMemoryRecoveryState();
@@ -1062,6 +1144,8 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         facts.put("Spigot JVM uptime seconds", Long.toString(java.lang.management.ManagementFactory.getRuntimeMXBean().getUptime() / 1000));
         facts.put("Spigot heap used/committed/max MiB", (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024)
                 + "/" + runtime.totalMemory() / (1024 * 1024) + "/" + runtime.maxMemory() / (1024 * 1024));
+        facts.put("Measurement note", MemoryTelemetry.INTERPRETATION);
+        facts.put("GC collectors", GcDiagnostics.snapshot().toString());
         facts.put("Emergency trigger", String.format(Locale.ROOT, "%.2f%% cgroup use; %d/%d MiB; critical samples=%d/%d",
                 trigger.cgroupUsePercent(), trigger.cgroupCurrentMb(), trigger.cgroupLimitMb(), memoryProtectionPolicy.criticalSamples(),
                 getConfig().getInt("memoryProtection.criticalSamples", 3)));
@@ -1496,8 +1580,10 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                 boolean restartAfter = wasRunning && target.wantRunning;
                 try {
                     if (wasRunning) {
+                        invalidateRestarts(target);
                         target.wantRunning = false;
                         target.stopRequested = true;
+                        target.phase = SupervisorHealth.Phase.STOPPING;
                         if (!stopProcess(target, getConfig().getLong("stopTimeoutSeconds", 60), false)) {
                             notifyNtfy("ServerHoster: Backup abgebrochen", "Der Child konnte vor dem geplanten Backup nicht sauber gestoppt werden; das Backup wurde abgebrochen.", "4");
                             throw new IOException("Child did not stop cleanly; scheduled backup was cancelled.");
@@ -1505,6 +1591,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                     }
                     runBackup(id);
                 } finally {
+                    if (!target.running()) target.phase = SupervisorHealth.Phase.IDLE;
                     if (restartAfter && !shuttingDown) startAsync(null, id);
                 }
             }
@@ -1519,20 +1606,34 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             return;
         }
         ChildSlot slot = slot(id);
+        invalidateRestarts(slot);
         slot.attempts = 0;
         slot.stopRequested = false;
         slot.wantRunning = true;
-        exec.submit(() -> {
-            try {
-                openChild(s, id);
-            } catch (Exception e) {
-                ChildSlot failedSlot = slot(id);
-                failedSlot.lastStatus = "start failed: " + e.getMessage();
-                getLogger().log(Level.SEVERE, "Failed to start child " + id, e);
-                msg(s, "Start failed: " + e.getMessage());
-                scheduleRestart(failedSlot);
-            }
-        });
+        if (!slot.launchInProgress.compareAndSet(false, true)) {
+            msg(s, "Child start is already in progress.");
+            return;
+        }
+        try {
+            exec.submit(() -> {
+                try {
+                    openChild(s, id);
+                } catch (Exception e) {
+                    ChildSlot failedSlot = slot(id);
+                    failedSlot.lastStatus = "start failed: " + e.getMessage();
+                    if (failedSlot.phase == SupervisorHealth.Phase.PREPARING) failedSlot.phase = SupervisorHealth.Phase.IDLE;
+                    getLogger().log(Level.SEVERE, "Failed to start child " + id, e);
+                    msg(s, "Start failed: " + e.getMessage());
+                    scheduleRestart(failedSlot);
+                } finally {
+                    slot.launchInProgress.set(false);
+                }
+            });
+        } catch (RejectedExecutionException e) {
+            slot.launchInProgress.set(false);
+            getLogger().log(Level.SEVERE, "Could not queue child start because the plugin is shutting down.", e);
+            msg(s, "Start failed: plugin is shutting down.");
+        }
     }
 
     /** Starts the single configured child. */
@@ -1549,42 +1650,64 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     }
 
     private boolean launch(ServerProfile profile, ChildSlot slot) throws Exception {
-        synchronized (slot.lock) {
-            if (slot.running()) throw new IllegalStateException("already running");
-            slot.profile = profile;
-            Path wd = profile.directory();
-            Files.createDirectories(wd);
-            copyPlayerFiles(wd);
-            slot.lastStatus = "preparing";
-            Path jar = prepareFiles(profile, wd);
-            Files.writeString(wd.resolve("eula.txt"), "eula=true\n");
-            writeProperties(profile, wd);
-            String javaBin = javaBin();
-            List<String> cmd = new ArrayList<>(LaunchPlan.argv(javaBin, profile, jar));
-            getLogger().info("Launching " + profile.id + ": " + String.join(" ", cmd));
-            if (!slot.wantRunning || slot.stopRequested) {
-                slot.lastStatus = "start cancelled";
-                return false;
+        Process started = null;
+        boolean claimed = false;
+        boolean stopAfterStart = false;
+        try {
+            synchronized (slot.lock) {
+                if (slot.running()) throw new IllegalStateException("already running");
+                slot.phase = SupervisorHealth.Phase.PREPARING;
+                claimed = true;
+                slot.profile = profile;
+                Path wd = profile.directory();
+                Files.createDirectories(wd);
+                copyPlayerFiles(wd);
+                slot.lastStatus = "preparing";
+                Path jar = prepareFiles(profile, wd);
+                Files.writeString(wd.resolve("eula.txt"), "eula=true\n");
+                writeProperties(profile, wd);
+                String javaBin = javaBin();
+                List<String> cmd = new ArrayList<>(LaunchPlan.argv(javaBin, profile, jar));
+                getLogger().info("Launching " + profile.id + ": " + String.join(" ", cmd));
+                if (!slot.wantRunning || slot.stopRequested || shuttingDown) {
+                    slot.lastStatus = "start cancelled";
+                    return false;
+                }
+                reapLeftover();
+                slot.serverReady = false;
+                slot.pipeFailures = 0;
+                Process p = new ProcessBuilder(cmd).directory(wd.toFile()).redirectErrorStream(true).start();
+                started = p;
+                slot.process = p;
+                slot.startedAt = System.currentTimeMillis();
+                slot.trackedPid = p.pid();
+                slot.trackedStart = p.info().startInstant().orElse(null);
+                slot.onlinePlayers.clear();
+                slot.console.add("[ServerhosterPlugin] Child started, pid " + p.pid());
+                slot.stdin = new BufferedWriter(new OutputStreamWriter(p.getOutputStream(), StandardCharsets.UTF_8));
+                slot.lastStatus = "running";
+                slot.phase = SupervisorHealth.Phase.RUNNING;
+                rememberProcess(p, profile, jar);
+                armPipe(slot, p, consolePrefix(profile));
+                armWatch(slot, p, false);
+                stopAfterStart = !slot.wantRunning || slot.stopRequested || shuttingDown;
             }
-            slot.serverReady = false;
-            Process p = new ProcessBuilder(cmd).directory(wd.toFile()).redirectErrorStream(true).start();
-            slot.process = p; slot.startedAt = System.currentTimeMillis(); slot.onlinePlayers.clear();
-            slot.console.add("[ServerhosterPlugin] Child started, pid " + p.pid());
-            slot.stdin = new BufferedWriter(new OutputStreamWriter(p.getOutputStream(), StandardCharsets.UTF_8));
-            slot.lastStatus = "running";
-            String basePrefix = getConfig().getString("logPrefix", "[Child] ");
-            final String prefix = !"default".equals(profile.id) && profiles.size() > 1 ? "[" + profile.id + "] " : basePrefix;
-            exec.submit(() -> pipe(slot, p, prefix));
-            exec.submit(() -> watch(slot, p));
-            if (!slot.wantRunning || slot.stopRequested) exec.submit(() -> stopBlocking(slot));
+            if (stopAfterStart) stopProcess(slot, getConfig().getLong("stopTimeoutSeconds", 60), shuttingDown);
             return true;
+        } catch (Exception e) {
+            if (started != null) abandonFailedStart(slot, started);
+            if (e instanceof InterruptedException) Thread.currentThread().interrupt();
+            throw e;
+        } finally {
+            if (claimed && started == null && slot.phase == SupervisorHealth.Phase.PREPARING) slot.phase = SupervisorHealth.Phase.IDLE;
         }
     }
 
-    private void pipe(ChildSlot slot, Process p, String prefix) {
+    private void pipe(ChildSlot slot, Process p, String prefix, int generation) {
         try (BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8))) {
             String line;
             while ((line = r.readLine()) != null) {
+                slot.pipeFailures = 0;
                 if (parseTick(slot, line)) continue;
                 getLogger().info(prefix + line);
                 slot.console.add(line);
@@ -1594,7 +1717,12 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                     if (slot.stopRequested) exec.submit(() -> stopBlocking(slot));
                 }
             }
-        } catch (IOException ignored) {}
+        } catch (IOException e) {
+            slot.pipeFailures++;
+            getLogger().warning("Child console pipe failed for " + slot.id + ": " + e.getMessage());
+        } finally {
+            if (slot.pipeGeneration.get() == generation) slot.pipeArmed.set(false);
+        }
     }
 
     private void startSampler() {
@@ -1648,22 +1776,61 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         }
     }
 
-    private void watch(ChildSlot slot, Process p) {
+    private void watch(ChildSlot slot, Process p, int token, int generation) {
+        int code = -1;
+        boolean exited = false;
         try {
-            int code = p.waitFor();
-            long up = System.currentTimeMillis() - slot.startedAt;
-            synchronized (slot.lock) { if (slot.process == p) { slot.process = null; slot.stdin = null; } }
-            slot.lastStatus = "exited (code " + code + ")";
-            slot.onlinePlayers.clear();
-            slot.console.add("[ServerhosterPlugin] Child exited with code " + code);
-            getLogger().warning("Child " + slot.id + " exited with code " + code + " after " + up / 1000 + "s");
-            if (up >= getConfig().getLong("autoRestart.resetAfterSeconds", 600) * 1000L) slot.attempts = 0;
-            if (slot.wantRunning && !shuttingDown) scheduleRestart(slot);
-        } catch (InterruptedException ignored) { Thread.currentThread().interrupt(); }
+            code = p.waitFor();
+            exited = true;
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            if (!p.isAlive()) {
+                try {
+                    code = p.exitValue();
+                    exited = true;
+                } catch (IllegalThreadStateException ignored) {}
+            } else if (!shuttingDown && slot.process == p) {
+                getLogger().warning("Child watcher for " + slot.id + " was interrupted; reattaching.");
+                try {
+                    armWatch(slot, p, true);
+                } catch (RejectedExecutionException ex) {
+                    getLogger().log(Level.SEVERE, "Could not reattach child watcher for " + slot.id, ex);
+                }
+                return;
+            }
+            if (!exited) return;
+        } finally {
+            if (slot.watchGeneration.get() == generation) slot.watchArmed.set(false);
+        }
+        long up = System.currentTimeMillis() - slot.startedAt;
+        synchronized (slot.lock) { if (slot.process == p) { slot.process = null; slot.stdin = null; } }
+        if (slot.phase == SupervisorHealth.Phase.RUNNING) slot.phase = SupervisorHealth.Phase.IDLE;
+        slot.lastStatus = "exited (code " + code + ")";
+        slot.onlinePlayers.clear();
+        slot.console.add("[ServerhosterPlugin] Child exited with code " + code);
+        getLogger().warning("Child " + slot.id + " exited with code " + code + " after " + up / 1000 + "s");
+        try {
+            if (ChildProcessRecord.deleteIfMatch(processRecord(), p.pid(), slot.trackedStart))
+                getLogger().info("Removed child process record for pid " + p.pid());
+        } catch (IOException e) {
+            getLogger().warning("Could not remove child process record: " + e.getMessage());
+        }
+        if (up >= getConfig().getLong("autoRestart.resetAfterSeconds", 600) * 1000L) slot.attempts = 0;
+        if (slot.wantRunning && !shuttingDown && slot.scheduleToken.get() == token) scheduleRestart(slot);
     }
 
     private void scheduleRestart(ChildSlot slot) {
-        if (!slot.wantRunning || shuttingDown || !getConfig().getBoolean("autoRestart.enabled", true)) return;
+        if (shuttingDown) return;
+        if (!slot.wantRunning) {
+            slot.restartQueued.set(false);
+            return;
+        }
+        if (!getConfig().getBoolean("autoRestart.enabled", true)) {
+            slot.restartQueued.set(true);
+            slot.lastStatus += ", auto-restart disabled";
+            getLogger().warning("Child " + slot.id + " exited and autoRestart is off.");
+            return;
+        }
         int max;
         try {
             max = RestartPolicy.maxAttempts(getConfig().get("autoRestart.maxAttempts",
@@ -1671,6 +1838,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         } catch (IllegalArgumentException e) {
             getLogger().log(Level.SEVERE, "Automatic restart limit is invalid; automatic restarts are paused.", e);
             slot.wantRunning = false;
+            slot.restartQueued.set(false);
             slot.lastStatus += ", auto-restart paused due to invalid settings";
             return;
         }
@@ -1679,9 +1847,12 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             notifyNtfy("ServerHoster: Neustart pausiert", "Der Child " + slot.id + " ist nach "
                     + max + " automatischen Neustartversuchen weiterhin ausgefallen. Automatische Neustarts sind pausiert; bitte Ursache prüfen und manuell starten.", "5");
             slot.wantRunning = false;
+            slot.restartQueued.set(false);
             slot.lastStatus += ", gave up";
             return;
         }
+        if (!slot.restartQueued.compareAndSet(false, true)) return;
+        int token = slot.scheduleToken.incrementAndGet();
         long base = getConfig().getLong("autoRestart.initialDelaySeconds", 5);
         long cap = getConfig().getLong("autoRestart.maxDelaySeconds", 300);
         long delay = RestartBackoff.delaySeconds(base, cap, slot.attempts);
@@ -1689,18 +1860,39 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         slot.lastStatus += ", restarting in " + delay + "s (attempt " + slot.attempts + ")";
         getLogger().warning("Restarting " + slot.id + " in " + delay + "s (attempt " + slot.attempts + ")");
         notifyNtfy("ServerHoster: Automatischer Neustart", "Child " + slot.id + " ist beendet. Neustartversuch " + slot.attempts + " in " + delay + " Sekunden.", "4");
-        exec.submit(() -> {
-            try { Thread.sleep(delay * 1000L); } catch (InterruptedException e) { return; }
-            if (!slot.wantRunning || shuttingDown || slot.running()) return;
-            try {
-                restartSingle(slot);
-            } catch (Exception e) { getLogger().log(Level.SEVERE, "Restart failed", e); scheduleRestart(slot); }
-        });
+        try {
+            exec.submit(() -> {
+                boolean failed = false;
+                try {
+                    Thread.sleep(delay * 1000L);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    if (slot.scheduleToken.get() == token) slot.restartQueued.set(false);
+                    return;
+                }
+                if (slot.scheduleToken.get() != token || !slot.wantRunning || shuttingDown || slot.running()) {
+                    if (slot.scheduleToken.get() == token) slot.restartQueued.set(false);
+                    return;
+                }
+                try {
+                    restartSingle(slot, token);
+                } catch (Exception e) {
+                    failed = true;
+                    getLogger().log(Level.SEVERE, "Restart failed", e);
+                } finally {
+                    if (slot.scheduleToken.get() == token) slot.restartQueued.set(false);
+                }
+                if (failed && slot.scheduleToken.get() == token) scheduleRestart(slot);
+            });
+        } catch (RejectedExecutionException e) {
+            slot.restartQueued.set(false);
+            getLogger().log(Level.SEVERE, "Could not queue child restart.", e);
+        }
     }
 
-    private void restartSingle(ChildSlot slot) throws Exception {
+    private void restartSingle(ChildSlot slot, int token) throws Exception {
         synchronized (childGate) {
-            if (!slot.wantRunning || shuttingDown || slot.running()) return;
+            if (slot.scheduleToken.get() != token || !slot.wantRunning || shuttingDown || slot.running()) return;
             launch(profile(slot.id), slot);
         }
     }
@@ -1712,12 +1904,18 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         catch (IOException e) { return false; }
     }
 
-    /** Sends "stop", waits stopTimeoutSeconds, then kills. Blocks. */
+    /** Sends "stop", waits stopTimeoutSeconds, then kills. Blocks the caller, not the server thread when queued. */
     private void stopBlocking(ChildSlot slot) {
+        invalidateRestarts(slot);
         slot.wantRunning = false;
         slot.stopRequested = true;
-        if (!slot.running()) return;
-        stopProcess(slot, getConfig().getLong("stopTimeoutSeconds", 60), false);
+        slot.phase = SupervisorHealth.Phase.STOPPING;
+        try {
+            if (!slot.running()) return;
+            stopProcess(slot, getConfig().getLong("stopTimeoutSeconds", 60), false);
+        } finally {
+            if (!slot.running()) slot.phase = SupervisorHealth.Phase.IDLE;
+        }
     }
 
     /** Thread-safe (onDisable + shutdown hook may race). useStdout: logger may be gone during JVM shutdown. */
@@ -1725,53 +1923,157 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         synchronized (slot.stopLock) {
             Process p = slot.process;
             if (p == null) return true;
-            if (!p.isAlive()) return p.exitValue() == 0;
+            if (!p.isAlive()) {
+                try { return p.exitValue() == 0; }
+                catch (IllegalThreadStateException e) { return false; }
+            }
             java.util.function.Consumer<String> log = m -> { if (useStdout) System.out.println("[ServerhosterPlugin] " + m); else { getLogger().info(m); slot.console.add("[ServerhosterPlugin] " + m); } };
-            log.accept("Stopping " + slot.id + " (pid " + p.pid() + ", waiting up to " + timeout + "s for clean save)...");
-            try {
-                long startupTimeout = useStdout ? 0 : Math.max(0, getConfig().getLong("startupStopTimeoutSeconds", 180));
-                long startupDeadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(startupTimeout);
-                while (p.isAlive() && !slot.serverReady && System.nanoTime() < startupDeadline) {
-                    p.waitFor(250, TimeUnit.MILLISECONDS);
-                }
-                if (!slot.serverReady && p.isAlive())
-                    log.accept("Child did not report startup complete within " + startupTimeout + "s; sending stop and retrying while it shuts down.");
-                long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(Math.max(0, timeout));
-                long nextSendAt = 0;
-                boolean firstSend = true;
-                while (p.isAlive() && (firstSend || System.nanoTime() < deadline)) {
-                    long now = System.nanoTime();
-                    if (firstSend || now >= nextSendAt) {
-                        firstSend = false;
+            long startupSeconds = 0;
+            if (!useStdout) {
+                RuntimeLimits.Bounded startup = RuntimeLimits.boundedSeconds(getConfig().getLong("startupStopTimeoutSeconds", 180), 180);
+                startup.notes().forEach(note -> warnOnce("startup-stop", note));
+                startupSeconds = startup.value();
+            }
+            RuntimeLimits.Bounded stop = RuntimeLimits.boundedSeconds(timeout, 60);
+            if (!useStdout) stop.notes().forEach(note -> warnOnce("stop-timeout", note));
+            ChildStopSequence.Outcome outcome = ChildStopSequence.stop(p, () -> slot.serverReady, startupSeconds, stop.value(),
+                    250, 5_000, 10, () -> {
                         BufferedWriter w = slot.stdin;
-                        try {
-                            if (w == null) throw new IOException("child console is not ready");
-                            synchronized (w) { w.write("stop"); w.newLine(); w.flush(); }
-                        } catch (IOException e) { log.accept("Could not send 'stop': " + e.getMessage()); }
-                        nextSendAt = now + TimeUnit.SECONDS.toNanos(5);
-                    }
-                    long remaining = deadline - now;
-                    if (remaining <= 0) break;
-                    p.waitFor(Math.max(1, Math.min(TimeUnit.NANOSECONDS.toMillis(remaining), 250)), TimeUnit.MILLISECONDS);
+                        if (w == null) throw new IOException("child console is not ready");
+                        synchronized (w) { w.write("stop"); w.newLine(); w.flush(); }
+                    }, log, slot.id);
+            return outcome == ChildStopSequence.Outcome.CLEAN;
+        }
+    }
+
+    private void invalidateRestarts(ChildSlot slot) {
+        slot.scheduleToken.incrementAndGet();
+        slot.restartQueued.set(false);
+    }
+
+    private void recoverChildSupervision() {
+        if (shuttingDown) return;
+        for (ChildSlot slot : List.copyOf(slots.values())) {
+            Process process = slot.process;
+            boolean alive = process != null && process.isAlive();
+            SupervisorHealth.Action action = SupervisorHealth.assess(new SupervisorHealth.State(
+                    slot.phase, shuttingDown, slot.wantRunning, slot.stopRequested, alive,
+                    slot.watchArmed.get(), slot.pipeArmed.get(), slot.restartQueued.get(), slot.launchInProgress.get()));
+            switch (action) {
+                case REATTACH_WATCH -> {
+                    getLogger().warning("Reattaching child watcher for " + slot.id);
+                    armWatch(slot, process, false);
                 }
-                if (!p.isAlive()) {
-                    int exitCode = p.exitValue();
-                    if (exitCode == 0) log.accept("Child stopped cleanly (exit code 0).");
-                    else log.accept("Child exited with code " + exitCode + " during stop; shutdown was not clean.");
-                    return exitCode == 0;
-                } else {
-                    log.accept("Child did not stop within " + timeout + "s - KILLING (unsaved changes since last save-all may be lost).");
-                    p.descendants().forEach(ProcessHandle::destroy);
-                    p.destroy();
-                    if (!p.waitFor(10, TimeUnit.SECONDS)) { p.descendants().forEach(ProcessHandle::destroyForcibly); p.destroyForcibly(); p.waitFor(10, TimeUnit.SECONDS); }
-                    log.accept("Child killed.");
-                    return false;
+                case REATTACH_PIPE -> {
+                    getLogger().warning("Reattaching child console pipe for " + slot.id);
+                    armPipe(slot, process, consolePrefix(slot.profile));
                 }
-            } catch (InterruptedException e) {
-                p.destroyForcibly(); log.accept("Child killed (interrupted)."); Thread.currentThread().interrupt();
-                return false;
+                case REATTACH_BOTH -> {
+                    getLogger().warning("Reattaching child watcher and console pipe for " + slot.id);
+                    armWatch(slot, process, false);
+                    armPipe(slot, process, consolePrefix(slot.profile));
+                }
+                case SCHEDULE_RESTART -> {
+                    getLogger().warning("No child watcher is attached after " + slot.id + " exited; scheduling restart.");
+                    scheduleRestart(slot);
+                }
+                case NONE -> {}
             }
         }
+    }
+
+    private void armWatch(ChildSlot slot, Process process, boolean replace) {
+        synchronized (slot.watchArmed) {
+            if (process == null || !process.isAlive()) return;
+            if (slot.watchArmed.get() && !replace) return;
+            int generation = slot.watchGeneration.incrementAndGet();
+            int token = slot.scheduleToken.get();
+            slot.watchArmed.set(true);
+            try {
+                exec.submit(() -> watch(slot, process, token, generation));
+            } catch (RejectedExecutionException e) {
+                if (slot.watchGeneration.get() == generation) slot.watchArmed.set(false);
+                throw e;
+            }
+        }
+    }
+
+    private void armPipe(ChildSlot slot, Process process, String prefix) {
+        synchronized (slot.pipeArmed) {
+            if (process == null || !process.isAlive()) return;
+            if (slot.pipeFailures >= 3) {
+                if (slot.pipeFailures == 3) {
+                    slot.pipeFailures = 4;
+                    getLogger().severe("Child console pipe failed repeatedly for " + slot.id
+                            + "; not reattaching. The child can block if its output buffer fills.");
+                }
+                return;
+            }
+            if (slot.pipeArmed.get()) return;
+            int generation = slot.pipeGeneration.incrementAndGet();
+            slot.pipeArmed.set(true);
+            try {
+                exec.submit(() -> pipe(slot, process, prefix, generation));
+            } catch (RejectedExecutionException e) {
+                if (slot.pipeGeneration.get() == generation) slot.pipeArmed.set(false);
+                throw e;
+            }
+        }
+    }
+
+    private String consolePrefix(ServerProfile profile) {
+        String base = getConfig().getString("logPrefix", "[Child] ");
+        if (profile == null) return base;
+        return !"default".equals(profile.id) && profiles.size() > 1 ? "[" + profile.id + "] " : base;
+    }
+
+    private Path processRecord() {
+        return getDataFolder().toPath().resolve("child-process.record");
+    }
+
+    private void rememberProcess(Process process, ServerProfile profile, Path jar) {
+        try {
+            ChildProcessRecord.write(processRecord(), new ChildProcessRecord.Identity(
+                    process.pid(), process.info().startInstant().orElse(null),
+                    profile.directory().toAbsolutePath().normalize().toString(),
+                    jar.toString(), jar.toAbsolutePath().normalize().toString(), javaBin()));
+        } catch (IOException e) {
+            getLogger().log(Level.SEVERE, "Could not persist child process identity; leftover recovery will refuse to kill an unmatched process.", e);
+        }
+    }
+
+    private void reapLeftover() throws IOException, InterruptedException {
+        ChildProcessRecord.ReapResult result = ChildProcessRecord.reap(processRecord(), Duration.ofSeconds(10),
+                Duration.ofSeconds(5), processes, ProcessHandle.current().pid());
+        switch (result.kind()) {
+            case NO_RECORD -> {}
+            case CLEARED -> getLogger().info("Removed stale child process record: " + result.detail());
+            case INVALID_RECORD -> getLogger().warning("Child process record is not usable; not killing any process. " + result.detail());
+            case REFUSED -> getLogger().warning("Leftover PID is not the recorded child; not killing it. " + result.detail());
+            case REAPED -> getLogger().warning("Stopped a leftover child process before start. " + result.detail());
+            case STILL_ALIVE -> throw new IOException("Leftover child is still running after a stop attempt; refusing to start a second process. " + result.detail());
+        }
+    }
+
+    private void abandonFailedStart(ChildSlot slot, Process process) {
+        ChildLaunchCleanup.Result cleanup = ChildLaunchCleanup.abandon(process, 2_000);
+        String detail = cleanup.detail() == null || cleanup.detail().isBlank() ? "no extra detail" : cleanup.detail();
+        getLogger().warning("Cleaned up child after a failed start (pid " + process.pid() + ", exited=" + cleanup.exited() + "): " + detail);
+        synchronized (slot.lock) {
+            if (slot.process == process) { slot.process = null; slot.stdin = null; }
+        }
+        slot.watchArmed.set(false);
+        slot.pipeArmed.set(false);
+        slot.phase = SupervisorHealth.Phase.IDLE;
+        try {
+            ChildProcessRecord.deleteIfMatch(processRecord(), process.pid(), slot.trackedStart);
+        } catch (IOException e) {
+            getLogger().warning("Could not remove child process record after the failed start: " + e.getMessage());
+        }
+    }
+
+    private void warnOnce(String key, String message) {
+        if (memoryBudgetWarnings.add(key)) getLogger().warning(message);
     }
 
     // ---------------- commands ----------------

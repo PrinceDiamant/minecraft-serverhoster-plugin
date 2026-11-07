@@ -439,6 +439,7 @@ final class Dashboard {
 
         m.put("spigot", spigotStats());
         m.put("hostMemory", pl.hostMemoryView());
+        m.put("telemetry", pl.memoryTelemetryView(pid));
         return m;
     }
 

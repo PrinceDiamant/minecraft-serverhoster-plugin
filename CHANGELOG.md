@@ -1,5 +1,31 @@
 # Release notes
 
+## ServerHoster 2.0.2
+
+- Keep every 2.0.1 feature. Do not change configured `Xms`/`Xmx`, Lithium or
+  other gameplay settings, view/simulation distance, worlds, or pause the child
+  when it is empty.
+- Record child PID, start instant, working directory and jar. A later start
+  stops that process only when the live process still matches; a reused PID is
+  left alone.
+- Reattach a detached console pipe or exit watcher, and schedule the existing
+  bounded restart if the watcher missed an exit. Drain and destroy a process
+  whose start fails after `ProcessBuilder.start()`.
+- Keep command and dashboard stop/restart off the Spigot main thread. Run
+  memory sampling and its emergency child stop on a separate scheduler so
+  `save-all` and schedules are not blocked by that work. `onDisable` still
+  waits for the child stop before the JVM exits.
+- Add read-only `memory-telemetry.log` and dashboard fields that keep heap
+  used, committed and max, process RSS, host meminfo and cgroup counters
+  separate. A GC cycle duration is reported as observed, not as proof about a
+  pause target. Host swap occupancy is not treated as a container OOM.
+- Invalid memory thresholds disable automatic child stop without rewriting
+  stored config. Negative wait values still mean 0 seconds. Waits above 7 days
+  are capped only in memory.
+- Existing `config.yml` remains valid. A missing `memoryTelemetry` block uses
+  the documented defaults. Startup still updates only `metadata.pluginVersion`
+  (and the legacy unlimited restart value, if present).
+
 ## ServerHoster 2.0.1
 
 - Pause automatic child restarts after five consecutive retry attempts by

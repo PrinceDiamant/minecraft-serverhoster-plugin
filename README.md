@@ -5,6 +5,15 @@ Child-Server startet und ein Web-Dashboard für Einrichtung, Betrieb,
 Diagnose, Backups und Zeitpläne bereitstellt. Das Plugin installiert keine
 Mods oder Plugins.
 
+## ServerHoster 2.0.2
+
+- Child-Prozessidentität mit PID und Startzeitpunkt; ein wiederverwendeter PID
+  wird nicht beendet.
+- Überwachung von Konsole und Exit-Watcher, Aufräumen nach fehlgeschlagenem
+  Start, und Speichermessung, die Heap, RSS, Host und cgroup getrennt hält.
+- Konfigurierte Heap-Werte, Welten, Sichtweiten und `pause-when-empty-seconds: 0`
+  bleiben unverändert. Details: [Vergleich](docs/VERGLEICH-MINIMAL-2026-11.md).
+
 ## ServerHoster 2.0.1
 
 - Genau ein Child-Server; keine Profile und kein Profilwechsel.
@@ -35,7 +44,7 @@ Build mit Node.js 22 erzeugt.
 mvn clean verify
 ```
 
-Das Plugin-Jar ist `target/ServerHoster-2.0.1.jar`. Spigot API 26.3 ist eine
+Das Plugin-Jar ist `target/ServerHoster-2.0.2.jar`. Spigot API 26.3 ist eine
 `provided`-Abhängigkeit. H2 ist ausschließlich eine Testabhängigkeit und
 befindet sich nicht im Plugin-Jar. Es gibt keine lokale Datenbank und keine
 mitgelieferten Server-Jars.
