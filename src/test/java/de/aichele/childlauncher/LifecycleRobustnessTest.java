@@ -18,6 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -216,6 +217,18 @@ class LifecycleRobustnessTest {
         assertFalse(config.contains("simulation-distance:"));
         assertFalse(config.contains("MinHeapFreeRatio"));
         assertFalse(config.contains("G1PeriodicGCInterval"));
+    }
+
+    @Test void retryExhaustionKeepsTheStartFailureInsteadOfPreparing() {
+        String cause = "Custom jar not found: lifecycle-intentionally-missing.jar";
+        String first = StartFailureStatus.text(new java.io.FileNotFoundException(cause));
+        assertEquals("start failed: " + cause + ", restarting in 2s (attempt 1)",
+                first + ", restarting in 2s (attempt 1)");
+        String overwrittenByNextAttempt = "preparing";
+        String restored = StartFailureStatus.text(new java.io.FileNotFoundException(cause));
+        assertNotEquals(overwrittenByNextAttempt, restored);
+        assertEquals("start failed: " + cause + ", gave up", restored + ", gave up");
+        assertEquals("start failed: FileNotFoundException", StartFailureStatus.text(new java.io.FileNotFoundException()));
     }
 
     @Test void telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates() throws Exception {

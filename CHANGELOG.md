@@ -25,6 +25,8 @@
 - Invalid memory thresholds disable automatic child stop without rewriting
   stored config. Negative wait values still mean 0 seconds. Waits above 7 days
   are capped only in memory.
+- After automatic restarts are exhausted, the status keeps the start failure
+  (`start failed: ... , gave up`) instead of replacing it with `preparing`.
 - Existing `config.yml` remains valid. A missing `memoryTelemetry` block uses
   the documented defaults. Startup still updates only `metadata.pluginVersion`
   (and the legacy unlimited restart value, if present).

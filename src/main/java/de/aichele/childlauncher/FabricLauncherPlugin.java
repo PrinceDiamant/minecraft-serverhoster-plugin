@@ -1612,7 +1612,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                     openChild(s, id);
                 } catch (Exception e) {
                     ChildSlot failedSlot = slot(id);
-                    failedSlot.lastStatus = "start failed: " + e.getMessage();
+                    failedSlot.lastStatus = StartFailureStatus.text(e);
                     if (failedSlot.phase == SupervisorHealth.Phase.PREPARING) failedSlot.phase = SupervisorHealth.Phase.IDLE;
                     getLogger().log(Level.SEVERE, "Failed to start child " + id, e);
                     msg(s, "Start failed: " + e.getMessage());
@@ -1869,6 +1869,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                     restartSingle(slot, token);
                 } catch (Exception e) {
                     failed = true;
+                    slot.lastStatus = StartFailureStatus.text(e);
                     getLogger().log(Level.SEVERE, "Restart failed", e);
                 } finally {
                     if (slot.scheduleToken.get() == token) slot.restartQueued.set(false);
