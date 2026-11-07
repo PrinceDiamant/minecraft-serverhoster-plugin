@@ -14,6 +14,17 @@ interface SetupCandidate {
   contents: string[];
 }
 
+interface HostMinimizeState {
+  status: string;
+  restartRequired: boolean;
+  lobbyName: string;
+  confirmation: string;
+  rollbackConfirmation: string;
+  notes: string[];
+  message?: string;
+  heap?: { name: string; applied: boolean; detail: string }[];
+}
+
 interface SetupState {
   required: boolean;
   legacyDataFound: boolean;
@@ -34,6 +45,7 @@ export default function SetupWorkflow() {
   const [ntfy, setNtfy] = useState({ enabled: false, server: "https://ntfy.sh", topic: "" });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [host, setHost] = useState<HostMinimizeState | null>(null);
   const initialized = useRef(false);
   const ntfyInitialized = useRef(false);
 
@@ -42,6 +54,11 @@ export default function SetupWorkflow() {
     try {
       const result = await dashboardRequest<SetupState>("/api/setup");
       setState(result);
+      try {
+        setHost(await dashboardRequest<HostMinimizeState>("/api/host-minimize"));
+      } catch {
+        setHost(null);
+      }
       if (!ntfyInitialized.current) {
         ntfyInitialized.current = true;
         setNtfy(result.ntfy);
@@ -174,6 +191,33 @@ export default function SetupWorkflow() {
     }
   };
 
+  const hostAction = async (action: "apply" | "rollback", required: string) => {
+    const typed = await window.dashboardUi?.prompt({
+      title: action === "apply" ? "Äußeren Spigot verkleinern?" : "Host-Dateien zurückholen?",
+      description: action === "apply"
+        ? "Ein laufender Child wird zuerst sauber gestoppt. Bestehende Welten, Plugins, Logs und Backups werden nicht gelöscht. Danach musst du den äußeren Spigot selbst im Panel neu starten."
+        : "Die gesicherten server.properties, bukkit.yml und spigot.yml werden zurückgeschrieben. Welten werden nicht gelöscht.",
+      placeholder: required,
+      requiredValue: required,
+      confirmLabel: action === "apply" ? "Minimierung vorbereiten" : "Zurückholen",
+      destructive: true,
+    });
+    if (typed !== required) return;
+    setBusy(true);
+    try {
+      const result = await dashboardRequest<HostMinimizeState>("/api/host-minimize", {
+        method: "POST",
+        body: jsonBody({ action, confirm: typed }),
+      });
+      setHost(result);
+      window.dashboardUi?.notify(result.message ?? "Gespeichert.", false);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Host-Aktion fehlgeschlagen.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
   if (!state && !error) return <section className="setup-workflow"><p>Einrichtung wird geladen …</p></section>;
 
   return (
@@ -291,6 +335,19 @@ export default function SetupWorkflow() {
           </div>
         </>
       )}
+
+      <div className="setup-card-list">
+        <h3>Äußeren Spigot verkleinern</h3>
+        <p>Optional und aus. Es wird nichts automatisch gelöscht. Welten, Plugins, Logs, Backups, der Child-Ordner und dieses Plugin bleiben erhalten. Port, Online-Mode und ein ausgeschaltetes RCON bleiben unverändert. -Xmx wird nicht gesenkt.</p>
+        <p>Status: {host?.status ?? "unbekannt"}{host?.restartRequired ? " · äußerer Neustart im Panel nötig" : ""}{host?.lobbyName ? ` · neue leere Welt ${host.lobbyName}` : ""}</p>
+        <ul>{(host?.notes ?? []).map((note) => <li key={note}>{note}</li>)}</ul>
+        {host?.heap && host.heap.length > 0 && <p className="muted">{host.heap.map((flag) => `${flag.name}: ${flag.detail}`).join(" · ")}</p>}
+        {host?.message && <p>{host.message}</p>}
+        <div className="setup-actions">
+          <button className="btn" disabled={busy} type="button" onClick={() => void hostAction("apply", host?.confirmation || "HOST MINIMIEREN")}>Minimierung vorbereiten …</button>
+          <button className="btn" disabled={busy || host?.status === "inactive"} type="button" onClick={() => void hostAction("rollback", host?.rollbackConfirmation || "HOST ZURUECK")}>Dateien zurückholen …</button>
+        </div>
+      </div>
     </section>
   );
 }
