@@ -182,7 +182,13 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         memorySched.shutdownNow();
         healthSched.shutdownNow();
         sched.shutdownNow();
-        try { if (shutdownHook != null) Runtime.getRuntime().removeShutdownHook(shutdownHook); } catch (IllegalStateException ignored) { /* JVM already shutting down; hook runs/ran */ }
+        boolean cleanStillPending = cleanShutdownHookNeeded();
+        try {
+            if (shutdownHook != null && !cleanStillPending) Runtime.getRuntime().removeShutdownHook(shutdownHook);
+        } catch (IllegalStateException ignored) { /* JVM already shutting down; hook runs/ran */ }
+        if (cleanStillPending) {
+            System.out.println("[ServerhosterPlugin] Clean-Setup bleibt bis zum Prozessende vorgemerkt und wird nicht in onDisable gelöscht.");
+        }
         if (dashboard != null) dashboard.stop();
         exec.shutdownNow();
     }
@@ -2132,6 +2138,16 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         }
     }
 
+    private boolean cleanShutdownHookNeeded() {
+        try {
+            Path sidecar = cleanSidecarPath();
+            if (!Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS) || Files.isSymbolicLink(sidecar)) return false;
+            return CleanSetup.keepShutdownHook(CleanSetup.sidecarStatus(Files.readString(sidecar)));
+        } catch (IOException e) {
+            return true;
+        }
+    }
+
     private Path cleanSidecarPath() {
         return getWorldRoot().resolve("plugins").resolve("ServerhosterPlugin-clean-reprovision.txt");
     }
@@ -2168,12 +2184,12 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             if (Files.isSymbolicLink(sidecar)) throw new SecurityException("Clean-Setup-Datei darf kein Symlink sein");
             String text = Files.readString(sidecar);
             String status = CleanSetup.sidecarStatus(text);
-            if ("pending".equals(status)) {
+            if (CleanSetup.startup(status) == CleanSetup.Startup.ABORT) {
                 Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
-                getLogger().severe("Clean-Setup war vorgemerkt, aber der Server ist wieder gestartet. Es wurde nichts weiter gelöscht.");
+                getLogger().severe("Clean-Setup war vorgemerkt, aber dieser Start löscht nichts. Der vorherige Prozess hat die Löschung nicht abgeschlossen. Eine neue Vorschau ist nötig.");
                 return;
             }
-            if (!"done".equals(status)) {
+            if (CleanSetup.startup(status) != CleanSetup.Startup.PROVISION) {
                 getLogger().warning("Clean-Setup ist " + status + " und läuft nicht von selbst weiter.");
                 return;
             }
@@ -2197,6 +2213,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             if (!Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS) || Files.isSymbolicLink(sidecar)) return;
             String text = Files.readString(sidecar);
             if (!"pending".equals(CleanSetup.sidecarStatus(text))) return;
+            System.out.println("[ServerhosterPlugin] Clean-Setup löscht beim Prozessende die bestätigte Liste.");
             for (ChildSlot slot : slots.values()) if (slot.running()) {
                 Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
                 System.out.println("[ServerhosterPlugin] Clean-Setup abgebrochen: der Child läuft noch");
@@ -2269,7 +2286,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         writeAtomically(cleanSidecarPath(), CleanSetup.sidecar("pending", afterStop));
         Files.deleteIfExists(cleanTicketPath());
         getServer().getScheduler().runTask(this, () -> getServer().shutdown());
-        return Map.of("ok", true, "message", "Der Child ist gestoppt. Der äußere Server fährt jetzt herunter und löscht nur die bestätigte Liste. Es gibt keine Rücknahme.");
+        return Map.of("ok", true, "message", "Der Child ist gestoppt. Der äußere Prozess beendet sich jetzt und löscht die bestätigte Liste erst beim Prozessende. Erst neu starten, wenn dieser Prozess beendet ist. Es gibt keine Rücknahme.");
     }
 
     private Map<String, Object> cleanSetupBody(CleanSetup.Plan plan) {

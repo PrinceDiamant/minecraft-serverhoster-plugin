@@ -170,6 +170,46 @@ class CleanSetupTest {
     }
 
     @Test
+    void acceptedApplyDeletesOnProcessExitAndDoesNotResumeAfterALaterStart() throws Exception {
+        Path root = server(temp.resolve("shutdown"));
+        Path plugin = root.resolve("plugins/ServerHoster-2.0.4.jar");
+        Path world = root.resolve("world/level.dat");
+        long now = 9_000L;
+        CleanSetup.Plan plan = CleanSetup.scan(root, plugin, 2063, 2064, now);
+        Path sidecar = root.resolve("plugins/ServerhosterPlugin-clean-reprovision.txt");
+        Files.writeString(sidecar, CleanSetup.sidecar("pending", plan));
+        assertTrue(CleanSetup.keepShutdownHook("pending"));
+        assertFalse(CleanSetup.keepShutdownHook("done"));
+        assertFalse(CleanSetup.keepShutdownHook("aborted"));
+        assertEquals(CleanSetup.Startup.ABORT, CleanSetup.startup("pending"));
+
+        CleanSetup.execute(root, plan.delete(), "plugins/ServerHoster-2.0.4.jar", Files::deleteIfExists);
+        Files.writeString(sidecar, CleanSetup.sidecar("done", plan));
+        assertFalse(Files.exists(world));
+        assertFalse(Files.exists(root.resolve("child-server")));
+        assertTrue(Files.exists(plugin));
+        assertTrue(Files.exists(root.resolve("spigot.jar")));
+        assertTrue(Files.exists(root.resolve("eula.txt")));
+        assertTrue(Files.exists(root.resolve("libraries/runtime.txt")));
+        assertEquals(CleanSetup.Startup.PROVISION, CleanSetup.startup(CleanSetup.sidecarStatus(Files.readString(sidecar))));
+        CleanSetup.provision(root, plan, "serverhoster-lobby-cccccccc");
+        assertTrue(Files.readString(root.resolve("server.properties")).contains("server-port=2060"));
+
+        Path restarted = server(temp.resolve("restarted"));
+        Path restartedWorld = restarted.resolve("world/level.dat");
+        Path restartedSidecar = restarted.resolve("plugins/ServerhosterPlugin-clean-reprovision.txt");
+        CleanSetup.Plan restartedPlan = CleanSetup.scan(restarted, restarted.resolve("plugins/ServerHoster-2.0.4.jar"), 2063, 2064, now);
+        Files.writeString(restartedSidecar, CleanSetup.sidecar("pending", restartedPlan));
+        assertEquals(CleanSetup.Startup.ABORT, CleanSetup.startup("pending"));
+        String pending = Files.readString(restartedSidecar);
+        Files.writeString(restartedSidecar, pending.replaceFirst("status=pending", "status=aborted"));
+        assertTrue(Files.exists(restartedWorld));
+        assertTrue(Files.exists(restarted.resolve("child-server/server.jar")));
+        assertEquals("aborted", CleanSetup.sidecarStatus(Files.readString(restartedSidecar)));
+        assertEquals(CleanSetup.Startup.IGNORE, CleanSetup.startup("aborted"));
+    }
+
+    @Test
     void mutatingRequestsStillNeedTheCsrfHeader() {
         assertTrue(Dashboard.csrfRejected("POST", null));
         assertTrue(Dashboard.csrfRejected("POST", ""));

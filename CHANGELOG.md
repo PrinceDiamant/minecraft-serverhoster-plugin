@@ -1,5 +1,15 @@
 # Release notes
 
+## ServerHoster 2.0.6
+
+- Finish an accepted clean setup when the outer process actually exits. Spigot
+  calls plugin disable before the JVM exits and 2.0.5 removed the shutdown hook
+  there, so the deletion never ran. A pending clean now keeps that hook. The
+  next startup still does not delete if the marker is pending; it marks the
+  attempt aborted and requires a new preview.
+- After a successful deletion the next start writes the fresh lobby and
+  requires setup again, so the old child does not autostart.
+
 ## ServerHoster 2.0.5
 
 - Fix clean-setup apply rejecting an unchanged server. The ticket now stores

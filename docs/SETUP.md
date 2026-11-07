@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.0.5.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.0.6.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Das Plugin legt `plugins/ServerhosterPlugin/` an und
    startet das Dashboard. Beim ersten Start wird das Dashboard-Passwort in
@@ -105,7 +105,10 @@ Start neu. Der nächste Start schreibt eine frische Konfiguration und
 behält die bisherigen Ports. Verzeichnisse außerhalb des Serverordners werden
 nicht angefasst. Logs und Lock-Dateien dürfen sich zwischen Vorschau und
 Ausführung ändern. Eine andere neue oder entfernte Datei macht das Ticket
-ungültig; dann ist eine neue Vorschau nötig. Ein Ticket aus 2.0.4 ist
+ungültig; dann ist eine neue Vorschau nötig. Nach einem angenommenen
+Apply darf der Server erst neu gestartet werden, wenn der alte Prozess
+beendet ist. Die Löschung läuft an diesem Prozessende. Sie wird bei einem
+späteren Start nicht nachgeholt. Ein Ticket aus 2.0.4 ist
 unvollständig und muss neu erzeugt werden.
 
 ## Aus dem Quellcode bauen

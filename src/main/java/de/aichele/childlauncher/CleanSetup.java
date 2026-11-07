@@ -155,6 +155,22 @@ final class CleanSetup {
                 && ticket.serverIp().equals(fresh.serverIp());
     }
 
+    static boolean keepShutdownHook(String sidecarStatus) {
+        return "pending".equals(sidecarStatus);
+    }
+
+    enum Startup {
+        PROVISION, ABORT, IGNORE
+    }
+
+    static Startup startup(String sidecarStatus) {
+        return switch (sidecarStatus == null ? "" : sidecarStatus) {
+            case "done" -> Startup.PROVISION;
+            case "pending" -> Startup.ABORT;
+            default -> Startup.IGNORE;
+        };
+    }
+
     static boolean volatilePath(String relative) {
         return relative.equals("logs") || relative.startsWith("logs/")
                 || relative.equals("crash-reports") || relative.startsWith("crash-reports/")
