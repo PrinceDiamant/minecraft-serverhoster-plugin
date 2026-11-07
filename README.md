@@ -5,6 +5,12 @@ Child-Server startet und ein Web-Dashboard für Einrichtung, Betrieb,
 Diagnose, Backups und Zeitpläne bereitstellt. Das Plugin installiert keine
 Mods oder Plugins.
 
+## ServerHoster 2.0.3
+
+- Optionale Minimierung des äußeren Spigots mit Vorschau, Dateisicherung und
+  Rückrollen. Kein automatisches Löschen und kein selbstständiger Host-Neustart.
+  Der Child, Backups und vorhandene Welten bleiben erhalten.
+
 ## ServerHoster 2.0.2
 
 - Child-Prozessidentität mit PID und Startzeitpunkt; ein wiederverwendeter PID
@@ -44,7 +50,7 @@ Build mit Node.js 22 erzeugt.
 mvn clean verify
 ```
 
-Das Plugin-Jar ist `target/ServerHoster-2.0.2.jar`. Spigot API 26.3 ist eine
+Das Plugin-Jar ist `target/ServerHoster-2.0.3.jar`. Spigot API 26.3 ist eine
 `provided`-Abhängigkeit. H2 ist ausschließlich eine Testabhängigkeit und
 befindet sich nicht im Plugin-Jar. Es gibt keine lokale Datenbank und keine
 mitgelieferten Server-Jars.

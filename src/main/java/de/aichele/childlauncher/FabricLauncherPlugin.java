@@ -122,6 +122,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             getLogger().warning("Previous memory emergency detected; automatic child start is paused until memory is stable.");
         }
         autoStartInitialized = true;
+        refreshHostMinimize();
         NtfyNotifier.Settings ntfy = ntfySettings();
         if (ntfy.enabled() && (ntfy.topic() == null || ntfy.topic().isBlank())) {
             getLogger().warning("ntfy notifications are enabled but notifications.ntfy.topic is empty; notifications are disabled until a topic is configured.");
@@ -2068,6 +2069,150 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         if (memoryBudgetWarnings.add(key)) getLogger().warning(message);
     }
 
+    private Path hostMinimizeStateFile() {
+        return getDataFolder().toPath().resolve("host-minimize-state.txt");
+    }
+
+    private List<Path> hostProtectedPaths() {
+        List<Path> paths = new ArrayList<>();
+        paths.add(getDataFolder().toPath().toAbsolutePath().normalize());
+        Path root = getWorldRoot();
+        String configured = getConfig().getString("workingDir", "./child-server");
+        Path child = Path.of(configured == null ? "./child-server" : configured);
+        if (!child.isAbsolute()) child = root.resolve(child);
+        paths.add(child.normalize());
+        for (ServerProfile profile : profiles) paths.add(profile.directory().toAbsolutePath().normalize());
+        String backup = getConfig().getString("backup.directory", "");
+        if (backup != null && !backup.isBlank()) {
+            Path backupPath = Path.of(backup);
+            if (!backupPath.isAbsolute()) backupPath = root.resolve(backupPath);
+            paths.add(backupPath.normalize());
+        }
+        return paths;
+    }
+
+    private Map<String, String> readHostMinimizeState() throws IOException {
+        Path file = hostMinimizeStateFile();
+        if (!Files.isRegularFile(file, LinkOption.NOFOLLOW_LINKS)) return Map.of();
+        return HostMinimize.readState(Files.readString(file));
+    }
+
+    private void writeHostMinimizeState(String status, String lobbyName, String backup, boolean restartRequired) throws IOException {
+        Path file = hostMinimizeStateFile();
+        if (Files.isSymbolicLink(file)) throw new SecurityException("host minimization state must not be a symlink");
+        Files.writeString(file, HostMinimize.stateText(status, lobbyName, backup, restartRequired));
+    }
+
+    Map<String, Object> hostMinimizeView() throws IOException {
+        Map<String, String> state = readHostMinimizeState();
+        String status = state.getOrDefault("status", "inactive");
+        String lobby = state.getOrDefault("lobbyName", "");
+        if (!HostMinimize.lobbyNameSafe(lobby)) lobby = HostMinimize.newLobbyName();
+        HostMinimize.Preview preview = HostMinimize.preview(getWorldRoot(), lobby, hostProtectedPaths());
+        Map<String, Object> view = new LinkedHashMap<>();
+        view.put("status", status);
+        view.put("restartRequired", Boolean.parseBoolean(state.getOrDefault("restartRequired", "false")));
+        view.put("lobbyName", "inactive".equals(status) ? "" : state.getOrDefault("lobbyName", ""));
+        view.put("previewLobbyName", preview.lobbyName());
+        view.put("confirmation", HostMinimize.CONFIRM);
+        view.put("rollbackConfirmation", HostMinimize.ROLLBACK_CONFIRM);
+        view.put("changes", preview.changes().stream().map(change -> Map.of(
+                "file", change.file(), "key", change.key(),
+                "from", change.from() == null ? "" : change.from(), "to", change.to())).toList());
+        view.put("notes", preview.notes());
+        view.put("childRunning", focusSlot().running());
+        return view;
+    }
+
+    Map<String, Object> hostMinimizeApply(String confirm) throws IOException {
+        if (!HostMinimize.CONFIRM.equals(confirm))
+            throw new IllegalArgumentException("Die Bestätigung stimmt nicht. Erforderlich ist exakt: " + HostMinimize.CONFIRM);
+        ChildSlot slot = focusSlot();
+        if (slot.running()) {
+            stopBlocking(slot);
+            if (slot.running()) throw new IOException("Der Child läuft noch. Host-Dateien wurden nicht geändert.");
+        }
+        String lobby = HostMinimize.newLobbyName();
+        Path backup = getDataFolder().toPath().resolve("host-minimize-backup").resolve(lobby.substring("serverhoster-lobby-".length()));
+        HostMinimize.apply(getWorldRoot(), backup, lobby, hostProtectedPaths());
+        List<Map<String, Object>> heap = HostHeapTune.apply(HostHeapTune.hotspot()).stream().map(result -> {
+            Map<String, Object> row = new LinkedHashMap<>();
+            row.put("name", result.name());
+            row.put("value", result.value());
+            row.put("applied", result.applied());
+            row.put("detail", result.detail());
+            return row;
+        }).toList();
+        writeHostMinimizeState("staged", lobby, getDataFolder().toPath().relativize(backup).toString().replace('\\', '/'), true);
+        Map<String, Object> view = hostMinimizeView();
+        view.put("heap", heap);
+        view.put("restartRequired", true);
+        view.put("message", "Host-Minimierung ist vorbereitet. Der äußere Spigot muss im Panel neu gestartet werden. Das Plugin startet den Host nicht selbst. -Xmx wurde nicht geändert.");
+        return view;
+    }
+
+    Map<String, Object> hostMinimizeRollback(String confirm) throws IOException {
+        if (!HostMinimize.ROLLBACK_CONFIRM.equals(confirm))
+            throw new IllegalArgumentException("Die Bestätigung stimmt nicht. Erforderlich ist exakt: " + HostMinimize.ROLLBACK_CONFIRM);
+        Map<String, String> state = readHostMinimizeState();
+        String relative = state.getOrDefault("backup", "");
+        if (relative.isBlank()) throw new IllegalStateException("Es gibt keine Host-Minimierungs-Sicherung");
+        Path backup = getDataFolder().toPath().resolve(relative).normalize();
+        if (!backup.startsWith(getDataFolder().toPath().toAbsolutePath().normalize()))
+            throw new SecurityException("Die Sicherung liegt außerhalb des Plugin-Ordners");
+        HostMinimize.restore(getWorldRoot(), backup, hostProtectedPaths());
+        Files.deleteIfExists(hostMinimizeStateFile());
+        Map<String, Object> view = hostMinimizeView();
+        view.put("message", "Gesicherte Host-Dateien wurden zurückgeschrieben. Ein äußerer Neustart ist nötig, wenn der Host schon mit der neuen Welt gestartet wurde. Welten wurden nicht gelöscht.");
+        return view;
+    }
+
+    private void refreshHostMinimize() {
+        try {
+            Map<String, String> state = readHostMinimizeState();
+            if (!"staged".equals(state.get("status")) && !"active".equals(state.get("status"))) return;
+            String lobby = state.get("lobbyName");
+            if (!HostMinimize.lobbyNameSafe(lobby)) return;
+            for (HostHeapTune.Result result : HostHeapTune.apply(HostHeapTune.hotspot()))
+                getLogger().info("Host heap option " + result.name() + ": " + result.detail());
+            String level = "";
+            Path properties = getWorldRoot().resolve("server.properties");
+            if (Files.isRegularFile(properties, LinkOption.NOFOLLOW_LINKS)) {
+                for (String line : Files.readAllLines(properties)) {
+                    if (line.startsWith("level-name=")) level = line.substring("level-name=".length()).trim();
+                }
+            }
+            boolean restarted = lobby.equals(level);
+            writeHostMinimizeState(restarted ? "active" : "staged", lobby, state.getOrDefault("backup", ""), !restarted);
+            if (restarted) {
+                String target = lobby;
+                getServer().getScheduler().runTask(this, () -> applyLobbyRules(target));
+            } else {
+                getLogger().warning("Host minimization is staged. Restart the outer Spigot from the panel to load lobby " + lobby + ". Existing worlds were not deleted.");
+            }
+        } catch (Exception e) {
+            getLogger().log(Level.WARNING, "Could not refresh host minimization", e);
+        }
+    }
+
+    private void applyLobbyRules(String lobby) {
+        int changed = HostLobbyRuntime.apply(getServer().getWorlds().stream().map(world -> (HostLobbyRuntime.World) new HostLobbyRuntime.World() {
+            @Override public String name() { return world.getName(); }
+            @Override public void spawnFlags(boolean monsters, boolean animals) { world.setSpawnFlags(monsters, animals); }
+            @Override public void keepSpawnInMemory(boolean keep) { world.setKeepSpawnInMemory(keep); }
+            @Override public void ruleOff(String name) { setOuterRuleOff(world, name); }
+        }).toList(), lobby);
+        if (changed > 0) getLogger().info("Applied outer lobby runtime limits to " + changed + " world(s) named " + lobby);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    private void setOuterRuleOff(org.bukkit.World world, String name) {
+        org.bukkit.GameRule rule = org.bukkit.GameRule.getByName(name);
+        if (rule == null) return;
+        if (Boolean.class.equals(rule.getType())) world.setGameRule(rule, false);
+        else if (Integer.class.equals(rule.getType())) world.setGameRule(rule, 0);
+    }
+
     // ---------------- commands ----------------
     @Override public boolean onCommand(CommandSender s, Command command, String label, String[] a) {
         if (!s.hasPermission("serverhoster.admin")) { s.sendMessage("No permission."); return true; }
@@ -2103,6 +2248,21 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             case "versions" -> {
                 if (a.length < 2) { s.sendMessage("/child versions <fabric|paper|vanilla|spigot>"); return true; }
                 exec.submit(() -> { try { for (String v : versions(a[1])) msg(s, v); } catch (Exception e) { msg(s, "Versions failed: " + e.getMessage()); } });
+            }
+            case "host" -> {
+                if (a.length < 2) { s.sendMessage("/child host <preview|apply|rollback>"); return true; }
+                switch (a[1].toLowerCase(Locale.ROOT)) {
+                    case "preview" -> exec.submit(() -> { try { msg(s, hostMinimizeView().toString()); } catch (Exception e) { msg(s, "Host-Vorschau fehlgeschlagen: " + e.getMessage()); } });
+                    case "apply" -> {
+                        String confirm = a.length >= 3 ? String.join(" ", java.util.Arrays.copyOfRange(a, 2, a.length)) : "";
+                        exec.submit(() -> { try { msg(s, String.valueOf(hostMinimizeApply(confirm).get("message"))); } catch (Exception e) { msg(s, "Host-Minimierung fehlgeschlagen: " + e.getMessage()); } });
+                    }
+                    case "rollback" -> {
+                        String confirm = a.length >= 3 ? String.join(" ", java.util.Arrays.copyOfRange(a, 2, a.length)) : "";
+                        exec.submit(() -> { try { msg(s, String.valueOf(hostMinimizeRollback(confirm).get("message"))); } catch (Exception e) { msg(s, "Host-Rücknahme fehlgeschlagen: " + e.getMessage()); } });
+                    }
+                    default -> s.sendMessage("/child host <preview|apply|rollback>");
+                }
             }
             case "plan" -> s.sendMessage(planText(focus));
             case "jar" -> {
@@ -2168,7 +2328,8 @@ public final class FabricLauncherPlugin extends JavaPlugin {
 
     @Override public List<String> onTabComplete(CommandSender s, Command c, String l, String[] a) {
         if (a.length == 2 && (a[0].equalsIgnoreCase("config") || a[0].equalsIgnoreCase("prop"))) return List.of("set");
-        if (a.length == 1) return List.of("start", "stop", "restart", "status", "cmd", "config", "prop", "diag", "threaddump", "heap", "flags", "tasks", "task", "backup", "versions", "plan", "crashes", "jar").stream().filter(x -> x.startsWith(a[0].toLowerCase(Locale.ROOT))).toList();
+        if (a.length == 1) return List.of("start", "stop", "restart", "status", "cmd", "config", "prop", "diag", "threaddump", "heap", "flags", "tasks", "task", "backup", "versions", "plan", "crashes", "jar", "host").stream().filter(x -> x.startsWith(a[0].toLowerCase(Locale.ROOT))).toList();
+        if (a.length == 2 && a[0].equalsIgnoreCase("host")) return List.of("preview", "apply", "rollback").stream().filter(x -> x.startsWith(a[1].toLowerCase(Locale.ROOT))).toList();
         if (a.length == 2 && a[0].equalsIgnoreCase("crashes")) {
             try { return crashFiles(focus).stream().filter(x -> x.startsWith(a[1])).toList(); }
             catch (IOException e) { return List.of(); }

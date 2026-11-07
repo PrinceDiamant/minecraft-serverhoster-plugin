@@ -1,4 +1,4 @@
-# ServerHoster 2.0.2 – Betrieb und Konfiguration
+# ServerHoster 2.0.3 – Betrieb und Konfiguration
 
 ServerHoster ist ein Spigot-26.3-Plugin für Java 25. Es verwaltet genau einen
 separaten Child-Serverprozess und stellt ein Web-Dashboard bereit. Das Plugin
@@ -65,8 +65,14 @@ gemeldet, nicht stillschweigend ersetzt.
 
 Child-`config.yml` und `server.properties` bleiben rohe Textareas. Das Plugin
 setzt Child-Port und Bind-Adresse und deaktiviert
-`pause-when-empty-seconds`. Es nimmt keine Gameplay-Optimierungen vor und
-installiert keine Gameplay-Erweiterungen.
+`pause-when-empty-seconds`. Es nimmt keine Gameplay-Optimierungen am Child vor
+und installiert keine Gameplay-Erweiterungen.
+
+Die Verkleinerung des äußeren Spigots ist ab 2.0.3 eine eigene, ausgeschaltete
+Aktion in der Einrichtung und über `/child host`. Sie sichert die drei
+Host-Konfigurationsdateien, legt einen neuen leeren Weltnamen fest und ändert
+Sichtweite, Nether, End und Spawn des äußeren Servers. Sie löscht keine Welten,
+Plugins, Logs oder Backups und startet den Host nicht neu. `-Xmx` bleibt.
 
 ## Dashboard
 

@@ -1,0 +1,247 @@
+package de.aichele.childlauncher;
+
+import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.IOException;
+import java.nio.file.AtomicMoveNotSupportedException;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.regex.Pattern;
+
+/**
+ * Opt-in edits for the outer Spigot lobby. Never deletes plugins, logs, backups, worlds, or child
+ * directories. Does not restart the host and does not change the child JVM.
+ */
+final class HostMinimize {
+    static final String CONFIRM = "HOST MINIMIEREN";
+    static final String ROLLBACK_CONFIRM = "HOST ZURUECK";
+    static final Pattern LOBBY_NAME = Pattern.compile("serverhoster-lobby-[a-f0-9]{8}");
+
+    private static final List<String> EDITABLE = List.of("server.properties", "bukkit.yml", "spigot.yml");
+
+    private HostMinimize() {}
+
+    static String newLobbyName() {
+        return "serverhoster-lobby-" + UUID.randomUUID().toString().replace("-", "").substring(0, 8);
+    }
+
+    static Map<String, String> outerProperties(String lobbyName) {
+        if (!LOBBY_NAME.matcher(lobbyName).matches()) throw new IllegalArgumentException("unsafe lobby name");
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("level-name", lobbyName);
+        values.put("level-type", "minecraft:flat");
+        values.put("generator-settings",
+                "{\"layers\":[{\"block\":\"minecraft:air\",\"height\":1}],\"biome\":\"minecraft:the_void\"}");
+        values.put("generate-structures", "false");
+        values.put("allow-nether", "false");
+        values.put("view-distance", "2");
+        values.put("simulation-distance", "2");
+        values.put("spawn-monsters", "false");
+        values.put("spawn-animals", "false");
+        values.put("spawn-npcs", "false");
+        values.put("spawn-protection", "0");
+        values.put("max-players", "1");
+        values.put("entity-broadcast-range-percentage", "10");
+        values.put("max-world-size", "16");
+        values.put("pause-when-empty-seconds", "60");
+        values.put("white-list", "true");
+        values.put("enforce-whitelist", "true");
+        return values;
+    }
+
+    static Map<String, Object> bukkitChanges() {
+        Map<String, Object> values = new LinkedHashMap<>();
+        values.put("settings.allow-end", false);
+        values.put("settings.allow-nether", false);
+        for (String kind : List.of("monsters", "animals", "water-animals", "water-ambient",
+                "water-underground-creature", "axolotls", "ambient"))
+            values.put("spawn-limits." + kind, 0);
+        return values;
+    }
+
+    static Map<String, Object> spigotChanges() {
+        Map<String, Object> values = new LinkedHashMap<>();
+        values.put("world-settings.default.view-distance", 2);
+        values.put("world-settings.default.simulation-distance", 2);
+        values.put("world-settings.default.mob-spawn-range", 0);
+        return values;
+    }
+
+    static List<String> preservedNotes() {
+        return List.of(
+                "Does not delete worlds, plugins, logs, backups, or the child directory.",
+                "Does not change server-port, server-ip, online-mode, or enable RCON.",
+                "Does not change the child JVM Xmx or child flags.",
+                "Existing world folders stay on disk. A new empty lobby is used after an outer restart.",
+                "The plugin does not restart the outer host.");
+    }
+
+    record Change(String file, String key, String from, String to) {}
+
+    record Preview(String lobbyName, List<Change> changes, List<String> notes) {}
+
+    static Preview preview(Path root, String lobbyName, List<Path> protectedPaths) throws IOException {
+        assertRoot(root, protectedPaths);
+        Map<String, String> current = readProperties(root.resolve("server.properties"));
+        List<Change> changes = new ArrayList<>();
+        for (var entry : outerProperties(lobbyName).entrySet())
+            changes.add(new Change("server.properties", entry.getKey(), current.get(entry.getKey()), entry.getValue()));
+        for (var entry : bukkitChanges().entrySet())
+            changes.add(new Change("bukkit.yml", entry.getKey(), null, String.valueOf(entry.getValue())));
+        for (var entry : spigotChanges().entrySet())
+            changes.add(new Change("spigot.yml", entry.getKey(), null, String.valueOf(entry.getValue())));
+        return new Preview(lobbyName, List.copyOf(changes), preservedNotes());
+    }
+
+    record ApplyResult(Path backupDirectory, String lobbyName, List<String> files) {}
+
+    static ApplyResult apply(Path root, Path backupDirectory, String lobbyName, List<Path> protectedPaths) throws IOException {
+        assertRoot(root, protectedPaths);
+        Path properties = root.resolve("server.properties");
+        assertEditable(root, properties, protectedPaths);
+        if (!Files.isRegularFile(properties, LinkOption.NOFOLLOW_LINKS))
+            throw new IOException("Outer server.properties must already exist as a regular file");
+        List<Path> files = new ArrayList<>();
+        files.add(properties);
+        if (Files.exists(root.resolve("bukkit.yml"), LinkOption.NOFOLLOW_LINKS)) files.add(root.resolve("bukkit.yml"));
+        if (Files.exists(root.resolve("spigot.yml"), LinkOption.NOFOLLOW_LINKS)) files.add(root.resolve("spigot.yml"));
+        for (Path file : files) assertEditable(root, file, protectedPaths);
+        assertEditable(root, root.resolve("bukkit.yml"), protectedPaths);
+        assertEditable(root, root.resolve("spigot.yml"), protectedPaths);
+        Path dataDirectory = protectedPaths.getFirst().toAbsolutePath().normalize();
+        if (!backupDirectory.toAbsolutePath().normalize().startsWith(dataDirectory))
+            throw new SecurityException("host minimization backup must stay inside the plugin data directory");
+        Files.createDirectories(backupDirectory);
+        for (Path file : files) {
+            Path destination = backupDirectory.resolve(file.getFileName().toString());
+            if (Files.isSymbolicLink(destination)) throw new SecurityException("backup target must not be a symlink");
+            Files.copy(file, destination, StandardCopyOption.REPLACE_EXISTING, LinkOption.NOFOLLOW_LINKS);
+        }
+        try {
+            PropertiesFile.update(properties, outerProperties(lobbyName), Map.of());
+            if (files.stream().anyMatch(file -> file.getFileName().toString().equals("bukkit.yml")))
+                updateYaml(root.resolve("bukkit.yml"), bukkitChanges());
+            if (files.stream().anyMatch(file -> file.getFileName().toString().equals("spigot.yml")))
+                updateYaml(root.resolve("spigot.yml"), spigotChanges());
+        } catch (IOException | RuntimeException e) {
+            restore(root, backupDirectory, protectedPaths);
+            throw e;
+        }
+        return new ApplyResult(backupDirectory, lobbyName, files.stream().map(file -> file.getFileName().toString()).toList());
+    }
+
+    static void restore(Path root, Path backupDirectory, List<Path> protectedPaths) throws IOException {
+        if (Files.isSymbolicLink(backupDirectory) || !Files.isDirectory(backupDirectory))
+            throw new IOException("host minimization backup is not a directory");
+        Path realBackup = backupDirectory.toRealPath();
+        Path data = protectedPaths.getFirst().toAbsolutePath().normalize();
+        if (!realBackup.startsWith(data)) throw new SecurityException("backup is outside the plugin data directory");
+        for (String name : EDITABLE) {
+            Path source = realBackup.resolve(name);
+            if (!Files.isRegularFile(source, LinkOption.NOFOLLOW_LINKS)) continue;
+            Path target = root.resolve(name);
+            assertEditable(root, target, protectedPaths);
+            Path temporary = target.resolveSibling(name + ".host-minimize-tmp");
+            if (Files.isSymbolicLink(temporary)) throw new SecurityException("temporary restore file must not be a symlink");
+            Files.copy(source, temporary, StandardCopyOption.REPLACE_EXISTING);
+            try {
+                Files.move(temporary, target, StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING);
+            } catch (AtomicMoveNotSupportedException e) {
+                Files.move(temporary, target, StandardCopyOption.REPLACE_EXISTING);
+            } finally {
+                Files.deleteIfExists(temporary);
+            }
+        }
+    }
+
+    static void assertEditable(Path root, Path file, List<Path> protectedPaths) throws IOException {
+        Path rootNormal = root.toAbsolutePath().normalize();
+        Path fileNormal = file.toAbsolutePath().normalize();
+        if (fileNormal.getParent() == null || !fileNormal.getParent().equals(rootNormal))
+            throw new SecurityException("only a file directly in the server root can be edited");
+        if (!EDITABLE.contains(fileNormal.getFileName().toString()))
+            throw new SecurityException("file is not part of host minimization");
+        if (Files.isSymbolicLink(fileNormal)) throw new SecurityException("refusing symbolic link " + fileNormal.getFileName());
+        if (Files.exists(fileNormal, LinkOption.NOFOLLOW_LINKS) && !Files.isRegularFile(fileNormal, LinkOption.NOFOLLOW_LINKS))
+            throw new SecurityException("refusing non-regular file " + fileNormal.getFileName());
+        Path real = Files.exists(fileNormal, LinkOption.NOFOLLOW_LINKS) ? fileNormal.toRealPath() : fileNormal;
+        Path realRoot = Files.isDirectory(rootNormal) ? rootNormal.toRealPath() : rootNormal;
+        if (!real.startsWith(realRoot)) throw new SecurityException("path escapes the server root");
+        for (Path protectedPath : protectedPaths) {
+            if (protectedPath == null) continue;
+            Path candidate = protectedPath.toAbsolutePath().normalize();
+            if (Files.exists(candidate, LinkOption.NOFOLLOW_LINKS)) {
+                if (Files.isSymbolicLink(candidate)) throw new SecurityException("protected path must not be a symlink");
+                candidate = candidate.toRealPath();
+            }
+            if (real.equals(candidate) || real.startsWith(candidate) || candidate.startsWith(real))
+                throw new SecurityException("refusing to edit protected path via " + fileNormal.getFileName());
+        }
+    }
+
+    private static void assertRoot(Path root, List<Path> protectedPaths) throws IOException {
+        if (protectedPaths.isEmpty()) throw new SecurityException("protected paths are required");
+        if (!Files.isDirectory(root)) throw new IOException("server root is not a directory");
+        if (Files.isSymbolicLink(root)) throw new SecurityException("server root must not be a symlink");
+        for (Path protectedPath : protectedPaths) {
+            if (protectedPath == null) continue;
+            Path candidate = protectedPath.toAbsolutePath().normalize();
+            Path realRoot = root.toRealPath();
+            Path realProtected = Files.exists(candidate, LinkOption.NOFOLLOW_LINKS) && !Files.isSymbolicLink(candidate)
+                    ? candidate.toRealPath() : candidate;
+            if (realProtected.equals(realRoot))
+                throw new SecurityException("a protected directory is the server root; host minimization is refused");
+        }
+    }
+
+    private static Map<String, String> readProperties(Path file) throws IOException {
+        Map<String, String> current = new LinkedHashMap<>();
+        if (!Files.isRegularFile(file, LinkOption.NOFOLLOW_LINKS)) return current;
+        for (String line : Files.readAllLines(file)) {
+            String trimmed = line.trim();
+            if (trimmed.isEmpty() || trimmed.startsWith("#") || trimmed.startsWith("!")) continue;
+            int eq = trimmed.indexOf('=');
+            if (eq < 0) continue;
+            current.put(trimmed.substring(0, eq).trim(), trimmed.substring(eq + 1).trim());
+        }
+        return current;
+    }
+
+    private static void updateYaml(Path file, Map<String, Object> values) throws IOException {
+        assertNotSymlink(file);
+        YamlConfiguration yaml = YamlConfiguration.loadConfiguration(file.toFile());
+        for (var entry : values.entrySet()) yaml.set(entry.getKey(), entry.getValue());
+        yaml.save(file.toFile());
+    }
+
+    private static void assertNotSymlink(Path file) {
+        if (Files.isSymbolicLink(file)) throw new SecurityException("refusing symbolic link " + file.getFileName());
+    }
+
+    static String stateText(String status, String lobbyName, String backup, boolean restartRequired) {
+        return "status=" + status + "\nlobbyName=" + lobbyName + "\nbackup=" + backup
+                + "\nrestartRequired=" + restartRequired + "\n";
+    }
+
+    static Map<String, String> readState(String text) {
+        Map<String, String> values = new LinkedHashMap<>();
+        if (text == null) return values;
+        for (String line : text.split("\n")) {
+            int eq = line.indexOf('=');
+            if (eq > 0) values.put(line.substring(0, eq), line.substring(eq + 1));
+        }
+        return values;
+    }
+
+    static boolean lobbyNameSafe(String name) {
+        return name != null && LOBBY_NAME.matcher(name).matches() && !"world".equals(name);
+    }
+
+}

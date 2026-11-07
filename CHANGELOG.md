@@ -1,5 +1,23 @@
 # Release notes
 
+## ServerHoster 2.0.3
+
+- Add an explicit outer-host minimization. It is off until an administrator
+  confirms `HOST MINIMIEREN` in the setup screen or with `/child host apply`.
+  Nothing runs on first start.
+- The action backs up `server.properties`, `bukkit.yml`, and `spigot.yml` under
+  `plugins/ServerhosterPlugin/host-minimize-backup/` and can restore them with
+  `HOST ZURUECK`. It does not delete worlds, plugins, logs, backups, or the
+  child directory. A new empty lobby name is used; existing world folders stay.
+- Outer view and simulation distance become 2, Nether and End are disabled,
+  and mob spawning is turned off for that lobby only. Port, online-mode, and an
+  already disabled RCON stay unchanged. The child still forces
+  `pause-when-empty-seconds=0`.
+- Manageable outer JVM options may be set. They do not change `-Xmx` and do
+  not call `System.gc`. Unsupported options are reported. The plugin does not
+  restart the outer host; the panel restart remains manual. A running child is
+  stopped gracefully before the files are written.
+
 ## ServerHoster 2.0.2
 
 - Keep every 2.0.1 feature. Do not change configured `Xms`/`Xmx`, Lithium or

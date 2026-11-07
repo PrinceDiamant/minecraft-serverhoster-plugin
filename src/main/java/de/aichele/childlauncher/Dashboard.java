@@ -192,6 +192,8 @@ final class Dashboard {
                     pl.runTask(found);
                     json(ex, 200, Map.of("ok", true, "id", id));
                 }
+                case "GET /api/host-minimize" -> json(ex, 200, pl.hostMinimizeView());
+                case "POST /api/host-minimize" -> json(ex, 200, hostMinimize(ex));
                 case "GET /api/setup" -> json(ex, 200, pl.setupView());
                 case "POST /api/setup" -> json(ex, 200, setup(ex));
                 case "POST /api/setup/cleanup" -> {
@@ -468,6 +470,18 @@ final class Dashboard {
         String ntfyServer = optionalString(ntfy, "server", "https://ntfy.sh");
         String ntfyTopic = optionalString(ntfy, "topic", "");
         return pl.configureSetup(action, path, type, mcVersion, port, confirm, ntfyEnabled, ntfyServer, ntfyTopic);
+    }
+
+    private Map<String, Object> hostMinimize(HttpExchange ex) throws IOException {
+        JsonObject request = parseJsonObject(readBodyText(ex));
+        String action = requiredString(request, "action");
+        String confirm = optionalString(request, "confirm", "");
+        return switch (action) {
+            case "preview" -> pl.hostMinimizeView();
+            case "apply" -> pl.hostMinimizeApply(confirm);
+            case "rollback" -> pl.hostMinimizeRollback(confirm);
+            default -> throw new IllegalArgumentException("Unbekannte Host-Aktion");
+        };
     }
 
     private static String requiredString(JsonObject request, String key) {
