@@ -32,7 +32,6 @@ final class ChildSlot {
     final AtomicBoolean launchInProgress = new AtomicBoolean();
     final AtomicInteger scheduleToken = new AtomicInteger();
     volatile int pipeFailures;
-    volatile long trackedPid = -1;
     volatile Instant trackedStart;
     volatile String lastStatus = "idle";
     volatile double mspt = -1;

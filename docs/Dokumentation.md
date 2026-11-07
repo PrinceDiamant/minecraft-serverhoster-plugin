@@ -49,7 +49,7 @@ gemeldet, nicht stillschweigend ersetzt.
 | `stopTimeoutSeconds` | `60` | Frist für den sauberen Child-Stopp, bevor Fehler gemeldet und der Prozess beendet wird. |
 | `startupStopTimeoutSeconds` | `180` | Beim Stop während des Starts auf die Vanilla-Bereitschaftsmeldung warten. |
 | `memoryProtection.*` | siehe `config.yml` | Lesendes cgroup-Sampling und Schutz, der nur den Child stoppen kann. Ungültige Schwellen deaktivieren den automatischen Stopp, ohne die Datei umzuschreiben. |
-| `memoryTelemetry.enabled` | `true`, auch wenn der Schlüssel fehlt | Schreibt `memory-telemetry.log`. Heap used/committed/max, RSS, Host-`meminfo` und cgroup bleiben getrennte Spalten. |
+| `memoryTelemetry.enabled` | `true`, auch wenn der Schlüssel fehlt | Schreibt `memory-telemetry.log` aus derselben cgroup-Messung. Heap, RSS und GC hängen an dieser Probe, nicht an einer zweiten. |
 | `memoryTelemetry.intervalSeconds` | `60` | Mindestwert zur Laufzeit 15 Sekunden. Gespeicherte Werte unter 15 oder über 7 Tagen werden nicht in die Datei zurückgeschrieben. |
 | `memoryTelemetry.maxBytes` | `5000000` | Danach wird die bisherige Datei zu `memory-telemetry.log.old`. |
 | `serverProperties` | `{}` | Explizite Child-Overrides; alle übrigen Werte bleiben Minecraft-Defaults. |

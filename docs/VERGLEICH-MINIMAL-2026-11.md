@@ -148,9 +148,15 @@ eines laufenden Servers.
 - `child-process.record` im Plugin-Datenordner. Fehlende Startzeit oder
   fehlende Jar-/Verzeichnis-Übereinstimmung verhindert das Beenden.
 - Health-Check alle 5 Sekunden und ein eigener Memory-Scheduler.
-- `memory-telemetry.log`, Diagnose- und Statusfeld `telemetry`, Übersicht zeigt
-  Heap belegt/committed/max. Der Child-Heap wird dort nicht geschätzt; sichtbar
-  ist die konfigurierte Xmx-Decke.
+- `memory-telemetry.log` aus der bestehenden cgroup-Probe. Heap, Host-RSS und
+  GC-Zähler werden in demselben Takt einmal gelesen. Die Diagnose zeigt diese
+  letzte Probe; Child-RSS bleibt das vorhandene Prozessbild. Die Statusseite
+  liest sie nicht erneut. Die Übersicht zeigt Heap belegt/committed/max aus
+  den bestehenden Spigot-Zählern. Der Child-Heap wird nicht geschätzt;
+  sichtbar ist die konfigurierte Xmx-Decke.
+- Der Memory-Scheduler bleibt vom `save-all`-Scheduler getrennt, weil der
+  Notstopp sonst Speichern und Zeitpläne blockiert. Der Health-Check bleibt
+  ein eigener Takt, damit dieselbe Blockade nicht die Prozessaufsicht trifft.
 - Ungültige Speicherschwellen schalten nur den automatischen Stopp für diese
   Läufe ab. Wartezeiten über 7 Tage werden nur im Speicher gekappt.
 

@@ -51,6 +51,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     private Thread shutdownHook;
     private volatile long shutdownHookTimeoutSeconds = 25;
     private volatile long lastTelemetryWriteAt;
+    private volatile MemoryTelemetry.Reading lastReading;
     private final ChildProcessRecord.Inspector processes = ChildProcessRecord.liveInspector();
     private final ScheduledExecutorService sched = Executors.newSingleThreadScheduledExecutor(r -> { Thread t = new Thread(r, "ServerhosterPlugin-Save"); t.setDaemon(true); return t; });
     private final ScheduledExecutorService memorySched = Executors.newSingleThreadScheduledExecutor(r -> { Thread t = new Thread(r, "ServerhosterPlugin-Memory"); t.setDaemon(true); return t; });
@@ -813,7 +814,15 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         m.put("mspt", s.mspt);
         m.put("tps", s.tps);
         if (pid > 0) m.putAll(ProcessProbe.snapshot(pid));
-        m.put("telemetry", memoryTelemetryView(pid));
+        MemoryTelemetry.Reading reading = lastReading;
+        if (reading != null) {
+            m.put("heapUsedMiB", reading.heap().usedMiB());
+            m.put("heapCommittedMiB", reading.heap().committedMiB());
+            m.put("heapMaxMiB", reading.heap().maxMiB());
+            m.put("hostRssMiB", reading.hostRssMiB());
+            m.put("gc", MemoryTelemetry.gcView(reading.collectors()));
+            m.put("interpretation", MemoryTelemetry.INTERPRETATION);
+        }
         ProcessProbe.Disk d = diskCached(s.id);
         m.put("diskBytes", d.bytes());
         m.put("diskFiles", d.files());
@@ -831,21 +840,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         return view;
     }
 
-    Map<String, Object> memoryTelemetryView(long childPid) {
-        long childRss = -1;
-        long childSwap = -1;
-        if (childPid > 0) {
-            Map<String, Object> child = ProcessProbe.snapshot(childPid);
-            childRss = ((Number) child.getOrDefault("rssMb", -1L)).longValue();
-            childSwap = ((Number) child.getOrDefault("swapMb", -1L)).longValue();
-        }
-        Map<String, Object> self = ProcessProbe.snapshot(ProcessHandle.current().pid());
-        long hostRss = ((Number) self.getOrDefault("rssMb", -1L)).longValue();
-        HostMemoryProbe.Snapshot snapshot = hostMemory == null ? HostMemoryProbe.snapshot() : hostMemory;
-        return MemoryTelemetry.view(MemoryTelemetry.Heap.current(), hostRss, snapshot, childRss, childSwap, GcDiagnostics.snapshot());
-    }
-
-    private void maybeWriteTelemetry(HostMemoryProbe.Snapshot snapshot) {
+    private void maybeWriteTelemetry(HostMemoryProbe.Snapshot snapshot, MemoryTelemetry.Reading reading) {
         if (!getConfig().getBoolean("memoryTelemetry.enabled", true)) return;
         long configuredInterval = getConfig().getLong("memoryTelemetry.intervalSeconds", 60);
         long interval = configuredInterval < 15 ? 15 : RuntimeLimits.boundedSeconds(configuredInterval, 60).value();
@@ -861,24 +856,8 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         if (lastTelemetryWriteAt != 0 && now - lastTelemetryWriteAt < interval * 1000L) return;
         lastTelemetryWriteAt = now;
         try {
-            long childPid = -1;
-            long childRss = -1;
-            long childSwap = -1;
-            for (ChildSlot slot : slots.values()) {
-                long pid = slot.pid();
-                if (pid > 0) {
-                    childPid = pid;
-                    Map<String, Object> child = ProcessProbe.snapshot(pid);
-                    childRss = ((Number) child.getOrDefault("rssMb", -1L)).longValue();
-                    childSwap = ((Number) child.getOrDefault("swapMb", -1L)).longValue();
-                    break;
-                }
-            }
-            Map<String, Object> self = ProcessProbe.snapshot(ProcessHandle.current().pid());
-            long hostRss = ((Number) self.getOrDefault("rssMb", -1L)).longValue();
-            String line = MemoryTelemetry.line(Instant.now(), MemoryTelemetry.Heap.current(), hostRss, snapshot,
-                    childRss, childSwap, GcDiagnostics.snapshot());
-            if (childPid < 0) line += " childPid=none";
+            String line = MemoryTelemetry.line(Instant.now(), reading.heap(), reading.hostRssMiB(), snapshot,
+                    reading.childRssMiB(), reading.childSwapMiB(), reading.collectors());
             MemoryTelemetry.appendRotated(getDataFolder().toPath().resolve("memory-telemetry.log"), line, maxBytes);
         } catch (IOException e) {
             warnOnce("telemetry-write", "Could not write memory telemetry: " + e.getMessage());
@@ -949,7 +928,18 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     private void sampleHostMemory() {
         HostMemoryProbe.Snapshot snapshot = HostMemoryProbe.snapshot();
         hostMemory = snapshot;
-        maybeWriteTelemetry(snapshot);
+        if (!getConfig().getBoolean("memoryTelemetry.enabled", true)) {
+            lastReading = null;
+        } else {
+            long childPid = -1;
+            for (ChildSlot slot : slots.values()) {
+                long pid = slot.pid();
+                if (pid > 0) { childPid = pid; break; }
+            }
+            MemoryTelemetry.Reading reading = MemoryTelemetry.read(childPid);
+            lastReading = reading;
+            maybeWriteTelemetry(snapshot, reading);
+        }
         synchronized (memoryHistory) {
             memoryHistory.addLast(new MemoryIncidentReport.Sample(Instant.now(), snapshot));
             while (memoryHistory.size() > 240) memoryHistory.removeFirst();
@@ -1680,7 +1670,6 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                 started = p;
                 slot.process = p;
                 slot.startedAt = System.currentTimeMillis();
-                slot.trackedPid = p.pid();
                 slot.trackedStart = p.info().startInstant().orElse(null);
                 slot.onlinePlayers.clear();
                 slot.console.add("[ServerhosterPlugin] Child started, pid " + p.pid());

@@ -15,10 +15,11 @@
   memory sampling and its emergency child stop on a separate scheduler so
   `save-all` and schedules are not blocked by that work. `onDisable` still
   waits for the child stop before the JVM exits.
-- Add read-only `memory-telemetry.log` and dashboard fields that keep heap
-  used, committed and max, process RSS, host meminfo and cgroup counters
-  separate. A GC cycle duration is reported as observed, not as proof about a
-  pause target. Host swap occupancy is not treated as a container OOM.
+- Add read-only `memory-telemetry.log`. Heap, RSS, host meminfo, cgroup and
+  GC counters are taken on the existing memory sample and shown on that same
+  host-memory view. Status polling does not read them again. A GC cycle
+  duration is observed, not proof about a pause target. Host swap occupancy
+  is not treated as a container OOM.
 - Invalid memory thresholds disable automatic child stop without rewriting
   stored config. Negative wait values still mean 0 seconds. Waits above 7 days
   are capped only in memory.

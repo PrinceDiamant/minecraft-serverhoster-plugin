@@ -36,6 +36,21 @@ final class MemoryTelemetry {
 
     private MemoryTelemetry() {}
 
+    /** Heap, RSS and GC read once per memory sample. cgroup data stays in the protection snapshot. */
+    record Reading(Heap heap, long hostRssMiB, long childRssMiB, long childSwapMiB, List<GcDiagnostics.Collector> collectors) {}
+
+    static Reading read(long childPid) {
+        long childRss = -1;
+        long childSwap = -1;
+        if (childPid > 0) {
+            Map<String, Object> child = ProcessProbe.snapshot(childPid);
+            childRss = number(child.get("rssMb"));
+            childSwap = number(child.get("swapMb"));
+        }
+        long hostRss = number(ProcessProbe.snapshot(ProcessHandle.current().pid()).get("rssMb"));
+        return new Reading(Heap.current(), hostRss, childRss, childSwap, GcDiagnostics.snapshot());
+    }
+
     static String line(Instant time, Heap heap, long hostRssMiB, HostMemoryProbe.Snapshot host,
                        long childRssMiB, long childSwapMiB, List<GcDiagnostics.Collector> collectors) {
         return "timestamp=" + time
@@ -58,18 +73,9 @@ final class MemoryTelemetry {
                 + " gc=" + formatGc(collectors);
     }
 
-    static Map<String, Object> view(Heap heap, long hostRssMiB, HostMemoryProbe.Snapshot host,
-                                    long childRssMiB, long childSwapMiB, List<GcDiagnostics.Collector> collectors) {
-        Map<String, Object> out = new LinkedHashMap<>();
-        out.put("interpretation", INTERPRETATION);
-        out.put("heapUsedMiB", heap.usedMiB());
-        out.put("heapCommittedMiB", heap.committedMiB());
-        out.put("heapMaxMiB", heap.maxMiB());
-        out.put("hostRssMiB", hostRssMiB);
-        if (host != null) out.put("host", host.view());
-        out.put("childRssMiB", childRssMiB);
-        out.put("childSwapMiB", childSwapMiB);
+    static List<Map<String, Object>> gcView(List<GcDiagnostics.Collector> collectors) {
         List<Map<String, Object>> gc = new ArrayList<>();
+        if (collectors == null) return gc;
         for (GcDiagnostics.Collector collector : collectors) {
             Map<String, Object> row = new LinkedHashMap<>();
             row.put("name", collector.name());
@@ -78,8 +84,7 @@ final class MemoryTelemetry {
             row.put("lastDurationMs", collector.lastDurationMs());
             gc.add(row);
         }
-        out.put("gc", gc);
-        return out;
+        return gc;
     }
 
     static void appendRotated(Path file, String line, long maxBytes) throws IOException {
@@ -112,5 +117,9 @@ final class MemoryTelemetry {
 
     private static long mib(long bytes) {
         return bytes < 0 ? -1 : bytes / (1024 * 1024);
+    }
+
+    private static long number(Object value) {
+        return value instanceof Number number ? number.longValue() : -1;
     }
 }
