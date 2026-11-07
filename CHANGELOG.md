@@ -1,5 +1,13 @@
 # Release notes
 
+## ServerHoster 2.0.8
+
+- Finish a clean deletion after Spigot has closed the plugin class loader.
+  The shutdown hook linked its file deleter too late, so the deletion threw
+  `NoClassDefFoundError` and left the marker `pending`. The deleter is now
+  linked at startup. Any failure writes `aborted` and a phase. A later start
+  still does not continue the deletion.
+
 ## ServerHoster 2.0.7
 
 - Allow a new confirmed clean preview to replace a terminal `aborted` marker.

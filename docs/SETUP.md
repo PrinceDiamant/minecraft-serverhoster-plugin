@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.0.7.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.0.8.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Das Plugin legt `plugins/ServerhosterPlugin/` an und
    startet das Dashboard. Beim ersten Start wird das Dashboard-Passwort in
@@ -111,7 +111,9 @@ beendet ist. Die Löschung läuft an diesem Prozessende. Sie wird bei einem
 späteren Start nicht nachgeholt. Ein Marker `aborted` blockiert 2.0.6 komplett.
 Ab 2.0.7 ersetzt eine neue Vorschau mit neuem Bestätigungssatz diesen
 abgeschlossenen Abbruch. Ein Marker `pending` oder `done` wird dadurch nicht
-fortgesetzt. Ein Ticket aus 2.0.4 ist
+fortgesetzt. Bricht die Löschung nach dem Hook-Start ab, steht im Marker
+`phase=failed` oder `phase=entered` und beim nächsten Start `aborted`.
+Dieser Start löscht nicht weiter. Ein Ticket aus 2.0.4 ist
 unvollständig und muss neu erzeugt werden.
 
 ## Aus dem Quellcode bauen

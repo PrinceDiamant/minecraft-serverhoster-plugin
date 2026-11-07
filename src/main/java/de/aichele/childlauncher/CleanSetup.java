@@ -35,6 +35,16 @@ final class CleanSetup {
         void delete(Path path) throws IOException;
     }
 
+    /** Linked while the plugin loader is still open. A method reference created in the shutdown hook is not. */
+    static final Deleter DELETE_FILE = Files::deleteIfExists;
+
+    static {
+        // Resolve types the shutdown hook needs before Spigot closes this loader.
+        Class<?> plan = Plan.class;
+        Class<?> deleter = Deleter.class;
+        if (plan == null || deleter == null || DELETE_FILE == null) throw new IllegalStateException("clean deleter");
+    }
+
     private CleanSetup() {}
 
     static Plan scan(Path root, Path pluginJar, int childPort, int dashboardPort, long now) throws IOException {
@@ -124,8 +134,62 @@ final class CleanSetup {
     }
 
     static String sidecarStatus(String text) {
-        for (String line : text.split("\n")) if (line.startsWith("status=")) return line.substring("status=".length());
+        return field(text, "status");
+    }
+
+    static String field(String text, String key) {
+        String prefix = key + "=";
+        if (text == null) return "";
+        for (String line : text.split("\n")) if (line.startsWith(prefix)) return line.substring(prefix.length());
         return "";
+    }
+
+    static String putField(String text, String key, String value) {
+        String body = text == null ? "" : text.replaceAll("(?m)^" + java.util.regex.Pattern.quote(key) + "=.*(?:\\R|$)", "");
+        String safe = value == null ? "" : value.replace("\r", " ").replace("\n", " ");
+        if (safe.length() > 240) safe = safe.substring(0, 240);
+        return key + "=" + safe + "\n" + body;
+    }
+
+    static String markFailed(String text, Throwable error) {
+        String message = error == null ? "unknown" : error.getClass().getName();
+        if (error != null && error.getMessage() != null && !error.getMessage().isBlank())
+            message += ": " + error.getMessage();
+        return putField(putField(putField(text, "status", "aborted"), "phase", "failed"), "error", message);
+    }
+
+    static void finishPending(Path root, Path sidecar) {
+        finishPending(root, sidecar, DELETE_FILE);
+    }
+
+    static void finishPending(Path root, Path sidecar, Deleter deleter) {
+        try {
+            if (sidecar == null || !Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS) || Files.isSymbolicLink(sidecar)) return;
+            String text = Files.readString(sidecar);
+            if (!"pending".equals(sidecarStatus(text))) return;
+            text = putField(text, "phase", "entered");
+            Files.writeString(sidecar, text);
+            System.out.println("[ServerhosterPlugin] Clean-Setup phase=entered");
+            Plan plan = parseSidecar(text);
+            try {
+                execute(root, plan.delete(), field(text, "pluginJar"), deleter);
+                Files.writeString(sidecar, putField(putField(sidecar("done", plan), "phase", "done"), "pluginJar", field(text, "pluginJar")));
+                System.out.println("[ServerhosterPlugin] Clean-Setup phase=done");
+            } catch (Throwable error) {
+                Files.writeString(sidecar, markFailed(text, error));
+                System.out.println("[ServerhosterPlugin] Clean-Setup phase=failed " + error.getClass().getName());
+            }
+        } catch (Throwable error) {
+            System.out.println("[ServerhosterPlugin] Clean-Setup phase=failed " + error.getClass().getName());
+            try {
+                if (sidecar != null && Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS)) {
+                    String text = Files.readString(sidecar);
+                    if ("pending".equals(sidecarStatus(text))) Files.writeString(sidecar, markFailed(text, error));
+                }
+            } catch (Throwable ignored) {
+                System.out.println("[ServerhosterPlugin] Clean-Setup-Status konnte nicht gespeichert werden");
+            }
+        }
     }
 
     static boolean ticketMatches(Plan ticket, Plan fresh, long now) {

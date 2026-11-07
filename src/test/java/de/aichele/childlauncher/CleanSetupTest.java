@@ -250,6 +250,67 @@ class CleanSetupTest {
     }
 
     @Test
+    void failedOrInterruptedCleanupDoesNotResumeOnTheNextStart() throws Exception {
+        Path root = server(temp.resolve("partial-clean"));
+        Path plugin = root.resolve("plugins/ServerHoster-2.0.4.jar");
+        Path sidecar = root.resolve("plugins/ServerhosterPlugin-clean-reprovision.txt");
+        CleanSetup.Plan plan = CleanSetup.scan(root, plugin, 2063, 2064, 12_000L);
+        Files.writeString(sidecar, CleanSetup.putField(CleanSetup.sidecar("pending", plan), "pluginJar", "plugins/ServerHoster-2.0.4.jar"));
+        CleanSetup.finishPending(root, sidecar, path -> {
+            throw new java.io.IOException("disk");
+        });
+        String failed = Files.readString(sidecar);
+        assertEquals("aborted", CleanSetup.sidecarStatus(failed));
+        assertEquals("failed", CleanSetup.field(failed, "phase"));
+        assertTrue(failed.contains("delete failure"));
+        assertTrue(Files.exists(root.resolve("world/level.dat")));
+        assertTrue(Files.exists(plugin));
+        assertEquals(CleanSetup.Startup.IGNORE, CleanSetup.startup(CleanSetup.sidecarStatus(failed)));
+
+        Path restarted = server(temp.resolve("still-pending"));
+        Path restartedWorld = restarted.resolve("world/level.dat");
+        Path restartedSidecar = restarted.resolve("plugins/ServerhosterPlugin-clean-reprovision.txt");
+        Files.writeString(restartedSidecar, "status=pending\nphase=entered\ndelete=world/level.dat\n");
+        assertEquals(CleanSetup.Startup.ABORT, CleanSetup.startup("pending"));
+        assertTrue(Files.exists(restartedWorld));
+        String aborted = CleanSetup.markFailed(Files.readString(restartedSidecar), new IllegalStateException("restarted before completion"));
+        assertEquals("aborted", CleanSetup.sidecarStatus(aborted));
+        assertTrue(Files.exists(restartedWorld));
+    }
+
+    @Test
+    void closedPluginLoaderStillFinishesTheHook(@TempDir Path tree) throws Exception {
+        Path root = server(tree.resolve("srv"));
+        Path plugin = root.resolve("plugins/ServerHoster-2.0.4.jar");
+        Path sidecar = root.resolve("plugins/ServerhosterPlugin-clean-reprovision.txt");
+        CleanSetup.Plan plan = CleanSetup.scan(root, plugin, 2063, 2064, 13_000L);
+        Files.writeString(sidecar, CleanSetup.putField(CleanSetup.sidecar("pending", plan), "pluginJar", "plugins/ServerHoster-2.0.4.jar"));
+        Process process = new ProcessBuilder(
+                Path.of(System.getProperty("java.home"), "bin", "java").toString(),
+                "-cp", Path.of("target/test-classes").toAbsolutePath().toString(),
+                "de.aichele.childlauncher.CleanHookChild",
+                Path.of("target/classes").toAbsolutePath().toString(),
+                Path.of("target/test-classes").toAbsolutePath().toString(),
+                root.toAbsolutePath().toString())
+                .redirectErrorStream(true)
+                .start();
+        String output = new String(process.getInputStream().readAllBytes(), java.nio.charset.StandardCharsets.UTF_8);
+        assertEquals(0, process.waitFor(), output);
+        assertTrue(output.contains("LOADER_CLOSED"), output);
+        assertTrue(output.contains("HOOK_ENTER"), output);
+        assertTrue(output.contains("HOOK_DONE"), output);
+        assertFalse(output.contains("HOOK_THROW"), output);
+        assertFalse(Files.exists(root.resolve("world/level.dat")));
+        assertFalse(Files.exists(root.resolve("child-server/server.jar")));
+        assertTrue(Files.exists(plugin));
+        assertTrue(Files.exists(root.resolve("eula.txt")));
+        assertTrue(Files.exists(root.resolve("spigot.jar")));
+        String done = Files.readString(sidecar);
+        assertEquals("done", CleanSetup.sidecarStatus(done));
+        assertEquals("done", CleanSetup.field(done, "phase"));
+    }
+
+    @Test
     void mutatingRequestsStillNeedTheCsrfHeader() {
         assertTrue(Dashboard.csrfRejected("POST", null));
         assertTrue(Dashboard.csrfRejected("POST", ""));

@@ -2194,8 +2194,10 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             String text = Files.readString(sidecar);
             String status = CleanSetup.sidecarStatus(text);
             if (CleanSetup.startup(status) == CleanSetup.Startup.ABORT) {
-                Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
-                getLogger().severe("Clean-Setup war vorgemerkt, aber dieser Start löscht nichts. Der vorherige Prozess hat die Löschung nicht abgeschlossen. Eine neue Vorschau ist nötig.");
+                Files.writeString(sidecar, CleanSetup.markFailed(text, new IllegalStateException("restarted before completion")));
+                String phase = CleanSetup.field(text, "phase");
+                getLogger().severe("Clean-Setup war " + (phase.isBlank() ? "vorgemerkt" : "in Phase " + phase)
+                        + ", aber dieser Start löscht nichts. Der vorherige Prozess hat die Löschung nicht abgeschlossen. Eine neue Vorschau ist nötig.");
                 return;
             }
             if (CleanSetup.startup(status) != CleanSetup.Startup.PROVISION) {
@@ -2222,24 +2224,18 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             if (!Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS) || Files.isSymbolicLink(sidecar)) return;
             String text = Files.readString(sidecar);
             if (!"pending".equals(CleanSetup.sidecarStatus(text))) return;
-            System.out.println("[ServerhosterPlugin] Clean-Setup löscht beim Prozessende die bestätigte Liste.");
             for (ChildSlot slot : slots.values()) if (slot.running()) {
-                Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
-                System.out.println("[ServerhosterPlugin] Clean-Setup abgebrochen: der Child läuft noch");
+                Files.writeString(sidecar, CleanSetup.markFailed(text, new IllegalStateException("child still running")));
+                System.out.println("[ServerhosterPlugin] Clean-Setup phase=failed child still running");
                 return;
             }
-            CleanSetup.Plan plan = CleanSetup.parseSidecar(text);
-            Path jar = pluginJarPath();
-            String jarRelative = jar == null ? "" : getWorldRoot().toRealPath().relativize(jar.toAbsolutePath().normalize()).toString().replace('\\', '/');
-            CleanSetup.execute(getWorldRoot(), plan.delete(), jarRelative, Files::deleteIfExists);
-            writeAtomically(sidecar, CleanSetup.sidecar("done", plan));
-            System.out.println("[ServerhosterPlugin] Clean-Setup hat die bestätigte Liste gelöscht. Die frische Konfiguration entsteht beim nächsten Start.");
-        } catch (Exception e) {
-            System.out.println("[ServerhosterPlugin] Clean-Setup abgebrochen: " + e.getMessage());
+            CleanSetup.finishPending(getWorldRoot(), sidecar);
+        } catch (Throwable error) {
+            System.out.println("[ServerhosterPlugin] Clean-Setup phase=failed " + error.getClass().getName());
             try {
                 String text = Files.readString(sidecar);
-                if (text.startsWith("status=pending")) Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
-            } catch (IOException ignored) {
+                if ("pending".equals(CleanSetup.sidecarStatus(text))) Files.writeString(sidecar, CleanSetup.markFailed(text, error));
+            } catch (Throwable ignored) {
                 System.out.println("[ServerhosterPlugin] Clean-Setup-Status konnte nicht gespeichert werden");
             }
         }
@@ -2291,7 +2287,10 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         }
         CleanSetup.Plan afterStop = scanClean(System.currentTimeMillis());
         CleanSetup.checkTicket(ticket, afterStop, confirm, System.currentTimeMillis());
-        writeAtomically(cleanSidecarPath(), CleanSetup.sidecar("pending", afterStop));
+        Path jar = pluginJarPath();
+        String jarRelative = "";
+        if (jar != null) jarRelative = getWorldRoot().toRealPath().relativize(jar.toAbsolutePath().normalize()).toString().replace('\\', '/');
+        writeAtomically(cleanSidecarPath(), CleanSetup.putField(CleanSetup.sidecar("pending", afterStop), "pluginJar", jarRelative));
         Files.deleteIfExists(cleanTicketPath());
         getServer().getScheduler().runTask(this, () -> getServer().shutdown());
         return Map.of("ok", true, "message", "Der Child ist gestoppt. Der äußere Prozess beendet sich jetzt und löscht die bestätigte Liste erst beim Prozessende. Erst neu starten, wenn dieser Prozess beendet ist. Es gibt keine Rücknahme.");
