@@ -816,10 +816,12 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         if (pid > 0) m.putAll(ProcessProbe.snapshot(pid));
         MemoryTelemetry.Reading reading = lastReading;
         if (reading != null) {
+            m.put("heapJvm", "outer");
             m.put("heapUsedMiB", reading.heap().usedMiB());
             m.put("heapCommittedMiB", reading.heap().committedMiB());
             m.put("heapMaxMiB", reading.heap().maxMiB());
             m.put("hostRssMiB", reading.hostRssMiB());
+            m.put("gcJvm", "outer");
             m.put("gc", MemoryTelemetry.gcView(reading.collectors()));
             m.put("interpretation", MemoryTelemetry.INTERPRETATION);
         }

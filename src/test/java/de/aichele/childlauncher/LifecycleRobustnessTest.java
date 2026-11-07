@@ -172,6 +172,8 @@ class LifecycleRobustnessTest {
         assertEquals(ChildStopSequence.Outcome.KILLED, outcome);
         assertTrue(log.stream().anyMatch(line -> line.contains("within 0s")));
         assertTrue(log.stream().anyMatch(line -> line.contains("KILLING")));
+        long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(2);
+        while (process.isAlive() && System.nanoTime() < deadline) Thread.sleep(50);
         assertFalse(process.isAlive());
     }
 
@@ -222,6 +224,8 @@ class LifecycleRobustnessTest {
         List<GcDiagnostics.Collector> collectors = List.of(new GcDiagnostics.Collector("G1 Young", 4, 30, 12));
         String line = MemoryTelemetry.line(Instant.parse("2026-11-07T09:00:00Z"),
                 new MemoryTelemetry.Heap(2L << 20, 4L << 20, 8L << 20), 700, host, 300, 5, collectors);
+        assertTrue(line.contains("heapJvm=outer"));
+        assertTrue(line.contains("gcJvm=outer"));
         assertTrue(line.contains("heapUsedMiB=2"));
         assertTrue(line.contains("heapCommittedMiB=4"));
         assertTrue(line.contains("heapMaxMiB=8"));
@@ -234,6 +238,8 @@ class LifecycleRobustnessTest {
         assertTrue(line.contains("cgroupOomEvents=0"));
         assertTrue(line.contains("childRssMiB=300"));
         assertTrue(line.contains("lastMs=12"));
+        assertTrue(MemoryTelemetry.INTERPRETATION.contains("outer Spigot JVM only"));
+        assertTrue(MemoryTelemetry.INTERPRETATION.contains("Child heap and child GC are not measured"));
         assertTrue(MemoryTelemetry.INTERPRETATION.contains("does not prove a container"));
         assertFalse(GcDiagnostics.snapshot().isEmpty());
 

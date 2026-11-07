@@ -16,10 +16,12 @@
   `save-all` and schedules are not blocked by that work. `onDisable` still
   waits for the child stop before the JVM exits.
 - Add read-only `memory-telemetry.log`. Heap, RSS, host meminfo, cgroup and
-  GC counters are taken on the existing memory sample and shown on that same
-  host-memory view. Status polling does not read them again. A GC cycle
-  duration is observed, not proof about a pause target. Host swap occupancy
-  is not treated as a container OOM.
+  GC counters are taken on the existing memory sample. Status polling does
+  not read them again. Heap and GC counters are the outer Spigot JVM
+  (`heapJvm=outer`, `gcJvm=outer`); child heap and child GC are not measured.
+  On `/api/diag`, `rssMb` remains the child process RSS. A GC cycle duration
+  is observed, not proof about a pause target. Host swap occupancy is not
+  treated as a container OOM.
 - Invalid memory thresholds disable automatic child stop without rewriting
   stored config. Negative wait values still mean 0 seconds. Waits above 7 days
   are capped only in memory.

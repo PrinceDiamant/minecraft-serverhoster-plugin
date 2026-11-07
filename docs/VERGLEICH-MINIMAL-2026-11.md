@@ -148,12 +148,13 @@ eines laufenden Servers.
 - `child-process.record` im Plugin-Datenordner. Fehlende Startzeit oder
   fehlende Jar-/Verzeichnis-Übereinstimmung verhindert das Beenden.
 - Health-Check alle 5 Sekunden und ein eigener Memory-Scheduler.
-- `memory-telemetry.log` aus der bestehenden cgroup-Probe. Heap, Host-RSS und
-  GC-Zähler werden in demselben Takt einmal gelesen. Die Diagnose zeigt diese
-  letzte Probe; Child-RSS bleibt das vorhandene Prozessbild. Die Statusseite
-  liest sie nicht erneut. Die Übersicht zeigt Heap belegt/committed/max aus
-  den bestehenden Spigot-Zählern. Der Child-Heap wird nicht geschätzt;
-  sichtbar ist die konfigurierte Xmx-Decke.
+- `memory-telemetry.log` aus der bestehenden cgroup-Probe. Heap und GC-Zähler
+  sind die äußere Spigot-JVM (`heapJvm=outer`, `gcJvm=outer`) und werden in
+  demselben Takt einmal gelesen. Child-Heap und Child-GC werden nicht gemessen.
+  Die Diagnose zeigt diese letzte Probe; `rssMb` bleibt der Child-Prozess.
+  Die Statusseite liest sie nicht erneut. Die Übersicht zeigt den
+  Spigot-Heap aus den bestehenden Zählern und für den Child nur die
+  konfigurierte Xmx-Decke.
 - Der Memory-Scheduler bleibt vom `save-all`-Scheduler getrennt, weil der
   Notstopp sonst Speichern und Zeitpläne blockiert. Der Health-Check bleibt
   ein eigener Takt, damit dieselbe Blockade nicht die Prozessaufsicht trifft.

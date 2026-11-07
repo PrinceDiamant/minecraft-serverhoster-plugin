@@ -16,11 +16,13 @@ import java.util.Map;
  * and a GC cycle duration is not a statement about MaxGCPauseMillis.
  */
 final class MemoryTelemetry {
-    static final String INTERPRETATION = "heap used, heap committed and heap max are JVM heap measures; "
-            + "max is the configured ceiling, not current usage. RSS is resident process memory. "
+    static final String INTERPRETATION = "heapUsedMiB, heapCommittedMiB, heapMaxMiB and gc are the outer Spigot JVM only. "
+            + "They are not the Fabric child. Child heap and child GC are not measured. "
+            + "heapMaxMiB is the outer heap ceiling, not current usage and not the child Xmx. "
+            + "On /api/diag, rssMb is the child process RSS and hostRssMiB is the outer process RSS. "
             + "hostAvailable and host swap come from host meminfo. cgroup current, limit, swap and events are container accounting. "
             + "A full host swap does not prove a container out-of-memory kill. "
-            + "gc lastMs is the last observed collector cycle, not evidence that a pause target was met or missed.";
+            + "gc lastMs is the last observed outer-JVM collector cycle, not evidence that a pause target was met or missed.";
 
     record Heap(long usedBytes, long committedBytes, long maxBytes) {
         static Heap current() {
@@ -54,6 +56,8 @@ final class MemoryTelemetry {
     static String line(Instant time, Heap heap, long hostRssMiB, HostMemoryProbe.Snapshot host,
                        long childRssMiB, long childSwapMiB, List<GcDiagnostics.Collector> collectors) {
         return "timestamp=" + time
+                + " heapJvm=outer"
+                + " gcJvm=outer"
                 + " heapUsedMiB=" + heap.usedMiB()
                 + " heapCommittedMiB=" + heap.committedMiB()
                 + " heapMaxMiB=" + heap.maxMiB()
