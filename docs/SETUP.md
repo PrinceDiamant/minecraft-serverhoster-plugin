@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.0.3.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.0.4.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Das Plugin legt `plugins/ServerhosterPlugin/` an und
    startet das Dashboard. Beim ersten Start wird das Dashboard-Passwort in
@@ -76,7 +76,7 @@ werden.
 
 Host-/cgroup-Messwerte werden nur gelesen. Bei anhaltend kritischen Messwerten
 mit bekannter, endlicher cgroup-Grenze kann ServerHoster warnen und den Child
-sauber stoppen. Der äußere Spigot-Host wird niemals automatisch beendet.
+sauber stoppen. Der Speicherschutz beendet den äußeren Spigot-Host nicht.
 Unbekannte oder unzuverlässige Grenzwerte lösen keinen automatischen Stopp
 aus. Wenn der Child nicht sauber endet, wird der Fehler protokolliert und nach
 Ablauf des konfigurierten Timeouts kann der Prozess beendet werden.
@@ -84,6 +84,24 @@ Ablauf des konfigurierten Timeouts kann der Prozess beendet werden.
 Den äußeren Server über das Hosting-Panel oder die Spigot-Konsole stoppen.
 Periodische Host-Neustarts gehören in den Zeitplan des Hosting-Providers,
 nicht in ServerHoster.
+
+## Host verkleinern oder leeren
+
+Die Minimierung ist die umkehrbare Variante. `/child host preview` zeigt die
+Änderungen, `/child host apply HOST MINIMIEREN` schreibt sie nach einem
+sauberen Child-Stopp. Der äußere Server wird dabei nicht heruntergefahren.
+`/child host rollback HOST ZURUECK` holt die drei gesicherten Dateien zurück.
+
+`/child clean preview` ist eine getrennte, standardmäßig inaktive Aktion. Sie
+legt eine Löschliste und für zehn Minuten den Satz
+`CLEAN <Server-Identität> <Plan-Hash>` an. `/child clean apply` mit genau
+diesem Satz stoppt den Child, fährt den äußeren Server herunter und löscht nur
+die bestätigte Liste innerhalb dieses Serverordners. Ein fehlgeschlagener
+Stopp löscht nichts. Es gibt keine Rücknahme und keine versteckte Kopie.
+Spigot-JAR, dieses Plugin-JAR, `eula.txt`, `bundler`, `libraries` und
+`versions` bleiben. Der nächste Start schreibt eine frische Konfiguration und
+behält die bisherigen Ports. Verzeichnisse außerhalb des Serverordners werden
+nicht angefasst.
 
 ## Aus dem Quellcode bauen
 

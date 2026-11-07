@@ -67,6 +67,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     // ---- child tick stats (from 'tick query') ----
     @Override public void onEnable() {
         saveDefaultConfig();
+        consumeCleanSidecar();
         migrateRestartPolicy();
         setupRequired = !getConfig().getBoolean("setup.completed", false);
         applyCurrentMemorySettings();
@@ -99,6 +100,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                 System.out.println("[ServerhosterPlugin] JVM shutdown hook: stopping " + s.id);
                 stopProcess(s, shutdownHookTimeoutSeconds, true);
             }
+            runPendingCleanSetup();
         }, "ServerhosterPlugin-ShutdownHook");
         Runtime.getRuntime().addShutdownHook(shutdownHook);
         long every = getConfig().getLong("saveAllIntervalMinutes", 5);
@@ -2097,10 +2099,228 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         return HostMinimize.readState(Files.readString(file));
     }
 
-    private void writeHostMinimizeState(String status, String lobbyName, String backup, boolean restartRequired) throws IOException {
+    private void writeHostMinimizeState(String status, String lobbyName, String backup, boolean restartRequired,
+                                        String heapPrevious) throws IOException {
         Path file = hostMinimizeStateFile();
         if (Files.isSymbolicLink(file)) throw new SecurityException("host minimization state must not be a symlink");
-        Files.writeString(file, HostMinimize.stateText(status, lobbyName, backup, restartRequired));
+        Files.writeString(file, HostMinimize.stateText(status, lobbyName, backup, restartRequired, heapPrevious));
+    }
+
+    private static String heapPrevious(List<HostHeapTune.Result> results) {
+        StringBuilder encoded = new StringBuilder();
+        for (HostHeapTune.Result result : results) {
+            if (!result.applied() || result.previous().isBlank() || result.previous().indexOf(';') >= 0) continue;
+            if (!encoded.isEmpty()) encoded.append(';');
+            encoded.append(result.name()).append(':').append(result.previous());
+        }
+        return encoded.toString();
+    }
+
+    private void restoreHostHeap(String encoded) {
+        if (encoded == null || encoded.isBlank()) return;
+        HostHeapTune.Options options = HostHeapTune.hotspot();
+        for (String part : encoded.split(";")) {
+            int colon = part.indexOf(':');
+            if (colon <= 0) continue;
+            String name = part.substring(0, colon);
+            String value = part.substring(colon + 1);
+            try {
+                if (options.manageable(name)) options.set(name, value);
+            } catch (Exception e) {
+                getLogger().warning("Could not restore outer heap option " + name + ": " + e.getMessage());
+            }
+        }
+    }
+
+    private Path cleanSidecarPath() {
+        return getWorldRoot().resolve("plugins").resolve("ServerhosterPlugin-clean-reprovision.txt");
+    }
+
+    private Path cleanTicketPath() {
+        return getDataFolder().toPath().resolve("clean-setup-ticket.txt");
+    }
+
+    private Path pluginJarPath() {
+        try {
+            var location = FabricLauncherPlugin.class.getProtectionDomain().getCodeSource().getLocation();
+            return location == null ? null : Path.of(location.toURI());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private CleanSetup.Plan scanClean(long now) throws IOException {
+        return CleanSetup.scan(getWorldRoot(), pluginJarPath(), getConfig().getInt("port", 2063),
+                getConfig().getInt("dashboard.port", 2064), now);
+    }
+
+    private CleanSetup.Plan readCleanTicket() throws IOException {
+        Path ticket = cleanTicketPath();
+        if (!Files.isRegularFile(ticket, LinkOption.NOFOLLOW_LINKS)) return null;
+        if (Files.isSymbolicLink(ticket)) throw new SecurityException("Clean-Setup-Ticket darf kein Symlink sein");
+        return CleanSetup.parseSidecar(Files.readString(ticket));
+    }
+
+    private void consumeCleanSidecar() {
+        Path sidecar = cleanSidecarPath();
+        if (!Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS)) return;
+        try {
+            if (Files.isSymbolicLink(sidecar)) throw new SecurityException("Clean-Setup-Datei darf kein Symlink sein");
+            String text = Files.readString(sidecar);
+            String status = CleanSetup.sidecarStatus(text);
+            if ("pending".equals(status)) {
+                Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
+                getLogger().severe("Clean-Setup war vorgemerkt, aber der Server ist wieder gestartet. Es wurde nichts weiter gelöscht.");
+                return;
+            }
+            if (!"done".equals(status)) {
+                getLogger().warning("Clean-Setup ist " + status + " und läuft nicht von selbst weiter.");
+                return;
+            }
+            CleanSetup.Plan plan = CleanSetup.parseSidecar(text);
+            String lobby = HostMinimize.newLobbyName(getWorldRoot());
+            CleanSetup.provision(getWorldRoot(), plan, lobby);
+            getConfig().set("port", plan.childPort());
+            getConfig().set("dashboard.port", plan.dashboardPort());
+            getConfig().set("setup.completed", false);
+            saveConfig();
+            Files.deleteIfExists(sidecar);
+            getLogger().info("Clean-Setup hat eine neue leere Lobby " + lobby + " und eine frische Plugin-Konfiguration geschrieben. Die Einrichtung ist wieder nötig.");
+        } catch (Exception e) {
+            getLogger().log(Level.SEVERE, "Clean-Setup konnte die frische Konfiguration nicht schreiben", e);
+        }
+    }
+
+    private void runPendingCleanSetup() {
+        Path sidecar = cleanSidecarPath();
+        try {
+            if (!Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS) || Files.isSymbolicLink(sidecar)) return;
+            String text = Files.readString(sidecar);
+            if (!"pending".equals(CleanSetup.sidecarStatus(text))) return;
+            for (ChildSlot slot : slots.values()) if (slot.running()) {
+                Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
+                System.out.println("[ServerhosterPlugin] Clean-Setup abgebrochen: der Child läuft noch");
+                return;
+            }
+            CleanSetup.Plan plan = CleanSetup.parseSidecar(text);
+            Path jar = pluginJarPath();
+            String jarRelative = jar == null ? "" : getWorldRoot().toRealPath().relativize(jar.toAbsolutePath().normalize()).toString().replace('\\', '/');
+            CleanSetup.execute(getWorldRoot(), plan.delete(), jarRelative, Files::deleteIfExists);
+            writeAtomically(sidecar, CleanSetup.sidecar("done", plan));
+            System.out.println("[ServerhosterPlugin] Clean-Setup hat die bestätigte Liste gelöscht. Die frische Konfiguration entsteht beim nächsten Start.");
+        } catch (Exception e) {
+            System.out.println("[ServerhosterPlugin] Clean-Setup abgebrochen: " + e.getMessage());
+            try {
+                String text = Files.readString(sidecar);
+                if (text.startsWith("status=pending")) Files.writeString(sidecar, text.replaceFirst("status=pending", "status=aborted"));
+            } catch (IOException ignored) {
+                System.out.println("[ServerhosterPlugin] Clean-Setup-Status konnte nicht gespeichert werden");
+            }
+        }
+    }
+
+    Map<String, Object> cleanSetupView() throws IOException {
+        long now = System.currentTimeMillis();
+        CleanSetup.Plan fresh = scanClean(now);
+        CleanSetup.Plan ticket = readCleanTicket();
+        boolean armed = ticket != null && ticket.planHash().equals(fresh.planHash()) && ticket.identity().equals(fresh.identity()) && now <= ticket.expiresAt();
+        Map<String, Object> view = cleanSetupBody(fresh);
+        view.put("armed", armed);
+        view.put("confirmation", armed ? CleanSetup.confirmPhrase(ticket) : "");
+        view.put("expiresAt", armed ? ticket.expiresAt() : 0);
+        return view;
+    }
+
+    Map<String, Object> cleanSetupPreview() throws IOException {
+        CleanSetup.Plan fresh = scanClean(System.currentTimeMillis());
+        writeAtomically(cleanTicketPath(), CleanSetup.sidecar("ticket", fresh));
+        Map<String, Object> view = cleanSetupBody(fresh);
+        view.put("armed", true);
+        view.put("confirmation", CleanSetup.confirmPhrase(fresh));
+        view.put("expiresAt", fresh.expiresAt());
+        view.put("message", "Vorschau " + fresh.identity() + " / " + fresh.planHash().substring(0, 8)
+                + ". " + fresh.delete().size() + " Einträge würden gelöscht. Keine Rücknahme, keine versteckte Kopie. Bestätigung: "
+                + CleanSetup.confirmPhrase(fresh));
+        return view;
+    }
+
+    Map<String, Object> cleanSetupApply(String confirm) throws IOException {
+        if (getServer() == null) throw new IllegalStateException("Clean-Setup stoppt nur einen laufenden Spigot-Server");
+        if (Files.exists(cleanSidecarPath(), LinkOption.NOFOLLOW_LINKS))
+            throw new IOException("Ein vorheriges Clean-Setup ist noch offen und wird nicht fortgesetzt");
+        long now = System.currentTimeMillis();
+        CleanSetup.Plan ticket = readCleanTicket();
+        CleanSetup.Plan fresh = scanClean(now);
+        CleanSetup.checkTicket(ticket, fresh, confirm, now);
+        ChildSlot slot = focusSlot();
+        if (slot.running()) {
+            stopBlocking(slot);
+            if (slot.running()) {
+                slot.wantRunning = true;
+                slot.stopRequested = false;
+                slot.phase = SupervisorHealth.Phase.RUNNING;
+                Process process = slot.process;
+                if (process != null) armWatch(slot, process, true);
+                throw new IOException("Der Child läuft noch. Es wurde nichts gelöscht.");
+            }
+        }
+        CleanSetup.Plan afterStop = scanClean(System.currentTimeMillis());
+        CleanSetup.checkTicket(ticket, afterStop, confirm, System.currentTimeMillis());
+        writeAtomically(cleanSidecarPath(), CleanSetup.sidecar("pending", afterStop));
+        Files.deleteIfExists(cleanTicketPath());
+        getServer().getScheduler().runTask(this, () -> getServer().shutdown());
+        return Map.of("ok", true, "message", "Der Child ist gestoppt. Der äußere Server fährt jetzt herunter und löscht nur die bestätigte Liste. Es gibt keine Rücknahme.");
+    }
+
+    private Map<String, Object> cleanSetupBody(CleanSetup.Plan plan) {
+        Map<String, Object> view = new LinkedHashMap<>();
+        view.put("identity", plan.identity());
+        view.put("planHash", plan.planHash());
+        view.put("delete", plan.delete());
+        view.put("keep", plan.keep());
+        view.put("reprovision", plan.reprovision());
+        view.put("serverPort", plan.serverPort());
+        view.put("childPort", plan.childPort());
+        view.put("dashboardPort", plan.dashboardPort());
+        view.put("onlineMode", plan.onlineMode());
+        view.put("enableRcon", plan.enableRcon());
+        view.put("undo", false);
+        List<String> notes = new ArrayList<>();
+        notes.add("Standard aus. Es wird nichts beim ersten Start gelöscht.");
+        notes.add("Keine eingebaute Rücknahme und keine versteckte Kopie. Ein Export muss vorher selbst erfolgen.");
+        notes.add("Gelöscht werden auch Child, Plugin-Konfiguration, Dashboard-Passwort und lokale Backups, wenn sie in der Liste stehen.");
+        notes.add("Behalten oder danach neu geschrieben: Spigot-JAR, dieses Plugin-JAR, bundler, libraries, versions, eula.txt, frische Ports.");
+        notes.add("Verzeichnisse außerhalb dieses Serverordners werden nicht angefasst.");
+        Path child = configuredPath(getConfig().getString("workingDir", "./child-server"));
+        Path root = getWorldRoot().toAbsolutePath().normalize();
+        notes.add(child.startsWith(root)
+                ? "Child-Ordner liegt im Serverordner und wird gelöscht, wenn er vorhanden ist: " + root.relativize(child).toString().replace('\\', '/')
+                : "Der konfigurierte Child-Ordner liegt außerhalb des Serverordners und wird nicht gelöscht.");
+        String backup = getConfig().getString("backup.directory", "");
+        if (backup != null && !backup.isBlank()) {
+            Path backupPath = configuredPath(backup);
+            notes.add(backupPath.startsWith(root)
+                    ? "Backup-Ordner in der Löschliste: " + root.relativize(backupPath).toString().replace('\\', '/')
+                    : "Der konfigurierte Backup-Ordner liegt außerhalb des Serverordners und wird nicht gelöscht.");
+        }
+        view.put("notes", notes);
+        return view;
+    }
+
+    private Path configuredPath(String configured) {
+        Path path = Paths.get(configured == null || configured.isBlank() ? "./child-server" : configured);
+        if (!path.isAbsolute()) path = getWorldRoot().resolve(path);
+        return path.toAbsolutePath().normalize();
+    }
+
+    private static void writeAtomically(Path path, String text) throws IOException {
+        Path tmp = path.resolveSibling(path.getFileName().toString() + ".tmp");
+        Files.writeString(tmp, text);
+        try {
+            Files.move(tmp, path, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
+        } catch (AtomicMoveNotSupportedException e) {
+            Files.move(tmp, path, StandardCopyOption.REPLACE_EXISTING);
+        }
     }
 
     Map<String, Object> hostMinimizeView() throws IOException {
@@ -2130,20 +2350,40 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         ChildSlot slot = focusSlot();
         if (slot.running()) {
             stopBlocking(slot);
-            if (slot.running()) throw new IOException("Der Child läuft noch. Host-Dateien wurden nicht geändert.");
+            if (slot.running()) {
+                slot.wantRunning = true;
+                slot.stopRequested = false;
+                slot.phase = SupervisorHealth.Phase.RUNNING;
+                Process process = slot.process;
+                if (process != null) armWatch(slot, process, true);
+                throw new IOException("Der Child läuft noch. Host-Dateien wurden nicht geändert.");
+            }
         }
-        String lobby = HostMinimize.newLobbyName();
+        List<Path> protectedPaths = hostProtectedPaths();
+        String lobby = HostMinimize.newLobbyName(getWorldRoot());
         Path backup = getDataFolder().toPath().resolve("host-minimize-backup").resolve(lobby.substring("serverhoster-lobby-".length()));
-        HostMinimize.apply(getWorldRoot(), backup, lobby, hostProtectedPaths());
-        List<Map<String, Object>> heap = HostHeapTune.apply(HostHeapTune.hotspot()).stream().map(result -> {
+        HostMinimize.apply(getWorldRoot(), backup, lobby, protectedPaths);
+        List<HostHeapTune.Result> tuned = HostHeapTune.apply(HostHeapTune.hotspot());
+        List<Map<String, Object>> heap = tuned.stream().map(result -> {
             Map<String, Object> row = new LinkedHashMap<>();
             row.put("name", result.name());
             row.put("value", result.value());
+            row.put("previous", result.previous());
             row.put("applied", result.applied());
             row.put("detail", result.detail());
             return row;
         }).toList();
-        writeHostMinimizeState("staged", lobby, getDataFolder().toPath().relativize(backup).toString().replace('\\', '/'), true);
+        String relativeBackup = getDataFolder().toPath().relativize(backup).toString().replace('\\', '/');
+        try {
+            writeHostMinimizeState("staged", lobby, relativeBackup, true, heapPrevious(tuned));
+        } catch (IOException e) {
+            try {
+                HostMinimize.restore(getWorldRoot(), backup, protectedPaths);
+            } catch (IOException restoreError) {
+                e.addSuppressed(restoreError);
+            }
+            throw e;
+        }
         Map<String, Object> view = hostMinimizeView();
         view.put("heap", heap);
         view.put("restartRequired", true);
@@ -2161,6 +2401,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         if (!backup.startsWith(getDataFolder().toPath().toAbsolutePath().normalize()))
             throw new SecurityException("Die Sicherung liegt außerhalb des Plugin-Ordners");
         HostMinimize.restore(getWorldRoot(), backup, hostProtectedPaths());
+        restoreHostHeap(state.getOrDefault("heapPrevious", ""));
         Files.deleteIfExists(hostMinimizeStateFile());
         Map<String, Object> view = hostMinimizeView();
         view.put("message", "Gesicherte Host-Dateien wurden zurückgeschrieben. Ein äußerer Neustart ist nötig, wenn der Host schon mit der neuen Welt gestartet wurde. Welten wurden nicht gelöscht.");
@@ -2183,7 +2424,8 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                 }
             }
             boolean restarted = lobby.equals(level);
-            writeHostMinimizeState(restarted ? "active" : "staged", lobby, state.getOrDefault("backup", ""), !restarted);
+            writeHostMinimizeState(restarted ? "active" : "staged", lobby, state.getOrDefault("backup", ""), !restarted,
+                    state.getOrDefault("heapPrevious", ""));
             if (restarted) {
                 String target = lobby;
                 getServer().getScheduler().runTask(this, () -> applyLobbyRules(target));
@@ -2248,6 +2490,23 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             case "versions" -> {
                 if (a.length < 2) { s.sendMessage("/child versions <fabric|paper|vanilla|spigot>"); return true; }
                 exec.submit(() -> { try { for (String v : versions(a[1])) msg(s, v); } catch (Exception e) { msg(s, "Versions failed: " + e.getMessage()); } });
+            }
+            case "clean" -> {
+                if (a.length < 2) { s.sendMessage("/child clean <preview|apply>"); return true; }
+                switch (a[1].toLowerCase(Locale.ROOT)) {
+                    case "preview" -> exec.submit(() -> {
+                        try { msg(s, String.valueOf(cleanSetupPreview().get("message"))); }
+                        catch (Exception e) { msg(s, "Clean-Vorschau fehlgeschlagen: " + e.getMessage()); }
+                    });
+                    case "apply" -> {
+                        String confirm = a.length >= 3 ? String.join(" ", java.util.Arrays.copyOfRange(a, 2, a.length)) : "";
+                        exec.submit(() -> {
+                            try { msg(s, String.valueOf(cleanSetupApply(confirm).get("message"))); }
+                            catch (Exception e) { msg(s, "Clean-Setup fehlgeschlagen: " + e.getMessage()); }
+                        });
+                    }
+                    default -> s.sendMessage("/child clean <preview|apply>");
+                }
             }
             case "host" -> {
                 if (a.length < 2) { s.sendMessage("/child host <preview|apply|rollback>"); return true; }

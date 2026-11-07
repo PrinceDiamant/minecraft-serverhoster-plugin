@@ -40,7 +40,10 @@ class HostMinimizeTest {
         Files.createDirectories(root.resolve("libraries"));
         Files.writeString(root.resolve("libraries/keep.jar"), "runtime");
 
-        String lobby = HostMinimize.newLobbyName();
+        Files.createDirectories(root.resolve("serverhoster-lobby-aaaaaaaa"));
+        String lobby = HostMinimize.newLobbyName(root);
+        assertFalse(lobby.equals("serverhoster-lobby-aaaaaaaa"));
+        assertFalse(Files.exists(root.resolve(lobby)));
         List<Path> protectedPaths = List.of(data, child, backups);
         Path backup = data.resolve("host-minimize-backup/test");
         HostMinimize.apply(root, backup, lobby, protectedPaths);
@@ -50,6 +53,8 @@ class HostMinimizeTest {
         assertTrue(properties.contains("view-distance=2"));
         assertTrue(properties.contains("simulation-distance=2"));
         assertTrue(properties.contains("allow-nether=false"));
+        assertTrue(properties.contains("\"structure_overrides\":[]"));
+        assertTrue(properties.contains("\"features\":true"));
         assertTrue(properties.contains("server-port=2060"));
         assertTrue(properties.contains("online-mode=true"));
         assertTrue(properties.contains("enable-rcon=false"));
@@ -104,8 +109,10 @@ class HostMinimizeTest {
         assertEquals(List.of(safe), touched);
         List<HostHeapTune.Result> results = HostHeapTune.apply(new HostHeapTune.Options() {
             @Override public boolean manageable(String name) { return "MinHeapFreeRatio".equals(name); }
+            @Override public String get(String name) { return "40"; }
             @Override public void set(String name, String value) {}
         });
+        assertEquals("40", results.stream().filter(result -> result.name().equals("MinHeapFreeRatio")).findFirst().orElseThrow().previous());
         assertTrue(results.stream().anyMatch(result -> result.name().equals("MinHeapFreeRatio") && result.applied()));
         assertTrue(results.stream().anyMatch(result -> result.name().equals("G1PeriodicGCInterval") && !result.applied()));
     }

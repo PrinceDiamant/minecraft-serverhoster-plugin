@@ -1,5 +1,15 @@
 # Release notes
 
+## ServerHoster 2.0.4
+
+- Use Minecraft 26.3's official void flat preset, including `structure_overrides`.
+- Choose another lobby name when that folder already exists.
+- If the child does not stop, leave its supervision running and do not edit host files.
+- If the state file cannot be saved after editing, restore the backed-up host files.
+- Remember manageable heap-option values and put them back on rollback. They still do not change `-Xmx` and are not kept after an outer JVM restart unless minimization stays active.
+- Add a separate clean-setup action. It stays off, does not run on first install, and has no built-in undo or hidden copy. Preview lists every deletion and survivor. Apply needs `CLEAN <server-identity> <plan-hash>` from a ticket that expires after 10 minutes and is rejected if the tree changed.
+- Clean-setup deletes only inside the outer server directory, only after the child has stopped, and only while the outer server is shutting down. A failed stop aborts with no deletions. The Spigot jar, this plugin jar, `eula.txt`, `bundler`, `libraries`, and `versions` stay. Fresh port-preserving config is written on the next start.
+
 ## ServerHoster 2.0.3
 
 - Add an explicit outer-host minimization. It is off until an administrator

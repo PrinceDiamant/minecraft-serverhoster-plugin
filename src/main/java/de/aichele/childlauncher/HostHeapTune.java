@@ -19,10 +19,11 @@ final class HostHeapTune {
             new Flag("MaxHeapFreeRatio", "20"),
             new Flag("G1PeriodicGCInterval", "30000"));
 
-    record Result(String name, String value, boolean applied, String detail) {}
+    record Result(String name, String value, String previous, boolean applied, String detail) {}
 
     interface Options {
         boolean manageable(String name);
+        String get(String name);
         void set(String name, String value) throws Exception;
     }
 
@@ -32,18 +33,20 @@ final class HostHeapTune {
         List<Result> results = new ArrayList<>();
         for (Flag flag : FLAGS) {
             if ("Xmx".equals(flag.name()) || flag.name().startsWith("-X")) {
-                results.add(new Result(flag.name(), flag.value(), false, "refusing to change the heap ceiling"));
+                results.add(new Result(flag.name(), flag.value(), "", false, "refusing to change the heap ceiling"));
                 continue;
             }
             try {
                 if (!options.manageable(flag.name())) {
-                    results.add(new Result(flag.name(), flag.value(), false, "not a manageable option in this JVM"));
+                    results.add(new Result(flag.name(), flag.value(), "", false, "not a manageable option in this JVM"));
                     continue;
                 }
+                String previous = options.get(flag.name());
                 options.set(flag.name(), flag.value());
-                results.add(new Result(flag.name(), flag.value(), true, "set on the outer JVM; -Xmx is unchanged"));
+                results.add(new Result(flag.name(), flag.value(), previous == null ? "" : previous, true,
+                        "set on the outer JVM; -Xmx is unchanged"));
             } catch (Exception e) {
-                results.add(new Result(flag.name(), flag.value(), false,
+                results.add(new Result(flag.name(), flag.value(), "", false,
                         e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage()));
             }
         }
@@ -60,6 +63,15 @@ final class HostHeapTune {
                     return option != null && option.isWriteable();
                 } catch (RuntimeException e) {
                     return false;
+                }
+            }
+
+            @Override public String get(String name) {
+                try {
+                    VMOption option = bean.getVMOption(name);
+                    return option == null ? "" : option.getValue();
+                } catch (RuntimeException e) {
+                    return "";
                 }
             }
 

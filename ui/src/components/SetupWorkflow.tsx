@@ -14,6 +14,16 @@ interface SetupCandidate {
   contents: string[];
 }
 
+interface CleanSetupState {
+  armed: boolean;
+  confirmation: string;
+  delete: string[];
+  keep: string[];
+  notes: string[];
+  message?: string;
+  identity: string;
+}
+
 interface HostMinimizeState {
   status: string;
   restartRequired: boolean;
@@ -46,6 +56,7 @@ export default function SetupWorkflow() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [host, setHost] = useState<HostMinimizeState | null>(null);
+  const [clean, setClean] = useState<CleanSetupState | null>(null);
   const initialized = useRef(false);
   const ntfyInitialized = useRef(false);
 
@@ -58,6 +69,11 @@ export default function SetupWorkflow() {
         setHost(await dashboardRequest<HostMinimizeState>("/api/host-minimize"));
       } catch {
         setHost(null);
+      }
+      try {
+        setClean(await dashboardRequest<CleanSetupState>("/api/clean-setup"));
+      } catch {
+        setClean(null);
       }
       if (!ntfyInitialized.current) {
         ntfyInitialized.current = true;
@@ -186,6 +202,49 @@ export default function SetupWorkflow() {
       window.dashboardUi?.notify("Alte FabricLauncher-Dateien bereinigt; lokale Backups und Notfallberichte bleiben erhalten.");
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Alte Dateien konnten nicht gelöscht werden.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const cleanPreview = async () => {
+    setBusy(true);
+    try {
+      const result = await dashboardRequest<CleanSetupState>("/api/clean-setup", {
+        method: "POST",
+        body: jsonBody({ action: "preview" }),
+      });
+      setClean(result);
+      window.dashboardUi?.notify(result.message ?? "Löschliste erzeugt.", false);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Clean-Vorschau fehlgeschlagen.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const cleanApply = async () => {
+    const required = clean?.confirmation ?? "";
+    if (!required) return;
+    const typed = await window.dashboardUi?.prompt({
+      title: "Serverordner wirklich vollständig leeren?",
+      description: "Das ist keine Minimierung. Die angezeigte Liste wird gelöscht, inklusive Child, Konfiguration, Passwort und lokalen Backups. Es gibt keine Rücknahme und keine versteckte Kopie. Der äußere Server fährt danach herunter.",
+      placeholder: required,
+      requiredValue: required,
+      confirmLabel: "Endgültig löschen",
+      destructive: true,
+    });
+    if (typed !== required) return;
+    setBusy(true);
+    try {
+      const result = await dashboardRequest<CleanSetupState>("/api/clean-setup", {
+        method: "POST",
+        body: jsonBody({ action: "apply", confirm: typed }),
+      });
+      setClean(result);
+      window.dashboardUi?.notify(result.message ?? "Clean-Setup gestartet.", false);
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Clean-Setup fehlgeschlagen.");
     } finally {
       setBusy(false);
     }
@@ -335,6 +394,19 @@ export default function SetupWorkflow() {
           </div>
         </>
       )}
+
+      <div className="setup-card-list">
+        <h3>Serverordner vollständig leeren</h3>
+        <p>Eigene, ausgeschaltete Aktion. Sie startet nicht bei der Einrichtung und hat keine Rücknahme. Zuerst die Löschliste erzeugen, dann den angezeigten Satz exakt eingeben. Die schonende Minimierung darunter bleibt die Alternative.</p>
+        <ul>{(clean?.notes ?? []).map((note) => <li key={note}>{note}</li>)}</ul>
+        {clean && <p>Identität {clean.identity}. {clean.delete.length} Löschungen, {clean.keep.length} behaltene Pfade.{clean.confirmation ? ` Bestätigung: ${clean.confirmation}` : ""}</p>}
+        {clean && clean.delete.length > 0 && <ul>{clean.delete.slice(0, 40).map((path) => <li key={path}>{path}</li>)}{clean.delete.length > 40 && <li>weitere {clean.delete.length - 40} Pfade stehen in der API-Liste</li>}</ul>}
+        {clean?.message && <p>{clean.message}</p>}
+        <div className="setup-actions">
+          <button className="btn" disabled={busy} type="button" onClick={() => void cleanPreview()}>Löschliste erzeugen …</button>
+          <button className="btn" disabled={busy || !clean?.confirmation} type="button" onClick={() => void cleanApply()}>Endgültig löschen …</button>
+        </div>
+      </div>
 
       <div className="setup-card-list">
         <h3>Äußeren Spigot verkleinern</h3>

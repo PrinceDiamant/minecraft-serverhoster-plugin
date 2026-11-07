@@ -32,13 +32,21 @@ final class HostMinimize {
         return "serverhoster-lobby-" + UUID.randomUUID().toString().replace("-", "").substring(0, 8);
     }
 
+    static String newLobbyName(Path root) throws IOException {
+        for (int attempt = 0; attempt < 8; attempt++) {
+            String name = newLobbyName();
+            if (!Files.exists(root.resolve(name), LinkOption.NOFOLLOW_LINKS)) return name;
+        }
+        throw new IOException("Could not choose a lobby name that does not already exist");
+    }
+
     static Map<String, String> outerProperties(String lobbyName) {
         if (!LOBBY_NAME.matcher(lobbyName).matches()) throw new IllegalArgumentException("unsafe lobby name");
         Map<String, String> values = new LinkedHashMap<>();
         values.put("level-name", lobbyName);
         values.put("level-type", "minecraft:flat");
         values.put("generator-settings",
-                "{\"layers\":[{\"block\":\"minecraft:air\",\"height\":1}],\"biome\":\"minecraft:the_void\"}");
+                "{\"biome\":\"minecraft:the_void\",\"features\":true,\"lakes\":false,\"layers\":[{\"block\":\"minecraft:air\",\"height\":1}],\"structure_overrides\":[]}");
         values.put("generate-structures", "false");
         values.put("allow-nether", "false");
         values.put("view-distance", "2");
@@ -225,9 +233,11 @@ final class HostMinimize {
         if (Files.isSymbolicLink(file)) throw new SecurityException("refusing symbolic link " + file.getFileName());
     }
 
-    static String stateText(String status, String lobbyName, String backup, boolean restartRequired) {
-        return "status=" + status + "\nlobbyName=" + lobbyName + "\nbackup=" + backup
+    static String stateText(String status, String lobbyName, String backup, boolean restartRequired, String heapPrevious) {
+        String text = "status=" + status + "\nlobbyName=" + lobbyName + "\nbackup=" + backup
                 + "\nrestartRequired=" + restartRequired + "\n";
+        if (heapPrevious != null && !heapPrevious.isBlank()) text += "heapPrevious=" + heapPrevious + "\n";
+        return text;
     }
 
     static Map<String, String> readState(String text) {
