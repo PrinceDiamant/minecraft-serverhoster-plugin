@@ -170,6 +170,46 @@ class CleanSetupTest {
     }
 
     @Test
+    void abortedMarkerIsReplacedOnlyByANewConfirmedPlan() throws Exception {
+        Path root = server(temp.resolve("rearm"));
+        Path plugin = root.resolve("plugins/ServerHoster-2.0.4.jar");
+        Path sidecar = root.resolve("plugins/ServerhosterPlugin-clean-reprovision.txt");
+        Files.writeString(sidecar, """
+                status=aborted
+                identity=49bb8cf1
+                planHash=3d4fc3034dd2cd26e086a6e74f68f547a7f9505d5b85f5ee1c5623cb765c88df
+                delete=eula.txt
+                delete=world/level.dat
+                """);
+        assertNull(CleanSetup.applyBlockReason("aborted"));
+        assertEquals("Ein Clean-Setup ist noch nicht abgeschlossen und wird nicht fortgesetzt.",
+                CleanSetup.applyBlockReason("pending"));
+        assertEquals("Ein abgeschlossenes Clean-Setup wartet auf den nächsten Start und wird nicht erneut ausgeführt.",
+                CleanSetup.applyBlockReason("done"));
+        assertEquals("Der Clean-Setup-Marker ist unvollständig und wird nicht fortgesetzt.",
+                CleanSetup.applyBlockReason(""));
+        assertNotNull(CleanSetup.applyBlockReason("ticket"));
+
+        long now = 11_000L;
+        CleanSetup.Plan preview = CleanSetup.scan(root, plugin, 2063, 2064, now);
+        CleanSetup.Plan parsed = CleanSetup.parseSidecar(CleanSetup.sidecar("ticket", preview));
+        CleanSetup.checkTicket(parsed, CleanSetup.scan(root, plugin, 2063, 2064, now), CleanSetup.confirmPhrase(preview), now);
+        String armed = CleanSetup.sidecar("pending", preview);
+        assertFalse(armed.contains("3d4fc3034dd2cd26e086a6e74f68f547a7f9505d5b85f5ee1c5623cb765c88df"));
+        assertFalse(armed.contains("delete=eula.txt"));
+        assertTrue(armed.contains(preview.planHash()));
+        Files.writeString(sidecar, armed);
+        assertTrue(CleanSetup.keepShutdownHook(CleanSetup.sidecarStatus(armed)));
+        CleanSetup.execute(root, preview.delete(), "plugins/ServerHoster-2.0.4.jar", Files::deleteIfExists);
+        assertTrue(Files.exists(root.resolve("eula.txt")));
+        assertTrue(Files.exists(plugin));
+        assertFalse(Files.exists(root.resolve("world/level.dat")));
+        Files.writeString(sidecar, CleanSetup.sidecar("done", preview));
+        assertEquals(CleanSetup.Startup.PROVISION, CleanSetup.startup("done"));
+        assertNotNull(CleanSetup.applyBlockReason("done"));
+    }
+
+    @Test
     void acceptedApplyDeletesOnProcessExitAndDoesNotResumeAfterALaterStart() throws Exception {
         Path root = server(temp.resolve("shutdown"));
         Path plugin = root.resolve("plugins/ServerHoster-2.0.4.jar");

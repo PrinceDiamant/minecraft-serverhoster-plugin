@@ -159,6 +159,15 @@ final class CleanSetup {
         return "pending".equals(sidecarStatus);
     }
 
+    static String applyBlockReason(String sidecarStatus) {
+        return switch (sidecarStatus == null ? "" : sidecarStatus) {
+            case "aborted" -> null;
+            case "pending" -> "Ein Clean-Setup ist noch nicht abgeschlossen und wird nicht fortgesetzt.";
+            case "done" -> "Ein abgeschlossenes Clean-Setup wartet auf den nächsten Start und wird nicht erneut ausgeführt.";
+            default -> "Der Clean-Setup-Marker ist unvollständig und wird nicht fortgesetzt.";
+        };
+    }
+
     enum Startup {
         PROVISION, ABORT, IGNORE
     }

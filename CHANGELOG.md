@@ -1,5 +1,11 @@
 # Release notes
 
+## ServerHoster 2.0.7
+
+- Allow a new confirmed clean preview to replace a terminal `aborted` marker.
+  The new plan is the one just confirmed. The old deletion list is not replayed.
+  A `pending` or `done` marker still blocks another apply.
+
 ## ServerHoster 2.0.6
 
 - Finish an accepted clean setup when the outer process actually exits. Spigot

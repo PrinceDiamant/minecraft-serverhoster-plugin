@@ -2138,6 +2138,15 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         }
     }
 
+    private void requireReplaceableCleanMarker() throws IOException {
+        Path sidecar = cleanSidecarPath();
+        if (!Files.exists(sidecar, LinkOption.NOFOLLOW_LINKS)) return;
+        if (Files.isSymbolicLink(sidecar) || !Files.isRegularFile(sidecar, LinkOption.NOFOLLOW_LINKS))
+            throw new SecurityException("Clean-Setup-Marker darf kein Symlink sein");
+        String reason = CleanSetup.applyBlockReason(CleanSetup.sidecarStatus(Files.readString(sidecar)));
+        if (reason != null) throw new IllegalStateException(reason);
+    }
+
     private boolean cleanShutdownHookNeeded() {
         try {
             Path sidecar = cleanSidecarPath();
@@ -2263,8 +2272,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
 
     Map<String, Object> cleanSetupApply(String confirm) throws IOException {
         if (getServer() == null) throw new IllegalStateException("Clean-Setup stoppt nur einen laufenden Spigot-Server");
-        if (Files.exists(cleanSidecarPath(), LinkOption.NOFOLLOW_LINKS))
-            throw new IOException("Ein vorheriges Clean-Setup ist noch offen und wird nicht fortgesetzt");
+        requireReplaceableCleanMarker();
         long now = System.currentTimeMillis();
         CleanSetup.Plan ticket = readCleanTicket();
         CleanSetup.Plan fresh = scanClean(now);
