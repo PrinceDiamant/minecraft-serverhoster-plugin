@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.0.4.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.0.5.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Das Plugin legt `plugins/ServerhosterPlugin/` an und
    startet das Dashboard. Beim ersten Start wird das Dashboard-Passwort in
@@ -99,9 +99,14 @@ diesem Satz stoppt den Child, fährt den äußeren Server herunter und löscht n
 die bestätigte Liste innerhalb dieses Serverordners. Ein fehlgeschlagener
 Stopp löscht nichts. Es gibt keine Rücknahme und keine versteckte Kopie.
 Spigot-JAR, dieses Plugin-JAR, `eula.txt`, `bundler`, `libraries` und
-`versions` bleiben. Der nächste Start schreibt eine frische Konfiguration und
+`versions` bleiben. Ein Startskript des Hosters im Serverordner, etwa
+`.serverstart/run.sh`, wird gelöscht; das Panel schreibt es beim nächsten
+Start neu. Der nächste Start schreibt eine frische Konfiguration und
 behält die bisherigen Ports. Verzeichnisse außerhalb des Serverordners werden
-nicht angefasst.
+nicht angefasst. Logs und Lock-Dateien dürfen sich zwischen Vorschau und
+Ausführung ändern. Eine andere neue oder entfernte Datei macht das Ticket
+ungültig; dann ist eine neue Vorschau nötig. Ein Ticket aus 2.0.4 ist
+unvollständig und muss neu erzeugt werden.
 
 ## Aus dem Quellcode bauen
 

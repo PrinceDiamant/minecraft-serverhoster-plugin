@@ -1,5 +1,20 @@
 # Release notes
 
+## ServerHoster 2.0.5
+
+- Fix clean-setup apply rejecting an unchanged server. The ticket now stores
+  the survivor list as well as the deletion list. Apply checks that stored
+  list against a fresh scan. A log, crash report, or lock file may change
+  without invalidating the ticket. Any other new or removed path still
+  rejects the apply.
+- The clean-setup ticket and its temporary file are control files. Writing
+  them does not change the plan hash. A ticket that loses its survivor list
+  is rejected as incomplete.
+- A provider start script inside the server root, such as `.serverstart/run.sh`,
+  is deleted with the other non-boot files. The panel rewrites it on the next
+  start. The Spigot jar, this plugin jar, `eula.txt`, `bundler`, `libraries`,
+  and `versions` stay.
+
 ## ServerHoster 2.0.4
 
 - Use Minecraft 26.3's official void flat preset, including `structure_overrides`.

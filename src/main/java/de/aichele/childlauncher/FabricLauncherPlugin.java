@@ -2223,7 +2223,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         long now = System.currentTimeMillis();
         CleanSetup.Plan fresh = scanClean(now);
         CleanSetup.Plan ticket = readCleanTicket();
-        boolean armed = ticket != null && ticket.planHash().equals(fresh.planHash()) && ticket.identity().equals(fresh.identity()) && now <= ticket.expiresAt();
+        boolean armed = CleanSetup.ticketMatches(ticket, fresh, now);
         Map<String, Object> view = cleanSetupBody(fresh);
         view.put("armed", armed);
         view.put("confirmation", armed ? CleanSetup.confirmPhrase(ticket) : "");

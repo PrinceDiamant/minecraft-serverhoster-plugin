@@ -5,6 +5,8 @@ import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
+import java.util.HexFormat;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -111,12 +113,74 @@ class CleanSetupTest {
     }
 
     @Test
+    void savedTicketMatchesAFreshScanUntilTheInventoryReallyChanges() throws Exception {
+        Path root = server(temp.resolve("ticket"));
+        Path plugin = root.resolve("plugins/ServerHoster-2.0.4.jar");
+        Files.createDirectories(root.resolve(".serverstart"));
+        Files.writeString(root.resolve(".serverstart/run.sh"), "#!/bin/sh\n");
+        Files.createDirectories(root.resolve("bundler"));
+        Files.writeString(root.resolve("bundler/bootstrap.jar"), "bundler");
+        Files.createDirectories(root.resolve("versions"));
+        Files.writeString(root.resolve("versions/spigot.jar"), "versions");
+        Files.writeString(root.resolve("child-server/server.properties"), "server-port=29999\n");
+        long now = 5_000L;
+        CleanSetup.Plan preview = CleanSetup.scan(root, plugin, 2063, 2064, now);
+        assertEquals(identityOf(root), preview.identity());
+        assertEquals(2060, preview.serverPort());
+        assertTrue(preview.delete().contains(".serverstart/run.sh"));
+        assertTrue(preview.delete().contains("child-server/server.properties"));
+        assertFalse(preview.keep().contains(".serverstart/run.sh"));
+        assertTrue(preview.keep().contains("bundler/bootstrap.jar"));
+        assertTrue(preview.keep().contains("versions/spigot.jar"));
+        assertTrue(preview.keep().contains("eula.txt"));
+        assertTrue(preview.keep().contains("plugins/ServerhosterPlugin/clean-setup-ticket.txt"));
+
+        String saved = CleanSetup.sidecar("ticket", preview);
+        CleanSetup.Plan parsed = CleanSetup.parseSidecar(saved);
+        assertEquals(preview.keep(), parsed.keep());
+        assertEquals(preview.delete(), parsed.delete());
+        assertEquals(preview.planHash(), parsed.planHash());
+        Files.writeString(root.resolve("plugins/ServerhosterPlugin/clean-setup-ticket.txt"), saved);
+        CleanSetup.Plan afterTicket = CleanSetup.scan(root, plugin, 2063, 2064, now);
+        assertEquals(preview.planHash(), afterTicket.planHash());
+        CleanSetup.checkTicket(parsed, afterTicket, CleanSetup.confirmPhrase(preview), now);
+
+        Files.createDirectories(root.resolve("logs"));
+        Files.writeString(root.resolve("logs/latest.log"), "volatile");
+        Files.writeString(root.resolve("world/session.lock"), "lock");
+        CleanSetup.Plan volatilePlan = CleanSetup.scan(root, plugin, 2063, 2064, now);
+        CleanSetup.checkTicket(parsed, volatilePlan, CleanSetup.confirmPhrase(preview), now);
+        assertTrue(CleanSetup.ticketMatches(parsed, volatilePlan, now));
+
+        Files.writeString(root.resolve("world/extra-region.dat"), "real change");
+        CleanSetup.Plan changed = CleanSetup.scan(root, plugin, 2063, 2064, now);
+        IllegalStateException rejected = assertThrows(IllegalStateException.class,
+                () -> CleanSetup.checkTicket(parsed, changed, CleanSetup.confirmPhrase(preview), now));
+        assertEquals("Der Serverinhalt hat sich seit der Vorschau geändert", rejected.getMessage());
+        assertFalse(CleanSetup.ticketMatches(parsed, changed, now));
+
+        String incomplete = saved.replaceAll("(?m)^keep=.*\\n", "");
+        IllegalStateException broken = assertThrows(IllegalStateException.class, () -> CleanSetup.checkTicket(
+                CleanSetup.parseSidecar(incomplete), preview, CleanSetup.confirmPhrase(preview), now));
+        assertEquals("Das Clean-Setup-Ticket ist unvollständig oder verändert", broken.getMessage());
+
+        CleanSetup.Plan otherPort = CleanSetup.scan(root, plugin, 29999, 2064, now);
+        assertThrows(IllegalStateException.class,
+                () -> CleanSetup.checkTicket(parsed, otherPort, CleanSetup.confirmPhrase(preview), now));
+    }
+
+    @Test
     void mutatingRequestsStillNeedTheCsrfHeader() {
         assertTrue(Dashboard.csrfRejected("POST", null));
         assertTrue(Dashboard.csrfRejected("POST", ""));
         assertFalse(Dashboard.csrfRejected("POST", "1"));
         assertFalse(Dashboard.csrfRejected("GET", null));
         assertFalse(Dashboard.csrfRejected("HEAD", null));
+    }
+
+    private static String identityOf(Path root) throws Exception {
+        return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256")
+                .digest(root.toRealPath().toString().getBytes(java.nio.charset.StandardCharsets.UTF_8))).substring(0, 8);
     }
 
     private static Path server(Path root) throws Exception {

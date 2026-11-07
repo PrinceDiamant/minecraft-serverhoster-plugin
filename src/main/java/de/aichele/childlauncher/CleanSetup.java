@@ -20,6 +20,10 @@ import java.util.TreeSet;
 final class CleanSetup {
     static final long TICKET_TTL_MS = 10 * 60 * 1000L;
     static final int MAX_ENTRIES = 100_000;
+    static final List<String> CONTROL_KEEP = List.of(
+            "plugins/ServerhosterPlugin-clean-reprovision.txt",
+            "plugins/ServerhosterPlugin/clean-setup-ticket.txt",
+            "plugins/ServerhosterPlugin/clean-setup-ticket.txt.tmp");
     private static final Set<String> SHALLOW = Set.of("/", "/home", "/opt", "/var", "/srv", "/root", "/mnt", "/data");
 
     record Plan(String identity, String planHash, long expiresAt, List<String> delete, List<String> keep,
@@ -55,8 +59,10 @@ final class CleanSetup {
                 else delete.add(relative);
             }
         }
-        keep.add("plugins/ServerhosterPlugin-clean-reprovision.txt");
-        delete.remove("plugins/ServerhosterPlugin-clean-reprovision.txt");
+        for (String control : CONTROL_KEEP) {
+            keep.add(control);
+            delete.remove(control);
+        }
         List<String> reprovision = List.of(
                 "server.properties", "bukkit.yml", "spigot.yml",
                 "plugins/ServerhosterPlugin/config.yml",
@@ -89,22 +95,25 @@ final class CleanSetup {
         text.append("onlineMode=").append(plan.onlineMode()).append('\n');
         text.append("enableRcon=").append(plan.enableRcon()).append('\n');
         for (String path : plan.delete()) text.append("delete=").append(path).append('\n');
+        for (String path : plan.keep()) text.append("keep=").append(path).append('\n');
         return text.toString();
     }
 
     static Plan parseSidecar(String text) {
         java.util.Map<String, String> values = new java.util.LinkedHashMap<>();
         List<String> delete = new ArrayList<>();
+        List<String> keep = new ArrayList<>();
         for (String line : text.split("\n")) {
             int eq = line.indexOf('=');
             if (eq < 1) continue;
             String key = line.substring(0, eq);
             String value = line.substring(eq + 1);
             if ("delete".equals(key)) delete.add(value);
+            else if ("keep".equals(key)) keep.add(value);
             else values.put(key, value);
         }
         return new Plan(values.getOrDefault("identity", ""), values.getOrDefault("planHash", ""),
-                Long.parseLong(values.getOrDefault("expiresAt", "0")), List.copyOf(delete), List.of(),
+                Long.parseLong(values.getOrDefault("expiresAt", "0")), List.copyOf(delete), List.copyOf(keep),
                 List.of("server.properties", "bukkit.yml", "spigot.yml",
                         "plugins/ServerhosterPlugin/config.yml", "plugins/ServerhosterPlugin/dashboard-password.txt"),
                 Integer.parseInt(values.getOrDefault("serverPort", "25565")),
@@ -119,16 +128,31 @@ final class CleanSetup {
         return "";
     }
 
+    static boolean ticketMatches(Plan ticket, Plan fresh, long now) {
+        return ticket != null && fresh != null && now <= ticket.expiresAt()
+                && ticket.planHash().equals(hash(ticket)) && sameDurableInventory(ticket, fresh);
+    }
+
     static void checkTicket(Plan ticket, Plan fresh, String confirm, long now) {
         if (ticket == null || fresh == null) throw new IllegalArgumentException("Clean-Setup-Ticket fehlt");
         if (now > ticket.expiresAt()) throw new IllegalArgumentException("Das Clean-Setup-Ticket ist abgelaufen");
-        if (!ticket.identity().equals(fresh.identity()) || !durableHash(ticket).equals(durableHash(fresh))
-                || ticket.serverPort() != fresh.serverPort() || ticket.childPort() != fresh.childPort()
-                || ticket.dashboardPort() != fresh.dashboardPort() || ticket.onlineMode() != fresh.onlineMode()
-                || ticket.enableRcon() != fresh.enableRcon() || !ticket.serverIp().equals(fresh.serverIp()))
+        if (!ticket.planHash().equals(hash(ticket)))
+            throw new IllegalStateException("Das Clean-Setup-Ticket ist unvollständig oder verändert");
+        if (!sameDurableInventory(ticket, fresh))
             throw new IllegalStateException("Der Serverinhalt hat sich seit der Vorschau geändert");
         if (!confirmPhrase(ticket).equals(confirm))
             throw new IllegalArgumentException("Die Bestätigung stimmt nicht. Erforderlich ist exakt: " + confirmPhrase(ticket));
+    }
+
+    private static boolean sameDurableInventory(Plan ticket, Plan fresh) {
+        return ticket.identity().equals(fresh.identity())
+                && durableHash(ticket).equals(durableHash(fresh))
+                && ticket.serverPort() == fresh.serverPort()
+                && ticket.childPort() == fresh.childPort()
+                && ticket.dashboardPort() == fresh.dashboardPort()
+                && ticket.onlineMode() == fresh.onlineMode()
+                && ticket.enableRcon() == fresh.enableRcon()
+                && ticket.serverIp().equals(fresh.serverIp());
     }
 
     static boolean volatilePath(String relative) {
@@ -251,7 +275,7 @@ final class CleanSetup {
         if (relative == null || relative.isBlank() || ".".equals(relative)) return true;
         if (relative.equals(pluginJarRelative)) return true;
         if (relative.equals("eula.txt") || relative.equals("plugins")) return true;
-        if (relative.equals("plugins/ServerhosterPlugin-clean-reprovision.txt")) return true;
+        if (CONTROL_KEEP.contains(relative)) return true;
         if (isRuntimeTree(relative)) return true;
         return !relative.contains("/") && relative.toLowerCase(Locale.ROOT).endsWith(".jar");
     }
