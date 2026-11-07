@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.0.9.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.0.10.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Das Plugin legt `plugins/ServerhosterPlugin/` an und
    startet das Dashboard. Beim ersten Start wird das Dashboard-Passwort in
@@ -90,13 +90,14 @@ nicht in ServerHoster.
 Die Minimierung ist die umkehrbare Variante. `/child host preview` zeigt die
 Änderungen, `/child host apply HOST MINIMIEREN` schreibt sie nach einem
 sauberen Child-Stopp. Der äußere Server wird dabei nicht heruntergefahren.
-`/child host rollback HOST ZURUECK` holt die drei gesicherten Dateien zurück
-und hebt die Spielersperre des äußeren Servers wieder auf. Aktiv ist die
-Minimierung erst, wenn die Lobby-Welt geladen ist, nicht schon weil
-`level-name` in der Datei steht. Weder Host noch Child bekommen eine
-Leerlaufpause. Das Dashboard bleibt bei HTTP, bis HTTPS in der Konfiguration
-eingeschaltet wird. HTTP überträgt das Dashboard-Passwort unverschlüsselt.
-Port und Zertifikat werden dadurch nicht geändert.
+`/child host rollback HOST ZURUECK` holt die gesicherten Host-Dateien zurück,
+einschließlich der vorherigen `whitelist.json`. Die Minimierung schaltet auf
+dem äußeren Server `white-list=true` und schreibt eine leere Whitelist. Die
+Child-Whitelist wird nicht geändert. Es gibt keinen zusätzlichen Login-Block.
+Aktiv ist die Minimierung erst, wenn die Lobby-Welt geladen ist, nicht schon
+weil `level-name` in der Datei steht. Das Dashboard bleibt bei HTTP, bis HTTPS
+in der Konfiguration eingeschaltet wird. HTTP überträgt das Dashboard-Passwort
+unverschlüsselt. Port und Zertifikat werden dadurch nicht geändert.
 
 `/child clean preview` ist eine getrennte, standardmäßig inaktive Aktion. Sie
 legt eine Löschliste und für zehn Minuten den Satz

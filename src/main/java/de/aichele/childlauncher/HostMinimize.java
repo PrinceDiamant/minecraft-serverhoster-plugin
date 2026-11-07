@@ -24,7 +24,8 @@ final class HostMinimize {
     static final String ROLLBACK_CONFIRM = "HOST ZURUECK";
     static final Pattern LOBBY_NAME = Pattern.compile("serverhoster-lobby-[a-f0-9]{8}");
 
-    private static final List<String> EDITABLE = List.of("server.properties", "bukkit.yml", "spigot.yml");
+    private static final List<String> EDITABLE = List.of("server.properties", "bukkit.yml", "spigot.yml", "whitelist.json");
+    private static final String WHITELIST_ABSENT = "whitelist.json.absent";
 
     private HostMinimize() {}
 
@@ -129,6 +130,7 @@ final class HostMinimize {
             changes.add(new Change("bukkit.yml", entry.getKey(), null, String.valueOf(entry.getValue())));
         for (var entry : spigotChanges().entrySet())
             changes.add(new Change("spigot.yml", entry.getKey(), null, String.valueOf(entry.getValue())));
+        changes.add(new Change("whitelist.json", "players", null, "[]"));
         return new Preview(lobbyName, List.copyOf(changes), preservedNotes());
     }
 
@@ -144,6 +146,9 @@ final class HostMinimize {
         files.add(properties);
         if (Files.exists(root.resolve("bukkit.yml"), LinkOption.NOFOLLOW_LINKS)) files.add(root.resolve("bukkit.yml"));
         if (Files.exists(root.resolve("spigot.yml"), LinkOption.NOFOLLOW_LINKS)) files.add(root.resolve("spigot.yml"));
+        Path whitelist = root.resolve("whitelist.json");
+        boolean whitelistExisted = Files.exists(whitelist, LinkOption.NOFOLLOW_LINKS);
+        if (whitelistExisted) files.add(whitelist);
         for (Path file : files) assertEditable(root, file, protectedPaths);
         assertEditable(root, root.resolve("bukkit.yml"), protectedPaths);
         assertEditable(root, root.resolve("spigot.yml"), protectedPaths);
@@ -151,6 +156,7 @@ final class HostMinimize {
         if (!backupDirectory.toAbsolutePath().normalize().startsWith(dataDirectory))
             throw new SecurityException("host minimization backup must stay inside the plugin data directory");
         Files.createDirectories(backupDirectory);
+        if (!whitelistExisted) Files.writeString(backupDirectory.resolve(WHITELIST_ABSENT), "absent\n");
         for (Path file : files) {
             Path destination = backupDirectory.resolve(file.getFileName().toString());
             if (Files.isSymbolicLink(destination)) throw new SecurityException("backup target must not be a symlink");
@@ -162,6 +168,7 @@ final class HostMinimize {
                 updateYaml(root.resolve("bukkit.yml"), bukkitChanges());
             if (files.stream().anyMatch(file -> file.getFileName().toString().equals("spigot.yml")))
                 updateYaml(root.resolve("spigot.yml"), spigotChanges());
+            writeEmptyWhitelist(root, protectedPaths);
         } catch (IOException | RuntimeException e) {
             restore(root, backupDirectory, protectedPaths);
             throw e;
@@ -175,6 +182,12 @@ final class HostMinimize {
         Path realBackup = backupDirectory.toRealPath();
         Path data = protectedPaths.getFirst().toAbsolutePath().normalize();
         if (!realBackup.startsWith(data)) throw new SecurityException("backup is outside the plugin data directory");
+        if (Files.isRegularFile(realBackup.resolve(WHITELIST_ABSENT), LinkOption.NOFOLLOW_LINKS)) {
+            Path created = root.resolve("whitelist.json");
+            assertEditable(root, created, protectedPaths);
+            if (Files.isSymbolicLink(created)) throw new SecurityException("refusing symbolic link whitelist.json");
+            Files.deleteIfExists(created);
+        }
         for (String name : EDITABLE) {
             Path source = realBackup.resolve(name);
             if (!Files.isRegularFile(source, LinkOption.NOFOLLOW_LINKS)) continue;
@@ -191,6 +204,13 @@ final class HostMinimize {
                 Files.deleteIfExists(temporary);
             }
         }
+    }
+
+    private static void writeEmptyWhitelist(Path root, List<Path> protectedPaths) throws IOException {
+        Path whitelist = root.resolve("whitelist.json");
+        assertEditable(root, whitelist, protectedPaths);
+        if (Files.isSymbolicLink(whitelist)) throw new SecurityException("refusing symbolic link whitelist.json");
+        Files.writeString(whitelist, "[]\n");
     }
 
     static void assertEditable(Path root, Path file, List<Path> protectedPaths) throws IOException {

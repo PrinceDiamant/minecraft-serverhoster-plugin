@@ -26,6 +26,8 @@ class HostMinimizeTest {
         Files.createDirectories(backups);
         Files.writeString(child.resolve("world/level.dat"), "child-world");
         Files.writeString(child.resolve("server.properties"), "server-port=2063\nview-distance=12\n");
+        Files.writeString(child.resolve("whitelist.json"), "[\"ChildPlayer\"]\n");
+        Files.writeString(root.resolve("whitelist.json"), "[\"HostPlayer\"]\n");
         Files.writeString(backups.resolve("world.zip"), "backup");
         Files.writeString(root.resolve("server.properties"), """
                 server-port=2060
@@ -58,6 +60,10 @@ class HostMinimizeTest {
         assertTrue(properties.contains("server-port=2060"));
         assertTrue(properties.contains("online-mode=true"));
         assertTrue(properties.contains("enable-rcon=false"));
+        assertTrue(properties.contains("white-list=true"));
+        assertTrue(properties.contains("enforce-whitelist=true"));
+        assertEquals("[]\n", Files.readString(root.resolve("whitelist.json")));
+        assertEquals("[\"ChildPlayer\"]\n", Files.readString(child.resolve("whitelist.json")));
         assertTrue(properties.contains("pause-when-empty-seconds=0"));
         assertFalse(properties.contains("pause-when-empty-seconds=60"));
         assertFalse(properties.contains("enable-rcon=true"));
@@ -74,8 +80,22 @@ class HostMinimizeTest {
         HostMinimize.restore(root, backup, protectedPaths);
         String restored = Files.readString(root.resolve("server.properties"));
         assertTrue(restored.contains("level-name=world"));
+        assertEquals("[\"HostPlayer\"]\n", Files.readString(root.resolve("whitelist.json")));
         assertTrue(restored.contains("view-distance=5"));
         assertEquals("child-world", Files.readString(child.resolve("world/level.dat")));
+    }
+
+    @Test void missingWhitelistIsRemovedAgainOnRollback() throws Exception {
+        Path root = tmp.resolve("fresh");
+        Path data = root.resolve("plugins/ServerhosterPlugin");
+        Files.createDirectories(data);
+        Files.writeString(root.resolve("server.properties"), "server-port=2060\nenable-rcon=false\nlevel-name=world\n");
+        String lobby = HostMinimize.newLobbyName();
+        Path backup = data.resolve("host-minimize-backup/fresh");
+        HostMinimize.apply(root, backup, lobby, List.of(data));
+        assertEquals("[]\n", Files.readString(root.resolve("whitelist.json")));
+        HostMinimize.restore(root, backup, List.of(data));
+        assertFalse(Files.exists(root.resolve("whitelist.json")));
     }
 
     @Test void activeRequiresTheLoadedLobbyAndIdlePauseStaysOff() throws Exception {

@@ -1,5 +1,12 @@
 # Release notes
 
+## ServerHoster 2.0.10
+
+- Host minimization turns the outer whitelist on and replaces `whitelist.json`
+  with an empty list. Rollback restores the previous list, or removes the file
+  if it did not exist. The child whitelist is not changed. There is no extra
+  login-event block.
+
 ## ServerHoster 2.0.9
 
 - Reject every player login on the outer server while host minimization is

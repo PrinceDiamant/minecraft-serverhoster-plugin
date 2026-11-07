@@ -4,9 +4,6 @@ import com.google.gson.*;
 import org.bukkit.command.*;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
@@ -20,7 +17,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.logging.Level;
 
-public final class FabricLauncherPlugin extends JavaPlugin implements Listener {
+public final class FabricLauncherPlugin extends JavaPlugin {
     private final HttpClient http = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).connectTimeout(Duration.ofSeconds(20)).build();
     private Upstream upstream;
     private final ExecutorService exec = Executors.newCachedThreadPool(r -> { Thread t = new Thread(r, "ServerhosterPlugin"); t.setDaemon(true); return t; });
@@ -90,7 +87,6 @@ public final class FabricLauncherPlugin extends JavaPlugin implements Listener {
         loadMemoryRecoveryState();
         loadLatestMemoryIncidentReport();
         sampleHostMemory();
-        getServer().getPluginManager().registerEvents(this, this);
         if (getConfig().getBoolean("dashboard.enabled", true)) {
             try { dashboard = new Dashboard(this); dashboard.start(); }
             catch (Exception e) { getLogger().log(Level.SEVERE, "Dashboard failed to start", e); }
@@ -2091,31 +2087,6 @@ public final class FabricLauncherPlugin extends JavaPlugin implements Listener {
         return getDataFolder().toPath().resolve("host-minimize-state.txt");
     }
 
-    private Path hostPlayersDeniedFile() {
-        return getDataFolder().toPath().resolve("host-players-denied.txt");
-    }
-
-    private void writeHostPlayersDenied() throws IOException {
-        Files.writeString(hostPlayersDeniedFile(), "denied=true\n");
-    }
-
-    private boolean hostPlayersBlocked() {
-        try {
-            if (HostMinimize.playersBlocked(readHostMinimizeState().getOrDefault("status", ""))) return true;
-            return Files.isRegularFile(hostPlayersDeniedFile(), LinkOption.NOFOLLOW_LINKS)
-                    && !Files.isSymbolicLink(hostPlayersDeniedFile());
-        } catch (IOException e) {
-            return true;
-        }
-    }
-
-    @EventHandler
-    public void denyHostPlayers(PlayerLoginEvent event) {
-        if (!hostPlayersBlocked()) return;
-        event.disallow(PlayerLoginEvent.Result.KICK_OTHER,
-                "Dieser äußere Server nimmt keine Spieler an. Das Spiel läuft auf dem Child-Server.");
-    }
-
     private List<Path> hostProtectedPaths() {
         List<Path> paths = new ArrayList<>();
         paths.add(getDataFolder().toPath().toAbsolutePath().normalize());
@@ -2242,7 +2213,6 @@ public final class FabricLauncherPlugin extends JavaPlugin implements Listener {
             CleanSetup.Plan plan = CleanSetup.parseSidecar(text);
             String lobby = HostMinimize.newLobbyName(getWorldRoot());
             CleanSetup.provision(getWorldRoot(), plan, lobby);
-            writeHostPlayersDenied();
             getConfig().set("port", plan.childPort());
             getConfig().set("dashboard.port", plan.dashboardPort());
             getConfig().set("setup.completed", false);
@@ -2436,7 +2406,6 @@ public final class FabricLauncherPlugin extends JavaPlugin implements Listener {
         String relativeBackup = getDataFolder().toPath().relativize(backup).toString().replace('\\', '/');
         try {
             writeHostMinimizeState("staged", lobby, relativeBackup, true, heapPrevious(tuned));
-            writeHostPlayersDenied();
         } catch (IOException e) {
             try {
                 HostMinimize.restore(getWorldRoot(), backup, protectedPaths);
@@ -2464,7 +2433,6 @@ public final class FabricLauncherPlugin extends JavaPlugin implements Listener {
         HostMinimize.restore(getWorldRoot(), backup, hostProtectedPaths());
         restoreHostHeap(state.getOrDefault("heapPrevious", ""));
         Files.deleteIfExists(hostMinimizeStateFile());
-        Files.deleteIfExists(hostPlayersDeniedFile());
         Map<String, Object> view = hostMinimizeView();
         view.put("message", "Gesicherte Host-Dateien wurden zurückgeschrieben. Ein äußerer Neustart ist nötig, wenn der Host schon mit der neuen Welt gestartet wurde. Welten wurden nicht gelöscht.");
         return view;
