@@ -11,7 +11,7 @@ The outer Spigot only exists so Zap-Hosting starts a JVM; the real game runs as 
 2. Merge server.properties / bukkit.yml / spigot.yml keys from this folder. Do NOT change the
    outer server-port. The void flat world + generate-structures=false keeps the world tiny;
    delete existing world folders before first start to regenerate as flat void.
-3. white-list=true + max-players=1: nobody should play on the outer server; players connect to
+3. This example is not applied by ServerHoster. white-list=true + max-players=1 does not by itself stop a whitelisted player. The plugin rejects outer logins while minimization is staged or active. Players connect to
    <host>:2063. Port 2064 stays free (second instance/query).
 4. The child's console appears in the Spigot console prefixed "[Child] "; use
    `child cmd <command>` from the Zap console (e.g. `child cmd op Name`, `child cmd save-all`).

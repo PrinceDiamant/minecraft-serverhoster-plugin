@@ -58,6 +58,8 @@ class HostMinimizeTest {
         assertTrue(properties.contains("server-port=2060"));
         assertTrue(properties.contains("online-mode=true"));
         assertTrue(properties.contains("enable-rcon=false"));
+        assertTrue(properties.contains("pause-when-empty-seconds=0"));
+        assertFalse(properties.contains("pause-when-empty-seconds=60"));
         assertFalse(properties.contains("enable-rcon=true"));
         assertEquals("child-world", Files.readString(child.resolve("world/level.dat")));
         assertTrue(Files.readString(child.resolve("server.properties")).contains("view-distance=12"));
@@ -74,6 +76,23 @@ class HostMinimizeTest {
         assertTrue(restored.contains("level-name=world"));
         assertTrue(restored.contains("view-distance=5"));
         assertEquals("child-world", Files.readString(child.resolve("world/level.dat")));
+    }
+
+    @Test void activeRequiresTheLoadedLobbyAndIdlePauseStaysOff() throws Exception {
+        assertEquals("staged", HostMinimize.phase("serverhoster-lobby-aaaaaaaa", "serverhoster-lobby-aaaaaaaa", false));
+        assertEquals("staged", HostMinimize.phase("serverhoster-lobby-aaaaaaaa", "world", true));
+        assertEquals("active", HostMinimize.phase("serverhoster-lobby-aaaaaaaa", "serverhoster-lobby-aaaaaaaa", true));
+        assertTrue(HostMinimize.playersBlocked("staged"));
+        assertTrue(HostMinimize.playersBlocked("active"));
+        assertFalse(HostMinimize.playersBlocked("inactive"));
+        Path properties = tmp.resolve("server.properties");
+        Files.writeString(properties, "level-name=serverhoster-lobby-aaaaaaaa\npause-when-empty-seconds=60\n");
+        assertTrue(HostMinimize.clearIdlePause(properties));
+        assertTrue(Files.readString(properties).contains("pause-when-empty-seconds=0"));
+        assertFalse(HostMinimize.clearIdlePause(properties));
+        String notice = Dashboard.passwordCreatedMessage(tmp.resolve("dashboard-password.txt"));
+        assertFalse(notice.contains("secret-password"));
+        assertTrue(notice.contains("dashboard-password.txt"));
     }
 
     @Test void symlinkAndChildRootAreRefused() throws Exception {

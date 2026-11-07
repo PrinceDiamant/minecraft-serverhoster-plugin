@@ -77,6 +77,7 @@ class CleanSetupTest {
         assertTrue(properties.contains("online-mode=true"));
         assertTrue(properties.contains("enable-rcon=false"));
         assertTrue(properties.contains("\"structure_overrides\":[]"));
+        assertTrue(properties.contains("pause-when-empty-seconds=0"));
         assertFalse(properties.contains("secret"));
         assertTrue(Files.isDirectory(root.resolve("child-server")));
     }

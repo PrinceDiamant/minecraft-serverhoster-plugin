@@ -280,7 +280,7 @@ final class CleanSetup {
                 "max-players=1",
                 "entity-broadcast-range-percentage=10",
                 "max-world-size=16",
-                "pause-when-empty-seconds=60",
+                "pause-when-empty-seconds=0",
                 "white-list=true",
                 "enforce-whitelist=true",
                 "server-port=" + plan.serverPort(),

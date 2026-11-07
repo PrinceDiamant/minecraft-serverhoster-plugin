@@ -1,5 +1,17 @@
 # Release notes
 
+## ServerHoster 2.0.9
+
+- Reject every player login on the outer server while host minimization is
+  staged or active, and after a clean setup has prepared the void lobby.
+  Whitelist and max-players remain additional settings, not the only gate.
+  Rollback removes that join block.
+- Mark minimization active only when the lobby world is actually loaded.
+- Write clean-setup world properties in `onLoad`, before Spigot loads worlds.
+- Keep outer and child `pause-when-empty-seconds` at 0. Clear a leftover 60
+  on an outer `serverhoster-lobby-*` world at startup.
+- Do not write the dashboard password into the server log.
+
 ## ServerHoster 2.0.8
 
 - Finish a clean deletion after Spigot has closed the plugin class loader.

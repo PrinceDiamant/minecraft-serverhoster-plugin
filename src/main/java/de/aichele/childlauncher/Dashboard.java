@@ -88,6 +88,10 @@ final class Dashboard {
         if (pool != null) pool.shutdownNow();
     }
 
+    static String passwordCreatedMessage(Path file) {
+        return "Dashboard-Passwortdatei angelegt: " + file + ". Das Passwort steht nur in dieser Datei, nicht im Server-Log.";
+    }
+
     private String loadOrCreatePassword() throws IOException {
         Path f = pl.getDataFolder().toPath().resolve("dashboard-password.txt");
         Files.createDirectories(f.getParent());
@@ -100,10 +104,7 @@ final class Dashboard {
         for (int i = 0; i < 20; i++) sb.append(chars.charAt(rnd.nextInt(chars.length())));
         Files.writeString(f, sb + "\n");
         try { Files.setPosixFilePermissions(f, java.nio.file.attribute.PosixFilePermissions.fromString("rw-rw----")); } catch (Exception ignored) {}
-        pl.getLogger().warning("==================================================");
-        pl.getLogger().warning(" Dashboard password generated (shown once): " + sb);
-        pl.getLogger().warning(" Stored in " + f + " (edit file + restart to change)");
-        pl.getLogger().warning("==================================================");
+        pl.getLogger().warning(passwordCreatedMessage(f));
         return sb.toString();
     }
 

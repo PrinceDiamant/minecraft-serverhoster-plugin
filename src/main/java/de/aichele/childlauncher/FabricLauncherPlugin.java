@@ -4,6 +4,9 @@ import com.google.gson.*;
 import org.bukkit.command.*;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
@@ -17,7 +20,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.logging.Level;
 
-public final class FabricLauncherPlugin extends JavaPlugin {
+public final class FabricLauncherPlugin extends JavaPlugin implements Listener {
     private final HttpClient http = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).connectTimeout(Duration.ofSeconds(20)).build();
     private Upstream upstream;
     private final ExecutorService exec = Executors.newCachedThreadPool(r -> { Thread t = new Thread(r, "ServerhosterPlugin"); t.setDaemon(true); return t; });
@@ -65,9 +68,15 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     volatile double outerTps = 20, outerMspt = 0; volatile int outerChunks, outerEntities, outerWorlds;
     private long lastSampleNs; private final long[] tickNs = new long[20]; private int tickIdx; private long tickStart;
     // ---- child tick stats (from 'tick query') ----
-    @Override public void onEnable() {
+    @Override public void onLoad() {
         saveDefaultConfig();
         consumeCleanSidecar();
+    }
+
+    @Override public void onEnable() {
+        saveDefaultConfig();
+        try { HostMinimize.clearIdlePause(getWorldRoot().resolve("server.properties")); }
+        catch (IOException e) { getLogger().warning("Could not clear outer idle pause: " + e.getMessage()); }
         migrateRestartPolicy();
         setupRequired = !getConfig().getBoolean("setup.completed", false);
         applyCurrentMemorySettings();
@@ -81,6 +90,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         loadMemoryRecoveryState();
         loadLatestMemoryIncidentReport();
         sampleHostMemory();
+        getServer().getPluginManager().registerEvents(this, this);
         if (getConfig().getBoolean("dashboard.enabled", true)) {
             try { dashboard = new Dashboard(this); dashboard.start(); }
             catch (Exception e) { getLogger().log(Level.SEVERE, "Dashboard failed to start", e); }
@@ -2081,6 +2091,31 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         return getDataFolder().toPath().resolve("host-minimize-state.txt");
     }
 
+    private Path hostPlayersDeniedFile() {
+        return getDataFolder().toPath().resolve("host-players-denied.txt");
+    }
+
+    private void writeHostPlayersDenied() throws IOException {
+        Files.writeString(hostPlayersDeniedFile(), "denied=true\n");
+    }
+
+    private boolean hostPlayersBlocked() {
+        try {
+            if (HostMinimize.playersBlocked(readHostMinimizeState().getOrDefault("status", ""))) return true;
+            return Files.isRegularFile(hostPlayersDeniedFile(), LinkOption.NOFOLLOW_LINKS)
+                    && !Files.isSymbolicLink(hostPlayersDeniedFile());
+        } catch (IOException e) {
+            return true;
+        }
+    }
+
+    @EventHandler
+    public void denyHostPlayers(PlayerLoginEvent event) {
+        if (!hostPlayersBlocked()) return;
+        event.disallow(PlayerLoginEvent.Result.KICK_OTHER,
+                "Dieser äußere Server nimmt keine Spieler an. Das Spiel läuft auf dem Child-Server.");
+    }
+
     private List<Path> hostProtectedPaths() {
         List<Path> paths = new ArrayList<>();
         paths.add(getDataFolder().toPath().toAbsolutePath().normalize());
@@ -2207,6 +2242,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             CleanSetup.Plan plan = CleanSetup.parseSidecar(text);
             String lobby = HostMinimize.newLobbyName(getWorldRoot());
             CleanSetup.provision(getWorldRoot(), plan, lobby);
+            writeHostPlayersDenied();
             getConfig().set("port", plan.childPort());
             getConfig().set("dashboard.port", plan.dashboardPort());
             getConfig().set("setup.completed", false);
@@ -2400,6 +2436,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         String relativeBackup = getDataFolder().toPath().relativize(backup).toString().replace('\\', '/');
         try {
             writeHostMinimizeState("staged", lobby, relativeBackup, true, heapPrevious(tuned));
+            writeHostPlayersDenied();
         } catch (IOException e) {
             try {
                 HostMinimize.restore(getWorldRoot(), backup, protectedPaths);
@@ -2427,6 +2464,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         HostMinimize.restore(getWorldRoot(), backup, hostProtectedPaths());
         restoreHostHeap(state.getOrDefault("heapPrevious", ""));
         Files.deleteIfExists(hostMinimizeStateFile());
+        Files.deleteIfExists(hostPlayersDeniedFile());
         Map<String, Object> view = hostMinimizeView();
         view.put("message", "Gesicherte Host-Dateien wurden zurückgeschrieben. Ein äußerer Neustart ist nötig, wenn der Host schon mit der neuen Welt gestartet wurde. Welten wurden nicht gelöscht.");
         return view;
@@ -2447,14 +2485,18 @@ public final class FabricLauncherPlugin extends JavaPlugin {
                     if (line.startsWith("level-name=")) level = line.substring("level-name=".length()).trim();
                 }
             }
-            boolean restarted = lobby.equals(level);
-            writeHostMinimizeState(restarted ? "active" : "staged", lobby, state.getOrDefault("backup", ""), !restarted,
+            boolean loaded = getServer().getWorlds().stream().anyMatch(world -> lobby.equals(world.getName()));
+            String phase = HostMinimize.phase(lobby, level, loaded);
+            boolean active = "active".equals(phase);
+            writeHostMinimizeState(phase, lobby, state.getOrDefault("backup", ""), !active,
                     state.getOrDefault("heapPrevious", ""));
-            if (restarted) {
+            if (active) {
                 String target = lobby;
                 getServer().getScheduler().runTask(this, () -> applyLobbyRules(target));
             } else {
-                getLogger().warning("Host minimization is staged. Restart the outer Spigot from the panel to load lobby " + lobby + ". Existing worlds were not deleted.");
+                getLogger().warning(lobby.equals(level)
+                        ? "Host minimization stays staged. The lobby world " + lobby + " is not loaded."
+                        : "Host minimization is staged. Restart the outer Spigot from the panel to load lobby " + lobby + ". Existing worlds were not deleted.");
             }
         } catch (Exception e) {
             getLogger().log(Level.WARNING, "Could not refresh host minimization", e);

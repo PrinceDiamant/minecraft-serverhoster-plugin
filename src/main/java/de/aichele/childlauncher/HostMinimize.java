@@ -58,7 +58,7 @@ final class HostMinimize {
         values.put("max-players", "1");
         values.put("entity-broadcast-range-percentage", "10");
         values.put("max-world-size", "16");
-        values.put("pause-when-empty-seconds", "60");
+        values.put("pause-when-empty-seconds", "0");
         values.put("white-list", "true");
         values.put("enforce-whitelist", "true");
         return values;
@@ -80,6 +80,30 @@ final class HostMinimize {
         values.put("world-settings.default.simulation-distance", 2);
         values.put("world-settings.default.mob-spawn-range", 0);
         return values;
+    }
+
+    static String phase(String lobbyName, String levelName, boolean lobbyWorldLoaded) {
+        if (lobbyNameSafe(lobbyName) && lobbyName.equals(levelName) && lobbyWorldLoaded) return "active";
+        return "staged";
+    }
+
+    static boolean playersBlocked(String status) {
+        return "staged".equals(status) || "active".equals(status);
+    }
+
+    static boolean clearIdlePause(Path properties) throws IOException {
+        if (properties == null || !Files.isRegularFile(properties, LinkOption.NOFOLLOW_LINKS) || Files.isSymbolicLink(properties))
+            return false;
+        String text = Files.readString(properties);
+        String level = "";
+        for (String line : text.split("\n")) if (line.startsWith("level-name=")) level = line.substring("level-name=".length()).trim();
+        if (!lobbyNameSafe(level)) return false;
+        String updated = text.contains("pause-when-empty-seconds=")
+                ? text.replaceAll("(?m)^pause-when-empty-seconds=.*$", "pause-when-empty-seconds=0")
+                : text + (text.endsWith("\n") ? "" : "\n") + "pause-when-empty-seconds=0\n";
+        if (updated.equals(text)) return false;
+        Files.writeString(properties, updated);
+        return true;
     }
 
     static List<String> preservedNotes() {

@@ -1,4 +1,4 @@
-# ServerHoster 2.0.8 – Betrieb und Konfiguration
+# ServerHoster 2.0.9 – Betrieb und Konfiguration
 
 ServerHoster ist ein Spigot-26.3-Plugin für Java 25. Es verwaltet genau einen
 separaten Child-Serverprozess und stellt ein Web-Dashboard bereit. Das Plugin
@@ -132,8 +132,8 @@ SIGTERM erhalten und wird nach einem normalen `onDisable` entfernt.
 Speichermessung und ein eventueller Child-Notstopp blockieren nicht mehr den
 Scheduler von `save-all` und Zeitplänen.
 
-`pause-when-empty-seconds` bleibt `0`. Es gibt kein Host-Trimming, keine
-Änderung von Sichtweite oder Welt und keine Laufzeitänderung von JVM-Flags.
+`pause-when-empty-seconds` bleibt am Child `0`. Die optionale Host-Minimierung
+ändert nur den äußeren Spigot und pausiert auch dort nicht im Leerlauf.
 Der Vergleich mit der Minimal-Variante und die Abgrenzung zur Baseline stehen
 in [VERGLEICH-MINIMAL-2026-11.md](VERGLEICH-MINIMAL-2026-11.md).
 

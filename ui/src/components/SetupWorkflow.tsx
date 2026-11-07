@@ -410,7 +410,7 @@ export default function SetupWorkflow() {
 
       <div className="setup-card-list">
         <h3>Äußeren Spigot verkleinern</h3>
-        <p>Optional und aus. Es wird nichts automatisch gelöscht. Welten, Plugins, Logs, Backups, der Child-Ordner und dieses Plugin bleiben erhalten. Port, Online-Mode und ein ausgeschaltetes RCON bleiben unverändert. -Xmx wird nicht gesenkt.</p>
+        <p>Optional und aus. Es wird nichts automatisch gelöscht. Welten, Plugins, Logs, Backups, der Child-Ordner und dieses Plugin bleiben erhalten. Port, Online-Mode und ein ausgeschaltetes RCON bleiben unverändert. -Xmx wird nicht gesenkt. Der Child bleibt Vanilla-Survival, sofern er so eingerichtet ist, und pausiert nicht im Leerlauf. Solange die Minimierung vorbereitet oder aktiv ist, lehnt der äußere Server jeden Spielerlogin ab. Aktiv wird sie erst, wenn die leere Lobby wirklich geladen ist.</p>
         <p>Status: {host?.status ?? "unbekannt"}{host?.restartRequired ? " · äußerer Neustart im Panel nötig" : ""}{host?.lobbyName ? ` · neue leere Welt ${host.lobbyName}` : ""}</p>
         <ul>{(host?.notes ?? []).map((note) => <li key={note}>{note}</li>)}</ul>
         {host?.heap && host.heap.length > 0 && <p className="muted">{host.heap.map((flag) => `${flag.name}: ${flag.detail}`).join(" · ")}</p>}
