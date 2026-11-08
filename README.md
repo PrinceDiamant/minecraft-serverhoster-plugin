@@ -5,6 +5,12 @@ Child-Server startet und ein Web-Dashboard für Einrichtung, Betrieb,
 Diagnose, Backups und Zeitpläne bereitstellt. Das Plugin installiert keine
 Mods oder Plugins.
 
+## ServerHoster 2.3.0
+
+- Dashboard-Passwort beim ersten Zugriff mit einmaligem Log-Code festlegen.
+- Backupziel, FTP/FTPS-Zugangsdaten und Zeitplan direkt im Onboarding einrichten.
+- Verständlichere Diagnose und verbessertes Zeitplan-Layout.
+
 ## ServerHoster 2.2.0
 
 - Situationsabhängiges Onboarding für neue und vorhandene Child-Server.
@@ -63,7 +69,7 @@ Build mit Node.js 22 erzeugt.
 mvn clean verify
 ```
 
-Das Plugin-Jar ist `target/ServerHoster-2.2.0.jar`. Spigot API 26.3 ist eine
+Das Plugin-Jar ist `target/ServerHoster-2.3.0.jar`. Spigot API 26.3 ist eine
 `provided`-Abhängigkeit. H2 ist ausschließlich eine Testabhängigkeit und
 befindet sich nicht im Plugin-Jar. Es gibt keine lokale Datenbank und keine
 mitgelieferten Server-Jars.

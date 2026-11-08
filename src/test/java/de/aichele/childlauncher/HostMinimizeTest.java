@@ -109,9 +109,6 @@ class HostMinimizeTest {
         assertTrue(HostMinimize.clearIdlePause(properties));
         assertTrue(Files.readString(properties).contains("pause-when-empty-seconds=0"));
         assertFalse(HostMinimize.clearIdlePause(properties));
-        String notice = Dashboard.passwordCreatedMessage(tmp.resolve("dashboard-password.txt"));
-        assertFalse(notice.contains("secret-password"));
-        assertTrue(notice.contains("dashboard-password.txt"));
     }
 
     @Test void symlinkAndChildRootAreRefused() throws Exception {

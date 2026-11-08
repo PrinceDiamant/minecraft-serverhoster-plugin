@@ -100,39 +100,33 @@ export default function SetupWorkflow() {
       if (action === "reset") {
         const candidateName = path.split(/[\\/]/).filter(Boolean).at(-1) || path;
         const contents = state?.candidates.find((candidate) => candidate.path === path)?.contents ?? [];
-        const typed = await window.dashboardUi?.prompt({
+        const accepted = await window.dashboardUi?.confirm({
           title: "Vorhandenen Child-Ordner neu aufsetzen?",
-          description: `Dieser Ordner wird verschoben und als Sicherung archiviert: ${path}\nEnthalten sind u.a.: ${contents.join(", ") || "keine Einträge erkannt"}. Zum Bestätigen „ARCHIVIEREN ${candidateName}“ exakt eingeben.`,
-          placeholder: `ARCHIVIEREN ${candidateName}`,
-          requiredValue: `ARCHIVIEREN ${candidateName}`,
+          description: `Dieser Ordner wird verschoben und als Sicherung archiviert: ${path}\nEnthalten sind u.a.: ${contents.join(", ") || "keine Einträge erkannt"}.`,
           confirmLabel: "Ordner archivieren",
           destructive: true,
         });
-        if (typed !== `ARCHIVIEREN ${candidateName}`) return;
-        confirm = typed;
+        if (!accepted) return;
+        confirm = `ARCHIVIEREN ${candidateName}`;
       } else if (action === "delete") {
         const candidateName = path.split(/[\\/]/).filter(Boolean).at(-1) || path;
         const contents = state?.candidates.find((candidate) => candidate.path === path)?.contents ?? [];
-        const typed = await window.dashboardUi?.prompt({
+        const accepted = await window.dashboardUi?.confirm({
           title: "Child-Ordner endgültig löschen?",
-          description: `ACHTUNG: Der gesamte Child-Ordner wird unwiderruflich gelöscht: ${path}\nDazu gehören Welten und alle darin enthaltenen Dateien. Erkannter Inhalt: ${contents.join(", ") || "keine Einträge erkannt"}. Server-Root und externe Verzeichnisse werden nicht gelöscht. Zum Bestätigen „DELETE ${candidateName}“ exakt eingeben.`,
-          placeholder: `DELETE ${candidateName}`,
-          requiredValue: `DELETE ${candidateName}`,
+          description: `ACHTUNG: Der gesamte Child-Ordner wird unwiderruflich gelöscht: ${path}\nDazu gehören Welten und alle darin enthaltenen Dateien. Erkannter Inhalt: ${contents.join(", ") || "keine Einträge erkannt"}. Server-Root und externe Verzeichnisse werden nicht gelöscht.`,
           confirmLabel: "Child endgültig löschen",
           destructive: true,
         });
-        if (typed !== `DELETE ${candidateName}`) return;
-        confirm = typed;
+        if (!accepted) return;
+        confirm = `DELETE ${candidateName}`;
       } else if (action === "import" && !state?.candidates.find((candidate) => candidate.path === path)?.legacyVersion) {
-        const typed = await window.dashboardUi?.prompt({
+        const accepted = await window.dashboardUi?.confirm({
           title: "Plugin-Version ist nicht feststellbar",
           description: "Die Plugin-JAR fehlt oder enthält keine lesbare Versionsangabe. Importiere nur, wenn die alte Konfiguration sicher aus ServerHoster 1.10.1 oder neuer stammt.",
-          placeholder: "IMPORT 1.10.1+",
-          requiredValue: "IMPORT 1.10.1+",
           confirmLabel: "Version bestätigen",
         });
-        if (typed !== "IMPORT 1.10.1+") return;
-        confirm = typed;
+        if (!accepted) return;
+        confirm = "IMPORT 1.10.1+";
       } else {
         const accepted = await window.dashboardUi?.confirm({
           title: action === "import" ? "Serverkonfiguration übernehmen?" : "Server einrichten?",
@@ -169,21 +163,19 @@ export default function SetupWorkflow() {
   };
 
   const cleanupLegacy = async () => {
-    const typed = await window.dashboardUi?.prompt({
+    const accepted = await window.dashboardUi?.confirm({
       title: "Alte FabricLauncher-Dateien löschen?",
       description: `Entfernt alte Plugin-Einstellungen, Secrets und erkannte FabricLauncher-JARs (${state?.legacyJars.join(", ") || "keine JARs"}). Child-Ordner und Welten bleiben unberührt; lokale Backups und Speicher-Notfallberichte werden ausdrücklich erhalten.`,
-      placeholder: "DELETE FABRICLAUNCHER",
-      requiredValue: "DELETE FABRICLAUNCHER",
       confirmLabel: "Alte Dateien löschen",
       destructive: true,
     });
-    if (typed !== "DELETE FABRICLAUNCHER") return;
+    if (!accepted) return;
     setBusy(true);
     setError("");
     try {
       await dashboardRequest("/api/setup/cleanup", {
         method: "POST",
-        body: jsonBody({ confirm: typed }),
+        body: jsonBody({ confirm: "DELETE FABRICLAUNCHER" }),
       });
       await refresh();
       window.dashboardUi?.notify("Alte FabricLauncher-Dateien bereinigt; lokale Backups und Notfallberichte bleiben erhalten.");
@@ -195,22 +187,20 @@ export default function SetupWorkflow() {
   };
 
   const hostAction = async (action: "apply" | "rollback", required: string) => {
-    const typed = await window.dashboardUi?.prompt({
+    const accepted = await window.dashboardUi?.confirm({
       title: action === "apply" ? "Äußeren Spigot verkleinern?" : "Host-Dateien zurückholen?",
       description: action === "apply"
         ? "Ein laufender Child wird zuerst sauber gestoppt. Bestehende Welten, Plugins, Logs und Backups werden nicht gelöscht. Danach musst du den äußeren Spigot selbst im Panel neu starten."
         : "Die gesicherten server.properties, bukkit.yml und spigot.yml werden zurückgeschrieben. Welten werden nicht gelöscht.",
-      placeholder: required,
-      requiredValue: required,
       confirmLabel: action === "apply" ? "Minimierung vorbereiten" : "Zurückholen",
       destructive: true,
     });
-    if (typed !== required) return;
+    if (!accepted) return;
     setBusy(true);
     try {
       const result = await dashboardRequest<HostMinimizeState>("/api/host-minimize", {
         method: "POST",
-        body: jsonBody({ action, confirm: typed }),
+        body: jsonBody({ action, confirm: required }),
       });
       setHost(result);
       window.dashboardUi?.notify(result.message ?? "Gespeichert.", false);
@@ -222,21 +212,19 @@ export default function SetupWorkflow() {
   };
 
   const runHostFirstSetup = async (required: string) => {
-    const typed = await window.dashboardUi?.prompt({
+    const accepted = await window.dashboardUi?.confirm({
       title: "Aggressive Host-Grundeinrichtung ausführen?",
       description: "Dies ist für ein Upgrade ausdrücklich manuell. Alle erkannten äußeren Minecraft-Welten werden unwiderruflich entfernt, eine neue Void-Lobby wird eingerichtet und andere Plugin-JARs werden mit .disabled umbenannt. Child-Daten, ServerHoster-Konfiguration, Passwort und Backups bleiben erhalten. Der Host fährt herunter und muss nach der Bestätigung und nach der Vorbereitung jeweils im Hosting-Panel gestartet werden. Die Weltlöschung erfolgt erst nach dem Laden der neuen Lobby und kann nicht zurückgenommen werden.",
-      placeholder: required,
-      requiredValue: required,
       confirmLabel: "Host-Grundeinrichtung starten",
       destructive: true,
     });
-    if (typed !== required) return;
+    if (!accepted) return;
     setBusy(true);
     setError("");
     try {
       await dashboardRequest("/api/host-first-setup", {
         method: "POST",
-        body: jsonBody({ confirm: typed }),
+        body: jsonBody({ confirm: required }),
       });
       setHost((current) => current ? { ...current, firstSetupStatus: "requested" } : current);
       window.dashboardUi?.notify("Host-Grundeinrichtung bestätigt. Der Host fährt herunter; starte ihn im Hosting-Panel neu.");

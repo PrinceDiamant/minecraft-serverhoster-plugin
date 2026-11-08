@@ -95,24 +95,22 @@ export default function BackupWorkflow() {
 
   const mutateBackup = async (backup: BackupEntry, operation: "restore" | "delete") => {
     const restoring = operation === "restore";
-    const typedName = await window.dashboardUi?.prompt({
+    const accepted = await window.dashboardUi?.confirm({
       title: restoring ? "Backup wiederherstellen?" : "Backup löschen?",
       description: restoring
-        ? `Der Child-Server muss gestoppt sein. Seine Dateien werden aus „${backup.name}“ wiederhergestellt und können dabei überschrieben werden. Zum Bestätigen den Backup-Namen eingeben.`
-        : `„${backup.name}“ wird dauerhaft gelöscht. Zum Bestätigen den Backup-Namen eingeben.`,
-      placeholder: backup.name,
-      requiredValue: backup.name,
+        ? `Der Child-Server muss gestoppt sein. Seine Dateien werden aus „${backup.name}“ wiederhergestellt und können dabei überschrieben werden.`
+        : `„${backup.name}“ wird dauerhaft gelöscht.`,
       confirmLabel: restoring ? "Wiederherstellen" : "Dauerhaft löschen",
       destructive: true,
     });
-    if (typedName !== backup.name) return;
+    if (!accepted) return;
 
     setWorking(`${operation}:${backup.name}`);
     setError("");
     try {
       const result = await dashboardRequest<{ files?: number }>("/api/backup/" + operation, {
         method: "POST",
-        body: jsonBody({ name: backup.name, confirm: typedName }),
+        body: jsonBody({ name: backup.name, confirm: backup.name }),
       });
       window.dashboardUi?.notify(
         restoring ? `${result.files ?? 0} Dateien wiederhergestellt.` : "Backup gelöscht.",
@@ -174,7 +172,7 @@ export default function BackupWorkflow() {
           <ShieldWarning size={19} />
           <div>
             <strong>Remote-Backup konfiguriert</strong>
-            <p>Zugangsdaten liegen in secrets.yml. AUTO bevorzugt FTPS; Klartext-FTP wird beim Verbindungstest ausdrücklich ausgewiesen.</p>
+            <p>Das Ziel und die Zugangsdaten kannst du unter Einstellungen ändern. AUTO bevorzugt FTPS; Klartext-FTP wird beim Verbindungstest ausdrücklich ausgewiesen.</p>
           </div>
         </aside>
       )}

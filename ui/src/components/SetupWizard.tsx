@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
+import BackupSettings, { loadBackupSettings, saveBackupSettings, type BackupOptions, type Credentials, type Settings } from "./BackupSettings";
 
 export interface SetupCandidate {
   path: string;
@@ -54,6 +55,14 @@ export default function SetupWizard({ state, host, onComplete }: {
   const [port, setPort] = useState("2063");
   const [ntfy, setNtfy] = useState(state.ntfy);
   const [minimize, setMinimize] = useState(false);
+  const [backupSettings, setBackupSettings] = useState<Settings | null>(null);
+  const [credentials, setCredentials] = useState<Credentials>({ username: "", password: "", passwordSet: false });
+  const [backupOptions, setBackupOptions] = useState<BackupOptions>({ paths: ["world"], keep: 5 });
+  const [schedule, setSchedule] = useState(false);
+  const [backupTime, setBackupTime] = useState("05:00");
+  const [scheduleId] = useState(() => `onboarding-${globalThis.crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2, 14)}`);
+  const [scheduleCreated, setScheduleCreated] = useState(false);
+  const [backupTest, setBackupTest] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const availableCandidates = action === "import"
@@ -61,7 +70,14 @@ export default function SetupWizard({ state, host, onComplete }: {
     : state.candidates;
   const candidate = availableCandidates.find((item) => item.path === selected);
   const path = action === "new" ? directory.trim() : selected;
-  const labels = ["Ausgangslage", "Server", "Benachrichtigungen", "Host", "Prüfen"];
+  const labels = ["Ausgangslage", "Server", "Backups", "Benachrichtigungen", "Host", "Prüfen"];
+  useEffect(() => {
+    loadBackupSettings().then(({ settings, credentials: loaded, options }) => {
+      setBackupSettings(settings);
+      setCredentials(loaded);
+      setBackupOptions(options);
+    }).catch((cause) => setError(cause instanceof Error ? cause.message : "Backup-Einstellungen konnten nicht geladen werden."));
+  }, []);
   const actionLabels: Record<Action, string> = {
     new: "Neuen Server erstellen",
     attach: "Vorhandenen Server einbinden",
@@ -98,7 +114,11 @@ export default function SetupWizard({ state, host, onComplete }: {
         return;
       }
     }
-    if (step === 2 && ntfy.enabled && (!ntfy.server.trim() || !ntfy.topic.trim())) {
+    if (step === 2 && (!backupSettings || (schedule && !/^\d{2}:\d{2}$/.test(backupTime)))) {
+      setError("Bitte prüfe die Backup-Einstellungen und die Uhrzeit.");
+      return;
+    }
+    if (step === 3 && ntfy.enabled && (!ntfy.server.trim() || !ntfy.topic.trim())) {
       setError("Bitte gib den ntfy-Server und ein Thema an oder deaktiviere die Benachrichtigungen.");
       return;
     }
@@ -113,41 +133,55 @@ export default function SetupWizard({ state, host, onComplete }: {
       const name = path.split(/[\\/]/).filter(Boolean).at(-1) || path;
       if (action === "delete" || action === "reset") {
         const required = action === "delete" ? `DELETE ${name}` : `ARCHIVIEREN ${name}`;
-        const typed = await window.dashboardUi?.prompt({
+        const accepted = await window.dashboardUi?.confirm({
           title: action === "delete" ? "Server endgültig löschen?" : "Serverordner archivieren?",
           description: action === "delete"
             ? `Der gesamte Ordner ${path} einschließlich Welten und Spielerdaten wird unwiderruflich gelöscht.`
             : `Der gesamte Ordner ${path} wird archiviert. Am ursprünglichen Pfad wird ein neuer Server eingerichtet.`,
-          placeholder: required,
-          requiredValue: required,
           confirmLabel: action === "delete" ? "Endgültig löschen" : "Archivieren",
           destructive: true,
         });
-        if (typed !== required) return;
-        confirm = typed;
+        if (!accepted) return;
+        confirm = required;
       } else if (action === "import" && !candidate?.legacyVersion) {
-        const typed = await window.dashboardUi?.prompt({
+        const accepted = await window.dashboardUi?.confirm({
           title: "Alte Plugin-Version bestätigen",
           description: "Die alte Version konnte nicht festgestellt werden. Importiere nur, wenn die Konfiguration aus ServerHoster 1.10.1 oder neuer stammt.",
-          placeholder: "IMPORT 1.10.1+",
-          requiredValue: "IMPORT 1.10.1+",
           confirmLabel: "Version bestätigen",
         });
-        if (typed !== "IMPORT 1.10.1+") return;
-        confirm = typed;
+        if (!accepted) return;
+        confirm = "IMPORT 1.10.1+";
       }
       let minimizeConfirmation = "";
       if (minimize) {
         const required = host?.confirmation || "HOST MINIMIEREN";
-        const typed = await window.dashboardUi?.prompt({
+        const accepted = await window.dashboardUi?.confirm({
           title: "Host-Minimierung vorbereiten?",
           description: "Die Host-Einstellungen werden gesichert und minimiert. Welten, Child-Daten und Backups werden nicht gelöscht. Anschließend ist ein Host-Neustart im Panel nötig.",
-          placeholder: required,
-          requiredValue: required,
           confirmLabel: "Minimierung bestätigen",
         });
-        if (typed !== required) return;
-        minimizeConfirmation = typed;
+        if (!accepted) return;
+        minimizeConfirmation = required;
+      }
+      if (!backupSettings) throw new Error("Backup-Einstellungen wurden nicht geladen.");
+      const createSchedule = async () => {
+        if (!schedule || scheduleCreated) return;
+        const [hour, minute] = backupTime.split(":").map(Number);
+        await dashboardRequest("/api/schedules", {
+          method: "POST",
+          body: jsonBody({
+            id: scheduleId, name: "Tägliches Backup", enabled: true, interval: "DAILY",
+            intervalValue: hour, timeValue: minute,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC",
+            actions: [{ id: `${scheduleId}-backup`, type: "backup", command: "" }],
+          }),
+        });
+        setScheduleCreated(true);
+      };
+      if (action !== "import") {
+        await saveBackupSettings(backupSettings, credentials, backupOptions);
+        if (backupSettings.backupStorage === "remote") setCredentials({ ...credentials, password: "", passwordSet: true });
+        await createSchedule();
       }
       const result = await dashboardRequest<{ warning?: string }>("/api/setup", {
         method: "POST",
@@ -155,6 +189,27 @@ export default function SetupWizard({ state, host, onComplete }: {
       });
       let notice = result.warning ?? "Einrichtung gespeichert. Der Child kann jetzt gestartet werden.";
       let warning = !!result.warning;
+      if (action === "import") {
+        try {
+          const current = await loadBackupSettings();
+          await saveBackupSettings({
+            ...current.settings,
+            backupStorage: backupSettings.backupStorage,
+            backupProtocol: backupSettings.backupProtocol,
+            backupHost: backupSettings.backupHost,
+            backupPort: backupSettings.backupPort,
+            backupDirectory: backupSettings.backupDirectory,
+          }, {
+            ...credentials,
+            passwordSet: current.credentials.passwordSet,
+            username: credentials.username || current.credentials.username,
+          }, backupOptions);
+          await createSchedule();
+        } catch (cause) {
+          warning = true;
+          notice += ` Backup-Einrichtung konnte nach dem Import nicht vollständig gespeichert werden: ${cause instanceof Error ? cause.message : String(cause)}. Bitte unter Einstellungen und Aufgaben prüfen.`;
+        }
+      }
       if (minimizeConfirmation) {
         try {
           const minimized = await dashboardRequest<{ message?: string }>("/api/host-minimize", {
@@ -183,21 +238,19 @@ export default function SetupWizard({ state, host, onComplete }: {
 
   const runFirstSetup = async () => {
     const required = host?.firstSetupConfirmation || "HOST GRUNDSETUP";
-    const typed = await window.dashboardUi?.prompt({
+    const accepted = await window.dashboardUi?.confirm({
       title: "Einmalige Host-Grundeinrichtung ausführen?",
       description: "Erkannte äußere Minecraft-Welten werden unwiderruflich gelöscht und andere Host-Plugin-JARs deaktiviert. Child-Daten, Konfiguration und Backups bleiben erhalten. Der Host fährt herunter und muss nach der Bestätigung und nach der Vorbereitung im Panel gestartet werden. Noch nicht gespeicherte Eingaben in diesem Assistenten gehen verloren.",
-      placeholder: required,
-      requiredValue: required,
       confirmLabel: "Host-Grundeinrichtung starten",
       destructive: true,
     });
-    if (typed !== required) return;
+    if (!accepted) return;
     setBusy(true);
     setError("");
     try {
       await dashboardRequest("/api/host-first-setup", {
         method: "POST",
-        body: jsonBody({ confirm: typed }),
+        body: jsonBody({ confirm: required }),
       });
       window.dashboardUi?.notify("Der Host fährt herunter. Bitte folge den Neustart-Hinweisen im Panel.");
     } catch (cause) {
@@ -257,6 +310,30 @@ export default function SetupWizard({ state, host, onComplete }: {
           <p className="muted">Der Spielport muss beim Hoster freigegeben sein und sich vom Host- und Dashboard-Port unterscheiden.</p>
         </>}
         {step === 2 && <>
+          <h2>Backups einrichten</h2>
+          <p>Wähle ein Speicherziel und die Dateien, die gesichert werden sollen.</p>
+          {backupSettings && <BackupSettings settings={backupSettings} credentials={credentials} options={backupOptions} onSettings={setBackupSettings} onCredentials={setCredentials} onOptions={setBackupOptions} />}
+          <label className="setup-checkbox"><input type="checkbox" checked={schedule} disabled={scheduleCreated} onChange={(event) => setSchedule(event.target.checked)} /> Tägliches automatisches Backup einrichten</label>
+          {schedule && <label>Uhrzeit ({Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC"})
+            <input type="time" value={backupTime} disabled={scheduleCreated} onChange={(event) => setBackupTime(event.target.value)} />
+          </label>}
+          <p className="muted">Geplante Backups warten auf einen leeren Server und stoppen den Child für die Sicherung. Ohne Zeitplan erfolgen Backups nur manuell.</p>
+          {action === "import" && <p className="muted">Beim Import wird das Backupziel erst nach Übernahme der alten Daten gespeichert. Teste es danach unter „Backups“.</p>}
+          <button className="btn" type="button" disabled={busy || !backupSettings || action === "import"} onClick={() => void (async () => {
+            if (!backupSettings) return;
+            setBusy(true); setError(""); setBackupTest("");
+            try {
+              await saveBackupSettings(backupSettings, credentials, backupOptions);
+              if (backupSettings.backupStorage === "remote") setCredentials({ ...credentials, password: "", passwordSet: true });
+              const result = await dashboardRequest<{ transport: string }>("/api/backup/test", { method: "POST" });
+              setBackupTest(`Zieltest: ${result.transport}. Die Backup-Einstellungen wurden gespeichert.`);
+            } catch (cause) {
+              setError(cause instanceof Error ? cause.message : "Backupziel konnte nicht getestet werden.");
+            } finally { setBusy(false); }
+          })()}>Einstellungen speichern und Ziel testen</button>
+          {backupTest && <p role="status">{backupTest}</p>}
+        </>}
+        {step === 3 && <>
           <h2>Benachrichtigungen</h2>
           <p>Optional kannst du Warnungen und Wiederherstellungsmeldungen über ntfy erhalten. Das lässt sich später ändern.</p>
           <label className="setup-checkbox"><input type="checkbox" checked={ntfy.enabled}
@@ -267,7 +344,7 @@ export default function SetupWizard({ state, host, onComplete }: {
           </div>}
           {ntfy.enabled && <p className="muted">Ein optionales Zugangstoken bleibt in der lokalen secrets.yml.</p>}
         </>}
-        {step === 3 && <>
+        {step === 4 && <>
           <h2>Äußeren Host vorbereiten</h2>
           <p>ServerHoster läuft auf einem äußeren Spigot-Host. Dessen Einstellungen können unabhängig vom Child minimiert werden.</p>
           <label className="setup-checkbox"><input type="checkbox" checked={minimize}
@@ -280,13 +357,15 @@ export default function SetupWizard({ state, host, onComplete }: {
           </div>}
           {host?.firstSetupStatus === "restart-required" && <p>Die einmalige Grundeinrichtung wartet auf einen Host-Neustart im Panel.</p>}
         </>}
-        {step === 4 && <>
+        {step === 5 && <>
           <h2>Alles prüfen</h2>
           <dl className="onboarding-summary">
             <dt>Vorhaben</dt><dd>{actionLabels[action]}</dd>
             <dt>Serverordner</dt><dd>{path}</dd>
             <dt>Server</dt><dd>{action === "import" ? "Aus alter Konfiguration" : `${type} ${mcVersion} · Port ${port}`}</dd>
             <dt>Benachrichtigungen</dt><dd>{ntfy.enabled ? `ntfy · ${ntfy.server} · ${ntfy.topic}` : "Ausgeschaltet"}</dd>
+            <dt>Backups</dt><dd>{backupSettings?.backupStorage === "remote" ? `FTP/FTPS · ${backupSettings.backupHost}` : "Lokal"} · {schedule ? `täglich ${backupTime}` : "nur manuell"}</dd>
+            <dt>Backup-Pfade</dt><dd>{backupOptions.paths.join(", ")} · {backupOptions.keep === 0 ? "unbegrenzt" : `${backupOptions.keep} Backups behalten`}</dd>
             <dt>Host-Minimierung</dt><dd>{minimize ? "Nach Bestätigung vorbereiten" : "Unverändert lassen"}</dd>
           </dl>
           <p>{descriptions[action]} Beim Speichern wird noch kein Server-JAR heruntergeladen oder Child gestartet.</p>
@@ -295,7 +374,7 @@ export default function SetupWizard({ state, host, onComplete }: {
         {error && <p className="workflow-error" role="alert">{error}</p>}
         <div className="onboarding-actions">
           {step > 0 && <button className="btn" type="button" disabled={busy} onClick={() => { setError(""); setStep(step - 1); }}>Zurück</button>}
-          {step < 4
+          {step < 5
             ? <button className="btn pri" type="button" disabled={busy} onClick={next}>Weiter</button>
             : <button className="btn pri" type="button" disabled={busy} onClick={() => void finish()}>{busy ? "Speichere …" : "Einrichtung abschließen"}</button>}
         </div>

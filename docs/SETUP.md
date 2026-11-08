@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.2.0.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.3.0.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Bei einer Neuinstallation ohne vorhandene
    ServerHoster-Daten führt das Plugin die einmalige Host-Grundeinrichtung
@@ -35,15 +35,19 @@ geladen oder gebaut, wenn sie noch fehlen.
    starte ihn im Hosting-Panel erneut. Child-Server,
    ServerHoster-Konfiguration, Dashboard-Passwort und Backups bleiben erhalten.
    Bei einem Fehler wird der Schritt beim nächsten Start wiederholt. Das Plugin
-   legt außerdem
-   `plugins/ServerhosterPlugin/` an und startet das Dashboard. Beim ersten
-   Start wird das Dashboard-Passwort in `dashboard-password.txt` gespeichert
-   und im Log ausgegeben.
-3. Das Dashboard über den konfigurierten Port öffnen und anmelden. Solange
+   legt außerdem `plugins/ServerhosterPlugin/` an und startet das Dashboard.
+3. Das Dashboard über den konfigurierten Port öffnen. Beim ersten Zugriff den
+   einmaligen Einrichtungscode aus dem aktuellen Host-Log eingeben und ein
+   Passwort festlegen oder sicher erzeugen lassen. Der Code ändert sich bei
+   jedem Host-Neustart und erlischt nach erfolgreicher Passwortvergabe. Das
+   Passwort wird lokal in `dashboard-password.txt` gespeichert und nicht
+   im Log ausgegeben. Vor der Passwortvergabe sind Verwaltungsfunktionen
+   gesperrt. Bestehende Dashboard-Passwörter bleiben unverändert. Solange
    die Einrichtung nicht abgeschlossen ist, öffnet sich das Onboarding
    automatisch. Wähle je nach Situation einen neuen Child, einen erkannten
    vorhandenen Child oder einen unterstützten Import. Der Assistent fragt
-   optional nach ntfy und der Host-Minimierung und zeigt vor dem Speichern
+   nach Backupziel, zu sichernden Pfaden, optionalem Backup-Zeitplan, ntfy
+   und der Host-Minimierung und zeigt vor dem Speichern
    eine Zusammenfassung. Vor der Bestätigung startet kein Child automatisch.
    Eine Übersicht aller Wege enthält [ONBOARDING.md](ONBOARDING.md).
 4. Für einen neuen Server Typ, Minecraft-Version, Child-Ordner und Spielport
@@ -92,6 +96,15 @@ Schlüssel, Secrets und Passwortdateien gehören nicht in die Versionsverwaltung
   ausschließlich externe Backup-Metadaten; es wird keine Datenbank installiert.
   Die temporäre Minecraft-Datei `session.lock` einer Welt wird nicht archiviert;
   sie wird beim nächsten Serverstart neu angelegt.
+- Backupziel, FTP-Benutzername und Passwort, Pfade und Aufbewahrung lassen
+  sich im Onboarding und unter „Einstellungen“ ändern. Ein gespeichertes
+  Passwort wird nicht erneut angezeigt; ein leeres Passwortfeld behält es.
+  Zugangsdaten werden in `secrets.yml` gespeichert. Dashboard-HTTP und
+  unverschlüsseltes FTP übertragen Zugangsdaten ungeschützt; FTPS und
+  Dashboard-HTTPS sind empfohlen. AUTO kann auf FTP zurückfallen.
+- Das Testen des Backupziels im Onboarding speichert die Backup-Einstellungen
+  bereits vor Abschluss der übrigen Einrichtung. Bei Legacy-Importen ist der
+  Zieltest nach dem Import unter „Backups“ verfügbar.
 - Stunden-, Tages- und Wochenpläne unterstützen geordnete Befehls- und
   Backup-Aktionen. Die Pläne werden in `config.yml` gespeichert.
 - ntfy ist optional und bleibt deaktiviert, solange es nicht ausdrücklich

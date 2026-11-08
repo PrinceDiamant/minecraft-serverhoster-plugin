@@ -1,4 +1,4 @@
-# ServerHoster 2.2.0 – Betrieb und Konfiguration
+# ServerHoster 2.3.0 – Betrieb und Konfiguration
 
 ServerHoster ist ein Spigot-26.3-Plugin für Java 25. Es verwaltet genau einen
 separaten Child-Serverprozess und stellt ein Web-Dashboard bereit. Das Plugin
@@ -76,13 +76,21 @@ Plugins, Logs oder Backups und startet den Host nicht neu. `-Xmx` bleibt.
 
 ## Dashboard
 
-Das Dashboard-Passwort liegt in
-`plugins/ServerhosterPlugin/dashboard-password.txt`. Das Dashboard bietet
+Bei der Ersteinrichtung wird ein einmaliger Code im Host-Log ausgegeben. Mit
+diesem Code wird im Dashboard ein Passwort gesetzt oder sicher erzeugt.
+Der Code gilt nur bis zum nächsten Host-Neustart oder zur Passwortvergabe;
+vorher sind Verwaltungsfunktionen gesperrt. Das Passwort liegt in
+`plugins/ServerhosterPlugin/dashboard-password.txt`. Vorhandene Passwörter
+bleiben beim Upgrade erhalten. Das Dashboard bietet
 Child-Status, Start/Stop/Neustart, Konsole, Spielerverwaltung, Datei- und
 Logzugriff, rohe Konfigurationseditoren, Diagnose, Backup-Verwaltung,
 Zeitpläne, selten geänderte Einstellungen und Versionsinformationen. Der
-Einstellungen-Tab bündelt Restart-Grenzen sowie FTP/FTPS-Verbindungsdaten;
-Zugangsdaten bleiben in der lokalen `secrets.yml`.
+Einstellungen-Tab bündelt Restart-Grenzen sowie Backupziel, -pfade,
+Aufbewahrung und FTP/FTPS-Zugangsdaten. Das Passwort kann im Dashboard gesetzt
+werden, wird anschließend nicht mehr angezeigt und liegt lokal in
+`secrets.yml`. Eine leere Passworteingabe behält das bisherige Passwort.
+Bei Dashboard-HTTP werden neue Zugangsdaten unverschlüsselt zum Dashboard
+übertragen; AUTO kann auf unverschlüsseltes FTP zurückfallen.
 
 In nicht vertrauenswürdigen Netzwerken HTTPS verwenden. Unterstützt werden
 selbstsignierte Zertifikate, vorhandene PKCS12-/JKS-Keystores und PEM-Dateien.

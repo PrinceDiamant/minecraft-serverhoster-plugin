@@ -1,5 +1,18 @@
 # Release notes
 
+## ServerHoster 2.3.0
+
+- Set the dashboard password during initial onboarding using a one-time code
+  from the host log, with optional secure password generation.
+- Fix overlapping schedule controls on narrow cards.
+- Configure backup destinations, credentials, paths, retention and an optional
+  daily schedule during onboarding and in the dashboard.
+- Explain diagnostic readings and actions, keeping advanced data available.
+- Replace typed dashboard confirmations with explicit confirmation dialogs.
+
+Testing limitations: a real external FTP/FTPS destination and a full remote
+backup upload were not tested end-to-end.
+
 ## ServerHoster 2.2.0
 
 - Guide first-time setup through a contextual onboarding flow for new servers,

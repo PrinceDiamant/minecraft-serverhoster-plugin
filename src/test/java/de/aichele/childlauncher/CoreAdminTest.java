@@ -27,6 +27,54 @@ import static org.junit.jupiter.api.Assertions.*;
 class CoreAdminTest {
     @TempDir Path tmp;
 
+    @Test void dashboardPasswordSetupPreservesExistingAndFailsClosed() throws Exception {
+        Path file = tmp.resolve("dashboard-password.txt");
+        assertNull(DashboardPassword.read(file, true));
+        assertThrows(java.io.IOException.class, () -> DashboardPassword.read(file, false));
+        assertThrows(IllegalArgumentException.class, () -> DashboardPassword.create(file, "short"));
+        assertThrows(IllegalArgumentException.class, () -> DashboardPassword.create(file, " long-password "));
+        assertThrows(IllegalArgumentException.class, () -> DashboardPassword.create(file, "password\nline"));
+        assertFalse(Files.exists(file));
+        DashboardPassword.create(file, "my-secure-password");
+        assertEquals("my-secure-password", DashboardPassword.read(file, false));
+        assertThrows(java.nio.file.FileAlreadyExistsException.class, () -> DashboardPassword.create(file, "replacement-password"));
+        assertEquals("my-secure-password", DashboardPassword.read(file, true));
+        if (Files.getFileStore(tmp).supportsFileAttributeView("posix"))
+            assertEquals(java.nio.file.attribute.PosixFilePermissions.fromString("rw-------"), Files.getPosixFilePermissions(file));
+        Files.writeString(file, "");
+        assertThrows(java.io.IOException.class, () -> DashboardPassword.read(file, true));
+    }
+
+    @Test void dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead() throws Exception {
+        assertEquals("", BackupSecrets.readExisting(tmp).username());
+        assertFalse(Files.exists(tmp.resolve("secrets.yml")));
+        Files.writeString(tmp.resolve("secrets.yml"), "notifications:\n  ntfy:\n    token: token-to-preserve\nother: value\n");
+        BackupSecrets.saveFtp(tmp, "user", "first-password");
+        BackupSecrets.Credentials first = BackupSecrets.readExisting(tmp);
+        assertEquals("user", first.username());
+        assertEquals("first-password", first.password());
+        assertEquals("token-to-preserve", first.ntfyToken());
+        BackupSecrets.saveFtp(tmp, "new-user", null);
+        assertEquals("first-password", BackupSecrets.load(tmp).password());
+        BackupSecrets.saveFtp(tmp, "new-user", "new-password");
+        assertEquals("new-password", BackupSecrets.load(tmp).password());
+        assertTrue(Files.readString(tmp.resolve("secrets.yml")).contains("other: value"));
+        assertThrows(IllegalArgumentException.class, () -> BackupSecrets.saveFtp(tmp, "user\nbad", "pass"));
+        assertEquals("new-password", BackupSecrets.load(tmp).password());
+        if (Files.getFileStore(tmp).supportsFileAttributeView("posix"))
+            assertEquals(java.nio.file.attribute.PosixFilePermissions.fromString("rw-------"),
+                    Files.getPosixFilePermissions(tmp.resolve("secrets.yml")));
+    }
+
+    @Test void backupOptionsRejectInvalidPathsAndRetention() {
+        assertEquals(List.of("world", "mods"), new BackupOptions(List.of("world", "mods"), 5).paths());
+        assertEquals(0, new BackupOptions(List.of("world"), 0).keep());
+        assertThrows(IllegalArgumentException.class, () -> new BackupOptions(List.of(), 5));
+        assertThrows(IllegalArgumentException.class, () -> new BackupOptions(List.of("../outside"), 5));
+        assertThrows(IllegalArgumentException.class, () -> new BackupOptions(List.of("C:\\outside"), 5));
+        assertThrows(IllegalArgumentException.class, () -> new BackupOptions(List.of("world"), -1));
+    }
+
     @Test void backoffCapsAndDoesNotOverflow() {
         assertEquals(5, RestartBackoff.delaySeconds(5, 300, 0));
         assertEquals(10, RestartBackoff.delaySeconds(5, 300, 1));

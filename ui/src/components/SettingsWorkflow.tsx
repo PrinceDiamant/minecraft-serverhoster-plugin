@@ -1,19 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { ArrowClockwise, CheckCircle, FloppyDisk, ShieldWarning } from "@phosphor-icons/react";
-import { dashboardRequest, jsonBody } from "../lib/hostApi";
-
-interface Settings {
-  autoRestartEnabled: boolean;
-  maxRestartAttempts: number;
-  initialRestartDelaySeconds: number;
-  maximumRestartDelaySeconds: number;
-  restartResetAfterSeconds: number;
-  backupStorage: "local" | "remote";
-  backupProtocol: "AUTO" | "FTP" | "FTPS";
-  backupHost: string;
-  backupPort: number;
-  backupDirectory: string;
-}
+import { ArrowClockwise, FloppyDisk, ShieldWarning } from "@phosphor-icons/react";
+import BackupSettings, { loadBackupSettings, saveBackupSettings, type BackupOptions, type Credentials, type Settings } from "./BackupSettings";
 
 const defaults: Settings = {
   autoRestartEnabled: true,
@@ -30,6 +17,9 @@ const defaults: Settings = {
 
 export default function SettingsWorkflow() {
   const [settings, setSettings] = useState<Settings>(defaults);
+  const [credentials, setCredentials] = useState<Credentials>({ username: "", password: "", passwordSet: false });
+  const [options, setOptions] = useState<BackupOptions>({ paths: ["world"], keep: 5 });
+  const [loaded, setLoaded] = useState(false);
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -38,7 +28,11 @@ export default function SettingsWorkflow() {
     setLoading(true);
     setError("");
     try {
-      setSettings(await dashboardRequest<Settings>("/api/settings"));
+      const loaded = await loadBackupSettings();
+      setSettings(loaded.settings);
+      setCredentials(loaded.credentials);
+      setOptions(loaded.options);
+      setLoaded(true);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Einstellungen konnten nicht geladen werden.");
     } finally {
@@ -61,11 +55,11 @@ export default function SettingsWorkflow() {
     setSaving(true);
     setError("");
     try {
-      const result = await dashboardRequest<{ settings: Settings }>("/api/settings", {
-        method: "POST",
-        body: jsonBody(settings),
-      });
-      setSettings(result.settings);
+      await saveBackupSettings(settings, credentials, options);
+      const loaded = await loadBackupSettings();
+      setSettings(loaded.settings);
+      setCredentials(loaded.credentials);
+      setOptions(loaded.options);
       window.dashboardUi?.notify("Einstellungen gespeichert.");
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Einstellungen konnten nicht gespeichert werden.");
@@ -85,7 +79,7 @@ export default function SettingsWorkflow() {
           <button className="btn" disabled={loading || saving} onClick={() => void refresh()} type="button">
             <ArrowClockwise size={17} /> Aktualisieren
           </button>
-          <button className="btn pri" disabled={loading || saving} onClick={() => void save()} type="button">
+          <button className="btn pri" disabled={!loaded || loading || saving} onClick={() => void save()} type="button">
             <FloppyDisk size={17} /> {saving ? "Speichere …" : "Speichern"}
           </button>
         </div>
@@ -125,34 +119,8 @@ export default function SettingsWorkflow() {
       </section>
 
       <section className="setup-card-list">
-        <h3>FTP/FTPS-Backupziel</h3>
-        <p className="muted">Passwort und Benutzername werden nicht über das Dashboard übertragen. Sie bleiben lokal in <code>plugins/ServerhosterPlugin/secrets.yml</code>.</p>
-        <div className="setup-form-grid">
-          <label>Speicherziel
-            <select value={settings.backupStorage} onChange={(event) => update("backupStorage", event.target.value as Settings["backupStorage"])}>
-              <option value="local">Lokal</option>
-              <option value="remote">FTP/FTPS</option>
-            </select>
-          </label>
-          <label>Protokoll
-            <select value={settings.backupProtocol} onChange={(event) => update("backupProtocol", event.target.value as Settings["backupProtocol"])}>
-              <option value="AUTO">AUTO (FTPS bevorzugen)</option>
-              <option value="FTPS">FTPS erzwingen</option>
-              <option value="FTP">Unverschlüsseltes FTP</option>
-            </select>
-          </label>
-          <label>FTP-Server
-            <input value={settings.backupHost} onChange={(event) => update("backupHost", event.target.value)} placeholder="ftp.example.net" />
-          </label>
-          <label>Port
-            <input type="number" min="1" max="65535" value={settings.backupPort}
-              onChange={(event) => update("backupPort", Number(event.target.value))} />
-          </label>
-          <label>Verzeichnis
-            <input value={settings.backupDirectory} onChange={(event) => update("backupDirectory", event.target.value)} />
-          </label>
-        </div>
-        <p className="muted"><CheckCircle size={15} /> FTP-Zugangsdaten bleiben getrennt von config.yml. Unverschlüsseltes FTP überträgt Zugangsdaten und Daten im Klartext.</p>
+        <h3>Backupziel</h3>
+        <BackupSettings settings={settings} credentials={credentials} options={options} onSettings={setSettings} onCredentials={setCredentials} onOptions={setOptions} />
       </section>
     </section>
   );

@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart TD
-    A[Dashboard anmelden] --> B{Einrichtung abgeschlossen?}
+    A[Erstzugriff: Log-Code prüfen und Passwort setzen; sonst anmelden] --> B{Einrichtung abgeschlossen?}
     B -- Ja --> Z[Dashboard und Host-Verwaltung]
     B -- Nein --> C[Onboarding: Ausgangslage wählen]
     C --> N[Neuer Child: Ordner, Typ, Version, Port]
@@ -16,9 +16,13 @@ flowchart TD
     I -->|Version unbekannt| V[Version 1.10.1+ ausdrücklich bestätigen]
     I -->|Version bekannt| T[Typ, Version und Port werden übernommen]
     V --> T
-    N --> O{ntfy gewünscht?}
-    F --> O
-    T --> O
+    N --> B1[Backupziel und Pfade wählen]
+    F --> B1
+    T --> B1
+    B1 -->|extern| B2[FTP/FTPS-Server und Zugangsdaten]
+    B1 -->|lokal| B3[Optionalen täglichen Backup-Zeitplan wählen]
+    B2 --> B3
+    B3 --> O{ntfy gewünscht?}
     O -- Ja --> P[HTTPS-Server und Thema eingeben]
     O -- Nein --> H
     P --> H[Host-Einstellungen]
@@ -27,7 +31,7 @@ flowchart TD
     G --> K[Host im Panel neu starten; Onboarding fortsetzen]
     H --> Q[Zusammenfassung prüfen]
     M --> Q
-    Q -->|Archivieren/Löschen| X[Exakte Sicherheitsbestätigung]
+    Q -->|Archivieren/Löschen| X[Warnung mit Bestätigung]
     Q -->|Import mit unbekannter Version| X
     Q -->|Host minimieren| X
     X --> S[Konfiguration speichern]
@@ -46,6 +50,6 @@ Ein Neustart muss im Hosting-Panel durchgeführt werden. Wird die Einrichtung
 während des Onboardings ausgelöst, gehen noch nicht gespeicherte Eingaben verloren.
 
 Der Assistent lädt keine Server-JARs herunter und startet den Child nicht.
-RAM, JVM-Flags, Backup-Zeitpläne und Child-`server.properties` können nach der
+RAM, JVM-Flags, weitere Backup-Zeitpläne und Child-`server.properties` können nach der
 Einrichtung im Dashboard angepasst werden; sie sind keine Voraussetzung für
 die Auswahl eines der bestehenden Einrichtungswege.

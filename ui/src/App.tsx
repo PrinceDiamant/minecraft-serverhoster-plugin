@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import type { FormEvent } from "react";
 import {
@@ -21,7 +21,7 @@ import { PlayerWorkflow } from "./components/PlayerWorkflow";
 import SetupWorkflow from "./components/SetupWorkflow";
 import SettingsWorkflow from "./components/SettingsWorkflow";
 import TaskWorkflow from "./components/TaskWorkflow";
-import type { ConfirmOptions, PromptOptions } from "./lib/hostApi";
+import { dashboardRequest, jsonBody, type ConfirmOptions, type PromptOptions } from "./lib/hostApi";
 import legacyDashboardHtml from "../../src/main/resources/web/index.html?raw";
 
 declare global {
@@ -34,6 +34,7 @@ declare global {
       notify: (message: string, error?: boolean) => void;
     };
     doLogin?: () => void;
+    start?: () => void;
     logout?: () => void;
     showLogin?: () => void;
     tab?: (tab: string) => void;
@@ -121,12 +122,25 @@ export default function App() {
   const [activeTab, setActiveTab] = useState("status");
   const [setupRequired, setSetupRequired] = useState(false);
   const [authReady, setAuthReady] = useState(false);
+  const [passwordSetup, setPasswordSetup] = useState<boolean | null>(null);
+  const [setupCode, setSetupCode] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
+  const [passwordBusy, setPasswordBusy] = useState(false);
   const setupRequiredRef = useRef(false);
   const [dialog, setDialog] = useState<WorkflowDialog | null>(null);
   const [dialogValue, setDialogValue] = useState("");
   const pendingDialog = useRef<((value: boolean | string | null) => void) | null>(null);
   const activePage =
     groups.flatMap((group) => group.items).find((item) => item.id === activeTab)?.label ?? "Übersicht";
+
+  useEffect(() => {
+    dashboardRequest<{ passwordSetupRequired: boolean }>("/api/auth-state")
+      .then((state) => setPasswordSetup(state.passwordSetupRequired))
+      .catch((cause) => setPasswordError(cause instanceof Error ? cause.message : "Dashboard-Status konnte nicht geladen werden."));
+  }, []);
 
   useLayoutEffect(() => {
     document.getElementById("app")?.classList.toggle("onboarding-active", setupRequired);
@@ -221,6 +235,44 @@ export default function App() {
     closeDialog(true);
   };
 
+  const generatePassword = () => {
+    if (!globalThis.crypto?.getRandomValues) {
+      setPasswordError("Sichere Passworterzeugung ist in diesem Browser nicht verfügbar.");
+      return;
+    }
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+    const bytes = globalThis.crypto.getRandomValues(new Uint8Array(24));
+    const generated = Array.from(bytes, (value) => alphabet[value & 63]).join("");
+    setNewPassword(generated);
+    setPasswordConfirmation(generated);
+    setShowPassword(true);
+    setPasswordError("");
+  };
+
+  const savePassword = async () => {
+    if (newPassword !== passwordConfirmation) {
+      setPasswordError("Die Passwörter stimmen nicht überein.");
+      return;
+    }
+    setPasswordBusy(true);
+    setPasswordError("");
+    try {
+      await dashboardRequest("/api/password-setup", {
+        method: "POST",
+        body: jsonBody({ code: setupCode.trim(), password: newPassword }),
+      });
+      setPasswordSetup(false);
+      setSetupCode("");
+      setNewPassword("");
+      setPasswordConfirmation("");
+      window.start?.();
+    } catch (cause) {
+      setPasswordError(cause instanceof Error ? cause.message : "Passwort konnte nicht gespeichert werden.");
+    } finally {
+      setPasswordBusy(false);
+    }
+  };
+
   return (
     <>
       <section id="login" className="login-screen">
@@ -228,12 +280,28 @@ export default function App() {
           className="login-card"
           onSubmit={(event) => {
             event.preventDefault();
-            window.doLogin?.();
+            if (passwordSetup) void savePassword();
+            else window.doLogin?.();
           }}
         >
           <div className="brand-mark login-mark">SH</div>
           <p className="eyebrow">SERVERHOSTER</p>
-          <h1>Anmelden</h1>
+          <h1>{passwordSetup ? "Dashboard einrichten" : "Anmelden"}</h1>
+          {passwordSetup ? <>
+            <p className="login-description">Erster Einrichtungsschritt: Gib den einmaligen Code aus dem Server-Log ein und lege dein Dashboard-Passwort fest. Der Code ändert sich bei einem Host-Neustart.</p>
+            {location.protocol !== "https:" && <p className="login-description">Achtung: Über HTTP werden Code und Passwort unverschlüsselt übertragen. Verwende ein vertrauenswürdiges Netzwerk oder HTTPS.</p>}
+            <label htmlFor="setup-code">Einrichtungscode aus dem Server-Log</label>
+            <input id="setup-code" autoComplete="off" value={setupCode} onChange={(event) => setSetupCode(event.target.value)} />
+            <label htmlFor="new-password">Neues Passwort (mindestens 12 Zeichen)</label>
+            <input id="new-password" type={showPassword ? "text" : "password"} autoComplete="new-password" value={newPassword} onChange={(event) => setNewPassword(event.target.value)} />
+            <button className="btn" type="button" onClick={generatePassword}>Sicheres Passwort erzeugen</button>
+            {showPassword && <p className="login-hint">Das erzeugte Passwort ist sichtbar. Bitte sicher speichern, bevor du fortfährst.</p>}
+            <label htmlFor="confirm-password">Passwort wiederholen</label>
+            <input id="confirm-password" type="password" autoComplete="new-password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} />
+            <button className="btn pri login-button" type="submit" disabled={!authReady || passwordBusy}>
+              {passwordBusy ? "Speichere …" : "Passwort setzen und fortfahren"}
+            </button>
+          </> : <>
           <p className="login-description">Melde dich an, um deinen Server zu verwalten.</p>
           <label htmlFor="pw">Dashboard-Passwort</label>
           <input
@@ -243,13 +311,12 @@ export default function App() {
             autoComplete="current-password"
             autoFocus
           />
-          <button className="btn pri login-button" type="submit" disabled={!authReady}>
+          <button className="btn pri login-button" type="submit" disabled={!authReady || passwordSetup === null}>
             Sicher anmelden
           </button>
           <p id="lerr" className="login-error" role="alert" />
-          <p className="login-hint">
-            Passwort: <code>plugins/ServerhosterPlugin/dashboard-password.txt</code>
-          </p>
+          </>}
+          {passwordError && <p className="login-error" role="alert">{passwordError}</p>}
         </form>
       </section>
 

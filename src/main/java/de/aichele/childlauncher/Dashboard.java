@@ -33,7 +33,8 @@ final class Dashboard {
     private final Map<String, Long> lockedUntil = new ConcurrentHashMap<>();
     private HttpServer server;
     private ExecutorService pool;
-    private String password;
+    private volatile String password;
+    private String setupCode;
     private boolean tls;
     private volatile long lastCpuTicks = -1, lastCpuWall, lastCpuPid = -1;
     private volatile double lastCpuPct;
@@ -41,7 +42,14 @@ final class Dashboard {
     Dashboard(FabricLauncherPlugin pl) { this.pl = pl; }
 
     void start() throws Exception {
-        password = loadOrCreatePassword();
+        password = DashboardPassword.read(passwordFile(), pl.setupRequired());
+        if (password == null) {
+            byte[] code = new byte[16];
+            rnd.nextBytes(code);
+            setupCode = HexFormat.of().formatHex(code);
+            pl.getLogger().warning("Einmaliger Dashboard-Einrichtungscode: " + setupCode
+                    + " (nur bis zum nächsten Serverstart gültig; nicht weitergeben).");
+        }
         String bind = pl.getConfig().getString("dashboard.bind", "");
         if (bind == null || bind.isBlank()) bind = pl.getConfig().getString("serverIp", "");
         if (bind == null || bind.isBlank()) bind = "0.0.0.0";
@@ -88,25 +96,7 @@ final class Dashboard {
         if (pool != null) pool.shutdownNow();
     }
 
-    static String passwordCreatedMessage(Path file) {
-        return "Dashboard-Passwortdatei angelegt: " + file + ". Das Passwort steht nur in dieser Datei, nicht im Server-Log.";
-    }
-
-    private String loadOrCreatePassword() throws IOException {
-        Path f = pl.getDataFolder().toPath().resolve("dashboard-password.txt");
-        Files.createDirectories(f.getParent());
-        if (Files.exists(f)) {
-            String p = Files.readString(f).trim();
-            if (!p.isEmpty()) return p;
-        }
-        String chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 20; i++) sb.append(chars.charAt(rnd.nextInt(chars.length())));
-        Files.writeString(f, sb + "\n");
-        try { Files.setPosixFilePermissions(f, java.nio.file.attribute.PosixFilePermissions.fromString("rw-rw----")); } catch (Exception ignored) {}
-        pl.getLogger().warning(passwordCreatedMessage(f));
-        return sb.toString();
-    }
+    private Path passwordFile() { return pl.getDataFolder().toPath().resolve("dashboard-password.txt"); }
 
     // ---------------- routing ----------------
     private void handle(HttpExchange ex) throws IOException {
@@ -120,11 +110,19 @@ final class Dashboard {
             if (path.equals("/") || path.equals("/index.html")) { serveIndex(ex); return; }
             if (path.startsWith("/assets/") && method.equals("GET")) { serveWebAsset(ex, path.substring(1)); return; }
             if (path.equals("/third-party-notices") && method.equals("GET")) { serveThirdPartyNotices(ex); return; }
+            if (path.equals("/api/auth-state") && method.equals("GET")) {
+                ex.getResponseHeaders().set("Cache-Control", "no-store");
+                json(ex, 200, Map.of("passwordSetupRequired", password == null));
+                return;
+            }
+            if (path.equals("/api/password-setup") && method.equals("POST")) { setupPassword(ex); return; }
             if (path.equals("/api/login") && method.equals("POST")) { login(ex); return; }
             if (!path.startsWith("/api/")) { send(ex, 404, "text/plain", "Not found"); return; }
             if (!authed(ex)) { json(ex, 401, Map.of("error", "Nicht angemeldet")); return; }
             if (pl.setupRequired() && !path.equals("/api/status") && !path.equals("/api/setup")
                     && !path.startsWith("/api/setup/") && !path.equals("/api/host-first-setup")
+                    && !path.equals("/api/settings") && !path.equals("/api/backup/credentials") && !path.equals("/api/backup/options")
+                    && !path.equals("/api/backup/test") && !path.equals("/api/schedules")
                     && !(method.equals("GET") && path.equals("/api/host-minimize"))) {
                 json(ex, 409, Map.of("error", "Bitte zuerst die ServerHoster-Einrichtung abschließen."));
                 return;
@@ -170,6 +168,37 @@ final class Dashboard {
                 case "POST /api/config" -> saveConfig(ex);
                 case "GET /api/settings" -> json(ex, 200, pl.settingsView());
                 case "POST /api/settings" -> json(ex, 200, saveSettings(ex));
+                case "GET /api/backup/credentials" -> {
+                    BackupSecrets.Credentials credentials = BackupSecrets.readExisting(pl.getDataFolder().toPath());
+                    ex.getResponseHeaders().set("Cache-Control", "no-store");
+                    json(ex, 200, Map.of("username", credentials.username(), "passwordSet", !credentials.password().isEmpty()));
+                }
+                case "POST /api/backup/credentials" -> {
+                    JsonObject request = parseJsonObject(readBodyText(ex));
+                    String password = request.has("password") ? requiredString(request, "password") : null;
+                    BackupSecrets.saveFtp(pl.getDataFolder().toPath(), requiredString(request, "username"), password);
+                    json(ex, 200, Map.of("ok", true));
+                }
+                case "GET /api/backup/options" -> json(ex, 200, Map.of(
+                        "paths", pl.getConfig().getStringList("backup.paths"), "keep", pl.getConfig().getInt("backup.keep", 5)));
+                case "POST /api/backup/options" -> {
+                    JsonObject request = parseJsonObject(readBodyText(ex));
+                    if (!request.has("paths") || !request.get("paths").isJsonArray())
+                        throw new IllegalArgumentException("Backup-Pfade müssen eine Liste sein");
+                    List<String> paths = new ArrayList<>();
+                    for (JsonElement element : request.getAsJsonArray("paths")) {
+                        if (!element.isJsonPrimitive() || !element.getAsJsonPrimitive().isString())
+                            throw new IllegalArgumentException("Backup-Pfade müssen Zeichenketten sein");
+                        paths.add(element.getAsString());
+                    }
+                    BackupOptions options = new BackupOptions(paths, requiredInt(request, "keep"));
+                    synchronized (pl.configMutationLock()) {
+                        pl.getConfig().set("backup.paths", options.paths());
+                        pl.getConfig().set("backup.keep", options.keep());
+                        pl.saveConfigWritable();
+                    }
+                    json(ex, 200, Map.of("ok", true));
+                }
                 case "GET /api/players" -> players(ex, sid);
                 case "GET /api/fs/list" -> fsList(ex, q, sid);
                 case "GET /api/fs/read" -> fsRead(ex, q, sid);
@@ -243,19 +272,54 @@ final class Dashboard {
     // ---------------- auth ----------------
     private String ip(HttpExchange ex) { return ex.getRemoteAddress().getAddress().getHostAddress(); }
 
+    private void createSession(HttpExchange ex, long now) {
+        byte[] b = new byte[32]; rnd.nextBytes(b);
+        String tok = HexFormat.of().formatHex(b);
+        sessions.put(tok, now + SESSION_TTL);
+        sessions.entrySet().removeIf(e -> e.getValue() < now);
+        ex.getResponseHeaders().add("Set-Cookie", cookie(tok, SESSION_TTL / 1000));
+    }
+
+    private void setupPassword(HttpExchange ex) throws IOException {
+        if (csrfRejected("POST", ex.getRequestHeaders().getFirst("X-FL"))) {
+            json(ex, 403, Map.of("error", "CSRF")); return;
+        }
+        String client = ip(ex);
+        long now = System.currentTimeMillis();
+        Long until = lockedUntil.get(client);
+        if (until != null && until > now) { json(ex, 429, Map.of("error", "Zu viele Fehlversuche. Bitte später erneut versuchen.")); return; }
+        JsonObject request = parseJsonObject(readBodyText(ex));
+        String code = requiredString(request, "code");
+        String chosen = requiredString(request, "password");
+        synchronized (this) {
+            if (password != null || setupCode == null) {
+                json(ex, 409, Map.of("error", "Das Dashboard-Passwort wurde bereits eingerichtet.")); return;
+            }
+            if (!MessageDigest.isEqual(code.getBytes(StandardCharsets.UTF_8), setupCode.getBytes(StandardCharsets.UTF_8))) {
+                int n = fails.computeIfAbsent(client, k -> new int[1])[0] += 1;
+                if (n >= 5) lockedUntil.put(client, now + Math.min(3600_000L, 30_000L << Math.min(n - 5, 7)));
+                json(ex, 403, Map.of("error", "Einrichtungscode ist falsch.")); return;
+            }
+            DashboardPassword.create(passwordFile(), chosen);
+            password = chosen;
+            setupCode = null;
+            fails.remove(client); lockedUntil.remove(client);
+            createSession(ex, now);
+        }
+        pl.getLogger().info("Dashboard password configured from " + client);
+        json(ex, 200, Map.of("ok", true));
+    }
+
     private void login(HttpExchange ex) throws IOException {
         String ip = ip(ex);
         long now = System.currentTimeMillis();
         Long until = lockedUntil.get(ip);
         if (until != null && until > now) { json(ex, 429, Map.of("error", "Zu viele Fehlversuche. Bitte " + ((until - now) / 1000 + 1) + " s warten.")); return; }
         String pw = body(ex, o -> o.has("password") ? o.get("password").getAsString() : "");
-        if (MessageDigest.isEqual(pw.getBytes(StandardCharsets.UTF_8), password.getBytes(StandardCharsets.UTF_8))) {
+        String current = password;
+        if (current != null && MessageDigest.isEqual(pw.getBytes(StandardCharsets.UTF_8), current.getBytes(StandardCharsets.UTF_8))) {
             fails.remove(ip); lockedUntil.remove(ip);
-            byte[] b = new byte[32]; rnd.nextBytes(b);
-            String tok = HexFormat.of().formatHex(b);
-            sessions.put(tok, now + SESSION_TTL);
-            sessions.entrySet().removeIf(e -> e.getValue() < now);
-            ex.getResponseHeaders().add("Set-Cookie", cookie(tok, SESSION_TTL / 1000));
+            createSession(ex, now);
             pl.getLogger().info("Dashboard login from " + ip);
             json(ex, 200, Map.of("ok", true));
         } else {

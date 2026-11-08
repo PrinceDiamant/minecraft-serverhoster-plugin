@@ -930,6 +930,7 @@ tr:hover td {
 
 .task-card-main {
   display: flex;
+  flex-wrap: wrap;
   min-width: 0;
   align-items: center;
   gap: 13px;
@@ -951,8 +952,20 @@ tr:hover td {
 }
 
 .task-card-copy {
-  flex: 1;
+  flex: 1 1 260px;
   min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.task-card-actions {
+  flex: 1 1 100%;
+  min-width: 0;
+  margin-left: 53px;
+}
+
+.task-card-actions .btn {
+  max-width: 100%;
+  white-space: normal;
 }
 
 .task-title-row {
