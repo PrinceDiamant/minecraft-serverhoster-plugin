@@ -36,6 +36,7 @@ export async function dashboardRequest<T>(
   }
 
   const url = new URL(path, window.location.origin);
+  const startedAuthenticated = !document.getElementById("app")?.classList.contains("hide");
 
   const response = await fetch(url, {
     ...options,
@@ -46,7 +47,7 @@ export async function dashboardRequest<T>(
   const isJson = contentType.includes("application/json");
   const result: unknown = isJson ? await response.json() : await response.text();
 
-  if (response.status === 401) {
+  if (response.status === 401 && startedAuthenticated) {
     window.dispatchEvent(new Event("dashboard:unauthorized"));
   }
   if (!response.ok) {

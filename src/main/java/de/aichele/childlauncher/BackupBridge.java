@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.security.DigestOutputStream;
@@ -148,6 +149,9 @@ final class BackupBridge {
                     }
                 } else if (pRealInside(guard, start)) files += write(out, guard.root(), start);
             }
+        } catch (Exception e) {
+            try { Files.deleteIfExists(zip); } catch (IOException cleanupError) { e.addSuppressed(cleanupError); }
+            throw e;
         }
         if (files == 0) { Files.deleteIfExists(zip); throw new IOException("nothing to archive"); }
         String sha = HexFormat.of().formatHex(md.digest());
@@ -167,6 +171,8 @@ final class BackupBridge {
     }
 
     static int write(ZipOutputStream out, Path root, Path file) throws IOException {
+        if (file.getFileName().toString().equals("session.lock")
+                && Files.isRegularFile(file.getParent().resolve("level.dat"), LinkOption.NOFOLLOW_LINKS)) return 0;
         String name = root.relativize(file).toString().replace('\\', '/');
         out.putNextEntry(new ZipEntry(name));
         try (InputStream in = Files.newInputStream(file)) { in.transferTo(out); }

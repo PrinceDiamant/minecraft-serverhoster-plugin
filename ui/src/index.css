@@ -115,6 +115,99 @@ a:hover {
   display: none !important;
 }
 
+.onboarding-active .sidebar,
+.onboarding-active .topbar {
+  display: none;
+}
+
+.onboarding-active .dashboard-main {
+  margin-left: 0;
+}
+
+.onboarding {
+  width: min(100%, 820px);
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.onboarding-header h1 {
+  margin: 8px 0;
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.onboarding-header > p:not(.eyebrow) {
+  color: hsl(var(--muted-foreground));
+}
+
+.onboarding-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 28px 0;
+  padding: 0;
+  list-style: none;
+  color: hsl(var(--muted-foreground));
+}
+
+.onboarding-progress li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.onboarding-progress li[aria-current="step"] {
+  color: hsl(var(--foreground));
+}
+
+.onboarding-progress span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid hsl(var(--border));
+  border-radius: 50%;
+}
+
+.onboarding-progress li[aria-current="step"] span {
+  background: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+.onboarding-panel h2 {
+  margin: 0;
+}
+
+.onboarding-choice {
+  cursor: pointer;
+}
+
+.onboarding-choice small {
+  display: block;
+  color: hsl(var(--muted-foreground));
+}
+
+.onboarding-summary {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) 2fr;
+  gap: 12px;
+}
+
+.onboarding-summary dt {
+  color: hsl(var(--muted-foreground));
+}
+
+.onboarding-summary dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.onboarding-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .sidebar {
   position: fixed;
   z-index: 5;
@@ -501,6 +594,15 @@ tr:hover td {
 
 .chart-card {
   margin: 0;
+}
+
+#spark svg {
+  max-width: 100%;
+  height: auto;
+}
+
+#t-files > .card:first-child {
+  overflow-x: auto;
 }
 
 .chart-title {

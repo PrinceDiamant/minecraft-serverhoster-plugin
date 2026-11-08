@@ -129,8 +129,8 @@ async function ls(p){const d=await api('/api/fs/list?path='+encodeURIComponent(p
 async function openFile(p){if(/\.(jar|zip|mca|dat|png|gz|db|lock)$/i.test(p)&&!p.endsWith('.log.gz')){const accepted=await window.dashboardUi?.confirm({title:'Datei als Text öffnen?',description:'Diese Datei könnte binär sein. Die Textansicht ist möglicherweise nicht lesbar.',confirmLabel:'Trotzdem öffnen'});if(!accepted)return}
  $('etext').value=await api('/api/fs/read?path='+encodeURIComponent(p));$('epath').textContent=p;$('editor').classList.remove('hide');$('editor').scrollIntoView()}
 async function saveFile(){const p=$('epath').textContent;if(p.endsWith('.gz')){toast('.gz kann nicht gespeichert werden',true);return}await post('/api/fs/write?path='+encodeURIComponent(p),$('etext').value,true);toast('Gespeichert');ls(cwd)}
-async function ren(p){const n=await window.dashboardUi?.prompt({title:'Datei oder Ordner umbenennen',description:'Gib den neuen Namen ein.',placeholder:'Neuer Name',initialValue:p,confirmLabel:'Umbenennen'});if(!n||n===p)return;await post('/api/fs/rename',{from:p,to:n});toast('Umbenannt');ls(cwd)}
-async function del(p){const name=p.split('/').pop();const c=await window.dashboardUi?.prompt({title:'Element dauerhaft löschen?',description:'Nur Dateien oder leere Ordner können gelöscht werden. Zum Bestätigen den Namen exakt eingeben.',placeholder:name,requiredValue:name,confirmLabel:'Dauerhaft löschen',destructive:true});if(c!==name)return;await post('/api/fs/delete',{path:p,confirm:c});toast('Gelöscht');ls(cwd)}
+async function ren(p){const n=await window.dashboardUi?.prompt({title:'Datei oder Ordner umbenennen',description:'Gib den neuen Namen ein.',placeholder:'Neuer Name',initialValue:p,confirmLabel:'Umbenennen'});if(!n||n===p)return;await post('/api/fs/rename',{from:p,to:n});const ep=$('epath').textContent;if(ep===p||ep.startsWith(p+'/'))$('epath').textContent=n+ep.slice(p.length);toast('Umbenannt');ls(cwd)}
+async function del(p){const name=p.split('/').pop();const c=await window.dashboardUi?.prompt({title:'Element dauerhaft löschen?',description:'Nur Dateien oder leere Ordner können gelöscht werden. Zum Bestätigen den Namen exakt eingeben.',placeholder:name,requiredValue:name,confirmLabel:'Dauerhaft löschen',destructive:true});if(c!==name)return;await post('/api/fs/delete',{path:p,confirm:c});const ep=$('epath').textContent;if(ep===p||ep.startsWith(p+'/')){$('editor').classList.add('hide');$('epath').textContent=''}toast('Gelöscht');ls(cwd)}
 async function mkdir(){const n=await window.dashboardUi?.prompt({title:'Neuen Ordner erstellen',description:'Der Ordner wird im aktuellen Verzeichnis angelegt.',placeholder:'Ordnername',confirmLabel:'Ordner erstellen'});if(!n)return;await post('/api/fs/mkdir?path='+encodeURIComponent(jp(cwd,n)));ls(cwd)}
 async function newFile(){const n=await window.dashboardUi?.prompt({title:'Neue Datei erstellen',description:'Die neue leere Textdatei wird im aktuellen Verzeichnis angelegt.',placeholder:'Dateiname',confirmLabel:'Datei erstellen'});if(!n)return;await post('/api/fs/write?path='+encodeURIComponent(jp(cwd,n)),'',true);ls(cwd);openFile(jp(cwd,n))}
 async function upload(files){for(const f of files){let ow='';try{await api('/api/fs/upload?path='+encodeURIComponent(cwd)+'&name='+encodeURIComponent(f.name),{method:'POST',body:f})}
@@ -162,20 +162,20 @@ function chartCard(title,caption,series,unit,limit){
  const w=640,h=170,pad=8,innerW=w-pad*2,innerH=h-pad*2;
  const all=series.flatMap(s=>s[1].map((v,i)=>v==null?null:{value:v,index:i})).filter(Boolean);
  const sampleCount=Math.max(1,...series.map(s=>s[1].length));
- if(all.length<2)return `<article class="chart-card"><div class="chart-title">${title}</div><div class="chart-caption">${caption}</div><div class="chart-empty">Messwerte werden gesammelt …</div></article>`;
- const high=limit||Math.max(1,Math.ceil(Math.max(...all.map(p=>p.value))*1.15));
+ if(all.length<2)return `<article class="chart-card"><div class="chart-title">${title}</div><div class="chart-caption">${caption}</div><div class="chart-empty">${sampleCount>1&&!all.length?'Keine Messwerte verfügbar':'Messwerte werden gesammelt …'}</div></article>`;
+ const high=Math.max(limit||1,Math.ceil(Math.max(...all.map(p=>p.value))*1.15));
  const low=0;
  const y=v=>pad+innerH-(Math.max(low,Math.min(high,v)-low)/(high-low||1))*innerH;
  const x=i=>pad+(sampleCount<2?innerW:(i/(sampleCount-1))*innerW);
  const grid=[0,.5,1].map(t=>{const gy=pad+innerH*t;return `<line class="chart-gridline" x1="${pad}" y1="${gy}" x2="${w-pad}" y2="${gy}"/>`}).join('');
  const paths=series.map(([name,values,color])=>{
-  const points=values.map((v,i)=>v==null?null:[x(i),y(v)]).filter(Boolean);
-  if(points.length<2)return '';
-  const d=points.map((pt,i)=>(i?'L':'M')+pt[0].toFixed(1)+' '+pt[1].toFixed(1)).join(' ');
-  const last=points[points.length-1];
-  return `<path class="chart-area" d="${d} L ${last[0].toFixed(1)} ${pad+innerH} L ${points[0][0].toFixed(1)} ${pad+innerH} Z" fill="${color}"/><path class="chart-line" d="${d}" stroke="${color}"><title>${name}: ${values.filter(v=>v!=null).at(-1)?.toFixed(1)??'–'}${unit}</title></path>`
+  const segments=[];let points=[];
+  for(let i=0;i<values.length;i++){if(values[i]==null){if(points.length>1)segments.push(points);points=[]}else points.push([x(i),y(values[i])])}
+  if(points.length>1)segments.push(points);
+  return segments.map(points=>{const d=points.map((pt,i)=>(i?'L':'M')+pt[0].toFixed(1)+' '+pt[1].toFixed(1)).join(' '),last=points[points.length-1];
+   return `<path class="chart-area" d="${d} L ${last[0].toFixed(1)} ${pad+innerH} L ${points[0][0].toFixed(1)} ${pad+innerH} Z" fill="${color}"/><path class="chart-line" d="${d}" stroke="${color}"><title>${name}: ${values.at(-1)?.toFixed(1)??'–'}${unit}</title></path>`}).join('')
  }).join('');
- const legend=series.map(([name,values,color])=>{const v=values.filter(n=>n!=null).at(-1);return `<span class="chart-legend"><i style="background:${color}"></i>${name}<b>${v==null?'–':v.toFixed(1)+unit}</b></span>`}).join('');
+ const legend=series.map(([name,values,color])=>{const v=values.at(-1);return `<span class="chart-legend"><i style="background:${color}"></i>${name}<b>${v==null?'–':v.toFixed(1)+unit}</b></span>`}).join('');
  return `<article class="chart-card"><div class="chart-title">${title}</div><div class="chart-caption">${caption}</div><div class="chart-legend-row">${legend}</div><svg class="metric-chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="${title}">${grid}${paths}</svg></article>`;
 }
 async function loadDiag(){const d=await api('/api/diag');const keys=['running','pid','tls','status','rssMb','hwmMb','swapMb','vmMb','threads','fds','readBytes','writeBytes','state','mspt','tps','diskBytes','diskFiles','diskPartial'];

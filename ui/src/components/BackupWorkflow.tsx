@@ -83,7 +83,7 @@ export default function BackupWorkflow() {
     setError("");
     try {
       const result = await dashboardRequest<{ transport?: string }>("/api/backup/test", { method: "POST" });
-      const message = result.transport || "Backup-Ziel erreichbar";
+      const message = result.transport === "local" ? "Lokales Backup-Ziel ist erreichbar." : result.transport || "Backup-Ziel erreichbar.";
       const insecure = message.toLowerCase().includes("unverschlüsselt");
       window.dashboardUi?.notify(insecure ? `Warnung: ${message}` : message, insecure);
     } catch (cause) {
@@ -98,7 +98,7 @@ export default function BackupWorkflow() {
     const typedName = await window.dashboardUi?.prompt({
       title: restoring ? "Backup wiederherstellen?" : "Backup löschen?",
       description: restoring
-        ? `Die Dateien des ausgewählten Servers werden aus „${backup.name}“ wiederhergestellt. Zum Bestätigen den Backup-Namen eingeben.`
+        ? `Der Child-Server muss gestoppt sein. Seine Dateien werden aus „${backup.name}“ wiederhergestellt und können dabei überschrieben werden. Zum Bestätigen den Backup-Namen eingeben.`
         : `„${backup.name}“ wird dauerhaft gelöscht. Zum Bestätigen den Backup-Namen eingeben.`,
       placeholder: backup.name,
       requiredValue: backup.name,
@@ -126,6 +126,13 @@ export default function BackupWorkflow() {
   };
 
   const storageLabel = snapshot.storage.toLowerCase() === "remote" ? "Externes FTP/FTPS-Ziel" : "Lokaler Speicher";
+  const newestBackup = snapshot.files.reduce<BackupEntry | null>(
+    (latest, entry) => !latest || entry.mtime > latest.mtime ? entry : latest,
+    null,
+  );
+  const lastBackupLabel = newestBackup && newestBackup.mtime > 0
+    ? new Date(newestBackup.mtime).toLocaleString("de-DE")
+    : snapshot.last || "Noch keines";
 
   return (
     <div className="feature-workflow">
@@ -158,7 +165,7 @@ export default function BackupWorkflow() {
         </div>
         <div className="backup-summary-card">
           <span className="summary-icon"><CalendarDots size={19} /></span>
-          <div><span>Letztes Backup</span><strong>{snapshot.last || "Noch keines"}</strong></div>
+          <div><span>Letztes Backup</span><strong title={newestBackup?.name || snapshot.last}>{lastBackupLabel}</strong></div>
         </div>
       </section>
 

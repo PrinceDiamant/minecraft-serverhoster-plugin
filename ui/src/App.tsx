@@ -35,6 +35,7 @@ declare global {
     };
     doLogin?: () => void;
     logout?: () => void;
+    showLogin?: () => void;
     tab?: (tab: string) => void;
     toast?: (message: string, error?: boolean) => void;
   }
@@ -93,17 +94,24 @@ function readLegacyDashboard() {
     root.id = rootId;
     section.replaceChildren(root);
   }
-  const settingsSection = document.createElement("section");
-  settingsSection.id = "t-settings";
-  settingsSection.className = "hide";
+  const settingsSection = main.querySelector("#t-settings");
+  if (!settingsSection) throw new Error("Dashboard section t-settings is missing");
   const settingsRoot = document.createElement("div");
   settingsRoot.id = "settings-workflow-root";
-  settingsSection.append(settingsRoot);
-  main.append(settingsSection);
-  const safeScript = script.textContent.replace(
-    /if\s*\(\s*t\s*===\s*['"](?:players|setup|backup|tasks)['"]\s*\)\s*load(?:Players|Setup|Backup|Tasks)\s*\(\s*\)\s*;?/g,
-    "",
-  );
+  settingsSection.replaceChildren(settingsRoot);
+  const safeScript = script.textContent
+    .replace(
+      /if\s*\(\s*t\s*===\s*['"](?:players|setup|backup|tasks)['"]\s*\)\s*load(?:Players|Setup|Backup|Tasks)\s*\(\s*\)\s*;?/g,
+      "",
+    )
+    .replace(
+      "async function status(){try{const s=await api('/api/status');",
+      "async function status(){try{const s=await api('/api/status');window.dispatchEvent(new CustomEvent('dashboard:setup-required',{detail:!!s.setupRequired}));",
+    )
+    .replace(
+      "fetch('/api/status',{credentials:'same-origin'}).then(r=>r.ok?start():showLogin()).catch(showLogin);",
+      "fetch('/api/status',{credentials:'same-origin'}).then(r=>r.ok?start():showLogin()).catch(showLogin).finally(()=>window.dispatchEvent(new Event('dashboard:auth-ready')));",
+    );
   return { panels: main.innerHTML, script: safeScript };
 }
 
@@ -111,6 +119,9 @@ const legacyDashboard = readLegacyDashboard();
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("status");
+  const [setupRequired, setSetupRequired] = useState(false);
+  const [authReady, setAuthReady] = useState(false);
+  const setupRequiredRef = useRef(false);
   const [dialog, setDialog] = useState<WorkflowDialog | null>(null);
   const [dialogValue, setDialogValue] = useState("");
   const pendingDialog = useRef<((value: boolean | string | null) => void) | null>(null);
@@ -118,13 +129,28 @@ export default function App() {
     groups.flatMap((group) => group.items).find((item) => item.id === activeTab)?.label ?? "Übersicht";
 
   useLayoutEffect(() => {
-    const onUnauthorized = () => window.logout?.();
+    document.getElementById("app")?.classList.toggle("onboarding-active", setupRequired);
+  }, [setupRequired]);
+
+  useLayoutEffect(() => {
+    const onUnauthorized = () => window.showLogin?.();
+    const onAuthReady = () => setAuthReady(true);
     const onTabChange = (event: Event) => setActiveTab((event as CustomEvent<string>).detail);
+    const onSetupRequired = (event: Event) => {
+      const required = (event as CustomEvent<boolean>).detail;
+      if (required && !setupRequiredRef.current) window.dashboardUi?.navigate("setup");
+      setupRequiredRef.current = required;
+      setSetupRequired(required);
+    };
     window.addEventListener("dashboard:unauthorized", onUnauthorized);
+    window.addEventListener("dashboard:auth-ready", onAuthReady);
     window.addEventListener("dashboard:tab", onTabChange);
+    window.addEventListener("dashboard:setup-required", onSetupRequired);
     return () => {
       window.removeEventListener("dashboard:unauthorized", onUnauthorized);
+      window.removeEventListener("dashboard:auth-ready", onAuthReady);
       window.removeEventListener("dashboard:tab", onTabChange);
+      window.removeEventListener("dashboard:setup-required", onSetupRequired);
     };
   }, []);
 
@@ -199,7 +225,7 @@ export default function App() {
     <>
       <section id="login" className="login-screen">
         <form
-          className="login-card vd-rise"
+          className="login-card"
           onSubmit={(event) => {
             event.preventDefault();
             window.doLogin?.();
@@ -217,7 +243,7 @@ export default function App() {
             autoComplete="current-password"
             autoFocus
           />
-          <button className="btn pri login-button" type="submit">
+          <button className="btn pri login-button" type="submit" disabled={!authReady}>
             Sicher anmelden
           </button>
           <p id="lerr" className="login-error" role="alert" />

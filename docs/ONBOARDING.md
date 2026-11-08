@@ -1,0 +1,51 @@
+# Einrichtungswege und Entscheidungen
+
+```mermaid
+flowchart TD
+    A[Dashboard anmelden] --> B{Einrichtung abgeschlossen?}
+    B -- Ja --> Z[Dashboard und Host-Verwaltung]
+    B -- Nein --> C[Onboarding: Ausgangslage wählen]
+    C --> N[Neuer Child: Ordner, Typ, Version, Port]
+    C -->|Serverordner erkannt| E[Vorhandenen Child auswählen und einbinden]
+    C -->|unterstützte Alt-Konfiguration erkannt| I[Alt-Konfiguration importieren]
+    C -->|Serverordner erkannt| R[Ordner archivieren und neu einrichten]
+    C -->|Serverordner erkannt| D[Ordner endgültig löschen und neu einrichten]
+    E --> F[Typ, Version und Port prüfen]
+    R --> F
+    D --> F
+    I -->|Version unbekannt| V[Version 1.10.1+ ausdrücklich bestätigen]
+    I -->|Version bekannt| T[Typ, Version und Port werden übernommen]
+    V --> T
+    N --> O{ntfy gewünscht?}
+    F --> O
+    T --> O
+    O -- Ja --> P[HTTPS-Server und Thema eingeben]
+    O -- Nein --> H
+    P --> H[Host-Einstellungen]
+    H -->|optional| M[Wiederholbare Host-Minimierung auswählen]
+    H -->|Upgrade und manuell verfügbar| G[Einmalige Host-Grundeinrichtung mit Warnung und Bestätigung]
+    G --> K[Host im Panel neu starten; Onboarding fortsetzen]
+    H --> Q[Zusammenfassung prüfen]
+    M --> Q
+    Q -->|Archivieren/Löschen| X[Exakte Sicherheitsbestätigung]
+    Q -->|Import mit unbekannter Version| X
+    Q -->|Host minimieren| X
+    X --> S[Konfiguration speichern]
+    Q --> S
+    S -->|Minimierung gewählt| J[Minimierung vorbereiten und Host im Panel neu starten]
+    S -->|keine Minimierung| Z
+    J --> Z
+    Z -->|Altdateien vorhanden| L[Optional: alte FabricLauncher-Dateien bereinigen]
+    Z --> U[Host-Minimierung oder manuelle Grundeinrichtung später verwalten]
+```
+
+Bei einer Neuinstallation erfolgt die einmalige Host-Grundeinrichtung vor
+dem ersten Dashboard-Aufruf automatisch. Bei Upgrades kann sie nur ausdrücklich
+ausgelöst werden; erkannte alte Hostwelten werden dabei unwiderruflich gelöscht.
+Ein Neustart muss im Hosting-Panel durchgeführt werden. Wird die Einrichtung
+während des Onboardings ausgelöst, gehen noch nicht gespeicherte Eingaben verloren.
+
+Der Assistent lädt keine Server-JARs herunter und startet den Child nicht.
+RAM, JVM-Flags, Backup-Zeitpläne und Child-`server.properties` können nach der
+Einrichtung im Dashboard angepasst werden; sie sind keine Voraussetzung für
+die Auswahl eines der bestehenden Einrichtungswege.

@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.1.0.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.2.0.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Bei einer Neuinstallation ohne vorhandene
    ServerHoster-Daten führt das Plugin die einmalige Host-Grundeinrichtung
@@ -39,8 +39,13 @@ geladen oder gebaut, wenn sie noch fehlen.
    `plugins/ServerhosterPlugin/` an und startet das Dashboard. Beim ersten
    Start wird das Dashboard-Passwort in `dashboard-password.txt` gespeichert
    und im Log ausgegeben.
-3. Das Dashboard über den konfigurierten Port öffnen und den Assistenten
-   abschließen. Vor der Bestätigung startet kein Child automatisch.
+3. Das Dashboard über den konfigurierten Port öffnen und anmelden. Solange
+   die Einrichtung nicht abgeschlossen ist, öffnet sich das Onboarding
+   automatisch. Wähle je nach Situation einen neuen Child, einen erkannten
+   vorhandenen Child oder einen unterstützten Import. Der Assistent fragt
+   optional nach ntfy und der Host-Minimierung und zeigt vor dem Speichern
+   eine Zusammenfassung. Vor der Bestätigung startet kein Child automatisch.
+   Eine Übersicht aller Wege enthält [ONBOARDING.md](ONBOARDING.md).
 4. Für einen neuen Server Typ, Minecraft-Version, Child-Ordner und Spielport
    wählen. Unterstützt werden Vanilla, Fabric, Paper, Spigot und ein eigenes
    Server-Jar. Beim Bestätigen des Assistenten wird noch kein Server-Jar
@@ -85,6 +90,8 @@ Schlüssel, Secrets und Passwortdateien gehören nicht in die Versionsverwaltung
   ihn danach wieder, falls er vorher lief.
 - Lokale ZIP-Dateien sind Standard. FTP/FTPS ist optional. JDBC bezeichnet
   ausschließlich externe Backup-Metadaten; es wird keine Datenbank installiert.
+  Die temporäre Minecraft-Datei `session.lock` einer Welt wird nicht archiviert;
+  sie wird beim nächsten Serverstart neu angelegt.
 - Stunden-, Tages- und Wochenpläne unterstützen geordnete Befehls- und
   Backup-Aktionen. Die Pläne werden in `config.yml` gespeichert.
 - ntfy ist optional und bleibt deaktiviert, solange es nicht ausdrücklich

@@ -30,6 +30,7 @@ class RemoteBackupBridgeTest {
     @Test void autoModeStreamsFtpBackupAndFinalizesPartialUpload() throws Exception {
         Files.createDirectories(work.resolve("world"));
         Files.writeString(work.resolve("world").resolve("level.dat"), "world-data");
+        Files.writeString(work.resolve("world").resolve("session.lock"), "minecraft lock");
         BackupBridge.Spec backup = new BackupBridge.Spec("", java.util.List.of("world"), 0, false,
                 "", "", "", "", "", "");
 
@@ -56,6 +57,7 @@ class RemoteBackupBridgeTest {
                 ByteArrayOutputStream content = new ByteArrayOutputStream();
                 zip.transferTo(content);
                 assertEquals("world-data", content.toString(StandardCharsets.UTF_8));
+                assertNull(zip.getNextEntry());
             }
             Path restore = work.resolve("restore");
             Files.createDirectories(restore);

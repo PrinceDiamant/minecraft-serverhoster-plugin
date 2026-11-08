@@ -31,7 +31,7 @@ final class SetupDiscovery {
         }
     }
 
-    private static final Set<String> SKIP = Set.of("plugins", "logs", "libraries", "cache", "world", "worlds", "versions", "build-tools");
+    private static final Set<String> SKIP = Set.of("plugins", "logs", "libraries", "cache", "world", "world_nether", "world_the_end", "worlds", "versions", "build-tools", "bundler");
 
     private SetupDiscovery() {}
 
@@ -42,6 +42,14 @@ final class SetupDiscovery {
         YamlConfiguration old = versionSupported && Files.isRegularFile(legacyConfig, LinkOption.NOFOLLOW_LINKS)
                 ? loadLegacyConfig(legacyConfig) : null;
         boolean importSupported = old != null;
+        java.util.Properties hostProperties = new java.util.Properties();
+        Path propertiesPath = root.resolve("server.properties");
+        if (Files.isRegularFile(propertiesPath, LinkOption.NOFOLLOW_LINKS)) {
+            try (var reader = Files.newBufferedReader(propertiesPath)) {
+                hostProperties.load(reader);
+            }
+        }
+        String hostLevel = hostProperties.getProperty("level-name", "world").toLowerCase(java.util.Locale.ROOT);
         Map<Path, ServerProfile> configured = new LinkedHashMap<>();
         if (importSupported) {
             for (ServerProfile profile : Profiles.load(old.getValues(true))) {
@@ -58,6 +66,10 @@ final class SetupDiscovery {
                 String entryName = entry.getFileName().toString().toLowerCase(java.util.Locale.ROOT);
                 if (entryName.contains(".serverhoster-delete-pending-")
                         || entryName.contains(".serverhoster-reset-pending-")
+                        || entryName.startsWith("serverhoster-lobby-")
+                        || entryName.equals(hostLevel)
+                        || entryName.equals(hostLevel + "_nether")
+                        || entryName.equals(hostLevel + "_the_end")
                         || SKIP.contains(entryName)
                         || Files.isSymbolicLink(entry)
                         || !Files.isDirectory(entry, LinkOption.NOFOLLOW_LINKS)) continue;

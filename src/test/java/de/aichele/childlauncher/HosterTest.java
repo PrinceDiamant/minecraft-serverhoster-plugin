@@ -353,6 +353,7 @@ class HosterTest {
     @Test void backupZipAndExternalJdbc() throws Exception {
         Path world = Files.createDirectories(tmp.resolve("child/world"));
         Files.writeString(world.resolve("level.dat"), "world");
+        Files.writeString(world.resolve("session.lock"), "minecraft lock");
         Files.createDirectories(tmp.resolve("outside"));
         Files.writeString(tmp.resolve("outside/secret.txt"), "nope");
         boolean linked = tryCreateSymbolicLink(tmp.resolve("child/escape"), tmp.resolve("outside"));
@@ -370,6 +371,7 @@ class HosterTest {
         assertEquals(1, BackupBridge.count(spec));
         try (var z = new java.util.zip.ZipFile(r.path())) {
             assertNotNull(z.getEntry("world/level.dat"));
+            assertNull(z.getEntry("world/session.lock"));
             assertNull(z.getEntry("escape/secret.txt"));
         }
         BackupBridge.archive(tmp.resolve("child"), spec, "default");
@@ -509,6 +511,24 @@ class HosterTest {
         assertTrue(candidates.stream().noneMatch(SetupDiscovery.Candidate::legacyConfigured));
         assertTrue(candidates.stream().allMatch(candidate -> candidate.profile() == null));
         assertTrue(candidates.stream().anyMatch(candidate -> candidate.contents().contains("server.properties")));
+    }
+
+    @Test void setupDiscoveryDoesNotOfferOuterWorldsAsChildServers() throws Exception {
+        Path root = Files.createTempDirectory("serverhoster-discovery-host-worlds");
+        Files.writeString(root.resolve("server.properties"), "level-name=custom-lobby\n");
+        for (String name : List.of("custom-lobby", "custom-lobby_nether", "custom-lobby_the_end",
+                "serverhoster-lobby-123", "serverhoster-lobby-123_nether",
+                "world_nether", "world_the_end")) {
+            Path world = Files.createDirectory(root.resolve(name));
+            Files.writeString(world.resolve("level.dat"), "host world");
+        }
+        Path child = Files.createDirectory(root.resolve("child-server"));
+        Files.writeString(child.resolve("server.properties"), "server-port=2063\n");
+
+        List<SetupDiscovery.Candidate> candidates = SetupDiscovery.scan(root, root.resolve("missing/config.yml"));
+
+        assertEquals(List.of(child.toAbsolutePath().normalize()),
+                candidates.stream().map(SetupDiscovery.Candidate::path).toList());
     }
 
     @Test void setupRecoveryRollsBackPendingDirectoriesBeforeSetupCompletes() throws Exception {

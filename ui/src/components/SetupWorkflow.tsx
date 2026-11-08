@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowClockwise, Check, FolderOpen, HardDrives, ShieldWarning } from "@phosphor-icons/react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
+import SetupWizard from "./SetupWizard";
 
 interface SetupCandidate {
   path: string;
@@ -58,11 +59,7 @@ export default function SetupWorkflow() {
     try {
       const result = await dashboardRequest<SetupState>("/api/setup");
       setState(result);
-      try {
-        setHost(await dashboardRequest<HostMinimizeState>("/api/host-minimize"));
-      } catch {
-        setHost(null);
-      }
+      setHost(await dashboardRequest<HostMinimizeState>("/api/host-minimize"));
       if (!ntfyInitialized.current) {
         ntfyInitialized.current = true;
         setNtfy(result.ntfy);
@@ -77,8 +74,10 @@ export default function SetupWorkflow() {
           setPort(String(candidate.port));
         }
       }
+      return true;
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Einrichtungsstatus konnte nicht geladen werden.");
+      return false;
     }
   }, []);
 
@@ -249,6 +248,10 @@ export default function SetupWorkflow() {
   };
 
   if (!state && !error) return <section className="setup-workflow"><p>Einrichtung wird geladen …</p></section>;
+  if (!state) return <section className="setup-workflow"><p className="workflow-error" role="alert">{error}</p><button className="btn" type="button" onClick={() => void refresh()}>Erneut versuchen</button></section>;
+  if (state.required && !host && !error) return <section className="setup-workflow"><p>Host-Einstellungen werden geladen …</p></section>;
+  if (state.required && !host) return <section className="setup-workflow"><p className="workflow-error" role="alert">{error}</p><button className="btn" type="button" onClick={() => void refresh()}>Erneut versuchen</button></section>;
+  if (state.required) return <SetupWizard state={state} host={host} onComplete={refresh} />;
 
   return (
     <section className="setup-workflow">
@@ -366,7 +369,7 @@ export default function SetupWorkflow() {
         </>
       )}
 
-      <div className="setup-card-list">
+      {host && host.firstSetupStatus !== "done" && host.firstSetupStatus !== "" && <div className="setup-card-list">
         <h3>Einmalige Host-Grundeinrichtung</h3>
         <p>Bei einer Neuinstallation automatisch beim ersten Start. Bei einem Upgrade wird aus Sicherheitsgründen nichts automatisch verändert; du kannst die aggressive Grundeinrichtung hier ausdrücklich bestätigen. Sie entfernt alle erkannten äußeren Minecraft-Welten und richtet eine Void-Lobby ein. Andere Plugin-JARs werden in-place umbenannt (Endung .disabled), damit sie nicht geladen werden; ihre Dateien und Konfigurationen bleiben erhalten. Child-Server, ServerHoster-Konfiguration, Dashboard-Passwort und Backups bleiben erhalten. Nach der Vorbereitung fährt der Host herunter und muss im Hosting-Panel gestartet werden. Erst nach dem Laden der neuen Lobby werden alte Welten unwiderruflich gelöscht.</p>
         <p>Status: {host?.firstSetupStatus ?? "unbekannt"}{host?.firstSetupWorld ? ` · Void-Welt ${host.firstSetupWorld}` : ""}{Number(host?.firstSetupDisabledPluginCount ?? 0) > 0 ? ` · deaktivierte Zusatz-Plugins: ${host?.firstSetupDisabledPluginCount}` : ""}</p>
@@ -376,7 +379,7 @@ export default function SetupWorkflow() {
           </div>
         )}
         {host?.firstSetupStatus === "restart-required" && <p>Die Einrichtung ist vorbereitet. Bitte den äußeren Host im Hosting-Panel neu starten.</p>}
-      </div>
+      </div>}
 
       <div className="setup-card-list">
         <h3>Host minimieren</h3>

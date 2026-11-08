@@ -1,5 +1,19 @@
 # Release notes
 
+## ServerHoster 2.2.0
+
+- Guide first-time setup through a contextual onboarding flow for new servers,
+  existing server directories and supported legacy configurations.
+- Exclude outer host worlds from child-server discovery.
+- Make dashboard settings accessible, improve charts and mobile layouts, and
+  keep the file editor in sync when files are renamed or deleted.
+- Exclude Minecraft world lock files from local and remote backups, and remove
+  incomplete local archives when backup creation fails.
+- Clarify player-command feedback and backup restore requirements.
+
+Testing limitations: real player actions, ntfy delivery, a real FTP/FTPS
+destination and Linux container metrics were not tested end-to-end.
+
 ## ServerHoster 2.1.0
 
 - On a fresh installation, prepare a void outer lobby automatically on the
