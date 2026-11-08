@@ -103,7 +103,7 @@ final class Profiles {
         String type = str(flat, prefix + "type", rootDefaults ? "fabric" : null);
         String mc = str(flat, prefix + "mcVersion", rootDefaults ? "26.3" : null);
         int port = num(flat, prefix + "port", rootDefaults ? 2063 : -1);
-        String ip = str(flat, prefix + "serverIp", rootDefaults ? "0.0.0.0" : null);
+        String ip = str(flat, prefix + "serverIp", rootDefaults ? "" : null);
         String jar = str(flat, prefix + "customJar", rootDefaults ? "server.jar" : null);
         String loader = str(flat, prefix + "fabricLoaderVersion", rootDefaults ? "latest" : null);
         String inst = str(flat, prefix + "fabricInstallerVersion", rootDefaults ? "latest" : null);

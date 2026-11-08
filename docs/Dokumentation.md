@@ -1,4 +1,4 @@
-# ServerHoster 2.3.0 – Betrieb und Konfiguration
+# ServerHoster 2.3.1 – Betrieb und Konfiguration
 
 ServerHoster ist ein Spigot-26.3-Plugin für Java 25. Es verwaltet genau einen
 separaten Child-Serverprozess und stellt ein Web-Dashboard bereit. Das Plugin
@@ -38,7 +38,7 @@ gemeldet, nicht stillschweigend ersetzt.
 | `mcVersion` | `26.3` | Minecraft-Version des Childs. |
 | `workingDir` | `./child-server` | Child-Ordner, relativ zum Spigot-Arbeitsverzeichnis oder absolut. |
 | `port` | `2063` | Spielport des Childs; muss vom Hoster freigegeben sein. |
-| `serverIp` | `0.0.0.0` | Bind-Adresse des Childs. |
+| `serverIp` | `""` | Leer übernimmt die `server-ip` des Spigot-Hosts; ein nicht leerer Wert überschreibt sie. |
 | `customJar` | `server.jar` | Jar-Pfad bei `type: custom`. |
 | `memory.xms` / `memory.xmx` | `2G` / `5G` | Initialer und maximaler Child-Heap. Native Speicheranteile und der äußere Server brauchen zusätzliche Reserve. |
 | `jvmFlags` | `-XX:+UseG1GC` | Zusätzliche JVM-Optionen. |
@@ -59,14 +59,48 @@ gemeldet, nicht stillschweigend ersetzt.
 | `backup.database.enabled` | `false` | Optionale externe JDBC-Metadaten; keine lokale Datenbank. |
 | `dashboard.enabled` | `true` | Dashboard aktivieren. |
 | `dashboard.port` | `2064` | Dashboard-Port. |
-| `dashboard.bind` | `""` | Leer verwendet die Child-Bind-Adresse; bei Bedarf Interface explizit setzen. |
+| `dashboard.bind` | `""` | Leer verwendet die effektive Child-Bind-Adresse; bei Bedarf Interface explizit setzen. |
 | `dashboard.https.enabled` | `false` | HTTPS optional; Modi: selbstsigniert, Keystore oder PEM. |
 | `notifications.ntfy.enabled` | `false` | Optionale ntfy-Benachrichtigungen; Thema muss gesetzt sein. |
 
-Child-`config.yml` und `server.properties` bleiben rohe Textareas. Das Plugin
+Der Datei-Editor sowie die Ansichten für `config.yml` und `server.properties`
+bieten Syntaxhervorhebung für YAML, JSON, Properties, TOML und JavaScript;
+andere Dateitypen werden als einfacher Text angezeigt. Die Hervorhebung
+validiert oder verändert den Inhalt nicht.
+
+Das Plugin
 setzt Child-Port und Bind-Adresse und deaktiviert
 `pause-when-empty-seconds`. Es nimmt keine Gameplay-Optimierungen am Child vor
 und installiert keine Gameplay-Erweiterungen.
+
+Die Host-Bind-Adresse wird beim Start von Spigot aus dessen `server.properties`
+übernommen. Ist dort `server-ip` leer, bindet auch der Child standardmäßig an
+alle Interfaces; das ist keine öffentlich erreichbare IP-Adresse. Die Anzeige im
+Dashboard beschreibt die Bind-Adresse, nicht notwendigerweise eine öffentliche
+Verbindungsadresse. Eine konkrete Adresse muss auf dem Host lokal verfügbar sein.
+Bestehende nicht leere `serverIp`-Werte, auch `0.0.0.0`, bleiben beim Upgrade
+unverändert und haben Vorrang. Um die Host-Adresse automatisch zu übernehmen,
+`serverIp: ""` in der ServerHoster-Konfiguration setzen und den Host neu starten.
+Die Standard-Bindung des Dashboards folgt ebenfalls dieser Adresse; ein
+explizites `dashboard.bind` hat dort Vorrang.
+
+Die Dashboard-Übersicht zeigt nur die zum Child-Zustand passenden Aktionen:
+Ein gestoppter Child kann gestartet, ein laufender gestoppt oder neu gestartet
+werden. Während des Starts kann der Start abgebrochen werden; ein ausstehender
+automatischer Neustart lässt sich mit „Stoppen“ abbrechen. Beim Stoppen und bei
+nicht verfügbarem Status werden widersprüchliche Aktionen gesperrt. Konsolenbefehle
+sind verfügbar, sobald der Child seine Bereitschaft gemeldet hat.
+
+Die Spielerverwaltung aktualisiert sichtbare Listen alle zehn Sekunden. Beim
+Öffnen und über „Aktualisieren“ wird beim laufenden, bereiten Child zusätzlich
+der `list`-Befehl angefordert; die Antwort erscheint gegebenenfalls beim
+nächsten Aktualisierungsintervall. Fehler beim Lesen von Spielerlisten werden
+angezeigt statt als leere Listen ausgegeben.
+
+Dashboard-Seiten besitzen eigene Adressen wie `/dashboard`, `/players`,
+`/files` und `/settings`. Ein Neuladen oder ein direkter Link öffnet dieselbe
+Seite nach der Anmeldung. Solange die Ersteinrichtung erforderlich ist, führt
+ein direkter Link stattdessen zur Einrichtung.
 
 Die Verkleinerung des äußeren Spigots ist ab 2.0.3 eine eigene, ausgeschaltete
 Aktion in der Einrichtung und über `/child host`. Sie sichert die drei

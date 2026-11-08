@@ -3,8 +3,9 @@ type: vanilla
 mcVersion: "26.3"
 # Second open port of the Zap-Hosting package (2064 is kept free, e.g. for a 2nd instance/query)
 port: 2063
-# Bind address for the child ("" = all interfaces)
-serverIp: "0.0.0.0"
+# Child bind address: "" inherits the host server-ip (which may itself be empty).
+# A non-empty value overrides the host address; 0.0.0.0 binds all IPv4 interfaces.
+serverIp: ""
 # Only used when type: custom (path relative to workingDir, or absolute)
 customJar: "server.jar"
 # Fabric loader/installer version: "latest" = newest stable
@@ -64,12 +65,12 @@ consoleBufferLines: 4000
 # Web dashboard (JDK HTTP server, optional TLS). Password: plugins/ServerhosterPlugin/dashboard-password.txt
 metadata:
   schemaVersion: 2
-  pluginVersion: 2.3.0
+  pluginVersion: 2.3.1
   migrationState: pending
 dashboard:
   enabled: true
   port: 2064
-  # "" = use serverIp above; "0.0.0.0" = all interfaces
+  # "" = use the effective child bind address; "0.0.0.0" = all IPv4 interfaces
   bind: ""
   # TLS is off until enabled. Material is created only when the dashboard starts with https.enabled.
   # mode: self-signed | keystore | pem

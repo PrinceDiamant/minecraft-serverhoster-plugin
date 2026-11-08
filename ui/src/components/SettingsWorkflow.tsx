@@ -45,6 +45,8 @@ export default function SettingsWorkflow() {
       if ((event as CustomEvent<string>).detail === "settings") void refresh();
     };
     window.addEventListener("dashboard:tab", onPageChange);
+    if (!document.getElementById("app")?.classList.contains("hide")
+        && !document.getElementById("t-settings")?.classList.contains("hide")) void refresh();
     return () => window.removeEventListener("dashboard:tab", onPageChange);
   }, [refresh]);
 

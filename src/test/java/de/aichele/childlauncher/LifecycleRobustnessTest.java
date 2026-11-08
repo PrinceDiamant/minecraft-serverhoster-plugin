@@ -189,6 +189,21 @@ class LifecycleRobustnessTest {
                 SupervisorHealth.Phase.IDLE, false, false, false, false, false, false, false)));
     }
 
+    @Test void dashboardDistinguishesLifecycleAndRestartCancellation() {
+        var idle = SupervisorHealth.Phase.IDLE;
+        var preparing = SupervisorHealth.Phase.PREPARING;
+        var running = SupervisorHealth.Phase.RUNNING;
+        var stopping = SupervisorHealth.Phase.STOPPING;
+        assertEquals(SupervisorHealth.DashboardState.STOPPED, SupervisorHealth.dashboardState(idle, false, false, false, false, false, false, true));
+        assertEquals(SupervisorHealth.DashboardState.STARTING, SupervisorHealth.dashboardState(preparing, false, false, true, false, true, false, true));
+        assertEquals(SupervisorHealth.DashboardState.STARTING, SupervisorHealth.dashboardState(running, true, false, true, false, false, false, true));
+        assertEquals(SupervisorHealth.DashboardState.RUNNING, SupervisorHealth.dashboardState(running, true, true, true, false, false, false, true));
+        assertEquals(SupervisorHealth.DashboardState.STOPPING, SupervisorHealth.dashboardState(stopping, true, true, false, true, false, false, true));
+        assertEquals(SupervisorHealth.DashboardState.STOPPING, SupervisorHealth.dashboardState(preparing, false, false, false, true, true, false, true));
+        assertEquals(SupervisorHealth.DashboardState.RESTART_WAIT, SupervisorHealth.dashboardState(idle, false, false, true, false, false, true, true));
+        assertEquals(SupervisorHealth.DashboardState.STOPPED, SupervisorHealth.dashboardState(idle, false, false, true, false, false, true, false));
+    }
+
     @Test void invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap() throws Exception {
         RuntimeLimits.MemoryPolicy invalid = RuntimeLimits.memory(Double.NaN, 95, 80, true);
         assertFalse(invalid.autoStop());

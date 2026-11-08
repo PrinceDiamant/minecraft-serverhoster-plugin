@@ -6,11 +6,25 @@ final class SupervisorHealth {
 
     enum Action { NONE, REATTACH_WATCH, REATTACH_PIPE, REATTACH_BOTH, SCHEDULE_RESTART }
 
+    enum DashboardState { STOPPED, STARTING, RUNNING, STOPPING, RESTART_WAIT }
+
     record State(Phase phase, boolean shuttingDown, boolean wantRunning, boolean stopRequested,
                  boolean processAlive, boolean watchArmed, boolean pipeArmed,
                  boolean restartQueued, boolean launchInProgress) {}
 
     private SupervisorHealth() {}
+
+    static DashboardState dashboardState(Phase phase, boolean alive, boolean ready, boolean wantRunning,
+                                         boolean stopRequested, boolean launchInProgress, boolean restartQueued,
+                                         boolean autoRestartEnabled) {
+        if (phase == Phase.STOPPING || (alive && (stopRequested || !wantRunning)))
+            return DashboardState.STOPPING;
+        if (alive) return ready ? DashboardState.RUNNING : DashboardState.STARTING;
+        if (phase == Phase.PREPARING || launchInProgress)
+            return stopRequested || !wantRunning ? DashboardState.STOPPING : DashboardState.STARTING;
+        if (restartQueued && wantRunning && autoRestartEnabled) return DashboardState.RESTART_WAIT;
+        return DashboardState.STOPPED;
+    }
 
     static Action assess(State state) {
         if (state.shuttingDown()) return Action.NONE;

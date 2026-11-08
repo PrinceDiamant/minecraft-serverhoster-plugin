@@ -64,6 +64,31 @@ body {
   font: 14px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
+.CodeMirror {
+  height: 60vh;
+  min-height: 300px;
+  border: 1px solid hsl(var(--border));
+  border-radius: 9px;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font: 13px/1.5 ui-monospace, Consolas, monospace;
+}
+
+.CodeMirror-gutters {
+  background: hsl(var(--card));
+  border-right: 1px solid hsl(var(--border));
+}
+
+.CodeMirror-linenumber { color: hsl(var(--muted-foreground)); }
+.CodeMirror-cursor { border-left-color: hsl(var(--foreground)); }
+.CodeMirror-selected { background: hsl(var(--primary) / 0.3) !important; }
+.CodeMirror-focused .CodeMirror-selected { background: hsl(var(--primary) / 0.4) !important; }
+.cm-s-default .cm-comment { color: #a7aaaf; }
+.cm-s-default .cm-atom, .cm-s-default .cm-number { color: #d3a8ff; }
+.cm-s-default .cm-string, .cm-s-default .cm-quote { color: #9de0aa; }
+.cm-s-default .cm-property, .cm-s-default .cm-def, .cm-s-default .cm-header { color: #8ecbff; }
+.cm-s-default .cm-keyword, .cm-s-default .cm-meta { color: #e8a7d5; }
+
 button,
 input,
 select,

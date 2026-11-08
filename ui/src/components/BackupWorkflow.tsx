@@ -51,6 +51,8 @@ export default function BackupWorkflow() {
     const onServerChange = () => void refresh();
     window.addEventListener("dashboard:tab", onPageChange);
     window.addEventListener("dashboard:server-changed", onServerChange);
+    if (!document.getElementById("app")?.classList.contains("hide")
+        && !document.getElementById("t-backup")?.classList.contains("hide")) void refresh();
     return () => {
       window.removeEventListener("dashboard:tab", onPageChange);
       window.removeEventListener("dashboard:server-changed", onServerChange);
@@ -224,7 +226,7 @@ export default function BackupWorkflow() {
           })}
         </div>
       )}
-      {snapshot.files.length > 0 && <p className="backup-hint"><CheckCircle size={15} /> Wiederherstellen und Löschen verlangen zur Sicherheit den exakten Backup-Namen.</p>}
+      {snapshot.files.length > 0 && <p className="backup-hint"><CheckCircle size={15} /> Wiederherstellen und Löschen müssen bestätigt werden.</p>}
     </div>
   );
 }

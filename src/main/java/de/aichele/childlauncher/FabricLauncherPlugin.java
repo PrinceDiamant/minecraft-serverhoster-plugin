@@ -58,9 +58,9 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     private final ScheduledExecutorService memorySched = Executors.newSingleThreadScheduledExecutor(r -> { Thread t = new Thread(r, "ServerhosterPlugin-Memory"); t.setDaemon(true); return t; });
     private final ScheduledExecutorService healthSched = Executors.newSingleThreadScheduledExecutor(r -> { Thread t = new Thread(r, "ServerhosterPlugin-Supervisor"); t.setDaemon(true); return t; });
     private final Object stopLock = new Object();
-    private static final java.util.regex.Pattern JOIN = java.util.regex.Pattern.compile("\\]: (\\w{1,16}) joined the game");
-    private static final java.util.regex.Pattern LEFT = java.util.regex.Pattern.compile("\\]: (\\w{1,16}) left the game");
-    private static final java.util.regex.Pattern LIST = java.util.regex.Pattern.compile("There are \\d+ of a max of \\d+ players online:(.*)$");
+    private static final java.util.regex.Pattern JOIN = java.util.regex.Pattern.compile("\\]: (?:System chat: )?(\\w{1,16}) joined the game\\s*$");
+    private static final java.util.regex.Pattern LEFT = java.util.regex.Pattern.compile("\\]: (?:System chat: )?(\\w{1,16}) left the game\\s*$");
+    private static final java.util.regex.Pattern LIST = java.util.regex.Pattern.compile("\\]: (?:System chat: )?There are \\d+ of a max of \\d+ players online:(.*)$");
 
     // ---- outer (Spigot) stats, sampled on the main thread once per second ----
     volatile double outerTps = 20, outerMspt = 0; volatile int outerChunks, outerEntities, outerWorlds;
@@ -272,6 +272,20 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         slot(selected.id).profile = selected;
     }
 
+    String hostBindAddress() {
+        String address = getServer().getIp();
+        return address == null ? "" : address.trim();
+    }
+
+    static String effectiveBindAddress(String override, String hostAddress) {
+        if (override != null && !override.isBlank()) return override.trim();
+        return hostAddress == null ? "" : hostAddress.trim();
+    }
+
+    String childBindAddress(ServerProfile profile) {
+        return effectiveBindAddress(profile.serverIp, hostBindAddress());
+    }
+
     String focusId() { return focus; }
     List<ServerProfile> profiles() { return profiles; }
     ServerProfile profile(String id) {
@@ -341,7 +355,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             try { getConfig().set(prefix + "port", Integer.parseInt(port.trim())); changed = true; } catch (NumberFormatException ignored) {}
         }
         String ip = p.getProperty("server-ip");
-        if (ip != null && !ip.equals(pr.serverIp == null ? "" : pr.serverIp)) {
+        if (ip != null && !ip.equals(childBindAddress(pr))) {
             getConfig().set(prefix + "serverIp", ip);
             changed = true;
         }
@@ -354,6 +368,14 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     }
 
     boolean setupRequired() { return setupRequired; }
+
+    String dashboardStartBlockReason() {
+        if (setupRequired) return "Bitte zuerst die ServerHoster-Einrichtung abschließen.";
+        if (hostFirstSetupRestartRequired || hostFirstSetupBlocked)
+            return "Die Host-Grundeinrichtung ist noch nicht abgeschlossen. Bitte das Host-Log prüfen oder den Host neu starten.";
+        if (shuttingDown) return "Der Host wird heruntergefahren.";
+        return "";
+    }
 
     Map<String, Object> setupView() throws IOException {
         Path root = getWorldRoot();
@@ -1815,7 +1837,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         return hide;
     }
 
-    private void trackPlayers(ChildSlot slot, String line) {
+    static void trackPlayers(ChildSlot slot, String line) {
         var m = JOIN.matcher(line); if (m.find()) { slot.onlinePlayers.add(m.group(1)); return; }
         m = LEFT.matcher(line); if (m.find()) { slot.onlinePlayers.remove(m.group(1)); return; }
         m = LIST.matcher(line);
@@ -2606,7 +2628,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     private void writeProperties(ServerProfile c, Path wd) throws IOException {
         Map<String, String> force = new LinkedHashMap<>();
         if (c.serverProperties != null) force.putAll(c.serverProperties);
-        force.putAll(forcedProperties(c));
+        force.putAll(forcedProperties(c, hostBindAddress()));
         Map<String, String> defaults = new LinkedHashMap<>();
         defaults.put("level-name", "world");
         defaults.put("white-list", "false");
@@ -2616,10 +2638,10 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         updateProperties(wd.resolve("server.properties"), force, defaults);
     }
 
-    static Map<String, String> forcedProperties(ServerProfile profile) {
+    static Map<String, String> forcedProperties(ServerProfile profile, String hostAddress) {
         Map<String, String> force = new LinkedHashMap<>();
         force.put("server-port", String.valueOf(profile.port));
-        force.put("server-ip", profile.serverIp == null ? "" : profile.serverIp);
+        force.put("server-ip", effectiveBindAddress(profile.serverIp, hostAddress));
         force.put("pause-when-empty-seconds", "0");
         return force;
     }
@@ -2634,7 +2656,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         }
         Map<String, String> force = new LinkedHashMap<>();
         if (profile.serverProperties != null) force.putAll(profile.serverProperties);
-        force.putAll(forcedProperties(profile));
+        force.putAll(forcedProperties(profile, hostBindAddress()));
         Map<String, String> defaults = new LinkedHashMap<>();
         defaults.put("level-name", "world");
         defaults.put("white-list", "false");

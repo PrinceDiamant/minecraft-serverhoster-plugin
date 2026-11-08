@@ -50,8 +50,8 @@ final class Dashboard {
             pl.getLogger().warning("Einmaliger Dashboard-Einrichtungscode: " + setupCode
                     + " (nur bis zum nächsten Serverstart gültig; nicht weitergeben).");
         }
-        String bind = pl.getConfig().getString("dashboard.bind", "");
-        if (bind == null || bind.isBlank()) bind = pl.getConfig().getString("serverIp", "");
+        String bind = FabricLauncherPlugin.effectiveBindAddress(
+                pl.getConfig().getString("dashboard.bind", ""), pl.childBindAddress(pl.profile(null)));
         if (bind == null || bind.isBlank()) bind = "0.0.0.0";
         int port = pl.getConfig().getInt("dashboard.port", 2064);
         InetSocketAddress addr = new InetSocketAddress(bind, port);
@@ -107,7 +107,7 @@ final class Dashboard {
             if (tls) ex.getResponseHeaders().set("Strict-Transport-Security", "max-age=31536000");
             String path = ex.getRequestURI().getPath();
             String method = ex.getRequestMethod();
-            if (path.equals("/") || path.equals("/index.html")) { serveIndex(ex); return; }
+            if (isDashboardPage(path) && method.equals("GET")) { serveIndex(ex); return; }
             if (path.startsWith("/assets/") && method.equals("GET")) { serveWebAsset(ex, path.substring(1)); return; }
             if (path.equals("/third-party-notices") && method.equals("GET")) { serveThirdPartyNotices(ex); return; }
             if (path.equals("/api/auth-state") && method.equals("GET")) {
@@ -150,6 +150,9 @@ final class Dashboard {
                 }
                 case "POST /api/action" -> {
                     String a = q.getOrDefault("do", "");
+                    if ((a.equals("start") || a.equals("restart")) && !pl.dashboardStartBlockReason().isEmpty()) {
+                        json(ex, 409, Map.of("error", pl.dashboardStartBlockReason())); return;
+                    }
                     switch (a) {
                         case "start" -> pl.requestStart(sid);
                         case "stop" -> pl.requestStop(sid);
@@ -200,6 +203,13 @@ final class Dashboard {
                     json(ex, 200, Map.of("ok", true));
                 }
                 case "GET /api/players" -> players(ex, sid);
+                case "POST /api/players/refresh" -> {
+                    ChildSlot slot = pl.slot(sid);
+                    if (!slot.running()) { json(ex, 200, Map.of("requested", false)); break; }
+                    if (!slot.serverReady || !pl.sendCommand(sid, "list"))
+                        throw new IllegalStateException("Die Spielerliste kann nicht abgefragt werden, solange der Child startet oder die Konsole nicht erreichbar ist.");
+                    json(ex, 200, Map.of("requested", true));
+                }
                 case "GET /api/fs/list" -> fsList(ex, q, sid);
                 case "GET /api/fs/read" -> fsRead(ex, q, sid);
                 case "GET /api/fs/download" -> fsDownload(ex, q, sid);
@@ -489,12 +499,15 @@ final class Dashboard {
         m.put("id", pr.id);
         m.put("setupRequired", pl.setupRequired());
         m.put("running", slot.running());
+        m.put("lifecycle", SupervisorHealth.dashboardState(slot.phase, slot.running(), slot.serverReady,
+                slot.wantRunning, slot.stopRequested, slot.launchInProgress.get(), slot.restartQueued.get(),
+                pl.getConfig().getBoolean("autoRestart.enabled", true)).name());
         m.put("pid", pid);
         m.put("uptime", slot.uptimeMillis() / 1000);
         m.put("status", slot.lastStatus);
         m.put("type", pr.type);
         m.put("mcVersion", pr.mcVersion);
-        m.put("address", (pr.serverIp == null ? "" : pr.serverIp) + ":" + pr.port);
+        m.put("address", formatBindAddress(pl.childBindAddress(pr), pr.port));
         m.put("xmx", pr.xmx);
         m.put("players", new TreeSet<>(slot.onlinePlayers));
         m.put("tls", pl.dashboardTls());
@@ -509,6 +522,12 @@ final class Dashboard {
         m.put("spigot", spigotStats());
         m.put("hostMemory", pl.hostMemoryView());
         return m;
+    }
+
+    static String formatBindAddress(String address, int port) {
+        if (address.isBlank() || address.equals("0.0.0.0") || address.equals("::"))
+            return "Alle Interfaces (Port " + port + ")";
+        return (address.contains(":") && !address.startsWith("[") ? "[" + address + "]" : address) + ":" + port;
     }
 
     private Map<String, Object> setup(HttpExchange ex) throws IOException {
@@ -541,6 +560,12 @@ final class Dashboard {
 
     static boolean csrfRejected(String method, String header) {
         return method != null && !Set.of("GET", "HEAD", "OPTIONS").contains(method) && !"1".equals(header);
+    }
+
+    static boolean isDashboardPage(String path) {
+        return Set.of("/", "/index.html", "/dashboard", "/console", "/players", "/files",
+                "/logs", "/properties", "/config", "/settings", "/diagnostics", "/setup",
+                "/tasks", "/backup").contains(path);
     }
 
     private Map<String, Object> hostMinimize(HttpExchange ex) throws IOException {
@@ -667,15 +692,29 @@ final class Dashboard {
         Map<String, Object> m = new LinkedHashMap<>();
         for (String n : List.of("whitelist", "ops", "banned-players")) {
             Path f = pl.workDir(sid).resolve(n + ".json");
-            List<String> names = new ArrayList<>();
-            try {
-                if (Files.exists(f)) for (JsonElement e : JsonParser.parseString(Files.readString(f)).getAsJsonArray())
-                    if (e.getAsJsonObject().has("name")) names.add(e.getAsJsonObject().get("name").getAsString());
-            } catch (Exception ignored) {}
-            m.put(n, names);
+            m.put(n, readPlayerNames(f));
         }
         m.put("online", new TreeSet<>(pl.players(sid)));
         json(ex, 200, m);
+    }
+
+    static List<String> readPlayerNames(Path file) throws IOException {
+        if (Files.notExists(file)) return List.of();
+        try {
+            JsonElement parsed = JsonParser.parseString(Files.readString(file));
+            if (!parsed.isJsonArray()) throw new IllegalArgumentException("expected an array");
+            List<String> names = new ArrayList<>();
+            for (JsonElement item : parsed.getAsJsonArray()) {
+                if (!item.isJsonObject() || !item.getAsJsonObject().has("name")
+                        || !item.getAsJsonObject().get("name").isJsonPrimitive()
+                        || !item.getAsJsonObject().getAsJsonPrimitive("name").isString())
+                    throw new IllegalArgumentException("expected entries with a player name");
+                names.add(item.getAsJsonObject().get("name").getAsString());
+            }
+            return names;
+        } catch (com.google.gson.JsonParseException | IllegalArgumentException e) {
+            throw new IOException("Spielerliste " + file.getFileName() + " ist ungültig: " + e.getMessage(), e);
+        }
     }
 
     // ---------------- console SSE ----------------

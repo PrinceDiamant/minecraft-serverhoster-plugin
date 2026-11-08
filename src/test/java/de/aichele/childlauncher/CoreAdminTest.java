@@ -27,6 +27,42 @@ import static org.junit.jupiter.api.Assertions.*;
 class CoreAdminTest {
     @TempDir Path tmp;
 
+    @Test void dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths() {
+        for (String path : List.of("/", "/index.html", "/dashboard", "/console", "/players",
+                "/files", "/logs", "/properties", "/config", "/settings", "/diagnostics",
+                "/setup", "/tasks", "/backup"))
+            assertTrue(Dashboard.isDashboardPage(path), path);
+        for (String path : List.of("/api/status", "/assets/example.js", "/third-party-notices",
+                "/players/extra", "/unknown", "/players/"))
+            assertFalse(Dashboard.isDashboardPage(path), path);
+    }
+
+    @Test void tracksMinecraftPlayerEventsAndListResponses() {
+        ChildSlot slot = new ChildSlot("test", 200);
+        FabricLauncherPlugin.trackPlayers(slot, "[14:45:22] [Server thread/INFO]: System chat: Sciddie_ joined the game");
+        FabricLauncherPlugin.trackPlayers(slot, "[14:45:25] [Server thread/INFO]: SparkysBac0n joined the game");
+        assertEquals(java.util.Set.of("Sciddie_", "SparkysBac0n"), slot.onlinePlayers);
+        FabricLauncherPlugin.trackPlayers(slot, "[14:45:50] [Server thread/INFO]: System chat: Sciddie_ left the game");
+        assertEquals(java.util.Set.of("SparkysBac0n"), slot.onlinePlayers);
+        FabricLauncherPlugin.trackPlayers(slot, "[14:46:00] [Server thread/INFO]: System chat: There are 2 of a max of 20 players online: Sciddie_, SparkysBac0n");
+        assertEquals(java.util.Set.of("Sciddie_", "SparkysBac0n"), slot.onlinePlayers);
+        FabricLauncherPlugin.trackPlayers(slot, "[14:46:01] [Server thread/INFO]: <Fake> There are 0 of a max of 20 players online:");
+        assertEquals(2, slot.onlinePlayers.size());
+        FabricLauncherPlugin.trackPlayers(slot, "[14:46:02] [Server thread/INFO]: There are 0 of a max of 20 players online:");
+        assertTrue(slot.onlinePlayers.isEmpty());
+    }
+
+    @Test void playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty() throws Exception {
+        Path file = tmp.resolve("ops.json");
+        assertEquals(List.of(), Dashboard.readPlayerNames(file));
+        Files.writeString(file, "[{\"uuid\":\"id\",\"name\":\"Sciddie_\"}]");
+        assertEquals(List.of("Sciddie_"), Dashboard.readPlayerNames(file));
+        Files.writeString(file, "{\"name\":\"wrong shape\"}");
+        assertThrows(java.io.IOException.class, () -> Dashboard.readPlayerNames(file));
+        Files.writeString(file, "[{\"uuid\":\"id\"}]");
+        assertThrows(java.io.IOException.class, () -> Dashboard.readPlayerNames(file));
+    }
+
     @Test void dashboardPasswordSetupPreservesExistingAndFailsClosed() throws Exception {
         Path file = tmp.resolve("dashboard-password.txt");
         assertNull(DashboardPassword.read(file, true));

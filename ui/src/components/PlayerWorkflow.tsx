@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowClockwise, Circle, UsersThree } from "@phosphor-icons/react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
 
@@ -7,16 +7,6 @@ interface PlayerLists {
   ops: string[];
   "banned-players": string[];
   online: string[];
-}
-
-function useRefreshOnTab(tab: string, refresh: () => void) {
-  useEffect(() => {
-    const onPageChange = (event: Event) => {
-      if ((event as CustomEvent<string>).detail === tab) refresh();
-    };
-    window.addEventListener("dashboard:tab", onPageChange);
-    return () => window.removeEventListener("dashboard:tab", onPageChange);
-  }, [refresh, tab]);
 }
 
 async function sendCommand(command: string): Promise<void> {
@@ -38,16 +28,54 @@ export function PlayerWorkflow() {
   const [playerName, setPlayerName] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [refreshError, setRefreshError] = useState("");
+  const [refreshing, setRefreshing] = useState(false);
+  const active = useRef(false);
+  const inFlight = useRef(false);
 
-  const refresh = useCallback(async () => {
-    setError("");
+  const refresh = useCallback(async (queryChild = false) => {
+    if (inFlight.current) return;
+    inFlight.current = true;
+    setRefreshing(true);
     try {
+      if (queryChild) {
+        const result = await dashboardRequest<{ requested: boolean }>("/api/players/refresh", { method: "POST" });
+        if (result.requested) await new Promise((resolve) => window.setTimeout(resolve, 1000));
+      }
       setLists(await dashboardRequest<PlayerLists>("/api/players"));
+      setRefreshError("");
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Spielerliste konnte nicht geladen werden.");
+      setRefreshError(cause instanceof Error ? cause.message : "Spielerliste konnte nicht geladen werden.");
+    } finally {
+      inFlight.current = false;
+      setRefreshing(false);
     }
   }, []);
-  useRefreshOnTab("players", refresh);
+  useEffect(() => {
+    const onPageChange = (event: Event) => {
+      const selected = (event as CustomEvent<string>).detail === "players";
+      if (selected && !active.current) void refresh(true);
+      active.current = selected;
+    };
+    const interval = window.setInterval(() => {
+      if (active.current && !document.hidden) void refresh();
+    }, 10000);
+    const onVisibilityChange = () => {
+      if (active.current && !document.hidden) void refresh(true);
+    };
+    window.addEventListener("dashboard:tab", onPageChange);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    if (!document.getElementById("app")?.classList.contains("hide")
+        && !document.getElementById("t-players")?.classList.contains("hide")) {
+      active.current = true;
+      void refresh(true);
+    }
+    return () => {
+      window.removeEventListener("dashboard:tab", onPageChange);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      window.clearInterval(interval);
+    };
+  }, [refresh]);
 
   const runPlayerAction = async (action: string, dangerous = false) => {
     const name = playerName.trim();
@@ -70,7 +98,7 @@ export function PlayerWorkflow() {
     try {
       await sendCommand(`${action} ${name}`);
       window.dashboardUi?.notify(`Befehl an den Child gesendet: ${action} ${name}. Das Ergebnis steht in der Konsole.`);
-      window.setTimeout(() => void refresh(), 1200);
+      window.setTimeout(() => void refresh(true), 1200);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Der Spielerbefehl ist fehlgeschlagen.");
     } finally {
@@ -93,8 +121,9 @@ export function PlayerWorkflow() {
           <span className="feature-icon"><UsersThree size={23} weight="fill" /></span>
           <div><h2>Spielerverwaltung</h2><p>Online-Status, Listen und sichere Schnellaktionen.</p></div>
         </div>
-        <button className="btn" onClick={() => void refresh()} type="button"><ArrowClockwise size={17} /> Aktualisieren</button>
+        <button className="btn" disabled={refreshing} onClick={() => void refresh(true)} type="button"><ArrowClockwise size={17} /> {refreshing ? "Aktualisiert …" : "Aktualisieren"}</button>
       </section>
+      {refreshError && <p className="workflow-error" role="alert">Aktualisierung fehlgeschlagen: {refreshError}</p>}
 
       <section className="player-actions-card">
         <div className="workflow-card-title"><div><h3>Spieleraktion</h3><p>Befehle laufen über die Child-Konsole.</p></div></div>
@@ -129,7 +158,7 @@ export function PlayerWorkflow() {
           <span>Whitelist</span>
           <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist on"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Aktivieren</button>
           <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist off"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Deaktivieren</button>
-          <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist reload"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); await refresh(); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Neu laden</button>
+          <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist reload"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); await refresh(true); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Neu laden</button>
         </div>
         {error && <p className="workflow-error" role="alert">{error}</p>}
       </section>

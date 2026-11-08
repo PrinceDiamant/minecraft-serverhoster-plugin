@@ -22,11 +22,13 @@ import SetupWorkflow from "./components/SetupWorkflow";
 import SettingsWorkflow from "./components/SettingsWorkflow";
 import TaskWorkflow from "./components/TaskWorkflow";
 import { dashboardRequest, jsonBody, type ConfirmOptions, type PromptOptions } from "./lib/hostApi";
+import { installFileEditors, type FileEditors } from "./lib/fileEditor";
 import legacyDashboardHtml from "../../src/main/resources/web/index.html?raw";
 
 declare global {
   interface Window {
     dashboardLegacyLoaded?: boolean;
+    dashboardEditors?: FileEditors;
     dashboardUi?: {
       confirm: (options: ConfirmOptions) => Promise<boolean>;
       prompt: (options: PromptOptions) => Promise<string | null>;
@@ -76,6 +78,25 @@ const groups = [
   },
 ];
 
+const routes: Record<string, string> = {
+  status: "/dashboard",
+  console: "/console",
+  players: "/players",
+  files: "/files",
+  logs: "/logs",
+  props: "/properties",
+  config: "/config",
+  settings: "/settings",
+  diag: "/diagnostics",
+  setup: "/setup",
+  tasks: "/tasks",
+  backup: "/backup",
+};
+
+function tabFromPath(path: string): string {
+  return Object.entries(routes).find(([, route]) => route === path)?.[0] ?? "status";
+}
+
 function readLegacyDashboard() {
   const document = new DOMParser().parseFromString(legacyDashboardHtml, "text/html");
   const main = document.querySelector("main");
@@ -106,12 +127,16 @@ function readLegacyDashboard() {
       "",
     )
     .replace(
-      "async function status(){try{const s=await api('/api/status');",
-      "async function status(){try{const s=await api('/api/status');window.dispatchEvent(new CustomEvent('dashboard:setup-required',{detail:!!s.setupRequired}));",
+      "if(generation!==statusGeneration)return;updateChildActions(s);",
+      "if(generation!==statusGeneration)return;window.dispatchEvent(new CustomEvent('dashboard:setup-required',{detail:!!s.setupRequired}));updateChildActions(s);",
     )
     .replace(
       "fetch('/api/status',{credentials:'same-origin'}).then(r=>r.ok?start():showLogin()).catch(showLogin);",
       "fetch('/api/status',{credentials:'same-origin'}).then(r=>r.ok?start():showLogin()).catch(showLogin).finally(()=>window.dispatchEvent(new Event('dashboard:auth-ready')));",
+    )
+    .replace(
+      "stream();tab(cur)}",
+      "stream();window.dispatchEvent(new Event('dashboard:started'))}",
     );
   return { panels: main.innerHTML, script: safeScript };
 }
@@ -119,7 +144,7 @@ function readLegacyDashboard() {
 const legacyDashboard = readLegacyDashboard();
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("status");
+  const [activeTab, setActiveTab] = useState(() => tabFromPath(window.location.pathname));
   const [setupRequired, setSetupRequired] = useState(false);
   const [authReady, setAuthReady] = useState(false);
   const [passwordSetup, setPasswordSetup] = useState<boolean | null>(null);
@@ -152,19 +177,32 @@ export default function App() {
     const onTabChange = (event: Event) => setActiveTab((event as CustomEvent<string>).detail);
     const onSetupRequired = (event: Event) => {
       const required = (event as CustomEvent<boolean>).detail;
-      if (required && !setupRequiredRef.current) window.dashboardUi?.navigate("setup");
+      const becameRequired = required && !setupRequiredRef.current;
       setupRequiredRef.current = required;
+      if (becameRequired) navigateTo("setup", "replace");
       setSetupRequired(required);
+    };
+    const onStarted = () => navigateTo(tabFromPath(window.location.pathname), "replace");
+    const onPopState = () => {
+      if (document.getElementById("app")?.classList.contains("hide")) {
+        setActiveTab(tabFromPath(window.location.pathname));
+      } else {
+        navigateTo(tabFromPath(window.location.pathname), "replace");
+      }
     };
     window.addEventListener("dashboard:unauthorized", onUnauthorized);
     window.addEventListener("dashboard:auth-ready", onAuthReady);
     window.addEventListener("dashboard:tab", onTabChange);
     window.addEventListener("dashboard:setup-required", onSetupRequired);
+    window.addEventListener("dashboard:started", onStarted);
+    window.addEventListener("popstate", onPopState);
     return () => {
       window.removeEventListener("dashboard:unauthorized", onUnauthorized);
       window.removeEventListener("dashboard:auth-ready", onAuthReady);
       window.removeEventListener("dashboard:tab", onTabChange);
       window.removeEventListener("dashboard:setup-required", onSetupRequired);
+      window.removeEventListener("dashboard:started", onStarted);
+      window.removeEventListener("popstate", onPopState);
     };
   }, []);
 
@@ -177,21 +215,17 @@ export default function App() {
         setDialogValue(request.kind === "prompt" ? request.initialValue ?? "" : "");
         setDialog(request);
       });
-    const navigate = (tab: string) => {
-      setActiveTab(tab);
-      window.tab?.(tab);
-      window.dispatchEvent(new CustomEvent("dashboard:tab", { detail: tab }));
-    };
     window.dashboardUi = {
       confirm: async (options) => (await showDialog({ ...options, kind: "confirm" })) === true,
       prompt: async (options) => {
         const result = await showDialog({ ...options, kind: "prompt" });
         return typeof result === "string" ? result : null;
       },
-      navigate,
+      navigate: (tab) => navigateTo(tab, "push"),
       notify: (message, error) => window.toast?.(message, error),
     };
 
+    window.dashboardEditors = installFileEditors();
     const script = document.createElement("script");
     script.textContent = legacyDashboard.script;
     document.body.appendChild(script);
@@ -211,11 +245,18 @@ export default function App() {
     window.dashboardLegacyLoaded = true;
   }, []);
 
-  const navigate = (tab: string) => {
-    setActiveTab(tab);
-    window.tab?.(tab);
-    window.dispatchEvent(new CustomEvent("dashboard:tab", { detail: tab }));
-  };
+  function navigateTo(requestedTab: string, mode: "push" | "replace") {
+    const tab = setupRequiredRef.current ? "setup" : requestedTab;
+    const path = routes[tab] ?? routes.status;
+    const effectiveTab = routes[tab] ? tab : "status";
+    if (window.location.pathname !== path) {
+      if (mode === "push") window.history.pushState(null, "", path);
+      else window.history.replaceState(null, "", path);
+    }
+    setActiveTab(effectiveTab);
+    window.tab?.(effectiveTab);
+    window.dispatchEvent(new CustomEvent("dashboard:tab", { detail: effectiveTab }));
+  }
 
   const closeDialog = (result: boolean | string | null) => {
     pendingDialog.current?.(result);
@@ -346,7 +387,7 @@ export default function App() {
                     aria-current={activeTab === item.id ? "page" : undefined}
                     className={`nav-item${activeTab === item.id ? " selected" : ""}`}
                     key={item.id}
-                    onClick={() => navigate(item.id)}
+                    onClick={() => navigateTo(item.id, "push")}
                     type="button"
                   >
                     {item.icon}
@@ -358,7 +399,7 @@ export default function App() {
           </nav>
 
           <div className="sidebar-footer">
-            <span className="host-indicator"><i /> Spigot-Host verbunden</span>
+            <span className="host-indicator"><i /> <span id="host-connection">Verbindung wird geprüft</span></span>
             <button className="logout-button" onClick={() => window.logout?.()} type="button">
               Abmelden
             </button>

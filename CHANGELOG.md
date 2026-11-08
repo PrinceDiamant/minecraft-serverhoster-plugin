@@ -1,5 +1,18 @@
 # Release notes
 
+## ServerHoster 2.3.1
+
+- Inherit the host bind address when `serverIp` is empty. Existing nonempty
+  overrides, including `0.0.0.0`, remain unchanged.
+- Add syntax highlighting and line numbers to supported dashboard editors.
+- Show child actions according to its lifecycle and report connection failures.
+- Fix player tracking for Minecraft 26.3, refresh visible player lists every
+  10 seconds, and query the child when opening or manually refreshing the page.
+- Give dashboard pages individual URLs that support reload and browser history.
+
+Testing limitations: the changed IP binding and player refresh have not been
+verified end-to-end on an external ZAP-Hosting server.
+
 ## ServerHoster 2.3.0
 
 - Set the dashboard password during initial onboarding using a one-time code

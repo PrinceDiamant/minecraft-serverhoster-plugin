@@ -42,7 +42,7 @@ a{color:hsl(270 80% 70%);cursor:pointer;text-decoration:none}a:hover{color:white
 <main>
 <section id="t-status">
  <h2 class="section-heading">Übersicht</h2><p class="section-subtitle">Live-Status von Child-Server und Spigot-Host</p>
- <div class="card"><div class="row" style="margin-bottom:12px"><button class="btn pri" onclick="act('start')">▶ Starten</button><button class="btn" onclick="act('restart')">⟳ Neustarten</button><button class="btn dan" onclick="confirmStop()">■ Stoppen</button></div>
+ <div class="card"><div class="row" style="margin-bottom:12px" id="child-actions"><button id="child-start" class="btn pri hide" onclick="act('start')">▶ Starten</button><button id="child-restart" class="btn hide" onclick="act('restart')">⟳ Neustarten</button><button id="child-stop" class="btn dan hide" onclick="confirmStop()">■ Stoppen</button><span id="child-action-status" class="muted" role="status">Status wird geladen …</span></div>
  <div class="grid" id="stats"></div></div>
  <h3 class="section-heading">Ressourcenverlauf</h3><p class="section-subtitle">Werte werden live alle 3 Sekunden erfasst und nur im Browser gehalten.</p>
  <div class="chart-grid" id="overviewCharts"></div>
@@ -50,7 +50,7 @@ a{color:hsl(270 80% 70%);cursor:pointer;text-decoration:none}a:hover{color:white
  <div class="card"><div class="row"><b>Online-Spieler (Child)</b><span style="flex:1"></span><a onclick="cmd('list')">Aktualisieren</a></div><div id="online" style="margin-top:8px"></div></div>
 </section>
 <section id="t-console" class="hide"><div class="card"><div id="con"></div>
- <form class="row" style="margin-top:10px" onsubmit="sendCmd();return false"><input id="cin" placeholder="Befehl (ohne /), z.B. say Hallo"><button class="btn pri">Senden</button><label class="muted"><input type="checkbox" id="auto" checked> Auto-Scroll</label></form></div></section>
+ <form class="row" style="margin-top:10px" onsubmit="sendCmd();return false"><input id="cin" placeholder="Befehl (ohne /), z.B. say Hallo" disabled><button id="console-send" class="btn pri" disabled>Senden</button><label class="muted"><input type="checkbox" id="auto" checked> Auto-Scroll</label></form><p id="console-state" class="muted">Serverstatus wird geladen …</p></div></section>
 <section id="t-players" class="hide"><div class="card"><div class="row"><input id="pname" placeholder="Spielername"><button class="btn" onclick="pc('whitelist add')">Whitelist +</button><button class="btn" onclick="pc('whitelist remove')">Whitelist −</button><button class="btn" onclick="pc('op')">OP +</button><button class="btn" onclick="pc('deop')">OP −</button><button class="btn" onclick="pc('kick')">Kick</button><button class="btn dan" onclick="pc('ban')">Ban</button><button class="btn" onclick="pc('pardon')">Entbannen</button></div>
  <div class="row" style="margin-top:10px"><button class="btn" onclick="cmd('whitelist on')">Whitelist an</button><button class="btn" onclick="cmd('whitelist off')">Whitelist aus</button><button class="btn" onclick="cmd('whitelist reload')">Whitelist neu laden</button><button class="btn" onclick="loadPlayers()">Aktualisieren</button></div>
  <div class="grid" id="plists" style="margin-top:14px"></div><p class="muted">Befehle werden an die Server-Konsole gesendet; Server muss laufen.</p></div></section>
@@ -70,7 +70,7 @@ a{color:hsl(270 80% 70%);cursor:pointer;text-decoration:none}a:hover{color:white
 <script>
 const $=id=>document.getElementById(id);
 const TABS=[['status','Status'],['console','Konsole'],['players','Spieler'],['props','server.properties'],['config','config.yml'],['files','Dateien'],['logs','Logs'],['diag','Diagnose'],['setup','Einrichtung'],['tasks','Aufgaben'],['backup','Backup'],['settings','Einstellungen']];
-let cur='status',es=null,cwd='',logLines=[],stTimer=null,srvName='child';
+let cur='status',es=null,cwd='',logLines=[],stTimer=null,srvName='child',actionPending=false,statusGeneration=0;
 const chartHistory={cpuHost:[],cpuChild:[],rssHost:[],rssChild:[],cgroup:[],mspt:[]};
 const CHART_HISTORY_LIMIT=60;
 function toast(m,bad){const t=$('toast');t.textContent=m;t.style.borderColor=bad?'var(--r)':'var(--b)';t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',4000)}
@@ -89,9 +89,18 @@ function tab(t){cur=t;for(const [k] of TABS){$('t-'+k).classList.toggle('hide',k
  if(t==='props'){loadTxt('props');loadPropertiesPreview()}if(t==='config')loadTxt('config');if(t==='files')ls(cwd);if(t==='logs')loadLogs();if(t==='players')loadPlayers();if(t==='console')scrollCon();if(t==='diag')loadDiag();if(t==='tasks')loadTasks();if(t==='backup')loadBackup()}
 function fmtUp(s){const d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);return (d?d+'d ':'')+h+'h '+m+'m'}
 function fmtSize(n){if(n<1024)return n+' B';if(n<1048576)return (n/1024).toFixed(1)+' KB';if(n<1073741824)return (n/1048576).toFixed(1)+' MB';return (n/1073741824).toFixed(2)+' GB'}
-async function status(){try{const s=await api('/api/status');
- $('hstate').innerHTML=s.running?'<span class="ok">● läuft</span>':'<span class="bad">● gestoppt</span>';
- const kv=[['Server',esc(s.id||'')],[ 'Status',s.running?'<span class="ok">Läuft</span>':'<span class="bad">Gestoppt</span>'],['Uptime',s.running?fmtUp(s.uptime):'–'],['PID',s.pid>0?s.pid:'–'],['CPU',s.cpu>=0&&s.cpu!=null?s.cpu+' %':'–'],['RAM (RSS)',s.rssMb>0?(s.rssMb/1024).toFixed(2)+' GB / '+esc(s.xmx):'–'],['Spieler',s.players.length],['Typ',esc(s.type+' '+s.mcVersion)],['Adresse',esc(s.address)],['TLS',s.tls?'https':'http'],['Letzter Zustand',esc(s.status)]];
+function lifecycleLabel(s){return s.setupRequired?'Einrichtung erforderlich':({STARTING:'Startet',RUNNING:'Läuft',STOPPING:'Stoppt',RESTART_WAIT:'Neustart ausstehend',STOPPED:'Gestoppt'}[s.lifecycle]||(s.running?'Läuft':'Gestoppt'))}
+function updateChildActions(s){const state=s.lifecycle||(s.running?'RUNNING':'STOPPED'),locked=actionPending||s.setupRequired;
+ $('child-start').classList.toggle('hide',state!=='STOPPED'||s.setupRequired);
+ $('child-restart').classList.toggle('hide',state!=='RUNNING'||s.setupRequired);
+ $('child-stop').classList.toggle('hide',!['STARTING','RUNNING','RESTART_WAIT'].includes(state)||s.setupRequired);
+ for(const id of ['child-start','child-restart','child-stop'])$(id).disabled=locked;
+ $('cin').disabled=$('console-send').disabled=state!=='RUNNING'||s.setupRequired;
+ $('console-state').textContent=state==='RUNNING'&&!s.setupRequired?'':'Befehle sind verfügbar, sobald der Child vollständig gestartet ist.';
+ $('child-action-status').textContent=actionPending?'Aktion wird angefordert …':state==='STOPPING'?'Child wird gestoppt …':state==='RESTART_WAIT'?'Automatischer Neustart ausstehend. Mit Stoppen abbrechen.':state==='STARTING'?'Child startet …':''}
+async function status(){const generation=++statusGeneration;try{const s=await api('/api/status');if(generation!==statusGeneration)return;updateChildActions(s);if($('host-connection'))$('host-connection').textContent='Spigot-Host verbunden';
+ $('hstate').innerHTML='<span class="'+(s.lifecycle==='RUNNING'?'ok':'bad')+'">● '+esc(lifecycleLabel(s).toLowerCase())+'</span>';
+ const kv=[['Server',esc(s.id||'')],[ 'Status',esc(lifecycleLabel(s))],['Uptime',s.running?fmtUp(s.uptime):'–'],['PID',s.pid>0?s.pid:'–'],['CPU',s.cpu>=0&&s.cpu!=null?s.cpu+' %':'–'],['RAM (RSS)',s.rssMb>0?(s.rssMb/1024).toFixed(2)+' GB / '+esc(s.xmx):'–'],['Spieler',s.players.length],['Typ',esc(s.type+' '+s.mcVersion)],['Bind-Adresse',esc(s.address)],['TLS',s.tls?'https':'http'],['Letzter Zustand',esc(s.status)]];
  const hm=s.hostMemory||{},memUse=hm.usePercent>=0?hm.usePercent.toFixed(1)+'% ('+hm.cgroupCurrentMb+' / '+hm.cgroupLimitMb+' MB)':'cgroup nicht verfügbar';
  kv.push(['Container-Speicher',esc(memUse)],['Swap (Container)',hm.cgroupSwapMb>=0?hm.cgroupSwapMb+' MB':'–'],['Host MemAvailable',hm.availableMb>=0?hm.availableMb+' MB':'–'],['Host Swap frei / gesamt',hm.swapFreeMb>=0&&hm.swapTotalMb>=0?hm.swapFreeMb+' / '+hm.swapTotalMb+' MB':'–'],['cgroup-Limit-Treffer',hm.memoryMaxEvents>=0?hm.memoryMaxEvents:'–']);
  if(hm.recoveryPending)kv.push(['Speicherschutz','<span class="bad">Child-Autostart pausiert</span>']);
@@ -102,8 +111,10 @@ async function status(){try{const s=await api('/api/status');
  $('res').innerHTML='<thead><tr><th></th><th>Spigot</th><th>'+esc(s.type||'child')+'</th></tr></thead><tbody>'+rows.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')+'</tbody>';
  updateCharts(g,s,hm);
  $('spark').innerHTML=spark(s.msptHistory||[]);
- $('online').innerHTML=s.players.length?s.players.map(p=>`<span class="pill">${esc(p)}</span>`).join(''):'<span class="muted">Niemand online</span>'}catch(e){}}
-async function act(a){await post('/api/action?do='+a);toast({start:'Start angefordert',stop:'Stopp angefordert (wartet ggf. auf Startbereitschaft)',restart:'Neustart angefordert'}[a]);setTimeout(status,1500)}
+ $('online').innerHTML=s.players.length?s.players.map(p=>`<span class="pill">${esc(p)}</span>`).join(''):'<span class="muted">Niemand online</span>'}catch(e){if(generation===statusGeneration){for(const id of ['child-start','child-restart','child-stop','cin','console-send'])$(id).disabled=true;$('child-action-status').textContent='Status nicht verfügbar – Aktionen vorübergehend gesperrt.';$('console-state').textContent='Status nicht verfügbar – Befehle vorübergehend gesperrt.';$('hstate').textContent='● Status nicht verfügbar';if($('host-connection'))$('host-connection').textContent='Host-Verbindung nicht verfügbar'}}}
+async function act(a){if(actionPending)return;actionPending=true;for(const id of ['child-start','child-restart','child-stop'])$(id).disabled=true;$('child-action-status').textContent='Aktion wird angefordert …';
+ try{await post('/api/action?do='+a);toast({start:'Start angefordert',stop:'Stopp angefordert (wartet ggf. auf Startbereitschaft)',restart:'Neustart angefordert'}[a]);await new Promise(resolve=>setTimeout(resolve,500))}
+ finally{actionPending=false;await status()}}
 async function confirmStop(){const accepted=await window.dashboardUi?.confirm({title:'Server wirklich stoppen?',description:'Der Child-Server wird regulär beendet. Der Spigot-Host bleibt aktiv.',confirmLabel:'Child stoppen',destructive:true});if(accepted)act('stop')}
 function cls(l){return /\bERROR\b|Exception|FATAL/.test(l)?'E':/\bWARN/.test(l)?'W':l.startsWith('[ServerhosterPlugin]')||l.startsWith('> ')?'L':''}
 function addLine(l){const c=$('con'),d=document.createElement('div');d.textContent=l;const k=cls(l);if(k)d.className=k;c.appendChild(d);while(c.childElementCount>2000)c.firstChild.remove();if($('auto').checked)c.scrollTop=c.scrollHeight}
@@ -115,8 +126,8 @@ function sendCmd(){const v=$('cin').value.trim();if(!v)return;cmd(v);$('cin').va
 function pc(c){const n=$('pname').value.trim();if(!/^\w{1,16}$/.test(n)){toast('Ungültiger Name',true);return}cmd(c+' '+n);setTimeout(loadPlayers,1200)}
 async function loadPlayers(){const d=await api('/api/players');const L={whitelist:'Whitelist',ops:'Operatoren','banned-players':'Gebannt',online:'Online'};
  $('plists').innerHTML=Object.keys(L).map(k=>`<div class="kv"><b>${L[k]} (${d[k].length})</b>${d[k].map(n=>`<span class="pill"><a onclick="$('pname').value='${esc(n)}'">${esc(n)}</a></span>`).join('')||'<span class="muted">–</span>'}</div>`).join('')}
-async function loadTxt(w){$(w).value=await api('/api/'+w)}
-async function saveTxt(w){const r=await post('/api/'+w,$(w).value,true);toast(r.hint||'Gespeichert');if(w==='props')loadPropertiesPreview()}
+async function loadTxt(w){const text=await api('/api/'+w);if(window.dashboardEditors)window.dashboardEditors.set(w,text,w==='props'?'server.properties':'config.yml');else $(w).value=text}
+async function saveTxt(w){const text=window.dashboardEditors?window.dashboardEditors.get(w):$(w).value;const r=await post('/api/'+w,text,true);toast(r.hint||'Gespeichert');if(w==='props')loadPropertiesPreview()}
 async function loadPropertiesPreview(){const rows=await api('/api/properties/preview'),body=$('propdiff');body.innerHTML=rows.length?rows.map(p=>`<tr><td><code>${esc(p.key)}</code></td><td>${p.present?esc(p.current):'<span class="muted">nicht gesetzt</span>'}</td><td><code>${esc(p.next)}</code></td><td>${esc(p.action)}</td></tr>`).join(''):'<tr><td colspan="4" class="muted">Keine erzwungenen Änderungen.</td></tr>'}
 function jp(a,b){return a?a+'/'+b:b}
 async function ls(p){const d=await api('/api/fs/list?path='+encodeURIComponent(p||''));cwd=d.path==='.'?'':d.path;
@@ -127,9 +138,9 @@ async function ls(p){const d=await api('/api/fs/list?path='+encodeURIComponent(p
   <td style="text-align:right">${e.dir?'':`<a href="/api/fs/download?path=${encodeURIComponent(p)}">Download</a> · `}<a onclick='ren(${ep})'>Umbenennen</a> · <a class="dan" onclick='del(${ep})'>Löschen</a></td></tr>`}
  $('flist').innerHTML=h}
 async function openFile(p){if(/\.(jar|zip|mca|dat|png|gz|db|lock)$/i.test(p)&&!p.endsWith('.log.gz')){const accepted=await window.dashboardUi?.confirm({title:'Datei als Text öffnen?',description:'Diese Datei könnte binär sein. Die Textansicht ist möglicherweise nicht lesbar.',confirmLabel:'Trotzdem öffnen'});if(!accepted)return}
- $('etext').value=await api('/api/fs/read?path='+encodeURIComponent(p));$('epath').textContent=p;$('editor').classList.remove('hide');$('editor').scrollIntoView()}
-async function saveFile(){const p=$('epath').textContent;if(p.endsWith('.gz')){toast('.gz kann nicht gespeichert werden',true);return}await post('/api/fs/write?path='+encodeURIComponent(p),$('etext').value,true);toast('Gespeichert');ls(cwd)}
-async function ren(p){const n=await window.dashboardUi?.prompt({title:'Datei oder Ordner umbenennen',description:'Gib den neuen Namen ein.',placeholder:'Neuer Name',initialValue:p,confirmLabel:'Umbenennen'});if(!n||n===p)return;await post('/api/fs/rename',{from:p,to:n});const ep=$('epath').textContent;if(ep===p||ep.startsWith(p+'/'))$('epath').textContent=n+ep.slice(p.length);toast('Umbenannt');ls(cwd)}
+ const text=await api('/api/fs/read?path='+encodeURIComponent(p));$('epath').textContent=p;$('editor').classList.remove('hide');if(window.dashboardEditors)window.dashboardEditors.set('etext',text,p);else $('etext').value=text;$('editor').scrollIntoView()}
+async function saveFile(){const p=$('epath').textContent;if(p.endsWith('.gz')){toast('.gz kann nicht gespeichert werden',true);return}const text=window.dashboardEditors?window.dashboardEditors.get('etext'):$('etext').value;await post('/api/fs/write?path='+encodeURIComponent(p),text,true);toast('Gespeichert');ls(cwd)}
+async function ren(p){const n=await window.dashboardUi?.prompt({title:'Datei oder Ordner umbenennen',description:'Gib den neuen Namen ein.',placeholder:'Neuer Name',initialValue:p,confirmLabel:'Umbenennen'});if(!n||n===p)return;await post('/api/fs/rename',{from:p,to:n});const ep=$('epath').textContent;if(ep===p||ep.startsWith(p+'/')){$('epath').textContent=n+ep.slice(p.length);window.dashboardEditors?.setPath('etext',$('epath').textContent)}toast('Umbenannt');ls(cwd)}
 async function del(p){const name=p.split('/').pop();const accepted=await window.dashboardUi?.confirm({title:'Element dauerhaft löschen?',description:'„'+p+'“ wird dauerhaft gelöscht. Nur Dateien oder leere Ordner können gelöscht werden.',confirmLabel:'Dauerhaft löschen',destructive:true});if(!accepted)return;await post('/api/fs/delete',{path:p,confirm:name});const ep=$('epath').textContent;if(ep===p||ep.startsWith(p+'/')){$('editor').classList.add('hide');$('epath').textContent=''}toast('Gelöscht');ls(cwd)}
 async function mkdir(){const n=await window.dashboardUi?.prompt({title:'Neuen Ordner erstellen',description:'Der Ordner wird im aktuellen Verzeichnis angelegt.',placeholder:'Ordnername',confirmLabel:'Ordner erstellen'});if(!n)return;await post('/api/fs/mkdir?path='+encodeURIComponent(jp(cwd,n)));ls(cwd)}
 async function newFile(){const n=await window.dashboardUi?.prompt({title:'Neue Datei erstellen',description:'Die neue leere Textdatei wird im aktuellen Verzeichnis angelegt.',placeholder:'Dateiname',confirmLabel:'Datei erstellen'});if(!n)return;await post('/api/fs/write?path='+encodeURIComponent(jp(cwd,n)),'',true);ls(cwd);openFile(jp(cwd,n))}
