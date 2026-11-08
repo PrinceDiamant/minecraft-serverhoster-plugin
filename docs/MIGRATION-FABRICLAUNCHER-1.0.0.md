@@ -1,7 +1,7 @@
 # Upgrade und Migration auf ServerHoster 2.0.1
 
-ServerHoster 2.0.10 verwendet denselben Import. Das Jar heißt
-`ServerHoster-2.0.10.jar`. Eine vorhandene 2.0.2- oder 2.0.1-`config.yml` bleibt gültig;
+ServerHoster 2.1.0 verwendet denselben Import. Das Jar heißt
+`ServerHoster-2.1.0.jar`. Eine vorhandene 2.0.2- oder 2.0.1-`config.yml` bleibt gültig;
 der Start schreibt nur `metadata.pluginVersion` fort und migriert weiterhin
 ausschließlich das alte unbegrenzte `autoRestart.maxAttempts: 0`. Heap-Werte
 werden nicht verändert. Siehe [VERGLEICH-MINIMAL-2026-11.md](VERGLEICH-MINIMAL-2026-11.md).
@@ -23,7 +23,7 @@ bereits gelöscht wurde.
    notieren. Das Plugin-Upgrade nicht mit einem Minecraft-Versionsupgrade
    kombinieren.
 4. Das alte `FabricLauncher*.jar` aus `plugins/` entfernen oder verschieben
-   und das aktuelle `ServerHoster-2.0.10.jar` dorthin laden. Niemals beide Plugin-Versionen
+   und das aktuelle `ServerHoster-2.1.0.jar` dorthin laden. Niemals beide Plugin-Versionen
    gleichzeitig aktivieren. Den Child-Ordner nicht löschen.
 
 ## Erster Start und Einrichtungsassistent

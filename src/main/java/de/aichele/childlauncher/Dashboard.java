@@ -124,7 +124,8 @@ final class Dashboard {
             if (!path.startsWith("/api/")) { send(ex, 404, "text/plain", "Not found"); return; }
             if (!authed(ex)) { json(ex, 401, Map.of("error", "Nicht angemeldet")); return; }
             if (pl.setupRequired() && !path.equals("/api/status") && !path.equals("/api/setup")
-                    && !path.startsWith("/api/setup/") && !path.equals("/api/clean-setup")) {
+                    && !path.startsWith("/api/setup/") && !path.equals("/api/host-first-setup")
+                    && !(method.equals("GET") && path.equals("/api/host-minimize"))) {
                 json(ex, 409, Map.of("error", "Bitte zuerst die ServerHoster-Einrichtung abschließen."));
                 return;
             }
@@ -194,8 +195,8 @@ final class Dashboard {
                 }
                 case "GET /api/host-minimize" -> json(ex, 200, pl.hostMinimizeView());
                 case "POST /api/host-minimize" -> json(ex, 200, hostMinimize(ex));
-                case "GET /api/clean-setup" -> json(ex, 200, pl.cleanSetupView());
-                case "POST /api/clean-setup" -> json(ex, 200, cleanSetup(ex));
+                case "POST /api/host-first-setup" -> json(ex, 200,
+                        pl.hostFirstSetupRequest(requiredString(parseJsonObject(readBodyText(ex)), "confirm")));
                 case "GET /api/setup" -> json(ex, 200, pl.setupView());
                 case "POST /api/setup" -> json(ex, 200, setup(ex));
                 case "POST /api/setup/cleanup" -> {
@@ -476,17 +477,6 @@ final class Dashboard {
 
     static boolean csrfRejected(String method, String header) {
         return method != null && !Set.of("GET", "HEAD", "OPTIONS").contains(method) && !"1".equals(header);
-    }
-
-    private Map<String, Object> cleanSetup(HttpExchange ex) throws IOException {
-        JsonObject request = parseJsonObject(readBodyText(ex));
-        String action = requiredString(request, "action");
-        String confirm = optionalString(request, "confirm", "");
-        return switch (action) {
-            case "preview" -> pl.cleanSetupPreview();
-            case "apply" -> pl.cleanSetupApply(confirm);
-            default -> throw new IllegalArgumentException("Unbekannte Clean-Setup-Aktion");
-        };
     }
 
     private Map<String, Object> hostMinimize(HttpExchange ex) throws IOException {

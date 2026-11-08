@@ -18,7 +18,7 @@ final class HostLobbyRuntime {
     private HostLobbyRuntime() {}
 
     static int apply(Iterable<World> worlds, String lobbyName) {
-        if (!HostMinimize.lobbyNameSafe(lobbyName)) return 0;
+        if (!HostMinimize.worldNameSafe(lobbyName)) return 0;
         int changed = 0;
         for (World world : worlds) {
             if (world == null || !lobbyName.equals(world.name())) continue;

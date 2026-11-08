@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystemException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
@@ -22,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class LifecycleRobustnessTest {
     @TempDir Path tmp;
@@ -84,7 +86,7 @@ class LifecycleRobustnessTest {
     }
 
     @Test void liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt() throws Exception {
-        Process process = new ProcessBuilder("sleep", "30").start();
+        Process process = testProcess("sleep", "30000");
         try {
             Instant start = process.info().startInstant().orElseThrow();
             Path file = tmp.resolve("child-process.record");
@@ -103,7 +105,11 @@ class LifecycleRobustnessTest {
         Path real = tmp.resolve("real.txt");
         Files.writeString(real, "serverhoster-child-process 1\n");
         Path link = tmp.resolve("child-process.record");
-        Files.createSymbolicLink(link, real);
+        try {
+            Files.createSymbolicLink(link, real);
+        } catch (UnsupportedOperationException | FileSystemException e) {
+            assumeTrue(false, "Symbolic links are unavailable: " + e.getMessage());
+        }
         ChildProcessRecord.Loaded loaded = ChildProcessRecord.read(link);
         assertNull(loaded.identity());
         assertTrue(loaded.error().contains("symlink"));
@@ -114,9 +120,7 @@ class LifecycleRobustnessTest {
     }
 
     @Test void failedStartDrainsProcessThatIgnoresTerm() throws Exception {
-        Process process = new ProcessBuilder("bash", "-c",
-                "trap '' TERM; i=0; while [ \"$i\" -lt 200000 ]; do echo xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx; i=$((i+1)); done; while true; do sleep 1; done")
-                .start();
+        Process process = testProcess("ignore-stop");
         assertTimeoutPreemptively(Duration.ofSeconds(8), () -> {
             ChildLaunchCleanup.Result result = ChildLaunchCleanup.abandon(process, 400);
             assertFalse(process.isAlive(), result.detail());
@@ -125,12 +129,7 @@ class LifecycleRobustnessTest {
     }
 
     @Test void stopWaitsUntilReadyBeforeSendingStop() throws Exception {
-        Process process = new ProcessBuilder("bash", "-c", """
-                echo 'Done (0.1s)!'
-                IFS= read -r line
-                [ "$line" = stop ] && exit 0
-                exit 3
-                """).start();
+        Process process = testProcess("ready-stop");
         AtomicBoolean ready = new AtomicBoolean();
         AtomicBoolean sentTooEarly = new AtomicBoolean();
         Thread reader = new Thread(() -> {
@@ -159,10 +158,7 @@ class LifecycleRobustnessTest {
     }
 
     @Test void stopSendsStopWhenStartupNeverBecomesReadyAndThenKills() throws Exception {
-        Process process = new ProcessBuilder("bash", "-c", """
-                trap '' TERM
-                while true; do sleep 1; done
-                """).start();
+        Process process = testProcess("never-ready");
         List<String> log = new ArrayList<>();
         ChildStopSequence.Outcome outcome = assertTimeoutPreemptively(Duration.ofSeconds(8), () ->
                 ChildStopSequence.stop(process, () -> false, 0, 0, 20, 1_000, 0,
@@ -272,6 +268,15 @@ class LifecycleRobustnessTest {
 
     private static ChildProcessRecord.Identity identity(long pid, Instant start, String workDir, String jar) {
         return new ChildProcessRecord.Identity(pid, start, workDir, jar, jar, "/usr/bin/java");
+    }
+
+    private static Process testProcess(String... args) throws Exception {
+        String executable = System.getProperty("os.name").toLowerCase().contains("win") ? "java.exe" : "java";
+        Path java = Path.of(System.getProperty("java.home"), "bin", executable);
+        List<String> command = new ArrayList<>(List.of(java.toString(), "-cp",
+                System.getProperty("java.class.path"), LifecycleTestProcess.class.getName()));
+        command.addAll(List.of(args));
+        return new ProcessBuilder(command).start();
     }
 
     private static final class FakeProcesses implements ChildProcessRecord.Inspector {

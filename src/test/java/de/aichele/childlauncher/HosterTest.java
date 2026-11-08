@@ -579,11 +579,19 @@ class HosterTest {
                 policy.sample(96, 95, 80, 3, 2, 0, 4_000, 1_000, true));
         assertEquals(MemoryProtectionPolicy.Decision.STOP_CHILD,
                 policy.sample(97, 95, 80, 3, 2, 0, 5_000, 1_000, true));
+        policy.startEmergencyStop();
+        assertTrue(policy.emergencyStopStarted());
 
         assertEquals(MemoryProtectionPolicy.Decision.NONE,
                 policy.sample(75, 95, 80, 3, 2, 1_000, 1_999, 1_000, true));
         assertEquals(MemoryProtectionPolicy.Decision.RELEASE_AFTER_STABLE_MEMORY,
                 policy.sample(75, 95, 80, 3, 2, 1_000, 2_000, 1_000, true));
+        policy.finishRecovery();
+        assertFalse(policy.emergencyStopStarted());
+        assertEquals(MemoryProtectionPolicy.Decision.STOP_CHILD,
+                policy.sample(97, 95, 80, 1, 2, 0, 3_000, 1_000, true));
+        policy.startEmergencyStop();
+        assertTrue(policy.emergencyStopStarted());
         assertEquals(MemoryProtectionPolicy.Decision.RELEASE_WITHOUT_MEMORY_GUARANTEE,
                 policy.sample(-1, 95, 80, 3, 2, 1_000, 2_000, 1_000, true));
         assertEquals(MemoryProtectionPolicy.Decision.NONE,

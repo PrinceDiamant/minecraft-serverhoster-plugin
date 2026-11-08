@@ -16,8 +16,8 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 
 /**
- * Opt-in edits for the outer Spigot lobby. Never deletes plugins, logs, backups, worlds, or child
- * directories. Does not restart the host and does not change the child JVM.
+ * Opt-in runtime settings for the outer Spigot host. Never selects or deletes worlds, plugins,
+ * logs, backups, or child directories. Does not restart the host or change the child JVM.
  */
 final class HostMinimize {
     static final String CONFIRM = "HOST MINIMIEREN";
@@ -41,14 +41,19 @@ final class HostMinimize {
         throw new IOException("Could not choose a lobby name that does not already exist");
     }
 
-    static Map<String, String> outerProperties(String lobbyName) {
-        if (!LOBBY_NAME.matcher(lobbyName).matches()) throw new IllegalArgumentException("unsafe lobby name");
+    static Map<String, String> firstSetupProperties(String worldName) {
+        if (!LOBBY_NAME.matcher(worldName).matches()) throw new IllegalArgumentException("unsafe lobby name");
         Map<String, String> values = new LinkedHashMap<>();
-        values.put("level-name", lobbyName);
+        values.put("level-name", worldName);
         values.put("level-type", "minecraft:flat");
         values.put("generator-settings",
                 "{\"biome\":\"minecraft:the_void\",\"features\":true,\"lakes\":false,\"layers\":[{\"block\":\"minecraft:air\",\"height\":1}],\"structure_overrides\":[]}");
         values.put("generate-structures", "false");
+        return values;
+    }
+
+    static Map<String, String> outerProperties() {
+        Map<String, String> values = new LinkedHashMap<>();
         values.put("allow-nether", "false");
         values.put("view-distance", "2");
         values.put("simulation-distance", "2");
@@ -83,9 +88,15 @@ final class HostMinimize {
         return values;
     }
 
-    static String phase(String lobbyName, String levelName, boolean lobbyWorldLoaded) {
-        if (lobbyNameSafe(lobbyName) && lobbyName.equals(levelName) && lobbyWorldLoaded) return "active";
+    static String phase(String worldName, String levelName, boolean worldLoaded) {
+        if (worldNameSafe(worldName) && worldName.equals(levelName) && worldLoaded) return "active";
         return "staged";
+    }
+
+    static String firstSetupWorld(String existing, String level, String setupStatus, String setupWorld, boolean loaded) {
+        if ("done".equals(setupStatus) && lobbyNameSafe(setupWorld) && setupWorld.equals(level) && loaded)
+            return setupWorld;
+        return existing;
     }
 
     static boolean playersBlocked(String status) {
@@ -110,33 +121,34 @@ final class HostMinimize {
     static List<String> preservedNotes() {
         return List.of(
                 "Does not delete worlds, plugins, logs, backups, or the child directory.",
+                "Does not change level-name or world generation; one-time void-world setup is separate.",
                 "Does not change server-port, server-ip, online-mode, or enable RCON.",
                 "Does not change the child JVM Xmx or child flags.",
-                "Existing world folders stay on disk. A new empty lobby is used after an outer restart.",
+                "Existing world folders and the configured world stay unchanged.",
                 "The plugin does not restart the outer host.");
     }
 
     record Change(String file, String key, String from, String to) {}
 
-    record Preview(String lobbyName, List<Change> changes, List<String> notes) {}
+    record Preview(List<Change> changes, List<String> notes) {}
 
-    static Preview preview(Path root, String lobbyName, List<Path> protectedPaths) throws IOException {
+    static Preview preview(Path root, List<Path> protectedPaths) throws IOException {
         assertRoot(root, protectedPaths);
         Map<String, String> current = readProperties(root.resolve("server.properties"));
         List<Change> changes = new ArrayList<>();
-        for (var entry : outerProperties(lobbyName).entrySet())
+        for (var entry : outerProperties().entrySet())
             changes.add(new Change("server.properties", entry.getKey(), current.get(entry.getKey()), entry.getValue()));
         for (var entry : bukkitChanges().entrySet())
             changes.add(new Change("bukkit.yml", entry.getKey(), null, String.valueOf(entry.getValue())));
         for (var entry : spigotChanges().entrySet())
             changes.add(new Change("spigot.yml", entry.getKey(), null, String.valueOf(entry.getValue())));
         changes.add(new Change("whitelist.json", "players", null, "[]"));
-        return new Preview(lobbyName, List.copyOf(changes), preservedNotes());
+        return new Preview(List.copyOf(changes), preservedNotes());
     }
 
-    record ApplyResult(Path backupDirectory, String lobbyName, List<String> files) {}
+    record ApplyResult(Path backupDirectory, List<String> files) {}
 
-    static ApplyResult apply(Path root, Path backupDirectory, String lobbyName, List<Path> protectedPaths) throws IOException {
+    static ApplyResult apply(Path root, Path backupDirectory, List<Path> protectedPaths) throws IOException {
         assertRoot(root, protectedPaths);
         Path properties = root.resolve("server.properties");
         assertEditable(root, properties, protectedPaths);
@@ -163,7 +175,7 @@ final class HostMinimize {
             Files.copy(file, destination, StandardCopyOption.REPLACE_EXISTING, LinkOption.NOFOLLOW_LINKS);
         }
         try {
-            PropertiesFile.update(properties, outerProperties(lobbyName), Map.of());
+            PropertiesFile.update(properties, outerProperties(), Map.of());
             if (files.stream().anyMatch(file -> file.getFileName().toString().equals("bukkit.yml")))
                 updateYaml(root.resolve("bukkit.yml"), bukkitChanges());
             if (files.stream().anyMatch(file -> file.getFileName().toString().equals("spigot.yml")))
@@ -173,7 +185,7 @@ final class HostMinimize {
             restore(root, backupDirectory, protectedPaths);
             throw e;
         }
-        return new ApplyResult(backupDirectory, lobbyName, files.stream().map(file -> file.getFileName().toString()).toList());
+        return new ApplyResult(backupDirectory, files.stream().map(file -> file.getFileName().toString()).toList());
     }
 
     static void restore(Path root, Path backupDirectory, List<Path> protectedPaths) throws IOException {
@@ -296,6 +308,11 @@ final class HostMinimize {
 
     static boolean lobbyNameSafe(String name) {
         return name != null && LOBBY_NAME.matcher(name).matches() && !"world".equals(name);
+    }
+
+    static boolean worldNameSafe(String name) {
+        return name != null && !name.isBlank() && !".".equals(name) && !"..".equals(name)
+                && name.indexOf('/') < 0 && name.indexOf('\\') < 0;
     }
 
 }

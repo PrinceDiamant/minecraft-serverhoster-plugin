@@ -1,4 +1,4 @@
-# ServerHoster 2.0.10 – Betrieb und Konfiguration
+# ServerHoster 2.1.0 – Betrieb und Konfiguration
 
 ServerHoster ist ein Spigot-26.3-Plugin für Java 25. Es verwaltet genau einen
 separaten Child-Serverprozess und stellt ein Web-Dashboard bereit. Das Plugin
@@ -46,7 +46,7 @@ gemeldet, nicht stillschweigend ersetzt.
 | `autoStart` | `true` | Child mit Spigot starten, sobald Einrichtung und Recovery-Schutz es erlauben. |
 | `autoRestart.enabled` | `true` | Child nach unerwartetem Prozessende neu starten. |
 | `autoRestart.maxAttempts` | `5` | Automatische Wiederholungen pro Fehlerfolge, danach Pause und Warnung. Im Dashboard unter Einstellungen änderbar. |
-| `stopTimeoutSeconds` | `60` | Frist für den sauberen Child-Stopp, bevor Fehler gemeldet und der Prozess beendet wird. |
+| `stopTimeoutSeconds` | `60` | Frist für den sauberen Child-Stopp, danach wird der Prozess notfalls beendet. Bei großen Welten oder vielen geladenen Chunks kann das Speichern länger dauern; dann die Frist erhöhen, sonst droht Datenverlust. Bei Host-Abschaltung kann zusätzlich die kürzere `shutdownHookTimeoutSeconds`-Frist bzw. das Provider-Limit gelten. |
 | `startupStopTimeoutSeconds` | `180` | Beim Stop während des Starts auf die Vanilla-Bereitschaftsmeldung warten. |
 | `memoryProtection.*` | siehe `config.yml` | Lesendes cgroup-Sampling und Schutz, der nur den Child stoppen kann. Ungültige Schwellen deaktivieren den automatischen Stopp, ohne die Datei umzuschreiben. |
 | `memoryTelemetry.enabled` | `true`, auch wenn der Schlüssel fehlt | Schreibt `memory-telemetry.log` aus derselben cgroup-Messung. `heapJvm=outer` und `gcJvm=outer`: Heap und GC sind die äußere Spigot-JVM. Child-Heap und Child-GC werden nicht gemessen. `rssMb` in `/api/diag` ist der Child-Prozess. |

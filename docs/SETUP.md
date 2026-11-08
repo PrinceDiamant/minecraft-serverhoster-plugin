@@ -21,11 +21,24 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.0.10.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.1.0.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
-2. Spigot starten. Das Plugin legt `plugins/ServerhosterPlugin/` an und
-   startet das Dashboard. Beim ersten Start wird das Dashboard-Passwort in
-   `dashboard-password.txt` gespeichert und im Log ausgegeben.
+2. Spigot starten. Bei einer Neuinstallation ohne vorhandene
+   ServerHoster-Daten führt das Plugin die einmalige Host-Grundeinrichtung
+   automatisch in mehreren Schritten aus: Es bereitet eine neue Void-Lobby vor.
+   Andere Plugin-JARs
+   werden in-place mit der Endung `.disabled` umbenannt, damit sie nicht
+   geladen werden. Ihre Dateien und Konfigurationen bleiben erhalten; nach
+   dem anschließenden Panel-Neustart wird nur ServerHoster geladen. Erst wenn
+   die Void-Lobby tatsächlich geladen ist, entfernt das Plugin erkannte alte
+   äußere Minecraft-Weltordner. Der Host fährt nach der Vorbereitung herunter;
+   starte ihn im Hosting-Panel erneut. Child-Server,
+   ServerHoster-Konfiguration, Dashboard-Passwort und Backups bleiben erhalten.
+   Bei einem Fehler wird der Schritt beim nächsten Start wiederholt. Das Plugin
+   legt außerdem
+   `plugins/ServerhosterPlugin/` an und startet das Dashboard. Beim ersten
+   Start wird das Dashboard-Passwort in `dashboard-password.txt` gespeichert
+   und im Log ausgegeben.
 3. Das Dashboard über den konfigurierten Port öffnen und den Assistenten
    abschließen. Vor der Bestätigung startet kein Child automatisch.
 4. Für einen neuen Server Typ, Minecraft-Version, Child-Ordner und Spielport
@@ -34,6 +47,15 @@ geladen oder gebaut, wenn sie noch fehlen.
    heruntergeladen.
 5. Den Child ausdrücklich über das Dashboard oder `/child start` starten.
    Konsole beobachten und die Vanilla-Bereitschaftsmeldung abwarten.
+
+Bei einem Upgrade mit vorhandenen ServerHoster-Daten wird diese aggressive
+Host-Grundeinrichtung **nicht automatisch** ausgeführt. Sie kann im Dashboard
+unter „Einmalige Host-Grundeinrichtung“ ausdrücklich gestartet werden. Dabei
+werden die erkannten äußeren Weltordner unwiderruflich gelöscht; bestätige sie
+nur, wenn das gewünscht ist. Der Host fährt nach der Bestätigung herunter.
+Starte ihn im Panel: Er bereitet die neue Lobby vor und fährt erneut herunter.
+Nach einem weiteren Panel-Start wird die geladene Lobby geprüft und erst dann
+werden die alten äußeren Welten entfernt.
 
 Ein vorhandener Child-Ordner kann eingebunden werden, ohne seine Dateien zu
 ändern. Typ, Version und Port müssen zur Installation passen. **Archivieren
@@ -85,43 +107,25 @@ Den äußeren Server über das Hosting-Panel oder die Spigot-Konsole stoppen.
 Periodische Host-Neustarts gehören in den Zeitplan des Hosting-Providers,
 nicht in ServerHoster.
 
-## Host verkleinern oder leeren
+## Host minimieren
 
-Die Minimierung ist die umkehrbare Variante. `/child host preview` zeigt die
-Änderungen, `/child host apply HOST MINIMIEREN` schreibt sie nach einem
-sauberen Child-Stopp. Der äußere Server wird dabei nicht heruntergefahren.
-`/child host rollback HOST ZURUECK` holt die gesicherten Host-Dateien zurück,
-einschließlich der vorherigen `whitelist.json`. Die Minimierung schaltet auf
-dem äußeren Server `white-list=true` und schreibt eine leere Whitelist. Die
-Child-Whitelist wird nicht geändert. Es gibt keinen zusätzlichen Login-Block.
-Aktiv ist die Minimierung erst, wenn die Lobby-Welt geladen ist, nicht schon
-weil `level-name` in der Datei steht. Das Dashboard bleibt bei HTTP, bis HTTPS
-in der Konfiguration eingeschaltet wird. HTTP überträgt das Dashboard-Passwort
-unverschlüsselt. Port und Zertifikat werden dadurch nicht geändert.
+Die einmalige Void-Lobby-Einrichtung und das Umbenennen anderer Plugin-JARs
+geschehen separat beim ersten Start dieser Plugin-Version. Die
+wiederholbare Minimierung verändert keine Weltordner, keine Plugin-Dateien,
+keinen `level-name` und keinen Weltgenerator. Sie reduziert
+Sicht-/Simulationsdistanz und Spawns, deaktiviert Nether/End und aktiviert eine
+leere Host-Whitelist. Child, Welten, Plugin-Dateien und Backups bleiben
+erhalten; Port, Online-Mode und ein ausgeschaltetes RCON bleiben unverändert.
+`-Xmx` wird nicht gesenkt. Die Child-Whitelist wird nicht geändert.
 
-`/child clean preview` ist eine getrennte, standardmäßig inaktive Aktion. Sie
-legt eine Löschliste und für zehn Minuten den Satz
-`CLEAN <Server-Identität> <Plan-Hash>` an. `/child clean apply` mit genau
-diesem Satz stoppt den Child, fährt den äußeren Server herunter und löscht nur
-die bestätigte Liste innerhalb dieses Serverordners. Ein fehlgeschlagener
-Stopp löscht nichts. Es gibt keine Rücknahme und keine versteckte Kopie.
-Spigot-JAR, dieses Plugin-JAR, `eula.txt`, `bundler`, `libraries` und
-`versions` bleiben. Ein Startskript des Hosters im Serverordner, etwa
-`.serverstart/run.sh`, wird gelöscht; das Panel schreibt es beim nächsten
-Start neu. Der nächste Start schreibt eine frische Konfiguration und
-behält die bisherigen Ports. Verzeichnisse außerhalb des Serverordners werden
-nicht angefasst. Logs und Lock-Dateien dürfen sich zwischen Vorschau und
-Ausführung ändern. Eine andere neue oder entfernte Datei macht das Ticket
-ungültig; dann ist eine neue Vorschau nötig. Nach einem angenommenen
-Apply darf der Server erst neu gestartet werden, wenn der alte Prozess
-beendet ist. Die Löschung läuft an diesem Prozessende. Sie wird bei einem
-späteren Start nicht nachgeholt. Ein Marker `aborted` blockiert 2.0.6 komplett.
-Ab 2.0.7 ersetzt eine neue Vorschau mit neuem Bestätigungssatz diesen
-abgeschlossenen Abbruch. Ein Marker `pending` oder `done` wird dadurch nicht
-fortgesetzt. Bricht die Löschung nach dem Hook-Start ab, steht im Marker
-`phase=failed` oder `phase=entered` und beim nächsten Start `aborted`.
-Dieser Start löscht nicht weiter. Ein Ticket aus 2.0.4 ist
-unvollständig und muss neu erzeugt werden.
+`/child host preview` zeigt die Änderungen, `/child host apply HOST MINIMIEREN`
+schreibt sie nach einem sauberen Child-Stopp. Der äußere Server wird dabei
+nicht heruntergefahren; den nötigen Neustart startest du im Hosting-Panel.
+`/child host rollback HOST ZURUECK` stellt die gesicherten Host-Dateien
+einschließlich der vorherigen `whitelist.json` wieder her. Das Dashboard bleibt
+bei HTTP, bis HTTPS in der Konfiguration eingeschaltet wird. HTTP überträgt
+das Dashboard-Passwort unverschlüsselt. Port und Zertifikat werden durch die
+Minimierung nicht geändert.
 
 ## Aus dem Quellcode bauen
 

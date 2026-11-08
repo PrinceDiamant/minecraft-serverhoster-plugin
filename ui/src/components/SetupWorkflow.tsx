@@ -14,20 +14,14 @@ interface SetupCandidate {
   contents: string[];
 }
 
-interface CleanSetupState {
-  armed: boolean;
-  confirmation: string;
-  delete: string[];
-  keep: string[];
-  notes: string[];
-  message?: string;
-  identity: string;
-}
-
 interface HostMinimizeState {
   status: string;
   restartRequired: boolean;
-  lobbyName: string;
+  worldName: string;
+  firstSetupStatus: string;
+  firstSetupWorld: string;
+  firstSetupDisabledPluginCount: string;
+  firstSetupConfirmation: string;
   confirmation: string;
   rollbackConfirmation: string;
   notes: string[];
@@ -56,7 +50,6 @@ export default function SetupWorkflow() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [host, setHost] = useState<HostMinimizeState | null>(null);
-  const [clean, setClean] = useState<CleanSetupState | null>(null);
   const initialized = useRef(false);
   const ntfyInitialized = useRef(false);
 
@@ -69,11 +62,6 @@ export default function SetupWorkflow() {
         setHost(await dashboardRequest<HostMinimizeState>("/api/host-minimize"));
       } catch {
         setHost(null);
-      }
-      try {
-        setClean(await dashboardRequest<CleanSetupState>("/api/clean-setup"));
-      } catch {
-        setClean(null);
       }
       if (!ntfyInitialized.current) {
         ntfyInitialized.current = true;
@@ -207,49 +195,6 @@ export default function SetupWorkflow() {
     }
   };
 
-  const cleanPreview = async () => {
-    setBusy(true);
-    try {
-      const result = await dashboardRequest<CleanSetupState>("/api/clean-setup", {
-        method: "POST",
-        body: jsonBody({ action: "preview" }),
-      });
-      setClean(result);
-      window.dashboardUi?.notify(result.message ?? "Löschliste erzeugt.", false);
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Clean-Vorschau fehlgeschlagen.");
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const cleanApply = async () => {
-    const required = clean?.confirmation ?? "";
-    if (!required) return;
-    const typed = await window.dashboardUi?.prompt({
-      title: "Serverordner wirklich vollständig leeren?",
-      description: "Das ist keine Minimierung. Die angezeigte Liste wird gelöscht, inklusive Child, Konfiguration, Passwort und lokalen Backups. Es gibt keine Rücknahme und keine versteckte Kopie. Der äußere Server fährt danach herunter.",
-      placeholder: required,
-      requiredValue: required,
-      confirmLabel: "Endgültig löschen",
-      destructive: true,
-    });
-    if (typed !== required) return;
-    setBusy(true);
-    try {
-      const result = await dashboardRequest<CleanSetupState>("/api/clean-setup", {
-        method: "POST",
-        body: jsonBody({ action: "apply", confirm: typed }),
-      });
-      setClean(result);
-      window.dashboardUi?.notify(result.message ?? "Clean-Setup gestartet.", false);
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Clean-Setup fehlgeschlagen.");
-    } finally {
-      setBusy(false);
-    }
-  };
-
   const hostAction = async (action: "apply" | "rollback", required: string) => {
     const typed = await window.dashboardUi?.prompt({
       title: action === "apply" ? "Äußeren Spigot verkleinern?" : "Host-Dateien zurückholen?",
@@ -272,6 +217,32 @@ export default function SetupWorkflow() {
       window.dashboardUi?.notify(result.message ?? "Gespeichert.", false);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Host-Aktion fehlgeschlagen.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const runHostFirstSetup = async (required: string) => {
+    const typed = await window.dashboardUi?.prompt({
+      title: "Aggressive Host-Grundeinrichtung ausführen?",
+      description: "Dies ist für ein Upgrade ausdrücklich manuell. Alle erkannten äußeren Minecraft-Welten werden unwiderruflich entfernt, eine neue Void-Lobby wird eingerichtet und andere Plugin-JARs werden mit .disabled umbenannt. Child-Daten, ServerHoster-Konfiguration, Passwort und Backups bleiben erhalten. Der Host fährt herunter und muss nach der Bestätigung und nach der Vorbereitung jeweils im Hosting-Panel gestartet werden. Die Weltlöschung erfolgt erst nach dem Laden der neuen Lobby und kann nicht zurückgenommen werden.",
+      placeholder: required,
+      requiredValue: required,
+      confirmLabel: "Host-Grundeinrichtung starten",
+      destructive: true,
+    });
+    if (typed !== required) return;
+    setBusy(true);
+    setError("");
+    try {
+      await dashboardRequest("/api/host-first-setup", {
+        method: "POST",
+        body: jsonBody({ confirm: typed }),
+      });
+      setHost((current) => current ? { ...current, firstSetupStatus: "requested" } : current);
+      window.dashboardUi?.notify("Host-Grundeinrichtung bestätigt. Der Host fährt herunter; starte ihn im Hosting-Panel neu.");
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Host-Grundeinrichtung konnte nicht gestartet werden.");
     } finally {
       setBusy(false);
     }
@@ -396,22 +367,21 @@ export default function SetupWorkflow() {
       )}
 
       <div className="setup-card-list">
-        <h3>Serverordner vollständig leeren</h3>
-        <p>Eigene, ausgeschaltete Aktion. Sie startet nicht bei der Einrichtung und hat keine Rücknahme. Zuerst die Löschliste erzeugen, dann den angezeigten Satz exakt eingeben. Die schonende Minimierung darunter bleibt die Alternative.</p>
-        <ul>{(clean?.notes ?? []).map((note) => <li key={note}>{note}</li>)}</ul>
-        {clean && <p>Identität {clean.identity}. {clean.delete.length} Löschungen, {clean.keep.length} behaltene Pfade.{clean.confirmation ? ` Bestätigung: ${clean.confirmation}` : ""}</p>}
-        {clean && clean.delete.length > 0 && <ul>{clean.delete.slice(0, 40).map((path) => <li key={path}>{path}</li>)}{clean.delete.length > 40 && <li>weitere {clean.delete.length - 40} Pfade stehen in der API-Liste</li>}</ul>}
-        {clean?.message && <p>{clean.message}</p>}
-        <div className="setup-actions">
-          <button className="btn" disabled={busy} type="button" onClick={() => void cleanPreview()}>Löschliste erzeugen …</button>
-          <button className="btn" disabled={busy || !clean?.confirmation} type="button" onClick={() => void cleanApply()}>Endgültig löschen …</button>
-        </div>
+        <h3>Einmalige Host-Grundeinrichtung</h3>
+        <p>Bei einer Neuinstallation automatisch beim ersten Start. Bei einem Upgrade wird aus Sicherheitsgründen nichts automatisch verändert; du kannst die aggressive Grundeinrichtung hier ausdrücklich bestätigen. Sie entfernt alle erkannten äußeren Minecraft-Welten und richtet eine Void-Lobby ein. Andere Plugin-JARs werden in-place umbenannt (Endung .disabled), damit sie nicht geladen werden; ihre Dateien und Konfigurationen bleiben erhalten. Child-Server, ServerHoster-Konfiguration, Dashboard-Passwort und Backups bleiben erhalten. Nach der Vorbereitung fährt der Host herunter und muss im Hosting-Panel gestartet werden. Erst nach dem Laden der neuen Lobby werden alte Welten unwiderruflich gelöscht.</p>
+        <p>Status: {host?.firstSetupStatus ?? "unbekannt"}{host?.firstSetupWorld ? ` · Void-Welt ${host.firstSetupWorld}` : ""}{Number(host?.firstSetupDisabledPluginCount ?? 0) > 0 ? ` · deaktivierte Zusatz-Plugins: ${host?.firstSetupDisabledPluginCount}` : ""}</p>
+        {host?.firstSetupStatus === "manual-required" && (
+          <div className="setup-actions">
+            <button className="btn" disabled={busy} type="button" onClick={() => void runHostFirstSetup(host.firstSetupConfirmation || "HOST GRUNDSETUP")}>Host-Grundeinrichtung starten …</button>
+          </div>
+        )}
+        {host?.firstSetupStatus === "restart-required" && <p>Die Einrichtung ist vorbereitet. Bitte den äußeren Host im Hosting-Panel neu starten.</p>}
       </div>
 
       <div className="setup-card-list">
-        <h3>Äußeren Spigot verkleinern</h3>
-        <p>Optional und aus. Es wird nichts automatisch gelöscht. Welten, Plugins, Logs, Backups, der Child-Ordner und dieses Plugin bleiben erhalten. Port, Online-Mode und ein ausgeschaltetes RCON bleiben unverändert. -Xmx wird nicht gesenkt. Die äußere Whitelist wird eingeschaltet und die Liste geleert. Die Child-Whitelist bleibt unverändert. Zurückholen stellt die vorherige äußere Liste wieder her.</p>
-        <p>Status: {host?.status ?? "unbekannt"}{host?.restartRequired ? " · äußerer Neustart im Panel nötig" : ""}{host?.lobbyName ? ` · neue leere Welt ${host.lobbyName}` : ""}</p>
+        <h3>Host minimieren</h3>
+        <p>Wendet die laufenden Host-Optimierungen an, ohne Welten auszuwählen, neu anzulegen oder zu löschen. Sicht- und Simulationsdistanz, Spawns, Nether/End und Host-Whitelist werden minimiert. Child-Server, Welten, Plugin-Dateien, Logs und Backups bleiben erhalten. Port, Online-Mode und ein ausgeschaltetes RCON bleiben unverändert; -Xmx wird nicht gesenkt. Die Whitelist des Childs bleibt unverändert.</p>
+        <p>Status: {host?.status ?? "unbekannt"}{host?.restartRequired ? " · äußerer Neustart im Panel nötig" : ""}{host?.worldName ? ` · Host-Welt ${host.worldName}` : ""}</p>
         <ul>{(host?.notes ?? []).map((note) => <li key={note}>{note}</li>)}</ul>
         {host?.heap && host.heap.length > 0 && <p className="muted">{host.heap.map((flag) => `${flag.name}: ${flag.detail}`).join(" · ")}</p>}
         {host?.message && <p>{host.message}</p>}

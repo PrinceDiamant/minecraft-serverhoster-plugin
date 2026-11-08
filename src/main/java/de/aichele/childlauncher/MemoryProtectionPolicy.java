@@ -10,6 +10,7 @@ final class MemoryProtectionPolicy {
 
     private int criticalSamples;
     private int safeSamples;
+    private volatile boolean emergencyStopStarted;
 
     Decision sample(double usagePercent, double criticalPercent, double recoveryPercent,
                     int requiredCriticalSamples, int requiredRecoverySamples,
@@ -49,5 +50,17 @@ final class MemoryProtectionPolicy {
 
     void resetCriticalSamples() {
         criticalSamples = 0;
+    }
+
+    boolean emergencyStopStarted() {
+        return emergencyStopStarted;
+    }
+
+    void startEmergencyStop() {
+        emergencyStopStarted = true;
+    }
+
+    void finishRecovery() {
+        emergencyStopStarted = false;
     }
 }

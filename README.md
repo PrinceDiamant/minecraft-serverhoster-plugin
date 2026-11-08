@@ -5,11 +5,19 @@ Child-Server startet und ein Web-Dashboard für Einrichtung, Betrieb,
 Diagnose, Backups und Zeitpläne bereitstellt. Das Plugin installiert keine
 Mods oder Plugins.
 
+## ServerHoster 2.1.0
+
+- Einmalige Host-Grundeinrichtung mit Void-Lobby: automatisch bei einer
+  Neuinstallation, bei bestehenden Installationen nur nach Bestätigung.
+  Der Host muss einmal neu gestartet werden, bevor alte Hostwelten entfernt
+  werden. Child-Daten, Konfiguration und Backups bleiben erhalten.
+- Der Speicherschutz kann nach abgeschlossener Wiederherstellung erneut
+  eingreifen.
+
 ## ServerHoster 2.0.3
 
 - Optionale Minimierung des äußeren Spigots mit Vorschau, Dateisicherung und
-  Rückrollen. Kein automatisches Löschen und kein selbstständiger Host-Neustart.
-  Der Child, Backups und vorhandene Welten bleiben erhalten.
+  Rückrollen. Die wiederholbare Minimierung verändert keine Welten.
 
 ## ServerHoster 2.0.2
 
@@ -50,7 +58,7 @@ Build mit Node.js 22 erzeugt.
 mvn clean verify
 ```
 
-Das Plugin-Jar ist `target/ServerHoster-2.0.10.jar`. Spigot API 26.3 ist eine
+Das Plugin-Jar ist `target/ServerHoster-2.1.0.jar`. Spigot API 26.3 ist eine
 `provided`-Abhängigkeit. H2 ist ausschließlich eine Testabhängigkeit und
 befindet sich nicht im Plugin-Jar. Es gibt keine lokale Datenbank und keine
 mitgelieferten Server-Jars.

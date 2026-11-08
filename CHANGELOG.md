@@ -1,5 +1,22 @@
 # Release notes
 
+## ServerHoster 2.1.0
+
+- On a fresh installation, prepare a void outer lobby automatically on the
+  first start, then remove old outer Minecraft worlds only after a panel restart
+  has loaded that lobby. On upgrades with
+  existing ServerHoster data, require an explicit dashboard confirmation
+  before running this destructive one-time setup. Other plugin jars are
+  renamed with a `.disabled` suffix so they are not loaded; their data remains
+  preserved. Child data, ServerHoster configuration, password, and backups
+  remain preserved.
+- Host minimization applies resource and access settings without changing the
+  selected world or its generator. Rollback restores the previous host files.
+  The outer whitelist is emptied; the child whitelist is not changed.
+- After memory-pressure recovery, clear the emergency-stop state so protection
+  can respond again to a later incident and the dashboard shows recovery ended.
+- Update Vite to fix the development-server advisory GHSA-8g5g-mxqh-grgj.
+
 ## ServerHoster 2.0.10
 
 - Host minimization turns the outer whitelist on and replaces `whitelist.json`
