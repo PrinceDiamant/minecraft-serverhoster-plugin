@@ -123,6 +123,7 @@ final class Dashboard {
                     && !path.startsWith("/api/setup/") && !path.equals("/api/host-first-setup")
                     && !path.equals("/api/settings") && !path.equals("/api/backup/credentials") && !path.equals("/api/backup/options")
                     && !path.equals("/api/backup/test") && !path.equals("/api/schedules")
+                    && !(method.equals("GET") && path.equals("/api/versions"))
                     && !(method.equals("GET") && path.equals("/api/host-minimize"))) {
                 json(ex, 409, Map.of("error", "Bitte zuerst die ServerHoster-Einrichtung abschließen."));
                 return;

@@ -32,8 +32,7 @@ Module und Hauptklassen der Baseline:
   `ScheduleExecution`, `TaskDef`, `BackupBridge`, `RemoteBackupBridge`,
   `NtfyNotifier`, `HttpsSupport`, `SetupDiscovery`, `SetupRecovery`,
   `PropertiesFile`, `PathGuard`, `CrashIndex`, `JarProbe`, `SpigotBuilder`.
-- `worldporter/` ist ein separates, optionales Maven-Projekt und nicht Teil
-  des Root-Builds. `spigot-minimal-config/` ist Beispielmaterial, kein
+- `spigot-minimal-config/` ist Beispielmaterial, kein
   automatisches Trimming.
 
 Vorhandene Oberflächen der Baseline:

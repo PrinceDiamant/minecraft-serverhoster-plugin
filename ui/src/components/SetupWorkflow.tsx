@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowClockwise, Check, FolderOpen, HardDrives, ShieldWarning } from "@phosphor-icons/react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
 import SetupWizard from "./SetupWizard";
+import VersionSelect, { useVersionCatalog, versionIsValid } from "./VersionSelect";
 
 interface SetupCandidate {
   path: string;
@@ -45,7 +46,7 @@ export default function SetupWorkflow() {
   const [selected, setSelected] = useState("");
   const [directory, setDirectory] = useState("./child-server");
   const [type, setType] = useState("vanilla");
-  const [mcVersion, setMcVersion] = useState("26.3");
+  const [mcVersion, setMcVersion] = useState("");
   const [port, setPort] = useState("2063");
   const [ntfy, setNtfy] = useState({ enabled: false, server: "https://ntfy.sh", topic: "" });
   const [busy, setBusy] = useState(false);
@@ -53,6 +54,9 @@ export default function SetupWorkflow() {
   const [host, setHost] = useState<HostMinimizeState | null>(null);
   const initialized = useRef(false);
   const ntfyInitialized = useRef(false);
+  const selectedCandidate = state?.candidates.find((candidate) => candidate.path === selected);
+  const preserveVersion = !!selectedCandidate?.configured && selectedCandidate.type === type && selectedCandidate.mcVersion === mcVersion;
+  const catalog = useVersionCatalog(type, !!state && !state.required && !state.completed);
 
   const refresh = useCallback(async () => {
     setError("");
@@ -96,6 +100,8 @@ export default function SetupWorkflow() {
     try {
       const path = action === "new" ? directory.trim() : selected;
       if (!path) throw new Error("Bitte zuerst einen Serverordner auswählen.");
+      if (action !== "import" && !versionIsValid(type, mcVersion, catalog.versions, action !== "new" && preserveVersion))
+        throw new Error("Bitte eine verfügbare Minecraft-Version auswählen.");
       let confirm = "";
       if (action === "reset") {
         const candidateName = path.split(/[\\/]/).filter(Boolean).at(-1) || path;
@@ -318,9 +324,9 @@ export default function SetupWorkflow() {
                 {state.candidates.find((candidate) => candidate.path === selected)?.legacyConfigured && (
                   <button className="btn pri" disabled={busy || !selected} onClick={() => void submit("import")}>Alte Konfiguration übernehmen</button>
                 )}
-                <button className="btn pri" disabled={busy || !selected} onClick={() => void submit("attach")}>Vorhandenen Ordner einbinden</button>
-                <button className="btn" disabled={busy || !selected} onClick={() => void submit("reset")}>Neu aufsetzen …</button>
-                <button className="btn danger-outline" disabled={busy || !selected} onClick={() => void submit("delete")}>Endgültig löschen und neu aufsetzen …</button>
+                <button className="btn pri" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("attach")}>Vorhandenen Ordner einbinden</button>
+                <button className="btn" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("reset")}>Neu aufsetzen …</button>
+                <button className="btn danger-outline" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("delete")}>Endgültig löschen und neu aufsetzen …</button>
               </div>
             </div>
           ) : (
@@ -334,13 +340,13 @@ export default function SetupWorkflow() {
             <h3>Server einrichten</h3>
             <label>Serverordner<input value={directory} onChange={(event) => setDirectory(event.target.value)} /></label>
             <div className="setup-form-grid">
-              <label>Servertyp<select value={type} onChange={(event) => setType(event.target.value)}>
+              <label>Servertyp<select value={type} onChange={(event) => { setType(event.target.value); setMcVersion(""); }}>
                 {["vanilla", "fabric", "paper", "spigot", "custom"].map((value) => <option key={value}>{value}</option>)}
               </select></label>
-              <label>Minecraft-Version<input value={mcVersion} onChange={(event) => setMcVersion(event.target.value)} /></label>
+              <VersionSelect type={type} value={mcVersion} onChange={setMcVersion} preserve={preserveVersion} catalog={catalog} />
               <label>Spielport<input type="number" min="1" max="65535" value={port} onChange={(event) => setPort(event.target.value)} /></label>
             </div>
-            <button className="btn pri" disabled={busy || !directory || !mcVersion || !Number(port)} onClick={() => void submit("new")}>Konfiguration speichern</button>
+            <button className="btn pri" disabled={busy || !directory || !versionIsValid(type, mcVersion, catalog.versions, false) || !Number(port)} onClick={() => void submit("new")}>Konfiguration speichern</button>
           </div>
           <div className="setup-card-list">
             <h3>ntfy-Benachrichtigungen (optional)</h3>

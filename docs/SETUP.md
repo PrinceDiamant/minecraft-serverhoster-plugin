@@ -21,7 +21,7 @@ geladen oder gebaut, wenn sie noch fehlen.
 
 ## Installation
 
-1. `ServerHoster-2.3.1.jar` in das `plugins`-Verzeichnis des Hosters laden.
+1. `ServerHoster-2.3.2.jar` in das `plugins`-Verzeichnis des Hosters laden.
    Keine Projektquellen, Server-Jars, Mods oder Datenbankdateien hochladen.
 2. Spigot starten. Bei einer Neuinstallation ohne vorhandene
    ServerHoster-Daten führt das Plugin die einmalige Host-Grundeinrichtung
@@ -52,8 +52,12 @@ geladen oder gebaut, wenn sie noch fehlen.
    Eine Übersicht aller Wege enthält [ONBOARDING.md](ONBOARDING.md).
 4. Für einen neuen Server Typ, Minecraft-Version, Child-Ordner und Spielport
    wählen. Unterstützt werden Vanilla, Fabric, Paper, Spigot und ein eigenes
-   Server-Jar. Beim Bestätigen des Assistenten wird noch kein Server-Jar
-   heruntergeladen.
+   Server-Jar. Für Vanilla, Fabric, Paper und Spigot lädt die Auswahl die
+   verfügbaren Versionen vom jeweiligen Anbieter; bei einem Verbindungsfehler
+   kann sie erneut geladen werden. Für eigene JARs wird die Version manuell
+   angegeben. Eine erkannte bestehende Version bleibt auch auswählbar, wenn
+   sie nicht mehr in der Liste steht. Beim Bestätigen des Assistenten wird
+   noch kein Server-Jar heruntergeladen.
 5. Den Child ausdrücklich über das Dashboard oder `/child start` starten.
    Konsole beobachten und die Vanilla-Bereitschaftsmeldung abwarten.
 

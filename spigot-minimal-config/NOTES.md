@@ -18,10 +18,3 @@ The outer Spigot only exists so Zap-Hosting starts a JVM; the real game runs as 
 5. Always stop the server via the panel/`stop` (not "kill"), so the plugin can stop the child
    cleanly (up to 60s). Check Zap's stop timeout is >60s if configurable.
 6. Optional: remove unneeded plugins; set `settings.timings`/bstats off in plugins/bStats/config.yml.
-7. World move plan: set level-name=lobby_empty in the outer server.properties FIRST, then install
-   WorldPorter + FabricLauncher. WorldPorter (enabled before FabricLauncher via softdepend) moves
-   ./world -> ./child-server/world, world_nether/dimensions/minecraft/the_nether and
-   world_the_end/dimensions/minecraft/the_end -> child-server/world/dimensions/minecraft/ (26.1+ layout;
-   legacy DIM-1/DIM1 only as fallback)
-   by atomic rename, never deletes, refuses if a target exists. Leftover world_nether/world_the_end
-   folders (level.dat, data) stay in place as backup. Back up the worlds before the first run.

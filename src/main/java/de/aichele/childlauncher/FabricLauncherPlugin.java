@@ -1270,7 +1270,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         long now = System.currentTimeMillis();
         Long at = versionCacheAt.get(type);
         if (at != null && now - at < 600_000 && versionCache.containsKey(type)) return versionCache.get(type);
-        List<String> list = VersionCatalog.fetch(upstream, type, 40);
+        List<String> list = VersionCatalog.fetch(upstream, type, Integer.MAX_VALUE);
         versionCache.put(type, list); versionCacheAt.put(type, now);
         return list;
     }
@@ -2428,7 +2428,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             }
             case "versions" -> {
                 if (a.length < 2) { s.sendMessage("/child versions <fabric|paper|vanilla|spigot>"); return true; }
-                exec.submit(() -> { try { for (String v : versions(a[1])) msg(s, v); } catch (Exception e) { msg(s, "Versions failed: " + e.getMessage()); } });
+                exec.submit(() -> { try { for (String v : versions(a[1]).stream().limit(40).toList()) msg(s, v); } catch (Exception e) { msg(s, "Versions failed: " + e.getMessage()); } });
             }
             case "host" -> {
                 if (a.length < 2) { s.sendMessage("/child host <preview|apply|rollback>"); return true; }

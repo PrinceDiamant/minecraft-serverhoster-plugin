@@ -1,5 +1,16 @@
 # Release notes
 
+## ServerHoster 2.3.2
+
+- Offer the available child versions as a dropdown in the onboarding wizard and
+  the setup page; `custom` keeps a free text field. `/api/versions` is available
+  before setup completes and returns the complete catalog.
+- Open the setup wizard automatically when setup is still required, and show
+  "Noch nicht eingerichtet" instead of a misleading default server type.
+- Reload the player lists several times after whitelist, op, ban and kick
+  actions, because Minecraft writes the files asynchronously.
+- Remove the separate WorldPorter project; the host setup replaces it.
+
 ## ServerHoster 2.3.1
 
 - Inherit the host bind address when `serverIp` is empty. Existing nonempty

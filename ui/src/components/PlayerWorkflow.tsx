@@ -98,7 +98,8 @@ export function PlayerWorkflow() {
     try {
       await sendCommand(`${action} ${name}`);
       window.dashboardUi?.notify(`Befehl an den Child gesendet: ${action} ${name}. Das Ergebnis steht in der Konsole.`);
-      window.setTimeout(() => void refresh(true), 1200);
+      // Minecraft schreibt die Listen asynchron (Mojang-UUID-Abfrage), daher mehrere Nachladeversuche.
+      for (const delay of [1200, 3500, 7000]) window.setTimeout(() => void refresh(delay === 1200), delay);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Der Spielerbefehl ist fehlgeschlagen.");
     } finally {
@@ -158,7 +159,7 @@ export function PlayerWorkflow() {
           <span>Whitelist</span>
           <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist on"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Aktivieren</button>
           <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist off"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Deaktivieren</button>
-          <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist reload"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); await refresh(true); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Neu laden</button>
+          <button className="btn" disabled={busy} onClick={async () => { try { await sendCommand("whitelist reload"); window.dashboardUi?.notify("Whitelist-Befehl gesendet. Das Ergebnis steht in der Konsole."); window.setTimeout(() => void refresh(), 1200); } catch (cause) { setError(cause instanceof Error ? cause.message : "Aktion fehlgeschlagen"); } }} type="button">Neu laden</button>
         </div>
         {error && <p className="workflow-error" role="alert">{error}</p>}
       </section>

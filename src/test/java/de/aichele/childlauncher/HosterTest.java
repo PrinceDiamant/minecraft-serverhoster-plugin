@@ -362,6 +362,20 @@ class HosterTest {
         assertTrue(VersionCatalog.compare("26.3", "26.3-rc-1") < 0);
     }
 
+    @Test void versionCatalogCanIncludeMoreThanFortyReleases() {
+        var versions = new com.google.gson.JsonArray();
+        for (int i = 0; i < 50; i++) {
+            var entry = new com.google.gson.JsonObject();
+            entry.addProperty("id", "1." + i);
+            entry.addProperty("type", "release");
+            versions.add(entry);
+        }
+        var manifest = new com.google.gson.JsonObject();
+        manifest.add("versions", versions);
+        assertEquals(50, VersionCatalog.vanilla(manifest, Integer.MAX_VALUE).size());
+        assertEquals(40, VersionCatalog.vanilla(manifest, 40).size());
+    }
+
     @Test void spigotCommandIsArgv() {
         var cmd = SpigotBuilder.command("/usr/bin/java", Path.of("/opt/BuildTools.jar"), "26.3", Path.of("/srv/child"));
         assertEquals("26.3", cmd.get(cmd.indexOf("--rev") + 1));

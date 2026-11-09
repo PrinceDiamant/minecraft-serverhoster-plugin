@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
 import BackupSettings, { loadBackupSettings, saveBackupSettings, type BackupOptions, type Credentials, type Settings } from "./BackupSettings";
+import VersionSelect, { useVersionCatalog, versionIsValid } from "./VersionSelect";
 
 export interface SetupCandidate {
   path: string;
@@ -51,7 +52,7 @@ export default function SetupWizard({ state, host, onComplete }: {
   const [selected, setSelected] = useState("");
   const [directory, setDirectory] = useState("./child-server");
   const [type, setType] = useState("vanilla");
-  const [mcVersion, setMcVersion] = useState("26.3");
+  const [mcVersion, setMcVersion] = useState("");
   const [port, setPort] = useState("2063");
   const [ntfy, setNtfy] = useState(state.ntfy);
   const [minimize, setMinimize] = useState(false);
@@ -69,6 +70,8 @@ export default function SetupWizard({ state, host, onComplete }: {
     ? state.candidates.filter((candidate) => candidate.legacyConfigured)
     : state.candidates;
   const candidate = availableCandidates.find((item) => item.path === selected);
+  const preserveVersion = !!candidate?.configured && candidate.type === type && candidate.mcVersion === mcVersion;
+  const catalog = useVersionCatalog(type, step === 1 && action !== "import");
   const path = action === "new" ? directory.trim() : selected;
   const labels = ["Ausgangslage", "Server", "Backups", "Benachrichtigungen", "Host", "Prüfen"];
   useEffect(() => {
@@ -109,7 +112,8 @@ export default function SetupWizard({ state, host, onComplete }: {
         setError(action === "new" ? "Bitte gib einen Serverordner an." : "Bitte wähle einen erkannten Serverordner.");
         return;
       }
-      if (!mcVersion.trim() || !Number.isInteger(Number(port)) || Number(port) < 1 || Number(port) > 65535) {
+      if (action !== "import" && (!versionIsValid(type, mcVersion, catalog.versions, preserveVersion) ||
+          !Number.isInteger(Number(port)) || Number(port) < 1 || Number(port) > 65535)) {
         setError("Bitte gib eine Minecraft-Version und einen gültigen Spielport von 1 bis 65535 an.");
         return;
       }
@@ -300,10 +304,10 @@ export default function SetupWizard({ state, host, onComplete }: {
             <p>Typ, Version, Port und unterstützte Einstellungen werden aus der alten Konfiguration übernommen.</p>
           ) : (
             <div className="setup-form-grid">
-              <label>Servertyp<select value={type} onChange={(event) => setType(event.target.value)}>
+              <label>Servertyp<select value={type} onChange={(event) => { setType(event.target.value); setMcVersion(""); }}>
                 {["vanilla", "fabric", "paper", "spigot", "custom"].map((value) => <option key={value}>{value}</option>)}
               </select></label>
-              <label>Minecraft-Version<input value={mcVersion} onChange={(event) => setMcVersion(event.target.value)} /></label>
+              <VersionSelect type={type} value={mcVersion} onChange={setMcVersion} preserve={preserveVersion} catalog={catalog} />
               <label>Spielport<input type="number" min="1" max="65535" value={port} onChange={(event) => setPort(event.target.value)} /></label>
             </div>
           )}
