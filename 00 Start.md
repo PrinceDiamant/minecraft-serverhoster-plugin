@@ -61,6 +61,6 @@ Tests
 
 - Ein Minecraft-Server mit diesem Plugin startet einen zweiten Server und bedient ihn. Unbekannte Wörter stehen im [[Glossar]].
 - Die Pfeile sagen, was das Plugin mit dem jeweiligen Teil tut.
-- Der Mauszeiger auf einem Block zeigt denselben Satz. Dafür das Plugin Mermaid Knoten Hover einschalten: eingeschränkten Modus aus, dann unter Community-Plugins aktivieren.
+- Der Mauszeiger auf einem Block zeigt denselben Satz. Ein Klick öffnet die Seite dazu. Diese Ansicht im Browser: Ordner site, Datei index.html.
 - Gelesen aus Commit `95b02b953b0b4c23673e900e021a7c3c844aa37d`.
 - [[Glossar]] · [[befunde]] · [[bericht]]

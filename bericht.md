@@ -14,7 +14,7 @@
   - Ebene 5: 558
   - Ebene 6: 157
 - Oben Alltagssprache, tiefer dazu der Name im Quelltext. Wörter stehen im [[Glossar]] und sind verlinkt.
-- Hover: Block `knoten` unter jedem Flowchart. Plugin `mermaid-knoten-hover` legt den Satz auf den Block. Dieselbe Liste steht darunter unter Was die Blöcke tun.
+- Hover: Block `knoten` unter jedem Flowchart. Die Ansicht im Browser (Ordner site, Datei index.html) zeigt den Satz am Mauszeiger. Dieselbe Liste steht darunter unter Was die Blöcke tun.
 - Ungeprüfte Aussagen:
   - Dashboard.handle: 1 eigene Aufrufe nur in Dashboard.handle.Aufrufe
   - Dashboard.schedulesApi: 4 eigene Aufrufe nur in Dashboard.schedulesApi.Aufrufe
