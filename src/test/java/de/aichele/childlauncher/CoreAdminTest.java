@@ -39,16 +39,16 @@ class CoreAdminTest {
 
     @Test void tracksMinecraftPlayerEventsAndListResponses() {
         ChildSlot slot = new ChildSlot("test", 200);
-        FabricLauncherPlugin.trackPlayers(slot, "[14:45:22] [Server thread/INFO]: System chat: Sciddie_ joined the game");
-        FabricLauncherPlugin.trackPlayers(slot, "[14:45:25] [Server thread/INFO]: SparkysBac0n joined the game");
+        ServerHosterPlugin.trackPlayers(slot, "[14:45:22] [Server thread/INFO]: System chat: Sciddie_ joined the game");
+        ServerHosterPlugin.trackPlayers(slot, "[14:45:25] [Server thread/INFO]: SparkysBac0n joined the game");
         assertEquals(java.util.Set.of("Sciddie_", "SparkysBac0n"), slot.onlinePlayers);
-        FabricLauncherPlugin.trackPlayers(slot, "[14:45:50] [Server thread/INFO]: System chat: Sciddie_ left the game");
+        ServerHosterPlugin.trackPlayers(slot, "[14:45:50] [Server thread/INFO]: System chat: Sciddie_ left the game");
         assertEquals(java.util.Set.of("SparkysBac0n"), slot.onlinePlayers);
-        FabricLauncherPlugin.trackPlayers(slot, "[14:46:00] [Server thread/INFO]: System chat: There are 2 of a max of 20 players online: Sciddie_, SparkysBac0n");
+        ServerHosterPlugin.trackPlayers(slot, "[14:46:00] [Server thread/INFO]: System chat: There are 2 of a max of 20 players online: Sciddie_, SparkysBac0n");
         assertEquals(java.util.Set.of("Sciddie_", "SparkysBac0n"), slot.onlinePlayers);
-        FabricLauncherPlugin.trackPlayers(slot, "[14:46:01] [Server thread/INFO]: <Fake> There are 0 of a max of 20 players online:");
+        ServerHosterPlugin.trackPlayers(slot, "[14:46:01] [Server thread/INFO]: <Fake> There are 0 of a max of 20 players online:");
         assertEquals(2, slot.onlinePlayers.size());
-        FabricLauncherPlugin.trackPlayers(slot, "[14:46:02] [Server thread/INFO]: There are 0 of a max of 20 players online:");
+        ServerHosterPlugin.trackPlayers(slot, "[14:46:02] [Server thread/INFO]: There are 0 of a max of 20 players online:");
         assertTrue(slot.onlinePlayers.isEmpty());
     }
 
@@ -140,11 +140,11 @@ class CoreAdminTest {
     }
 
     @Test void heapSizeParserHandlesJvmSuffixesAndInvalidValues() {
-        assertEquals(8L * 1024 * 1024 * 1024, FabricLauncherPlugin.parseMemoryBytes("8G"));
-        assertEquals(1536L * 1024 * 1024, FabricLauncherPlugin.parseMemoryBytes("1536M"));
-        assertEquals(1024L, FabricLauncherPlugin.parseMemoryBytes("1K"));
-        assertEquals(-1, FabricLauncherPlugin.parseMemoryBytes("large"));
-        assertEquals(-1, FabricLauncherPlugin.parseMemoryBytes("999999999999T"));
+        assertEquals(8L * 1024 * 1024 * 1024, ServerHosterPlugin.parseMemoryBytes("8G"));
+        assertEquals(1536L * 1024 * 1024, ServerHosterPlugin.parseMemoryBytes("1536M"));
+        assertEquals(1024L, ServerHosterPlugin.parseMemoryBytes("1K"));
+        assertEquals(-1, ServerHosterPlugin.parseMemoryBytes("large"));
+        assertEquals(-1, ServerHosterPlugin.parseMemoryBytes("999999999999T"));
     }
 
     @Test void hostMemoryProbeReadsCgroupV2AndHostSwapWithoutCommands() throws Exception {

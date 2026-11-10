@@ -17,7 +17,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.logging.Level;
 
-public final class FabricLauncherPlugin extends JavaPlugin {
+public final class ServerHosterPlugin extends JavaPlugin {
     private final HttpClient http = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).connectTimeout(Duration.ofSeconds(20)).build();
     private Upstream upstream;
     private final ExecutorService exec = Executors.newCachedThreadPool(r -> { Thread t = new Thread(r, "ServerhosterPlugin"); t.setDaemon(true); return t; });
@@ -287,7 +287,6 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     }
 
     String focusId() { return focus; }
-    List<ServerProfile> profiles() { return profiles; }
     ServerProfile profile(String id) {
         String key = id == null || id.isBlank() ? focus : id;
         for (ServerProfile p : profiles) if (p.id.equals(key)) return p;
@@ -301,23 +300,10 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     }
 
     private ChildSlot focusSlot() { return slot(focus); }
-    boolean running() { return focusSlot().running(); }
-    boolean running(String id) { return slot(id).running(); }
-    long pid() { return focusSlot().pid(); }
-    long pid(String id) { return slot(id).pid(); }
-    long uptimeMillis() { return focusSlot().uptimeMillis(); }
-    long uptimeMillis(String id) { return slot(id).uptimeMillis(); }
-    String lastStatus() { return focusSlot().lastStatus; }
-    String lastStatus(String id) { return slot(id).lastStatus; }
-    ConsoleBuffer console() { return focusSlot().console; }
     ConsoleBuffer console(String id) { return slot(id).console; }
-    Set<String> players() { return focusSlot().onlinePlayers; }
     Set<String> players(String id) { return slot(id).onlinePlayers; }
     boolean sendCommand(String c) { return sendCommand(focus, c); }
     boolean sendCommand(String id, String c) { if (c.startsWith("/")) c = c.substring(1); return send(slot(id), c); }
-    void requestStart() { requestStart(focus); }
-    void requestStop() { requestStop(focus); }
-    void requestRestart() { requestRestart(focus); }
     void requestStart(String id) {
         startAsync(null, id);
     }
@@ -332,9 +318,6 @@ public final class FabricLauncherPlugin extends JavaPlugin {
         exec.submit(() -> stopBlocking(s));
     }
     void requestRestart(String id) { exec.submit(() -> { ChildSlot s = slot(id); s.wantRunning = false; stopBlocking(s); s.attempts = 0; reloadConfig(); reloadProfiles(); startAsync(null, id); }); }
-    void focus(String id) {
-        if (!focus.equals(id)) throw new IllegalArgumentException("ServerHoster verwaltet genau einen Child-Server");
-    }
     void info(String m) { info(focus, m); }
     void info(String id, String m) { getLogger().info(m); slot(id).console.add("[ServerhosterPlugin] " + m); }
 
@@ -856,15 +839,8 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     List<String> crashFiles(String id) throws IOException { return CrashIndex.list(profile(id).directory()); }
     String crashText(String id, String file) throws IOException { return CrashIndex.read(profile(id).directory(), file); }
 
-    Path workDir() { return profile(focus).directory(); }
     Path workDir(String id) { return profile(id).directory(); }
-    List<Path> workDirs() { List<Path> out = new ArrayList<>(); for (ServerProfile p : profiles) out.add(p.directory()); return out; }
-
-    Upstream upstream() { return upstream; }
     boolean dashboardTls() { return dashboard != null && dashboard.tls(); }
-
-    List<Double> msptHistory() { return focusSlot().msptHistory(); }
-    List<Double> msptHistory(String id) { return slot(id).msptHistory(); }
 
     ProcessProbe.Disk diskCached(String id) {
         long now = System.currentTimeMillis();
@@ -1417,11 +1393,6 @@ public final class FabricLauncherPlugin extends JavaPlugin {
             return RemoteBackupBridge.list(remoteBackupSettings(), credentials.username(), credentials.password(), id);
         }
         return BackupBridge.list(backupSpec(), id);
-    }
-
-    Path backupFile(String id, String name) throws IOException {
-        if (remoteBackupSelected()) throw new IOException("Remote backup files are streamed from the configured destination.");
-        return BackupBridge.file(backupSpec(), id, name);
     }
 
     void downloadBackup(String id, String name, OutputStream output) throws IOException {
@@ -2157,7 +2128,7 @@ public final class FabricLauncherPlugin extends JavaPlugin {
     }
 
     private Path runningPluginJar() throws Exception {
-        java.security.CodeSource source = FabricLauncherPlugin.class.getProtectionDomain().getCodeSource();
+        java.security.CodeSource source = ServerHosterPlugin.class.getProtectionDomain().getCodeSource();
         if (source == null) throw new IOException("Could not identify the running ServerHoster plugin jar");
         return Path.of(source.getLocation().toURI()).toAbsolutePath().normalize();
     }

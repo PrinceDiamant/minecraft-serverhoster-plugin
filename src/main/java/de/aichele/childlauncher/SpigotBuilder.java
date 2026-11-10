@@ -42,7 +42,7 @@ final class SpigotBuilder {
             try (var in = new java.io.BufferedReader(new java.io.InputStreamReader(p.getInputStream(), java.nio.charset.StandardCharsets.UTF_8))) {
                 String line; while ((line = in.readLine()) != null) log.accept("[BuildTools] " + line);
             } catch (IOException ignored) {}
-        }, "FabricLauncher-BuildTools");
+        }, "ServerHoster-BuildTools");
         pump.setDaemon(true);
         pump.start();
         if (!p.waitFor(45, TimeUnit.MINUTES)) { p.destroyForcibly(); throw new IOException("BuildTools timeout"); }

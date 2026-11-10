@@ -82,7 +82,7 @@ final class ProcessProbe {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         Thread pump = new Thread(() -> {
             try { p.getInputStream().transferTo(buf); } catch (IOException ignored) {}
-        }, "FabricLauncher-jcmd");
+        }, "ServerHoster-jcmd");
         pump.setDaemon(true);
         pump.start();
         try {

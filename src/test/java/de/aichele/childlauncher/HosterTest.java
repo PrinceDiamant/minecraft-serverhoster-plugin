@@ -108,7 +108,7 @@ class HosterTest {
         assertEquals(Map.of(
                 "server-port", "2063",
                 "server-ip", "192.0.2.1",
-                "pause-when-empty-seconds", "0"), FabricLauncherPlugin.forcedProperties(profile, "192.0.2.1"));
+                "pause-when-empty-seconds", "0"), ServerHosterPlugin.forcedProperties(profile, "192.0.2.1"));
 
         String config = Files.readString(Path.of("src/main/resources/config.yml"));
         assertTrue(config.contains("xmx: 5G"));
@@ -123,7 +123,7 @@ class HosterTest {
 
         Path properties = tmp.resolve("server.properties");
         Files.writeString(properties, "view-distance=12\ndifficulty=hard\npause-when-empty-seconds=60\n");
-        FabricLauncherPlugin.updateProperties(properties, FabricLauncherPlugin.forcedProperties(profile, "192.0.2.1"), Map.of());
+        ServerHosterPlugin.updateProperties(properties, ServerHosterPlugin.forcedProperties(profile, "192.0.2.1"), Map.of());
         String saved = Files.readString(properties);
         assertTrue(saved.contains("view-distance=12"));
         assertTrue(saved.contains("difficulty=hard"));
@@ -132,18 +132,18 @@ class HosterTest {
     }
 
     @Test void bindAddressInheritsHostUnlessExplicitlyOverridden() {
-        assertEquals("192.0.2.1", FabricLauncherPlugin.effectiveBindAddress("", "192.0.2.1"));
-        assertEquals("192.0.2.2", FabricLauncherPlugin.effectiveBindAddress("192.0.2.2", "192.0.2.1"));
-        assertEquals("0.0.0.0", FabricLauncherPlugin.effectiveBindAddress("0.0.0.0", "192.0.2.1"));
-        assertEquals("", FabricLauncherPlugin.effectiveBindAddress("", ""));
-        assertEquals("", FabricLauncherPlugin.effectiveBindAddress(null, null));
+        assertEquals("192.0.2.1", ServerHosterPlugin.effectiveBindAddress("", "192.0.2.1"));
+        assertEquals("192.0.2.2", ServerHosterPlugin.effectiveBindAddress("192.0.2.2", "192.0.2.1"));
+        assertEquals("0.0.0.0", ServerHosterPlugin.effectiveBindAddress("0.0.0.0", "192.0.2.1"));
+        assertEquals("", ServerHosterPlugin.effectiveBindAddress("", ""));
+        assertEquals("", ServerHosterPlugin.effectiveBindAddress(null, null));
         ServerProfile explicit = Profiles.load(Map.of("serverIp", "127.0.0.1")).getFirst();
-        assertEquals("127.0.0.1", FabricLauncherPlugin.forcedProperties(explicit, "192.0.2.1").get("server-ip"));
+        assertEquals("127.0.0.1", ServerHosterPlugin.forcedProperties(explicit, "192.0.2.1").get("server-ip"));
         ServerProfile inherited = Profiles.load(Map.of()).getFirst();
-        assertEquals("192.0.2.3", FabricLauncherPlugin.forcedProperties(inherited, "192.0.2.3").get("server-ip"));
-        assertEquals("", FabricLauncherPlugin.forcedProperties(inherited, "").get("server-ip"));
-        assertEquals("192.0.2.3", FabricLauncherPlugin.effectiveBindAddress("", "192.0.2.3"));
-        assertEquals("127.0.0.1", FabricLauncherPlugin.effectiveBindAddress("127.0.0.1", "192.0.2.3"));
+        assertEquals("192.0.2.3", ServerHosterPlugin.forcedProperties(inherited, "192.0.2.3").get("server-ip"));
+        assertEquals("", ServerHosterPlugin.forcedProperties(inherited, "").get("server-ip"));
+        assertEquals("192.0.2.3", ServerHosterPlugin.effectiveBindAddress("", "192.0.2.3"));
+        assertEquals("127.0.0.1", ServerHosterPlugin.effectiveBindAddress("127.0.0.1", "192.0.2.3"));
         assertEquals("Alle Interfaces (Port 2063)", Dashboard.formatBindAddress("", 2063));
         assertEquals("Alle Interfaces (Port 2063)", Dashboard.formatBindAddress("0.0.0.0", 2063));
         assertEquals("192.0.2.3:2063", Dashboard.formatBindAddress("192.0.2.3", 2063));
@@ -297,18 +297,18 @@ class HosterTest {
         org.bukkit.configuration.file.YamlConfiguration config = new org.bukkit.configuration.file.YamlConfiguration();
         config.set("metadata.pluginVersion", "2.0.0");
         config.set("autoRestart.maxAttempts", 0);
-        assertTrue(FabricLauncherPlugin.migrateLegacyRestartPolicy(config, "2.0.1"));
+        assertTrue(ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.0.1"));
         assertEquals(5, config.getInt("autoRestart.maxAttempts"));
         assertEquals("2.0.1", config.getString("metadata.pluginVersion"));
 
         config.set("autoRestart.maxAttempts", 3);
-        assertFalse(FabricLauncherPlugin.migrateLegacyRestartPolicy(config, "2.0.1"));
+        assertFalse(ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.0.1"));
         assertEquals(3, config.getInt("autoRestart.maxAttempts"));
 
         // Configs imported from 1.10.x carry no pluginVersion but may contain the unlimited value.
         org.bukkit.configuration.file.YamlConfiguration imported = new org.bukkit.configuration.file.YamlConfiguration();
         imported.set("autoRestart.maxAttempts", 0);
-        assertTrue(FabricLauncherPlugin.migrateLegacyRestartPolicy(imported, "2.0.1"));
+        assertTrue(ServerHosterPlugin.migrateLegacyRestartPolicy(imported, "2.0.1"));
         assertEquals(5, imported.getInt("autoRestart.maxAttempts"));
     }
 
@@ -665,7 +665,7 @@ class HosterTest {
         Files.writeString(backups.resolve("backup.zip"), "backup");
         Files.writeString(reports.resolve("incident.log"), "report");
 
-        FabricLauncherPlugin.cleanupLegacyDirectory(oldData, java.util.Set.of(backups, reports));
+        ServerHosterPlugin.cleanupLegacyDirectory(oldData, java.util.Set.of(backups, reports));
 
         assertFalse(Files.exists(oldData.resolve("config.yml")));
         assertEquals("backup", Files.readString(backups.resolve("backup.zip")));

@@ -23,7 +23,7 @@ Dashboard im Maven-Lauf. H2 nur in Tests. Kein mitgeliefertes Server-Jar.
 Module und Hauptklassen der Baseline:
 
 - Root-Plugin `src/main/java/de/aichele/childlauncher/`. Einstieg
-  `FabricLauncherPlugin` (`plugin.yml`: Name `ServerhosterPlugin`, Befehl
+  `ServerHosterPlugin` (`plugin.yml`: Name `ServerhosterPlugin`, Befehl
   `/child`, Recht `serverhoster.admin`).
 - Prozess und Diagnose: `ChildSlot`, `LaunchPlan`, `ProcessProbe`,
   `HostMemoryProbe`, `MemoryProtectionPolicy`, `MemoryIncidentReport`,

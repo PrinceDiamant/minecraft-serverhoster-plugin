@@ -5,7 +5,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -93,6 +92,4 @@ final class VersionCatalog {
 
     private static boolean num(String s) { return s.chars().allMatch(Character::isDigit) && !s.isEmpty(); }
     private static String str(JsonObject o, String k) { JsonElement e = o.get(k); return e == null || e.isJsonNull() ? "" : e.getAsString(); }
-
-    static Comparator<String> newestFirst() { return VersionCatalog::compare; }
 }

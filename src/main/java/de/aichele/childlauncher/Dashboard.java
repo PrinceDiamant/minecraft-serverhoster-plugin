@@ -25,7 +25,7 @@ final class Dashboard {
     private static final long SESSION_TTL = 12 * 3600_000L;
     private static final long MAX_TEXT = 2 * 1024 * 1024;
     private static final long MAX_UPLOAD = 1024L * 1024 * 1024;
-    private final FabricLauncherPlugin pl;
+    private final ServerHosterPlugin pl;
     private final Gson gson = new Gson();
     private final SecureRandom rnd = new SecureRandom();
     private final Map<String, Long> sessions = new ConcurrentHashMap<>();
@@ -39,7 +39,7 @@ final class Dashboard {
     private volatile long lastCpuTicks = -1, lastCpuWall, lastCpuPid = -1;
     private volatile double lastCpuPct;
 
-    Dashboard(FabricLauncherPlugin pl) { this.pl = pl; }
+    Dashboard(ServerHosterPlugin pl) { this.pl = pl; }
 
     void start() throws Exception {
         password = DashboardPassword.read(passwordFile(), pl.setupRequired());
@@ -50,7 +50,7 @@ final class Dashboard {
             pl.getLogger().warning("Einmaliger Dashboard-Einrichtungscode: " + setupCode
                     + " (nur bis zum nächsten Serverstart gültig; nicht weitergeben).");
         }
-        String bind = FabricLauncherPlugin.effectiveBindAddress(
+        String bind = ServerHosterPlugin.effectiveBindAddress(
                 pl.getConfig().getString("dashboard.bind", ""), pl.childBindAddress(pl.profile(null)));
         if (bind == null || bind.isBlank()) bind = "0.0.0.0";
         int port = pl.getConfig().getInt("dashboard.port", 2064);
@@ -765,7 +765,7 @@ final class Dashboard {
         Path f = pl.getDataFolder().toPath().resolve("config.yml");
         synchronized (pl.configMutationLock()) {
             Files.writeString(f, txt, StandardCharsets.UTF_8);
-            FabricLauncherPlugin.makeWritable(f, false);
+            ServerHosterPlugin.makeWritable(f, false);
             pl.reloadConfig();
             pl.reloadProfiles();
         }

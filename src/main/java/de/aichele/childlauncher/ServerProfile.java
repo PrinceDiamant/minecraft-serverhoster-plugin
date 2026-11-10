@@ -50,13 +50,6 @@ final class ServerProfile {
     }
 
     Path directory() { return Paths.get(workingDir).toAbsolutePath().normalize(); }
-
-    Map<String, Object> view() {
-        Map<String, Object> m = new LinkedHashMap<>();
-        m.put("id", id); m.put("type", type); m.put("mcVersion", mcVersion); m.put("port", port);
-        m.put("serverIp", serverIp); m.put("workingDir", directory().toString()); m.put("xmx", xmx); m.put("autoStart", autoStart);
-        return m;
-    }
 }
 
 /** Reads the flat dotted map produced by Bukkit {@code getValues(true)}. */
