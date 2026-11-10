@@ -368,14 +368,18 @@ class CoreAdminTest {
         ProcessProbe.Disk disk = ProcessProbe.disk(dir, 100);
         assertEquals(1, disk.files());
         assertEquals(5, disk.bytes());
-        String html = Files.readString(Path.of("ui/src/legacyDashboard.ts"));
-        assertTrue(html.contains("id=\\\"props\\\""));
-        assertTrue(html.contains("id=\\\"config\\\""));
+        String html = Files.readString(Path.of("ui/src/dashboardPanels.html"));
+        String script = Files.readString(Path.of("ui/src/dashboardScript.js"));
+        assertTrue(html.contains("id=\"props\""));
+        assertTrue(html.contains("id=\"config\""));
         assertTrue(html.contains("<textarea"));
-        assertFalse(html.contains("['mods','Mods']"));
-        assertTrue(html.contains("['setup','Einrichtung']"));
-        assertTrue(html.contains("['diag','Diagnose']"));
-        assertTrue(html.contains("id=\\\"t-setup\\\""));
+        assertFalse(script.contains("['mods','Mods']"));
+        assertTrue(script.contains("['setup','Einrichtung']"));
+        assertTrue(script.contains("['diag','Diagnose']"));
+        assertTrue(html.contains("id=\"t-setup\""));
+        assertFalse(script.contains("/api/tasks"));
+        assertFalse(script.contains("function loadPlayers("));
+        assertFalse(script.contains("function loadBackup("));
     }
 
     private static HttpClient client(Path keystore, char[] pass) throws Exception {

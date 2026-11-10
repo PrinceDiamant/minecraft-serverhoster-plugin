@@ -1,4 +1,8 @@
-# Upgrade von ServerHoster 2.4.0 auf 2.4.1
+# Upgrade von ServerHoster 2.4.1 auf 2.4.2
+
+Das Plugin-Jar ersetzen; Konfiguration und Child-Ordner bleiben erhalten.
+
+## Vorheriges Upgrade: 2.4.0 auf 2.4.1
 
 Das Plugin-Jar ersetzen; Konfiguration und Child-Ordner bleiben erhalten.
 Bei `type: custom` werden relative `customJar`-Pfade jetzt wie dokumentiert

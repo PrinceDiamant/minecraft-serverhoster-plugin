@@ -23,7 +23,8 @@ import SettingsWorkflow from "./components/SettingsWorkflow";
 import TaskWorkflow from "./components/TaskWorkflow";
 import { dashboardRequest, jsonBody, type ConfirmOptions, type PromptOptions } from "./lib/hostApi";
 import { installFileEditors, type FileEditors } from "./lib/fileEditor";
-import { legacyDashboardMarkup, legacyDashboardScript } from "./legacyDashboard";
+import dashboardMarkup from "./dashboardPanels.html?raw";
+import dashboardScript from "./dashboardScript.js?raw";
 
 declare global {
   interface Window {
@@ -99,12 +100,11 @@ function tabFromPath(path: string): string {
 
 function readLegacyDashboard() {
   const document = new DOMParser().parseFromString(
-    `<!DOCTYPE html><html><body><main>${legacyDashboardMarkup}</main><script>${legacyDashboardScript}</script></body></html>`,
+    `<!DOCTYPE html><html><body><main>${dashboardMarkup}</main></body></html>`,
     "text/html",
   );
   const main = document.querySelector("main");
-  const script = document.querySelector("script");
-  if (!main || !script?.textContent) {
+  if (!main || !dashboardScript) {
     throw new Error("The bundled ServerHoster dashboard source is incomplete");
   }
   for (const [sectionId, rootId] of [
@@ -124,24 +124,7 @@ function readLegacyDashboard() {
   const settingsRoot = document.createElement("div");
   settingsRoot.id = "settings-workflow-root";
   settingsSection.replaceChildren(settingsRoot);
-  const safeScript = script.textContent
-    .replace(
-      /if\s*\(\s*t\s*===\s*['"](?:players|setup|backup|tasks)['"]\s*\)\s*load(?:Players|Setup|Backup|Tasks)\s*\(\s*\)\s*;?/g,
-      "",
-    )
-    .replace(
-      "if(generation!==statusGeneration)return;updateChildActions(s);",
-      "if(generation!==statusGeneration)return;window.dispatchEvent(new CustomEvent('dashboard:setup-required',{detail:!!s.setupRequired}));updateChildActions(s);",
-    )
-    .replace(
-      "fetch('/api/status',{credentials:'same-origin'}).then(r=>r.ok?start():showLogin()).catch(showLogin);",
-      "fetch('/api/status',{credentials:'same-origin'}).then(r=>r.ok?start():showLogin()).catch(showLogin).finally(()=>window.dispatchEvent(new Event('dashboard:auth-ready')));",
-    )
-    .replace(
-      "stream();tab(cur)}",
-      "stream();window.dispatchEvent(new Event('dashboard:started'))}",
-    );
-  return { panels: main.innerHTML, script: safeScript };
+  return { panels: main.innerHTML, script: dashboardScript };
 }
 
 const legacyDashboard = readLegacyDashboard();

@@ -1,5 +1,13 @@
 # Release notes
 
+## ServerHoster 2.4.2
+
+- Extract the active dashboard markup and script into separate source files.
+- Remove obsolete duplicate player, task and backup dashboard implementations
+  and fragile runtime script replacements. The existing web dashboard remains
+  bundled with the plugin.
+- Upgrade from 2.4.1 by replacing the plugin jar.
+
 ## ServerHoster 2.4.1
 
 - Restore dashboard visibility of schedule execution, waiting and failure
