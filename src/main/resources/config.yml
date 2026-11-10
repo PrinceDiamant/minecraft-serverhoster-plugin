@@ -65,7 +65,7 @@ consoleBufferLines: 4000
 # Web dashboard (JDK HTTP server, optional TLS). Password: plugins/ServerhosterPlugin/dashboard-password.txt
 metadata:
   schemaVersion: 2
-  pluginVersion: 2.3.2
+  pluginVersion: 2.4.0
   migrationState: pending
 dashboard:
   enabled: true

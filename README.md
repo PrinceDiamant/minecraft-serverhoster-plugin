@@ -5,6 +5,13 @@ Child-Server startet und ein Web-Dashboard für Einrichtung, Betrieb,
 Diagnose, Backups und Zeitpläne bereitstellt. Das Plugin installiert keine
 Mods oder Plugins.
 
+## ServerHoster 2.4.0
+
+- Upgrade von 2.3.2 bleibt der Austausch des Jars im Ordner
+  `plugins/ServerhosterPlugin/`.
+- Die alte Aufgabenliste entfällt. Zeitpläne im Dashboard bleiben.
+- Ein neues Setup liest nur `memoryProtection.autoStopChild`.
+
 ## ServerHoster 2.3.2
 
 - Dashboard-Passwort beim ersten Zugriff mit einmaligem Log-Code festlegen.
@@ -69,7 +76,7 @@ Build mit Node.js 22 erzeugt.
 mvn clean verify
 ```
 
-Das Plugin-Jar ist `target/ServerHoster-2.3.2.jar`. Spigot API 26.3 ist eine
+Das Plugin-Jar ist `target/ServerHoster-2.4.0.jar`. Spigot API 26.3 ist eine
 `provided`-Abhängigkeit. H2 ist ausschließlich eine Testabhängigkeit und
 befindet sich nicht im Plugin-Jar. Es gibt keine lokale Datenbank und keine
 mitgelieferten Server-Jars.

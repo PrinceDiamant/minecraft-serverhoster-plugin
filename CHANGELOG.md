@@ -1,5 +1,20 @@
 # Release notes
 
+## ServerHoster 2.4.0
+
+- Keep the 2.3.2 upgrade path: replace the jar. The data folder stays
+  `plugins/ServerhosterPlugin/`, and the existing child, config, password and
+  secrets stay in place.
+- Move the Java package to `dev.aichele.serverhoster`.
+- Stop importing or cleaning up FabricLauncher 1.x folders and jars.
+- Ignore `servers.*` and `focusServer`, and remove those keys at startup.
+- Remove the legacy `tasks` list, `/child tasks`, `/child task` and
+  `/api/tasks`. Dashboard schedules still create, edit, toggle, run and delete
+  through `/api/schedules`. A startup removes a leftover `tasks` key.
+- Read only `memoryProtection.autoStopChild` at runtime. A fresh config sets it
+  to true and uses policy version 4. Configs below policy version 4 still copy
+  `autoShutdown` once, then drop the old key.
+
 ## ServerHoster 2.3.2
 
 - Offer the available child versions as a dropdown in the onboarding wizard and
