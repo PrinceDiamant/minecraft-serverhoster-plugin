@@ -1,18 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowClockwise, Check, HardDrives, ShieldWarning } from "@phosphor-icons/react";
+import { useCallback, useEffect, useState } from "react";
+import { ArrowClockwise, Check } from "@phosphor-icons/react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
-import SetupWizard from "./SetupWizard";
-import VersionSelect, { useVersionCatalog, versionIsValid } from "./VersionSelect";
-
-interface SetupCandidate {
-  path: string;
-  type: string;
-  mcVersion: string;
-  port: number;
-  configured: boolean;
-  hasServerFiles: boolean;
-  contents: string[];
-}
+import SetupWizard, { type SetupState } from "./SetupWizard";
 
 interface HostMinimizeState {
   status: string;
@@ -29,29 +18,15 @@ interface HostMinimizeState {
   heap?: { name: string; applied: boolean; detail: string }[];
 }
 
-interface SetupState {
-  required: boolean;
-  completed: boolean;
-  candidates: SetupCandidate[];
-  ntfy: { enabled: boolean; server: string; topic: string };
-}
-
+/**
+ * Post-setup host management. Incomplete setup always uses {@link SetupWizard}
+ * because the API keeps {@code completed == !required}.
+ */
 export default function SetupWorkflow() {
   const [state, setState] = useState<SetupState | null>(null);
-  const [selected, setSelected] = useState("");
-  const [directory, setDirectory] = useState("./child-server");
-  const [type, setType] = useState("vanilla");
-  const [mcVersion, setMcVersion] = useState("");
-  const [port, setPort] = useState("2063");
-  const [ntfy, setNtfy] = useState({ enabled: false, server: "https://ntfy.sh", topic: "" });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [host, setHost] = useState<HostMinimizeState | null>(null);
-  const initialized = useRef(false);
-  const ntfyInitialized = useRef(false);
-  const selectedCandidate = state?.candidates.find((candidate) => candidate.path === selected);
-  const preserveVersion = !!selectedCandidate?.configured && selectedCandidate.type === type && selectedCandidate.mcVersion === mcVersion;
-  const catalog = useVersionCatalog(type, !!state && !state.required && !state.completed);
 
   const refresh = useCallback(async () => {
     setError("");
@@ -59,20 +34,6 @@ export default function SetupWorkflow() {
       const result = await dashboardRequest<SetupState>("/api/setup");
       setState(result);
       setHost(await dashboardRequest<HostMinimizeState>("/api/host-minimize"));
-      if (!ntfyInitialized.current) {
-        ntfyInitialized.current = true;
-        setNtfy(result.ntfy);
-      }
-      const candidate = result.candidates.length === 1 ? result.candidates[0] : undefined;
-      setSelected((current) => current || candidate?.path || "");
-      if (!initialized.current && candidate) {
-        initialized.current = true;
-        if (candidate.configured) {
-          setType(candidate.type);
-          setMcVersion(candidate.mcVersion);
-          setPort(String(candidate.port));
-        }
-      }
       return true;
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Einrichtungsstatus konnte nicht geladen werden.");
@@ -88,61 +49,6 @@ export default function SetupWorkflow() {
     window.addEventListener("dashboard:tab", onPageChange);
     return () => window.removeEventListener("dashboard:tab", onPageChange);
   }, [refresh]);
-
-  const submit = async (action: "attach" | "delete" | "new" | "reset") => {
-    setBusy(true);
-    setError("");
-    try {
-      const path = action === "new" ? directory.trim() : selected;
-      if (!path) throw new Error("Bitte zuerst einen Serverordner auswählen.");
-      if (!versionIsValid(type, mcVersion, catalog.versions, action !== "new" && preserveVersion))
-        throw new Error("Bitte eine verfügbare Minecraft-Version auswählen.");
-      let confirm = "";
-      if (action === "reset") {
-        const candidateName = path.split(/[\\/]/).filter(Boolean).at(-1) || path;
-        const contents = state?.candidates.find((candidate) => candidate.path === path)?.contents ?? [];
-        const accepted = await window.dashboardUi?.confirm({
-          title: "Vorhandenen Child-Ordner neu aufsetzen?",
-          description: `Dieser Ordner wird verschoben und als Sicherung archiviert: ${path}\nEnthalten sind u.a.: ${contents.join(", ") || "keine Einträge erkannt"}.`,
-          confirmLabel: "Ordner archivieren",
-          destructive: true,
-        });
-        if (!accepted) return;
-        confirm = `ARCHIVIEREN ${candidateName}`;
-      } else if (action === "delete") {
-        const candidateName = path.split(/[\\/]/).filter(Boolean).at(-1) || path;
-        const contents = state?.candidates.find((candidate) => candidate.path === path)?.contents ?? [];
-        const accepted = await window.dashboardUi?.confirm({
-          title: "Child-Ordner endgültig löschen?",
-          description: `ACHTUNG: Der gesamte Child-Ordner wird unwiderruflich gelöscht: ${path}\nDazu gehören Welten und alle darin enthaltenen Dateien. Erkannter Inhalt: ${contents.join(", ") || "keine Einträge erkannt"}. Server-Root und externe Verzeichnisse werden nicht gelöscht.`,
-          confirmLabel: "Child endgültig löschen",
-          destructive: true,
-        });
-        if (!accepted) return;
-        confirm = `DELETE ${candidateName}`;
-      } else {
-        const accepted = await window.dashboardUi?.confirm({
-          title: "Server einrichten?",
-          description: `Servertyp ${type} ${mcVersion} wird für ${path} konfiguriert. Es wird noch kein Server-JAR heruntergeladen.`,
-          confirmLabel: "Einrichtung bestätigen",
-        });
-        if (!accepted) return;
-      }
-      const result = await dashboardRequest<{ warning?: string }>("/api/setup", {
-        method: "POST",
-        body: jsonBody({ action, path, type, mcVersion, port: Number(port), confirm, ntfy }),
-      });
-      await refresh();
-      window.dashboardUi?.notify(
-        result.warning ?? "Einrichtung gespeichert. Ein Child-Start ist jetzt möglich.",
-        !!result.warning,
-      );
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Einrichtung fehlgeschlagen.");
-    } finally {
-      setBusy(false);
-    }
-  };
 
   const hostAction = async (action: "apply" | "rollback", required: string) => {
     const accepted = await window.dashboardUi?.confirm({
@@ -204,7 +110,7 @@ export default function SetupWorkflow() {
       <header className="setup-heading">
         <div>
           <p className="eyebrow">EINMALIGE EINRICHTUNG</p>
-          <h2>{state?.completed ? "Child-Server eingerichtet" : "Serverhoster einrichten"}</h2>
+          <h2>Child-Server eingerichtet</h2>
           <p>Es wird genau ein Child-Server verwaltet. Die Einrichtung lädt keine Mods oder Plugins vorab herunter.</p>
         </div>
         <button className="btn" onClick={() => void refresh()} disabled={busy} aria-label="Erneut laden">
@@ -214,89 +120,10 @@ export default function SetupWorkflow() {
 
       {error && <p className="workflow-error" role="alert">{error}</p>}
 
-      {state?.completed && (
-        <>
-          <article className="setup-card">
-            <Check size={20} />
-            <div><b>Einrichtung abgeschlossen</b><p>Serverdateien werden nur bei einem expliziten Start eingerichtet oder aktualisiert.</p></div>
-          </article>
-        </>
-      )}
-
-      {!state?.completed && (
-        <>
-          {state?.candidates.length ? (
-            <div className="setup-card-list">
-              <h3>Erkannte Serverordner</h3>
-              {state.candidates.length > 1 && (
-                <article className="setup-card">
-                  <ShieldWarning size={20} />
-                  <div><b>Mehrere Serverordner gefunden</b><p>Es wird nur der ausgewählte Ordner eingebunden, archiviert oder gelöscht. Alle anderen erkannten Ordner bleiben unverändert und müssen bei Bedarf separat behandelt werden.</p></div>
-                </article>
-              )}
-              {state.candidates.map((candidate) => (
-                <label className="setup-card" key={candidate.path}>
-                  <input
-                    type="radio"
-                    name="server-candidate"
-                    value={candidate.path}
-                    checked={selected === candidate.path}
-                    onChange={() => {
-                      setSelected(candidate.path);
-                      if (candidate.configured) {
-                        setType(candidate.type);
-                        setMcVersion(candidate.mcVersion);
-                        setPort(String(candidate.port));
-                      }
-                    }}
-                  />
-                  <HardDrives size={20} />
-                  <div>
-                    <b>{candidate.path}</b>
-                    <p>{candidate.configured ? `${candidate.type} ${candidate.mcVersion} · Port ${candidate.port}` : "Serverdateien erkannt; Konfiguration muss angegeben werden."}</p>
-                    <p className="muted">Inhalt: {candidate.contents.join(", ") || "keine Einträge erkannt"}</p>
-                  </div>
-                </label>
-              ))}
-              <div className="setup-actions">
-                <button className="btn pri" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("attach")}>Vorhandenen Ordner einbinden</button>
-                <button className="btn" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("reset")}>Neu aufsetzen …</button>
-                <button className="btn danger-outline" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("delete")}>Endgültig löschen und neu aufsetzen …</button>
-              </div>
-            </div>
-          ) : (
-            <article className="setup-card">
-              <ShieldWarning size={20} />
-              <div><b>Kein vorhandener Child-Server erkannt</b><p>Lege zunächst die Serverkonfiguration fest. Der Child-Ordner wird erst beim Start verwendet.</p></div>
-            </article>
-          )}
-
-          <div className="setup-card-list">
-            <h3>Server einrichten</h3>
-            <label>Serverordner<input value={directory} onChange={(event) => setDirectory(event.target.value)} /></label>
-            <div className="setup-form-grid">
-              <label>Servertyp<select value={type} onChange={(event) => { setType(event.target.value); setMcVersion(""); }}>
-                {["vanilla", "fabric", "paper", "spigot", "custom"].map((value) => <option key={value}>{value}</option>)}
-              </select></label>
-              <VersionSelect type={type} value={mcVersion} onChange={setMcVersion} preserve={preserveVersion} catalog={catalog} />
-              <label>Spielport<input type="number" min="1" max="65535" value={port} onChange={(event) => setPort(event.target.value)} /></label>
-            </div>
-            <button className="btn pri" disabled={busy || !directory || !versionIsValid(type, mcVersion, catalog.versions, false) || !Number(port)} onClick={() => void submit("new")}>Konfiguration speichern</button>
-          </div>
-          <div className="setup-card-list">
-            <h3>ntfy-Benachrichtigungen (optional)</h3>
-            <label className="setup-checkbox">
-              <input type="checkbox" checked={ntfy.enabled} onChange={(event) => setNtfy({ ...ntfy, enabled: event.target.checked })} />
-              Benachrichtigungen aktivieren
-            </label>
-            <div className="setup-form-grid">
-              <label>ntfy-Server-URL<input value={ntfy.server} onChange={(event) => setNtfy({ ...ntfy, server: event.target.value })} /></label>
-              <label>Thema<input value={ntfy.topic} onChange={(event) => setNtfy({ ...ntfy, topic: event.target.value })} /></label>
-            </div>
-            <p className="muted">Zugangstoken bleiben außerhalb der config.yml in der lokalen secrets.yml gespeichert.</p>
-          </div>
-        </>
-      )}
+      <article className="setup-card">
+        <Check size={20} />
+        <div><b>Einrichtung abgeschlossen</b><p>Serverdateien werden nur bei einem expliziten Start eingerichtet oder aktualisiert.</p></div>
+      </article>
 
       {host && host.firstSetupStatus !== "done" && host.firstSetupStatus !== "" && <div className="setup-card-list">
         <h3>Einmalige Host-Grundeinrichtung</h3>

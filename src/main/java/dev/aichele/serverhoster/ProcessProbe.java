@@ -26,13 +26,13 @@ final class ProcessProbe {
         m.put("threads", -1L); m.put("fds", -1); m.put("readBytes", -1L); m.put("writeBytes", -1L);
         m.put("state", ""); m.put("cmdline", List.of());
         if (pid <= 0) return m;
+        m.put("rssMb", rssMb(pid));
+        m.put("threads", threads(pid));
         try {
             for (String l : Files.readAllLines(Path.of("/proc/" + pid + "/status"))) {
-                if (l.startsWith("VmRSS:")) m.put("rssMb", kb(l) / 1024);
-                else if (l.startsWith("VmHWM:")) m.put("hwmMb", kb(l) / 1024);
+                if (l.startsWith("VmHWM:")) m.put("hwmMb", kb(l) / 1024);
                 else if (l.startsWith("VmSwap:")) m.put("swapMb", kb(l) / 1024);
                 else if (l.startsWith("VmSize:")) m.put("vmMb", kb(l) / 1024);
-                else if (l.startsWith("Threads:")) m.put("threads", kb(l));
                 else if (l.startsWith("State:")) m.put("state", l.substring(6).trim());
             }
         } catch (Exception ignored) {}
@@ -48,6 +48,26 @@ final class ProcessProbe {
             m.put("cmdline", List.of(raw.split("\0")));
         } catch (Exception ignored) {}
         return m;
+    }
+
+    /** RSS from {@code /proc/<pid>/status}; {@code -1} when unavailable. Same contract as dashboard status. */
+    static long rssMb(long pid) {
+        if (pid <= 0) return -1;
+        try {
+            for (String l : Files.readAllLines(Path.of("/proc/" + pid + "/status")))
+                if (l.startsWith("VmRSS:")) return kb(l) / 1024;
+        } catch (Exception ignored) {}
+        return -1;
+    }
+
+    /** Thread count from {@code /proc/<pid>/status}; {@code -1} when unavailable. */
+    static long threads(long pid) {
+        if (pid <= 0) return -1;
+        try {
+            for (String l : Files.readAllLines(Path.of("/proc/" + pid + "/status")))
+                if (l.startsWith("Threads:")) return kb(l);
+        } catch (Exception ignored) {}
+        return -1;
     }
 
     static Disk disk(Path root, int maxEntries) {

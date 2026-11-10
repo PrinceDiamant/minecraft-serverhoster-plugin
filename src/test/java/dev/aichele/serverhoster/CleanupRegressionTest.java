@@ -64,6 +64,45 @@ class CleanupRegressionTest {
                 || script.contains("api('/api/status')"));
     }
 
+    @Test void setupWorkflowKeepsWizardAndDropsUnreachableIncompleteForm() throws Exception {
+        String workflow = Files.readString(Path.of("ui/src/components/SetupWorkflow.tsx"));
+        String wizard = Files.readString(Path.of("ui/src/components/SetupWizard.tsx"));
+        assertTrue(workflow.contains("SetupWizard"));
+        assertTrue(workflow.contains("Host minimieren"));
+        assertTrue(workflow.contains("Host-Grundeinrichtung"));
+        assertTrue(workflow.contains("Child-Server eingerichtet"));
+        assertFalse(workflow.contains("Vorhandenen Ordner einbinden"));
+        assertFalse(workflow.contains("Konfiguration speichern"));
+        assertFalse(workflow.contains("submit(\"attach\")"));
+        assertFalse(workflow.contains("!state?.completed"));
+        assertTrue(wizard.contains("Vorhandenen Ordner einbinden") || wizard.contains("attach"));
+        assertTrue(wizard.contains("export interface SetupState"));
+    }
+
+    @Test void processProbeRssAndThreadsMatchSnapshotContract() {
+        long pid = ProcessHandle.current().pid();
+        Map<String, Object> snap = ProcessProbe.snapshot(pid);
+        long rss = ProcessProbe.rssMb(pid);
+        long threads = ProcessProbe.threads(pid);
+        if (System.getProperty("os.name", "").toLowerCase().contains("win")) {
+            assertEquals(-1L, rss);
+            assertEquals(-1L, threads);
+        } else {
+            assertTrue(rss > 0, "rssMb");
+            assertTrue(threads > 0, "threads");
+            assertEquals(((Number) snap.get("rssMb")).longValue(), rss);
+            assertEquals(((Number) snap.get("threads")).longValue(), threads);
+        }
+        assertEquals(-1L, ProcessProbe.rssMb(0));
+        assertEquals(-1L, ProcessProbe.threads(-1));
+    }
+
+    @Test void setupViewKeepsCompletedAsInverseOfRequired() throws Exception {
+        String source = Files.readString(Path.of("src/main/java/dev/aichele/serverhoster/ServerHosterPlugin.java"));
+        assertTrue(source.contains("result.put(\"required\", setupRequired);"));
+        assertTrue(source.contains("result.put(\"completed\", !setupRequired);"));
+    }
+
     @Test void bundledDashboardAssetsKeepSameLoginAndScheduleContracts() throws Exception {
         String html;
         try (var in = CleanupRegressionTest.class.getResourceAsStream("/web/index.html")) {

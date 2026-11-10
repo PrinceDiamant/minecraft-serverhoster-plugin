@@ -507,7 +507,7 @@ final class Dashboard {
         m.put("msptHistory", slot.msptHistory());
         m.put("lastBackup", pl.lastBackup == null ? "" : pl.lastBackup);
         if (pid > 0) {
-            m.put("cpu", cpu(pid)); m.put("rssMb", rssMb(pid)); m.put("threads", procField(pid, "Threads:"));
+            m.put("cpu", cpu(pid)); m.put("rssMb", ProcessProbe.rssMb(pid)); m.put("threads", ProcessProbe.threads(pid));
             pl.maybeQueryChildTick(id);
             if (System.currentTimeMillis() - slot.tickAt < 60_000) { m.put("tps", slot.tps); m.put("mspt", slot.mspt); }
         }
@@ -634,17 +634,11 @@ final class Dashboard {
         o.put("threads", java.lang.management.ManagementFactory.getThreadMXBean().getThreadCount());
         long self = ProcessHandle.current().pid();
         o.put("pid", self);
-        o.put("rssMb", rssMb(self));
+        o.put("rssMb", ProcessProbe.rssMb(self));
         o.put("tps", pl.outerTps); o.put("mspt", pl.outerMspt);
         o.put("chunks", pl.outerChunks); o.put("entities", pl.outerEntities); o.put("worlds", pl.outerWorlds);
         o.put("cores", Runtime.getRuntime().availableProcessors());
         return o;
-    }
-
-    private long procField(long pid, String key) {
-        try { for (String l : Files.readAllLines(Paths.get("/proc/" + pid + "/status"))) if (l.startsWith(key)) return Long.parseLong(l.replaceAll("\\D", "")); }
-        catch (Exception ignored) {}
-        return -1;
     }
 
     private double cpu(long pid) {
@@ -663,14 +657,6 @@ final class Dashboard {
             }
             return lastCpuPct;
         } catch (Exception e) { return -1; }
-    }
-
-    private long rssMb(long pid) {
-        try {
-            for (String l : Files.readAllLines(Paths.get("/proc/" + pid + "/status")))
-                if (l.startsWith("VmRSS:")) return Long.parseLong(l.replaceAll("\\D", "")) / 1024;
-        } catch (Exception ignored) {}
-        return -1;
     }
 
     private void players(HttpExchange ex, String sid) throws IOException {
