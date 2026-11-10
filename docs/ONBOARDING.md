@@ -7,18 +7,13 @@ flowchart TD
     B -- Nein --> C[Onboarding: Ausgangslage wählen]
     C --> N[Neuer Child: Ordner, Typ, Version, Port]
     C -->|Serverordner erkannt| E[Vorhandenen Child auswählen und einbinden]
-    C -->|unterstützte Alt-Konfiguration erkannt| I[Alt-Konfiguration importieren]
     C -->|Serverordner erkannt| R[Ordner archivieren und neu einrichten]
     C -->|Serverordner erkannt| D[Ordner endgültig löschen und neu einrichten]
     E --> F[Typ, Version und Port prüfen]
     R --> F
     D --> F
-    I -->|Version unbekannt| V[Version 1.10.1+ ausdrücklich bestätigen]
-    I -->|Version bekannt| T[Typ, Version und Port werden übernommen]
-    V --> T
     N --> B1[Backupziel und Pfade wählen]
     F --> B1
-    T --> B1
     B1 -->|extern| B2[FTP/FTPS-Server und Zugangsdaten]
     B1 -->|lokal| B3[Optionalen täglichen Backup-Zeitplan wählen]
     B2 --> B3
@@ -32,14 +27,12 @@ flowchart TD
     H --> Q[Zusammenfassung prüfen]
     M --> Q
     Q -->|Archivieren/Löschen| X[Warnung mit Bestätigung]
-    Q -->|Import mit unbekannter Version| X
     Q -->|Host minimieren| X
     X --> S[Konfiguration speichern]
     Q --> S
     S -->|Minimierung gewählt| J[Minimierung vorbereiten und Host im Panel neu starten]
     S -->|keine Minimierung| Z
     J --> Z
-    Z -->|Altdateien vorhanden| L[Optional: alte FabricLauncher-Dateien bereinigen]
     Z --> U[Host-Minimierung oder manuelle Grundeinrichtung später verwalten]
 ```
 

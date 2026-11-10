@@ -10,7 +10,7 @@
     <dependency><groupId>com.h2database</groupId><artifactId>h2</artifactId><version>2.3.232</version><scope>test</scope></dependency>
   </dependencies>
   <build><finalName>ServerHoster-${project.version}</finalName>
-    <resources><resource><directory>src/main/resources</directory><filtering>true</filtering><includes><include>plugin.yml</include></includes></resource><resource><directory>src/main/resources</directory><filtering>false</filtering><excludes><exclude>plugin.yml</exclude><exclude>web/index.html</exclude></excludes></resource></resources>
+    <resources><resource><directory>src/main/resources</directory><filtering>true</filtering><includes><include>plugin.yml</include></includes></resource><resource><directory>src/main/resources</directory><filtering>false</filtering><excludes><exclude>plugin.yml</exclude></excludes></resource></resources>
     <plugins>
       <plugin>
         <groupId>com.github.eirslett</groupId>
@@ -73,11 +73,11 @@
               <relocations>
                 <relocation>
                   <pattern>org.apache.commons.net</pattern>
-                  <shadedPattern>de.aichele.childlauncher.internal.commons.net</shadedPattern>
+                  <shadedPattern>de.aichele.serverhoster.internal.commons.net</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>org.apache.commons.io</pattern>
-                  <shadedPattern>de.aichele.childlauncher.internal.commons.io</shadedPattern>
+                  <shadedPattern>de.aichele.serverhoster.internal.commons.io</shadedPattern>
                 </relocation>
               </relocations>
               <transformers>

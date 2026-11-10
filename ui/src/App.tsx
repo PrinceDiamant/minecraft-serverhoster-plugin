@@ -23,7 +23,7 @@ import SettingsWorkflow from "./components/SettingsWorkflow";
 import TaskWorkflow from "./components/TaskWorkflow";
 import { dashboardRequest, jsonBody, type ConfirmOptions, type PromptOptions } from "./lib/hostApi";
 import { installFileEditors, type FileEditors } from "./lib/fileEditor";
-import legacyDashboardHtml from "../../src/main/resources/web/index.html?raw";
+import { legacyDashboardMarkup, legacyDashboardScript } from "./legacyDashboard";
 
 declare global {
   interface Window {
@@ -98,7 +98,10 @@ function tabFromPath(path: string): string {
 }
 
 function readLegacyDashboard() {
-  const document = new DOMParser().parseFromString(legacyDashboardHtml, "text/html");
+  const document = new DOMParser().parseFromString(
+    `<!DOCTYPE html><html><body><main>${legacyDashboardMarkup}</main><script>${legacyDashboardScript}</script></body></html>`,
+    "text/html",
+  );
   const main = document.querySelector("main");
   const script = document.querySelector("script");
   if (!main || !script?.textContent) {

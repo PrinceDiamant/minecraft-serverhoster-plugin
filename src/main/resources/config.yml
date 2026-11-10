@@ -89,7 +89,7 @@ setup:
   completed: false
 # Dashboard-managed hourly, daily, and weekly schedules are stored here.
 schedules: []
-# Deprecated FabricLauncher task config is read during migration, but new schedules are managed in the dashboard.
+# Older task entries still run from this list. New schedules are managed in the dashboard.
 tasks: []
 # Zip of backup.paths inside the profile directory. Created only when a backup runs.
 # database.* is an external JDBC target. Nothing is installed locally; driverJar is loaded on use.

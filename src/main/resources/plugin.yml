@@ -1,6 +1,6 @@
 name: ServerhosterPlugin
 version: ${project.version}
-main: de.aichele.childlauncher.ServerHosterPlugin
+main: de.aichele.serverhoster.ServerHosterPlugin
 api-version: '26.3'
 description: ServerHoster manages one child server.
 commands:

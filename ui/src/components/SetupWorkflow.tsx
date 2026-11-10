@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowClockwise, Check, FolderOpen, HardDrives, ShieldWarning } from "@phosphor-icons/react";
+import { ArrowClockwise, Check, HardDrives, ShieldWarning } from "@phosphor-icons/react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
 import SetupWizard from "./SetupWizard";
 import VersionSelect, { useVersionCatalog, versionIsValid } from "./VersionSelect";
@@ -10,9 +10,7 @@ interface SetupCandidate {
   mcVersion: string;
   port: number;
   configured: boolean;
-  legacyConfigured: boolean;
   hasServerFiles: boolean;
-  legacyVersion: string;
   contents: string[];
 }
 
@@ -33,11 +31,8 @@ interface HostMinimizeState {
 
 interface SetupState {
   required: boolean;
-  legacyDataFound: boolean;
   completed: boolean;
   candidates: SetupCandidate[];
-  cleanupAvailable: boolean;
-  legacyJars: string[];
   ntfy: { enabled: boolean; server: string; topic: string };
 }
 
@@ -94,13 +89,13 @@ export default function SetupWorkflow() {
     return () => window.removeEventListener("dashboard:tab", onPageChange);
   }, [refresh]);
 
-  const submit = async (action: "attach" | "delete" | "import" | "new" | "reset") => {
+  const submit = async (action: "attach" | "delete" | "new" | "reset") => {
     setBusy(true);
     setError("");
     try {
       const path = action === "new" ? directory.trim() : selected;
       if (!path) throw new Error("Bitte zuerst einen Serverordner auswählen.");
-      if (action !== "import" && !versionIsValid(type, mcVersion, catalog.versions, action !== "new" && preserveVersion))
+      if (!versionIsValid(type, mcVersion, catalog.versions, action !== "new" && preserveVersion))
         throw new Error("Bitte eine verfügbare Minecraft-Version auswählen.");
       let confirm = "";
       if (action === "reset") {
@@ -125,21 +120,11 @@ export default function SetupWorkflow() {
         });
         if (!accepted) return;
         confirm = `DELETE ${candidateName}`;
-      } else if (action === "import" && !state?.candidates.find((candidate) => candidate.path === path)?.legacyVersion) {
-        const accepted = await window.dashboardUi?.confirm({
-          title: "Plugin-Version ist nicht feststellbar",
-          description: "Die Plugin-JAR fehlt oder enthält keine lesbare Versionsangabe. Importiere nur, wenn die alte Konfiguration sicher aus ServerHoster 1.10.1 oder neuer stammt.",
-          confirmLabel: "Version bestätigen",
-        });
-        if (!accepted) return;
-        confirm = "IMPORT 1.10.1+";
       } else {
         const accepted = await window.dashboardUi?.confirm({
-          title: action === "import" ? "Serverkonfiguration übernehmen?" : "Server einrichten?",
-          description: action === "import"
-            ? `Die erkannte Konfiguration für ${path} wird als einzelner Child-Server übernommen. Dateien im Serverordner bleiben unangetastet.`
-            : `Servertyp ${type} ${mcVersion} wird für ${path} konfiguriert. Es wird noch kein Server-JAR heruntergeladen.`,
-          confirmLabel: action === "import" ? "Konfiguration übernehmen" : "Einrichtung bestätigen",
+          title: "Server einrichten?",
+          description: `Servertyp ${type} ${mcVersion} wird für ${path} konfiguriert. Es wird noch kein Server-JAR heruntergeladen.`,
+          confirmLabel: "Einrichtung bestätigen",
         });
         if (!accepted) return;
       }
@@ -152,41 +137,8 @@ export default function SetupWorkflow() {
         result.warning ?? "Einrichtung gespeichert. Ein Child-Start ist jetzt möglich.",
         !!result.warning,
       );
-      if (state?.cleanupAvailable) {
-        const shouldClean = await window.dashboardUi?.confirm({
-          title: "Alte FabricLauncher-Dateien jetzt löschen?",
-          description: "Die Migration ist abgeschlossen. Alte Plugin-Einstellungen, Secrets und JARs können optional entfernt werden. Lokale Backups und Speicher-Notfallberichte bleiben erhalten.",
-          confirmLabel: "Bereinigung prüfen",
-          destructive: true,
-        });
-        if (shouldClean) await cleanupLegacy();
-      }
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Einrichtung fehlgeschlagen.");
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const cleanupLegacy = async () => {
-    const accepted = await window.dashboardUi?.confirm({
-      title: "Alte FabricLauncher-Dateien löschen?",
-      description: `Entfernt alte Plugin-Einstellungen, Secrets und erkannte FabricLauncher-JARs (${state?.legacyJars.join(", ") || "keine JARs"}). Child-Ordner und Welten bleiben unberührt; lokale Backups und Speicher-Notfallberichte werden ausdrücklich erhalten.`,
-      confirmLabel: "Alte Dateien löschen",
-      destructive: true,
-    });
-    if (!accepted) return;
-    setBusy(true);
-    setError("");
-    try {
-      await dashboardRequest("/api/setup/cleanup", {
-        method: "POST",
-        body: jsonBody({ confirm: "DELETE FABRICLAUNCHER" }),
-      });
-      await refresh();
-      window.dashboardUi?.notify("Alte FabricLauncher-Dateien bereinigt; lokale Backups und Notfallberichte bleiben erhalten.");
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Alte Dateien konnten nicht gelöscht werden.");
     } finally {
       setBusy(false);
     }
@@ -268,21 +220,7 @@ export default function SetupWorkflow() {
             <Check size={20} />
             <div><b>Einrichtung abgeschlossen</b><p>Serverdateien werden nur bei einem expliziten Start eingerichtet oder aktualisiert.</p></div>
           </article>
-          {state.cleanupAvailable && (
-            <article className="setup-card">
-              <FolderOpen size={20} />
-              <div><b>Alte Plugin-Dateien erkannt</b><p>Die Bereinigung ist optional und betrifft nicht den Child-Server.</p></div>
-              <button className="btn danger-outline" disabled={busy} onClick={() => void cleanupLegacy()}>Alte Dateien löschen …</button>
-            </article>
-          )}
         </>
-      )}
-
-      {state?.legacyDataFound && !state.completed && (
-        <article className="setup-card">
-          <FolderOpen size={20} />
-          <div><b>Ältere ServerHoster-Konfiguration gefunden</b><p>Übernahme ist optional. Bestehende Child-Dateien werden dabei nicht verändert.</p></div>
-        </article>
       )}
 
       {!state?.completed && (
@@ -315,15 +253,12 @@ export default function SetupWorkflow() {
                   <HardDrives size={20} />
                   <div>
                     <b>{candidate.path}</b>
-                    <p>{candidate.configured ? `${candidate.type} ${candidate.mcVersion} · Port ${candidate.port}` : "Serverdateien erkannt; Konfiguration muss angegeben werden."}{candidate.legacyConfigured ? ` · alte Plugin-Version ${candidate.legacyVersion || "nicht feststellbar"}` : ""}</p>
+                    <p>{candidate.configured ? `${candidate.type} ${candidate.mcVersion} · Port ${candidate.port}` : "Serverdateien erkannt; Konfiguration muss angegeben werden."}</p>
                     <p className="muted">Inhalt: {candidate.contents.join(", ") || "keine Einträge erkannt"}</p>
                   </div>
                 </label>
               ))}
               <div className="setup-actions">
-                {state.candidates.find((candidate) => candidate.path === selected)?.legacyConfigured && (
-                  <button className="btn pri" disabled={busy || !selected} onClick={() => void submit("import")}>Alte Konfiguration übernehmen</button>
-                )}
                 <button className="btn pri" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("attach")}>Vorhandenen Ordner einbinden</button>
                 <button className="btn" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("reset")}>Neu aufsetzen …</button>
                 <button className="btn danger-outline" disabled={busy || !selected || !versionIsValid(type, mcVersion, catalog.versions, preserveVersion)} onClick={() => void submit("delete")}>Endgültig löschen und neu aufsetzen …</button>

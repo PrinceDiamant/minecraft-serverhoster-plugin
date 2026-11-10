@@ -13,9 +13,8 @@ Für Installation und Upgrade siehe [SETUP.md](SETUP.md) und
 Beim ersten Start legt das Plugin `plugins/ServerhosterPlugin/` an und
 verlangt eine Bestätigung im Einrichtungsassistenten, bevor ein Child
 automatisch gestartet werden darf. Der Assistent kann einen neuen Server
-konfigurieren, einen vorhandenen Child-Ordner einbinden oder unterstützte
-Einstellungen ab 1.10.1 importieren. Fehlen alte Plugin-Daten, durchsucht
-eine begrenzte, lesende Erkennung direkte Ordner unter dem Spigot-Root nach
+konfigurieren oder einen vorhandenen Child-Ordner einbinden. Eine begrenzte,
+lesende Erkennung durchsucht direkte Ordner unter dem Spigot-Root nach
 üblichen Serverdateien. Mehrdeutige Treffer müssen explizit ausgewählt werden.
 
 Neue Child-Installationen verwenden standardmäßig Vanilla. Unterstützt werden

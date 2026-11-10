@@ -9,23 +9,18 @@ export interface SetupCandidate {
   mcVersion: string;
   port: number;
   configured: boolean;
-  legacyConfigured: boolean;
   hasServerFiles: boolean;
-  legacyVersion: string;
   contents: string[];
 }
 
 export interface SetupState {
   required: boolean;
-  legacyDataFound: boolean;
   completed: boolean;
   candidates: SetupCandidate[];
-  cleanupAvailable: boolean;
-  legacyJars: string[];
   ntfy: { enabled: boolean; server: string; topic: string };
 }
 
-type Action = "new" | "attach" | "import" | "reset" | "delete";
+type Action = "new" | "attach" | "reset" | "delete";
 
 export interface SetupHostState {
   status: string;
@@ -37,7 +32,6 @@ export interface SetupHostState {
 const descriptions: Record<Action, string> = {
   new: "Einen neuen Child-Server in einem eigenen Ordner einrichten.",
   attach: "Einen erkannten Server weiterverwenden. Seine Dateien bleiben erhalten.",
-  import: "Einstellungen aus einer unterstützten FabricLauncher-Installation übernehmen.",
   reset: "Den vorhandenen Serverordner archivieren und am gleichen Ort neu beginnen.",
   delete: "Den vorhandenen Serverordner und seine Welten endgültig löschen und neu beginnen.",
 };
@@ -66,12 +60,10 @@ export default function SetupWizard({ state, host, onComplete }: {
   const [backupTest, setBackupTest] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const availableCandidates = action === "import"
-    ? state.candidates.filter((candidate) => candidate.legacyConfigured)
-    : state.candidates;
+  const availableCandidates = state.candidates;
   const candidate = availableCandidates.find((item) => item.path === selected);
   const preserveVersion = !!candidate?.configured && candidate.type === type && candidate.mcVersion === mcVersion;
-  const catalog = useVersionCatalog(type, step === 1 && action !== "import");
+  const catalog = useVersionCatalog(type, step === 1);
   const path = action === "new" ? directory.trim() : selected;
   const labels = ["Ausgangslage", "Server", "Backups", "Benachrichtigungen", "Host", "Prüfen"];
   useEffect(() => {
@@ -84,7 +76,6 @@ export default function SetupWizard({ state, host, onComplete }: {
   const actionLabels: Record<Action, string> = {
     new: "Neuen Server erstellen",
     attach: "Vorhandenen Server einbinden",
-    import: "Alte Konfiguration übernehmen",
     reset: "Vorhandenen Server archivieren und neu starten",
     delete: "Vorhandenen Server endgültig löschen",
   };
@@ -112,8 +103,8 @@ export default function SetupWizard({ state, host, onComplete }: {
         setError(action === "new" ? "Bitte gib einen Serverordner an." : "Bitte wähle einen erkannten Serverordner.");
         return;
       }
-      if (action !== "import" && (!versionIsValid(type, mcVersion, catalog.versions, preserveVersion) ||
-          !Number.isInteger(Number(port)) || Number(port) < 1 || Number(port) > 65535)) {
+      if (!versionIsValid(type, mcVersion, catalog.versions, preserveVersion) ||
+          !Number.isInteger(Number(port)) || Number(port) < 1 || Number(port) > 65535) {
         setError("Bitte gib eine Minecraft-Version und einen gültigen Spielport von 1 bis 65535 an.");
         return;
       }
@@ -147,14 +138,6 @@ export default function SetupWizard({ state, host, onComplete }: {
         });
         if (!accepted) return;
         confirm = required;
-      } else if (action === "import" && !candidate?.legacyVersion) {
-        const accepted = await window.dashboardUi?.confirm({
-          title: "Alte Plugin-Version bestätigen",
-          description: "Die alte Version konnte nicht festgestellt werden. Importiere nur, wenn die Konfiguration aus ServerHoster 1.10.1 oder neuer stammt.",
-          confirmLabel: "Version bestätigen",
-        });
-        if (!accepted) return;
-        confirm = "IMPORT 1.10.1+";
       }
       let minimizeConfirmation = "";
       if (minimize) {
@@ -182,38 +165,15 @@ export default function SetupWizard({ state, host, onComplete }: {
         });
         setScheduleCreated(true);
       };
-      if (action !== "import") {
-        await saveBackupSettings(backupSettings, credentials, backupOptions);
-        if (backupSettings.backupStorage === "remote") setCredentials({ ...credentials, password: "", passwordSet: true });
-        await createSchedule();
-      }
+      await saveBackupSettings(backupSettings, credentials, backupOptions);
+      if (backupSettings.backupStorage === "remote") setCredentials({ ...credentials, password: "", passwordSet: true });
+      await createSchedule();
       const result = await dashboardRequest<{ warning?: string }>("/api/setup", {
         method: "POST",
         body: jsonBody({ action, path, type, mcVersion, port: Number(port), confirm, ntfy }),
       });
       let notice = result.warning ?? "Einrichtung gespeichert. Der Child kann jetzt gestartet werden.";
       let warning = !!result.warning;
-      if (action === "import") {
-        try {
-          const current = await loadBackupSettings();
-          await saveBackupSettings({
-            ...current.settings,
-            backupStorage: backupSettings.backupStorage,
-            backupProtocol: backupSettings.backupProtocol,
-            backupHost: backupSettings.backupHost,
-            backupPort: backupSettings.backupPort,
-            backupDirectory: backupSettings.backupDirectory,
-          }, {
-            ...credentials,
-            passwordSet: current.credentials.passwordSet,
-            username: credentials.username || current.credentials.username,
-          }, backupOptions);
-          await createSchedule();
-        } catch (cause) {
-          warning = true;
-          notice += ` Backup-Einrichtung konnte nach dem Import nicht vollständig gespeichert werden: ${cause instanceof Error ? cause.message : String(cause)}. Bitte unter Einstellungen und Aufgaben prüfen.`;
-        }
-      }
       if (minimizeConfirmation) {
         try {
           const minimized = await dashboardRequest<{ message?: string }>("/api/host-minimize", {
@@ -277,8 +237,7 @@ export default function SetupWizard({ state, host, onComplete }: {
         {step === 0 && <>
           <h2>Was möchtest du einrichten?</h2>
           <p>Wähle den Weg, der zu deinem Server passt.</p>
-          {(["new", ...(state.candidates.length ? ["attach", "reset", "delete"] : []),
-            ...(state.candidates.some((item) => item.legacyConfigured) ? ["import"] : [])] as Action[]).map((value) => (
+          {(["new", ...(state.candidates.length ? ["attach", "reset", "delete"] : [])] as Action[]).map((value) => (
             <label className="setup-card onboarding-choice" key={value}>
               <input type="radio" name="setup-action" checked={action === value} onChange={() => chooseAction(value)} />
               <span><strong>{actionLabels[value]}</strong><small>{descriptions[value]}</small></span>
@@ -300,17 +259,13 @@ export default function SetupWizard({ state, host, onComplete }: {
             </label>
             {candidate && <p className="muted">Erkannt: {candidate.contents.join(", ") || "keine Einträge"}</p>}
           </>}
-          {action === "import" ? (
-            <p>Typ, Version, Port und unterstützte Einstellungen werden aus der alten Konfiguration übernommen.</p>
-          ) : (
-            <div className="setup-form-grid">
-              <label>Servertyp<select value={type} onChange={(event) => { setType(event.target.value); setMcVersion(""); }}>
-                {["vanilla", "fabric", "paper", "spigot", "custom"].map((value) => <option key={value}>{value}</option>)}
-              </select></label>
-              <VersionSelect type={type} value={mcVersion} onChange={setMcVersion} preserve={preserveVersion} catalog={catalog} />
-              <label>Spielport<input type="number" min="1" max="65535" value={port} onChange={(event) => setPort(event.target.value)} /></label>
-            </div>
-          )}
+          <div className="setup-form-grid">
+            <label>Servertyp<select value={type} onChange={(event) => { setType(event.target.value); setMcVersion(""); }}>
+              {["vanilla", "fabric", "paper", "spigot", "custom"].map((value) => <option key={value}>{value}</option>)}
+            </select></label>
+            <VersionSelect type={type} value={mcVersion} onChange={setMcVersion} preserve={preserveVersion} catalog={catalog} />
+            <label>Spielport<input type="number" min="1" max="65535" value={port} onChange={(event) => setPort(event.target.value)} /></label>
+          </div>
           <p className="muted">Der Spielport muss beim Hoster freigegeben sein und sich vom Host- und Dashboard-Port unterscheiden.</p>
         </>}
         {step === 2 && <>
@@ -322,8 +277,7 @@ export default function SetupWizard({ state, host, onComplete }: {
             <input type="time" value={backupTime} disabled={scheduleCreated} onChange={(event) => setBackupTime(event.target.value)} />
           </label>}
           <p className="muted">Geplante Backups warten auf einen leeren Server und stoppen den Child für die Sicherung. Ohne Zeitplan erfolgen Backups nur manuell.</p>
-          {action === "import" && <p className="muted">Beim Import wird das Backupziel erst nach Übernahme der alten Daten gespeichert. Teste es danach unter „Backups“.</p>}
-          <button className="btn" type="button" disabled={busy || !backupSettings || action === "import"} onClick={() => void (async () => {
+          <button className="btn" type="button" disabled={busy || !backupSettings} onClick={() => void (async () => {
             if (!backupSettings) return;
             setBusy(true); setError(""); setBackupTest("");
             try {
@@ -366,7 +320,7 @@ export default function SetupWizard({ state, host, onComplete }: {
           <dl className="onboarding-summary">
             <dt>Vorhaben</dt><dd>{actionLabels[action]}</dd>
             <dt>Serverordner</dt><dd>{path}</dd>
-            <dt>Server</dt><dd>{action === "import" ? "Aus alter Konfiguration" : `${type} ${mcVersion} · Port ${port}`}</dd>
+            <dt>Server</dt><dd>{`${type} ${mcVersion} · Port ${port}`}</dd>
             <dt>Benachrichtigungen</dt><dd>{ntfy.enabled ? `ntfy · ${ntfy.server} · ${ntfy.topic}` : "Ausgeschaltet"}</dd>
             <dt>Backups</dt><dd>{backupSettings?.backupStorage === "remote" ? `FTP/FTPS · ${backupSettings.backupHost}` : "Lokal"} · {schedule ? `täglich ${backupTime}` : "nur manuell"}</dd>
             <dt>Backup-Pfade</dt><dd>{backupOptions.paths.join(", ")} · {backupOptions.keep === 0 ? "unbegrenzt" : `${backupOptions.keep} Backups behalten`}</dd>
