@@ -5,12 +5,19 @@ Child-Server startet und ein Web-Dashboard für Einrichtung, Betrieb,
 Diagnose, Backups und Zeitpläne bereitstellt. Das Plugin installiert keine
 Mods oder Plugins.
 
+## ServerHoster 2.4.4
+
+- Stabilisierte ProcessProbe-Regression; enthält die Setup-Snapshot- und
+  RSS/Thread-Korrekturen aus 2.4.3.
+- Tag `v2.4.3` bleibt bestehen, wurde aber nicht als GitHub-Release veröffentlicht.
+- Upgrade von 2.4.2 (oder lokalem 2.4.3-Jar) durch Austausch des Plugin-Jars.
+
 ## ServerHoster 2.4.3
 
 - Konsistenter Setup-Status (`required`/`completed`) bei gleichzeitigem
   Abschluss der Einrichtung.
 - Dashboard-Status nutzt gemeinsame RSS-/Thread-Messung; CPU bleibt separat.
-- Upgrade von 2.4.2 durch Austausch des Plugin-Jars.
+- Tag vorhanden, Release-Workflow fehlgeschlagen; bitte 2.4.4 verwenden.
 
 ## ServerHoster 2.4.2
 
@@ -95,7 +102,7 @@ Build mit Node.js 22 erzeugt.
 mvn clean verify
 ```
 
-Das Plugin-Jar ist `target/ServerHoster-2.4.3.jar`. Spigot API 26.3 ist eine
+Das Plugin-Jar ist `target/ServerHoster-2.4.4.jar`. Spigot API 26.3 ist eine
 `provided`-Abhängigkeit. H2 ist ausschließlich eine Testabhängigkeit und
 befindet sich nicht im Plugin-Jar. Es gibt keine lokale Datenbank und keine
 mitgelieferten Server-Jars.

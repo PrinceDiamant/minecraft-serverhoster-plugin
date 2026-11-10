@@ -1,7 +1,15 @@
-# Upgrade von ServerHoster 2.4.2 auf 2.4.3
+# Upgrade von ServerHoster 2.4.2 oder 2.4.3 auf 2.4.4
 
 Das Plugin-Jar ersetzen; Konfiguration und Child-Ordner bleiben erhalten.
 `/api/setup` liefert `required` und `completed` aus demselben Snapshot.
+Tag `v2.4.3` existiert, hat aber kein veröffentlichtes GitHub-Release-Asset;
+für den Betrieb `ServerHoster-2.4.4.jar` verwenden.
+
+## Vorheriges Upgrade: 2.4.2 auf 2.4.3
+
+Das Tag `v2.4.3` wurde gesetzt, der Release-Workflow ist jedoch fehlgeschlagen
+und hat kein GitHub-Release veröffentlicht. Funktionale Änderungen sind in
+2.4.4 enthalten.
 
 ## Vorheriges Upgrade: 2.4.1 auf 2.4.2
 

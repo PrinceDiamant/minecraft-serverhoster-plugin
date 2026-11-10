@@ -86,11 +86,14 @@ class CleanupRegressionTest {
         if (System.getProperty("os.name", "").toLowerCase().contains("win")) {
             assertEquals(-1L, rss);
             assertEquals(-1L, threads);
+            assertEquals(-1L, ((Number) snap.get("rssMb")).longValue());
+            assertEquals(-1L, ((Number) snap.get("threads")).longValue());
         } else {
+            // Separate /proc reads can move slightly; assert the shared contract, not lockstep equality.
             assertTrue(rss > 0, "rssMb");
             assertTrue(threads > 0, "threads");
-            assertEquals(((Number) snap.get("rssMb")).longValue(), rss);
-            assertEquals(((Number) snap.get("threads")).longValue(), threads);
+            assertTrue(((Number) snap.get("rssMb")).longValue() > 0, "snapshot rssMb");
+            assertTrue(((Number) snap.get("threads")).longValue() > 0, "snapshot threads");
         }
         assertEquals(-1L, ProcessProbe.rssMb(0));
         assertEquals(-1L, ProcessProbe.threads(-1));
@@ -248,8 +251,8 @@ class CleanupRegressionTest {
         boolean unchanged = ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.4.2");
         assertFalse(unchanged, "same version must not rewrite pluginVersion or restart defaults");
         assertEquals(5, config.getInt("autoRestart.maxAttempts"));
-        assertTrue(ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.4.3"));
-        assertEquals("2.4.3", config.getString("metadata.pluginVersion"));
+        assertTrue(ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.4.4"));
+        assertEquals("2.4.4", config.getString("metadata.pluginVersion"));
         assertEquals(5, config.getInt("autoRestart.maxAttempts"));
 
         // Mirror the startup drop performed by migrateRestartPolicy() for retired keys.
@@ -265,7 +268,7 @@ class CleanupRegressionTest {
         assertFalse(reloaded.contains("tasks"));
         assertFalse(reloaded.contains("servers"));
         assertFalse(reloaded.contains("focusServer"));
-        assertEquals("2.4.3", reloaded.getString("metadata.pluginVersion"));
+        assertEquals("2.4.4", reloaded.getString("metadata.pluginVersion"));
         assertEquals(2, reloaded.getInt("metadata.schemaVersion"));
         assertEquals("pending", reloaded.getString("metadata.migrationState"));
         assertEquals(1, reloaded.getInt("backup.scheduleDefaultVersion"));

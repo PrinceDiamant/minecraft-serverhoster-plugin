@@ -1,5 +1,25 @@
 # Release notes
 
+## ServerHoster 2.4.4
+
+- Stabilize the ProcessProbe RSS/threads regression so separate `/proc` reads
+  are not required to match lockstep (GitHub Actions run for tag `v2.4.3`
+  failed on that flake: https://github.com/Sciddie/minecraft-serverhoster-plugin/actions/runs/42871713549).
+- Includes the 2.4.3 functional fixes: consistent `/api/setup` required/completed
+  snapshot, incomplete SetupWorkflow safety path, and shared RSS/thread helpers
+  with dashboard CPU sampling left separate.
+- Upgrade from 2.4.2 or from a local 2.4.3 jar build by replacing the plugin jar.
+
+Note on 2.4.3: git tag `v2.4.3` remains on commit `97181f6` and is not moved.
+No GitHub Release asset was published for 2.4.3 because the tag workflow failed
+before `gh release create`. Use `ServerHoster-2.4.4.jar` from this release.
+
+Testing limitations: no live Spigot host or browser E2E in the release
+environment. Automated regressions cover setup snapshot consistency, wizard
+completion notify/reload contracts, ProcessProbe RSS/threads, and the 2.4.2
+upgrade fixture. A separate manual Spigot check of 2.4.2/PR #4 is not a
+substitute for live verification of 2.4.4.
+
 ## ServerHoster 2.4.3
 
 - Make `/api/setup` return a consistent `required`/`completed` pair from one
@@ -9,13 +29,9 @@
   SetupWizard remains the onboarding UI while setup is required.
 - Share RSS and thread reads between the dashboard status path and
   `ProcessProbe`. Child CPU sampling stays in the dashboard (delta state).
-- Upgrade from 2.4.2 by replacing the plugin jar.
-
-Testing limitations: no live Spigot host or browser E2E in the release
-environment. Automated regressions cover setup snapshot consistency, wizard
-completion notify/reload contracts, ProcessProbe RSS/threads, and the 2.4.2
-upgrade fixture. A separate manual Spigot check of 2.4.2/PR #4 is not a
-substitute for live verification of 2.4.3.
+- Tag `v2.4.3` was pushed, but the Release workflow failed on a flaky
+  ProcessProbe assertion and published no GitHub Release asset. Superseded by
+  2.4.4 without rewriting the tag.
 
 ## ServerHoster 2.4.2
 

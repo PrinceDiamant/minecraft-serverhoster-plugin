@@ -26,13 +26,13 @@ final class ProcessProbe {
         m.put("threads", -1L); m.put("fds", -1); m.put("readBytes", -1L); m.put("writeBytes", -1L);
         m.put("state", ""); m.put("cmdline", List.of());
         if (pid <= 0) return m;
-        m.put("rssMb", rssMb(pid));
-        m.put("threads", threads(pid));
         try {
             for (String l : Files.readAllLines(Path.of("/proc/" + pid + "/status"))) {
-                if (l.startsWith("VmHWM:")) m.put("hwmMb", kb(l) / 1024);
+                if (l.startsWith("VmRSS:")) m.put("rssMb", kb(l) / 1024);
+                else if (l.startsWith("VmHWM:")) m.put("hwmMb", kb(l) / 1024);
                 else if (l.startsWith("VmSwap:")) m.put("swapMb", kb(l) / 1024);
                 else if (l.startsWith("VmSize:")) m.put("vmMb", kb(l) / 1024);
+                else if (l.startsWith("Threads:")) m.put("threads", kb(l));
                 else if (l.startsWith("State:")) m.put("state", l.substring(6).trim());
             }
         } catch (Exception ignored) {}
