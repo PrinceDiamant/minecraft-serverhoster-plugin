@@ -16,4 +16,8 @@ return Z.193 return id.replaceAll('(^A-Za-z0-9._-)', '_');
   Zeile 193: Rückgabe `return id.replaceAll('(^A-Za-z0-9._-)', '_');`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.193 return id.replaceAll('(^A-Za-z0-9._-)', '_');**: Zeile 193: Rückgabe `return id.replaceAll('(^A-Za-z0-9._-)', '_');`.
+
+- Dieser Teil kümmert sich um die Kennung.
 - `safeId` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

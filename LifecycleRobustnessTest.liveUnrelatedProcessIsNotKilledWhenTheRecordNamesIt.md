@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 LifecycleRobustnessTest.testProcess
-  Prüft `testProcess`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Prüft `testProcess`. Nur Test.
 LifecycleRobustnessTest.liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt.Z90
-  Fortsetzung des Ablaufs ab Zeile 90.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 90 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 90.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LifecycleRobustnessTest.testProcess**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Prüft `testProcess`. Nur Test.
+> - **LifecycleRobustnessTest.liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt.Z90**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 90 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 90.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

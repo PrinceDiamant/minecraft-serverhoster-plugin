@@ -27,7 +27,7 @@ flowchart TD
 
 ```knoten
 HttpsSupport.pemBlock
-  `pemBlock` in `HttpsSupport.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `pemBlock` in `HttpsSupport.java`.
 if Z.159 (rsa == null && pkcs8 == null)
   Zeile 159: prüft `(rsa == null && pkcs8 == null)`.
 throw Z.159 throw new IllegalArgumentException('Expected PKCS…
@@ -35,9 +35,18 @@ throw Z.159 throw new IllegalArgumentException('Expected PKCS…
 if Z.161 (rsa != null)
   Zeile 161: prüft `(rsa != null)`.
 HttpsSupport.wrapPkcs1
-  Hüllt ein `wrapPkcs1`. Ruft `concat`, `derLen`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Hüllt ein `wrapPkcs1`. Ruft `concat`, `derLen`.
 return Z.162 return KeyFactory.getInstance('RSA').generatePriv…
   Zeile 162: Rückgabe `return KeyFactory.getInstance('RSA').generatePriv…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.pemBlock**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `pemBlock` in `HttpsSupport.java`.
+> - **if Z.159 (rsa == null && pkcs8 == null)**: Zeile 159: prüft `(rsa == null && pkcs8 == null)`.
+> - **throw Z.159 throw new IllegalArgumentException('Expected PKCS…**: Zeile 159: Abbruch `throw new IllegalArgumentException('Expected PKCS…`.
+> - **if Z.161 (rsa != null)**: Zeile 161: prüft `(rsa != null)`.
+> - **HttpsSupport.wrapPkcs1**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Hüllt ein `wrapPkcs1`. Ruft `concat`, `derLen`.
+> - **return Z.162 return KeyFactory.getInstance('RSA').generatePriv…**: Zeile 162: Rückgabe `return KeyFactory.getInstance('RSA').generatePriv…`.
+
+- Dieser Teil lädt hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `loadKey` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

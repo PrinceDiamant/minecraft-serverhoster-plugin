@@ -17,9 +17,15 @@ flowchart TD
 if Z.115 generation===statusGeneration
   Zeile 115: prüft `generation===statusGeneration`.
 index.status.Z101.Z115.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 index.status.Z101.Z115.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `index.status.Z101`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.115 generation===statusGeneration**: Zeile 115: prüft `generation===statusGeneration`.
+> - **index.status.Z101.Z115.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **index.status.Z101.Z115.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 115 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `index.status.Z101`.

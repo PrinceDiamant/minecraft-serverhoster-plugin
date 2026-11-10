@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 kein eigener Aufruf
-  In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+  Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
 ```
 
-- `invalidateRestarts` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
+
+- Vergisst geplante [[Glossar#Neustart|Neustarts]], damit ein absichtlicher [[Glossar#Stopp|Stopp]] nicht gleich wieder startet.

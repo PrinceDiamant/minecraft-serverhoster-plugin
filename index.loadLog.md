@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 index.loadLog.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 index.loadLog.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 ```
 
-- `loadLog` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.loadLog.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **index.loadLog.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt das Protokoll.

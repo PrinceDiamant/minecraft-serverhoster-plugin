@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.enterBaseDirectory
-  Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
 if Z.259 (!client.changeWorkingDirectory(server))
   Zeile 259: prüft `(!client.changeWorkingDirectory(server))`.
 if Z.261 (!client.changeWorkingDirectory(server))
   Zeile 261: prüft `(!client.changeWorkingDirectory(server))`.
 RemoteBackupBridge.replyError
-  Antwortet `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
 throw Z.261 throw replyError(client, 'create or ent…
   Zeile 261: Abbruch `throw replyError(client, 'create or ent…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.enterBaseDirectory**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
+> - **if Z.259 (!client.changeWorkingDirectory(server))**: Zeile 259: prüft `(!client.changeWorkingDirectory(server))`.
+> - **if Z.261 (!client.changeWorkingDirectory(server))**: Zeile 261: prüft `(!client.changeWorkingDirectory(server))`.
+> - **RemoteBackupBridge.replyError**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
+> - **throw Z.261 throw replyError(client, 'create or ent…**: Zeile 261: Abbruch `throw replyError(client, 'create or ent…`.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `enterDirectory` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

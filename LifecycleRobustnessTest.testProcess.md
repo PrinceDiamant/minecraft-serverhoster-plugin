@@ -16,5 +16,9 @@ return Z.294 return new ProcessBuilder(command).start();
   Zeile 294: Rückgabe `return new ProcessBuilder(command).start();`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.294 return new ProcessBuilder(command).start();**: Zeile 294: Rückgabe `return new ProcessBuilder(command).start();`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `testProcess` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

@@ -16,4 +16,8 @@ return Z.75 return action == null ? '' : action.toLowerCase(L…
   Zeile 75: Rückgabe `return action == null ? '' : action.toLowerCase(L…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.75 return action == null ? '' : action.toLowerCase(L…**: Zeile 75: Rückgabe `return action == null ? '' : action.toLowerCase(L…`.
+
+- Dieser Teil kümmert sich um die Tätigkeit.
 - `normAction` in `src/main/java/de/aichele/childlauncher/CronExpr.java`

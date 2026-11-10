@@ -21,9 +21,16 @@ if Z.603 (pendingDelete != null)
 try Z.604
   Zeile 604: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.cleanupLegacyDirectory
-  Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
+  Das [[Glossar#Plugin|Plugin]] räumt auf den alten Weg. Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
 catch Z.606 (IOException e)
   Zeile 606: fängt (IOException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.603 (pendingDelete != null)**: Zeile 603: prüft `(pendingDelete != null)`.
+> - **try Z.604**: Zeile 604: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.cleanupLegacyDirectory**: Das [[Glossar#Plugin|Plugin]] räumt auf den alten Weg. Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
+> - **catch Z.606 (IOException e)**: Zeile 606: fängt (IOException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 603 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil4`.

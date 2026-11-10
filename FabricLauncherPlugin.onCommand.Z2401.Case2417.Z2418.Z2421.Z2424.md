@@ -17,9 +17,15 @@ flowchart TD
 if Z.2424 (a.length )= 3 && a(1).equalsIgnoreCase('restore'…
   Zeile 2424: prüft `(a.length )= 3 && a(1).equalsIgnoreCase('restore'…`.
 FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421.Z2424.Z2426
-  Fortsetzung des Ablaufs ab Zeile 2426.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2426 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2426.
 FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421.Z2424.Z2427
-  Fortsetzung des Ablaufs ab Zeile 2427.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2427 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2427.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2424 (a.length )= 3 && a(1).equalsIgnoreCase('restore'…**: Zeile 2424: prüft `(a.length )= 3 && a(1).equalsIgnoreCase('restore'…`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421.Z2424.Z2426**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2426 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2426.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421.Z2424.Z2427**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2427 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2427.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2424 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421`.

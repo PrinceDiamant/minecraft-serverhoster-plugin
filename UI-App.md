@@ -7,7 +7,7 @@ flowchart TD
   n1["App.tabFromPath"]:::internal-link
   n2["App.readLegacyDashboard"]:::internal-link
   n3["App.App"]:::internal-link
-  n3 -->|"Z.147"| n1
+  n3 -->|"Zeile 147"| n1
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n2 fill:#f88,stroke:#900
@@ -15,11 +15,16 @@ flowchart TD
 
 ```knoten
 App.tabFromPath
-  Wechselt den Tab `tabFromPath`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad.
 App.readLegacyDashboard
-  Ersetzt Legacy-Abschnitte und löscht vier `load…`-Aufrufe aus dem Script. Befund: doppelte Implementierung (sicher).
+  Liest die ältere [[Glossar#Bedienseite|Bedienseite]] und schneidet die Bereiche heraus, die die neuere Seite selbst übernimmt. Auffällig: derselbe Teil ist zweimal vorhanden. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].
 App.App
-  `App` in `App.tsx`. Ruft `tabFromPath`, `dashboardRequest`, `showDialog`.
+  Baut die [[Glossar#Bedienseite|Bedienseite]] zusammen, wenn sie im Browser erscheint.
 ```
 
-- `App` liest das Legacy-HTML und hängt Workflows ein.
+> [!knoten] Was die Blöcke tun
+> - **App.tabFromPath**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad.
+> - **App.readLegacyDashboard**: Liest die ältere [[Glossar#Bedienseite|Bedienseite]] und schneidet die Bereiche heraus, die die neuere Seite selbst übernimmt. Auffällig: derselbe Teil ist zweimal vorhanden. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].
+> - **App.App**: Baut die [[Glossar#Bedienseite|Bedienseite]] zusammen, wenn sie im Browser erscheint.
+
+- Die neuere [[Glossar#Bedienseite|Bedienseite]]. Sie übernimmt die ältere Seite, schneidet alte Bereiche heraus und hängt die neuen Abläufe ein.

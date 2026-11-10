@@ -16,4 +16,8 @@ return Z.107 return s.length() ) 500 ? s.substring(0, 500) : s;
   Zeile 107: Rückgabe `return s.length() ) 500 ? s.substring(0, 500) : s;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.107 return s.length() ) 500 ? s.substring(0, 500) : s;**: Zeile 107: Rückgabe `return s.length() ) 500 ? s.substring(0, 500) : s;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `abbreviate` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

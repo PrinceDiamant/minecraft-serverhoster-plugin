@@ -26,11 +26,19 @@ if Z.56 (algo == null // expectedHex == null // expectedH…
 return Z.56 return;
   Zeile 56: Rückgabe `return;`.
 Upstream.digest
-  `digest` in `Upstream.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `digest` in `Upstream.java`.
 if Z.58 (!expectedHex.equalsIgnoreCase(got))
   Zeile 58: prüft `(!expectedHex.equalsIgnoreCase(got))`.
 throw Z.58 throw new IOException('checksum mismatch (' + alg…
   Zeile 58: Abbruch `throw new IOException('checksum mismatch (' + alg…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.56 (algo == null // expectedHex == null // expectedH…**: Zeile 56: prüft `(algo == null // expectedHex == null // expectedH…`.
+> - **return Z.56 return;**: Zeile 56: Rückgabe `return;`.
+> - **Upstream.digest**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `digest` in `Upstream.java`.
+> - **if Z.58 (!expectedHex.equalsIgnoreCase(got))**: Zeile 58: prüft `(!expectedHex.equalsIgnoreCase(got))`.
+> - **throw Z.58 throw new IOException('checksum mismatch (' + alg…**: Zeile 58: Abbruch `throw new IOException('checksum mismatch (' + alg…`.
+
+- Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `checkHash` in `src/main/java/de/aichele/childlauncher/Upstream.java`

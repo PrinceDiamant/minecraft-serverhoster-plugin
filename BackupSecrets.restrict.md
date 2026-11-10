@@ -20,4 +20,9 @@ Schritt Z.90 Files.setPosixFilePermissions(path, Set.of(PosixF…
   Zeile 90: setzt POSIX-Dateirechte. `Files.setPosixFilePermissions(path, Set.of(PosixF…`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.89 (Files.getFileStore(path).supportsFileAttributeVi…**: Zeile 89: prüft `(Files.getFileStore(path).supportsFileAttributeVi…`.
+> - **Schritt Z.90 Files.setPosixFilePermissions(path, Set.of(PosixF…**: Zeile 90: setzt POSIX-Dateirechte. `Files.setPosixFilePermissions(path, Set.of(PosixF…`
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `restrict` in `src/main/java/de/aichele/childlauncher/BackupSecrets.java`

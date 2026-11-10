@@ -10,28 +10,36 @@ flowchart TD
   n4["ScheduleDef.integer"]:::internal-link
   n5["ScheduleDef.optionalLong"]:::internal-link
   n6["ScheduleDef.enumValue"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 ScheduleDef.asMap
-  `asMap` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Übersicht. `asMap` in `ScheduleDef.java`.
 ScheduleDef.string
-  `string` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `string` in `ScheduleDef.java`.
 ScheduleDef.bool
-  `bool` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bool` in `ScheduleDef.java`.
 ScheduleDef.integer
-  `integer` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `integer` in `ScheduleDef.java`.
 ScheduleDef.optionalLong
-  Liest optional `optionalLong`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um eine Zahl. Liest optional `optionalLong`.
 ScheduleDef.enumValue
-  `enumValue` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den Wert. `enumValue` in `ScheduleDef.java`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.asMap**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Übersicht. `asMap` in `ScheduleDef.java`.
+> - **ScheduleDef.string**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `string` in `ScheduleDef.java`.
+> - **ScheduleDef.bool**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bool` in `ScheduleDef.java`.
+> - **ScheduleDef.integer**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `integer` in `ScheduleDef.java`.
+> - **ScheduleDef.optionalLong**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um eine Zahl. Liest optional `optionalLong`.
+> - **ScheduleDef.enumValue**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den Wert. `enumValue` in `ScheduleDef.java`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

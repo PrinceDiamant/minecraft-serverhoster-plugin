@@ -19,11 +19,18 @@ flowchart TD
 try Z.1130
   Zeile 1130: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.memoryRecoveryFile
-  Betrifft den Speicher `memoryRecoveryFile`.
+  Die Datei, in der steht, ob der Speicher nach einem [[Glossar#Vorfall|Vorfall]] schon wieder freigegeben wurde. Betrifft den Speicher `memoryRecoveryFile`.
 MemoryProtectionPolicy.finishRecovery
-  Schließt ab `finishRecovery`.
+  Dieser Teil beendet die Wiederherstellung. Schließt ab `finishRecovery`.
 catch Z.1135 (IOException e)
   Zeile 1135: fängt (IOException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.clearMemoryRecoveryState`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1130**: Zeile 1130: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.memoryRecoveryFile**: Die Datei, in der steht, ob der Speicher nach einem [[Glossar#Vorfall|Vorfall]] schon wieder freigegeben wurde. Betrifft den Speicher `memoryRecoveryFile`.
+> - **MemoryProtectionPolicy.finishRecovery**: Dieser Teil beendet die Wiederherstellung. Schließt ab `finishRecovery`.
+> - **catch Z.1135 (IOException e)**: Zeile 1135: fängt (IOException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1130 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.clearMemoryRecoveryState`.

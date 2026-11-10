@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 kein eigener Aufruf
-  In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+  Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
 ```
 
-- `$` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
+
+- Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element.

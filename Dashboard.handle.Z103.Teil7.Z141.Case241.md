@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 Dashboard.setup
-  `setup` in `Dashboard.java`. Ruft `parseJsonObject`, `readBodyText`, `requiredString`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `setup` in `Dashboard.java`. Ruft `parseJsonObject`, `readBodyText`, `requiredString`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **Dashboard.setup**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `setup` in `Dashboard.java`. Ruft `parseJsonObject`, `readBodyText`, `requiredString`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 241.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

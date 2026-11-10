@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 App.App.navigateTo
-  Wechselt die Route `navigateTo`. Ruft `tab`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
 App.tabFromPath
-  Wechselt den Tab `tabFromPath`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad. Wechselt den Tab `tabFromPath`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **App.App.navigateTo**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
+> - **App.tabFromPath**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad. Wechselt den Tab `tabFromPath`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `onStarted` in `ui/src/App.tsx`

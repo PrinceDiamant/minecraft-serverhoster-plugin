@@ -37,4 +37,13 @@ return Z.207 return left.equals(right);
   Zeile 207: Rückgabe `return left.equals(right);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.203 (left == null // right == null // left.isBlank() …**: Zeile 203: prüft `(left == null // right == null // left.isBlank() …`.
+> - **return Z.203 return false;**: Zeile 203: Rückgabe `return false;`.
+> - **try Z.204**: Zeile 204: Versuch. Der Fehlerpfad geht in catch.
+> - **return Z.205 return Path.of(left).toAbsolutePath().normalize()…**: Zeile 205: Rückgabe `return Path.of(left).toAbsolutePath().normalize()…`.
+> - **catch Z.206 (RuntimeException e)**: Zeile 206: fängt (RuntimeException e).
+> - **return Z.207 return left.equals(right);**: Zeile 207: Rückgabe `return left.equals(right);`.
+
+- Dieser Teil kümmert sich um den Pfad.
 - `samePath` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

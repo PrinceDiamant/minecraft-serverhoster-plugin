@@ -24,11 +24,19 @@ if Z.107 (tls)
 if Z.110 (isDashboardPage(path) && method.equals('GET'))
   Zeile 110: prüft `(isDashboardPage(path) && method.equals('GET'))`.
 Dashboard.isDashboardPage
-  Prüft `isDashboardPage`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] prüft die [[Glossar#Bedienseite|Bedienseite]] die Seite. Prüft `isDashboardPage`.
 Dashboard.serveIndex
-  Liefert `serveIndex`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liefert die Position. Liefert `serveIndex`. Ruft `sendBytes`.
 return Z.110 return;
   Zeile 110: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.107 (tls)**: Zeile 107: prüft `(tls)`.
+> - **if Z.110 (isDashboardPage(path) && method.equals('GET'))**: Zeile 110: prüft `(isDashboardPage(path) && method.equals('GET'))`.
+> - **Dashboard.isDashboardPage**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] prüft die [[Glossar#Bedienseite|Bedienseite]] die Seite. Prüft `isDashboardPage`.
+> - **Dashboard.serveIndex**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liefert die Position. Liefert `serveIndex`. Ruft `sendBytes`.
+> - **return Z.110 return;**: Zeile 110: Rückgabe `return;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.handle.Z103`.

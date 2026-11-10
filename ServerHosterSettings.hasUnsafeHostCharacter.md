@@ -16,4 +16,8 @@ return Z.96 return host.chars().anyMatch(c -) Character.isWhi…
   Zeile 96: Rückgabe `return host.chars().anyMatch(c -) Character.isWhi…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.96 return host.chars().anyMatch(c -) Character.isWhi…**: Zeile 96: Rückgabe `return host.chars().anyMatch(c -) Character.isWhi…`.
+
+- Dieser Teil prüft den [[Glossar#Host|Host]].
 - `hasUnsafeHostCharacter` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

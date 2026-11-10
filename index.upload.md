@@ -17,11 +17,16 @@ flowchart TD
 
 ```knoten
 index.upload.Z148
-  Fortsetzung des Ablaufs ab Zeile 148.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 148 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z148`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
 index.ls
-  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Im [[Glossar#Quelltext|Quelltext]] heißt das `ls`.
 ```
 
-- `upload` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.upload.Z148**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 148 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z148`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
+> - **index.ls**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Im [[Glossar#Quelltext|Quelltext]] heißt das `ls`.
+
+- Schickt eine Datei von der älteren [[Glossar#Bedienseite|Bedienseite]] an das [[Glossar#Plugin|Plugin]].

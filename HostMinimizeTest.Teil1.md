@@ -12,34 +12,44 @@ flowchart TD
   n6["HostMinimizeTest.firstSetupRetriesPendingStateAndRejectsProtectedWorlds"]:::internal-link
   n7["HostMinimizeTest.firstSetupResumesPreparationWithoutLosingOriginalWorldOrChangingLobby"]:::internal-link
   n8["HostMinimizeTest.firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys
-  Wendet an `applyKeepsWorldSelectionChildBackupsAndSecurityKeys`. Ruft `apply`, `restore`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `applyKeepsWorldSelectionChildBackupsAndSecurityKeys`.
 HostMinimizeTest.missingWhitelistIsRemovedAgainOnRollback
-  `missingWhitelistIsRemovedAgainOnRollback` in `HostMinimizeTest.java`. Ruft `apply`, `restore`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `missingWhitelistIsRemovedAgainOnRollback`.
 HostMinimizeTest.activeRequiresTheConfiguredWorldToBeLoadedAndIdlePauseStaysOff
-  `activeRequiresTheConfiguredWorldToBeLoadedAndIdlePauseStaysOff` in `HostMinimizeTest.java`. Ruft `phase`, `playersBlocked`, `clearIdlePause`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `activeRequiresTheConfiguredWorldToBeLoadedAndIdlePauseStaysOff`.
 HostMinimizeTest.symlinkAndChildRootAreRefused
-  `symlinkAndChildRootAreRefused` in `HostMinimizeTest.java`. Ruft `apply`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `symlinkAndChildRootAreRefused`.
 HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby
-  `firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby` in `HostMinimizeTest.java`. Ruft `shouldRun`, `apply`, `readState`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby`.
 HostMinimizeTest.firstSetupRetriesPendingStateAndRejectsProtectedWorlds
-  `firstSetupRetriesPendingStateAndRejectsProtectedWorlds` in `HostMinimizeTest.java`. Ruft `shouldRun`, `apply`, `readState`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupRetriesPendingStateAndRejectsProtectedWorlds`.
 HostMinimizeTest.firstSetupResumesPreparationWithoutLosingOriginalWorldOrChangingLobby
-  `firstSetupResumesPreparationWithoutLosingOriginalWorldOrChangingLobby` in `HostMinimizeTest.java`. Ruft `shouldRun`, `apply`, `completeRestart`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupResumesPreparationWithoutLosingOriginalWorldOrChangingLobby`.
 HostMinimizeTest.firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged
-  `firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged` in `HostMinimizeTest.java`. Ruft `shouldRun`, `apply`, `completeRestart`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `applyKeepsWorldSelectionChildBackupsAndSecurityKeys`.
+> - **HostMinimizeTest.missingWhitelistIsRemovedAgainOnRollback**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `missingWhitelistIsRemovedAgainOnRollback`.
+> - **HostMinimizeTest.activeRequiresTheConfiguredWorldToBeLoadedAndIdlePauseStaysOff**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `activeRequiresTheConfiguredWorldToBeLoadedAndIdlePauseStaysOff`.
+> - **HostMinimizeTest.symlinkAndChildRootAreRefused**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `symlinkAndChildRootAreRefused`.
+> - **HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby`.
+> - **HostMinimizeTest.firstSetupRetriesPendingStateAndRejectsProtectedWorlds**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupRetriesPendingStateAndRejectsProtectedWorlds`.
+> - **HostMinimizeTest.firstSetupResumesPreparationWithoutLosingOriginalWorldOrChangingLobby**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupResumesPreparationWithoutLosingOriginalWorldOrChangingLobby`.
+> - **HostMinimizeTest.firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

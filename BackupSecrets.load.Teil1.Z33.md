@@ -19,7 +19,13 @@ if Z.33 (!Files.exists(path))
 Schritt Z.34 Files.createFile(path);
   Zeile 34: Dateioperation. `Files.createFile(path);`
 BackupSecrets.restrict
-  `restrict` in `BackupSecrets.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `restrict` in `BackupSecrets.java`.
 ```
 
-- Fortsetzung von `BackupSecrets.load.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.33 (!Files.exists(path))**: Zeile 33: prüft `(!Files.exists(path))`.
+> - **Schritt Z.34 Files.createFile(path);**: Zeile 34: Dateioperation. `Files.createFile(path);`
+> - **BackupSecrets.restrict**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `restrict` in `BackupSecrets.java`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 33 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `BackupSecrets.load.Teil1`.

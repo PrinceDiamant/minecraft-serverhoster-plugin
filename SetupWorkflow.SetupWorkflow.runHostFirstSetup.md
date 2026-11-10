@@ -22,7 +22,13 @@ if Z.227 !accepted
 return Z.227 return;
   Zeile 227: Rückgabe `return;`.
 SetupWorkflow.SetupWorkflow.runHostFirstSetup.Z230
-  Fortsetzung des Ablaufs ab Zeile 230.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 230 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 230.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.227 !accepted**: Zeile 227: prüft `!accepted`.
+> - **return Z.227 return;**: Zeile 227: Rückgabe `return;`.
+> - **SetupWorkflow.SetupWorkflow.runHostFirstSetup.Z230**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 230 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 230.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Host|Host]] die erste die [[Glossar#Einrichtung|Einrichtung]].
 - `runHostFirstSetup` in `ui/src/components/SetupWorkflow.tsx`

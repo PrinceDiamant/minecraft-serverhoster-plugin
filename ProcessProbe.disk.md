@@ -24,9 +24,16 @@ if Z.54 (root == null // !Files.isDirectory(root))
 return Z.54 return new Disk(0, 0, false);
   Zeile 54: Rückgabe `return new Disk(0, 0, false);`.
 ProcessProbe.disk.Z57
-  Fortsetzung des Ablaufs ab Zeile 57.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 57 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 57.
 return Z.67 return new Disk(bytes, files, partial);
   Zeile 67: Rückgabe `return new Disk(bytes, files, partial);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.54 (root == null // !Files.isDirectory(root))**: Zeile 54: prüft `(root == null // !Files.isDirectory(root))`.
+> - **return Z.54 return new Disk(0, 0, false);**: Zeile 54: Rückgabe `return new Disk(0, 0, false);`.
+> - **ProcessProbe.disk.Z57**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 57 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 57.
+> - **return Z.67 return new Disk(bytes, files, partial);**: Zeile 67: Rückgabe `return new Disk(bytes, files, partial);`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `disk` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

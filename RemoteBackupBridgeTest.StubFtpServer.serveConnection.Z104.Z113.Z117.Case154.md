@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154.Z156
-  Fortsetzung des Ablaufs ab Zeile 156.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 156 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 156.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154.Z156**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 156 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 156.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 154.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`.

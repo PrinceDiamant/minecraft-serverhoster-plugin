@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 App.App.closeDialog
-  Schließt `closeDialog`.
+  Die [[Glossar#Bedienseite|Bedienseite]] schließt den Dialog. Schließt `closeDialog`.
 ```
 
-- Fortsetzung von `App.App.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **App.App.closeDialog**: Die [[Glossar#Bedienseite|Bedienseite]] schließt den Dialog. Schließt `closeDialog`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 443 aufgerufen werden.
+- Fortsetzung von `App.App.Teil4`.

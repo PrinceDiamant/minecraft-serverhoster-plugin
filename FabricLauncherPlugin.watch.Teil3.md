@@ -15,7 +15,12 @@ flowchart TD
 if Z.1890 (slot.wantRunning && !shuttingDown && slot.schedu…
   Zeile 1890: prüft `(slot.wantRunning && !shuttingDown && slot.schedu…`.
 FabricLauncherPlugin.scheduleRestart
-  Plant `scheduleRestart`. Ruft `maxAttempts`, `mayRetry`, `notifyNtfy`.
+  Wartet die [[Glossar#Pause|Pause]] und startet den [[Glossar#Spielserver|Spielserver]] dann neu. Am Anfang sind das fünf Sekunden, höchstens fünf Minuten. Plant `scheduleRestart`. Ruft `maxAttempts`, `mayRetry`, `notifyNtfy`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.watch`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1890 (slot.wantRunning && !shuttingDown && slot.schedu…**: Zeile 1890: prüft `(slot.wantRunning && !shuttingDown && slot.schedu…`.
+> - **FabricLauncherPlugin.scheduleRestart**: Wartet die [[Glossar#Pause|Pause]] und startet den [[Glossar#Spielserver|Spielserver]] dann neu. Am Anfang sind das fünf Sekunden, höchstens fünf Minuten. Plant `scheduleRestart`. Ruft `maxAttempts`, `mayRetry`, `notifyNtfy`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.watch`.

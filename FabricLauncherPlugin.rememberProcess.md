@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.rememberProcess.Z2107
-  Fortsetzung des Ablaufs ab Zeile 2107.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2107 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2107`.
 ```
 
-- `rememberProcess` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.rememberProcess.Z2107**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2107 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2107`.
+
+- Merkt sich Programmnummer und [[Glossar#Programmdatei|Programmdatei]], damit das [[Glossar#Plugin|Plugin]] den [[Glossar#Spielserver|Spielserver]] später wiederfindet.

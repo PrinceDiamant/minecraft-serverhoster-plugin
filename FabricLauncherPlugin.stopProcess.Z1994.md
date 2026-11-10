@@ -21,13 +21,21 @@ flowchart TD
 sync Z.1994
   Zeile 1994: synchronisierter Block.
 FabricLauncherPlugin.stopProcess.Z1994.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.stopProcess.Z1994.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.stopProcess.Z1994.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.stopProcess.Z1994.Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.stopProcess`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.1994**: Zeile 1994: synchronisierter Block.
+> - **FabricLauncherPlugin.stopProcess.Z1994.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.stopProcess.Z1994.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.stopProcess.Z1994.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.stopProcess.Z1994.Teil4**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1994 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.stopProcess`.

@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 DashboardPassword.read
-  Liest `read`.
+  Dieser Teil liest das. Liest `read`.
 DashboardPassword.create
-  Legt an `create`.
+  Dieser Teil legt an das. Legt an `create`.
 Schritt Z.73 assertFalse(Files.exists(file));
   Zeile 73: Dateioperation. `assertFalse(Files.exists(file));`
 ```
 
-- Fortsetzung von `CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **DashboardPassword.read**: Dieser Teil liest das. Liest `read`.
+> - **DashboardPassword.create**: Dieser Teil legt an das. Legt an `create`.
+> - **Schritt Z.73 assertFalse(Files.exists(file));**: Zeile 73: Dateioperation. `assertFalse(Files.exists(file));`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed`.

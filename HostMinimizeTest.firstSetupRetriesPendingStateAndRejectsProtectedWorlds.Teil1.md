@@ -32,7 +32,16 @@ Schritt Z.214 Files.writeString(root.resolve('server.properties…
 Schritt Z.216 Files.writeString(marker, 'status=pending/n');
   Zeile 216: schreibt Text in eine Datei. `Files.writeString(marker, 'status=pending/n');`
 HostFirstSetup.shouldRun
-  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] führt aus das. Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], wahrscheinlich. HostFirstSetup.java:35 akzeptiert pending; Schreibstelle nur HostMinimizeTest.java:216
 ```
 
-- Fortsetzung von `HostMinimizeTest.firstSetupRetriesPendingStateAndRejectsProtectedWorlds`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.211 Files.createDirectories(data);**: Zeile 211: Dateioperation. `Files.createDirectories(data);`
+> - **Schritt Z.212 Files.writeString(root.resolve('plugins/ServerHos…**: Zeile 212: schreibt Text in eine Datei. `Files.writeString(root.resolve('plugins/ServerHos…`
+> - **Schritt Z.213 Files.createDirectories(child.resolve('world'));**: Zeile 213: Dateioperation. `Files.createDirectories(child.resolve('world'));`
+> - **Schritt Z.214 Files.writeString(root.resolve('server.properties…**: Zeile 214: schreibt Text in eine Datei. `Files.writeString(root.resolve('server.properties…`
+> - **Schritt Z.216 Files.writeString(marker, 'status=pending/n');**: Zeile 216: schreibt Text in eine Datei. `Files.writeString(marker, 'status=pending/n');`
+> - **HostFirstSetup.shouldRun**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] führt aus das. Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], wahrscheinlich. HostFirstSetup.java:35 akzeptiert pending; Schreibstelle nur HostMinimizeTest.java:216
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimizeTest.firstSetupRetriesPendingStateAndRejectsProtectedWorlds`.

@@ -13,8 +13,12 @@ flowchart TD
 
 ```knoten
 TaskDef.load
-  Lädt `load`. Ruft `str`, `TaskDef`.
+  Dieser Teil lädt das. Lädt `load`. Ruft `str`, `TaskDef`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **TaskDef.load**: Dieser Teil lädt das. Lädt `load`. Ruft `str`, `TaskDef`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `defaultDailyBackupUsesServerLocalTime` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

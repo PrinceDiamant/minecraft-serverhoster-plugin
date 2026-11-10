@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 ChildStopSequence.stop.Z21
-  Fortsetzung des Ablaufs ab Zeile 21.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 21 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 21.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ChildStopSequence.stop.Z21**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 21 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 21.
+
+- Dieser Teil stoppt das.
 - `stop` in `src/main/java/de/aichele/childlauncher/ChildStopSequence.java`

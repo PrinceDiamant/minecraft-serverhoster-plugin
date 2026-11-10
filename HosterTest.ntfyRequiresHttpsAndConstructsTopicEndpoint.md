@@ -21,8 +21,12 @@ flowchart TD
 
 ```knoten
 NtfyNotifier.target
-  `target` in `NtfyNotifier.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `target` in `NtfyNotifier.java`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **NtfyNotifier.target**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `target` in `NtfyNotifier.java`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `ntfyRequiresHttpsAndConstructsTopicEndpoint` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

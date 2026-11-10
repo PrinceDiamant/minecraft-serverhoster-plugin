@@ -14,4 +14,8 @@ Schritt Z.947 String contentType = switch (path.substring(path.…
   Zeile 947: `String contentType = switch (path.substring(path.…`
 ```
 
-- Fortsetzung von `Dashboard.serveWebAsset`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.947 String contentType = switch (path.substring(path.…**: Zeile 947: `String contentType = switch (path.substring(path.…`
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 947 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.serveWebAsset`.

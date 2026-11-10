@@ -33,4 +33,12 @@ return Z.202 return List.copyOf(names);
   Zeile 202: Rückgabe `return List.copyOf(names);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.193**: Zeile 193: Versuch. Der Fehlerpfad geht in catch.
+> - **for Z.194 (Path entry : entries)**: Zeile 194: Schleife `(Path entry : entries)`.
+> - **if Z.195 (names.size() == 20)**: Zeile 195: prüft `(names.size() == 20)`.
+> - **Schritt Z.199 names.add(entry.getFileName().toString() + (Files…**: Zeile 199: `names.add(entry.getFileName().toString() + (Files…`
+> - **return Z.202 return List.copyOf(names);**: Zeile 202: Rückgabe `return List.copyOf(names);`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `topLevelEntries` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

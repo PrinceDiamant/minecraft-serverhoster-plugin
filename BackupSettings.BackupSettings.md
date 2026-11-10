@@ -23,4 +23,8 @@ return Z.71 return () (label)Speicherziel (select value=(sett…
   Zeile 71: Rückgabe `return () (label)Speicherziel (select value=(sett…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.71 return () (label)Speicherziel (select value=(sett…**: Zeile 71: Rückgabe `return () (label)Speicherziel (select value=(sett…`.
+
+- Dieser Teil sichert die [[Glossar#Einstellungen|Einstellungen]].
 - `BackupSettings` in `ui/src/components/BackupSettings.tsx`

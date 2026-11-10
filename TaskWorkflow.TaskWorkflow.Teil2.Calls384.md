@@ -21,7 +21,11 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.TaskWorkflow.updateDraft
-  Aktualisiert `updateDraft`.
+  Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
 ```
 
-- Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.TaskWorkflow.updateDraft**: Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 384 aufgerufen werden.
+- Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`.

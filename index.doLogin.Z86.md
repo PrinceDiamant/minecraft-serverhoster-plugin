@@ -20,9 +20,15 @@ flowchart TD
 if Z.86 r.ok
   Zeile 86: prüft `r.ok`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.start
-  Browser-Timer 3000 ms für `status`. Befund: doppelte Implementierung (sicher).
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt ab jetzt alle drei Sekunden nach dem Zustand. Browser-Timer 3000 ms für `status`. [[Glossar#Befund|Befund]]: doppelte Implementierung, sicher. index.html:220 setInterval 3000 ms läuft in der React-Hülle weiter
 ```
 
-- Fortsetzung von `index.doLogin`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.86 r.ok**: Zeile 86: prüft `r.ok`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.start**: Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt ab jetzt alle drei Sekunden nach dem Zustand. Browser-Timer 3000 ms für `status`. [[Glossar#Befund|Befund]]: doppelte Implementierung, sicher. index.html:220 setInterval 3000 ms läuft in der React-Hülle weiter
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 86 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `index.doLogin`.

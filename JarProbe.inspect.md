@@ -32,9 +32,9 @@ flowchart TD
 
 ```knoten
 LaunchPlan.jarPath
-  Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
+  Dieser Teil kümmert sich um den Pfad. Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
 LaunchPlan.jarName
-  Betrifft das Jar `jarName`. Ruft `fileName`.
+  Dieser Teil kümmert sich um den Namen. Betrifft das Jar `jarName`. Ruft `fileName`.
 if Z.19 (Files.isSymbolicLink(jar))
   Zeile 19: prüft `(Files.isSymbolicLink(jar))`.
 return Z.19 return new Info(name, jar.toString(), true, false…
@@ -51,4 +51,16 @@ return Z.22 return new Info(name, jar.toString(), true, true,…
   Zeile 22: Rückgabe `return new Info(name, jar.toString(), true, true,…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LaunchPlan.jarPath**: Dieser Teil kümmert sich um den Pfad. Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
+> - **LaunchPlan.jarName**: Dieser Teil kümmert sich um den Namen. Betrifft das Jar `jarName`. Ruft `fileName`.
+> - **if Z.19 (Files.isSymbolicLink(jar))**: Zeile 19: prüft `(Files.isSymbolicLink(jar))`.
+> - **return Z.19 return new Info(name, jar.toString(), true, false…**: Zeile 19: Rückgabe `return new Info(name, jar.toString(), true, false…`.
+> - **if Z.20 (!Files.exists(jar, LinkOption.NOFOLLOW_LINKS))**: Zeile 20: prüft `(!Files.exists(jar, LinkOption.NOFOLLOW_LINKS))`.
+> - **return Z.20 return new Info(name, jar.toString(), false, fals…**: Zeile 20: Rückgabe `return new Info(name, jar.toString(), false, fals…`.
+> - **if Z.21 (!Files.isRegularFile(jar, LinkOption.NOFOLLOW_LI…**: Zeile 21: prüft `(!Files.isRegularFile(jar, LinkOption.NOFOLLOW_LI…`.
+> - **return Z.21 return new Info(name, jar.toString(), true, false…**: Zeile 21: Rückgabe `return new Info(name, jar.toString(), true, false…`.
+> - **return Z.22 return new Info(name, jar.toString(), true, true,…**: Zeile 22: Rückgabe `return new Info(name, jar.toString(), true, true,…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `inspect` in `src/main/java/de/aichele/childlauncher/JarProbe.java`

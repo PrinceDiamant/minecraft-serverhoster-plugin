@@ -21,13 +21,21 @@ flowchart TD
 try Z.37
   Zeile 37: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridgeTest.StubFtpServer.StubFtpServer
-  `StubFtpServer` in `RemoteBackupBridgeTest.java`. Ruft `serve`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `StubFtpServer` in `RemoteBackupBridgeTest.java`. Ruft `serve`. Nur Test.
 RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.37**: Zeile 37: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridgeTest.StubFtpServer.StubFtpServer**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `StubFtpServer` in `RemoteBackupBridgeTest.java`. Ruft `serve`. Nur Test.
+> - **RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 37 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload`.

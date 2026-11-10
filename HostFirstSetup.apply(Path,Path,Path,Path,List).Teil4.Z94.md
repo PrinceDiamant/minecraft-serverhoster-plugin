@@ -30,9 +30,9 @@ for Z.94 (Path world : worlds)
 if Z.95 (protectedPath(world, dataDirectory) // protected…
   Zeile 95: prüft `(protectedPath(world, dataDirectory) // protected…`.
 HostFirstSetup.protectedPath
-  `protectedPath` in `HostFirstSetup.java`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Pfad. `protectedPath` in `HostFirstSetup.java`.
 HostFirstSetup.protectedByAny
-  `protectedByAny` in `HostFirstSetup.java`. Ruft `protectedPath`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `protectedByAny` in `HostFirstSetup.java`. Ruft `protectedPath`.
 throw Z.97 throw new SecurityException('refusing to remove p…
   Zeile 97: Abbruch `throw new SecurityException('refusing to remove p…`.
 if Z.98 (Files.isSymbolicLink(world))
@@ -41,4 +41,14 @@ throw Z.99 throw new SecurityException('refusing symbolic li…
   Zeile 99: Abbruch `throw new SecurityException('refusing symbolic li…`.
 ```
 
-- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List).Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.94 (Path world : worlds)**: Zeile 94: Schleife `(Path world : worlds)`.
+> - **if Z.95 (protectedPath(world, dataDirectory) // protected…**: Zeile 95: prüft `(protectedPath(world, dataDirectory) // protected…`.
+> - **HostFirstSetup.protectedPath**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Pfad. `protectedPath` in `HostFirstSetup.java`.
+> - **HostFirstSetup.protectedByAny**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `protectedByAny` in `HostFirstSetup.java`. Ruft `protectedPath`.
+> - **throw Z.97 throw new SecurityException('refusing to remove p…**: Zeile 97: Abbruch `throw new SecurityException('refusing to remove p…`.
+> - **if Z.98 (Files.isSymbolicLink(world))**: Zeile 98: prüft `(Files.isSymbolicLink(world))`.
+> - **throw Z.99 throw new SecurityException('refusing symbolic li…**: Zeile 99: Abbruch `throw new SecurityException('refusing symbolic li…`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 94 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List).Teil4`.

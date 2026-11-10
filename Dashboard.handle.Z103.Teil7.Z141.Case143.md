@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 Dashboard.status
-  Liefert den Status `status`. Ruft `profile`, `slot`, `pid`.
+  Liefert den Zustand des [[Glossar#Spielserver|Spielservers]] an die [[Glossar#Bedienseite|Bedienseite]]. Liefert den Status `status`. Ruft `profile`, `slot`, `pid`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **Dashboard.status**: Liefert den Zustand des [[Glossar#Spielserver|Spielservers]] an die [[Glossar#Bedienseite|Bedienseite]]. Liefert den Status `status`. Ruft `profile`, `slot`, `pid`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 143.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

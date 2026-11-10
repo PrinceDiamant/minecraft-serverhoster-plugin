@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 ScheduleDef.toConfig
-  `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
 ScheduleDef.cron
-  `cron` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cron` in `ScheduleDef.java`.
 return Z.110 return result;
   Zeile 110: Rückgabe `return result;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.toConfig**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+> - **ScheduleDef.cron**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cron` in `ScheduleDef.java`.
+> - **return Z.110 return result;**: Zeile 110: Rückgabe `return result;`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Antwort.
 - `toJson` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

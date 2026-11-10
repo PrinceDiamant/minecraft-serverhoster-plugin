@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 LaunchPlan.jarName
-  Betrifft das Jar `jarName`. Ruft `fileName`.
+  Dieser Teil kümmert sich um den Namen. Betrifft das Jar `jarName`. Ruft `fileName`.
 LaunchPlan.jarPath
-  Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
+  Dieser Teil kümmert sich um den Pfad. Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
 HosterTest.profile
-  `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
 ```
 
-- Fortsetzung von `HosterTest.launchPlanDropsDeadFlagAndNamesJars`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **LaunchPlan.jarName**: Dieser Teil kümmert sich um den Namen. Betrifft das Jar `jarName`. Ruft `fileName`.
+> - **LaunchPlan.jarPath**: Dieser Teil kümmert sich um den Pfad. Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
+> - **HosterTest.profile**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.launchPlanDropsDeadFlagAndNamesJars`.

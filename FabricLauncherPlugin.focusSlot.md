@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `slot`.
 return Z.303 return slot(focus);
-  Zeile 303: Rückgabe `return slot(focus);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 303.
 ```
 
-- `focusSlot` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `slot`.
+> - **return Z.303 return slot(focus);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 303.
+
+- Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]].

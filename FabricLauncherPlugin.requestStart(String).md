@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.startAsync
-  Startet `startAsync`. Ruft `msg`, `slot`, `invalidateRestarts`.
+  Beginnt den Start des [[Glossar#Spielserver|Spielservers]] im Hintergrund, damit der [[Glossar#Host|Host]] dabei nicht stehen bleibt. Im [[Glossar#Quelltext|Quelltext]] heißt das `startAsync`.
 ```
 
-- `requestStart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.startAsync**: Beginnt den Start des [[Glossar#Spielserver|Spielservers]] im Hintergrund, damit der [[Glossar#Host|Host]] dabei nicht stehen bleibt. Im [[Glossar#Quelltext|Quelltext]] heißt das `startAsync`.
+
+- Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten.

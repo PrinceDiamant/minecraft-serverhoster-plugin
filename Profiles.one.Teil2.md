@@ -21,9 +21,14 @@ flowchart TD
 
 ```knoten
 Profiles.str
-  `str` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `ServerProfile.java`.
 Profiles.list
-  Listet `list`.
+  Die Serverbeschreibung zeigt das. Listet `list`.
 ```
 
-- Fortsetzung von `Profiles.one`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Profiles.str**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `ServerProfile.java`.
+> - **Profiles.list**: Die Serverbeschreibung zeigt das. Listet `list`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Profiles.one`.

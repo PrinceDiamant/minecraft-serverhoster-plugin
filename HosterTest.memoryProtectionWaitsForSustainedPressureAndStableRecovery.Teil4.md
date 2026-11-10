@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 MemoryProtectionPolicy.sample
-  Misst `sample`.
+  Dieser Teil misst das. Misst `sample`.
 MemoryProtectionPolicy.criticalSamples
-  `criticalSamples` in `MemoryProtectionPolicy.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `criticalSamples` in `MemoryProtectionPolicy.java`.
 ```
 
-- Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **MemoryProtectionPolicy.sample**: Dieser Teil misst das. Misst `sample`.
+> - **MemoryProtectionPolicy.criticalSamples**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `criticalSamples` in `MemoryProtectionPolicy.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`.

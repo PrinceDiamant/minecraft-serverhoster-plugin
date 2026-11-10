@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 index.post
-  Sendet POST `post`. Ruft `api`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Im [[Glossar#Quelltext|Quelltext]] heißt das `post`.
 index.showLogin
-  Zeigt `showLogin`. Ruft `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] zeigt die [[Glossar#Anmeldung|Anmeldung]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `showLogin`.
 ```
 
-- `logout` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.post**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Im [[Glossar#Quelltext|Quelltext]] heißt das `post`.
+> - **index.showLogin**: Die ältere [[Glossar#Bedienseite|Bedienseite]] zeigt die [[Glossar#Anmeldung|Anmeldung]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `showLogin`.
+
+- Meldet von der älteren [[Glossar#Bedienseite|Bedienseite]] ab.

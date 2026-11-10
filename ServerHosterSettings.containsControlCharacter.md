@@ -16,4 +16,8 @@ return Z.101 return value.chars().anyMatch(Character::isISOCon…
   Zeile 101: Rückgabe `return value.chars().anyMatch(Character::isISOCon…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.101 return value.chars().anyMatch(Character::isISOCon…**: Zeile 101: Rückgabe `return value.chars().anyMatch(Character::isISOCon…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `containsControlCharacter` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

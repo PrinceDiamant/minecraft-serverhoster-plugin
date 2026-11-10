@@ -65,4 +65,19 @@ return Z.23 return password;
   Zeile 23: Rückgabe `return password;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.15 (Files.isSymbolicLink(file))**: Zeile 15: prüft `(Files.isSymbolicLink(file))`.
+> - **throw Z.15 throw new IOException('Dashboard password file mu…**: Zeile 15: Abbruch `throw new IOException('Dashboard password file mu…`.
+> - **if Z.16 (!Files.exists(file, LinkOption.NOFOLLOW_LINKS))**: Zeile 16: prüft `(!Files.exists(file, LinkOption.NOFOLLOW_LINKS))`.
+> - **if Z.17 (!setupRequired)**: Zeile 17: prüft `(!setupRequired)`.
+> - **throw Z.17 throw new IOException('Dashboard password is miss…**: Zeile 17: Abbruch `throw new IOException('Dashboard password is miss…`.
+> - **return Z.18 return null;**: Zeile 18: Rückgabe `return null;`.
+> - **if Z.20 (!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…**: Zeile 20: prüft `(!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…`.
+> - **throw Z.20 throw new IOException('Dashboard password must be…**: Zeile 20: Abbruch `throw new IOException('Dashboard password must be…`.
+> - **Schritt Z.21 String password = Files.readString(file, Standard…**: Zeile 21: liest Text aus einer Datei. `String password = Files.readString(file, Standard…`
+> - **if Z.22 (password.isEmpty())**: Zeile 22: prüft `(password.isEmpty())`.
+> - **throw Z.22 throw new IOException('Dashboard password file is…**: Zeile 22: Abbruch `throw new IOException('Dashboard password file is…`.
+> - **return Z.23 return password;**: Zeile 23: Rückgabe `return password;`.
+
+- Dieser Teil liest das.
 - `read` in `src/main/java/de/aichele/childlauncher/DashboardPassword.java`

@@ -25,5 +25,11 @@ return Z.82 return n ) 1;
   Zeile 82: Rückgabe `return n ) 1;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **for Z.81 (ServerProfile p : profiles)**: Zeile 81: Schleife `(ServerProfile p : profiles)`.
+> - **if Z.81 (p.port == port)**: Zeile 81: prüft `(p.port == port)`.
+> - **return Z.82 return n ) 1;**: Zeile 82: Rückgabe `return n ) 1;`.
+
+- Würde merken, wenn zwei Server dieselbe Türnummer hätten. Der laufende Weg benutzt das nicht.
 - Wird vom Plugin-Kern nicht ausgewertet.
 - Befund: angemeldet aber nicht umgesetzt, wahrscheinlich. ServerProfile.java:79, nur Tests rufen Profiles.portClash

@@ -20,7 +20,13 @@ if Z.2430 (a.length ( 2)
 return Z.2430 return true;
   Zeile 2430: Rückgabe `return true;`.
 FabricLauncherPlugin.onCommand.Z2401.Case2429.Z2431
-  Fortsetzung des Ablaufs ab Zeile 2431.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2431 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2431.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2430 (a.length ( 2)**: Zeile 2430: prüft `(a.length ( 2)`.
+> - **return Z.2430 return true;**: Zeile 2430: Rückgabe `return true;`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2429.Z2431**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2431 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2431.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2429.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

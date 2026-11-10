@@ -10,27 +10,35 @@ flowchart TD
   n4["Dashboard.scheduleJson"]:::internal-link
   n5["Dashboard.scheduleIndex"]:::internal-link
   n6["Dashboard.taskJson"]:::internal-link
-  n1 -->|"Z.351"| n4
-  n1 -->|"Z.355"| n2
-  n1 -->|"Z.385"| n3
-  n1 -->|"Z.393"| n5
+  n1 -->|"Zeile 351"| n4
+  n1 -->|"Zeile 355"| n2
+  n1 -->|"Zeile 385"| n3
+  n1 -->|"Zeile 393"| n5
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Dashboard.schedulesApi
-  `schedulesApi` in `Dashboard.java`. Ruft `json`, `schedules`, `scheduleJson`.
+  Nimmt Aufträge zu den Zeitplänen an.
 Dashboard.parseSchedule
-  Wertet aus `parseSchedule`. Ruft `load`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Zeitplan|Zeitplan]].
 Dashboard.parseJsonObject
-  Wertet aus `parseJsonObject`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt.
 Dashboard.scheduleJson
-  Plant `scheduleJson`. Ruft `toJson`, `taskLast`, `next`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Antwort.
 Dashboard.scheduleIndex
-  Plant `scheduleIndex`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Position.
 Dashboard.taskJson
-  `taskJson` in `Dashboard.java`. Ruft `taskNext`, `taskLast`.
+  Liefert eine [[Glossar#Aufgabe|Aufgabe]] als Antwort an die [[Glossar#Bedienseite|Bedienseite]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **Dashboard.schedulesApi**: Nimmt Aufträge zu den Zeitplänen an.
+> - **Dashboard.parseSchedule**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Zeitplan|Zeitplan]].
+> - **Dashboard.parseJsonObject**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt.
+> - **Dashboard.scheduleJson**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Antwort.
+> - **Dashboard.scheduleIndex**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Position.
+> - **Dashboard.taskJson**: Liefert eine [[Glossar#Aufgabe|Aufgabe]] als Antwort an die [[Glossar#Bedienseite|Bedienseite]].
 
+- Liefert und ändert Zeitpläne und die ältere Aufgabenliste.

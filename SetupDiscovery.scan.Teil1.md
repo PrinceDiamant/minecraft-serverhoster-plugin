@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 SetupDiscovery.legacyPluginVersion
-  `legacyPluginVersion` in `SetupDiscovery.java`.
+  Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Version|Version]]. `legacyPluginVersion` in `SetupDiscovery.java`.
 SetupDiscovery.isAtLeast
-  Prüft `isAtLeast`.
+  Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `isAtLeast`.
 SetupDiscovery.loadLegacyConfig
-  Lädt `loadLegacyConfig`.
+  Dieser Teil lädt den alten Weg die [[Glossar#Einstellungen|Einstellungen]]. Lädt `loadLegacyConfig`.
 ```
 
-- Fortsetzung von `SetupDiscovery.scan`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SetupDiscovery.legacyPluginVersion**: Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Version|Version]]. `legacyPluginVersion` in `SetupDiscovery.java`.
+> - **SetupDiscovery.isAtLeast**: Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `isAtLeast`.
+> - **SetupDiscovery.loadLegacyConfig**: Dieser Teil lädt den alten Weg die [[Glossar#Einstellungen|Einstellungen]]. Lädt `loadLegacyConfig`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SetupDiscovery.scan`.

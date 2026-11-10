@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 VersionCatalog.compare
-  Vergleicht `compare`. Ruft `num`.
+  Dieser Teil vergleicht das. Vergleicht `compare`. Ruft `num`.
 return Z.97 return VersionCatalog::compare;
   Zeile 97: Rückgabe `return VersionCatalog::compare;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.compare**: Dieser Teil vergleicht das. Vergleicht `compare`. Ruft `num`.
+> - **return Z.97 return VersionCatalog::compare;**: Zeile 97: Rückgabe `return VersionCatalog::compare;`.
+
+- Dieser Teil kümmert sich um die erste.
 - `newestFirst` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/VersionCatalog.java:97–97 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

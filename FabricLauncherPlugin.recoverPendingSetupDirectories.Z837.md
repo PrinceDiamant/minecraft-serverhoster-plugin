@@ -33,11 +33,11 @@ flowchart TD
 try Z.837
   Zeile 837: Versuch. Der Fehlerpfad geht in catch.
 SetupRecovery.recover
-  Hebt hängende Zustände auf `recover`.
+  Dieser Teil rückt wieder gerade das. Hebt hängende Zustände auf `recover`.
 FabricLauncherPlugin.getWorldRoot
-  Liefert `getWorldRoot`.
+  Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
 FabricLauncherPlugin.cleanupLegacyDirectory
-  Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
+  Das [[Glossar#Plugin|Plugin]] räumt auf den alten Weg. Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
 for Z.840 (SetupRecovery.Result result : recovere…
   Zeile 840: Schleife `(SetupRecovery.Result result : recovere…`.
 switch Z.841 (result.action())
@@ -54,4 +54,18 @@ catch Z.848 (IOException e)
   Zeile 848: fängt (IOException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.recoverPendingSetupDirectories`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.837**: Zeile 837: Versuch. Der Fehlerpfad geht in catch.
+> - **SetupRecovery.recover**: Dieser Teil rückt wieder gerade das. Hebt hängende Zustände auf `recover`.
+> - **FabricLauncherPlugin.getWorldRoot**: Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
+> - **FabricLauncherPlugin.cleanupLegacyDirectory**: Das [[Glossar#Plugin|Plugin]] räumt auf den alten Weg. Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
+> - **for Z.840 (SetupRecovery.Result result : recovere…**: Zeile 840: Schleife `(SetupRecovery.Result result : recovere…`.
+> - **switch Z.841 (result.action())**: Zeile 841: Verzweigung nach `(result.action())`.
+> - **case Z.842 RESTORED**: Zeile 842: Zweig `RESTORED`.
+> - **case Z.843 DELETED**: Zeile 843: Zweig `DELETED`.
+> - **case Z.844 ARCHIVED**: Zeile 844: Zweig `ARCHIVED`.
+> - **case Z.845 PRESERVED**: Zeile 845: Zweig `PRESERVED`.
+> - **catch Z.848 (IOException e)**: Zeile 848: fängt (IOException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 837 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.recoverPendingSetupDirectories`.

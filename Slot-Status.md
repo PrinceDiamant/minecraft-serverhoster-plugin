@@ -16,17 +16,17 @@ flowchart TD
   n10["FabricLauncherPlugin.console(String)"]:::internal-link
   n11["FabricLauncherPlugin.players()"]:::internal-link
   n12["FabricLauncherPlugin.players(String)"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
-  n8 -->|"Quelltext"| n9
-  n9 -->|"Quelltext"| n10
-  n10 -->|"Quelltext"| n11
-  n11 -->|"Quelltext"| n12
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
+  n8 -->|"Kapitel im Text"| n9
+  n9 -->|"Kapitel im Text"| n10
+  n10 -->|"Kapitel im Text"| n11
+  n11 -->|"Kapitel im Text"| n12
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n1 fill:#f88,stroke:#900
@@ -43,29 +43,43 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.running()
-  Sagt, ob der Prozess läuft `running`. Ruft `focusSlot`, `running`. Befund: toter Code (prüfen).
+  Sagt, ob der [[Glossar#Spielserver|Spielserver]] gerade läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.running(String)
-  Sagt, ob der Prozess läuft `running`. Ruft `slot`, `running`. Befund: toter Code (prüfen).
+  Sagt, ob der [[Glossar#Spielserver|Spielserver]] gerade läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.pid()
-  Liefert die Prozessnummer `pid`. Ruft `focusSlot`, `pid`. Befund: toter Code (prüfen).
+  Liefert die Programmnummer des [[Glossar#Spielserver|Spielservers]]. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.pid(String)
-  Liefert die Prozessnummer `pid`. Ruft `slot`, `pid`. Befund: toter Code (prüfen).
+  Liefert die Programmnummer des [[Glossar#Spielserver|Spielservers]]. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.uptimeMillis()
-  Liefert die Laufzeit `uptimeMillis`. Ruft `focusSlot`, `uptimeMillis`. Befund: toter Code (sicher).
+  Sagt, wie lange der [[Glossar#Spielserver|Spielserver]] schon läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.uptimeMillis(String)
-  Liefert die Laufzeit `uptimeMillis`. Ruft `slot`, `uptimeMillis`. Befund: toter Code (sicher).
+  Sagt, wie lange der [[Glossar#Spielserver|Spielserver]] schon läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.lastStatus()
-  `lastStatus` in `FabricLauncherPlugin.java`. Ruft `focusSlot`. Befund: toter Code (sicher).
+  Der letzte kurze Zustandstext, zum Beispiel startet oder läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.lastStatus(String)
-  `lastStatus` in `FabricLauncherPlugin.java`. Ruft `slot`. Befund: toter Code (sicher).
+  Der letzte kurze Zustandstext, zum Beispiel startet oder läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.console()
-  Liefert die Konsole `console`. Ruft `focusSlot`. Befund: toter Code (prüfen).
+  Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]]. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.console(String)
-  Liefert die Konsole `console`. Ruft `slot`.
+  Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]].
 FabricLauncherPlugin.players()
-  Liefert die Spieler `players`. Ruft `focusSlot`. Befund: toter Code (prüfen).
+  Liefert die [[Glossar#Spieler|Spieler]], die gerade online sind. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.players(String)
-  Liefert die Spieler `players`. Ruft `slot`.
+  Liefert die [[Glossar#Spieler|Spieler]], die gerade online sind.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.running()**: Sagt, ob der [[Glossar#Spielserver|Spielserver]] gerade läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.running(String)**: Sagt, ob der [[Glossar#Spielserver|Spielserver]] gerade läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.pid()**: Liefert die Programmnummer des [[Glossar#Spielserver|Spielservers]]. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.pid(String)**: Liefert die Programmnummer des [[Glossar#Spielserver|Spielservers]]. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.uptimeMillis()**: Sagt, wie lange der [[Glossar#Spielserver|Spielserver]] schon läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.uptimeMillis(String)**: Sagt, wie lange der [[Glossar#Spielserver|Spielserver]] schon läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.lastStatus()**: Der letzte kurze Zustandstext, zum Beispiel startet oder läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.lastStatus(String)**: Der letzte kurze Zustandstext, zum Beispiel startet oder läuft. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.console()**: Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]]. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.console(String)**: Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]].
+> - **FabricLauncherPlugin.players()**: Liefert die [[Glossar#Spieler|Spieler]], die gerade online sind. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.players(String)**: Liefert die [[Glossar#Spieler|Spieler]], die gerade online sind.
 
+- Ob der [[Glossar#Spielserver|Spielserver]] läuft, welche Programmnummer er hat, wie lange schon, was die [[Glossar#Konsole|Konsole]] zuletzt sagte, und wer spielt.

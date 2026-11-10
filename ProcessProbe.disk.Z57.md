@@ -17,9 +17,15 @@ flowchart TD
 try Z.57
   Zeile 57: Versuch. Der Fehlerpfad geht in catch.
 ProcessProbe.disk.Z57.Z59
-  Fortsetzung des Ablaufs ab Zeile 59.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 59 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 59.
 catch Z.66 (IOException ignored)
   Zeile 66: fängt (IOException ignored).
 ```
 
-- Fortsetzung von `ProcessProbe.disk`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.57**: Zeile 57: Versuch. Der Fehlerpfad geht in catch.
+> - **ProcessProbe.disk.Z57.Z59**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 59 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 59.
+> - **catch Z.66 (IOException ignored)**: Zeile 66: fängt (IOException ignored).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 57 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `ProcessProbe.disk`.

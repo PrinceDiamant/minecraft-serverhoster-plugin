@@ -14,4 +14,8 @@ keine Verzweigung
   Schritt. `keine Verzweigung`
 ```
 
-- Fortsetzung von `ProcessProbe.snapshot`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **keine Verzweigung**: Schritt. `keine Verzweigung`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `ProcessProbe.snapshot`.

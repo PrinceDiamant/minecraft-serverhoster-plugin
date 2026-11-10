@@ -22,13 +22,21 @@ flowchart TD
 if Z.2276 (slot.running())
   Zeile 2276: prüft `(slot.running())`.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
 if Z.2281 (process != null)
   Zeile 2281: prüft `(process != null)`.
 FabricLauncherPlugin.armWatch
-  Hängt die Überwachung an `armWatch`. Ruft `watch`.
+  Schaltet die [[Glossar#Aufsicht|Aufsicht]] an, die merkt, wenn das Programm endet. Hängt die Überwachung an `armWatch`. Ruft `watch`.
 throw Z.2282 throw new IOException('Der Child läuft noch. Host…
   Zeile 2282: Abbruch `throw new IOException('Der Child läuft noch. Host…`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply.Teil1.Z2274`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2276 (slot.running())**: Zeile 2276: prüft `(slot.running())`.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
+> - **if Z.2281 (process != null)**: Zeile 2281: prüft `(process != null)`.
+> - **FabricLauncherPlugin.armWatch**: Schaltet die [[Glossar#Aufsicht|Aufsicht]] an, die merkt, wenn das Programm endet. Hängt die Überwachung an `armWatch`. Ruft `watch`.
+> - **throw Z.2282 throw new IOException('Der Child läuft noch. Host…**: Zeile 2282: Abbruch `throw new IOException('Der Child läuft noch. Host…`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2276 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply.Teil1.Z2274`.

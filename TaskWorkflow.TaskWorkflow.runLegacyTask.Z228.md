@@ -22,13 +22,21 @@ flowchart TD
 try Z.228
   Zeile 228: Versuch. Der Fehlerpfad geht in catch.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 catch Z.232 cause
   Zeile 232: fängt cause.
 finally Z.228
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `TaskWorkflow.TaskWorkflow.runLegacyTask`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.228**: Zeile 228: Versuch. Der Fehlerpfad geht in catch.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+> - **catch Z.232 cause**: Zeile 232: fängt cause.
+> - **finally Z.228**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 228 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `TaskWorkflow.TaskWorkflow.runLegacyTask`.

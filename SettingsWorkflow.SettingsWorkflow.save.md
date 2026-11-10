@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 SettingsWorkflow.SettingsWorkflow.save.Z59
-  Fortsetzung des Ablaufs ab Zeile 59.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 59 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 59.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SettingsWorkflow.SettingsWorkflow.save.Z59**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 59 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 59.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] speichert das.
 - `save` in `ui/src/components/SettingsWorkflow.tsx`

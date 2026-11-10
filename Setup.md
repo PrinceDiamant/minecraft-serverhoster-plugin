@@ -7,19 +7,24 @@ flowchart TD
   n1["Setup-Dialog"]:::internal-link
   n2["Setup-Aufraeumen"]:::internal-link
   n3["Setup-Import"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Setup-Dialog
-  Die Einrichtungsschritte, die der Kern selbst ausführt.
+  Die Schritte der [[Glossar#Einrichtung|Einrichtung]], die das [[Glossar#Plugin|Plugin]] selbst ausführt.
 Setup-Aufraeumen
-  Räumt Dateien und Reste nach der Einrichtung weg.
+  Räumt nach der [[Glossar#Einrichtung|Einrichtung]] Dateien und Reste weg.
 Setup-Import
-  Übernimmt Daten aus einer alten FabricLauncher-Anlage.
+  Übernimmt Dateien aus einer älteren Anlage desselben [[Glossar#Plugin|Plugins]].
 ```
 
-- Einrichtung, Aufräumen und Import der alten FabricLauncher-Daten.
+> [!knoten] Was die Blöcke tun
+> - **Setup-Dialog**: Die Schritte der [[Glossar#Einrichtung|Einrichtung]], die das [[Glossar#Plugin|Plugin]] selbst ausführt.
+> - **Setup-Aufraeumen**: Räumt nach der [[Glossar#Einrichtung|Einrichtung]] Dateien und Reste weg.
+> - **Setup-Import**: Übernimmt Dateien aus einer älteren Anlage desselben [[Glossar#Plugin|Plugins]].
+
+- Die [[Glossar#Einrichtung|Einrichtung]] des [[Glossar#Spielserver|Spielservers]], das Aufräumen danach, und das Übernehmen von Dateien aus einer älteren Anlage.

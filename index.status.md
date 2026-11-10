@@ -17,11 +17,16 @@ flowchart TD
 
 ```knoten
 index.status.Z101
-  Fortsetzung des Ablaufs ab Zeile 101.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 101 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z101`.
 index.status.n
-  `n` in `index.html`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `n`.
 index.status.mb
-  `mb` in `index.html`. Ruft `n`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `mb`.
 ```
 
-- `status` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.status.Z101**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 101 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z101`.
+> - **index.status.n**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `n`.
+> - **index.status.mb**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `mb`.
+
+- Holt den Zustand und zeichnet ihn in die ältere [[Glossar#Bedienseite|Bedienseite]].

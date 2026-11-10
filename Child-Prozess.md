@@ -9,38 +9,49 @@ flowchart TD
   n3["Neustart"]:::internal-link
   n4["Stopp"]:::internal-link
   n5["Prozess-Bausteine"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Startablauf
-  startAsync öffnet den Child, launch schreibt Dateien und startet den Prozess, danach Pipes und Watch; bei Abbruch reapLeftover oder abandonFailedStart.
+  Der [[Glossar#Spielserver|Spielserver]] wird eingeschaltet. Das [[Glossar#Plugin|Plugin]] legt Dateien bereit, startet das Programm und beginnt, die Ausgabe mitzulesen. Scheitert der Start, räumt es wieder auf.
 Pipe-Watch
-  Liest stdout und stderr, Tick-Antworten und Spielerliste. tick query frühestens 30 s nach Start, dann höchstens alle 10 s. Sampler jeden Tick, recoverChildSupervision alle 5 s.
+  Das [[Glossar#Plugin|Plugin]] liest mit, was der [[Glossar#Spielserver|Spielserver]] schreibt. Es erkennt [[Glossar#Spieler|Spieler]], die Dauer eines [[Glossar#Spielschritt|Spielschritts]], und ob die [[Glossar#Aufsicht|Aufsicht]] hängen geblieben ist.
 Neustart
-  scheduleRestart wartet delay mal 1000 ms (initialDelaySeconds Standard 5 s, Deckel maxDelaySeconds Standard 300 s) und ruft restartSingle.
+  Endet der [[Glossar#Spielserver|Spielserver]] unerwartet, wartet das [[Glossar#Plugin|Plugin]] eine [[Glossar#Pause|Pause]] und schaltet ihn wieder ein. Die Pause wird länger, wenn das kurz hintereinander oft passiert.
 Stopp
-  stopBlocking setzt STOPPING. stopProcess ruft ChildStopSequence: Poll 250 ms, Stop erneut alle 5 s, TERM-Gnade 10 s. startupStopTimeoutSeconds Standard 180 s, stopTimeoutSeconds Standard 60 s.
+  Der [[Glossar#Spielserver|Spielserver]] wird heruntergefahren. Erst mit der Bitte aufzuhören, dann mit Warten, und nach einer Frist hart. Ein absichtlicher [[Glossar#Stopp|Stopp]] soll nicht gleich wieder starten.
 Prozess-Bausteine
-  Daten und Hilfsklassen ohne eigenen Ablauf: Slot, Prozess, Stopp, Puffer, Restart, Supervisor.
+  Die Zettel, auf denen Zustand, Programmnummer, [[Glossar#Konsole|Konsole]] und [[Glossar#Pause|Pausen]] stehen. Hier läuft nichts von selbst ab.
 ```
+
+> [!knoten] Was die Blöcke tun
+> - **Startablauf**: Der [[Glossar#Spielserver|Spielserver]] wird eingeschaltet. Das [[Glossar#Plugin|Plugin]] legt Dateien bereit, startet das Programm und beginnt, die Ausgabe mitzulesen. Scheitert der Start, räumt es wieder auf.
+> - **Pipe-Watch**: Das [[Glossar#Plugin|Plugin]] liest mit, was der [[Glossar#Spielserver|Spielserver]] schreibt. Es erkennt [[Glossar#Spieler|Spieler]], die Dauer eines [[Glossar#Spielschritt|Spielschritts]], und ob die [[Glossar#Aufsicht|Aufsicht]] hängen geblieben ist.
+> - **Neustart**: Endet der [[Glossar#Spielserver|Spielserver]] unerwartet, wartet das [[Glossar#Plugin|Plugin]] eine [[Glossar#Pause|Pause]] und schaltet ihn wieder ein. Die Pause wird länger, wenn das kurz hintereinander oft passiert.
+> - **Stopp**: Der [[Glossar#Spielserver|Spielserver]] wird heruntergefahren. Erst mit der Bitte aufzuhören, dann mit Warten, und nach einer Frist hart. Ein absichtlicher [[Glossar#Stopp|Stopp]] soll nicht gleich wieder starten.
+> - **Prozess-Bausteine**: Die Zettel, auf denen Zustand, Programmnummer, [[Glossar#Konsole|Konsole]] und [[Glossar#Pause|Pausen]] stehen. Hier läuft nichts von selbst ab.
 
 ```mermaid
 stateDiagram-v2
-  [*] --> IDLE
-  IDLE --> PREPARING: launch Z.1731
-  PREPARING --> RUNNING: launch Z.1760
-  PREPARING --> IDLE: Start abgebrochen Z.1773 / Fehler Z.1696
-  RUNNING --> IDLE: watch Ende Z.1878
-  PREPARING --> IDLE: abandonFailedStart Z.2139
-  RUNNING --> STOPPING: stopBlocking Z.1984 / Backup Z.1654
-  STOPPING --> IDLE: nicht mehr running Z.1989 / Z.1662
-  STOPPING --> RUNNING: Host-Minimize Stopp fehlgeschlagen Z.2279
+  state "aus" as aus
+  state "startet" as startet
+  state "läuft" as laeuft
+  state "stoppt" as stoppt
+  [*] --> aus
+  aus --> startet: Programm wird gestartet, Zeile 1731
+  startet --> laeuft: Programm läuft, Zeile 1760
+  startet --> aus: Start abgebrochen, Zeile 1773, oder Fehler, Zeile 1696
+  laeuft --> aus: Programm endet, Zeile 1878
+  startet --> aus: Fehlstart wird aufgeräumt, Zeile 2139
+  laeuft --> stoppt: Stopp oder Sicherungskopie, Zeile 1984 oder 1654
+  stoppt --> aus: Programm ist aus, Zeile 1989 oder 1662
+  stoppt --> laeuft: Stopp beim Verkleinern gescheitert, Zeile 2279
 ```
 
-- Phase `IDLE`, `PREPARING`, `RUNNING`, `STOPPING` an `ChildSlot`.
+- Der [[Glossar#Spielserver|Spielserver]] als eigenes Programm: einschalten, Meldungen mitlesen, neu starten, ausschalten. Pfeile mit [[Glossar#Kapitel|Kapitel]] im Text sind keine zeitliche Reihenfolge. Im Zustandsbild heißen die Zustände aus, startet, läuft und stoppt. Im [[Glossar#Quelltext|Quelltext]] heißen sie IDLE, PREPARING, RUNNING und STOPPING.

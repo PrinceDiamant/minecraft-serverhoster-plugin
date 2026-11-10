@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.2224 (!path.isAbsolute())
-  Zeile 2224: prüft `(!path.isAbsolute())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2224.
 FabricLauncherPlugin.getWorldRoot
-  Liefert `getWorldRoot`.
+  Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Im [[Glossar#Quelltext|Quelltext]] heißt das `getWorldRoot`.
 return Z.2225 return path.toAbsolutePath().normalize();
-  Zeile 2225: Rückgabe `return path.toAbsolutePath().normalize();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2225.
 ```
 
-- `configuredPath` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2224 (!path.isAbsolute())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2224.
+> - **FabricLauncherPlugin.getWorldRoot**: Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Im [[Glossar#Quelltext|Quelltext]] heißt das `getWorldRoot`.
+> - **return Z.2225 return path.toAbsolutePath().normalize();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2225.
+
+- Liest einen Ordner so, wie er in den [[Glossar#Einstellungen|Einstellungen]] steht.

@@ -24,19 +24,29 @@ flowchart TD
 
 ```knoten
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
 try Z.764
   Zeile 764: Versuch. Der Fehlerpfad geht in catch.
 catch Z.764 (Exception e)
   Zeile 764: fängt (Exception e).
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 return Z.764 return;
   Zeile 764: Rückgabe `return;`.
 Dashboard.saveConfig.Teil1.Z765
-  Fortsetzung des Ablaufs ab Zeile 765.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 765 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 765.
 FabricLauncherPlugin.info(String)
-  Schreibt eine Infozeile `info`. Ruft `info`.
+  Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `info`.
 ```
 
-- Fortsetzung von `Dashboard.saveConfig`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
+> - **try Z.764**: Zeile 764: Versuch. Der Fehlerpfad geht in catch.
+> - **catch Z.764 (Exception e)**: Zeile 764: fängt (Exception e).
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **return Z.764 return;**: Zeile 764: Rückgabe `return;`.
+> - **Dashboard.saveConfig.Teil1.Z765**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 765 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 765.
+> - **FabricLauncherPlugin.info(String)**: Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `info`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.saveConfig`.

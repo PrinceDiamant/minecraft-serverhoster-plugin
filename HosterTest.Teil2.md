@@ -12,34 +12,44 @@ flowchart TD
   n6["HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure"]:::internal-link
   n7["HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault"]:::internal-link
   n8["HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting
-  `propertiesPreviewShowsStartupDiffWithoutWriting` in `HosterTest.java`. Ruft `preview`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `propertiesPreviewShowsStartupDiffWithoutWriting`.
 HosterTest.dashboardKeepsHosterDataAndBundledVoxelDashAttribution
-  `dashboardKeepsHosterDataAndBundledVoxelDashAttribution` in `HosterTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardKeepsHosterDataAndBundledVoxelDashAttribution`.
 HosterTest.cronRespectsZoneAndSunday
-  `cronRespectsZoneAndSunday` in `HosterTest.java`. Ruft `matches`, `next`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `cronRespectsZoneAndSunday`.
 HosterTest.tasksParse
-  `tasksParse` in `HosterTest.java`. Ruft `load`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `tasksParse`.
 HosterTest.schedulesValidateVoxelDashIntervalsAndKeepOrderedActions
-  `schedulesValidateVoxelDashIntervalsAndKeepOrderedActions` in `HosterTest.java`. Ruft `ScheduleDef`, `cron`, `load`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `schedulesValidateVoxelDashIntervalsAndKeepOrderedActions`.
 HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure
-  Plant `scheduleExecutionPreservesOrderAndStopsAfterFailure`. Ruft `ScheduleDef`, `run`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `scheduleExecutionPreservesOrderAndStopsAfterFailure`.
 HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault
-  `restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault` in `HosterTest.java`. Ruft `maxAttempts`, `mayRetry`, `migrateLegacyUnlimited`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault`.
 HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault
-  `restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault` in `HosterTest.java`. Ruft `migrateLegacyRestartPolicy`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `propertiesPreviewShowsStartupDiffWithoutWriting`.
+> - **HosterTest.dashboardKeepsHosterDataAndBundledVoxelDashAttribution**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardKeepsHosterDataAndBundledVoxelDashAttribution`.
+> - **HosterTest.cronRespectsZoneAndSunday**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `cronRespectsZoneAndSunday`.
+> - **HosterTest.tasksParse**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `tasksParse`.
+> - **HosterTest.schedulesValidateVoxelDashIntervalsAndKeepOrderedActions**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `schedulesValidateVoxelDashIntervalsAndKeepOrderedActions`.
+> - **HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `scheduleExecutionPreservesOrderAndStopsAfterFailure`.
+> - **HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault`.
+> - **HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

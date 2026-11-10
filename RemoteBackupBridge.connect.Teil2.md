@@ -34,13 +34,13 @@ flowchart TD
 if Z.182 ('FTPS'.equals(protocol))
   Zeile 182: prüft `('FTPS'.equals(protocol))`.
 RemoteBackupBridge.openFtps
-  Öffnet `openFtps`. Ruft `configure`, `connectControl`, `login`.
+  Die Sicherung über das Netz öffnet hier einen Schritt. Eine Ebene tiefer steht er genauer. Öffnet `openFtps`. Ruft `configure`, `connectControl`, `login`.
 return Z.182 return openFtps(settings, username, pas…
   Zeile 182: Rückgabe `return openFtps(settings, username, pas…`.
 if Z.183 ('FTP'.equals(protocol))
   Zeile 183: prüft `('FTP'.equals(protocol))`.
 RemoteBackupBridge.openFtp
-  Öffnet `openFtp`. Ruft `configure`, `connectControl`, `warnPlainFtp`.
+  Die Sicherung über das Netz öffnet die Übertragung. Öffnet `openFtp`. Ruft `configure`, `connectControl`, `warnPlainFtp`.
 return Z.183 return openFtp(settings, username, pass…
   Zeile 183: Rückgabe `return openFtp(settings, username, pass…`.
 if Z.184 (settings.port() == 990)
@@ -48,7 +48,19 @@ if Z.184 (settings.port() == 990)
 return Z.184 return openFtps(settings, username, pas…
   Zeile 184: Rückgabe `return openFtps(settings, username, pas…`.
 RemoteBackupBridge.configure
-  `configure` in `RemoteBackupBridge.java`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `RemoteBackupBridge.java`.
 ```
 
-- Fortsetzung von `RemoteBackupBridge.connect`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.182 ('FTPS'.equals(protocol))**: Zeile 182: prüft `('FTPS'.equals(protocol))`.
+> - **RemoteBackupBridge.openFtps**: Die Sicherung über das Netz öffnet hier einen Schritt. Eine Ebene tiefer steht er genauer. Öffnet `openFtps`. Ruft `configure`, `connectControl`, `login`.
+> - **return Z.182 return openFtps(settings, username, pas…**: Zeile 182: Rückgabe `return openFtps(settings, username, pas…`.
+> - **if Z.183 ('FTP'.equals(protocol))**: Zeile 183: prüft `('FTP'.equals(protocol))`.
+> - **RemoteBackupBridge.openFtp**: Die Sicherung über das Netz öffnet die Übertragung. Öffnet `openFtp`. Ruft `configure`, `connectControl`, `warnPlainFtp`.
+> - **return Z.183 return openFtp(settings, username, pass…**: Zeile 183: Rückgabe `return openFtp(settings, username, pass…`.
+> - **if Z.184 (settings.port() == 990)**: Zeile 184: prüft `(settings.port() == 990)`.
+> - **return Z.184 return openFtps(settings, username, pas…**: Zeile 184: Rückgabe `return openFtps(settings, username, pas…`.
+> - **RemoteBackupBridge.configure**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `RemoteBackupBridge.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `RemoteBackupBridge.connect`.

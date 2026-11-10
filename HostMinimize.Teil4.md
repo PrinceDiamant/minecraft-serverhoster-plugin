@@ -11,7 +11,10 @@ flowchart TD
 
 ```knoten
 HostMinimize.worldNameSafe
-  Betrifft die Welt `worldNameSafe`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. Betrifft die Welt `worldNameSafe`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.worldNameSafe**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. Betrifft die Welt `worldNameSafe`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

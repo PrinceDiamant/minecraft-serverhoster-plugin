@@ -29,7 +29,7 @@ flowchart TD
 if Z.1672 (hostFirstSetupRestartRequired // hostFirstSetupB…
   Zeile 1672: prüft `(hostFirstSetupRestartRequired // hostFirstSetupB…`.
 FabricLauncherPlugin.msg
-  Sendet eine Chat-Zeile `msg`.
+  Schickt eine [[Glossar#Zeile|Zeile]] an den Menschen, der einen [[Glossar#Befehl|Befehl]] getippt hat. Sendet eine Chat-Zeile `msg`.
 return Z.1674 return;
   Zeile 1674: Rückgabe `return;`.
 if Z.1676 (setupRequired)
@@ -37,9 +37,19 @@ if Z.1676 (setupRequired)
 return Z.1678 return;
   Zeile 1678: Rückgabe `return;`.
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
 FabricLauncherPlugin.invalidateRestarts
-  Verwirft `invalidateRestarts`.
+  Vergisst geplante [[Glossar#Neustart|Neustarts]], damit ein absichtlicher [[Glossar#Stopp|Stopp]] nicht gleich wieder startet. Verwirft `invalidateRestarts`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.startAsync`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1672 (hostFirstSetupRestartRequired // hostFirstSetupB…**: Zeile 1672: prüft `(hostFirstSetupRestartRequired // hostFirstSetupB…`.
+> - **FabricLauncherPlugin.msg**: Schickt eine [[Glossar#Zeile|Zeile]] an den Menschen, der einen [[Glossar#Befehl|Befehl]] getippt hat. Sendet eine Chat-Zeile `msg`.
+> - **return Z.1674 return;**: Zeile 1674: Rückgabe `return;`.
+> - **if Z.1676 (setupRequired)**: Zeile 1676: prüft `(setupRequired)`.
+> - **return Z.1678 return;**: Zeile 1678: Rückgabe `return;`.
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+> - **FabricLauncherPlugin.invalidateRestarts**: Vergisst geplante [[Glossar#Neustart|Neustarts]], damit ein absichtlicher [[Glossar#Stopp|Stopp]] nicht gleich wieder startet. Verwirft `invalidateRestarts`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.startAsync`.

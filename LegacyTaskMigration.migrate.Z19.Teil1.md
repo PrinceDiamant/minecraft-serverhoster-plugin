@@ -16,11 +16,17 @@ flowchart TD
 
 ```knoten
 TaskDef.load
-  Lädt `load`. Ruft `str`, `TaskDef`.
+  Dieser Teil lädt das. Lädt `load`. Ruft `str`, `TaskDef`.
 if Z.21 (parsed.isEmpty())
   Zeile 21: prüft `(parsed.isEmpty())`.
 LegacyTaskMigration.convert
-  Wandelt um `convert`. Ruft `number`, `ScheduleDef`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wandelt um `convert`. Ruft `number`, `ScheduleDef`.
 ```
 
-- Fortsetzung von `LegacyTaskMigration.migrate.Z19`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **TaskDef.load**: Dieser Teil lädt das. Lädt `load`. Ruft `str`, `TaskDef`.
+> - **if Z.21 (parsed.isEmpty())**: Zeile 21: prüft `(parsed.isEmpty())`.
+> - **LegacyTaskMigration.convert**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wandelt um `convert`. Ruft `number`, `ScheduleDef`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LegacyTaskMigration.migrate.Z19`.

@@ -32,25 +32,38 @@ flowchart TD
 
 ```knoten
 BackupBridge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 if Z.153 (!BackupBridge.named(safe, name))
   Zeile 153: prüft `(!BackupBridge.named(safe, name))`.
 BackupBridge.named
-  `named` in `BackupBridge.java`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `named` in `BackupBridge.java`.
 throw Z.153 throw new IllegalArgumentException('backup name');
   Zeile 153: Abbruch `throw new IllegalArgumentException('backup name');`.
 try Z.154
   Zeile 154: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridge.connect
-  Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
 RemoteBackupBridge.enterDirectory
-  Wechselt hinein `enterDirectory`. Ruft `enterBaseDirectory`, `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterDirectory`. Ruft `enterBaseDirectory`, `replyError`.
 if Z.156 (!session.client().retrieveFile(name, output))
   Zeile 156: prüft `(!session.client().retrieveFile(name, output))`.
 RemoteBackupBridge.replyError
-  Antwortet `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
 throw Z.156 throw replyError(session.client(), 'dow…
   Zeile 156: Abbruch `throw replyError(session.client(), 'dow…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.safeId**: Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
+> - **if Z.153 (!BackupBridge.named(safe, name))**: Zeile 153: prüft `(!BackupBridge.named(safe, name))`.
+> - **BackupBridge.named**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `named` in `BackupBridge.java`.
+> - **throw Z.153 throw new IllegalArgumentException('backup name');**: Zeile 153: Abbruch `throw new IllegalArgumentException('backup name');`.
+> - **try Z.154**: Zeile 154: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridge.connect**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
+> - **RemoteBackupBridge.enterDirectory**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterDirectory`. Ruft `enterBaseDirectory`, `replyError`.
+> - **if Z.156 (!session.client().retrieveFile(name, output))**: Zeile 156: prüft `(!session.client().retrieveFile(name, output))`.
+> - **RemoteBackupBridge.replyError**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
+> - **throw Z.156 throw replyError(session.client(), 'dow…**: Zeile 156: Abbruch `throw replyError(session.client(), 'dow…`.
+
+- Die Sicherung über das Netz holt das.
 - `download` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

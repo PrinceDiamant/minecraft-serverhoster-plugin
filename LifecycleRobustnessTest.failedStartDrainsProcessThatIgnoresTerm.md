@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 LifecycleRobustnessTest.testProcess
-  Prüft `testProcess`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Prüft `testProcess`. Nur Test.
 ChildLaunchCleanup.abandon
-  Bricht den fehlgeschlagenen Start ab `abandon`.
+  Dieser Teil bricht ab das. Bricht den fehlgeschlagenen Start ab `abandon`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LifecycleRobustnessTest.testProcess**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Prüft `testProcess`. Nur Test.
+> - **ChildLaunchCleanup.abandon**: Dieser Teil bricht ab das. Bricht den fehlgeschlagenen Start ab `abandon`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `failedStartDrainsProcessThatIgnoresTerm` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

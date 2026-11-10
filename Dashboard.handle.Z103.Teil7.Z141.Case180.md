@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 Dashboard.parseJsonObject
-  Wertet aus `parseJsonObject`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt. Wertet aus `parseJsonObject`.
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
 Dashboard.requiredString
-  Liest verpflichtend `requiredString`.
+  Liest einen Text, der in der Anfrage dabei sein muss. Liest verpflichtend `requiredString`.
 BackupSecrets.saveFtp
-  Speichert `saveFtp`. Ruft `load`, `restrict`.
+  Dieser Teil speichert die Übertragung. Speichert `saveFtp`. Ruft `load`, `restrict`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.parseJsonObject**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt. Wertet aus `parseJsonObject`.
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
+> - **Dashboard.requiredString**: Liest einen Text, der in der Anfrage dabei sein muss. Liest verpflichtend `requiredString`.
+> - **BackupSecrets.saveFtp**: Dieser Teil speichert die Übertragung. Speichert `saveFtp`. Ruft `load`, `restrict`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 180.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

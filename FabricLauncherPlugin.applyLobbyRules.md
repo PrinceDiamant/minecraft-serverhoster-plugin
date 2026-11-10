@@ -31,17 +31,26 @@ flowchart TD
 
 ```knoten
 HostLobbyRuntime.apply
-  Wendet an `apply`. Ruft `worldNameSafe`.
+  Dieser Teil wendet an das. Wendet an `apply`. Ruft `worldNameSafe`.
 FabricLauncherPlugin.applyLobbyRules.name
-  `name` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `name` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.applyLobbyRules.spawnFlags
-  `spawnFlags` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spawnFlags` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.applyLobbyRules.keepSpawnInMemory
-  `keepSpawnInMemory` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `keepSpawnInMemory` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.applyLobbyRules.ruleOff
-  `ruleOff` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `ruleOff` in `FabricLauncherPlugin.java`.
 if Z.2386 (changed ) 0)
   Zeile 2386: prüft `(changed ) 0)`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostLobbyRuntime.apply**: Dieser Teil wendet an das. Wendet an `apply`. Ruft `worldNameSafe`.
+> - **FabricLauncherPlugin.applyLobbyRules.name**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `name` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.applyLobbyRules.spawnFlags**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spawnFlags` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.applyLobbyRules.keepSpawnInMemory**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `keepSpawnInMemory` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.applyLobbyRules.ruleOff**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `ruleOff` in `FabricLauncherPlugin.java`.
+> - **if Z.2386 (changed ) 0)**: Zeile 2386: prüft `(changed ) 0)`.
+
+- Das [[Glossar#Plugin|Plugin]] wendet an die Wartewelt.
 - `applyLobbyRules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

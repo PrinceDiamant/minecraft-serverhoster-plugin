@@ -17,11 +17,16 @@ flowchart TD
 
 ```knoten
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
 index.loadTasks.Calls212
-  Weitere eigene Aufrufe ab Zeile 212.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 212 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls212`.
 index.loadTasks.Calls212.2
-  Seite `index.loadTasks.Calls212.2`.
+  Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `2`.
 ```
 
-- `loadTasks` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
+> - **index.loadTasks.Calls212**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 212 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls212`.
+> - **index.loadTasks.Calls212.2**: Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `2`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Aufgabe|Aufgaben]].

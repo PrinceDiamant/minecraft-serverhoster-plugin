@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 BackupSettings.loadBackupSettings
-  Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+  Dieser Teil lädt die [[Glossar#Sicherungskopie|Sicherungskopie]] die [[Glossar#Einstellungen|Einstellungen]]. Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
 ```
 
-- Fortsetzung von `SetupWizard.SetupWizard`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupSettings.loadBackupSettings**: Dieser Teil lädt die [[Glossar#Sicherungskopie|Sicherungskopie]] die [[Glossar#Einstellungen|Einstellungen]]. Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SetupWizard.SetupWizard`.

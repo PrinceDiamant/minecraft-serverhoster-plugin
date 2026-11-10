@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die Sicherung über das Netz warnt vor die Übertragung.
 - `warnPlainFtp` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

@@ -22,7 +22,13 @@ if Z.294 newPassword !== passwordConfirmation
 return Z.296 return;
   Zeile 296: Rückgabe `return;`.
 App.App.savePassword.Z300
-  Fortsetzung des Ablaufs ab Zeile 300.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 300 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 300.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.294 newPassword !== passwordConfirmation**: Zeile 294: prüft `newPassword !== passwordConfirmation`.
+> - **return Z.296 return;**: Zeile 296: Rückgabe `return;`.
+> - **App.App.savePassword.Z300**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 300 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 300.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] speichert das Passwort.
 - `savePassword` in `ui/src/App.tsx`

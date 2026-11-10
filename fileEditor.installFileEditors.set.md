@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.editorFor
-  Liefert den Editor `editorFor`. Ruft `get`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Liefert den Editor `editorFor`. Ruft `get`.
 fileEditor.modeForPath
-  `modeForPath` in `fileEditor.ts`.
+  Wählt, wie eine Datei in der [[Glossar#Bedienseite|Bedienseite]] bearbeitet wird, je nach Art der Datei. `modeForPath` in `fileEditor.ts`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.editorFor**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Liefert den Editor `editorFor`. Ruft `get`.
+> - **fileEditor.modeForPath**: Wählt, wie eine Datei in der [[Glossar#Bedienseite|Bedienseite]] bearbeitet wird, je nach Art der Datei. `modeForPath` in `fileEditor.ts`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] setzt das.
 - `set` in `ui/src/lib/fileEditor.ts`

@@ -24,9 +24,16 @@ if Z.2207 (encoded == null // encoded.isBlank())
 return Z.2207 return;
   Zeile 2207: Rückgabe `return;`.
 HostHeapTune.hotspot
-  `hotspot` in `HostHeapTune.java`. Ruft `manageable`, `get`, `set`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `hotspot` in `HostHeapTune.java`. Ruft `manageable`, `get`, `set`.
 FabricLauncherPlugin.restoreHostHeap.Z2209
-  Fortsetzung des Ablaufs ab Zeile 2209.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2209 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2209.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2207 (encoded == null // encoded.isBlank())**: Zeile 2207: prüft `(encoded == null // encoded.isBlank())`.
+> - **return Z.2207 return;**: Zeile 2207: Rückgabe `return;`.
+> - **HostHeapTune.hotspot**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `hotspot` in `HostHeapTune.java`. Ruft `manageable`, `get`, `set`.
+> - **FabricLauncherPlugin.restoreHostHeap.Z2209**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2209 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2209.
+
+- Das [[Glossar#Plugin|Plugin]] stellt wieder her den [[Glossar#Host|Host]] den Programmspeicher.
 - `restoreHostHeap` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

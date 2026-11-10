@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 ConsoleBuffer.ConsoleBuffer
-  Liefert die Konsole `ConsoleBuffer`.
+  Dieser Teil kümmert sich um den Zwischenspeicher. Liefert die [[Glossar#Konsole|Konsole]] `ConsoleBuffer`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ConsoleBuffer.ConsoleBuffer**: Dieser Teil kümmert sich um den Zwischenspeicher. Liefert die [[Glossar#Konsole|Konsole]] `ConsoleBuffer`.
+
+- Dieser Teil kümmert sich um den [[Glossar#Platz|Platz]].
 - `ChildSlot` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

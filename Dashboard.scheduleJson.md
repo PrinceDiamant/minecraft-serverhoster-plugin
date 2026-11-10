@@ -19,13 +19,19 @@ flowchart TD
 
 ```knoten
 ScheduleDef.toJson
-  `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Antwort. Im [[Glossar#Quelltext|Quelltext]] heißt das `toJson`.
 FabricLauncherPlugin.taskLast
-  `taskLast` in `FabricLauncherPlugin.java`.
+  Merkt, wann eine [[Glossar#Aufgabe|Aufgabe]] zuletzt gelaufen ist. Im [[Glossar#Quelltext|Quelltext]] heißt das `taskLast`.
 Dashboard.scheduleJson.Z460
-  Fortsetzung des Ablaufs ab Zeile 460.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 460 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z460`.
 return Z.471 return result;
-  Zeile 471: Rückgabe `return result;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 471.
 ```
 
-- `scheduleJson` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.toJson**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Antwort. Im [[Glossar#Quelltext|Quelltext]] heißt das `toJson`.
+> - **FabricLauncherPlugin.taskLast**: Merkt, wann eine [[Glossar#Aufgabe|Aufgabe]] zuletzt gelaufen ist. Im [[Glossar#Quelltext|Quelltext]] heißt das `taskLast`.
+> - **Dashboard.scheduleJson.Z460**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 460 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z460`.
+> - **return Z.471 return result;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 471.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Antwort.

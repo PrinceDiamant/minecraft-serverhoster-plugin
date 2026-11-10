@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 LifecycleRobustnessTest.testProcess
-  Prüft `testProcess`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Prüft `testProcess`. Nur Test.
 ChildStopSequence.stop
-  Stoppt `stop`. Ruft `signal`.
+  Dieser Teil stoppt das. Stoppt `stop`. Ruft `signal`.
 Schritt Z.172 long deadline = System.nanoTime() + java.util.con…
   Zeile 172: `long deadline = System.nanoTime() + java.util.con…`
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **LifecycleRobustnessTest.testProcess**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Prüft `testProcess`. Nur Test.
+> - **ChildStopSequence.stop**: Dieser Teil stoppt das. Stoppt `stop`. Ruft `signal`.
+> - **Schritt Z.172 long deadline = System.nanoTime() + java.util.con…**: Zeile 172: `long deadline = System.nanoTime() + java.util.con…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`.

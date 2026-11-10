@@ -21,13 +21,20 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 SetupWorkflow.SetupWorkflow.cleanupLegacy
-  Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] räumt auf den alten Weg. Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
 SetupWorkflow.SetupWorkflow.submit
-  Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
 VersionSelect.versionIsValid
-  `versionIsValid` in `VersionSelect.tsx`.
+  Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. `versionIsValid` in `VersionSelect.tsx`.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+> - **SetupWorkflow.SetupWorkflow.cleanupLegacy**: Die [[Glossar#Bedienseite|Bedienseite]] räumt auf den alten Weg. Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+> - **SetupWorkflow.SetupWorkflow.submit**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
+> - **VersionSelect.versionIsValid**: Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. `versionIsValid` in `VersionSelect.tsx`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 258 aufgerufen werden.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`.

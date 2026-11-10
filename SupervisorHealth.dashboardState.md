@@ -52,4 +52,16 @@ return Z.26 return DashboardState.STOPPED;
   Zeile 26: Rückgabe `return DashboardState.STOPPED;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.20 (phase == Phase.STOPPING // (alive && (stopReques…**: Zeile 20: prüft `(phase == Phase.STOPPING // (alive && (stopReques…`.
+> - **return Z.21 return DashboardState.STOPPING;**: Zeile 21: Rückgabe `return DashboardState.STOPPING;`.
+> - **if Z.22 (alive)**: Zeile 22: prüft `(alive)`.
+> - **return Z.22 return ready ? DashboardState.RUNNING : Dashboard…**: Zeile 22: Rückgabe `return ready ? DashboardState.RUNNING : Dashboard…`.
+> - **if Z.23 (phase == Phase.PREPARING // launchInProgress)**: Zeile 23: prüft `(phase == Phase.PREPARING // launchInProgress)`.
+> - **return Z.24 return stopRequested // !wantRunning ? DashboardS…**: Zeile 24: Rückgabe `return stopRequested // !wantRunning ? DashboardS…`.
+> - **if Z.25 (restartQueued && wantRunning && autoRestartEnabl…**: Zeile 25: prüft `(restartQueued && wantRunning && autoRestartEnabl…`.
+> - **return Z.25 return DashboardState.RESTART_WAIT;**: Zeile 25: Rückgabe `return DashboardState.RESTART_WAIT;`.
+> - **return Z.26 return DashboardState.STOPPED;**: Zeile 26: Rückgabe `return DashboardState.STOPPED;`.
+
+- Dieser Teil kümmert sich um den Zustand.
 - `dashboardState` in `src/main/java/de/aichele/childlauncher/SupervisorHealth.java`

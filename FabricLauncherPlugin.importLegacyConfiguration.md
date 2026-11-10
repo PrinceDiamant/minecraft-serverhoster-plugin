@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.importLegacyConfiguration.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.importLegacyConfiguration.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.importLegacyConfiguration.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.importLegacyConfiguration.Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.importLegacyConfiguration.Teil5
-  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.importLegacyConfiguration.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.importLegacyConfiguration.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.importLegacyConfiguration.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.importLegacyConfiguration.Teil4**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.importLegacyConfiguration.Teil5**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+
+- Das [[Glossar#Plugin|Plugin]] übernimmt den alten Weg.
 - `importLegacyConfiguration` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

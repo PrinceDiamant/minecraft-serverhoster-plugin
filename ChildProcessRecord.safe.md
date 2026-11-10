@@ -16,4 +16,8 @@ return Z.225 return value == null ? '' : value.replace('/r', '…
   Zeile 225: Rückgabe `return value == null ? '' : value.replace('/r', '…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.225 return value == null ? '' : value.replace('/r', '…**: Zeile 225: Rückgabe `return value == null ? '' : value.replace('/r', '…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `safe` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

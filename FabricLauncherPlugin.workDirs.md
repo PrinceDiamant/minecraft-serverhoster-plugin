@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 for Z.861 (ServerProfile p : profiles)
-  Zeile 861: Schleife `(ServerProfile p : profiles)`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 861.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `directory`.
 return Z.861 return out;
-  Zeile 861: Rückgabe `return out;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 861.
 ```
 
-- `workDirs` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:861–861 kein Aufruf, kein Treffer in plugin.yml/UI/Strings
+> [!knoten]- Was die Blöcke tun
+> - **for Z.861 (ServerProfile p : profiles)**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 861.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `directory`.
+> - **return Z.861 return out;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 861.
+
+- Die Ordner, in denen die Server arbeiten.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

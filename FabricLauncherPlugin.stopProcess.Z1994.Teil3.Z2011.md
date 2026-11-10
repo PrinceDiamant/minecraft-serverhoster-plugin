@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 ChildStopSequence.stop
-  Stoppt `stop`. Ruft `signal`.
+  Dieser Teil stoppt das. Stoppt `stop`. Ruft `signal`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994.Teil3`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ChildStopSequence.stop**: Dieser Teil stoppt das. Stoppt `stop`. Ruft `signal`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2011 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994.Teil3`.

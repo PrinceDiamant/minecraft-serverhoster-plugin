@@ -17,9 +17,15 @@ flowchart TD
 if Z.835 (f.toString().endsWith('.gz'))
   Zeile 835: prüft `(f.toString().endsWith('.gz'))`.
 Dashboard.fsRead.Z835.Z836
-  Fortsetzung des Ablaufs ab Zeile 836.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 836 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 836.
 return Z.842 return;
   Zeile 842: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `Dashboard.fsRead`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.835 (f.toString().endsWith('.gz'))**: Zeile 835: prüft `(f.toString().endsWith('.gz'))`.
+> - **Dashboard.fsRead.Z835.Z836**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 836 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 836.
+> - **return Z.842 return;**: Zeile 842: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 835 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.fsRead`.

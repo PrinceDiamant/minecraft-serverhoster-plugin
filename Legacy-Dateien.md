@@ -16,46 +16,60 @@ flowchart TD
   n10["index.mkdir"]:::internal-link
   n11["index.newFile"]:::internal-link
   n12["index.upload"]:::internal-link
-  n2 -->|"Z.131"| n3
-  n5 -->|"Z.135"| n4
-  n7 -->|"Z.143"| n5
-  n8 -->|"Z.144"| n5
-  n9 -->|"Z.145"| n5
-  n10 -->|"Z.146"| n4
-  n10 -->|"Z.146"| n5
-  n11 -->|"Z.147"| n4
-  n11 -->|"Z.147"| n5
-  n11 -->|"Z.147"| n6
-  n12 -->|"Z.149"| n5
+  n2 -->|"Zeile 131"| n3
+  n5 -->|"Zeile 135"| n4
+  n7 -->|"Zeile 143"| n5
+  n8 -->|"Zeile 144"| n5
+  n9 -->|"Zeile 145"| n5
+  n10 -->|"Zeile 146"| n4
+  n10 -->|"Zeile 146"| n5
+  n11 -->|"Zeile 147"| n4
+  n11 -->|"Zeile 147"| n5
+  n11 -->|"Zeile 147"| n6
+  n12 -->|"Zeile 149"| n5
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 index.loadTxt
-  Lädt `loadTxt`. Ruft `api`, `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den Text.
 index.saveTxt
-  Speichert `saveTxt`. Ruft `$`, `post`, `toast`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] speichert den Text.
 index.loadPropertiesPreview
-  Lädt `loadPropertiesPreview`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die Eigenschaften die Vorschau.
 index.jp
-  Baut einen Pfad `jp`.
+  Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen.
 index.ls
-  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners.
 index.openFile
-  Öffnet `openFile`. Ruft `api`, `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] öffnet die Datei.
 index.saveFile
-  Speichert `saveFile`. Ruft `$`, `toast`, `post`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] speichert die Datei.
 index.ren
-  Benennt um `ren`. Ruft `post`, `$`, `setPath`.
+  Benennt in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Datei um.
 index.del
-  Löscht `del`. Ruft `post`, `$`, `toast`.
+  Löscht in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Datei.
 index.mkdir
-  Legt einen Ordner an `mkdir`. Ruft `post`, `jp`, `ls`.
+  Legt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Ordner an.
 index.newFile
-  `newFile` in `index.html`. Ruft `post`, `jp`, `ls`.
+  Legt in der älteren [[Glossar#Bedienseite|Bedienseite]] eine neue Datei an.
 index.upload
-  Lädt hoch `upload`. Ruft `api`, `toast`, `$`.
+  Schickt eine Datei von der älteren [[Glossar#Bedienseite|Bedienseite]] an das [[Glossar#Plugin|Plugin]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **index.loadTxt**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den Text.
+> - **index.saveTxt**: Die ältere [[Glossar#Bedienseite|Bedienseite]] speichert den Text.
+> - **index.loadPropertiesPreview**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die Eigenschaften die Vorschau.
+> - **index.jp**: Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen.
+> - **index.ls**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners.
+> - **index.openFile**: Die ältere [[Glossar#Bedienseite|Bedienseite]] öffnet die Datei.
+> - **index.saveFile**: Die ältere [[Glossar#Bedienseite|Bedienseite]] speichert die Datei.
+> - **index.ren**: Benennt in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Datei um.
+> - **index.del**: Löscht in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Datei.
+> - **index.mkdir**: Legt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Ordner an.
+> - **index.newFile**: Legt in der älteren [[Glossar#Bedienseite|Bedienseite]] eine neue Datei an.
+> - **index.upload**: Schickt eine Datei von der älteren [[Glossar#Bedienseite|Bedienseite]] an das [[Glossar#Plugin|Plugin]].
 
+- Der Datei-Browser in der älteren [[Glossar#Bedienseite|Bedienseite]].

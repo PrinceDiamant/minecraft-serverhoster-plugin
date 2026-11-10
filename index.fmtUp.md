@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.90 return (d?d+'d ':'')+h+'h '+m+'m'
-  Zeile 90: Rückgabe `return (d?d+'d ':'')+h+'h '+m+'m'`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 90.
 ```
 
-- `fmtUp` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.90 return (d?d+'d ':'')+h+'h '+m+'m'**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 90.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Laufzeit.

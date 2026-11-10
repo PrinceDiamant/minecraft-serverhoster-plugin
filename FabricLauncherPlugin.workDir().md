@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `profile`.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `directory`.
 return Z.859 return profile(focus).directory();
-  Zeile 859: Rückgabe `return profile(focus).directory();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 859.
 ```
 
-- `workDir` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:859–859 kein Produktionsaufruf im Aufrufgraph
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `profile`.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `directory`.
+> - **return Z.859 return profile(focus).directory();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 859.
+
+- Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

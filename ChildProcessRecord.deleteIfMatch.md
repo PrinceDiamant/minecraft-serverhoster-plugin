@@ -36,7 +36,7 @@ if Z.144 (Files.isSymbolicLink(file))
 throw Z.144 throw new IOException('child process record must …
   Zeile 144: Abbruch `throw new IOException('child process record must …`.
 ChildProcessRecord.read
-  Liest `read`. Ruft `required`.
+  Dieser Teil liest das. Liest `read`. Ruft `required`.
 if Z.146 (loaded.identity() == null)
   Zeile 146: prüft `(loaded.identity() == null)`.
 return Z.146 return false;
@@ -51,4 +51,16 @@ return Z.150 return true;
   Zeile 150: Rückgabe `return true;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.144 (Files.isSymbolicLink(file))**: Zeile 144: prüft `(Files.isSymbolicLink(file))`.
+> - **throw Z.144 throw new IOException('child process record must …**: Zeile 144: Abbruch `throw new IOException('child process record must …`.
+> - **ChildProcessRecord.read**: Dieser Teil liest das. Liest `read`. Ruft `required`.
+> - **if Z.146 (loaded.identity() == null)**: Zeile 146: prüft `(loaded.identity() == null)`.
+> - **return Z.146 return false;**: Zeile 146: Rückgabe `return false;`.
+> - **if Z.147 (loaded.identity().pid() != pid // startedAt == n…**: Zeile 147: prüft `(loaded.identity().pid() != pid // startedAt == n…`.
+> - **return Z.148 return false;**: Zeile 148: Rückgabe `return false;`.
+> - **Schritt Z.149 Files.deleteIfExists(file);**: Zeile 149: Dateioperation. `Files.deleteIfExists(file);`
+> - **return Z.150 return true;**: Zeile 150: Rückgabe `return true;`.
+
+- Dieser Teil löscht hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `deleteIfMatch` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

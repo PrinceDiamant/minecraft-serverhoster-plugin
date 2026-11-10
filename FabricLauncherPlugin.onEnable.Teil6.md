@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.refreshHostMinimize
-  Lädt neu `refreshHostMinimize`. Ruft `readHostMinimizeState`, `worldNameSafe`, `apply`.
+  Das [[Glossar#Plugin|Plugin]] lädt neu den [[Glossar#Host|Host]] das Verkleinern. Lädt neu `refreshHostMinimize`. Ruft `readHostMinimizeState`, `worldNameSafe`, `apply`.
 FabricLauncherPlugin.ntfySettings
-  `ntfySettings` in `FabricLauncherPlugin.java`.
+  Liest die [[Glossar#Einstellungen|Einstellungen]] für den Mitteilungsdienst. `ntfySettings` in `FabricLauncherPlugin.java`.
 if Z.177 (ntfy.enabled() && (ntfy.topic() == null // ntfy.…
   Zeile 177: prüft `(ntfy.enabled() && (ntfy.topic() == null // ntfy.…`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onEnable`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.refreshHostMinimize**: Das [[Glossar#Plugin|Plugin]] lädt neu den [[Glossar#Host|Host]] das Verkleinern. Lädt neu `refreshHostMinimize`. Ruft `readHostMinimizeState`, `worldNameSafe`, `apply`.
+> - **FabricLauncherPlugin.ntfySettings**: Liest die [[Glossar#Einstellungen|Einstellungen]] für den Mitteilungsdienst. `ntfySettings` in `FabricLauncherPlugin.java`.
+> - **if Z.177 (ntfy.enabled() && (ntfy.topic() == null // ntfy.…**: Zeile 177: prüft `(ntfy.enabled() && (ntfy.topic() == null // ntfy.…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.onEnable`.

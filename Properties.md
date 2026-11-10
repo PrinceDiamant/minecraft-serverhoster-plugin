@@ -15,41 +15,54 @@ flowchart TD
   n9["FabricLauncherPlugin.writeProperties"]:::internal-link
   n10["FabricLauncherPlugin.forcedProperties"]:::internal-link
   n11["FabricLauncherPlugin.serverPropertiesPreview"]:::internal-link
-  n1 -->|"Z.344"| n2
-  n1 -->|"Z.349"| n5
-  n6 -->|"Z.2612"| n7
-  n7 -->|"Z.2617"| n8
-  n7 -->|"Z.2620"| n1
-  n9 -->|"Z.2631"| n10
-  n9 -->|"Z.2638"| n8
-  n11 -->|"Z.2659"| n10
+  n1 -->|"Zeile 344"| n2
+  n1 -->|"Zeile 349"| n5
+  n6 -->|"Zeile 2612"| n7
+  n7 -->|"Zeile 2617"| n8
+  n7 -->|"Zeile 2620"| n1
+  n9 -->|"Zeile 2631"| n10
+  n9 -->|"Zeile 2638"| n8
+  n11 -->|"Zeile 2659"| n10
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 FabricLauncherPlugin.syncPropertiesEdit
-  Gleicht ab `syncPropertiesEdit`. Ruft `profile`, `configPrefix`, `parseValue`.
+  Das [[Glossar#Plugin|Plugin]] gleicht ab die Eigenschaften die Bearbeitung.
 FabricLauncherPlugin.configPrefix
-  `configPrefix` in `FabricLauncherPlugin.java`.
+  Der Anfang der Namen, unter denen die Werte eines Servers in den [[Glossar#Einstellungen|Einstellungen]] stehen.
 FabricLauncherPlugin.prepareFiles
-  Bereitet vor `prepareFiles`. Ruft `firstStable`, `getJson`, `download`.
+  Das [[Glossar#Plugin|Plugin]] bereitet vor die Dateien.
 FabricLauncherPlugin.copyPlayerFiles
-  Kopiert `copyPlayerFiles`.
+  Das [[Glossar#Plugin|Plugin]] kopiert den [[Glossar#Spieler|Spieler]] die Dateien.
 FabricLauncherPlugin.parseValue
-  Wertet aus `parseValue`.
+  Das [[Glossar#Plugin|Plugin]] liest den Wert.
 FabricLauncherPlugin.setChildProperty(String,String)
-  Setzt `setChildProperty`. Ruft `setChildProperty`.
+  Das [[Glossar#Plugin|Plugin]] setzt den [[Glossar#Spielserver|Spielserver]] eine Eigenschaft.
 FabricLauncherPlugin.setChildProperty(String,String,String)
-  Setzt `setChildProperty`. Ruft `profile`, `directory`, `updateProperties`.
+  Das [[Glossar#Plugin|Plugin]] setzt den [[Glossar#Spielserver|Spielserver]] eine Eigenschaft.
 FabricLauncherPlugin.updateProperties
-  Aktualisiert `updateProperties`. Ruft `update`.
+  Das [[Glossar#Plugin|Plugin]] ändert die Eigenschaften.
 FabricLauncherPlugin.writeProperties
-  Schreibt `writeProperties`. Ruft `forcedProperties`, `hostBindAddress`, `updateProperties`.
+  Das [[Glossar#Plugin|Plugin]] schreibt die Eigenschaften.
 FabricLauncherPlugin.forcedProperties
-  Erzwingt `forcedProperties`. Ruft `effectiveBindAddress`.
+  Werte, die das [[Glossar#Plugin|Plugin]] in der Eigenschaftsdatei fest setzt, auch wenn dort etwas anderes steht.
 FabricLauncherPlugin.serverPropertiesPreview
-  `serverPropertiesPreview` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`, `open`.
+  Zeigt, wie die Eigenschaftsdatei aussehen wird, bevor sie geschrieben wird.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.syncPropertiesEdit**: Das [[Glossar#Plugin|Plugin]] gleicht ab die Eigenschaften die Bearbeitung.
+> - **FabricLauncherPlugin.configPrefix**: Der Anfang der Namen, unter denen die Werte eines Servers in den [[Glossar#Einstellungen|Einstellungen]] stehen.
+> - **FabricLauncherPlugin.prepareFiles**: Das [[Glossar#Plugin|Plugin]] bereitet vor die Dateien.
+> - **FabricLauncherPlugin.copyPlayerFiles**: Das [[Glossar#Plugin|Plugin]] kopiert den [[Glossar#Spieler|Spieler]] die Dateien.
+> - **FabricLauncherPlugin.parseValue**: Das [[Glossar#Plugin|Plugin]] liest den Wert.
+> - **FabricLauncherPlugin.setChildProperty(String,String)**: Das [[Glossar#Plugin|Plugin]] setzt den [[Glossar#Spielserver|Spielserver]] eine Eigenschaft.
+> - **FabricLauncherPlugin.setChildProperty(String,String,String)**: Das [[Glossar#Plugin|Plugin]] setzt den [[Glossar#Spielserver|Spielserver]] eine Eigenschaft.
+> - **FabricLauncherPlugin.updateProperties**: Das [[Glossar#Plugin|Plugin]] ändert die Eigenschaften.
+> - **FabricLauncherPlugin.writeProperties**: Das [[Glossar#Plugin|Plugin]] schreibt die Eigenschaften.
+> - **FabricLauncherPlugin.forcedProperties**: Werte, die das [[Glossar#Plugin|Plugin]] in der Eigenschaftsdatei fest setzt, auch wenn dort etwas anderes steht.
+> - **FabricLauncherPlugin.serverPropertiesPreview**: Zeigt, wie die Eigenschaftsdatei aussehen wird, bevor sie geschrieben wird.
 
+- Die Eigenschaftsdatei des [[Glossar#Spielserver|Spielservers]], zum Beispiel [[Glossar#Port|Port]] und Schwierigkeit, und die Dateien der [[Glossar#Spieler|Spieler]].

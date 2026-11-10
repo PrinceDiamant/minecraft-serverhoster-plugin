@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.requestStart(String)
-  Fordert an `requestStart`. Ruft `startAsync`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestStart(String)`.
 ```
 
-- `requestStart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:318–318 kein Aufruf, kein Treffer in plugin.yml/UI/Strings
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.requestStart(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestStart(String)`.
+
+- Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

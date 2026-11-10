@@ -16,4 +16,8 @@ return Z.34 return m;
   Zeile 34: Rückgabe `return m;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.34 return m;**: Zeile 34: Rückgabe `return m;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `view` in `src/main/java/de/aichele/childlauncher/JarProbe.java`

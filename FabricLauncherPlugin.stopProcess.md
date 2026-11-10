@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.stopProcess.Z1994
-  Fortsetzung des Ablaufs ab Zeile 1994.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1994 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1994`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.stopProcess.Z1994**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1994 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1994`.
 
 ```mermaid
 sequenceDiagram
@@ -25,4 +28,4 @@ sequenceDiagram
   Note over Seq: Poll 250 ms, Stop erneut 5000 ms, TERM-Gnade 10 s, Z.2011
 ```
 
-- `stopProcess` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+- Fährt den [[Glossar#Spielserver|Spielserver]] herunter: erst die Bitte, dann Warten, dann ein hartes Beenden.

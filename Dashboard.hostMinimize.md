@@ -21,15 +21,22 @@ flowchart TD
 
 ```knoten
 Dashboard.parseJsonObject
-  Wertet aus `parseJsonObject`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt. Im [[Glossar#Quelltext|Quelltext]] heißt das `parseJsonObject`.
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Im [[Glossar#Quelltext|Quelltext]] heißt das `readBodyText`.
 Dashboard.requiredString
-  Liest verpflichtend `requiredString`.
+  Liest einen Text, der in der Anfrage dabei sein muss. Im [[Glossar#Quelltext|Quelltext]] heißt das `requiredString`.
 Dashboard.optionalString
-  Liest optional `optionalString`.
+  Liest einen Text, der in der Anfrage fehlen darf. Im [[Glossar#Quelltext|Quelltext]] heißt das `optionalString`.
 Dashboard.hostMinimize.Z576
-  Fortsetzung des Ablaufs ab Zeile 576.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 576 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z576`.
 ```
 
-- `hostMinimize` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.parseJsonObject**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt. Im [[Glossar#Quelltext|Quelltext]] heißt das `parseJsonObject`.
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Im [[Glossar#Quelltext|Quelltext]] heißt das `readBodyText`.
+> - **Dashboard.requiredString**: Liest einen Text, der in der Anfrage dabei sein muss. Im [[Glossar#Quelltext|Quelltext]] heißt das `requiredString`.
+> - **Dashboard.optionalString**: Liest einen Text, der in der Anfrage fehlen darf. Im [[Glossar#Quelltext|Quelltext]] heißt das `optionalString`.
+> - **Dashboard.hostMinimize.Z576**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 576 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z576`.
+
+- Nimmt von der [[Glossar#Bedienseite|Bedienseite]] den Auftrag an, den [[Glossar#Host|Host]] zu verkleinern oder das zurückzunehmen.

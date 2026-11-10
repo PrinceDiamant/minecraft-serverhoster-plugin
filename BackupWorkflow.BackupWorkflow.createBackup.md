@@ -22,7 +22,13 @@ if Z.68 !accepted
 return Z.68 return;
   Zeile 68: Rückgabe `return;`.
 BackupWorkflow.BackupWorkflow.createBackup.Z72
-  Fortsetzung des Ablaufs ab Zeile 72.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 72 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 72.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.68 !accepted**: Zeile 68: prüft `!accepted`.
+> - **return Z.68 return;**: Zeile 68: Rückgabe `return;`.
+> - **BackupWorkflow.BackupWorkflow.createBackup.Z72**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 72 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 72.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] legt an die [[Glossar#Sicherungskopie|Sicherungskopie]].
 - `createBackup` in `ui/src/components/BackupWorkflow.tsx`

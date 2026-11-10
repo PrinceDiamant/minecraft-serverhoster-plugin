@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.restartSingle.Z1965
-  Fortsetzung des Ablaufs ab Zeile 1965.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1965 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1965`.
 ```
 
-- `restartSingle` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.restartSingle.Z1965**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1965 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1965`.
+
+- Schaltet genau diesen einen [[Glossar#Spielserver|Spielserver]] aus und wieder an.

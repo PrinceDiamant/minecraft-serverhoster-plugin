@@ -52,7 +52,7 @@ if Z.2514 (a.length == 2 && a(0).equalsIgnoreCase('crashes'…
 try Z.2515
   Zeile 2515: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.crashFiles
-  Betrifft Crash-Reports `crashFiles`. Ruft `list`, `profile`, `directory`.
+  Listet die [[Glossar#Absturzbericht|Absturzberichte]]. Betrifft Crash-Reports `crashFiles`. Ruft `list`, `profile`, `directory`.
 return Z.2515 return crashFiles(focus).stream().filte…
   Zeile 2515: Rückgabe `return crashFiles(focus).stream().filte…`.
 catch Z.2516 (IOException e)
@@ -61,4 +61,19 @@ return Z.2516 return List.of();
   Zeile 2516: Rückgabe `return List.of();`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onTabComplete`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2511 (a.length == 2 && (a(0).equalsIgnoreCase('config'…**: Zeile 2511: prüft `(a.length == 2 && (a(0).equalsIgnoreCase('config'…`.
+> - **return Z.2511 return List.of('set');**: Zeile 2511: Rückgabe `return List.of('set');`.
+> - **if Z.2512 (a.length == 1)**: Zeile 2512: prüft `(a.length == 1)`.
+> - **return Z.2512 return List.of('start', 'stop', 'restart', 'statu…**: Zeile 2512: Rückgabe `return List.of('start', 'stop', 'restart', 'statu…`.
+> - **if Z.2513 (a.length == 2 && a(0).equalsIgnoreCase('host'))**: Zeile 2513: prüft `(a.length == 2 && a(0).equalsIgnoreCase('host'))`.
+> - **return Z.2513 return List.of('preview', 'apply', 'rollback').st…**: Zeile 2513: Rückgabe `return List.of('preview', 'apply', 'rollback').st…`.
+> - **if Z.2514 (a.length == 2 && a(0).equalsIgnoreCase('crashes'…**: Zeile 2514: prüft `(a.length == 2 && a(0).equalsIgnoreCase('crashes'…`.
+> - **try Z.2515**: Zeile 2515: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.crashFiles**: Listet die [[Glossar#Absturzbericht|Absturzberichte]]. Betrifft Crash-Reports `crashFiles`. Ruft `list`, `profile`, `directory`.
+> - **return Z.2515 return crashFiles(focus).stream().filte…**: Zeile 2515: Rückgabe `return crashFiles(focus).stream().filte…`.
+> - **catch Z.2516 (IOException e)**: Zeile 2516: fängt (IOException e).
+> - **return Z.2516 return List.of();**: Zeile 2516: Rückgabe `return List.of();`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.onTabComplete`.

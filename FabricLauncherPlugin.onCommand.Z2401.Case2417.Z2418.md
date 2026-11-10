@@ -27,11 +27,20 @@ try Z.2419
 for Z.2419 (var e : backupFiles(focus))
   Zeile 2419: Schleife `(var e : backupFiles(focus))`.
 FabricLauncherPlugin.backupFiles
-  Sichert `backupFiles`. Ruft `remoteBackupSelected`, `backupCredentials`, `list`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Dateien. Sichert `backupFiles`. Ruft `remoteBackupSelected`, `backupCredentials`, `list`.
 catch Z.2420 (IOException e)
   Zeile 2420: fängt (IOException e).
 FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421
-  Fortsetzung des Ablaufs ab Zeile 2421.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2421 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2421.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2417`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2418 (a.length )= 2 && a(1).equalsIgnoreCase('list'))**: Zeile 2418: prüft `(a.length )= 2 && a(1).equalsIgnoreCase('list'))`.
+> - **try Z.2419**: Zeile 2419: Versuch. Der Fehlerpfad geht in catch.
+> - **for Z.2419 (var e : backupFiles(focus))**: Zeile 2419: Schleife `(var e : backupFiles(focus))`.
+> - **FabricLauncherPlugin.backupFiles**: Das [[Glossar#Plugin|Plugin]] sichert die Dateien. Sichert `backupFiles`. Ruft `remoteBackupSelected`, `backupCredentials`, `list`.
+> - **catch Z.2420 (IOException e)**: Zeile 2420: fängt (IOException e).
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2421 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2421.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2418 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2417`.

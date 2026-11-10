@@ -50,4 +50,16 @@ Schritt Z.81 Process p = new ProcessBuilder(bin.toString(), Lo…
   Zeile 81: baut einen Prozess. `Process p = new ProcessBuilder(bin.toString(), Lo…`
 ```
 
-- Fortsetzung von `ProcessProbe.jcmd(long,String,long)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.75 (!JCMD.contains(command))**: Zeile 75: prüft `(!JCMD.contains(command))`.
+> - **throw Z.75 throw new IllegalArgumentException('jcmd');**: Zeile 75: Abbruch `throw new IllegalArgumentException('jcmd');`.
+> - **if Z.76 (pid (= 0)**: Zeile 76: prüft `(pid (= 0)`.
+> - **throw Z.76 throw new IllegalStateException('Child läuft nich…**: Zeile 76: Abbruch `throw new IllegalStateException('Child läuft nich…`.
+> - **if Z.77 (timeoutSeconds (= 0)**: Zeile 77: prüft `(timeoutSeconds (= 0)`.
+> - **throw Z.77 throw new IllegalArgumentException('timeoutSecond…**: Zeile 77: Abbruch `throw new IllegalArgumentException('timeoutSecond…`.
+> - **if Z.80 (!Files.isExecutable(bin))**: Zeile 80: prüft `(!Files.isExecutable(bin))`.
+> - **throw Z.80 throw new IOException('jcmd fehlt: ' + bin);**: Zeile 80: Abbruch `throw new IOException('jcmd fehlt: ' + bin);`.
+> - **Schritt Z.81 Process p = new ProcessBuilder(bin.toString(), Lo…**: Zeile 81: baut einen Prozess. `Process p = new ProcessBuilder(bin.toString(), Lo…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `ProcessProbe.jcmd(long,String,long)`.

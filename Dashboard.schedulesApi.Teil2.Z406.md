@@ -30,21 +30,33 @@ flowchart TD
 if Z.406 (method.equals('PUT'))
   Zeile 406: prüft `(method.equals('PUT'))`.
 Dashboard.parseSchedule
-  Wertet aus `parseSchedule`. Ruft `load`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Zeitplan|Zeitplan]]. Wertet aus `parseSchedule`. Ruft `load`.
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
 if Z.408 (!replacement.id().equals(id))
   Zeile 408: prüft `(!replacement.id().equals(id))`.
 throw Z.408 throw new IllegalArgumentException('Schedule-ID s…
   Zeile 408: Abbruch `throw new IllegalArgumentException('Schedule-ID s…`.
 Dashboard.schedulesApi.Teil2.Z406.Z409
-  Fortsetzung des Ablaufs ab Zeile 409.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 409 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 409.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 ScheduleDef.toJson
-  `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Antwort. `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
 return Z.417 return;
   Zeile 417: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `Dashboard.schedulesApi.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.406 (method.equals('PUT'))**: Zeile 406: prüft `(method.equals('PUT'))`.
+> - **Dashboard.parseSchedule**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Zeitplan|Zeitplan]]. Wertet aus `parseSchedule`. Ruft `load`.
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
+> - **if Z.408 (!replacement.id().equals(id))**: Zeile 408: prüft `(!replacement.id().equals(id))`.
+> - **throw Z.408 throw new IllegalArgumentException('Schedule-ID s…**: Zeile 408: Abbruch `throw new IllegalArgumentException('Schedule-ID s…`.
+> - **Dashboard.schedulesApi.Teil2.Z406.Z409**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 409 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 409.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **ScheduleDef.toJson**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Antwort. `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+> - **return Z.417 return;**: Zeile 417: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 406 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.schedulesApi.Teil2`.

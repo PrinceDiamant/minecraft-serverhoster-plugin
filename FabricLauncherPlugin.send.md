@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 if Z.1974 (w == null // !slot.running())
-  Zeile 1974: prüft `(w == null // !slot.running())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1974.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Im [[Glossar#Quelltext|Quelltext]] heißt das `running`.
 return Z.1974 return false;
-  Zeile 1974: Rückgabe `return false;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1974.
 FabricLauncherPlugin.send.Z1975
-  Fortsetzung des Ablaufs ab Zeile 1975.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1975 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1975`.
 ```
 
-- `send` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1974 (w == null // !slot.running())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1974.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Im [[Glossar#Quelltext|Quelltext]] heißt das `running`.
+> - **return Z.1974 return false;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1974.
+> - **FabricLauncherPlugin.send.Z1975**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1975 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1975`.
+
+- Schickt Text an den laufenden [[Glossar#Spielserver|Spielserver]].

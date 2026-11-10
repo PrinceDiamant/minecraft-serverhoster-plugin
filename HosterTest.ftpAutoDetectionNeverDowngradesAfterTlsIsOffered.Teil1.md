@@ -21,7 +21,11 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.unsupportedAuthTls
-  `unsupportedAuthTls` in `RemoteBackupBridge.java`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unsupportedAuthTls` in `RemoteBackupBridge.java`.
 ```
 
-- Fortsetzung von `HosterTest.ftpAutoDetectionNeverDowngradesAfterTlsIsOffered`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.unsupportedAuthTls**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unsupportedAuthTls` in `RemoteBackupBridge.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.ftpAutoDetectionNeverDowngradesAfterTlsIsOffered`.

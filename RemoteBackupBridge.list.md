@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 BackupBridge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 RemoteBackupBridge.list.Z70
-  Fortsetzung des Ablaufs ab Zeile 70.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 70 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 70.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.safeId**: Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
+> - **RemoteBackupBridge.list.Z70**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 70 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 70.
+
+- Die Sicherung über das Netz zeigt das.
 - `list` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

@@ -17,12 +17,18 @@ flowchart TD
 
 ```knoten
 HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `bindAddressInheritsHostUnlessExplicitlyOverridden` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

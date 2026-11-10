@@ -22,11 +22,18 @@ flowchart TD
 if Z.226 (!safeWorldName(name))
   Zeile 226: prüft `(!safeWorldName(name))`.
 HostFirstSetup.safeWorldName
-  Prüft die Pfadgrenze `safeWorldName`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die [[Glossar#Spielwelt|Spielwelt]] den Namen. Prüft die Pfadgrenze `safeWorldName`.
 return Z.226 return;
   Zeile 226: Rückgabe `return;`.
 if Z.228 (candidate.getParent() != null && candidate.getPa…
   Zeile 228: prüft `(candidate.getParent() != null && candidate.getPa…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.226 (!safeWorldName(name))**: Zeile 226: prüft `(!safeWorldName(name))`.
+> - **HostFirstSetup.safeWorldName**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die [[Glossar#Spielwelt|Spielwelt]] den Namen. Prüft die Pfadgrenze `safeWorldName`.
+> - **return Z.226 return;**: Zeile 226: Rückgabe `return;`.
+> - **if Z.228 (candidate.getParent() != null && candidate.getPa…**: Zeile 228: prüft `(candidate.getParent() != null && candidate.getPa…`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] fügt hinzu hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `addIfDirectory` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

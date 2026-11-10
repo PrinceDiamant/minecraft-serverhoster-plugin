@@ -16,4 +16,8 @@ return Z.47 return p != null && p.isAlive();
   Zeile 47: Rückgabe `return p != null && p.isAlive();`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.47 return p != null && p.isAlive();**: Zeile 47: Rückgabe `return p != null && p.isAlive();`.
+
+- Dieser Teil prüft, ob läuft, das.
 - `running` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

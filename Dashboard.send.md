@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 Dashboard.sendBytes
-  Sendet `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendBytes`.
 ```
 
-- `send` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.sendBytes**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendBytes`.
+
+- Schickt die Antwort an den Browser.

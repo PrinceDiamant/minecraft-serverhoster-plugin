@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.refreshHostMinimize.Z2337
-  Fortsetzung des Ablaufs ab Zeile 2337.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2337 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2337.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.refreshHostMinimize.Z2337**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2337 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2337.
+
+- Das [[Glossar#Plugin|Plugin]] lädt neu den [[Glossar#Host|Host]] das Verkleinern.
 - `refreshHostMinimize` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

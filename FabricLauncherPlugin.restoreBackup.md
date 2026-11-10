@@ -26,17 +26,25 @@ flowchart TD
 
 ```knoten
 if Z.1444 (slot(id).running())
-  Zeile 1444: prüft `(slot(id).running())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1444.
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `slot`.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Im [[Glossar#Quelltext|Quelltext]] heißt das `running`.
 throw Z.1444 throw new IllegalStateException('stop the server …
-  Zeile 1444: Abbruch `throw new IllegalStateException('stop the server …`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1444.
 FabricLauncherPlugin.restoreBackup.Z1446
-  Fortsetzung des Ablaufs ab Zeile 1446.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1446 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1446`.
 return Z.1461 return n;
-  Zeile 1461: Rückgabe `return n;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1461.
 ```
 
-- `restoreBackup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1444 (slot(id).running())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1444.
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `slot`.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Im [[Glossar#Quelltext|Quelltext]] heißt das `running`.
+> - **throw Z.1444 throw new IllegalStateException('stop the server …**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1444.
+> - **FabricLauncherPlugin.restoreBackup.Z1446**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1446 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1446`.
+> - **return Z.1461 return n;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1461.
+
+- Das [[Glossar#Plugin|Plugin]] stellt wieder her die [[Glossar#Sicherungskopie|Sicherungskopie]].

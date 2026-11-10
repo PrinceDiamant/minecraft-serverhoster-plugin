@@ -21,11 +21,18 @@ flowchart TD
 try Z.61
   Zeile 61: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridge.connect
-  Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
 RemoteBackupBridge.enterBaseDirectory
-  Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
 return Z.63 return session.encrypted();
   Zeile 63: Rückgabe `return session.encrypted();`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.61**: Zeile 61: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridge.connect**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
+> - **RemoteBackupBridge.enterBaseDirectory**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
+> - **return Z.63 return session.encrypted();**: Zeile 63: Rückgabe `return session.encrypted();`.
+
+- Die Sicherung über das Netz prüft das.
 - `test` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

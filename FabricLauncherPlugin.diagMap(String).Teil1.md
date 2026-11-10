@@ -17,13 +17,20 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
 ChildSlot.pid
-  Liefert die Prozessnummer `pid`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Prozessnummer `pid`.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
 FabricLauncherPlugin.dashboardTls
-  `dashboardTls` in `FabricLauncherPlugin.java`. Ruft `tls`.
+  Liest, ob die [[Glossar#Bedienseite|Bedienseite]] verschlüsselt erreichbar sein soll. `dashboardTls` in `FabricLauncherPlugin.java`. Ruft `tls`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.diagMap(String)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+> - **ChildSlot.pid**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Prozessnummer `pid`.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
+> - **FabricLauncherPlugin.dashboardTls**: Liest, ob die [[Glossar#Bedienseite|Bedienseite]] verschlüsselt erreichbar sein soll. `dashboardTls` in `FabricLauncherPlugin.java`. Ruft `tls`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.diagMap(String)`.

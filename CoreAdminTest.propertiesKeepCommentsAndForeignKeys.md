@@ -19,10 +19,16 @@ flowchart TD
 Schritt Z.228 Files.writeString(f, ' head/nmotd=old/nview-dista…
   Zeile 228: schreibt Text in eine Datei. `Files.writeString(f, ' head/nmotd=old/nview-dista…`
 PropertiesFile.update
-  Aktualisiert `update`.
+  Dieser Teil ändert das. Aktualisiert `update`.
 Schritt Z.230 String text = Files.readString(f);
   Zeile 230: liest Text aus einer Datei. `String text = Files.readString(f);`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.228 Files.writeString(f, ' head/nmotd=old/nview-dista…**: Zeile 228: schreibt Text in eine Datei. `Files.writeString(f, ' head/nmotd=old/nview-dista…`
+> - **PropertiesFile.update**: Dieser Teil ändert das. Aktualisiert `update`.
+> - **Schritt Z.230 String text = Files.readString(f);**: Zeile 230: liest Text aus einer Datei. `String text = Files.readString(f);`
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `propertiesKeepCommentsAndForeignKeys` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

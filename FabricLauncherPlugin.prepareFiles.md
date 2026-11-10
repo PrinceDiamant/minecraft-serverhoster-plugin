@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.prepareFiles.Z2531
-  Fortsetzung des Ablaufs ab Zeile 2531.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2531 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2531`.
 ```
 
-- `prepareFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.prepareFiles.Z2531**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2531 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2531`.
+
+- Das [[Glossar#Plugin|Plugin]] bereitet vor die Dateien.

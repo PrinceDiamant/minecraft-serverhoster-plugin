@@ -19,14 +19,20 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.sampleHostMemory.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 FabricLauncherPlugin.sampleHostMemory.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 FabricLauncherPlugin.sampleHostMemory.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
 FabricLauncherPlugin.sampleHostMemory.Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil4`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.sampleHostMemory.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **FabricLauncherPlugin.sampleHostMemory.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+> - **FabricLauncherPlugin.sampleHostMemory.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
+> - **FabricLauncherPlugin.sampleHostMemory.Teil4**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil4`.
 
 ```mermaid
 sequenceDiagram
@@ -37,5 +43,5 @@ sequenceDiagram
   Mem->>Mem: warningDelaySeconds Standard 15 s, mindestens 5, Z.1166
 ```
 
-- Ein Sample auf `ServerhosterPlugin-Memory`.
-- Befund: Altlast, sicher. Z.1030–1031 liest memoryProtection.autoShutdown als Fallback
+- Misst einmal den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] des [[Glossar#Host|Host]] und entscheidet, ob der [[Glossar#Spielserver|Spielserver]] wegen Mangels aus muss.
+- Auffällig: ein alter Weg läuft noch mit. Das nennt man [[Glossar#Altlast|Altlast]].

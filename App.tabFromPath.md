@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.97 return Object.entries(routes).find(((, route)) =)…
-  Zeile 97: Rückgabe `return Object.entries(routes).find(((, route)) =)…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 97.
 ```
 
-- `tabFromPath` in `ui/src/App.tsx`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.97 return Object.entries(routes).find(((, route)) =)…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 97.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad.

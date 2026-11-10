@@ -15,7 +15,12 @@ flowchart TD
 try Z.104
   Zeile 104: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1.Z104.Z107
-  Fortsetzung des Ablaufs ab Zeile 107.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 107 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 107.
 ```
 
-- Fortsetzung von `RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.104**: Zeile 104: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1.Z104.Z107**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 107 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 107.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 104 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1`.

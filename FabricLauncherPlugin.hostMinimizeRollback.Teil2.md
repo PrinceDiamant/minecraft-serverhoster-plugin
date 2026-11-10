@@ -23,19 +23,29 @@ flowchart TD
 
 ```knoten
 HostMinimize.restore
-  Stellt wieder her `restore`. Ruft `assertEditable`.
+  Das Verkleinern des [[Glossar#Host|Host]] stellt wieder her das. Stellt wieder her `restore`. Ruft `assertEditable`.
 FabricLauncherPlugin.getWorldRoot
-  Liefert `getWorldRoot`.
+  Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
 FabricLauncherPlugin.hostProtectedPaths
-  Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
+  Die Ordner des [[Glossar#Host|Host]], die nicht gelöscht oder überschrieben werden dürfen. Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
 FabricLauncherPlugin.restoreHostHeap
-  Stellt wieder her `restoreHostHeap`. Ruft `hotspot`.
+  Das [[Glossar#Plugin|Plugin]] stellt wieder her den [[Glossar#Host|Host]] den Programmspeicher. Stellt wieder her `restoreHostHeap`. Ruft `hotspot`.
 FabricLauncherPlugin.hostMinimizeStateFile
-  Betrifft den Host `hostMinimizeStateFile`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern den Zustand die Datei. Betrifft den [[Glossar#Host|Host]] `hostMinimizeStateFile`.
 FabricLauncherPlugin.hostMinimizeView
-  Betrifft den Host `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern die Ansicht. Betrifft den [[Glossar#Host|Host]] `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
 return Z.2333 return view;
   Zeile 2333: Rückgabe `return view;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.hostMinimizeRollback`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.restore**: Das Verkleinern des [[Glossar#Host|Host]] stellt wieder her das. Stellt wieder her `restore`. Ruft `assertEditable`.
+> - **FabricLauncherPlugin.getWorldRoot**: Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
+> - **FabricLauncherPlugin.hostProtectedPaths**: Die Ordner des [[Glossar#Host|Host]], die nicht gelöscht oder überschrieben werden dürfen. Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
+> - **FabricLauncherPlugin.restoreHostHeap**: Das [[Glossar#Plugin|Plugin]] stellt wieder her den [[Glossar#Host|Host]] den Programmspeicher. Stellt wieder her `restoreHostHeap`. Ruft `hotspot`.
+> - **FabricLauncherPlugin.hostMinimizeStateFile**: Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern den Zustand die Datei. Betrifft den [[Glossar#Host|Host]] `hostMinimizeStateFile`.
+> - **FabricLauncherPlugin.hostMinimizeView**: Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern die Ansicht. Betrifft den [[Glossar#Host|Host]] `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
+> - **return Z.2333 return view;**: Zeile 2333: Rückgabe `return view;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.hostMinimizeRollback`.

@@ -18,4 +18,9 @@ try Z.183
   Zeile 183: Versuch. Der Fehlerpfad geht in catch.
 ```
 
-- Fortsetzung von `HosterTest.dashboardKeepsHosterDataAndBundledVoxelDashAttribution`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.178**: Zeile 178: Versuch. Der Fehlerpfad geht in catch.
+> - **try Z.183**: Zeile 183: Versuch. Der Fehlerpfad geht in catch.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.dashboardKeepsHosterDataAndBundledVoxelDashAttribution`.

@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 SettingsWorkflow.SettingsWorkflow.update
-  Aktualisiert `update`.
+  Die [[Glossar#Bedienseite|Bedienseite]] ändert das. Aktualisiert `update`.
 BackupSettings.BackupSettings
-  Sichert `BackupSettings`.
+  Dieser Teil sichert die [[Glossar#Einstellungen|Einstellungen]]. Sichert `BackupSettings`.
 ```
 
-- Fortsetzung von `SettingsWorkflow.SettingsWorkflow.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SettingsWorkflow.SettingsWorkflow.update**: Die [[Glossar#Bedienseite|Bedienseite]] ändert das. Aktualisiert `update`.
+> - **BackupSettings.BackupSettings**: Dieser Teil sichert die [[Glossar#Einstellungen|Einstellungen]]. Sichert `BackupSettings`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 118 aufgerufen werden.
+- Fortsetzung von `SettingsWorkflow.SettingsWorkflow.Teil2`.

@@ -27,23 +27,36 @@ flowchart TD
 case Z.2449 'jar'
   Zeile 2449: Zweig `'jar'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2449
-  Rumpf dieses switch-Zweigs ab Zeile 2449.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2449. Rumpf dieses switch-Zweigs ab Zeile 2449.
 case Z.2453 'crashes'
   Zeile 2453: Zweig `'crashes'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2453
-  Rumpf dieses switch-Zweigs ab Zeile 2453.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2453. Rumpf dieses switch-Zweigs ab Zeile 2453.
 case Z.2469 'cmd'
   Zeile 2469: Zweig `'cmd'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2469
-  Rumpf dieses switch-Zweigs ab Zeile 2469.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2469. Rumpf dieses switch-Zweigs ab Zeile 2469.
 case Z.2474 'config'
   Zeile 2474: Zweig `'config'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2474
-  Rumpf dieses switch-Zweigs ab Zeile 2474.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2474. Rumpf dieses switch-Zweigs ab Zeile 2474.
 case Z.2481 'prop'
   Zeile 2481: Zweig `'prop'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2481
-  Rumpf dieses switch-Zweigs ab Zeile 2481.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2481. Rumpf dieses switch-Zweigs ab Zeile 2481.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **case Z.2449 'jar'**: Zeile 2449: Zweig `'jar'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2449**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2449. Rumpf dieses switch-Zweigs ab Zeile 2449.
+> - **case Z.2453 'crashes'**: Zeile 2453: Zweig `'crashes'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2453**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2453. Rumpf dieses switch-Zweigs ab Zeile 2453.
+> - **case Z.2469 'cmd'**: Zeile 2469: Zweig `'cmd'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2469**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2469. Rumpf dieses switch-Zweigs ab Zeile 2469.
+> - **case Z.2474 'config'**: Zeile 2474: Zweig `'config'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2474**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2474. Rumpf dieses switch-Zweigs ab Zeile 2474.
+> - **case Z.2481 'prop'**: Zeile 2481: Zweig `'prop'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2481**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2481. Rumpf dieses switch-Zweigs ab Zeile 2481.
+
+- Weitere Wege der Entscheidung in [[Glossar#Zeile|Zeile]] 2449.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

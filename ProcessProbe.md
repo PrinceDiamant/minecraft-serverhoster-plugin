@@ -20,19 +20,28 @@ flowchart TD
 
 ```knoten
 ProcessProbe.ProcessProbe
-  `ProcessProbe` in `ProcessProbe.java`.
+  Dieser Teil kümmert sich um die Messung. Im [[Glossar#Quelltext|Quelltext]] heißt das `ProcessProbe`.
 ProcessProbe.snapshot
-  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `snapshot`.
 ProcessProbe.disk
-  Liest die Platte `disk`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `disk`.
 ProcessProbe.jcmd(long,String)
-  `jcmd` in `ProcessProbe.java`. Ruft `jcmd`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `jcmd(long,String)`.
 ProcessProbe.jcmd(long,String,long)
-  `jcmd` in `ProcessProbe.java`. Ruft `abbreviate`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `jcmd(long,String,long)`.
 ProcessProbe.kb
-  `kb` in `ProcessProbe.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `kb`.
 ProcessProbe.abbreviate
-  `abbreviate` in `ProcessProbe.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `abbreviate`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ProcessProbe.ProcessProbe**: Dieser Teil kümmert sich um die Messung. Im [[Glossar#Quelltext|Quelltext]] heißt das `ProcessProbe`.
+> - **ProcessProbe.snapshot**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `snapshot`.
+> - **ProcessProbe.disk**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `disk`.
+> - **ProcessProbe.jcmd(long,String)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `jcmd(long,String)`.
+> - **ProcessProbe.jcmd(long,String,long)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `jcmd(long,String,long)`.
+> - **ProcessProbe.kb**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `kb`.
+> - **ProcessProbe.abbreviate**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `abbreviate`.
 
+- Fragt das laufende Programm über ein Hilfswerkzeug des Java nach seinem Zustand. Die Frage wartet höchstens zwanzig Sekunden.

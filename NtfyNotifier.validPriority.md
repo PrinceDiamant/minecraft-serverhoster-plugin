@@ -16,4 +16,8 @@ return Z.66 return switch (value) ( case '1', '2', '3', '4', …
   Zeile 66: Rückgabe `return switch (value) ( case '1', '2', '3', '4', …`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.66 return switch (value) ( case '1', '2', '3', '4', …**: Zeile 66: Rückgabe `return switch (value) ( case '1', '2', '3', '4', …`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `validPriority` in `src/main/java/de/aichele/childlauncher/NtfyNotifier.java`

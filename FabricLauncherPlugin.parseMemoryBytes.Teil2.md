@@ -14,4 +14,8 @@ keine Verzweigung
   Schritt. `keine Verzweigung`
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.parseMemoryBytes`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **keine Verzweigung**: Schritt. `keine Verzweigung`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.parseMemoryBytes`.

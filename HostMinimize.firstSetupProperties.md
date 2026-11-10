@@ -25,4 +25,10 @@ return Z.52 return values;
   Zeile 52: Rückgabe `return values;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.45 (!LOBBY_NAME.matcher(worldName).matches())**: Zeile 45: prüft `(!LOBBY_NAME.matcher(worldName).matches())`.
+> - **throw Z.45 throw new IllegalArgumentException('unsafe lobby …**: Zeile 45: Abbruch `throw new IllegalArgumentException('unsafe lobby …`.
+> - **return Z.52 return values;**: Zeile 52: Rückgabe `return values;`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die [[Glossar#Einrichtung|Einrichtung]] die Eigenschaften.
 - `firstSetupProperties` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

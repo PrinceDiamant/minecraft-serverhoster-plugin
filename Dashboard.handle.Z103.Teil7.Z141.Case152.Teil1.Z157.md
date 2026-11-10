@@ -31,19 +31,31 @@ switch Z.157 (a)
 case Z.158 'start'
   Zeile 158: Zweig `'start'`.
 FabricLauncherPlugin.requestStart(String)
-  Fordert an `requestStart`. Ruft `startAsync`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Fordert an `requestStart`. Ruft `startAsync`.
 case Z.159 'stop'
   Zeile 159: Zweig `'stop'`.
 FabricLauncherPlugin.requestStop(String)
-  Fordert an `requestStop`. Ruft `slot`, `stopBlocking`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen. Fordert an `requestStop`. Ruft `slot`, `stopBlocking`.
 case Z.160 'restart'
   Zeile 160: Zweig `'restart'`.
 FabricLauncherPlugin.requestRestart(String)
-  Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
 case Z.161 default
   Zeile 161: Zweig `default`.
 Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1.Z157.Case161
-  Rumpf dieses switch-Zweigs ab Zeile 161.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 161. Rumpf dieses switch-Zweigs ab Zeile 161.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **switch Z.157 (a)**: Zeile 157: Verzweigung nach `(a)`.
+> - **case Z.158 'start'**: Zeile 158: Zweig `'start'`.
+> - **FabricLauncherPlugin.requestStart(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Fordert an `requestStart`. Ruft `startAsync`.
+> - **case Z.159 'stop'**: Zeile 159: Zweig `'stop'`.
+> - **FabricLauncherPlugin.requestStop(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen. Fordert an `requestStop`. Ruft `slot`, `stopBlocking`.
+> - **case Z.160 'restart'**: Zeile 160: Zweig `'restart'`.
+> - **FabricLauncherPlugin.requestRestart(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+> - **case Z.161 default**: Zeile 161: Zweig `default`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1.Z157.Case161**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 161. Rumpf dieses switch-Zweigs ab Zeile 161.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 157 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1`.

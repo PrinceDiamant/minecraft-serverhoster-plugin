@@ -24,17 +24,26 @@ flowchart TD
 
 ```knoten
 BackupBridge.directory
-  `directory` in `BackupBridge.java`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `BackupBridge.java`.
 if Z.45 (!Files.isDirectory(dir))
   Zeile 45: prüft `(!Files.isDirectory(dir))`.
 return Z.45 return List.of();
   Zeile 45: Rückgabe `return List.of();`.
 BackupBridge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 BackupBridge.list.Z48
-  Fortsetzung des Ablaufs ab Zeile 48.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 48 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 48.
 return Z.56 return out;
   Zeile 56: Rückgabe `return out;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.directory**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `BackupBridge.java`.
+> - **if Z.45 (!Files.isDirectory(dir))**: Zeile 45: prüft `(!Files.isDirectory(dir))`.
+> - **return Z.45 return List.of();**: Zeile 45: Rückgabe `return List.of();`.
+> - **BackupBridge.safeId**: Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
+> - **BackupBridge.list.Z48**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 48 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 48.
+> - **return Z.56 return out;**: Zeile 56: Rückgabe `return out;`.
+
+- Die Sicherung auf diesem Rechner zeigt das.
 - `list` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

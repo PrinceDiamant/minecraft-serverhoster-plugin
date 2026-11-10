@@ -11,27 +11,36 @@ flowchart TD
   n5["Dashboard.cookie"]:::internal-link
   n6["Dashboard.stop"]:::internal-link
   n7["Dashboard.passwordFile"]:::internal-link
-  n2 -->|"Z.45"| n7
-  n2 -->|"Z.59"| n4
+  n2 -->|"Zeile 45"| n7
+  n2 -->|"Zeile 59"| n4
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Dashboard.Dashboard
-  `Dashboard` in `Dashboard.java`.
+  Richtet die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] ein, wenn sie erzeugt wird.
 Dashboard.start
-  Startet `start`. Ruft `read`, `passwordFile`, `setupRequired`.
+  Öffnet die Tür der [[Glossar#Web-Schnittstelle|Web-Schnittstelle]].
 Dashboard.tls
-  `tls` in `Dashboard.java`.
+  Liest, ob die Verbindung zur [[Glossar#Bedienseite|Bedienseite]] verschlüsselt sein soll.
 Dashboard.httpsSpec
-  `httpsSpec` in `Dashboard.java`.
+  Liest, ob und wie die [[Glossar#Verschlüsselung|Verschlüsselung]] eingestellt ist.
 Dashboard.cookie
-  `cookie` in `Dashboard.java`.
+  Liest oder setzt die [[Glossar#Anmeldung|Anmeldung]], die der Browser mitschickt.
 Dashboard.stop
-  Stoppt `stop`.
+  Schließt die Tür der [[Glossar#Web-Schnittstelle|Web-Schnittstelle]].
 Dashboard.passwordFile
-  `passwordFile` in `Dashboard.java`.
+  Liest oder schreibt die Datei mit dem Passwort der [[Glossar#Bedienseite|Bedienseite]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **Dashboard.Dashboard**: Richtet die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] ein, wenn sie erzeugt wird.
+> - **Dashboard.start**: Öffnet die Tür der [[Glossar#Web-Schnittstelle|Web-Schnittstelle]].
+> - **Dashboard.tls**: Liest, ob die Verbindung zur [[Glossar#Bedienseite|Bedienseite]] verschlüsselt sein soll.
+> - **Dashboard.httpsSpec**: Liest, ob und wie die [[Glossar#Verschlüsselung|Verschlüsselung]] eingestellt ist.
+> - **Dashboard.cookie**: Liest oder setzt die [[Glossar#Anmeldung|Anmeldung]], die der Browser mitschickt.
+> - **Dashboard.stop**: Schließt die Tür der [[Glossar#Web-Schnittstelle|Web-Schnittstelle]].
+> - **Dashboard.passwordFile**: Liest oder schreibt die Datei mit dem Passwort der [[Glossar#Bedienseite|Bedienseite]].
 
+- Öffnet diese Tür: Türnummer, [[Glossar#Verschlüsselung|Verschlüsselung]] und ein eigener [[Glossar#Thread|Thread]] für die Anfragen.

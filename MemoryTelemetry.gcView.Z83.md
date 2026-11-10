@@ -14,4 +14,8 @@ for Z.83 (GcDiagnostics.Collector collector : co…
   Zeile 83: Schleife `(GcDiagnostics.Collector collector : co…`.
 ```
 
-- Fortsetzung von `MemoryTelemetry.gcView`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.83 (GcDiagnostics.Collector collector : co…**: Zeile 83: Schleife `(GcDiagnostics.Collector collector : co…`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 83 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `MemoryTelemetry.gcView`.

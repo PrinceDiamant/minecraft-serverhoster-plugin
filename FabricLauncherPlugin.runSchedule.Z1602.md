@@ -31,17 +31,27 @@ flowchart TD
 try Z.1602
   Zeile 1602: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.runSchedule.Z1602.Z1603
-  Fortsetzung des Ablaufs ab Zeile 1603.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1603 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1603.
 FabricLauncherPlugin.noteTask
-  Merkt `noteTask`.
+  Schreibt auf, dass eine [[Glossar#Aufgabe|Aufgabe]] gelaufen ist. Merkt `noteTask`.
 catch Z.1616 (InterruptedException e)
   Zeile 1616: fängt (InterruptedException e).
 catch Z.1620 (Exception e)
   Zeile 1620: fängt (Exception e).
 FabricLauncherPlugin.notifyNtfy
-  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+  Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
 finally Z.1602
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.runSchedule`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1602**: Zeile 1602: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.runSchedule.Z1602.Z1603**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1603 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1603.
+> - **FabricLauncherPlugin.noteTask**: Schreibt auf, dass eine [[Glossar#Aufgabe|Aufgabe]] gelaufen ist. Merkt `noteTask`.
+> - **catch Z.1616 (InterruptedException e)**: Zeile 1616: fängt (InterruptedException e).
+> - **catch Z.1620 (Exception e)**: Zeile 1620: fängt (Exception e).
+> - **FabricLauncherPlugin.notifyNtfy**: Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+> - **finally Z.1602**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1602 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.runSchedule`.

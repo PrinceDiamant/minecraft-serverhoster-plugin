@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.settingsView
-  `settingsView` in `FabricLauncherPlugin.java`. Ruft `from`, `view`.
+  Stellt die [[Glossar#Einstellungen|Einstellungen]] so zusammen, wie die [[Glossar#Bedienseite|Bedienseite]] sie anzeigt. `settingsView` in `FabricLauncherPlugin.java`. Ruft `from`, `view`.
 return Z.793 return Map.of('ok', true, 'settings', p…
   Zeile 793: Rückgabe `return Map.of('ok', true, 'settings', p…`.
 ```
 
-- Fortsetzung von `Dashboard.saveSettings`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.settingsView**: Stellt die [[Glossar#Einstellungen|Einstellungen]] so zusammen, wie die [[Glossar#Bedienseite|Bedienseite]] sie anzeigt. `settingsView` in `FabricLauncherPlugin.java`. Ruft `from`, `view`.
+> - **return Z.793 return Map.of('ok', true, 'settings', p…**: Zeile 793: Rückgabe `return Map.of('ok', true, 'settings', p…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.saveSettings`.

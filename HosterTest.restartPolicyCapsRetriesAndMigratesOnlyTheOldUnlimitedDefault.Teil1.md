@@ -19,11 +19,17 @@ flowchart TD
 
 ```knoten
 RestartPolicy.maxAttempts
-  Begrenzt nach oben `maxAttempts`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt nach oben `maxAttempts`.
 RestartPolicy.mayRetry
-  `mayRetry` in `RestartPolicy.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mayRetry` in `RestartPolicy.java`.
 RestartPolicy.migrateLegacyUnlimited
-  Übernimmt den alten Wert von `migrateLegacyUnlimited`.
+  Dieser Teil übernimmt den alten Wert von den alten Weg. Übernimmt den alten Wert von `migrateLegacyUnlimited`.
 ```
 
-- Fortsetzung von `HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RestartPolicy.maxAttempts**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt nach oben `maxAttempts`.
+> - **RestartPolicy.mayRetry**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mayRetry` in `RestartPolicy.java`.
+> - **RestartPolicy.migrateLegacyUnlimited**: Dieser Teil übernimmt den alten Wert von den alten Weg. Übernimmt den alten Wert von `migrateLegacyUnlimited`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault`.

@@ -21,15 +21,22 @@ flowchart TD
 
 ```knoten
 for Z.694 (String n : List.of('whitelist', 'ops',…
-  Zeile 694: Schleife `(String n : List.of('whitelist', 'ops',…`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 694.
 FabricLauncherPlugin.workDir(String)
-  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+  Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Im [[Glossar#Quelltext|Quelltext]] heißt das `workDir(String)`.
 Dashboard.readPlayerNames
-  Liest `readPlayerNames`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Spieler|Spieler]] die Namen. Im [[Glossar#Quelltext|Quelltext]] heißt das `readPlayerNames`.
 FabricLauncherPlugin.players(String)
-  Liefert die Spieler `players`. Ruft `slot`.
+  Liefert die [[Glossar#Spieler|Spieler]], die gerade online sind. Im [[Glossar#Quelltext|Quelltext]] heißt das `players(String)`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `json`.
 ```
 
-- `players` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **for Z.694 (String n : List.of('whitelist', 'ops',…**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 694.
+> - **FabricLauncherPlugin.workDir(String)**: Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Im [[Glossar#Quelltext|Quelltext]] heißt das `workDir(String)`.
+> - **Dashboard.readPlayerNames**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Spieler|Spieler]] die Namen. Im [[Glossar#Quelltext|Quelltext]] heißt das `readPlayerNames`.
+> - **FabricLauncherPlugin.players(String)**: Liefert die [[Glossar#Spieler|Spieler]], die gerade online sind. Im [[Glossar#Quelltext|Quelltext]] heißt das `players(String)`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `json`.
+
+- Liefert die [[Glossar#Spieler|Spieler]] an die [[Glossar#Bedienseite|Bedienseite]].

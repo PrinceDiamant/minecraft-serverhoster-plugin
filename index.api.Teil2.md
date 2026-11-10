@@ -20,11 +20,18 @@ flowchart TD
 if Z.81 !r.ok
   Zeile 81: prüft `!r.ok`.
 index.toast
-  Zeigt eine Meldung `toast`. Ruft `$`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis. Zeigt eine Meldung `toast`. Ruft `$`.
 throw Z.81 throw new Error(m)
   Zeile 81: Abbruch `throw new Error(m)`.
 return Z.81 return d
   Zeile 81: Rückgabe `return d`.
 ```
 
-- Fortsetzung von `index.api`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.81 !r.ok**: Zeile 81: prüft `!r.ok`.
+> - **index.toast**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis. Zeigt eine Meldung `toast`. Ruft `$`.
+> - **throw Z.81 throw new Error(m)**: Zeile 81: Abbruch `throw new Error(m)`.
+> - **return Z.81 return d**: Zeile 81: Rückgabe `return d`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.api`.

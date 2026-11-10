@@ -17,13 +17,20 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.notifyNtfy
-  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+  Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
 HostMemoryProbe.Snapshot.cgroupUsePercent
-  `cgroupUsePercent` in `HostMemoryProbe.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroupUsePercent` in `HostMemoryProbe.java`.
 Schritt Z.1166 int warningDelay = Math.max(5, getConfig().getInt…
   Zeile 1166: liest die Config. `int warningDelay = Math.max(5, getConfig().getInt…`
 FabricLauncherPlugin.requestChildEmergencyStop.Teil2.Z1171
-  Fortsetzung des Ablaufs ab Zeile 1171.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1171 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1171.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.notifyNtfy**: Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+> - **HostMemoryProbe.Snapshot.cgroupUsePercent**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroupUsePercent` in `HostMemoryProbe.java`.
+> - **Schritt Z.1166 int warningDelay = Math.max(5, getConfig().getInt…**: Zeile 1166: liest die Config. `int warningDelay = Math.max(5, getConfig().getInt…`
+> - **FabricLauncherPlugin.requestChildEmergencyStop.Teil2.Z1171**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1171 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1171.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`.

@@ -15,19 +15,19 @@ flowchart TD
   n9["index.logout"]:::internal-link
   n10["index.tab"]:::internal-link
   n11["index.start"]:::internal-link
-  n2 -->|"Z.76"| n1
-  n4 -->|"Z.78"| n3
-  n4 -->|"Z.79"| n7
-  n4 -->|"Z.81"| n2
-  n5 -->|"Z.82"| n4
-  n7 -->|"Z.84"| n1
-  n8 -->|"Z.85"| n1
-  n8 -->|"Z.86"| n11
-  n9 -->|"Z.87"| n5
-  n9 -->|"Z.87"| n7
-  n10 -->|"Z.88"| n1
-  n11 -->|"Z.220"| n1
-  n11 -->|"Z.220"| n10
+  n2 -->|"Zeile 76"| n1
+  n4 -->|"Zeile 78"| n3
+  n4 -->|"Zeile 79"| n7
+  n4 -->|"Zeile 81"| n2
+  n5 -->|"Zeile 82"| n4
+  n7 -->|"Zeile 84"| n1
+  n8 -->|"Zeile 85"| n1
+  n8 -->|"Zeile 86"| n11
+  n9 -->|"Zeile 87"| n5
+  n9 -->|"Zeile 87"| n7
+  n10 -->|"Zeile 88"| n1
+  n11 -->|"Zeile 220"| n1
+  n11 -->|"Zeile 220"| n10
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n3 fill:#f88,stroke:#900
@@ -36,27 +36,40 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element.
 index.toast
-  Zeigt eine Meldung `toast`. Ruft `$`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis.
 index.scoped
-  Gibt `path` unverändert zurück. Befund: Altlast (sicher).
+  Gibt einen Dateipfad unverändert zurück. Der Name klingt nach einer Prüfung, es ist aber keine. Auffällig: ein alter Weg läuft noch mit. Das nennt man [[Glossar#Altlast|Altlast]].
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]].
 index.post
-  Sendet POST `post`. Ruft `api`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann.
 index.showLogin
-  Zeigt `showLogin`. Ruft `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] zeigt die [[Glossar#Anmeldung|Anmeldung]].
 index.doLogin
-  Führt aus `doLogin`. Ruft `$`, `start`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Anmeldung|Anmeldung]].
 index.logout
-  Meldet ab `logout`. Ruft `post`, `showLogin`.
+  Meldet von der älteren [[Glossar#Bedienseite|Bedienseite]] ab.
 index.tab
-  Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+  Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich.
 index.start
-  Browser-Timer 3000 ms für `status`. Befund: doppelte Implementierung (sicher).
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt ab jetzt alle drei Sekunden nach dem Zustand. Auffällig: derselbe Teil ist zweimal vorhanden. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element.
+> - **index.toast**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis.
+> - **index.scoped**: Gibt einen Dateipfad unverändert zurück. Der Name klingt nach einer Prüfung, es ist aber keine. Auffällig: ein alter Weg läuft noch mit. Das nennt man [[Glossar#Altlast|Altlast]].
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]].
+> - **index.post**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann.
+> - **index.showLogin**: Die ältere [[Glossar#Bedienseite|Bedienseite]] zeigt die [[Glossar#Anmeldung|Anmeldung]].
+> - **index.doLogin**: Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Anmeldung|Anmeldung]].
+> - **index.logout**: Meldet von der älteren [[Glossar#Bedienseite|Bedienseite]] ab.
+> - **index.tab**: Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich.
+> - **index.start**: Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt ab jetzt alle drei Sekunden nach dem Zustand. Auffällig: derselbe Teil ist zweimal vorhanden. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].
 
+- [[Glossar#Anmeldung|Anmeldung]] und Abmeldung in der älteren [[Glossar#Bedienseite|Bedienseite]].

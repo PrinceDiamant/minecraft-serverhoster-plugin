@@ -17,11 +17,16 @@ flowchart TD
 
 ```knoten
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
 if Z.130 window.dashboardEditors
-  Zeile 130: prüft `window.dashboardEditors`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 130.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
 ```
 
-- `loadTxt` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
+> - **if Z.130 window.dashboardEditors**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 130.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den Text.

@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.sendCommand(String,String)
-  Sendet `sendCommand`. Ruft `send`, `slot`.
+  Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendCommand(String,String)`.
 return Z.316 return sendCommand(focus, c);
-  Zeile 316: Rückgabe `return sendCommand(focus, c);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 316.
 ```
 
-- `sendCommand` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.sendCommand(String,String)**: Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendCommand(String,String)`.
+> - **return Z.316 return sendCommand(focus, c);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 316.
+
+- Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].

@@ -16,4 +16,8 @@ for Z.12 (ScheduleDef.Action action : schedule.a…
   Zeile 12: Schleife `(ScheduleDef.Action action : schedule.a…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **for Z.12 (ScheduleDef.Action action : schedule.a…**: Zeile 12: Schleife `(ScheduleDef.Action action : schedule.a…`.
+
+- Dieser Teil führt aus das.
 - `run` in `src/main/java/de/aichele/childlauncher/ScheduleExecution.java`

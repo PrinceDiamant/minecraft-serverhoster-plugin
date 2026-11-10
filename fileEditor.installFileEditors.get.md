@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.editorFor
-  Liefert den Editor `editorFor`. Ruft `get`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Liefert den Editor `editorFor`. Ruft `get`.
 return Z.47 return editorFor(id).getValue();
   Zeile 47: Rückgabe `return editorFor(id).getValue();`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.editorFor**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Liefert den Editor `editorFor`. Ruft `get`.
+> - **return Z.47 return editorFor(id).getValue();**: Zeile 47: Rückgabe `return editorFor(id).getValue();`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] liefert das.
 - `get` in `ui/src/lib/fileEditor.ts`

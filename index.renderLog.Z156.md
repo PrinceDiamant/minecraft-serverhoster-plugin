@@ -22,9 +22,16 @@ for Z.156 logLines
 if Z.156 f&&!l.toLowerCase().includes(f)
   Zeile 156: prüft `f&&!l.toLowerCase().includes(f)`.
 index.cls
-  Leert die Konsole `cls`.
+  Leert die Anzeige der [[Glossar#Konsole|Konsole]] in der älteren [[Glossar#Bedienseite|Bedienseite]]. Leert die Konsole `cls`.
 if Z.156 k
   Zeile 156: prüft `k`.
 ```
 
-- Fortsetzung von `index.renderLog`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.156 logLines**: Zeile 156: Schleife `logLines`.
+> - **if Z.156 f&&!l.toLowerCase().includes(f)**: Zeile 156: prüft `f&&!l.toLowerCase().includes(f)`.
+> - **index.cls**: Leert die Anzeige der [[Glossar#Konsole|Konsole]] in der älteren [[Glossar#Bedienseite|Bedienseite]]. Leert die Konsole `cls`.
+> - **if Z.156 k**: Zeile 156: prüft `k`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 156 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `index.renderLog`.

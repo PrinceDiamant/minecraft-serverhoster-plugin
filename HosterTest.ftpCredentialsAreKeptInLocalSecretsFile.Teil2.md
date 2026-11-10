@@ -14,4 +14,8 @@ Schritt Z.42 assertFalse(Files.readString(Path.of('src/main/re…
   Zeile 42: liest Text aus einer Datei. `assertFalse(Files.readString(Path.of('src/main/re…`
 ```
 
-- Fortsetzung von `HosterTest.ftpCredentialsAreKeptInLocalSecretsFile`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.42 assertFalse(Files.readString(Path.of('src/main/re…**: Zeile 42: liest Text aus einer Datei. `assertFalse(Files.readString(Path.of('src/main/re…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.ftpCredentialsAreKeptInLocalSecretsFile`.

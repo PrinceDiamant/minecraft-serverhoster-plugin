@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 HostMinimize.assertNotSymlink
-  Prüft `assertNotSymlink`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertNotSymlink`.
 for Z.284 (var entry : values.entrySet())
   Zeile 284: Schleife `(var entry : values.entrySet())`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.assertNotSymlink**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertNotSymlink`.
+> - **for Z.284 (var entry : values.entrySet())**: Zeile 284: Schleife `(var entry : values.entrySet())`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `updateYaml` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

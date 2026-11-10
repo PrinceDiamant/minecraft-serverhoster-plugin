@@ -23,15 +23,24 @@ flowchart TD
 try Z.2107
   Zeile 2107: Versuch. Der Fehlerpfad geht in catch.
 ChildProcessRecord.write
-  Schreibt `write`. Ruft `safe`.
+  Dieser Teil schreibt das. Schreibt `write`. Ruft `safe`.
 FabricLauncherPlugin.processRecord
-  `processRecord` in `FabricLauncherPlugin.java`.
+  Baut den Merkzettel zum Programm: Nummer und die Prüfungen, ob es noch lebt. `processRecord` in `FabricLauncherPlugin.java`.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
 FabricLauncherPlugin.javaBin
-  Liefert das Java-Binary `javaBin`. Ruft `isWindows`.
+  Liefert das Java-Programm, mit dem der [[Glossar#Spielserver|Spielserver]] gestartet wird. Liefert das Java-Binary `javaBin`. Ruft `isWindows`.
 catch Z.2112 (IOException e)
   Zeile 2112: fängt (IOException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.rememberProcess`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.2107**: Zeile 2107: Versuch. Der Fehlerpfad geht in catch.
+> - **ChildProcessRecord.write**: Dieser Teil schreibt das. Schreibt `write`. Ruft `safe`.
+> - **FabricLauncherPlugin.processRecord**: Baut den Merkzettel zum Programm: Nummer und die Prüfungen, ob es noch lebt. `processRecord` in `FabricLauncherPlugin.java`.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
+> - **FabricLauncherPlugin.javaBin**: Liefert das Java-Programm, mit dem der [[Glossar#Spielserver|Spielserver]] gestartet wird. Liefert das Java-Binary `javaBin`. Ruft `isWindows`.
+> - **catch Z.2112 (IOException e)**: Zeile 2112: fängt (IOException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2107 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.rememberProcess`.

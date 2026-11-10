@@ -25,15 +25,24 @@ flowchart TD
 try Z.300
   Zeile 300: Versuch. Der Fehlerpfad geht in catch.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 index.start
-  Browser-Timer 3000 ms für `status`. Befund: doppelte Implementierung (sicher).
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt ab jetzt alle drei Sekunden nach dem Zustand. Browser-Timer 3000 ms für `status`. [[Glossar#Befund|Befund]]: doppelte Implementierung, sicher. index.html:220 setInterval 3000 ms läuft in der React-Hülle weiter
 catch Z.310 cause
   Zeile 310: fängt cause.
 finally Z.300
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `App.App.savePassword`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.300**: Zeile 300: Versuch. Der Fehlerpfad geht in catch.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+> - **index.start**: Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt ab jetzt alle drei Sekunden nach dem Zustand. Browser-Timer 3000 ms für `status`. [[Glossar#Befund|Befund]]: doppelte Implementierung, sicher. index.html:220 setInterval 3000 ms läuft in der React-Hülle weiter
+> - **catch Z.310 cause**: Zeile 310: fängt cause.
+> - **finally Z.300**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 300 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `App.App.savePassword`.

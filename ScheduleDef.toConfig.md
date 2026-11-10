@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ScheduleDef.Action.toConfig
-  `toConfig` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. `toConfig` in `ScheduleDef.java`.
 return Z.104 return result;
   Zeile 104: Rückgabe `return result;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.Action.toConfig**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. `toConfig` in `ScheduleDef.java`.
+> - **return Z.104 return result;**: Zeile 104: Rückgabe `return result;`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]].
 - `toConfig` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

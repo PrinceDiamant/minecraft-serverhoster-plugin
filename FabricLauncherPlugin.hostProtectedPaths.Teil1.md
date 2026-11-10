@@ -20,7 +20,7 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.getWorldRoot
-  Liefert `getWorldRoot`.
+  Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
 Schritt Z.2169 String configured = getConfig().getString('workin…
   Zeile 2169: liest die Config. `String configured = getConfig().getString('workin…`
 if Z.2171 (!child.isAbsolute())
@@ -28,7 +28,15 @@ if Z.2171 (!child.isAbsolute())
 for Z.2173 (ServerProfile profile : profiles)
   Zeile 2173: Schleife `(ServerProfile profile : profiles)`.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.hostProtectedPaths`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.getWorldRoot**: Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
+> - **Schritt Z.2169 String configured = getConfig().getString('workin…**: Zeile 2169: liest die Config. `String configured = getConfig().getString('workin…`
+> - **if Z.2171 (!child.isAbsolute())**: Zeile 2171: prüft `(!child.isAbsolute())`.
+> - **for Z.2173 (ServerProfile profile : profiles)**: Zeile 2173: Schleife `(ServerProfile profile : profiles)`.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.hostProtectedPaths`.

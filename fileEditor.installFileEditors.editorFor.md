@@ -20,7 +20,7 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.get
-  Liefert `get`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] liefert das. Liefert `get`. Ruft `editorFor`.
 if Z.36 !editor
   Zeile 36: prüft `!editor`.
 throw Z.36 throw new Error('Editor $(id) is missing');
@@ -29,4 +29,11 @@ return Z.37 return editor;
   Zeile 37: Rückgabe `return editor;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.get**: Die [[Glossar#Bedienseite|Bedienseite]] liefert das. Liefert `get`. Ruft `editorFor`.
+> - **if Z.36 !editor**: Zeile 36: prüft `!editor`.
+> - **throw Z.36 throw new Error('Editor $(id) is missing');**: Zeile 36: Abbruch `throw new Error('Editor $(id) is missing');`.
+> - **return Z.37 return editor;**: Zeile 37: Rückgabe `return editor;`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für.
 - `editorFor` in `ui/src/lib/fileEditor.ts`

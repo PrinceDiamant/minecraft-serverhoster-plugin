@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 BackupSecrets.load
-  Lädt `load`. Ruft `restrict`.
+  Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
 if Z.100 (Files.getFileStore(tmp).supportsFileAttributeVie…
   Zeile 100: prüft `(Files.getFileStore(tmp).supportsFileAttributeVie…`.
 ```
 
-- Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupSecrets.load**: Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
+> - **if Z.100 (Files.getFileStore(tmp).supportsFileAttributeVie…**: Zeile 100: prüft `(Files.getFileStore(tmp).supportsFileAttributeVie…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`.

@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 CronExpr.next
-  Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+  Dieser Teil geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
 ```
 
-- Fortsetzung von `HosterTest.cronRespectsZoneAndSunday`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **CronExpr.next**: Dieser Teil geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.cronRespectsZoneAndSunday`.

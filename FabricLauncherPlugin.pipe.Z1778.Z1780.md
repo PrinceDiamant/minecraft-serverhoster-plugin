@@ -17,9 +17,15 @@ flowchart TD
 while Z.1780 ((line = r.readLine()) != null)
   Zeile 1780: Schleife `((line = r.readLine()) != null)`.
 FabricLauncherPlugin.pipe.Z1778.Z1780.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.pipe.Z1778.Z1780.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.pipe.Z1778`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **while Z.1780 ((line = r.readLine()) != null)**: Zeile 1780: Schleife `((line = r.readLine()) != null)`.
+> - **FabricLauncherPlugin.pipe.Z1778.Z1780.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.pipe.Z1778.Z1780.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1780 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.pipe.Z1778`.

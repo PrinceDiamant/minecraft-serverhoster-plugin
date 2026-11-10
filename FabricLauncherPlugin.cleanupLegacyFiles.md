@@ -37,13 +37,24 @@ if Z.408 (!'DELETE FABRICLAUNCHER'.equals(confirm))
 throw Z.409 throw new IllegalArgumentException('Die Bereinigu…
   Zeile 409: Abbruch `throw new IllegalArgumentException('Die Bereinigu…`.
 FabricLauncherPlugin.legacyJarNames
-  `legacyJarNames` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um die [[Glossar#Programmdatei|Programmdatei]] die Namen. `legacyJarNames` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.cleanupLegacyFiles.Z413
-  Fortsetzung des Ablaufs ab Zeile 413.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 413 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 413.
 for Z.422 (String name : oldJars)
   Zeile 422: Schleife `(String name : oldJars)`.
 Schritt Z.422 Files.delete(plugins.resolve(name));
   Zeile 422: Dateioperation. `Files.delete(plugins.resolve(name));`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.407 (setupRequired)**: Zeile 407: prüft `(setupRequired)`.
+> - **throw Z.407 throw new IllegalStateException('Die Einrichtung …**: Zeile 407: Abbruch `throw new IllegalStateException('Die Einrichtung …`.
+> - **if Z.408 (!'DELETE FABRICLAUNCHER'.equals(confirm))**: Zeile 408: prüft `(!'DELETE FABRICLAUNCHER'.equals(confirm))`.
+> - **throw Z.409 throw new IllegalArgumentException('Die Bereinigu…**: Zeile 409: Abbruch `throw new IllegalArgumentException('Die Bereinigu…`.
+> - **FabricLauncherPlugin.legacyJarNames**: Das [[Glossar#Plugin|Plugin]] kümmert sich um die [[Glossar#Programmdatei|Programmdatei]] die Namen. `legacyJarNames` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.cleanupLegacyFiles.Z413**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 413 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 413.
+> - **for Z.422 (String name : oldJars)**: Zeile 422: Schleife `(String name : oldJars)`.
+> - **Schritt Z.422 Files.delete(plugins.resolve(name));**: Zeile 422: Dateioperation. `Files.delete(plugins.resolve(name));`
+
+- Das [[Glossar#Plugin|Plugin]] räumt auf den alten Weg die Dateien.
 - `cleanupLegacyFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -16,4 +16,8 @@ return Z.95 return e == null // e.isJsonNull() ? '' : e.getAs…
   Zeile 95: Rückgabe `return e == null // e.isJsonNull() ? '' : e.getAs…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.95 return e == null // e.isJsonNull() ? '' : e.getAs…**: Zeile 95: Rückgabe `return e == null // e.isJsonNull() ? '' : e.getAs…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `str` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

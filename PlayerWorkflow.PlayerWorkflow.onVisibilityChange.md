@@ -17,7 +17,12 @@ flowchart TD
 if Z.64 active.current && !document.hidden
   Zeile 64: prüft `active.current && !document.hidden`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.64 active.current && !document.hidden**: Zeile 64: prüft `active.current && !document.hidden`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `onVisibilityChange` in `ui/src/components/PlayerWorkflow.tsx`

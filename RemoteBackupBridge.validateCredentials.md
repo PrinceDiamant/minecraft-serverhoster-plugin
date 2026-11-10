@@ -30,9 +30,17 @@ throw Z.298 throw new IOException('backup FTP username is req…
 if Z.299 (hasControlCharacter(username) // hasControlChara…
   Zeile 299: prüft `(hasControlCharacter(username) // hasControlChara…`.
 RemoteBackupBridge.hasControlCharacter
-  Prüft `hasControlCharacter`.
+  Die Sicherung über das Netz prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `hasControlCharacter`.
 throw Z.300 throw new IOException('FTP credentials cannot con…
   Zeile 300: Abbruch `throw new IOException('FTP credentials cannot con…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.298 (username == null // username.isBlank())**: Zeile 298: prüft `(username == null // username.isBlank())`.
+> - **throw Z.298 throw new IOException('backup FTP username is req…**: Zeile 298: Abbruch `throw new IOException('backup FTP username is req…`.
+> - **if Z.299 (hasControlCharacter(username) // hasControlChara…**: Zeile 299: prüft `(hasControlCharacter(username) // hasControlChara…`.
+> - **RemoteBackupBridge.hasControlCharacter**: Die Sicherung über das Netz prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `hasControlCharacter`.
+> - **throw Z.300 throw new IOException('FTP credentials cannot con…**: Zeile 300: Abbruch `throw new IOException('FTP credentials cannot con…`.
+
+- Die Sicherung über das Netz prüft die Zugangsdaten.
 - `validateCredentials` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

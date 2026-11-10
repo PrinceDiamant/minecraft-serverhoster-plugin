@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.TaskWorkflow.toggleSchedule.Z183
-  Fortsetzung des Ablaufs ab Zeile 183.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 183 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 183.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.TaskWorkflow.toggleSchedule.Z183**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 183 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 183.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] schaltet um den [[Glossar#Zeitplan|Zeitplan]].
 - `toggleSchedule` in `ui/src/components/TaskWorkflow.tsx`

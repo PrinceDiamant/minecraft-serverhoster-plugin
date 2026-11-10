@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 ```
 
-- Fortsetzung von `PlayerWorkflow.PlayerWorkflow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `PlayerWorkflow.PlayerWorkflow`.

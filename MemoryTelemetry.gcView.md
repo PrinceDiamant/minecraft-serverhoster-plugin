@@ -24,9 +24,16 @@ if Z.82 (collectors == null)
 return Z.82 return gc;
   Zeile 82: Rückgabe `return gc;`.
 MemoryTelemetry.gcView.Z83
-  Fortsetzung des Ablaufs ab Zeile 83.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 83 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 83.
 return Z.91 return gc;
   Zeile 91: Rückgabe `return gc;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.82 (collectors == null)**: Zeile 82: prüft `(collectors == null)`.
+> - **return Z.82 return gc;**: Zeile 82: Rückgabe `return gc;`.
+> - **MemoryTelemetry.gcView.Z83**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 83 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 83.
+> - **return Z.91 return gc;**: Zeile 91: Rückgabe `return gc;`.
+
+- Die Messung kümmert sich um die Ansicht.
 - `gcView` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

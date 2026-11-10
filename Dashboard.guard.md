@@ -17,11 +17,16 @@ flowchart TD
 
 ```knoten
 PathGuard.open
-  Öffnet `open`. Ruft `PathGuard`.
+  Dieser Teil öffnet das. Im [[Glossar#Quelltext|Quelltext]] heißt das `open`.
 FabricLauncherPlugin.workDir(String)
-  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+  Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Im [[Glossar#Quelltext|Quelltext]] heißt das `workDir(String)`.
 return Z.813 return PathGuard.open(pl.workDir(sid));
-  Zeile 813: Rückgabe `return PathGuard.open(pl.workDir(sid));`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 813.
 ```
 
-- `guard` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **PathGuard.open**: Dieser Teil öffnet das. Im [[Glossar#Quelltext|Quelltext]] heißt das `open`.
+> - **FabricLauncherPlugin.workDir(String)**: Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Im [[Glossar#Quelltext|Quelltext]] heißt das `workDir(String)`.
+> - **return Z.813 return PathGuard.open(pl.workDir(sid));**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 813.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.

@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `slot`.
 FabricLauncherPlugin.runBackup.Z1360
-  Fortsetzung des Ablaufs ab Zeile 1360.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1360 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1360`.
 ```
 
-- `runBackup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `slot`.
+> - **FabricLauncherPlugin.runBackup.Z1360**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1360 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1360`.
+
+- Das [[Glossar#Plugin|Plugin]] führt aus die [[Glossar#Sicherungskopie|Sicherungskopie]].

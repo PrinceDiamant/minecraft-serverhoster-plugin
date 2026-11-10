@@ -15,7 +15,12 @@ flowchart TD
 while Z.113 ((line = input.readLine()) != null)
   Zeile 113: Schleife `((line = input.readLine()) != null)`.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117
-  Fortsetzung des Ablaufs ab Zeile 117.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 117 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 117.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **while Z.113 ((line = input.readLine()) != null)**: Zeile 113: Schleife `((line = input.readLine()) != null)`.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 117 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 117.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 113 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104`.

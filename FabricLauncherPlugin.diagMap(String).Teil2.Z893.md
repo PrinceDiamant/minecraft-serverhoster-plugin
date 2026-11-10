@@ -15,7 +15,12 @@ flowchart TD
 if Z.893 (reading != null)
   Zeile 893: prüft `(reading != null)`.
 MemoryTelemetry.gcView
-  `gcView` in `MemoryTelemetry.java`.
+  Die Messung kümmert sich um die Ansicht. `gcView` in `MemoryTelemetry.java`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.diagMap(String).Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.893 (reading != null)**: Zeile 893: prüft `(reading != null)`.
+> - **MemoryTelemetry.gcView**: Die Messung kümmert sich um die Ansicht. `gcView` in `MemoryTelemetry.java`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 893 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.diagMap(String).Teil2`.

@@ -23,11 +23,19 @@ Schritt Z.213 exec.submit(() -) ( try ( BackupSecrets.Credentia…
 try Z.214
   Zeile 214: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.backupCredentials
-  Sichert `backupCredentials`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
 NtfyNotifier.send
-  Sendet `send`. Ruft `target`, `encodeHeader`, `validPriority`.
+  Dieser Teil schickt das. Sendet `send`. Ruft `target`, `encodeHeader`, `validPriority`.
 catch Z.217 (Exception e)
   Zeile 217: fängt (Exception e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.notifyNtfy.Z212`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.213 exec.submit(() -) ( try ( BackupSecrets.Credentia…**: Zeile 213: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( try ( BackupSecrets.Credentia…`
+> - **try Z.214**: Zeile 214: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.backupCredentials**: Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
+> - **NtfyNotifier.send**: Dieser Teil schickt das. Sendet `send`. Ruft `target`, `encodeHeader`, `validPriority`.
+> - **catch Z.217 (Exception e)**: Zeile 217: fängt (Exception e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 213 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.notifyNtfy.Z212`.

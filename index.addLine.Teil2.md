@@ -15,7 +15,12 @@ flowchart TD
 if Z.121 $('auto').checked
   Zeile 121: prüft `$('auto').checked`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 ```
 
-- Fortsetzung von `index.addLine`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.121 $('auto').checked**: Zeile 121: prüft `$('auto').checked`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.addLine`.

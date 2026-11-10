@@ -17,11 +17,16 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.requestManual
-  Fordert an `requestManual`. Ruft `readState`, `writeMarker`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] fordert an die Handarbeit. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestManual`.
 FabricLauncherPlugin.hostFirstSetupMarker
-  Betrifft den Host `hostFirstSetupMarker`.
+  Liest oder schreibt die Merkdatei der [[Glossar#Ersteinrichtung|Ersteinrichtung]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostFirstSetupMarker`.
 return Z.2256 return Map.of('firstSetupStatus', 'requested', 's…
-  Zeile 2256: Rückgabe `return Map.of('firstSetupStatus', 'requested', 's…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2256.
 ```
 
-- `hostFirstSetupRequest` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.requestManual**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] fordert an die Handarbeit. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestManual`.
+> - **FabricLauncherPlugin.hostFirstSetupMarker**: Liest oder schreibt die Merkdatei der [[Glossar#Ersteinrichtung|Ersteinrichtung]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostFirstSetupMarker`.
+> - **return Z.2256 return Map.of('firstSetupStatus', 'requested', 's…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2256.
+
+- Merkt den Wunsch, die [[Glossar#Ersteinrichtung|Ersteinrichtung]] von Hand anzustoßen.

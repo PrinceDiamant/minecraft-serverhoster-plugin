@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 try Z.975
-  Zeile 975: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 975.
 if Z.977 (b.length ) MAX_TEXT)
-  Zeile 977: prüft `(b.length ) MAX_TEXT)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 977.
 throw Z.977 throw new IOException('Zu groß (max 2 MB)');
-  Zeile 977: Abbruch `throw new IOException('Zu groß (max 2 MB)');`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 977.
 return Z.978 return new String(b, StandardCharsets.UTF_8);
-  Zeile 978: Rückgabe `return new String(b, StandardCharsets.UTF_8);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 978.
 ```
 
-- `readBodyText` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **try Z.975**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 975.
+> - **if Z.977 (b.length ) MAX_TEXT)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 977.
+> - **throw Z.977 throw new IOException('Zu groß (max 2 MB)');**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 977.
+> - **return Z.978 return new String(b, StandardCharsets.UTF_8);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 978.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text.

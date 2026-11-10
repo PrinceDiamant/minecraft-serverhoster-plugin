@@ -16,4 +16,8 @@ return Z.127 return value instanceof Number number ? number.lo…
   Zeile 127: Rückgabe `return value instanceof Number number ? number.lo…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.127 return value instanceof Number number ? number.lo…**: Zeile 127: Rückgabe `return value instanceof Number number ? number.lo…`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `number` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

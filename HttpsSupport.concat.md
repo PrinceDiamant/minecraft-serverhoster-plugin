@@ -24,4 +24,10 @@ return Z.202 return out;
   Zeile 202: Rückgabe `return out;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **for Z.198 (byte() p : parts)**: Zeile 198: Schleife `(byte() p : parts)`.
+> - **for Z.201 (byte() p : parts)**: Zeile 201: Schleife `(byte() p : parts)`.
+> - **return Z.202 return out;**: Zeile 202: Rückgabe `return out;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `concat` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

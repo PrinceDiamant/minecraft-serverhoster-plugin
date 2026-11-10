@@ -14,4 +14,8 @@ case Z.205 default
   Zeile 205: Zweig `default`.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **case Z.205 default**: Zeile 205: Zweig `default`.
+
+- Weitere Wege der Entscheidung in [[Glossar#Zeile|Zeile]] 205.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`.

@@ -32,5 +32,13 @@ return Z.693 return false;
   Zeile 693: Rückgabe `return false;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.689**: Zeile 689: Versuch. Der Fehlerpfad geht in catch.
+> - **Schritt Z.690 Files.createSymbolicLink(link, target);**: Zeile 690: Dateioperation. `Files.createSymbolicLink(link, target);`
+> - **return Z.691 return true;**: Zeile 691: Rückgabe `return true;`.
+> - **catch Z.692 (UnsupportedOperationExceptio…**: Zeile 692: fängt (UnsupportedOperationExceptio….
+> - **return Z.693 return false;**: Zeile 693: Rückgabe `return false;`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `tryCreateSymbolicLink` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

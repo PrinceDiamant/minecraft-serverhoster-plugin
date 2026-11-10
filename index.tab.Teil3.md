@@ -30,19 +30,30 @@ flowchart TD
 if Z.89 t==='console'
   Zeile 89: prüft `t==='console'`.
 index.scrollCon
-  Scrollt die Konsole `scrollCon`. Ruft `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] rollt die [[Glossar#Konsole|Konsole]]. Scrollt die Konsole `scrollCon`. Ruft `$`.
 if Z.89 t==='diag'
   Zeile 89: prüft `t==='diag'`.
 index.loadDiag
-  Lädt `loadDiag`. Ruft `api`, `$`, `row`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Diagnose|Diagnose]]. Lädt `loadDiag`. Ruft `api`, `$`, `row`.
 if Z.89 t==='tasks'
   Zeile 89: prüft `t==='tasks'`.
 index.loadTasks
-  Lädt `loadTasks`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Aufgabe|Aufgaben]]. Lädt `loadTasks`. Ruft `api`, `$`, `esc`.
 if Z.89 t==='backup'
   Zeile 89: prüft `t==='backup'`.
 index.loadBackup
-  Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Sicherungskopie|Sicherungskopie]]. Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
 ```
 
-- Fortsetzung von `index.tab`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.89 t==='console'**: Zeile 89: prüft `t==='console'`.
+> - **index.scrollCon**: Die ältere [[Glossar#Bedienseite|Bedienseite]] rollt die [[Glossar#Konsole|Konsole]]. Scrollt die Konsole `scrollCon`. Ruft `$`.
+> - **if Z.89 t==='diag'**: Zeile 89: prüft `t==='diag'`.
+> - **index.loadDiag**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Diagnose|Diagnose]]. Lädt `loadDiag`. Ruft `api`, `$`, `row`.
+> - **if Z.89 t==='tasks'**: Zeile 89: prüft `t==='tasks'`.
+> - **index.loadTasks**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Aufgabe|Aufgaben]]. Lädt `loadTasks`. Ruft `api`, `$`, `esc`.
+> - **if Z.89 t==='backup'**: Zeile 89: prüft `t==='backup'`.
+> - **index.loadBackup**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Sicherungskopie|Sicherungskopie]]. Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.tab`.

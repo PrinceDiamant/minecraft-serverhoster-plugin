@@ -21,13 +21,20 @@ flowchart TD
 
 ```knoten
 ServerHosterSettings.ServerHosterSettings
-  `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+  Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Einstellungen|Einstellungen]]. `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
 Dashboard.requiredInt
-  Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+  Liest eine Zahl, die in der Anfrage dabei sein muss. Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
 Dashboard.requiredLong
-  Liest verpflichtend `requiredLong`.
+  Liest eine große Zahl, die in der Anfrage dabei sein muss. Liest verpflichtend `requiredLong`.
 Dashboard.requiredString
-  Liest verpflichtend `requiredString`.
+  Liest einen Text, der in der Anfrage dabei sein muss. Liest verpflichtend `requiredString`.
 ```
 
-- Fortsetzung von `Dashboard.saveSettings.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ServerHosterSettings.ServerHosterSettings**: Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Einstellungen|Einstellungen]]. `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+> - **Dashboard.requiredInt**: Liest eine Zahl, die in der Anfrage dabei sein muss. Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+> - **Dashboard.requiredLong**: Liest eine große Zahl, die in der Anfrage dabei sein muss. Liest verpflichtend `requiredLong`.
+> - **Dashboard.requiredString**: Liest einen Text, der in der Anfrage dabei sein muss. Liest verpflichtend `requiredString`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 42317 aufgerufen werden.
+- Fortsetzung von `Dashboard.saveSettings.Teil1`.

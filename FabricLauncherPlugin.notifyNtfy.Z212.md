@@ -17,9 +17,15 @@ flowchart TD
 try Z.212
   Zeile 212: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.notifyNtfy.Z212.Z213
-  Fortsetzung des Ablaufs ab Zeile 213.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 213 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 213.
 catch Z.221 (RejectedExecutionException e)
   Zeile 221: fängt (RejectedExecutionException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.notifyNtfy`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.212**: Zeile 212: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.notifyNtfy.Z212.Z213**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 213 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 213.
+> - **catch Z.221 (RejectedExecutionException e)**: Zeile 221: fängt (RejectedExecutionException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 212 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.notifyNtfy`.

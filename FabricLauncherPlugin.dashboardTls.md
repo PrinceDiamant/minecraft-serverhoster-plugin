@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 Dashboard.tls
-  `tls` in `Dashboard.java`.
+  Liest, ob die Verbindung zur [[Glossar#Bedienseite|Bedienseite]] verschlüsselt sein soll. Im [[Glossar#Quelltext|Quelltext]] heißt das `tls`.
 return Z.864 return dashboard != null && dashboard.t…
-  Zeile 864: Rückgabe `return dashboard != null && dashboard.t…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 864.
 ```
 
-- `dashboardTls` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.tls**: Liest, ob die Verbindung zur [[Glossar#Bedienseite|Bedienseite]] verschlüsselt sein soll. Im [[Glossar#Quelltext|Quelltext]] heißt das `tls`.
+> - **return Z.864 return dashboard != null && dashboard.t…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 864.
+
+- Liest, ob die [[Glossar#Bedienseite|Bedienseite]] verschlüsselt erreichbar sein soll.

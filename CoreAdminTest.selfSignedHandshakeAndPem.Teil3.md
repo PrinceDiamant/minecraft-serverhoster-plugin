@@ -19,9 +19,15 @@ flowchart TD
 try Z.300
   Zeile 300: Versuch. Der Fehlerpfad geht in catch.
 CoreAdminTest.pem
-  `pem` in `CoreAdminTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `pem` in `CoreAdminTest.java`. Nur Test.
 HttpsSupport.fromPem
-  `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
 ```
 
-- Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.300**: Zeile 300: Versuch. Der Fehlerpfad geht in catch.
+> - **CoreAdminTest.pem**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `pem` in `CoreAdminTest.java`. Nur Test.
+> - **HttpsSupport.fromPem**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`.

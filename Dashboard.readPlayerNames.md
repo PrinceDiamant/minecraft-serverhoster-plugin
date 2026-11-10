@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.703 (Files.notExists(file))
-  Zeile 703: prüft `(Files.notExists(file))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 703.
 return Z.703 return List.of();
-  Zeile 703: Rückgabe `return List.of();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 703.
 Dashboard.readPlayerNames.Z704
-  Fortsetzung des Ablaufs ab Zeile 704.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 704 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z704`.
 ```
 
-- `readPlayerNames` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.703 (Files.notExists(file))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 703.
+> - **return Z.703 return List.of();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 703.
+> - **Dashboard.readPlayerNames.Z704**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 704 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z704`.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Spieler|Spieler]] die Namen.

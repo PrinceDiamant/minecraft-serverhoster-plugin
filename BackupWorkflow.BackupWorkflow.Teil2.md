@@ -23,17 +23,26 @@ flowchart TD
 
 ```knoten
 BackupWorkflow.BackupWorkflow.testTarget
-  Prüft `testTarget`. Ruft `dashboardRequest`.
+  Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `testTarget`. Ruft `dashboardRequest`.
 BackupWorkflow.BackupWorkflow.createBackup
-  Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] legt an die [[Glossar#Sicherungskopie|Sicherungskopie]]. Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 hostApi.formatBytes
-  Formatiert `formatBytes`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe. Formatiert `formatBytes`.
 BackupWorkflow.BackupWorkflow.mutateBackup
-  `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] sichert das. `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
 return Z.137 return ( (div className='feature-workfl…
   Zeile 137: Rückgabe `return ( (div className='feature-workfl…`.
 ```
 
-- Fortsetzung von `BackupWorkflow.BackupWorkflow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupWorkflow.BackupWorkflow.testTarget**: Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `testTarget`. Ruft `dashboardRequest`.
+> - **BackupWorkflow.BackupWorkflow.createBackup**: Die [[Glossar#Bedienseite|Bedienseite]] legt an die [[Glossar#Sicherungskopie|Sicherungskopie]]. Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+> - **hostApi.formatBytes**: Die [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe. Formatiert `formatBytes`.
+> - **BackupWorkflow.BackupWorkflow.mutateBackup**: Die [[Glossar#Bedienseite|Bedienseite]] sichert das. `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+> - **return Z.137 return ( (div className='feature-workfl…**: Zeile 137: Rückgabe `return ( (div className='feature-workfl…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `BackupWorkflow.BackupWorkflow`.

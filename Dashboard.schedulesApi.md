@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 Dashboard.schedulesApi.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 Dashboard.schedulesApi.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 Dashboard.schedulesApi.Aufrufe
-  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+  Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
 ```
 
-- `schedulesApi` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.schedulesApi.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **Dashboard.schedulesApi.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+> - **Dashboard.schedulesApi.Aufrufe**: Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
+
+- Nimmt Aufträge zu den Zeitplänen an.
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

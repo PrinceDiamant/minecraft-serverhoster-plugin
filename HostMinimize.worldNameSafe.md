@@ -16,4 +16,8 @@ return Z.314 return name != null && !name.isBlank() && !'.'.eq…
   Zeile 314: Rückgabe `return name != null && !name.isBlank() && !'.'.eq…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.314 return name != null && !name.isBlank() && !'.'.eq…**: Zeile 314: Rückgabe `return name != null && !name.isBlank() && !'.'.eq…`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze.
 - `worldNameSafe` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

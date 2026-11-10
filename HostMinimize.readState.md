@@ -34,4 +34,12 @@ return Z.306 return values;
   Zeile 306: Rückgabe `return values;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.301 (text == null)**: Zeile 301: prüft `(text == null)`.
+> - **return Z.301 return values;**: Zeile 301: Rückgabe `return values;`.
+> - **for Z.302 (String line : text.split('/n'))**: Zeile 302: Schleife `(String line : text.split('/n'))`.
+> - **if Z.304 (eq ) 0)**: Zeile 304: prüft `(eq ) 0)`.
+> - **return Z.306 return values;**: Zeile 306: Rückgabe `return values;`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] liest den Zustand.
 - `readState` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

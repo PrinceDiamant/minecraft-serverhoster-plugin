@@ -15,7 +15,12 @@ flowchart TD
 if Z.54 (importSupported)
   Zeile 54: prüft `(importSupported)`.
 SetupDiscovery.scan.Teil2.Z54.Z55
-  Fortsetzung des Ablaufs ab Zeile 55.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 55 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 55.
 ```
 
-- Fortsetzung von `SetupDiscovery.scan.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.54 (importSupported)**: Zeile 54: prüft `(importSupported)`.
+> - **SetupDiscovery.scan.Teil2.Z54.Z55**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 55 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 55.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 54 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `SetupDiscovery.scan.Teil2`.

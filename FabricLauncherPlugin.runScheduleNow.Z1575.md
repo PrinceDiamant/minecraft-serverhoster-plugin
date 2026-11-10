@@ -21,13 +21,21 @@ flowchart TD
 try Z.1575
   Zeile 1575: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.markManualScheduleRun
-  Merkt `markManualScheduleRun`. Ruft `schedules`, `sameScheduleMinute`, `withLastRun`.
+  Das [[Glossar#Plugin|Plugin]] merkt sich die Handarbeit den [[Glossar#Zeitplan|Zeitplan]] den Lauf. Merkt `markManualScheduleRun`. Ruft `schedules`, `sameScheduleMinute`, `withLastRun`.
 FabricLauncherPlugin.runSchedule
-  Führt aus `runSchedule`. Ruft `noteTask`, `run`, `TaskDef`.
+  Das [[Glossar#Plugin|Plugin]] führt aus den [[Glossar#Zeitplan|Zeitplan]]. Führt aus `runSchedule`. Ruft `noteTask`, `run`, `TaskDef`.
 catch Z.1578 (RuntimeException e)
   Zeile 1578: fängt (RuntimeException e).
 throw Z.1580 throw e;
   Zeile 1580: Abbruch `throw e;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.runScheduleNow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1575**: Zeile 1575: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.markManualScheduleRun**: Das [[Glossar#Plugin|Plugin]] merkt sich die Handarbeit den [[Glossar#Zeitplan|Zeitplan]] den Lauf. Merkt `markManualScheduleRun`. Ruft `schedules`, `sameScheduleMinute`, `withLastRun`.
+> - **FabricLauncherPlugin.runSchedule**: Das [[Glossar#Plugin|Plugin]] führt aus den [[Glossar#Zeitplan|Zeitplan]]. Führt aus `runSchedule`. Ruft `noteTask`, `run`, `TaskDef`.
+> - **catch Z.1578 (RuntimeException e)**: Zeile 1578: fängt (RuntimeException e).
+> - **throw Z.1580 throw e;**: Zeile 1580: Abbruch `throw e;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1575 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.runScheduleNow`.

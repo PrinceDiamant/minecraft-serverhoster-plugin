@@ -16,4 +16,8 @@ return Z.74 return line.contains('WARN');
   Zeile 74: Rückgabe `return line.contains('WARN');`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.74 return line.contains('WARN');**: Zeile 74: Rückgabe `return line.contains('WARN');`.
+
+- Dieser Teil prüft die Warnung.
 - `isWarn` in `src/main/java/de/aichele/childlauncher/LogQuery.java`

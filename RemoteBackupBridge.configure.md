@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `configure` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

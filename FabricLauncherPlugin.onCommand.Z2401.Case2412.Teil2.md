@@ -15,7 +15,12 @@ flowchart TD
 if Z.2415 (found == null)
   Zeile 2415: prüft `(found == null)`.
 FabricLauncherPlugin.runTask
-  Führt aus `runTask`. Ruft `executeTask`, `noteTask`, `notifyNtfy`.
+  Das [[Glossar#Plugin|Plugin]] führt aus die [[Glossar#Aufgabe|Aufgabe]]. Führt aus `runTask`. Ruft `executeTask`, `noteTask`, `notifyNtfy`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2412`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2415 (found == null)**: Zeile 2415: prüft `(found == null)`.
+> - **FabricLauncherPlugin.runTask**: Das [[Glossar#Plugin|Plugin]] führt aus die [[Glossar#Aufgabe|Aufgabe]]. Führt aus `runTask`. Ruft `executeTask`, `noteTask`, `notifyNtfy`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2412`.

@@ -22,9 +22,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.effectiveBindAddress
-  Liefert den wirksamen Wert `effectiveBindAddress`.
+  Die Adresse, die nach allen Ersatzregeln wirklich gilt. Liefert den wirksamen Wert `effectiveBindAddress`.
 Profiles.load
-  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+  Die Serverbeschreibung lädt das. Lädt `load`. Ruft `one`, `str`, `copyId`. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, sicher. ServerProfile.java Profiles.load liest servers.*, reloadProfiles nutzt nur den ersten
 ```
 
-- Fortsetzung von `HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.effectiveBindAddress**: Die Adresse, die nach allen Ersatzregeln wirklich gilt. Liefert den wirksamen Wert `effectiveBindAddress`.
+> - **Profiles.load**: Die Serverbeschreibung lädt das. Lädt `load`. Ruft `one`, `str`, `copyId`. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, sicher. ServerProfile.java Profiles.load liest servers.*, reloadProfiles nutzt nur den ersten
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden`.

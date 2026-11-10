@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 HttpsSupport.fromPem
-  `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
 HttpsSupport.resolve
-  Löst auf `resolve`.
+  Dieser Teil bestimmt das. Löst auf `resolve`.
 HttpsSupport.password
-  `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
 ```
 
-- Fortsetzung von `HttpsSupport.build.Z55`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.fromPem**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
+> - **HttpsSupport.resolve**: Dieser Teil bestimmt das. Löst auf `resolve`.
+> - **HttpsSupport.password**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HttpsSupport.build.Z55`.

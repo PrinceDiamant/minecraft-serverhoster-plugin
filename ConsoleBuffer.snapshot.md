@@ -20,4 +20,9 @@ return Z.22 return new ArrayList()(lines);
   Zeile 22: Rückgabe `return new ArrayList()(lines);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.22**: Zeile 22: synchronisierter Block.
+> - **return Z.22 return new ArrayList()(lines);**: Zeile 22: Rückgabe `return new ArrayList()(lines);`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `snapshot` in `src/main/java/de/aichele/childlauncher/ConsoleBuffer.java`

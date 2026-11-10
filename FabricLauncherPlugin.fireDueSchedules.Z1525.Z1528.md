@@ -23,11 +23,19 @@ try Z.1528
 if Z.1530 (!CronExpr.matches(schedule.cron(), now))
   Zeile 1530: prüft `(!CronExpr.matches(schedule.cron(), now))`.
 CronExpr.matches
-  `matches` in `CronExpr.java`. Ruft `field`, `dow`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `matches` in `CronExpr.java`. Ruft `field`, `dow`.
 ScheduleDef.cron
-  `cron` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cron` in `ScheduleDef.java`.
 catch Z.1531 (RuntimeException e)
   Zeile 1531: fängt (RuntimeException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.fireDueSchedules.Z1525`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1528**: Zeile 1528: Versuch. Der Fehlerpfad geht in catch.
+> - **if Z.1530 (!CronExpr.matches(schedule.cron(), now))**: Zeile 1530: prüft `(!CronExpr.matches(schedule.cron(), now))`.
+> - **CronExpr.matches**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `matches` in `CronExpr.java`. Ruft `field`, `dow`.
+> - **ScheduleDef.cron**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cron` in `ScheduleDef.java`.
+> - **catch Z.1531 (RuntimeException e)**: Zeile 1531: fängt (RuntimeException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1528 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.fireDueSchedules.Z1525`.

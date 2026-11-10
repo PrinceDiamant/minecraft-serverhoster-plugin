@@ -23,10 +23,16 @@ flowchart TD
 Schritt Z.271 Files.writeString(f, 'abc');
   Zeile 271: schreibt Text in eine Datei. `Files.writeString(f, 'abc');`
 Upstream.digest
-  `digest` in `Upstream.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `digest` in `Upstream.java`.
 Upstream.checkHash
-  Prüft `checkHash`. Ruft `digest`.
+  Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `checkHash`. Ruft `digest`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.271 Files.writeString(f, 'abc');**: Zeile 271: schreibt Text in eine Datei. `Files.writeString(f, 'abc');`
+> - **Upstream.digest**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `digest` in `Upstream.java`.
+> - **Upstream.checkHash**: Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `checkHash`. Ruft `digest`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `checksumMismatch` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

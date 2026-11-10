@@ -21,4 +21,9 @@ return Z.296 return text;
   Zeile 296: Rückgabe `return text;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.295 (heapPrevious != null && !heapPrevious.isBlank())**: Zeile 295: prüft `(heapPrevious != null && !heapPrevious.isBlank())`.
+> - **return Z.296 return text;**: Zeile 296: Rückgabe `return text;`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Text.
 - `stateText` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

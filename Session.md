@@ -11,7 +11,10 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.Session.close
-  Schließt `close`. Ruft `replyError`.
+  Die Sicherung über das Netz schließt das. Schließt `close`. Ruft `replyError`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.Session.close**: Die Sicherung über das Netz schließt das. Schließt `close`. Ruft `replyError`.
 
+- Die Verbindung zu dem anderen Rechner, solange eine [[Glossar#Sicherungskopie|Sicherungskopie]] übertragen wird. Am Ende wird sie geschlossen.

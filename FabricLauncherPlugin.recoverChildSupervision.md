@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.2027 (shuttingDown)
-  Zeile 2027: prüft `(shuttingDown)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2027.
 return Z.2027 return;
-  Zeile 2027: Rückgabe `return;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2027.
 FabricLauncherPlugin.recoverChildSupervision.Z2028
-  Fortsetzung des Ablaufs ab Zeile 2028.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2028 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2028`.
 ```
 
-- `recoverChildSupervision` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2027 (shuttingDown)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2027.
+> - **return Z.2027 return;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2027.
+> - **FabricLauncherPlugin.recoverChildSupervision.Z2028**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2028 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2028`.
+
+- Ein [[Glossar#Wecker|Wecker]] alle fünf Sekunden. Er hebt Zustände auf, die hängen geblieben sind, zum Beispiel „startet“, obwohl nichts mehr läuft.

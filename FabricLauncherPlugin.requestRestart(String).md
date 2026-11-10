@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.requestRestart(String).Z334
-  Fortsetzung des Ablaufs ab Zeile 334.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 334 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z334`.
 ```
 
-- `requestRestart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.requestRestart(String).Z334**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 334 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z334`.
+
+- Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten.

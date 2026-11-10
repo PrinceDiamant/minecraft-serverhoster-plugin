@@ -23,7 +23,13 @@ if Z.252 window.location.pathname !== path
 if Z.253 mode === 'push'
   Zeile 253: prüft `mode === 'push'`.
 index.tab
-  Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+  Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich. Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.252 window.location.pathname !== path**: Zeile 252: prüft `window.location.pathname !== path`.
+> - **if Z.253 mode === 'push'**: Zeile 253: prüft `mode === 'push'`.
+> - **index.tab**: Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich. Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das.
 - `navigateTo` in `ui/src/App.tsx`

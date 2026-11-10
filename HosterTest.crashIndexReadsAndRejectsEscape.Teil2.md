@@ -18,9 +18,14 @@ flowchart TD
 
 ```knoten
 CrashIndex.read
-  Liest `read`. Ruft `open`, `resolve`, `query`.
+  Dieser Teil liest das. Liest `read`. Ruft `open`, `resolve`, `query`.
 if Z.496 (linked)
   Zeile 496: prüft `(linked)`.
 ```
 
-- Fortsetzung von `HosterTest.crashIndexReadsAndRejectsEscape`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **CrashIndex.read**: Dieser Teil liest das. Liest `read`. Ruft `open`, `resolve`, `query`.
+> - **if Z.496 (linked)**: Zeile 496: prüft `(linked)`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.crashIndexReadsAndRejectsEscape`.

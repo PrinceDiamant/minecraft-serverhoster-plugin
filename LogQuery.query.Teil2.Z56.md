@@ -22,9 +22,16 @@ for Z.56 (String line : data.split('/n', -1))
 if Z.57 (!levelOk(line, lv) // (!needle.isEmpty() && !lin…
   Zeile 57: prüft `(!levelOk(line, lv) // (!needle.isEmpty() && !lin…`.
 LogQuery.levelOk
-  `levelOk` in `LogQuery.java`. Ruft `isError`, `isWarn`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `levelOk` in `LogQuery.java`. Ruft `isError`, `isWarn`.
 if Z.59 (keep.size() ) limit)
   Zeile 59: prüft `(keep.size() ) limit)`.
 ```
 
-- Fortsetzung von `LogQuery.query.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.56 (String line : data.split('/n', -1))**: Zeile 56: Schleife `(String line : data.split('/n', -1))`.
+> - **if Z.57 (!levelOk(line, lv) // (!needle.isEmpty() && !lin…**: Zeile 57: prüft `(!levelOk(line, lv) // (!needle.isEmpty() && !lin…`.
+> - **LogQuery.levelOk**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `levelOk` in `LogQuery.java`. Ruft `isError`, `isWarn`.
+> - **if Z.59 (keep.size() ) limit)**: Zeile 59: prüft `(keep.size() ) limit)`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 56 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `LogQuery.query.Teil2`.

@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.editorFor
-  Liefert den Editor `editorFor`. Ruft `get`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Liefert den Editor `editorFor`. Ruft `get`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.editorFor**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Liefert den Editor `editorFor`. Ruft `get`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das.
 - `refresh` in `ui/src/lib/fileEditor.ts`

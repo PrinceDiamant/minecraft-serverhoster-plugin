@@ -15,7 +15,12 @@ flowchart TD
 if Z.217 minimizeConfirmation
   Zeile 217: prüft `minimizeConfirmation`.
 SetupWizard.SetupWizard.finish.Z135.Teil2.Z217.Z218
-  Fortsetzung des Ablaufs ab Zeile 218.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 218 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 218.
 ```
 
-- Fortsetzung von `SetupWizard.SetupWizard.finish.Z135.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.217 minimizeConfirmation**: Zeile 217: prüft `minimizeConfirmation`.
+> - **SetupWizard.SetupWizard.finish.Z135.Teil2.Z217.Z218**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 218 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 218.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 217 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `SetupWizard.SetupWizard.finish.Z135.Teil2`.

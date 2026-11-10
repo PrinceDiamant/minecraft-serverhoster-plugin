@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.migrateLegacyRestartPolicy
-  Übernimmt den alten Wert von `migrateLegacyRestartPolicy`. Ruft `migrateLegacyUnlimited`.
+  Dasselbe für eine noch ältere Schreibweise der [[Glossar#Neustart|Neustart]]-Regel. Übernimmt den alten Wert von `migrateLegacyRestartPolicy`. Ruft `migrateLegacyUnlimited`.
 ```
 
-- Fortsetzung von `HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.migrateLegacyRestartPolicy**: Dasselbe für eine noch ältere Schreibweise der [[Glossar#Neustart|Neustart]]-Regel. Übernimmt den alten Wert von `migrateLegacyRestartPolicy`. Ruft `migrateLegacyUnlimited`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault`.

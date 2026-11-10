@@ -15,7 +15,12 @@ flowchart TD
 return Z.68 return t;
   Zeile 68: Rückgabe `return t;`.
 Dashboard.handle
-  Ein HTTP-Kontext `/`, verzweigt nach Methode und Pfad.
+  Nimmt eine Anfrage des Browsers an und verteilt sie an [[Glossar#Anmeldung|Anmeldung]], Zustand, Dateien oder die anderen Aufträge. Ein HTTP-Kontext `/`, verzweigt nach Methode und Pfad.
 ```
 
-- Fortsetzung von `Dashboard.start`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.68 return t;**: Zeile 68: Rückgabe `return t;`.
+> - **Dashboard.handle**: Nimmt eine Anfrage des Browsers an und verteilt sie an [[Glossar#Anmeldung|Anmeldung]], Zustand, Dateien oder die anderen Aufträge. Ein HTTP-Kontext `/`, verzweigt nach Methode und Pfad.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.start`.

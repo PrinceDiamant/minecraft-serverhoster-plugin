@@ -9,25 +9,32 @@ flowchart TD
   n3["LifecycleRobustnessTest.FakeProcesses.destroy"]:::internal-link
   n4["LifecycleRobustnessTest.FakeProcesses.destroyForcibly"]:::internal-link
   n5["LifecycleRobustnessTest.FakeProcesses.alive"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 LifecycleRobustnessTest.FakeProcesses.FakeProcesses
-  `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `FakeProcesses`.
 LifecycleRobustnessTest.FakeProcesses.find
-  Sucht `find`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `find`.
 LifecycleRobustnessTest.FakeProcesses.destroy
-  Zerstört `destroy`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `destroy`.
 LifecycleRobustnessTest.FakeProcesses.destroyForcibly
-  Zerstört `destroyForcibly`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `destroyForcibly`.
 LifecycleRobustnessTest.FakeProcesses.alive
-  Sagt, ob der Prozess lebt `alive`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `alive`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LifecycleRobustnessTest.FakeProcesses.FakeProcesses**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `FakeProcesses`.
+> - **LifecycleRobustnessTest.FakeProcesses.find**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `find`.
+> - **LifecycleRobustnessTest.FakeProcesses.destroy**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `destroy`.
+> - **LifecycleRobustnessTest.FakeProcesses.destroyForcibly**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `destroyForcibly`.
+> - **LifecycleRobustnessTest.FakeProcesses.alive**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `alive`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

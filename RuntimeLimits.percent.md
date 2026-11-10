@@ -16,4 +16,8 @@ return Z.46 return Double.isFinite(value) && value ) 0 && val…
   Zeile 46: Rückgabe `return Double.isFinite(value) && value ) 0 && val…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.46 return Double.isFinite(value) && value ) 0 && val…**: Zeile 46: Rückgabe `return Double.isFinite(value) && value ) 0 && val…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `percent` in `src/main/java/de/aichele/childlauncher/RuntimeLimits.java`

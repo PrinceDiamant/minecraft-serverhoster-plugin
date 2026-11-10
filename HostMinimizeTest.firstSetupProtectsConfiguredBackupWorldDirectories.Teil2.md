@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.apply(Path,Path,Path,Path,List)
-  Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das. Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
 Schritt Z.286 assertEquals('backup', Files.readString(backup.re…
   Zeile 286: liest Text aus einer Datei. `assertEquals('backup', Files.readString(backup.re…`
 ```
 
-- Fortsetzung von `HostMinimizeTest.firstSetupProtectsConfiguredBackupWorldDirectories`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.apply(Path,Path,Path,Path,List)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das. Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
+> - **Schritt Z.286 assertEquals('backup', Files.readString(backup.re…**: Zeile 286: liest Text aus einer Datei. `assertEquals('backup', Files.readString(backup.re…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimizeTest.firstSetupProtectsConfiguredBackupWorldDirectories`.

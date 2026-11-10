@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.migrateMemoryRecoveryState.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.migrateMemoryRecoveryState.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.migrateMemoryRecoveryState.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.migrateMemoryRecoveryState.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Das [[Glossar#Plugin|Plugin]] übernimmt den alten Wert von den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Wiederherstellung den Zustand.
 - `migrateMemoryRecoveryState` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -16,4 +16,8 @@ return Z.148 return new Cgroup('unavailable', -1, -1, -1, -1, …
   Zeile 148: Rückgabe `return new Cgroup('unavailable', -1, -1, -1, -1, …`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.148 return new Cgroup('unavailable', -1, -1, -1, -1, …**: Zeile 148: Rückgabe `return new Cgroup('unavailable', -1, -1, -1, -1, …`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `unavailable` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

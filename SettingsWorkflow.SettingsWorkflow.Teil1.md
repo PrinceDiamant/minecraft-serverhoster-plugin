@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 BackupSettings.loadBackupSettings
-  Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+  Dieser Teil lädt die [[Glossar#Sicherungskopie|Sicherungskopie]] die [[Glossar#Einstellungen|Einstellungen]]. Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 ```
 
-- Fortsetzung von `SettingsWorkflow.SettingsWorkflow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupSettings.loadBackupSettings**: Dieser Teil lädt die [[Glossar#Sicherungskopie|Sicherungskopie]] die [[Glossar#Einstellungen|Einstellungen]]. Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SettingsWorkflow.SettingsWorkflow`.

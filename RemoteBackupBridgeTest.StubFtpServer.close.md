@@ -15,10 +15,14 @@ flowchart TD
 
 ```knoten
 if Z.226 (failure != null)
-  Zeile 226: prüft `(failure != null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 226.
 throw Z.226 throw failure;
-  Zeile 226: Abbruch `throw failure;`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 226.
 ```
 
-- `close` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
-- Auslöser: Test
+> [!knoten]- Was die Blöcke tun
+> - **if Z.226 (failure != null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 226.
+> - **throw Z.226 throw failure;**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 226.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

@@ -16,4 +16,8 @@ return Z.19 return root;
   Zeile 19: Rückgabe `return root;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.19 return root;**: Zeile 19: Rückgabe `return root;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `root` in `src/main/java/de/aichele/childlauncher/PathGuard.java`

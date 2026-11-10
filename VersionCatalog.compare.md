@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 VersionCatalog.compare.Z81
-  Fortsetzung des Ablaufs ab Zeile 81.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 81 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 81.
 return Z.91 return 0;
   Zeile 91: Rückgabe `return 0;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.compare.Z81**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 81 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 81.
+> - **return Z.91 return 0;**: Zeile 91: Rückgabe `return 0;`.
+
+- Dieser Teil vergleicht das.
 - `compare` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

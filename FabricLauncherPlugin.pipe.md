@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.pipe.Z1778
-  Fortsetzung des Ablaufs ab Zeile 1778.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1778 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1778`.
 ```
 
-- `pipe` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.pipe.Z1778**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1778 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1778`.
+
+- Liest die [[Glossar#Konsole|Konsole]] [[Glossar#Zeile|Zeile]] für Zeile mit, bis das Programm endet.

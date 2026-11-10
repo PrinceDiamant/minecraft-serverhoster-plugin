@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 index.ls
-  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
 ```
 
-- Fortsetzung von `index.saveFile`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.ls**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.saveFile`.

@@ -19,4 +19,9 @@ if Z.50 response.status === 401 && startedAuthenticated
   Zeile 50: prüft `response.status === 401 && startedAuthenticated`.
 ```
 
-- Fortsetzung von `hostApi.dashboardRequest`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.34 options.body && typeof options.body === 'string'**: Zeile 34: prüft `options.body && typeof options.body === 'string'`.
+> - **if Z.50 response.status === 401 && startedAuthenticated**: Zeile 50: prüft `response.status === 401 && startedAuthenticated`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `hostApi.dashboardRequest`.

@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 Dashboard.requiredLong
-  Liest verpflichtend `requiredLong`.
+  Liest eine große Zahl, die in der Anfrage dabei sein muss. Im [[Glossar#Quelltext|Quelltext]] heißt das `requiredLong`.
 if Z.798 (value ( Integer.MIN_VALUE // value ) Integer.MAX…
-  Zeile 798: prüft `(value ( Integer.MIN_VALUE // value ) Integer.MAX…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 798.
 throw Z.799 throw new IllegalArgumentException(key + ' liegt …
-  Zeile 799: Abbruch `throw new IllegalArgumentException(key + ' liegt …`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 799.
 return Z.800 return (int) value;
-  Zeile 800: Rückgabe `return (int) value;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 800.
 ```
 
-- `requiredInt` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.requiredLong**: Liest eine große Zahl, die in der Anfrage dabei sein muss. Im [[Glossar#Quelltext|Quelltext]] heißt das `requiredLong`.
+> - **if Z.798 (value ( Integer.MIN_VALUE // value ) Integer.MAX…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 798.
+> - **throw Z.799 throw new IllegalArgumentException(key + ' liegt …**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 799.
+> - **return Z.800 return (int) value;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 800.
+
+- Liest eine Zahl, die in der Anfrage dabei sein muss.

@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.585 (!request.has(key) // !request.get(key).isJsonPri…
-  Zeile 585: prüft `(!request.has(key) // !request.get(key).isJsonPri…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 585.
 throw Z.586 throw new IllegalArgumentException(key + ' muss T…
-  Zeile 586: Abbruch `throw new IllegalArgumentException(key + ' muss T…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 586.
 return Z.587 return request.get(key).getAsString();
-  Zeile 587: Rückgabe `return request.get(key).getAsString();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 587.
 ```
 
-- `requiredString` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.585 (!request.has(key) // !request.get(key).isJsonPri…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 585.
+> - **throw Z.586 throw new IllegalArgumentException(key + ' muss T…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 586.
+> - **return Z.587 return request.get(key).getAsString();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 587.
+
+- Liest einen Text, der in der Anfrage dabei sein muss.

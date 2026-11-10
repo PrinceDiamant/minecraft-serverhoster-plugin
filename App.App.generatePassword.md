@@ -20,4 +20,9 @@ return Z.282 return;
   Zeile 282: Rückgabe `return;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.280 !globalThis.crypto?.getRandomValues**: Zeile 280: prüft `!globalThis.crypto?.getRandomValues`.
+> - **return Z.282 return;**: Zeile 282: Rückgabe `return;`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] erzeugt das Passwort.
 - `generatePassword` in `ui/src/App.tsx`

@@ -20,21 +20,31 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.readLevelNames
-  Liest `readLevelNames`. Ruft `safeWorldName`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest die Namen. Liest `readLevelNames`. Ruft `safeWorldName`.
 HostFirstSetup.otherPluginJars
-  `otherPluginJars` in `HostFirstSetup.java`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `otherPluginJars` in `HostFirstSetup.java`.
 HostFirstSetup.movePluginJar
-  Verschiebt `movePluginJar`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Programmdatei|Programmdatei]]. Verschiebt `movePluginJar`.
 HostFirstSetup.deleteTree
-  Löscht `deleteTree`. Ruft `visitFile`, `postVisitDirectory`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] löscht hier einen Schritt. Eine Ebene tiefer steht er genauer. Löscht `deleteTree`. Ruft `visitFile`, `postVisitDirectory`.
 HostFirstSetup.writeMarker(Path,String,String)
-  Schreibt `writeMarker`. Ruft `writeMarker`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
 HostFirstSetup.writeMarker(Path,String,String,int)
-  Schreibt `writeMarker`. Ruft `writeMarker`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
 HostFirstSetup.writeMarker(Path,String,String,int,String)
-  Schreibt `writeMarker`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`.
 HostFirstSetup.parseCount
-  Wertet aus `parseCount`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Wertet aus `parseCount`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.readLevelNames**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest die Namen. Liest `readLevelNames`. Ruft `safeWorldName`.
+> - **HostFirstSetup.otherPluginJars**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `otherPluginJars` in `HostFirstSetup.java`.
+> - **HostFirstSetup.movePluginJar**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Programmdatei|Programmdatei]]. Verschiebt `movePluginJar`.
+> - **HostFirstSetup.deleteTree**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] löscht hier einen Schritt. Eine Ebene tiefer steht er genauer. Löscht `deleteTree`. Ruft `visitFile`, `postVisitDirectory`.
+> - **HostFirstSetup.writeMarker(Path,String,String)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
+> - **HostFirstSetup.writeMarker(Path,String,String,int)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
+> - **HostFirstSetup.writeMarker(Path,String,String,int,String)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`.
+> - **HostFirstSetup.parseCount**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Wertet aus `parseCount`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

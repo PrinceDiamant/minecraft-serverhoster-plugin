@@ -37,4 +37,13 @@ return Z.35 return false;
   Zeile 35: Rückgabe `return false;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.31 (!(raw instanceof Number number))**: Zeile 31: prüft `(!(raw instanceof Number number))`.
+> - **return Z.31 return false;**: Zeile 31: Rückgabe `return false;`.
+> - **try Z.32**: Zeile 32: Versuch. Der Fehlerpfad geht in catch.
+> - **return Z.33 return new BigDecimal(number.toString()).intValue…**: Zeile 33: Rückgabe `return new BigDecimal(number.toString()).intValue…`.
+> - **catch Z.34 (NumberFormatException / Arit…**: Zeile 34: fängt (NumberFormatException / Arit….
+> - **return Z.35 return false;**: Zeile 35: Rückgabe `return false;`.
+
+- Dieser Teil übernimmt den alten Wert von den alten Weg.
 - `migrateLegacyUnlimited` in `src/main/java/de/aichele/childlauncher/RestartPolicy.java`

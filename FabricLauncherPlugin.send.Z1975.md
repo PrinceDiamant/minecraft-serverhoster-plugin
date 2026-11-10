@@ -30,4 +30,12 @@ return Z.1976 return false;
   Zeile 1976: Rückgabe `return false;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.send`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1975**: Zeile 1975: Versuch. Der Fehlerpfad geht in catch.
+> - **sync Z.1975**: Zeile 1975: synchronisierter Block.
+> - **return Z.1975 return true;**: Zeile 1975: Rückgabe `return true;`.
+> - **catch Z.1976 (IOException e)**: Zeile 1976: fängt (IOException e).
+> - **return Z.1976 return false;**: Zeile 1976: Rückgabe `return false;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1975 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.send`.

@@ -24,18 +24,26 @@ flowchart TD
 
 ```knoten
 if Z.1423 (remoteBackupSelected())
-  Zeile 1423: prüft `(remoteBackupSelected())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1423.
 FabricLauncherPlugin.remoteBackupSelected
-  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. Im [[Glossar#Quelltext|Quelltext]] heißt das `remoteBackupSelected`.
 throw Z.1423 throw new IOException('Remote backup files are st…
-  Zeile 1423: Abbruch `throw new IOException('Remote backup files are st…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1423.
 BackupBridge.file
-  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `file`.
 FabricLauncherPlugin.backupSpec
-  Sichert `backupSpec`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupSpec`.
 return Z.1424 return BackupBridge.file(backupSpec(), …
-  Zeile 1424: Rückgabe `return BackupBridge.file(backupSpec(), …`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1424.
 ```
 
-- `backupFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:1422–1425 kein Aufruf, kein Treffer in plugin.yml/UI/Strings
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1423 (remoteBackupSelected())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1423.
+> - **FabricLauncherPlugin.remoteBackupSelected**: Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. Im [[Glossar#Quelltext|Quelltext]] heißt das `remoteBackupSelected`.
+> - **throw Z.1423 throw new IOException('Remote backup files are st…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1423.
+> - **BackupBridge.file**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `file`.
+> - **FabricLauncherPlugin.backupSpec**: Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupSpec`.
+> - **return Z.1424 return BackupBridge.file(backupSpec(), …**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1424.
+
+- Das [[Glossar#Plugin|Plugin]] sichert die Datei.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

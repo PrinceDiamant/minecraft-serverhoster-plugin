@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ScheduleDef.ScheduleDef
-  Plant `ScheduleDef`. Ruft `validateInterval`.
+  Der [[Glossar#Zeitplan|Zeitplan]] plant hier einen Schritt. Eine Ebene tiefer steht er genauer. Plant `ScheduleDef`. Ruft `validateInterval`.
 ScheduleExecution.run
-  Führt aus `run`.
+  Dieser Teil führt aus das. Führt aus `run`.
 ```
 
-- Fortsetzung von `HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.ScheduleDef**: Der [[Glossar#Zeitplan|Zeitplan]] plant hier einen Schritt. Eine Ebene tiefer steht er genauer. Plant `ScheduleDef`. Ruft `validateInterval`.
+> - **ScheduleExecution.run**: Dieser Teil führt aus das. Führt aus `run`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure`.

@@ -17,12 +17,18 @@ flowchart TD
 
 ```knoten
 MemoryIncidentReport.write
-  Schreibt `write`. Ruft `cgroupUsePercent`.
+  Dieser Teil schreibt das. Schreibt `write`. Ruft `cgroupUsePercent`.
 Schritt Z.203 String text = Files.readString(report);
   Zeile 203: liest Text aus einer Datei. `String text = Files.readString(report);`
 Schritt Z.208 assertTrue(text.contains('(Spigot jcmd GC.heap_in…
   Zeile 208: fragt jcmd. `assertTrue(text.contains('(Spigot jcmd GC.heap_in…`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **MemoryIncidentReport.write**: Dieser Teil schreibt das. Schreibt `write`. Ruft `cgroupUsePercent`.
+> - **Schritt Z.203 String text = Files.readString(report);**: Zeile 203: liest Text aus einer Datei. `String text = Files.readString(report);`
+> - **Schritt Z.208 assertTrue(text.contains('(Spigot jcmd GC.heap_in…**: Zeile 208: fragt jcmd. `assertTrue(text.contains('(Spigot jcmd GC.heap_in…`
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `memoryIncidentReportWritesTimelineFactsAndReadOnlyDiagnostics` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

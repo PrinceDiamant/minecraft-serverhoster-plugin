@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 Dashboard.handle.Z103.Teil7.Z141.Case228.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Teil7.Z141.Case228.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.handle.Z103.Teil7.Z141.Case228.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case228.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 228.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

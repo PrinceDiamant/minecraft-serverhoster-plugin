@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.1345 return taskLast.getOrDefault(id, '');
-  Zeile 1345: Rückgabe `return taskLast.getOrDefault(id, '');`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1345.
 ```
 
-- `taskLast` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.1345 return taskLast.getOrDefault(id, '');**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1345.
+
+- Merkt, wann eine [[Glossar#Aufgabe|Aufgabe]] zuletzt gelaufen ist.

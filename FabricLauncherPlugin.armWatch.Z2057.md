@@ -17,9 +17,15 @@ flowchart TD
 sync Z.2057
   Zeile 2057: synchronisierter Block.
 FabricLauncherPlugin.armWatch.Z2057.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.armWatch.Z2057.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.armWatch`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.2057**: Zeile 2057: synchronisierter Block.
+> - **FabricLauncherPlugin.armWatch.Z2057.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.armWatch.Z2057.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2057 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.armWatch`.

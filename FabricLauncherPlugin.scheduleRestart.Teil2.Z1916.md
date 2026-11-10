@@ -19,11 +19,18 @@ flowchart TD
 if Z.1916 (!RestartPolicy.mayRetry(slot.attempts, max))
   Zeile 1916: prüft `(!RestartPolicy.mayRetry(slot.attempts, max))`.
 RestartPolicy.mayRetry
-  `mayRetry` in `RestartPolicy.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mayRetry` in `RestartPolicy.java`.
 FabricLauncherPlugin.notifyNtfy
-  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+  Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
 return Z.1923 return;
   Zeile 1923: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1916 (!RestartPolicy.mayRetry(slot.attempts, max))**: Zeile 1916: prüft `(!RestartPolicy.mayRetry(slot.attempts, max))`.
+> - **RestartPolicy.mayRetry**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mayRetry` in `RestartPolicy.java`.
+> - **FabricLauncherPlugin.notifyNtfy**: Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+> - **return Z.1923 return;**: Zeile 1923: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1916 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil2`.

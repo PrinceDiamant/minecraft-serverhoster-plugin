@@ -17,9 +17,15 @@ flowchart TD
 for Z.203 (String name : EDITABLE)
   Zeile 203: Schleife `(String name : EDITABLE)`.
 HostMinimize.restore.Z203.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 HostMinimize.restore.Z203.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `HostMinimize.restore`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.203 (String name : EDITABLE)**: Zeile 203: Schleife `(String name : EDITABLE)`.
+> - **HostMinimize.restore.Z203.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **HostMinimize.restore.Z203.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 203 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostMinimize.restore`.

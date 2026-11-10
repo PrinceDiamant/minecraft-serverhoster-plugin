@@ -24,11 +24,19 @@ if Z.104 !main // !script?.textContent
 throw Z.105 throw new Error('The bundled ServerHoster dashboa…
   Zeile 105: Abbruch `throw new Error('The bundled ServerHoster dashboa…`.
 App.readLegacyDashboard.Teil1.Z107
-  Fortsetzung des Ablaufs ab Zeile 107.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 107 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 107.
 if Z.120 !settingsSection
   Zeile 120: prüft `!settingsSection`.
 throw Z.120 throw new Error('Dashboard section t-settings is …
   Zeile 120: Abbruch `throw new Error('Dashboard section t-settings is …`.
 ```
 
-- Fortsetzung von `App.readLegacyDashboard`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.104 !main // !script?.textContent**: Zeile 104: prüft `!main // !script?.textContent`.
+> - **throw Z.105 throw new Error('The bundled ServerHoster dashboa…**: Zeile 105: Abbruch `throw new Error('The bundled ServerHoster dashboa…`.
+> - **App.readLegacyDashboard.Teil1.Z107**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 107 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 107.
+> - **if Z.120 !settingsSection**: Zeile 120: prüft `!settingsSection`.
+> - **throw Z.120 throw new Error('Dashboard section t-settings is …**: Zeile 120: Abbruch `throw new Error('Dashboard section t-settings is …`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `App.readLegacyDashboard`.

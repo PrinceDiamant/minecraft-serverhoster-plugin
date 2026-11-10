@@ -23,13 +23,20 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.addLegacyDataToPreserve
-  Fügt hinzu `addLegacyDataToPreserve`.
+  Das [[Glossar#Plugin|Plugin]] fügt hinzu den alten Weg. Fügt hinzu `addLegacyDataToPreserve`.
 Schritt Z.432 String configuredBackup = getConfig().getString('…
   Zeile 432: liest die Config. `String configuredBackup = getConfig().getString('…`
 FabricLauncherPlugin.legacyDataToPreserve.Z433
-  Fortsetzung des Ablaufs ab Zeile 433.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 433 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 433.
 return Z.440 return Set.copyOf(preserved);
   Zeile 440: Rückgabe `return Set.copyOf(preserved);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.addLegacyDataToPreserve**: Das [[Glossar#Plugin|Plugin]] fügt hinzu den alten Weg. Fügt hinzu `addLegacyDataToPreserve`.
+> - **Schritt Z.432 String configuredBackup = getConfig().getString('…**: Zeile 432: liest die Config. `String configuredBackup = getConfig().getString('…`
+> - **FabricLauncherPlugin.legacyDataToPreserve.Z433**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 433 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 433.
+> - **return Z.440 return Set.copyOf(preserved);**: Zeile 440: Rückgabe `return Set.copyOf(preserved);`.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `legacyDataToPreserve` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

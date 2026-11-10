@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 index.ls.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 index.ls.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 ```
 
-- `ls` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.ls.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **index.ls.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+
+- Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners.

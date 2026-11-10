@@ -16,5 +16,9 @@ return Z.309 return alive ? observed : null;
   Zeile 309: Rückgabe `return alive ? observed : null;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.309 return alive ? observed : null;**: Zeile 309: Rückgabe `return alive ? observed : null;`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `find` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

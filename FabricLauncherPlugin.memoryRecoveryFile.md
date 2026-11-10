@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.1002 return getDataFolder().toPath().resolve('memory-r…
-  Zeile 1002: Rückgabe `return getDataFolder().toPath().resolve('memory-r…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1002.
 ```
 
-- `memoryRecoveryFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.1002 return getDataFolder().toPath().resolve('memory-r…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1002.
+
+- Die Datei, in der steht, ob der Speicher nach einem [[Glossar#Vorfall|Vorfall]] schon wieder freigegeben wurde.

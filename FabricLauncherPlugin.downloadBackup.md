@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.downloadBackup.Z1428
-  Fortsetzung des Ablaufs ab Zeile 1428.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1428 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1428`.
 ```
 
-- `downloadBackup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.downloadBackup.Z1428**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1428 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1428`.
+
+- Das [[Glossar#Plugin|Plugin]] holt die [[Glossar#Sicherungskopie|Sicherungskopie]].

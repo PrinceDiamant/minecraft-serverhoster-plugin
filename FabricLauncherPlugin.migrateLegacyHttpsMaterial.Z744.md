@@ -19,9 +19,15 @@ flowchart TD
 if Z.744 ('self-signed'.equalsIgnoreCase(mode) // 'keystor…
   Zeile 744: prüft `('self-signed'.equalsIgnoreCase(mode) // 'keystor…`.
 FabricLauncherPlugin.migrateHttpsFile
-  Übernimmt den alten Wert von `migrateHttpsFile`. Ruft `copyLegacyFile`.
+  Das [[Glossar#Plugin|Plugin]] übernimmt den alten Wert von die [[Glossar#Verschlüsselung|Verschlüsselung]] die Datei. Übernimmt den alten Wert von `migrateHttpsFile`. Ruft `copyLegacyFile`.
 FabricLauncherPlugin.migrateLegacyHttpsMaterial.Z744.Z747
-  Fortsetzung des Ablaufs ab Zeile 747.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 747 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 747.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.migrateLegacyHttpsMaterial`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.744 ('self-signed'.equalsIgnoreCase(mode) // 'keystor…**: Zeile 744: prüft `('self-signed'.equalsIgnoreCase(mode) // 'keystor…`.
+> - **FabricLauncherPlugin.migrateHttpsFile**: Das [[Glossar#Plugin|Plugin]] übernimmt den alten Wert von die [[Glossar#Verschlüsselung|Verschlüsselung]] die Datei. Übernimmt den alten Wert von `migrateHttpsFile`. Ruft `copyLegacyFile`.
+> - **FabricLauncherPlugin.migrateLegacyHttpsMaterial.Z744.Z747**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 747 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 747.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 744 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.migrateLegacyHttpsMaterial`.

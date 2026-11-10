@@ -19,11 +19,18 @@ flowchart TD
 if Z.419 (method.equals('DELETE'))
   Zeile 419: prüft `(method.equals('DELETE'))`.
 Dashboard.schedulesApi.Teil2.Z419.Z419
-  Fortsetzung des Ablaufs ab Zeile 419.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 419 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 419.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 return Z.426 return;
   Zeile 426: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `Dashboard.schedulesApi.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.419 (method.equals('DELETE'))**: Zeile 419: prüft `(method.equals('DELETE'))`.
+> - **Dashboard.schedulesApi.Teil2.Z419.Z419**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 419 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 419.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **return Z.426 return;**: Zeile 426: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 419 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.schedulesApi.Teil2`.

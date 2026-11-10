@@ -26,21 +26,32 @@ flowchart TD
 
 ```knoten
 Dashboard.safe
-  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
 if Z.867 (Files.isDirectory(f))
   Zeile 867: prüft `(Files.isDirectory(f))`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 return Z.867 return;
   Zeile 867: Rückgabe `return;`.
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
 Schritt Z.869 Files.writeString(f, txt, StandardCharsets.UTF_8);
   Zeile 869: schreibt Text in eine Datei. `Files.writeString(f, txt, StandardCharsets.UTF_8);`
 FabricLauncherPlugin.info(String,String)
-  Schreibt eine Infozeile `info`. Ruft `slot`.
+  Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `slot`.
 Dashboard.rel
-  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
 ```
 
-- Fortsetzung von `Dashboard.fsWrite`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.safe**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+> - **if Z.867 (Files.isDirectory(f))**: Zeile 867: prüft `(Files.isDirectory(f))`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **return Z.867 return;**: Zeile 867: Rückgabe `return;`.
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
+> - **Schritt Z.869 Files.writeString(f, txt, StandardCharsets.UTF_8);**: Zeile 869: schreibt Text in eine Datei. `Files.writeString(f, txt, StandardCharsets.UTF_8);`
+> - **FabricLauncherPlugin.info(String,String)**: Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `slot`.
+> - **Dashboard.rel**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.fsWrite`.

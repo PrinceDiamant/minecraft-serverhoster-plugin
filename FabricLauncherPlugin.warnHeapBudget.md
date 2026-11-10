@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 Schritt Z.1068 long outerXmx = Runtime.getRuntime().maxMemory();
-  Zeile 1068: fragt die JVM-Laufzeit. `long outerXmx = Runtime.getRuntime().maxMemory();`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1068.
 FabricLauncherPlugin.warnHeapBudget.Z1070
-  Fortsetzung des Ablaufs ab Zeile 1070.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1070 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1070`.
 ```
 
-- `warnHeapBudget` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.1068 long outerXmx = Runtime.getRuntime().maxMemory();**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1068.
+> - **FabricLauncherPlugin.warnHeapBudget.Z1070**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1070 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1070`.
+
+- Das [[Glossar#Plugin|Plugin]] warnt vor den Programmspeicher die Grenze.

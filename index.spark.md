@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.157 a.length(2
-  Zeile 157: prüft `a.length(2`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 157.
 return Z.157 return '';
-  Zeile 157: Rückgabe `return '';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 157.
 return Z.159 return '(svg width='$(w)' height='$(h)' viewBox='…
-  Zeile 159: Rückgabe `return '(svg width='$(w)' height='$(h)' viewBox='…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 159.
 ```
 
-- `spark` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.157 a.length(2**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 157.
+> - **return Z.157 return '';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 157.
+> - **return Z.159 return '(svg width='$(w)' height='$(h)' viewBox='…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 159.
+
+- Zeichnet in der älteren [[Glossar#Bedienseite|Bedienseite]] eine kleine Kurve der letzten Messwerte.

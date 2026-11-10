@@ -39,4 +39,14 @@ throw Z.39 throw e;
   Zeile 39: Abbruch `throw e;`.
 ```
 
-- Fortsetzung von `DashboardPassword.create`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.35**: Zeile 35: Versuch. Der Fehlerpfad geht in catch.
+> - **Schritt Z.36 Files.writeString(file, password + '/n', Standard…**: Zeile 36: schreibt Text in eine Datei. `Files.writeString(file, password + '/n', Standard…`
+> - **catch Z.37 (IOException e)**: Zeile 37: fängt (IOException e).
+> - **try Z.38**: Zeile 38: Versuch. Der Fehlerpfad geht in catch.
+> - **Schritt Z.38 Files.deleteIfExists(file);**: Zeile 38: Dateioperation. `Files.deleteIfExists(file);`
+> - **catch Z.38 (IOException cleanup)**: Zeile 38: fängt (IOException cleanup).
+> - **throw Z.39 throw e;**: Zeile 39: Abbruch `throw e;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `DashboardPassword.create`.

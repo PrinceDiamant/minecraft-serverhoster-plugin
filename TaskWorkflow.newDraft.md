@@ -17,9 +17,14 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.newId
-  `newId` in `TaskWorkflow.tsx`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die Kennung. `newId` in `TaskWorkflow.tsx`.
 return Z.69 return ( id: newId(), name: '', enabled…
   Zeile 69: Rückgabe `return ( id: newId(), name: '', enabled…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.newId**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die Kennung. `newId` in `TaskWorkflow.tsx`.
+> - **return Z.69 return ( id: newId(), name: '', enabled…**: Zeile 69: Rückgabe `return ( id: newId(), name: '', enabled…`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `newDraft` in `ui/src/components/TaskWorkflow.tsx`

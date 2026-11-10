@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.focusSlot
-  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+  Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
 ChildSlot.pid
-  Liefert die Prozessnummer `pid`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `pid`.
 return Z.306 return focusSlot().pid();
-  Zeile 306: Rückgabe `return focusSlot().pid();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 306.
 ```
 
-- `pid` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, prüfen. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:306–306 kein Produktionsaufruf im Aufrufgraph; Name kommt in UI, Config oder anderem Text vor
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.focusSlot**: Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
+> - **ChildSlot.pid**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `pid`.
+> - **return Z.306 return focusSlot().pid();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 306.
+
+- Liefert die Programmnummer des [[Glossar#Spielserver|Spielservers]].
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

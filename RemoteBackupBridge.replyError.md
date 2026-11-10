@@ -16,4 +16,8 @@ return Z.315 return new IOException(action + ' failed (' + cli…
   Zeile 315: Rückgabe `return new IOException(action + ' failed (' + cli…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.315 return new IOException(action + ' failed (' + cli…**: Zeile 315: Rückgabe `return new IOException(action + ' failed (' + cli…`.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `replyError` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

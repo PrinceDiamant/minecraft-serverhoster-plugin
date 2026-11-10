@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 try Z.242
-  Zeile 242: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 242.
 Schritt Z.242 Files.setPosixFilePermissions(p, java.nio.file.at…
-  Zeile 242: setzt POSIX-Dateirechte. `Files.setPosixFilePermissions(p, java.nio.file.at…`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 242.
 catch Z.242 (Exception ignored)
-  Zeile 242: fängt (Exception ignored).
+  Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 242.
 ```
 
-- Setzt POSIX `rwxrwxrwx` für Ordner und `rw-rw-rw-` für Dateien.
-- Befund: Logikrisiko, sicher. FabricLauncherPlugin.java:241–242 rwxrwxrwx und rw-rw-rw-. Kommentar Z.240 sagt rw für group/other
+> [!knoten]- Was die Blöcke tun
+> - **try Z.242**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 242.
+> - **Schritt Z.242 Files.setPosixFilePermissions(p, java.nio.file.at…**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 242.
+> - **catch Z.242 (Exception ignored)**: Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 242.
+
+- Setzt die [[Glossar#Dateirechte|Dateirechte]] eines Ordners oder einer Datei sehr offen, damit der [[Glossar#Spielserver|Spielserver]] dort schreiben kann.
+- Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].

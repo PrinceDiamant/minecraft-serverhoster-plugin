@@ -22,7 +22,7 @@ flowchart TD
 if Z.197 (Files.isRegularFile(realBackup.resolve(WHITELIST…
   Zeile 197: prüft `(Files.isRegularFile(realBackup.resolve(WHITELIST…`.
 HostMinimize.assertEditable
-  Prüft `assertEditable`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertEditable`.
 if Z.200 (Files.isSymbolicLink(created))
   Zeile 200: prüft `(Files.isSymbolicLink(created))`.
 throw Z.200 throw new SecurityException('refusing symbolic li…
@@ -31,4 +31,12 @@ Schritt Z.201 Files.deleteIfExists(created);
   Zeile 201: Dateioperation. `Files.deleteIfExists(created);`
 ```
 
-- Fortsetzung von `HostMinimize.restore`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.197 (Files.isRegularFile(realBackup.resolve(WHITELIST…**: Zeile 197: prüft `(Files.isRegularFile(realBackup.resolve(WHITELIST…`.
+> - **HostMinimize.assertEditable**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertEditable`.
+> - **if Z.200 (Files.isSymbolicLink(created))**: Zeile 200: prüft `(Files.isSymbolicLink(created))`.
+> - **throw Z.200 throw new SecurityException('refusing symbolic li…**: Zeile 200: Abbruch `throw new SecurityException('refusing symbolic li…`.
+> - **Schritt Z.201 Files.deleteIfExists(created);**: Zeile 201: Dateioperation. `Files.deleteIfExists(created);`
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 197 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostMinimize.restore`.

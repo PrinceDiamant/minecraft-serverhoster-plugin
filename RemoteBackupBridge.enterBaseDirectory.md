@@ -29,17 +29,27 @@ flowchart TD
 if Z.267 (hasControlCharacter(path))
   Zeile 267: prüft `(hasControlCharacter(path))`.
 RemoteBackupBridge.hasControlCharacter
-  Prüft `hasControlCharacter`.
+  Die Sicherung über das Netz prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `hasControlCharacter`.
 throw Z.267 throw new IOException('backup.remote.directory is…
   Zeile 267: Abbruch `throw new IOException('backup.remote.directory is…`.
 if Z.268 (path.startsWith('/') && !client.changeWorkingDir…
   Zeile 268: prüft `(path.startsWith('/') && !client.changeWorkingDir…`.
 RemoteBackupBridge.replyError
-  Antwortet `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
 throw Z.268 throw replyError(client, 'change to FTP…
   Zeile 268: Abbruch `throw replyError(client, 'change to FTP…`.
 RemoteBackupBridge.enterBaseDirectory.Z269
-  Fortsetzung des Ablaufs ab Zeile 269.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 269 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 269.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.267 (hasControlCharacter(path))**: Zeile 267: prüft `(hasControlCharacter(path))`.
+> - **RemoteBackupBridge.hasControlCharacter**: Die Sicherung über das Netz prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `hasControlCharacter`.
+> - **throw Z.267 throw new IOException('backup.remote.directory is…**: Zeile 267: Abbruch `throw new IOException('backup.remote.directory is…`.
+> - **if Z.268 (path.startsWith('/') && !client.changeWorkingDir…**: Zeile 268: prüft `(path.startsWith('/') && !client.changeWorkingDir…`.
+> - **RemoteBackupBridge.replyError**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
+> - **throw Z.268 throw replyError(client, 'change to FTP…**: Zeile 268: Abbruch `throw replyError(client, 'change to FTP…`.
+> - **RemoteBackupBridge.enterBaseDirectory.Z269**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 269 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 269.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `enterBaseDirectory` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 VersionCatalog.fabric.Z32
-  Fortsetzung des Ablaufs ab Zeile 32.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 32 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 32.
 return Z.37 return ids;
   Zeile 37: Rückgabe `return ids;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.fabric.Z32**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 32 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 32.
+> - **return Z.37 return ids;**: Zeile 37: Rückgabe `return ids;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `fabric` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

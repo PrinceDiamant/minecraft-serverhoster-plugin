@@ -25,4 +25,10 @@ return Z.470 return java.nio.file.FileVisitResult.CONTINUE;
   Zeile 470: Rückgabe `return java.nio.file.FileVisitResult.CONTINUE;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.467 (normalizedPreserved.stream().noneMatch(path -) p…**: Zeile 467: prüft `(normalizedPreserved.stream().noneMatch(path -) p…`.
+> - **Schritt Z.469 Files.delete(file);**: Zeile 469: Dateioperation. `Files.delete(file);`
+> - **return Z.470 return java.nio.file.FileVisitResult.CONTINUE;**: Zeile 470: Rückgabe `return java.nio.file.FileVisitResult.CONTINUE;`.
+
+- Das [[Glossar#Plugin|Plugin]] kümmert sich um die Datei.
 - `visitFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

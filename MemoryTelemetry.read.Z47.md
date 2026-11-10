@@ -19,9 +19,15 @@ flowchart TD
 if Z.47 (childPid ) 0)
   Zeile 47: prüft `(childPid ) 0)`.
 ProcessProbe.snapshot
-  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `ProcessProbe.java`. Ruft `kb`.
 MemoryTelemetry.number
-  `number` in `MemoryTelemetry.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `number` in `MemoryTelemetry.java`.
 ```
 
-- Fortsetzung von `MemoryTelemetry.read`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.47 (childPid ) 0)**: Zeile 47: prüft `(childPid ) 0)`.
+> - **ProcessProbe.snapshot**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+> - **MemoryTelemetry.number**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `number` in `MemoryTelemetry.java`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 47 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `MemoryTelemetry.read`.

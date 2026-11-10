@@ -25,17 +25,27 @@ flowchart TD
 if Z.354 (method.equals('POST'))
   Zeile 354: prüft `(method.equals('POST'))`.
 Dashboard.parseSchedule
-  Wertet aus `parseSchedule`. Ruft `load`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Zeitplan|Zeitplan]]. Wertet aus `parseSchedule`. Ruft `load`.
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
 Dashboard.schedulesApi.Teil1.Z349.Z354.Z355
-  Fortsetzung des Ablaufs ab Zeile 355.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 355 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 355.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 ScheduleDef.toJson
-  `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Antwort. `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
 return Z.366 return;
   Zeile 366: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `Dashboard.schedulesApi.Teil1.Z349`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.354 (method.equals('POST'))**: Zeile 354: prüft `(method.equals('POST'))`.
+> - **Dashboard.parseSchedule**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Zeitplan|Zeitplan]]. Wertet aus `parseSchedule`. Ruft `load`.
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
+> - **Dashboard.schedulesApi.Teil1.Z349.Z354.Z355**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 355 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 355.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **ScheduleDef.toJson**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Antwort. `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+> - **return Z.366 return;**: Zeile 366: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 354 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.schedulesApi.Teil1.Z349`.

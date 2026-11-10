@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 ServerHosterSettings.ServerHosterSettings
-  `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+  Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Einstellungen|Einstellungen]]. `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
 ServerHosterSettings.apply
-  Wendet an `apply`.
+  Dieser Teil wendet an das. Wendet an `apply`.
 ServerHosterSettings.from
-  `from` in `ServerHosterSettings.java`. Ruft `ServerHosterSettings`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `from` in `ServerHosterSettings.java`. Ruft `ServerHosterSettings`.
 ```
 
-- Fortsetzung von `HosterTest.settingsValidateAndKeepRemoteCredentialsOutOfDashboardView`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ServerHosterSettings.ServerHosterSettings**: Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Einstellungen|Einstellungen]]. `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+> - **ServerHosterSettings.apply**: Dieser Teil wendet an das. Wendet an `apply`.
+> - **ServerHosterSettings.from**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `from` in `ServerHosterSettings.java`. Ruft `ServerHosterSettings`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.settingsValidateAndKeepRemoteCredentialsOutOfDashboardView`.

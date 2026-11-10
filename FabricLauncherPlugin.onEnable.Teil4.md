@@ -26,13 +26,22 @@ Schritt Z.148 Runtime.getRuntime().addShutdownHook(shutdownHook…
 Schritt Z.149 long every = getConfig().getLong('saveAllInterval…
   Zeile 149: liest die Config. `long every = getConfig().getLong('saveAllInterval…`
 FabricLauncherPlugin.onEnable.Teil4.Z150
-  Fortsetzung des Ablaufs ab Zeile 150.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 150 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 150.
 FabricLauncherPlugin.fireDueTasks
-  Führt Fälliges aus in `fireDueTasks`. Ruft `tasks`, `matches`, `runTask`. Befund: Altlast (sicher).
+  Das [[Glossar#Plugin|Plugin]] stößt an Fälliges die [[Glossar#Aufgabe|Aufgaben]]. Führt Fälliges aus in `fireDueTasks`. Ruft `tasks`, `matches`, `runTask`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], sicher. FabricLauncherPlugin.java:151 und config.yml:93 Kommentar Deprecated
 FabricLauncherPlugin.fireDueSchedules
-  Führt Fälliges aus in `fireDueSchedules`. Ruft `schedules`, `matches`, `cron`.
+  Das [[Glossar#Plugin|Plugin]] stößt an Fälliges die Zeitpläne. Führt Fälliges aus in `fireDueSchedules`. Ruft `schedules`, `matches`, `cron`.
 Schritt Z.153 long memoryInterval = Math.max(15, getConfig().ge…
   Zeile 153: liest die Config. `long memoryInterval = Math.max(15, getConfig().ge…`
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onEnable`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.148 Runtime.getRuntime().addShutdownHook(shutdownHook…**: Zeile 148: fragt die JVM-Laufzeit. `Runtime.getRuntime().addShutdownHook(shutdownHook…`
+> - **Schritt Z.149 long every = getConfig().getLong('saveAllInterval…**: Zeile 149: liest die Config. `long every = getConfig().getLong('saveAllInterval…`
+> - **FabricLauncherPlugin.onEnable.Teil4.Z150**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 150 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 150.
+> - **FabricLauncherPlugin.fireDueTasks**: Das [[Glossar#Plugin|Plugin]] stößt an Fälliges die [[Glossar#Aufgabe|Aufgaben]]. Führt Fälliges aus in `fireDueTasks`. Ruft `tasks`, `matches`, `runTask`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], sicher. FabricLauncherPlugin.java:151 und config.yml:93 Kommentar Deprecated
+> - **FabricLauncherPlugin.fireDueSchedules**: Das [[Glossar#Plugin|Plugin]] stößt an Fälliges die Zeitpläne. Führt Fälliges aus in `fireDueSchedules`. Ruft `schedules`, `matches`, `cron`.
+> - **Schritt Z.153 long memoryInterval = Math.max(15, getConfig().ge…**: Zeile 153: liest die Config. `long memoryInterval = Math.max(15, getConfig().ge…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.onEnable`.

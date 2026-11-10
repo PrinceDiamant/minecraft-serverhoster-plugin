@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.focusSlot
-  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+  Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Im [[Glossar#Quelltext|Quelltext]] heißt das `running`.
 return Z.304 return focusSlot().running();
-  Zeile 304: Rückgabe `return focusSlot().running();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 304.
 ```
 
-- `running` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, prüfen. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:304–304 kein Produktionsaufruf im Aufrufgraph; Name kommt in UI, Config oder anderem Text vor
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.focusSlot**: Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Im [[Glossar#Quelltext|Quelltext]] heißt das `running`.
+> - **return Z.304 return focusSlot().running();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 304.
+
+- Sagt, ob der [[Glossar#Spielserver|Spielserver]] gerade läuft.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

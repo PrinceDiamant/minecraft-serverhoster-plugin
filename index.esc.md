@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.83 return String(s).replace(/(&()'')/g,c=)(('&':'&am…
-  Zeile 83: Rückgabe `return String(s).replace(/(&()'')/g,c=)(('&':'&am…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 83.
 ```
 
-- `esc` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.83 return String(s).replace(/(&()'')/g,c=)(('&':'&am…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 83.
+
+- Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann.

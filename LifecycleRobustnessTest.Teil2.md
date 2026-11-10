@@ -19,21 +19,31 @@ flowchart TD
 
 ```knoten
 LifecycleRobustnessTest.supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart
-  `supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart` in `LifecycleRobustnessTest.java`. Ruft `assess`, `state`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart`.
 LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation
-  `dashboardDistinguishesLifecycleAndRestartCancellation` in `LifecycleRobustnessTest.java`. Ruft `dashboardState`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardDistinguishesLifecycleAndRestartCancellation`.
 LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap
-  `invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap` in `LifecycleRobustnessTest.java`. Ruft `memory`, `boundedSeconds`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap`.
 LifecycleRobustnessTest.retryExhaustionKeepsTheStartFailureInsteadOfPreparing
-  `retryExhaustionKeepsTheStartFailureInsteadOfPreparing` in `LifecycleRobustnessTest.java`. Ruft `text`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `retryExhaustionKeepsTheStartFailureInsteadOfPreparing`.
 LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates
-  `telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates` in `LifecycleRobustnessTest.java`. Ruft `line`, `snapshot`, `appendRotated`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates`.
 LifecycleRobustnessTest.state
-  Liefert den Zustand `state`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `state`.
 LifecycleRobustnessTest.identity
-  `identity` in `LifecycleRobustnessTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `identity`.
 LifecycleRobustnessTest.testProcess
-  Prüft `testProcess`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `testProcess`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LifecycleRobustnessTest.supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart`.
+> - **LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardDistinguishesLifecycleAndRestartCancellation`.
+> - **LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap`.
+> - **LifecycleRobustnessTest.retryExhaustionKeepsTheStartFailureInsteadOfPreparing**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `retryExhaustionKeepsTheStartFailureInsteadOfPreparing`.
+> - **LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates`.
+> - **LifecycleRobustnessTest.state**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `state`.
+> - **LifecycleRobustnessTest.identity**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `identity`.
+> - **LifecycleRobustnessTest.testProcess**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `testProcess`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

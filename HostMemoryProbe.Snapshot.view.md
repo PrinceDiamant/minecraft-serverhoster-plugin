@@ -16,4 +16,8 @@ return Z.27 return out;
   Zeile 27: Rückgabe `return out;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.27 return out;**: Zeile 27: Rückgabe `return out;`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `view` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

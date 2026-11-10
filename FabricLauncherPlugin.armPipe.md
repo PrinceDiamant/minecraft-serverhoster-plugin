@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.armPipe.Z2073
-  Fortsetzung des Ablaufs ab Zeile 2073.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2073 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2073`.
 ```
 
-- `armPipe` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.armPipe.Z2073**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2073 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2073`.
+
+- Schaltet das Mitlesen der [[Glossar#Konsole|Konsole]] an.

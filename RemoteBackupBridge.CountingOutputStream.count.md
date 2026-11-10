@@ -16,4 +16,8 @@ return Z.336 return count;
   Zeile 336: Rückgabe `return count;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.336 return count;**: Zeile 336: Rückgabe `return count;`.
+
+- Die Sicherung über das Netz zählt das.
 - `count` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

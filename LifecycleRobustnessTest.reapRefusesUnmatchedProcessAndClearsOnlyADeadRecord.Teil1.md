@@ -19,15 +19,23 @@ flowchart TD
 
 ```knoten
 LifecycleRobustnessTest.identity
-  `identity` in `LifecycleRobustnessTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `identity` in `LifecycleRobustnessTest.java`. Nur Test.
 ChildProcessRecord.write
-  Schreibt `write`. Ruft `safe`.
+  Dieser Teil schreibt das. Schreibt `write`. Ruft `safe`.
 ChildProcessRecord.read
-  Liest `read`. Ruft `required`.
+  Dieser Teil liest das. Liest `read`. Ruft `required`.
 LifecycleRobustnessTest.FakeProcesses.FakeProcesses
-  `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
 ChildProcessRecord.reap
-  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+  Dieser Teil räumt weg das. Räumt übrige [[Glossar#Prozess|Prozesse]] ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **LifecycleRobustnessTest.identity**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `identity` in `LifecycleRobustnessTest.java`. Nur Test.
+> - **ChildProcessRecord.write**: Dieser Teil schreibt das. Schreibt `write`. Ruft `safe`.
+> - **ChildProcessRecord.read**: Dieser Teil liest das. Liest `read`. Ruft `required`.
+> - **LifecycleRobustnessTest.FakeProcesses.FakeProcesses**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+> - **ChildProcessRecord.reap**: Dieser Teil räumt weg das. Räumt übrige [[Glossar#Prozess|Prozesse]] ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`.

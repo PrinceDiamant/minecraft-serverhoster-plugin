@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 index.loadLogs.Z150
-  Fortsetzung des Ablaufs ab Zeile 150.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 150 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z150`.
 ```
 
-- `loadLogs` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.loadLogs.Z150**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 150 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z150`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die Protokolle.

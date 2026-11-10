@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.563 return method != null && !Set.of('GET', 'HEAD', '…
-  Zeile 563: Rückgabe `return method != null && !Set.of('GET', 'HEAD', '…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 563.
 ```
 
-- `csrfRejected` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.563 return method != null && !Set.of('GET', 'HEAD', '…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 563.
+
+- Lehnt eine Anfrage ab, die nicht von der eigenen [[Glossar#Bedienseite|Bedienseite]] kommt.

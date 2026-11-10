@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.writeMarker(Path,String,String,int)
-  Schreibt `writeMarker`. Ruft `writeMarker`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.writeMarker(Path,String,String,int)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei.
 - `writeMarker` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

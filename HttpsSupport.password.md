@@ -23,11 +23,18 @@ flowchart TD
 if Z.66 (store.isBlank())
   Zeile 66: prüft `(store.isBlank())`.
 HttpsSupport.readOrCreatePass
-  Liest `readOrCreatePass`.
+  Dieser Teil liest oder den Ersatz. Liest `readOrCreatePass`.
 if Z.67 (key.isBlank())
   Zeile 67: prüft `(key.isBlank())`.
 return Z.68 return new char()() ( store.toCharArray(), key.to…
   Zeile 68: Rückgabe `return new char()() ( store.toCharArray(), key.to…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.66 (store.isBlank())**: Zeile 66: prüft `(store.isBlank())`.
+> - **HttpsSupport.readOrCreatePass**: Dieser Teil liest oder den Ersatz. Liest `readOrCreatePass`.
+> - **if Z.67 (key.isBlank())**: Zeile 67: prüft `(key.isBlank())`.
+> - **return Z.68 return new char()() ( store.toCharArray(), key.to…**: Zeile 68: Rückgabe `return new char()() ( store.toCharArray(), key.to…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `password` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

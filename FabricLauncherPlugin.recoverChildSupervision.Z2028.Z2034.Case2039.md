@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.armPipe
-  Hängt die Überwachung an `armPipe`. Ruft `pipe`.
+  Schaltet das Mitlesen der [[Glossar#Konsole|Konsole]] an. Hängt die Überwachung an `armPipe`. Ruft `pipe`.
 FabricLauncherPlugin.consolePrefix
-  Liefert die Konsole `consolePrefix`.
+  Setzt eine kurze Kennung vor jede [[Glossar#Zeile|Zeile]], damit man sie dem [[Glossar#Spielserver|Spielserver]] zuordnen kann. Liefert die [[Glossar#Konsole|Konsole]] `consolePrefix`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.recoverChildSupervision.Z2028.Z2034`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.armPipe**: Schaltet das Mitlesen der [[Glossar#Konsole|Konsole]] an. Hängt die Überwachung an `armPipe`. Ruft `pipe`.
+> - **FabricLauncherPlugin.consolePrefix**: Setzt eine kurze Kennung vor jede [[Glossar#Zeile|Zeile]], damit man sie dem [[Glossar#Spielserver|Spielserver]] zuordnen kann. Liefert die [[Glossar#Konsole|Konsole]] `consolePrefix`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2039.
+- Fortsetzung von `FabricLauncherPlugin.recoverChildSupervision.Z2028.Z2034`.

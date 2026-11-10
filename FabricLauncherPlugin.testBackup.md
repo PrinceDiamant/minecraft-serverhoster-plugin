@@ -22,15 +22,22 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.backupSpec
-  Sichert `backupSpec`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupSpec`.
 FabricLauncherPlugin.testBackup.Z1396
-  Fortsetzung des Ablaufs ab Zeile 1396.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1396 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1396`.
 if Z.1407 (spec.dbEnabled())
-  Zeile 1407: prüft `(spec.dbEnabled())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1407.
 BackupBridge.test
-  Prüft `test`. Ruft `connect`, `ensureTable`, `table`.
+  Die Sicherung auf diesem Rechner prüft das. Im [[Glossar#Quelltext|Quelltext]] heißt das `test`.
 return Z.1411 return transport;
-  Zeile 1411: Rückgabe `return transport;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1411.
 ```
 
-- `testBackup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.backupSpec**: Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupSpec`.
+> - **FabricLauncherPlugin.testBackup.Z1396**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1396 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1396`.
+> - **if Z.1407 (spec.dbEnabled())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1407.
+> - **BackupBridge.test**: Die Sicherung auf diesem Rechner prüft das. Im [[Glossar#Quelltext|Quelltext]] heißt das `test`.
+> - **return Z.1411 return transport;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1411.
+
+- Das [[Glossar#Plugin|Plugin]] prüft die [[Glossar#Sicherungskopie|Sicherungskopie]].

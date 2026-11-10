@@ -16,5 +16,9 @@ return Z.328 return '40';
   Zeile 328: Rückgabe `return '40';`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.328 return '40';**: Zeile 328: Rückgabe `return '40';`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `get` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

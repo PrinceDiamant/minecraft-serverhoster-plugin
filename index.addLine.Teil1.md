@@ -18,13 +18,20 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.cls
-  Leert die Konsole `cls`.
+  Leert die Anzeige der [[Glossar#Konsole|Konsole]] in der älteren [[Glossar#Bedienseite|Bedienseite]]. Leert die Konsole `cls`.
 if Z.121 k
   Zeile 121: prüft `k`.
 while Z.121 c.childElementCount)2000
   Zeile 121: Schleife `c.childElementCount)2000`.
 ```
 
-- Fortsetzung von `index.addLine`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.cls**: Leert die Anzeige der [[Glossar#Konsole|Konsole]] in der älteren [[Glossar#Bedienseite|Bedienseite]]. Leert die Konsole `cls`.
+> - **if Z.121 k**: Zeile 121: prüft `k`.
+> - **while Z.121 c.childElementCount)2000**: Zeile 121: Schleife `c.childElementCount)2000`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.addLine`.

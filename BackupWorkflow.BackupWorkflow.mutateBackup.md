@@ -22,7 +22,13 @@ if Z.108 !accepted
 return Z.108 return;
   Zeile 108: Rückgabe `return;`.
 BackupWorkflow.BackupWorkflow.mutateBackup.Z112
-  Fortsetzung des Ablaufs ab Zeile 112.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 112 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 112.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.108 !accepted**: Zeile 108: prüft `!accepted`.
+> - **return Z.108 return;**: Zeile 108: Rückgabe `return;`.
+> - **BackupWorkflow.BackupWorkflow.mutateBackup.Z112**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 112 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 112.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] sichert das.
 - `mutateBackup` in `ui/src/components/BackupWorkflow.tsx`

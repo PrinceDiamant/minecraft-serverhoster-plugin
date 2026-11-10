@@ -14,4 +14,8 @@ Schritt Z.583 assertFalse(Files.exists(pendingReset));
   Zeile 583: Dateioperation. `assertFalse(Files.exists(pendingReset));`
 ```
 
-- Fortsetzung von `HosterTest.setupRecoveryRollsBackPendingDirectoriesBeforeSetupCompletes`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.583 assertFalse(Files.exists(pendingReset));**: Zeile 583: Dateioperation. `assertFalse(Files.exists(pendingReset));`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.setupRecoveryRollsBackPendingDirectoriesBeforeSetupCompletes`.

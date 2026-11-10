@@ -23,11 +23,19 @@ if Z.460 (schedule.enabled())
 try Z.461
   Zeile 461: Versuch. Der Fehlerpfad geht in catch.
 CronExpr.next
-  Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+  Dieser Teil geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
 ScheduleDef.cron
-  `cron` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cron` in `ScheduleDef.java`.
 catch Z.465 (RuntimeException e)
   Zeile 465: fängt (RuntimeException e).
 ```
 
-- Fortsetzung von `Dashboard.scheduleJson`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.460 (schedule.enabled())**: Zeile 460: prüft `(schedule.enabled())`.
+> - **try Z.461**: Zeile 461: Versuch. Der Fehlerpfad geht in catch.
+> - **CronExpr.next**: Dieser Teil geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+> - **ScheduleDef.cron**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cron` in `ScheduleDef.java`.
+> - **catch Z.465 (RuntimeException e)**: Zeile 465: fängt (RuntimeException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 460 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.scheduleJson`.

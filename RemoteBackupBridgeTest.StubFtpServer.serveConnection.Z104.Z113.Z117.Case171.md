@@ -23,4 +23,10 @@ finally Z.178
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.173 (value == null)**: Zeile 173: prüft `(value == null)`.
+> - **try Z.178**: Zeile 178: Versuch. Der Fehlerpfad geht in catch.
+> - **finally Z.178**: Läuft danach immer, auch nach einem Fehler.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 171.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`.

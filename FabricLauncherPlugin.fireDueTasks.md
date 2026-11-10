@@ -18,12 +18,17 @@ flowchart TD
 
 ```knoten
 if Z.1498 (shuttingDown)
-  Zeile 1498: prüft `(shuttingDown)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1498.
 return Z.1498 return;
-  Zeile 1498: Rückgabe `return;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1498.
 FabricLauncherPlugin.fireDueTasks.Z1499
-  Fortsetzung des Ablaufs ab Zeile 1499.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1499 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1499`.
 ```
 
-- `fireDueTasks` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: Altlast, sicher. FabricLauncherPlugin.java:151 und config.yml:93 Kommentar Deprecated
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1498 (shuttingDown)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1498.
+> - **return Z.1498 return;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1498.
+> - **FabricLauncherPlugin.fireDueTasks.Z1499**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1499 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1499`.
+
+- Das [[Glossar#Plugin|Plugin]] stößt an Fälliges die [[Glossar#Aufgabe|Aufgaben]].
+- Auffällig: ein alter Weg läuft noch mit. Das nennt man [[Glossar#Altlast|Altlast]].

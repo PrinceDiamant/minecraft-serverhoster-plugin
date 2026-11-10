@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow`.

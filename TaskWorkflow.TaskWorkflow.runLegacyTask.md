@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.TaskWorkflow.runLegacyTask.Z228
-  Fortsetzung des Ablaufs ab Zeile 228.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 228 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 228.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.TaskWorkflow.runLegacyTask.Z228**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 228 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 228.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] führt aus den alten Weg die [[Glossar#Aufgabe|Aufgabe]].
 - `runLegacyTask` in `ui/src/components/TaskWorkflow.tsx`

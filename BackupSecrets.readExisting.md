@@ -33,9 +33,18 @@ if Z.22 (!Files.exists(path))
 return Z.22 return new Credentials('', '', '');
   Zeile 22: Rückgabe `return new Credentials('', '', '');`.
 BackupSecrets.load
-  Lädt `load`. Ruft `restrict`.
+  Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
 return Z.23 return load(pluginDirectory);
   Zeile 23: Rückgabe `return load(pluginDirectory);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.21 (Files.isSymbolicLink(path))**: Zeile 21: prüft `(Files.isSymbolicLink(path))`.
+> - **throw Z.21 throw new IOException('Invalid secrets.yml path');**: Zeile 21: Abbruch `throw new IOException('Invalid secrets.yml path');`.
+> - **if Z.22 (!Files.exists(path))**: Zeile 22: prüft `(!Files.exists(path))`.
+> - **return Z.22 return new Credentials('', '', '');**: Zeile 22: Rückgabe `return new Credentials('', '', '');`.
+> - **BackupSecrets.load**: Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
+> - **return Z.23 return load(pluginDirectory);**: Zeile 23: Rückgabe `return load(pluginDirectory);`.
+
+- Dieser Teil liest hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `readExisting` in `src/main/java/de/aichele/childlauncher/BackupSecrets.java`

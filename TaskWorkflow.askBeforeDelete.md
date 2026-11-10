@@ -16,4 +16,8 @@ return Z.109 return window.dashboardUi?.confirm(( title: 'Zeit…
   Zeile 109: Rückgabe `return window.dashboardUi?.confirm(( title: 'Zeit…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.109 return window.dashboardUi?.confirm(( title: 'Zeit…**: Zeile 109: Rückgabe `return window.dashboardUi?.confirm(( title: 'Zeit…`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `askBeforeDelete` in `ui/src/components/TaskWorkflow.tsx`

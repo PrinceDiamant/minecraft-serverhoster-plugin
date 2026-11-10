@@ -20,7 +20,13 @@ try Z.836
 if Z.839 (b.length ) MAX_TEXT)
   Zeile 839: prüft `(b.length ) MAX_TEXT)`.
 Dashboard.text
-  Antwortet mit Text `text`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`. Ruft `sendBytes`.
 ```
 
-- Fortsetzung von `Dashboard.fsRead.Z835`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.836**: Zeile 836: Versuch. Der Fehlerpfad geht in catch.
+> - **if Z.839 (b.length ) MAX_TEXT)**: Zeile 839: prüft `(b.length ) MAX_TEXT)`.
+> - **Dashboard.text**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`. Ruft `sendBytes`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 836 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.fsRead.Z835`.

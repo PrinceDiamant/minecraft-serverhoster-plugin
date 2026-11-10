@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.833 return getDataFolder().toPath().toAbsolutePath().…
-  Zeile 833: Rückgabe `return getDataFolder().toPath().toAbsolutePath().…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 833.
 ```
 
-- `getWorldRoot` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.833 return getDataFolder().toPath().toAbsolutePath().…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 833.
+
+- Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang.

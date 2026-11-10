@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 RuntimeLimits.memory
-  Betrifft den Speicher `memory`. Ruft `percent`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Betrifft den Speicher `memory`. Ruft `percent`.
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RuntimeLimits.memory**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Betrifft den Speicher `memory`. Ruft `percent`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap`.

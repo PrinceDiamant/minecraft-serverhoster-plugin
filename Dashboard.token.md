@@ -22,15 +22,22 @@ flowchart TD
 
 ```knoten
 for Z.481 (String h : ex.getRequestHeaders().getO…
-  Zeile 481: Schleife `(String h : ex.getRequestHeaders().getO…`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 481.
 for Z.482 (String part : h.split(';'))
-  Zeile 482: Schleife `(String part : h.split(';'))`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 482.
 if Z.482 (p.startsWith('FLS='))
-  Zeile 482: prüft `(p.startsWith('FLS='))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 482.
 return Z.482 return p.substring(4);
-  Zeile 482: Rückgabe `return p.substring(4);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 482.
 return Z.483 return '';
-  Zeile 483: Rückgabe `return '';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 483.
 ```
 
-- `token` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **for Z.481 (String h : ex.getRequestHeaders().getO…**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 481.
+> - **for Z.482 (String part : h.split(';'))**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 482.
+> - **if Z.482 (p.startsWith('FLS='))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 482.
+> - **return Z.482 return p.substring(4);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 482.
+> - **return Z.483 return '';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 483.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.

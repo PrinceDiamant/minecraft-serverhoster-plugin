@@ -24,9 +24,16 @@ if Z.270 (!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…
 return Z.270 return current;
   Zeile 270: Rückgabe `return current;`.
 HostMinimize.readProperties.Z271
-  Fortsetzung des Ablaufs ab Zeile 271.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 271 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 271.
 return Z.278 return current;
   Zeile 278: Rückgabe `return current;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.270 (!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…**: Zeile 270: prüft `(!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…`.
+> - **return Z.270 return current;**: Zeile 270: Rückgabe `return current;`.
+> - **HostMinimize.readProperties.Z271**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 271 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 271.
+> - **return Z.278 return current;**: Zeile 278: Rückgabe `return current;`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] liest die Eigenschaften.
 - `readProperties` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

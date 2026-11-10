@@ -17,9 +17,15 @@ flowchart TD
 try Z.2450
   Zeile 2450: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.jarText
-  Betrifft das Jar `jarText`. Ruft `text`, `inspect`, `profile`.
+  Zeigt Einzelheiten aus der [[Glossar#Programmdatei|Programmdatei]]. Betrifft das Jar `jarText`. Ruft `text`, `inspect`, `profile`.
 catch Z.2451 (IOException e)
   Zeile 2451: fängt (IOException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.2450**: Zeile 2450: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.jarText**: Zeigt Einzelheiten aus der [[Glossar#Programmdatei|Programmdatei]]. Betrifft das Jar `jarText`. Ruft `text`, `inspect`, `profile`.
+> - **catch Z.2451 (IOException e)**: Zeile 2451: fängt (IOException e).
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2449.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

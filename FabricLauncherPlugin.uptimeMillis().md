@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.focusSlot
-  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+  Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
 ChildSlot.uptimeMillis
-  Liefert die Laufzeit `uptimeMillis`. Ruft `running`.
+  Dieser Teil kümmert sich um die Zeit. Im [[Glossar#Quelltext|Quelltext]] heißt das `uptimeMillis`.
 return Z.308 return focusSlot().uptimeMillis();
-  Zeile 308: Rückgabe `return focusSlot().uptimeMillis();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 308.
 ```
 
-- `uptimeMillis` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:308–308 kein Aufruf, kein Treffer in plugin.yml/UI/Strings
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.focusSlot**: Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
+> - **ChildSlot.uptimeMillis**: Dieser Teil kümmert sich um die Zeit. Im [[Glossar#Quelltext|Quelltext]] heißt das `uptimeMillis`.
+> - **return Z.308 return focusSlot().uptimeMillis();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 308.
+
+- Sagt, wie lange der [[Glossar#Spielserver|Spielserver]] schon läuft.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

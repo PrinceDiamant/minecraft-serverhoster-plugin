@@ -16,12 +16,12 @@ flowchart TD
   n10["FabricLauncherPlugin.info(String)"]:::internal-link
   n11["FabricLauncherPlugin.info(String,String)"]:::internal-link
   n12["FabricLauncherPlugin.send"]:::internal-link
-  n1 -->|"Z.316"| n2
-  n2 -->|"Z.317"| n12
-  n3 -->|"Z.318"| n6
-  n4 -->|"Z.319"| n8
-  n5 -->|"Z.320"| n9
-  n10 -->|"Z.338"| n11
+  n1 -->|"Zeile 316"| n2
+  n2 -->|"Zeile 317"| n12
+  n3 -->|"Zeile 318"| n6
+  n4 -->|"Zeile 319"| n8
+  n5 -->|"Zeile 320"| n9
+  n10 -->|"Zeile 338"| n11
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n3 fill:#f88,stroke:#900
@@ -31,29 +31,43 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.sendCommand(String)
-  Sendet `sendCommand`. Ruft `sendCommand`.
+  Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
 FabricLauncherPlugin.sendCommand(String,String)
-  Sendet `sendCommand`. Ruft `send`, `slot`.
+  Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
 FabricLauncherPlugin.requestStart()
-  Fordert an `requestStart`. Ruft `requestStart`. Befund: toter Code (sicher).
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.requestStop()
-  Fordert an `requestStop`. Ruft `requestStop`. Befund: toter Code (sicher).
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.requestRestart()
-  Fordert an `requestRestart`. Ruft `requestRestart`. Befund: toter Code (sicher).
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.requestStart(String)
-  Fordert an `requestStart`. Ruft `startAsync`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten.
 FabricLauncherPlugin.requestStart(CommandSender,String)
-  Fordert an `requestStart`. Ruft `startAsync`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten.
 FabricLauncherPlugin.requestStop(String)
-  Fordert an `requestStop`. Ruft `slot`, `stopBlocking`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen.
 FabricLauncherPlugin.requestRestart(String)
-  Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten.
 FabricLauncherPlugin.info(String)
-  Schreibt eine Infozeile `info`. Ruft `info`.
+  Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
 FabricLauncherPlugin.info(String,String)
-  Schreibt eine Infozeile `info`. Ruft `slot`.
+  Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
 FabricLauncherPlugin.send
-  Sendet `send`. Ruft `running`.
+  Schickt Text an den laufenden [[Glossar#Spielserver|Spielserver]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.sendCommand(String)**: Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
+> - **FabricLauncherPlugin.sendCommand(String,String)**: Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
+> - **FabricLauncherPlugin.requestStart()**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.requestStop()**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.requestRestart()**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.requestStart(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten.
+> - **FabricLauncherPlugin.requestStart(CommandSender,String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten.
+> - **FabricLauncherPlugin.requestStop(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen.
+> - **FabricLauncherPlugin.requestRestart(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten.
+> - **FabricLauncherPlugin.info(String)**: Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
+> - **FabricLauncherPlugin.info(String,String)**: Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]].
+> - **FabricLauncherPlugin.send**: Schickt Text an den laufenden [[Glossar#Spielserver|Spielserver]].
 
+- Dem laufenden [[Glossar#Spielserver|Spielserver]] einen [[Glossar#Befehl|Befehl]] schicken, oder ihn starten, stoppen und neu starten.

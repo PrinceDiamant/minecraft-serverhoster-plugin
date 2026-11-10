@@ -21,17 +21,26 @@ flowchart TD
 
 ```knoten
 SetupWizard.SetupWizard.finish.Z135.Teil2.Z185
-  Fortsetzung des Ablaufs ab Zeile 185.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 185 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 185.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 SetupWizard.SetupWizard.finish.Z135.Teil2.Z196
-  Fortsetzung des Ablaufs ab Zeile 196.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 196 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 196.
 SetupWizard.SetupWizard.finish.Z135.Teil2.Z217
-  Fortsetzung des Ablaufs ab Zeile 217.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 217 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 217.
 if Z.229 !await onComplete()
   Zeile 229: prüft `!await onComplete()`.
 ```
 
-- Fortsetzung von `SetupWizard.SetupWizard.finish.Z135`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SetupWizard.SetupWizard.finish.Z135.Teil2.Z185**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 185 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 185.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+> - **SetupWizard.SetupWizard.finish.Z135.Teil2.Z196**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 196 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 196.
+> - **SetupWizard.SetupWizard.finish.Z135.Teil2.Z217**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 217 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 217.
+> - **if Z.229 !await onComplete()**: Zeile 229: prüft `!await onComplete()`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SetupWizard.SetupWizard.finish.Z135`.

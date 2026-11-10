@@ -20,7 +20,13 @@ if Z.240 (!real.startsWith(realRoot))
 throw Z.240 throw new SecurityException('path escapes the ser…
   Zeile 240: Abbruch `throw new SecurityException('path escapes the ser…`.
 HostMinimize.assertEditable.Teil2.Z241
-  Fortsetzung des Ablaufs ab Zeile 241.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 241 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 241.
 ```
 
-- Fortsetzung von `HostMinimize.assertEditable`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.240 (!real.startsWith(realRoot))**: Zeile 240: prüft `(!real.startsWith(realRoot))`.
+> - **throw Z.240 throw new SecurityException('path escapes the ser…**: Zeile 240: Abbruch `throw new SecurityException('path escapes the ser…`.
+> - **HostMinimize.assertEditable.Teil2.Z241**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 241 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 241.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimize.assertEditable`.

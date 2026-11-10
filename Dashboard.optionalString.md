@@ -23,15 +23,22 @@ flowchart TD
 
 ```knoten
 if Z.591 (!request.has(key))
-  Zeile 591: prüft `(!request.has(key))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 591.
 return Z.591 return fallback;
-  Zeile 591: Rückgabe `return fallback;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 591.
 if Z.592 (!request.get(key).isJsonPrimitive() // !request.…
-  Zeile 592: prüft `(!request.get(key).isJsonPrimitive() // !request.…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 592.
 throw Z.593 throw new IllegalArgumentException(key + ' muss T…
-  Zeile 593: Abbruch `throw new IllegalArgumentException(key + ' muss T…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 593.
 return Z.594 return request.get(key).getAsString();
-  Zeile 594: Rückgabe `return request.get(key).getAsString();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 594.
 ```
 
-- `optionalString` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.591 (!request.has(key))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 591.
+> - **return Z.591 return fallback;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 591.
+> - **if Z.592 (!request.get(key).isJsonPrimitive() // !request.…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 592.
+> - **throw Z.593 throw new IllegalArgumentException(key + ' muss T…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 593.
+> - **return Z.594 return request.get(key).getAsString();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 594.
+
+- Liest einen Text, der in der Anfrage fehlen darf.

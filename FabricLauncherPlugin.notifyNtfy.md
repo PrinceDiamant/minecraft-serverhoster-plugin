@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.ntfySettings
-  `ntfySettings` in `FabricLauncherPlugin.java`.
+  Liest die [[Glossar#Einstellungen|Einstellungen]] für den Mitteilungsdienst. Im [[Glossar#Quelltext|Quelltext]] heißt das `ntfySettings`.
 if Z.211 (!settings.enabled() // settings.topic() == null …
-  Zeile 211: prüft `(!settings.enabled() // settings.topic() == null …`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 211.
 return Z.211 return;
-  Zeile 211: Rückgabe `return;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 211.
 FabricLauncherPlugin.notifyNtfy.Z212
-  Fortsetzung des Ablaufs ab Zeile 212.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 212 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z212`.
 ```
 
-- `notifyNtfy` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.ntfySettings**: Liest die [[Glossar#Einstellungen|Einstellungen]] für den Mitteilungsdienst. Im [[Glossar#Quelltext|Quelltext]] heißt das `ntfySettings`.
+> - **if Z.211 (!settings.enabled() // settings.topic() == null …**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 211.
+> - **return Z.211 return;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 211.
+> - **FabricLauncherPlugin.notifyNtfy.Z212**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 212 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z212`.
+
+- Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst.

@@ -16,51 +16,65 @@ flowchart TD
   n10["Dashboard.fsMkdir"]:::internal-link
   n11["Dashboard.fsDelete"]:::internal-link
   n12["Dashboard.logs"]:::internal-link
-  n4 -->|"Z.819"| n2
-  n4 -->|"Z.829"| n3
-  n5 -->|"Z.833"| n2
-  n6 -->|"Z.857"| n2
-  n7 -->|"Z.866"| n2
-  n7 -->|"Z.870"| n3
-  n8 -->|"Z.875"| n2
-  n8 -->|"Z.878"| n3
-  n9 -->|"Z.893"| n2
-  n9 -->|"Z.894"| n1
-  n9 -->|"Z.897"| n3
-  n10 -->|"Z.902"| n2
-  n11 -->|"Z.910"| n2
-  n11 -->|"Z.911"| n1
-  n11 -->|"Z.914"| n3
-  n12 -->|"Z.923"| n2
+  n4 -->|"Zeile 819"| n2
+  n4 -->|"Zeile 829"| n3
+  n5 -->|"Zeile 833"| n2
+  n6 -->|"Zeile 857"| n2
+  n7 -->|"Zeile 866"| n2
+  n7 -->|"Zeile 870"| n3
+  n8 -->|"Zeile 875"| n2
+  n8 -->|"Zeile 878"| n3
+  n9 -->|"Zeile 893"| n2
+  n9 -->|"Zeile 894"| n1
+  n9 -->|"Zeile 897"| n3
+  n10 -->|"Zeile 902"| n2
+  n11 -->|"Zeile 910"| n2
+  n11 -->|"Zeile 911"| n1
+  n11 -->|"Zeile 914"| n3
+  n12 -->|"Zeile 923"| n2
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Dashboard.root
-  Liefert die Wurzel `root`. Ruft `guard`, `root`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 Dashboard.safe
-  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 Dashboard.rel
-  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 Dashboard.fsList
-  `fsList` in `Dashboard.java`. Ruft `safe`, `json`, `rel`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] zeigt eine Datei.
 Dashboard.fsRead
-  `fsRead` in `Dashboard.java`. Ruft `safe`, `json`, `text`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Datei.
 Dashboard.fsDownload
-  `fsDownload` in `Dashboard.java`. Ruft `safe`, `json`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] holt eine Datei.
 Dashboard.fsWrite
-  `fsWrite` in `Dashboard.java`. Ruft `safe`, `json`, `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schreibt eine Datei.
 Dashboard.fsUpload
-  `fsUpload` in `Dashboard.java`. Ruft `safe`, `json`, `rel`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt eine Datei.
 Dashboard.fsRename
-  `fsRename` in `Dashboard.java`. Ruft `readBodyText`, `safe`, `root`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] benennt um eine Datei.
 Dashboard.fsMkdir
-  `fsMkdir` in `Dashboard.java`. Ruft `safe`, `json`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] legt einen Ordner an für eine Datei.
 Dashboard.fsDelete
-  `fsDelete` in `Dashboard.java`. Ruft `readBodyText`, `safe`, `root`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] löscht eine Datei.
 Dashboard.logs
-  `logs` in `Dashboard.java`. Ruft `parseInt`, `query`, `safe`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **Dashboard.root**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **Dashboard.safe**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **Dashboard.rel**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **Dashboard.fsList**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] zeigt eine Datei.
+> - **Dashboard.fsRead**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Datei.
+> - **Dashboard.fsDownload**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] holt eine Datei.
+> - **Dashboard.fsWrite**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schreibt eine Datei.
+> - **Dashboard.fsUpload**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt eine Datei.
+> - **Dashboard.fsRename**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] benennt um eine Datei.
+> - **Dashboard.fsMkdir**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] legt einen Ordner an für eine Datei.
+> - **Dashboard.fsDelete**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] löscht eine Datei.
+> - **Dashboard.logs**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 
+- Ordner ansehen, Datei lesen, schreiben, umbenennen oder löschen.

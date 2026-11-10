@@ -29,23 +29,35 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.TaskWorkflow.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 TaskWorkflow.TaskWorkflow.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 TaskWorkflow.TaskWorkflow.onPageChange
-  Reagiert `onPageChange`. Ruft `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
 TaskWorkflow.TaskWorkflow.saveDraft
-  Speichert `saveDraft`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] speichert hier einen Schritt. Eine Ebene tiefer steht er genauer. Speichert `saveDraft`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
 TaskWorkflow.TaskWorkflow.toggleSchedule
-  Schaltet um `toggleSchedule`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] schaltet um den [[Glossar#Zeitplan|Zeitplan]]. Schaltet um `toggleSchedule`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
 TaskWorkflow.TaskWorkflow.runSchedule
-  Führt aus `runSchedule`. Ruft `dashboardRequest`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Zeitplan|Zeitplan]]. Führt aus `runSchedule`. Ruft `dashboardRequest`, `refresh`.
 TaskWorkflow.TaskWorkflow.deleteSchedule
-  Löscht `deleteSchedule`. Ruft `askBeforeDelete`, `dashboardRequest`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] löscht den [[Glossar#Zeitplan|Zeitplan]]. Löscht `deleteSchedule`. Ruft `askBeforeDelete`, `dashboardRequest`, `refresh`.
 TaskWorkflow.TaskWorkflow.runLegacyTask
-  Führt aus `runLegacyTask`. Ruft `dashboardRequest`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] führt aus den alten Weg die [[Glossar#Aufgabe|Aufgabe]]. Führt aus `runLegacyTask`. Ruft `dashboardRequest`, `refresh`.
 TaskWorkflow.TaskWorkflow.updateDraft
-  Aktualisiert `updateDraft`.
+  Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.TaskWorkflow.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **TaskWorkflow.TaskWorkflow.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **TaskWorkflow.TaskWorkflow.onPageChange**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
+> - **TaskWorkflow.TaskWorkflow.saveDraft**: Die [[Glossar#Bedienseite|Bedienseite]] speichert hier einen Schritt. Eine Ebene tiefer steht er genauer. Speichert `saveDraft`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+> - **TaskWorkflow.TaskWorkflow.toggleSchedule**: Die [[Glossar#Bedienseite|Bedienseite]] schaltet um den [[Glossar#Zeitplan|Zeitplan]]. Schaltet um `toggleSchedule`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+> - **TaskWorkflow.TaskWorkflow.runSchedule**: Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Zeitplan|Zeitplan]]. Führt aus `runSchedule`. Ruft `dashboardRequest`, `refresh`.
+> - **TaskWorkflow.TaskWorkflow.deleteSchedule**: Die [[Glossar#Bedienseite|Bedienseite]] löscht den [[Glossar#Zeitplan|Zeitplan]]. Löscht `deleteSchedule`. Ruft `askBeforeDelete`, `dashboardRequest`, `refresh`.
+> - **TaskWorkflow.TaskWorkflow.runLegacyTask**: Die [[Glossar#Bedienseite|Bedienseite]] führt aus den alten Weg die [[Glossar#Aufgabe|Aufgabe]]. Führt aus `runLegacyTask`. Ruft `dashboardRequest`, `refresh`.
+> - **TaskWorkflow.TaskWorkflow.updateDraft**: Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf.
 - `TaskWorkflow` in `ui/src/components/TaskWorkflow.tsx`

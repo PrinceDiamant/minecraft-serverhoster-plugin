@@ -19,9 +19,15 @@ flowchart TD
 if Z.241 (!FTPReply.isPositiveCompletion(client.getReplyCo…
   Zeile 241: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
 RemoteBackupBridge.replyError
-  Antwortet `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
 throw Z.241 throw replyError(client, 'connect');
   Zeile 241: Abbruch `throw replyError(client, 'connect');`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.241 (!FTPReply.isPositiveCompletion(client.getReplyCo…**: Zeile 241: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
+> - **RemoteBackupBridge.replyError**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
+> - **throw Z.241 throw replyError(client, 'connect');**: Zeile 241: Abbruch `throw replyError(client, 'connect');`.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `connectControl` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

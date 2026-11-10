@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Der [[Glossar#Assistent|Assistent]] wählt die Tätigkeit.
 - `chooseAction` in `ui/src/components/SetupWizard.tsx`

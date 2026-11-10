@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 LegacyTaskMigration.migrate
-  Übernimmt den alten Wert von `migrate`. Ruft `load`, `convert`, `toConfig`.
+  Dieser Teil übernimmt den alten Wert von das. Übernimmt den alten Wert von `migrate`. Ruft `load`, `convert`, `toConfig`.
 ScheduleDef.load
-  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+  Der [[Glossar#Zeitplan|Zeitplan]] lädt das. Lädt `load`. Ruft `asMap`, `Action`, `string`.
 ```
 
-- Fortsetzung von `HosterTest.legacySchedulesMigrateOnlySupportedTasksAndPreserveTheRest`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **LegacyTaskMigration.migrate**: Dieser Teil übernimmt den alten Wert von das. Übernimmt den alten Wert von `migrate`. Ruft `load`, `convert`, `toConfig`.
+> - **ScheduleDef.load**: Der [[Glossar#Zeitplan|Zeitplan]] lädt das. Lädt `load`. Ruft `asMap`, `Action`, `string`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.legacySchedulesMigrateOnlySupportedTasksAndPreserveTheRest`.

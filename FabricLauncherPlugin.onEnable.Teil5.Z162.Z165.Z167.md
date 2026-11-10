@@ -27,7 +27,15 @@ for Z.170 (ServerProfile p : profiles)
 if Z.170 (p.autoStart)
   Zeile 170: prüft `(p.autoStart)`.
 FabricLauncherPlugin.startAsync
-  Startet `startAsync`. Ruft `msg`, `slot`, `invalidateRestarts`.
+  Beginnt den Start des [[Glossar#Spielserver|Spielservers]] im Hintergrund, damit der [[Glossar#Host|Host]] dabei nicht stehen bleibt. Startet `startAsync`. Ruft `msg`, `slot`, `invalidateRestarts`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil5.Z162.Z165`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.167 (setupRequired)**: Zeile 167: prüft `(setupRequired)`.
+> - **if Z.169 (recoveryBlockedSince == 0)**: Zeile 169: prüft `(recoveryBlockedSince == 0)`.
+> - **for Z.170 (ServerProfile p : profiles)**: Zeile 170: Schleife `(ServerProfile p : profiles)`.
+> - **if Z.170 (p.autoStart)**: Zeile 170: prüft `(p.autoStart)`.
+> - **FabricLauncherPlugin.startAsync**: Beginnt den Start des [[Glossar#Spielserver|Spielservers]] im Hintergrund, damit der [[Glossar#Host|Host]] dabei nicht stehen bleibt. Startet `startAsync`. Ruft `msg`, `slot`, `invalidateRestarts`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 167 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil5.Z162.Z165`.

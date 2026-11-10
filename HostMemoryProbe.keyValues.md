@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 HostMemoryProbe.keyValues.Z133
-  Fortsetzung des Ablaufs ab Zeile 133.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 133 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 133.
 return Z.142 return out;
   Zeile 142: Rückgabe `return out;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMemoryProbe.keyValues.Z133**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 133 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 133.
+> - **return Z.142 return out;**: Zeile 142: Rückgabe `return out;`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `keyValues` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

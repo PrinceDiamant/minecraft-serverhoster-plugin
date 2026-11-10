@@ -24,9 +24,16 @@ sync Z.1643
 if Z.1646 (target.running() && !target.onlinePlayers.isEmpt…
   Zeile 1646: prüft `(target.running() && !target.onlinePlayers.isEmpt…`.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
 FabricLauncherPlugin.runScheduledBackup.Z1632.Z1643.Z1649
-  Fortsetzung des Ablaufs ab Zeile 1649.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1649 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1649.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.1643**: Zeile 1643: synchronisierter Block.
+> - **if Z.1646 (target.running() && !target.onlinePlayers.isEmpt…**: Zeile 1646: prüft `(target.running() && !target.onlinePlayers.isEmpt…`.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
+> - **FabricLauncherPlugin.runScheduledBackup.Z1632.Z1643.Z1649**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1649 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1649.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1643 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632`.

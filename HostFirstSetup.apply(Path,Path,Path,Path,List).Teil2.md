@@ -31,9 +31,18 @@ if Z.80 (dataDirectory == null // Files.isSymbolicLink(da…
 throw Z.83 throw new SecurityException('host setup marker mu…
   Zeile 83: Abbruch `throw new SecurityException('host setup marker mu…`.
 HostFirstSetup.otherPluginJars
-  `otherPluginJars` in `HostFirstSetup.java`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `otherPluginJars` in `HostFirstSetup.java`.
 HostFirstSetup.parseCount
-  Wertet aus `parseCount`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Wertet aus `parseCount`.
 ```
 
-- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.74 (Files.isSymbolicLink(properties) // !Files.isReg…**: Zeile 74: prüft `(Files.isSymbolicLink(properties) // !Files.isReg…`.
+> - **throw Z.76 throw new IOException('server.properties must exi…**: Zeile 76: Abbruch `throw new IOException('server.properties must exi…`.
+> - **if Z.80 (dataDirectory == null // Files.isSymbolicLink(da…**: Zeile 80: prüft `(dataDirectory == null // Files.isSymbolicLink(da…`.
+> - **throw Z.83 throw new SecurityException('host setup marker mu…**: Zeile 83: Abbruch `throw new SecurityException('host setup marker mu…`.
+> - **HostFirstSetup.otherPluginJars**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `otherPluginJars` in `HostFirstSetup.java`.
+> - **HostFirstSetup.parseCount**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Wertet aus `parseCount`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`.

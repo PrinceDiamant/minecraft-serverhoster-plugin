@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 if Z.1002 (b.length ) 0)
-  Zeile 1002: prüft `(b.length ) 0)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1002.
 try Z.1002
-  Zeile 1002: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1002.
 ```
 
-- `sendBytes` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1002 (b.length ) 0)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1002.
+> - **try Z.1002**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1002.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe.

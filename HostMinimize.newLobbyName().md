@@ -16,4 +16,8 @@ return Z.33 return 'serverhoster-lobby-' + UUID.randomUUID().…
   Zeile 33: Rückgabe `return 'serverhoster-lobby-' + UUID.randomUUID().…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.33 return 'serverhoster-lobby-' + UUID.randomUUID().…**: Zeile 33: Rückgabe `return 'serverhoster-lobby-' + UUID.randomUUID().…`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die Wartewelt den Namen.
 - `newLobbyName` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

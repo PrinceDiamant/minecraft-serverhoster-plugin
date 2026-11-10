@@ -32,23 +32,36 @@ flowchart TD
 try Z.103
   Zeile 103: Versuch. Der Fehlerpfad geht in catch.
 Dashboard.handle.Z103.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Teil5
-  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Teil6
-  Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Teil7
-  Abschnitt 7 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 7 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.handle.Z103.Catch103
-  Fehlerpfade ab Zeile 103.
+  Was passiert, wenn der Schritt in [[Glossar#Zeile|Zeile]] 103 schiefgeht. Fehlerpfade ab Zeile 103.
 finally Z.103
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `Dashboard.handle`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.103**: Zeile 103: Versuch. Der Fehlerpfad geht in catch.
+> - **Dashboard.handle.Z103.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Teil4**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Teil5**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Teil6**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Teil7**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 7 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.handle.Z103.Catch103**: Was passiert, wenn der Schritt in [[Glossar#Zeile|Zeile]] 103 schiefgeht. Fehlerpfade ab Zeile 103.
+> - **finally Z.103**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 103 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.handle`.

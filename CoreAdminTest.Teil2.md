@@ -12,34 +12,44 @@ flowchart TD
   n6["CoreAdminTest.hostMemoryProbeReportsUnknownCgroupLimits"]:::internal-link
   n7["CoreAdminTest.propertiesKeepCommentsAndForeignKeys"]:::internal-link
   n8["CoreAdminTest.pathGuardRejectsEscapeAndSymlink"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 CoreAdminTest.childReadinessRequiresTheVanillaDoneLine
-  Betrifft den Child `childReadinessRequiresTheVanillaDoneLine`. Ruft `isReadyLine`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `childReadinessRequiresTheVanillaDoneLine`.
 CoreAdminTest.heapSizeParserHandlesJvmSuffixesAndInvalidValues
-  Betrifft den Heap `heapSizeParserHandlesJvmSuffixesAndInvalidValues`. Ruft `parseMemoryBytes`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `heapSizeParserHandlesJvmSuffixesAndInvalidValues`.
 CoreAdminTest.hostMemoryProbeReadsCgroupV2AndHostSwapWithoutCommands
-  Betrifft den Host `hostMemoryProbeReadsCgroupV2AndHostSwapWithoutCommands`. Ruft `snapshot`, `cgroupUsePercent`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostMemoryProbeReadsCgroupV2AndHostSwapWithoutCommands`.
 CoreAdminTest.hostMemoryProbeSeparatesCgroupV1LimitHitsFromOomEvents
-  Betrifft den Host `hostMemoryProbeSeparatesCgroupV1LimitHitsFromOomEvents`. Ruft `snapshot`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostMemoryProbeSeparatesCgroupV1LimitHitsFromOomEvents`.
 CoreAdminTest.memoryIncidentReportWritesTimelineFactsAndReadOnlyDiagnostics
-  Betrifft den Speicher `memoryIncidentReportWritesTimelineFactsAndReadOnlyDiagnostics`. Ruft `write`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `memoryIncidentReportWritesTimelineFactsAndReadOnlyDiagnostics`.
 CoreAdminTest.hostMemoryProbeReportsUnknownCgroupLimits
-  Betrifft den Host `hostMemoryProbeReportsUnknownCgroupLimits`. Ruft `snapshot`, `cgroupUsePercent`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostMemoryProbeReportsUnknownCgroupLimits`.
 CoreAdminTest.propertiesKeepCommentsAndForeignKeys
-  `propertiesKeepCommentsAndForeignKeys` in `CoreAdminTest.java`. Ruft `update`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `propertiesKeepCommentsAndForeignKeys`.
 CoreAdminTest.pathGuardRejectsEscapeAndSymlink
-  Liefert den Pfad `pathGuardRejectsEscapeAndSymlink`. Ruft `open`, `resolve`, `root`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `pathGuardRejectsEscapeAndSymlink`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **CoreAdminTest.childReadinessRequiresTheVanillaDoneLine**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `childReadinessRequiresTheVanillaDoneLine`.
+> - **CoreAdminTest.heapSizeParserHandlesJvmSuffixesAndInvalidValues**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `heapSizeParserHandlesJvmSuffixesAndInvalidValues`.
+> - **CoreAdminTest.hostMemoryProbeReadsCgroupV2AndHostSwapWithoutCommands**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostMemoryProbeReadsCgroupV2AndHostSwapWithoutCommands`.
+> - **CoreAdminTest.hostMemoryProbeSeparatesCgroupV1LimitHitsFromOomEvents**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostMemoryProbeSeparatesCgroupV1LimitHitsFromOomEvents`.
+> - **CoreAdminTest.memoryIncidentReportWritesTimelineFactsAndReadOnlyDiagnostics**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `memoryIncidentReportWritesTimelineFactsAndReadOnlyDiagnostics`.
+> - **CoreAdminTest.hostMemoryProbeReportsUnknownCgroupLimits**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostMemoryProbeReportsUnknownCgroupLimits`.
+> - **CoreAdminTest.propertiesKeepCommentsAndForeignKeys**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `propertiesKeepCommentsAndForeignKeys`.
+> - **CoreAdminTest.pathGuardRejectsEscapeAndSymlink**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `pathGuardRejectsEscapeAndSymlink`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

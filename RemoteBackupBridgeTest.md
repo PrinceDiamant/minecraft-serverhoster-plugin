@@ -11,30 +11,39 @@ flowchart TD
   n5["RemoteBackupBridgeTest.StubFtpServer.serveConnection"]:::internal-link
   n6["RemoteBackupBridgeTest.StubFtpServer.ftpWriter"]:::internal-link
   n7["RemoteBackupBridgeTest.StubFtpServer.close"]:::internal-link
-  n1 -->|"Z.37"| n2
-  n1 -->|"Z.40"| n3
-  n2 -->|"Z.82"| n4
-  n4 -->|"Z.92"| n5
-  n5 -->|"Z.106"| n6
+  n1 -->|"Zeile 37"| n2
+  n1 -->|"Zeile 40"| n3
+  n2 -->|"Zeile 82"| n4
+  n4 -->|"Zeile 92"| n5
+  n5 -->|"Zeile 106"| n6
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload
-  `autoModeStreamsFtpBackupAndFinalizesPartialUpload` in `RemoteBackupBridgeTest.java`. Ruft `StubFtpServer`, `port`, `archive`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 RemoteBackupBridgeTest.StubFtpServer.StubFtpServer
-  `StubFtpServer` in `RemoteBackupBridgeTest.java`. Ruft `serve`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 RemoteBackupBridgeTest.StubFtpServer.port
-  Prüft oder liefert den Port `port`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 RemoteBackupBridgeTest.StubFtpServer.serve
-  Liefert `serve`. Ruft `serveConnection`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection
-  Liefert `serveConnection`. Ruft `ftpWriter`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 RemoteBackupBridgeTest.StubFtpServer.ftpWriter
-  `ftpWriter` in `RemoteBackupBridgeTest.java`. Ruft `println`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 RemoteBackupBridgeTest.StubFtpServer.close
-  Schließt `close`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+> - **RemoteBackupBridgeTest.StubFtpServer.StubFtpServer**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+> - **RemoteBackupBridgeTest.StubFtpServer.port**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+> - **RemoteBackupBridgeTest.StubFtpServer.serve**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+> - **RemoteBackupBridgeTest.StubFtpServer.ftpWriter**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+> - **RemoteBackupBridgeTest.StubFtpServer.close**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 
+- [[Glossar#Probelauf|Probelauf]] für die [[Glossar#Sicherungskopie|Sicherungskopie]] über das Netz.

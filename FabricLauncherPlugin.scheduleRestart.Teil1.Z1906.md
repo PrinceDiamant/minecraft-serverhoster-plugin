@@ -19,11 +19,18 @@ flowchart TD
 try Z.1906
   Zeile 1906: Versuch. Der Fehlerpfad geht in catch.
 RestartPolicy.maxAttempts
-  Begrenzt nach oben `maxAttempts`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt nach oben `maxAttempts`.
 catch Z.1909 (IllegalArgumentException e)
   Zeile 1909: fängt (IllegalArgumentException e).
 return Z.1914 return;
   Zeile 1914: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1906**: Zeile 1906: Versuch. Der Fehlerpfad geht in catch.
+> - **RestartPolicy.maxAttempts**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt nach oben `maxAttempts`.
+> - **catch Z.1909 (IllegalArgumentException e)**: Zeile 1909: fängt (IllegalArgumentException e).
+> - **return Z.1914 return;**: Zeile 1914: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1906 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil1`.

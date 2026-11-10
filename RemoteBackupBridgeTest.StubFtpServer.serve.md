@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridgeTest.StubFtpServer.serve.Z90
-  Fortsetzung des Ablaufs ab Zeile 90.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 90 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z90`.
 ```
 
-- `serve` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
-- Auslöser: Test
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridgeTest.StubFtpServer.serve.Z90**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 90 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z90`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

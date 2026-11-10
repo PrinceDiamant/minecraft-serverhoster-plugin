@@ -30,4 +30,12 @@ return Z.1125 return -1;
   Zeile 1125: Rückgabe `return -1;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.parseMemoryBytes`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1120**: Zeile 1120: Versuch. Der Fehlerpfad geht in catch.
+> - **for Z.1122 (int i = 0; i ( power; i++)**: Zeile 1122: Schleife `(int i = 0; i ( power; i++)`.
+> - **return Z.1123 return bytes ) 0 ? bytes : -1;**: Zeile 1123: Rückgabe `return bytes ) 0 ? bytes : -1;`.
+> - **catch Z.1124 (NumberFormatException / Arit…**: Zeile 1124: fängt (NumberFormatException / Arit….
+> - **return Z.1125 return -1;**: Zeile 1125: Rückgabe `return -1;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.parseMemoryBytes`.

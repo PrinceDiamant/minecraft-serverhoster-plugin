@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 index.chartCard.x
-  `x` in `index.html`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `x` in `index.html`.
 index.chartCard.y
-  `y` in `index.html`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `y` in `index.html`.
 return Z.191 return '(article class='chart-card')(div class='c…
   Zeile 191: Rückgabe `return '(article class='chart-card')(div class='c…`.
 ```
 
-- Fortsetzung von `index.chartCard`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.chartCard.x**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `x` in `index.html`.
+> - **index.chartCard.y**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `y` in `index.html`.
+> - **return Z.191 return '(article class='chart-card')(div class='c…**: Zeile 191: Rückgabe `return '(article class='chart-card')(div class='c…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.chartCard`.

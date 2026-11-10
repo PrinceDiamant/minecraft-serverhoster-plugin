@@ -14,40 +14,52 @@ flowchart TD
   n8["SupervisorHealth"]:::internal-link
   n9["ChildLaunchCleanup"]:::internal-link
   n10["TickQueryFilter"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
-  n8 -->|"Quelltext"| n9
-  n9 -->|"Quelltext"| n10
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
+  n8 -->|"Kapitel im Text"| n9
+  n9 -->|"Kapitel im Text"| n10
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 RestartBackoff
-  Wartezeit aus Versuchen, Basis und Deckel.
+  Rechnet die [[Glossar#Pause|Pause]] vor dem nächsten [[Glossar#Neustart|Neustart]] aus.
 StartFailureStatus
-  Merkt, woran der Start gescheitert ist.
+  Merkt sich, woran ein Start gescheitert ist, damit man es in der [[Glossar#Bedienseite|Bedienseite]] sieht.
 ChildProcessRecord
-  Der gemerkte Prozess: pid, lebendig, zerstören.
+  Der Merkzettel zum laufenden Programm: Nummer, ob es noch lebt, und wie man es beendet.
 RestartPolicy
-  Ob und wie oft der Child von allein neu startet.
+  Die Regel, ob und wie oft der [[Glossar#Spielserver|Spielserver]] von allein neu starten darf.
 ChildStopSequence
-  Stoppt den Prozess: Poll 250 ms, Befehl erneut, dann TERM.
+  Die Schritte des [[Glossar#Stopp|Stopps]]: nachfragen, die Bitte wiederholen, dann hart beenden.
 ChildSlot
-  Phase, pid, Konsole und Messwerte des einen Child.
+  Der [[Glossar#Platz|Platz]] des [[Glossar#Spielserver|Spielservers]]: Zustand, Programmnummer, [[Glossar#Konsole|Konsole]] und Messwerte.
 ConsoleBuffer
-  Ringpuffer der Konsolenzeilen.
+  Ein kurzer Speicher für die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]], damit die [[Glossar#Bedienseite|Bedienseite]] sie zeigen kann.
 SupervisorHealth
-  Phase IDLE, PREPARING, RUNNING, STOPPING und die 5-s-Aufsicht.
+  Die vier Zustände aus, startet, läuft und stoppt, und die [[Glossar#Aufsicht|Aufsicht]] darüber.
 ChildLaunchCleanup
-  Räumt Dateien und übrige Prozesse nach einem fehlgeschlagenen Start weg.
+  Räumt Dateien und übrig gebliebene Programme weg, wenn ein Start nicht geklappt hat.
 TickQueryFilter
-  Erkennt die Antwort auf tick query und verwirft den Rest.
+  Erkennt die Antwort auf die Frage nach dem letzten [[Glossar#Spielschritt|Spielschritt]] und lässt andere [[Glossar#Zeile|Zeilen]] links liegen.
 ```
 
-- Slot, Prozessrecord, Stoppsequenz, Restart, Supervisor.
+> [!knoten] Was die Blöcke tun
+> - **RestartBackoff**: Rechnet die [[Glossar#Pause|Pause]] vor dem nächsten [[Glossar#Neustart|Neustart]] aus.
+> - **StartFailureStatus**: Merkt sich, woran ein Start gescheitert ist, damit man es in der [[Glossar#Bedienseite|Bedienseite]] sieht.
+> - **ChildProcessRecord**: Der Merkzettel zum laufenden Programm: Nummer, ob es noch lebt, und wie man es beendet.
+> - **RestartPolicy**: Die Regel, ob und wie oft der [[Glossar#Spielserver|Spielserver]] von allein neu starten darf.
+> - **ChildStopSequence**: Die Schritte des [[Glossar#Stopp|Stopps]]: nachfragen, die Bitte wiederholen, dann hart beenden.
+> - **ChildSlot**: Der [[Glossar#Platz|Platz]] des [[Glossar#Spielserver|Spielservers]]: Zustand, Programmnummer, [[Glossar#Konsole|Konsole]] und Messwerte.
+> - **ConsoleBuffer**: Ein kurzer Speicher für die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]], damit die [[Glossar#Bedienseite|Bedienseite]] sie zeigen kann.
+> - **SupervisorHealth**: Die vier Zustände aus, startet, läuft und stoppt, und die [[Glossar#Aufsicht|Aufsicht]] darüber.
+> - **ChildLaunchCleanup**: Räumt Dateien und übrig gebliebene Programme weg, wenn ein Start nicht geklappt hat.
+> - **TickQueryFilter**: Erkennt die Antwort auf die Frage nach dem letzten [[Glossar#Spielschritt|Spielschritt]] und lässt andere [[Glossar#Zeile|Zeilen]] links liegen.
+
+- Die Zettel, auf denen Zustand, Programmnummer, [[Glossar#Konsole|Konsole]] und [[Glossar#Pause|Pausen]] stehen. Hier läuft nichts von selbst ab.

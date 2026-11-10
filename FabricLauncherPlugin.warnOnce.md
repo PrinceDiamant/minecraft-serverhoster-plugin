@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 if Z.2148 (memoryBudgetWarnings.add(key))
-  Zeile 2148: prüft `(memoryBudgetWarnings.add(key))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2148.
 ```
 
-- `warnOnce` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2148 (memoryBudgetWarnings.add(key))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2148.
+
+- Schreibt eine Warnung nur ein einziges Mal, damit das Protokoll nicht vollläuft.

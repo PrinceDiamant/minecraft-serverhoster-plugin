@@ -21,7 +21,12 @@ flowchart TD
 for Z.115 ('child-start','child-restart','child-s…
   Zeile 115: Schleife `('child-start','child-restart','child-s…`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 ```
 
-- Fortsetzung von `index.status.Z101.Z115`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.115 ('child-start','child-restart','child-s…**: Zeile 115: Schleife `('child-start','child-restart','child-s…`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.status.Z101.Z115`.

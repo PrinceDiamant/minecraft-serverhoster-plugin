@@ -3,17 +3,18 @@
 # bericht
 
 - Commit: `95b02b953b0b4c23673e900e021a7c3c844aa37d` (https://github.com/Sciddie/minecraft-serverhoster-plugin/commit/95b02b953b0b4c23673e900e021a7c3c844aa37d).
-- Seiten: 2002 inklusive befunde und bericht.
+- Seiten: 2003 inklusive befunde, Glossar und bericht.
 - Diagramme: 2012.
 - Seiten je Ebene:
   - Ebene 0: 1
-  - Ebene 1: 11
+  - Ebene 1: 12
   - Ebene 2: 60
   - Ebene 3: 370
   - Ebene 4: 845
   - Ebene 5: 558
   - Ebene 6: 157
-- Hover: Block `knoten` unter jedem Flowchart. Plugin `mermaid-knoten-hover` legt den Satz auf den Block.
+- Oben Alltagssprache, tiefer dazu der Name im Quelltext. Wörter stehen im [[Glossar]] und sind verlinkt.
+- Hover: Block `knoten` unter jedem Flowchart. Plugin `mermaid-knoten-hover` legt den Satz auf den Block. Dieselbe Liste steht darunter unter Was die Blöcke tun.
 - Ungeprüfte Aussagen:
   - Dashboard.handle: 1 eigene Aufrufe nur in Dashboard.handle.Aufrufe
   - Dashboard.schedulesApi: 4 eigene Aufrufe nur in Dashboard.schedulesApi.Aufrufe

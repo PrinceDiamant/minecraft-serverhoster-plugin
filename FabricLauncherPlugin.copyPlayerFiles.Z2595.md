@@ -30,4 +30,12 @@ catch Z.2599 (IOException e)
   Zeile 2599: fängt (IOException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.copyPlayerFiles`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.2595 (String n : List.of('ops.json', 'whitel…**: Zeile 2595: Schleife `(String n : List.of('ops.json', 'whitel…`.
+> - **try Z.2597**: Zeile 2597: Versuch. Der Fehlerpfad geht in catch.
+> - **if Z.2598 (Files.exists(src) && !Files.exists(dst))**: Zeile 2598: prüft `(Files.exists(src) && !Files.exists(dst))`.
+> - **Schritt Z.2598 Files.copy(src, dst);**: Zeile 2598: Dateioperation. `Files.copy(src, dst);`
+> - **catch Z.2599 (IOException e)**: Zeile 2599: fängt (IOException e).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2595 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.copyPlayerFiles`.

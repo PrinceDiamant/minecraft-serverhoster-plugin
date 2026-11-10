@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 BackupBridge.file
-  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.file**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+
+- Die Sicherung auf diesem Rechner löscht das.
 - `delete` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

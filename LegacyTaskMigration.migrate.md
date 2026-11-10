@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 LegacyTaskMigration.migrate.Z19
-  Fortsetzung des Ablaufs ab Zeile 19.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 19 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 19.
 return Z.34 return new Result(List.copyOf(schedules), List.co…
   Zeile 34: Rückgabe `return new Result(List.copyOf(schedules), List.co…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LegacyTaskMigration.migrate.Z19**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 19 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 19.
+> - **return Z.34 return new Result(List.copyOf(schedules), List.co…**: Zeile 34: Rückgabe `return new Result(List.copyOf(schedules), List.co…`.
+
+- Dieser Teil übernimmt den alten Wert von das.
 - `migrate` in `src/main/java/de/aichele/childlauncher/LegacyTaskMigration.java`

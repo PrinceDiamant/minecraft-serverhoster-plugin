@@ -26,13 +26,22 @@ sync Z.1965
 if Z.1967 (slot.scheduleToken.get() != token // !slot.wantR…
   Zeile 1967: prüft `(slot.scheduleToken.get() != token // !slot.wantR…`.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
 return Z.1967 return;
   Zeile 1967: Rückgabe `return;`.
 FabricLauncherPlugin.launch
-  Startet den Prozess `launch`. Ruft `running`, `directory`, `copyPlayerFiles`.
+  Legt Ordner und Dateien an, schreibt die [[Glossar#Lizenz|Lizenz]], startet das Programm und schaltet Mitlesen und [[Glossar#Aufsicht|Aufsicht]] an. Scheitert das, wird aufgeräumt. Startet den [[Glossar#Prozess|Prozess]] `launch`. Ruft `running`, `directory`, `copyPlayerFiles`.
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.restartSingle`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.1965**: Zeile 1965: synchronisierter Block.
+> - **if Z.1967 (slot.scheduleToken.get() != token // !slot.wantR…**: Zeile 1967: prüft `(slot.scheduleToken.get() != token // !slot.wantR…`.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
+> - **return Z.1967 return;**: Zeile 1967: Rückgabe `return;`.
+> - **FabricLauncherPlugin.launch**: Legt Ordner und Dateien an, schreibt die [[Glossar#Lizenz|Lizenz]], startet das Programm und schaltet Mitlesen und [[Glossar#Aufsicht|Aufsicht]] an. Scheitert das, wird aufgeräumt. Startet den [[Glossar#Prozess|Prozess]] `launch`. Ruft `running`, `directory`, `copyPlayerFiles`.
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1965 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.restartSingle`.

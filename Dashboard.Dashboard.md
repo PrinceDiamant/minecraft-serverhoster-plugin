@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 kein eigener Aufruf
-  In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+  Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
 ```
 
-- `Dashboard` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
+
+- Richtet die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] ein, wenn sie erzeugt wird.

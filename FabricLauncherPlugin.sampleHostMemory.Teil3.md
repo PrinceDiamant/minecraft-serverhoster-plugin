@@ -22,13 +22,21 @@ flowchart TD
 if Z.1037 (use )= warning && now - lastMemoryWarningAt )= 3…
   Zeile 1037: prüft `(use )= warning && now - lastMemoryWarningAt )= 3…`.
 FabricLauncherPlugin.notifyNtfy
-  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+  Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
 Schritt Z.1046 long cooldown = TimeUnit.SECONDS.toMillis(Math.ma…
   Zeile 1046: rechnet Zeit um oder wartet. `long cooldown = TimeUnit.SECONDS.toMillis(Math.ma…`
 MemoryProtectionPolicy.sample
-  Misst `sample`.
+  Dieser Teil misst das. Misst `sample`.
 FabricLauncherPlugin.sampleHostMemory.Teil3.Z1052
-  Fortsetzung des Ablaufs ab Zeile 1052.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1052 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1052.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.sampleHostMemory`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1037 (use )= warning && now - lastMemoryWarningAt )= 3…**: Zeile 1037: prüft `(use )= warning && now - lastMemoryWarningAt )= 3…`.
+> - **FabricLauncherPlugin.notifyNtfy**: Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+> - **Schritt Z.1046 long cooldown = TimeUnit.SECONDS.toMillis(Math.ma…**: Zeile 1046: rechnet Zeit um oder wartet. `long cooldown = TimeUnit.SECONDS.toMillis(Math.ma…`
+> - **MemoryProtectionPolicy.sample**: Dieser Teil misst das. Misst `sample`.
+> - **FabricLauncherPlugin.sampleHostMemory.Teil3.Z1052**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1052 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1052.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.sampleHostMemory`.

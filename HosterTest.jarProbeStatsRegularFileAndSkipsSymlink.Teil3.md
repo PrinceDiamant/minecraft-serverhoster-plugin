@@ -15,7 +15,12 @@ flowchart TD
 Schritt Z.475 Files.writeString(outside.resolve('secret.txt'), …
   Zeile 475: schreibt Text in eine Datei. `Files.writeString(outside.resolve('secret.txt'), …`
 HosterTest.jarProbeStatsRegularFileAndSkipsSymlink.Teil3.Z476
-  Fortsetzung des Ablaufs ab Zeile 476.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 476 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 476.
 ```
 
-- Fortsetzung von `HosterTest.jarProbeStatsRegularFileAndSkipsSymlink`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.475 Files.writeString(outside.resolve('secret.txt'), …**: Zeile 475: schreibt Text in eine Datei. `Files.writeString(outside.resolve('secret.txt'), …`
+> - **HosterTest.jarProbeStatsRegularFileAndSkipsSymlink.Teil3.Z476**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 476 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 476.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.jarProbeStatsRegularFileAndSkipsSymlink`.

@@ -16,4 +16,8 @@ return Z.61 return URLEncoder.encode(value == null ? '' : val…
   Zeile 61: Rückgabe `return URLEncoder.encode(value == null ? '' : val…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.61 return URLEncoder.encode(value == null ? '' : val…**: Zeile 61: Rückgabe `return URLEncoder.encode(value == null ? '' : val…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `encodeHeader` in `src/main/java/de/aichele/childlauncher/NtfyNotifier.java`

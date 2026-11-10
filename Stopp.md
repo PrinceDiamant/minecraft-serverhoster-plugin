@@ -7,19 +7,24 @@ flowchart TD
   n1["FabricLauncherPlugin.stopBlocking"]:::internal-link
   n2["FabricLauncherPlugin.stopProcess"]:::internal-link
   n3["FabricLauncherPlugin.invalidateRestarts"]:::internal-link
-  n1 -->|"Z.1981"| n3
-  n1 -->|"Z.1987"| n2
+  n1 -->|"Zeile 1981"| n3
+  n1 -->|"Zeile 1987"| n2
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 FabricLauncherPlugin.stopBlocking
-  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+  Setzt den Zustand auf „stoppt“ und wartet, bis der [[Glossar#Spielserver|Spielserver]] wirklich aus ist.
 FabricLauncherPlugin.stopProcess
-  Stoppt `stopProcess`. Ruft `add`, `boundedSeconds`, `warnOnce`.
+  Fährt den [[Glossar#Spielserver|Spielserver]] herunter: erst die Bitte, dann Warten, dann ein hartes Beenden.
 FabricLauncherPlugin.invalidateRestarts
-  Verwirft `invalidateRestarts`.
+  Vergisst geplante [[Glossar#Neustart|Neustarts]], damit ein absichtlicher [[Glossar#Stopp|Stopp]] nicht gleich wieder startet.
 ```
 
-- `ChildStopSequence.stop`: Poll 250 ms, Stop erneut alle 5 s, TERM-Gnade 10 s.
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.stopBlocking**: Setzt den Zustand auf „stoppt“ und wartet, bis der [[Glossar#Spielserver|Spielserver]] wirklich aus ist.
+> - **FabricLauncherPlugin.stopProcess**: Fährt den [[Glossar#Spielserver|Spielserver]] herunter: erst die Bitte, dann Warten, dann ein hartes Beenden.
+> - **FabricLauncherPlugin.invalidateRestarts**: Vergisst geplante [[Glossar#Neustart|Neustarts]], damit ein absichtlicher [[Glossar#Stopp|Stopp]] nicht gleich wieder startet.
+
+- Der [[Glossar#Spielserver|Spielserver]] wird heruntergefahren. Erst mit der Bitte aufzuhören, dann mit Warten, und nach einer Frist hart. Ein absichtlicher [[Glossar#Stopp|Stopp]] soll nicht gleich wieder starten.

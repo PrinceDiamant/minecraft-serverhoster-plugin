@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.284 return ex.getRemoteAddress().getAddress().getHost…
-  Zeile 284: Rückgabe `return ex.getRemoteAddress().getAddress().getHost…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 284.
 ```
 
-- `ip` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.284 return ex.getRemoteAddress().getAddress().getHost…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 284.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.

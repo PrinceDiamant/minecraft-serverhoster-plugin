@@ -28,4 +28,11 @@ return Z.65 return true;
   Zeile 65: Rückgabe `return true;`.
 ```
 
-- Fortsetzung von `CronExpr.field.Z47`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.56 (!stepPart.equals('*'))**: Zeile 56: prüft `(!stepPart.equals('*'))`.
+> - **if Z.58 (dash )= 0)**: Zeile 58: prüft `(dash )= 0)`.
+> - **if Z.65 (value )= from && value (= to && (value - from) %…**: Zeile 65: prüft `(value )= from && value (= to && (value - from) %…`.
+> - **return Z.65 return true;**: Zeile 65: Rückgabe `return true;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CronExpr.field.Z47`.

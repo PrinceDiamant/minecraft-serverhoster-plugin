@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 App.tabFromPath
-  Wechselt den Tab `tabFromPath`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad. Wechselt den Tab `tabFromPath`.
 ```
 
-- Fortsetzung von `App.App`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **App.tabFromPath**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad. Wechselt den Tab `tabFromPath`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `App.App`.

@@ -15,7 +15,11 @@ flowchart TD
 
 ```knoten
 TickQueryFilter.consume
-  Filtert `consume`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Filtert `consume`.
 ```
 
-- Fortsetzung von `CoreAdminTest.tickQueryHidesOnlyTheReply`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **TickQueryFilter.consume**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Filtert `consume`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.tickQueryHidesOnlyTheReply`.

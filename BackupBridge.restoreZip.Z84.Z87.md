@@ -17,9 +17,15 @@ flowchart TD
 while Z.87 (en.hasMoreElements())
   Zeile 87: Schleife `(en.hasMoreElements())`.
 BackupBridge.restoreZip.Z84.Z87.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 BackupBridge.restoreZip.Z84.Z87.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `BackupBridge.restoreZip.Z84`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **while Z.87 (en.hasMoreElements())**: Zeile 87: Schleife `(en.hasMoreElements())`.
+> - **BackupBridge.restoreZip.Z84.Z87.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **BackupBridge.restoreZip.Z84.Z87.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 87 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `BackupBridge.restoreZip.Z84`.

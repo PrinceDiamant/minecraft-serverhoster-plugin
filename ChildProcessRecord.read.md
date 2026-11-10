@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 ChildProcessRecord.read.Z118
-  Fortsetzung des Ablaufs ab Zeile 118.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 118 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 118.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ChildProcessRecord.read.Z118**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 118 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 118.
+
+- Dieser Teil liest das.
 - `read` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

@@ -17,9 +17,15 @@ flowchart TD
 for Z.47 (String part : expr.split(','))
   Zeile 47: Schleife `(String part : expr.split(','))`.
 CronExpr.field.Z47.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 CronExpr.field.Z47.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `CronExpr.field`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.47 (String part : expr.split(','))**: Zeile 47: Schleife `(String part : expr.split(','))`.
+> - **CronExpr.field.Z47.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **CronExpr.field.Z47.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 47 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `CronExpr.field`.

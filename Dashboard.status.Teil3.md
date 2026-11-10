@@ -19,15 +19,23 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.dashboardTls
-  `dashboardTls` in `FabricLauncherPlugin.java`. Ruft `tls`.
+  Liest, ob die [[Glossar#Bedienseite|Bedienseite]] verschlüsselt erreichbar sein soll. `dashboardTls` in `FabricLauncherPlugin.java`. Ruft `tls`.
 ChildSlot.msptHistory
-  Liefert die Tickzeiten `msptHistory`.
+  Dieser Teil kümmert sich um den Verlauf. Liefert die Tickzeiten `msptHistory`.
 Dashboard.status.Teil3.Z517
-  Fortsetzung des Ablaufs ab Zeile 517.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 517 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 517.
 Dashboard.spigotStats
-  `spigotStats` in `Dashboard.java`. Ruft `rssMb`.
+  Liefert eine kurze Statistik, die der [[Glossar#Spielserver|Spielserver]] anbietet. `spigotStats` in `Dashboard.java`. Ruft `rssMb`.
 FabricLauncherPlugin.hostMemoryView
-  Betrifft den Host `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
+  Stellt die Speichermessung so zusammen, wie die [[Glossar#Bedienseite|Bedienseite]] sie zeigt. Betrifft den [[Glossar#Host|Host]] `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
 ```
 
-- Fortsetzung von `Dashboard.status`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.dashboardTls**: Liest, ob die [[Glossar#Bedienseite|Bedienseite]] verschlüsselt erreichbar sein soll. `dashboardTls` in `FabricLauncherPlugin.java`. Ruft `tls`.
+> - **ChildSlot.msptHistory**: Dieser Teil kümmert sich um den Verlauf. Liefert die Tickzeiten `msptHistory`.
+> - **Dashboard.status.Teil3.Z517**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 517 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 517.
+> - **Dashboard.spigotStats**: Liefert eine kurze Statistik, die der [[Glossar#Spielserver|Spielserver]] anbietet. `spigotStats` in `Dashboard.java`. Ruft `rssMb`.
+> - **FabricLauncherPlugin.hostMemoryView**: Stellt die Speichermessung so zusammen, wie die [[Glossar#Bedienseite|Bedienseite]] sie zeigt. Betrifft den [[Glossar#Host|Host]] `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.status`.

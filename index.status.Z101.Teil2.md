@@ -21,17 +21,26 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 index.lifecycleLabel
-  `lifecycleLabel` in `index.html`.
+  Setzt die Beschriftung, die den Zustand in der älteren [[Glossar#Bedienseite|Bedienseite]] zeigt. `lifecycleLabel` in `index.html`.
 if Z.103 s.setupRequired&&!window.setupRedirected
   Zeile 103: prüft `s.setupRequired&&!window.setupRedirected`.
 if Z.103 window.dashboardUi
   Zeile 103: prüft `window.dashboardUi`.
 index.tab
-  Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+  Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich. Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
 ```
 
-- Fortsetzung von `index.status.Z101`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **index.lifecycleLabel**: Setzt die Beschriftung, die den Zustand in der älteren [[Glossar#Bedienseite|Bedienseite]] zeigt. `lifecycleLabel` in `index.html`.
+> - **if Z.103 s.setupRequired&&!window.setupRedirected**: Zeile 103: prüft `s.setupRequired&&!window.setupRedirected`.
+> - **if Z.103 window.dashboardUi**: Zeile 103: prüft `window.dashboardUi`.
+> - **index.tab**: Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich. Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.status.Z101`.

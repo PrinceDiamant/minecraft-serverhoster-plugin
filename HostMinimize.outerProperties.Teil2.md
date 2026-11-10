@@ -14,4 +14,8 @@ return Z.70 return values;
   Zeile 70: Rückgabe `return values;`.
 ```
 
-- Fortsetzung von `HostMinimize.outerProperties`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.70 return values;**: Zeile 70: Rückgabe `return values;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimize.outerProperties`.

@@ -17,9 +17,15 @@ flowchart TD
 try Z.29
   Zeile 29: Versuch. Der Fehlerpfad geht in catch.
 ProcessProbe.snapshot.Teil2.Z29.Z30
-  Fortsetzung des Ablaufs ab Zeile 30.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 30 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 30.
 catch Z.38 (Exception ignored)
   Zeile 38: fängt (Exception ignored).
 ```
 
-- Fortsetzung von `ProcessProbe.snapshot.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.29**: Zeile 29: Versuch. Der Fehlerpfad geht in catch.
+> - **ProcessProbe.snapshot.Teil2.Z29.Z30**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 30 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 30.
+> - **catch Z.38 (Exception ignored)**: Zeile 38: fängt (Exception ignored).
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 29 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `ProcessProbe.snapshot.Teil2`.

@@ -26,17 +26,25 @@ flowchart TD
 
 ```knoten
 if Z.147 !n
-  Zeile 147: prüft `!n`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 147.
 return Z.147 return;
-  Zeile 147: Rückgabe `return;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 147.
 index.post
-  Sendet POST `post`. Ruft `api`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Im [[Glossar#Quelltext|Quelltext]] heißt das `post`.
 index.jp
-  Baut einen Pfad `jp`.
+  Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen. Im [[Glossar#Quelltext|Quelltext]] heißt das `jp`.
 index.ls
-  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Im [[Glossar#Quelltext|Quelltext]] heißt das `ls`.
 index.openFile
-  Öffnet `openFile`. Ruft `api`, `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] öffnet die Datei. Im [[Glossar#Quelltext|Quelltext]] heißt das `openFile`.
 ```
 
-- `newFile` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.147 !n**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 147.
+> - **return Z.147 return;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 147.
+> - **index.post**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Im [[Glossar#Quelltext|Quelltext]] heißt das `post`.
+> - **index.jp**: Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen. Im [[Glossar#Quelltext|Quelltext]] heißt das `jp`.
+> - **index.ls**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Im [[Glossar#Quelltext|Quelltext]] heißt das `ls`.
+> - **index.openFile**: Die ältere [[Glossar#Bedienseite|Bedienseite]] öffnet die Datei. Im [[Glossar#Quelltext|Quelltext]] heißt das `openFile`.
+
+- Legt in der älteren [[Glossar#Bedienseite|Bedienseite]] eine neue Datei an.

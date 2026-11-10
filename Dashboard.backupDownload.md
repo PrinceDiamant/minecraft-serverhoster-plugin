@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.backupFiles
-  Sichert `backupFiles`. Ruft `remoteBackupSelected`, `backupCredentials`, `list`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Dateien. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupFiles`.
 try Z.618
-  Zeile 618: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 618.
 FabricLauncherPlugin.downloadBackup
-  Liefert zum Herunterladen `downloadBackup`. Ruft `remoteBackupSelected`, `backupCredentials`, `download`.
+  Das [[Glossar#Plugin|Plugin]] holt die [[Glossar#Sicherungskopie|Sicherungskopie]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `downloadBackup`.
 ```
 
-- `backupDownload` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
-- Befund: Logikrisiko, sicher. Dashboard.java nimmt die Fokus-ID, Query server wird ignoriert
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.backupFiles**: Das [[Glossar#Plugin|Plugin]] sichert die Dateien. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupFiles`.
+> - **try Z.618**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 618.
+> - **FabricLauncherPlugin.downloadBackup**: Das [[Glossar#Plugin|Plugin]] holt die [[Glossar#Sicherungskopie|Sicherungskopie]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `downloadBackup`.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] sichert das Herunterladen.
+- Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].

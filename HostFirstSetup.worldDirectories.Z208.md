@@ -26,9 +26,16 @@ for Z.208 (String name : previousWorlds)
 if Z.209 (!safeWorldName(name))
   Zeile 209: prüft `(!safeWorldName(name))`.
 HostFirstSetup.safeWorldName
-  Prüft die Pfadgrenze `safeWorldName`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die [[Glossar#Spielwelt|Spielwelt]] den Namen. Prüft die Pfadgrenze `safeWorldName`.
 HostFirstSetup.addIfDirectory
-  Fügt hinzu `addIfDirectory`. Ruft `safeWorldName`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] fügt hinzu hier einen Schritt. Eine Ebene tiefer steht er genauer. Fügt hinzu `addIfDirectory`. Ruft `safeWorldName`.
 ```
 
-- Fortsetzung von `HostFirstSetup.worldDirectories`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.208 (String name : previousWorlds)**: Zeile 208: Schleife `(String name : previousWorlds)`.
+> - **if Z.209 (!safeWorldName(name))**: Zeile 209: prüft `(!safeWorldName(name))`.
+> - **HostFirstSetup.safeWorldName**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die [[Glossar#Spielwelt|Spielwelt]] den Namen. Prüft die Pfadgrenze `safeWorldName`.
+> - **HostFirstSetup.addIfDirectory**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] fügt hinzu hier einen Schritt. Eine Ebene tiefer steht er genauer. Fügt hinzu `addIfDirectory`. Ruft `safeWorldName`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 208 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostFirstSetup.worldDirectories`.

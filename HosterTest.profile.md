@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 ServerProfile.ServerProfile
-  `ServerProfile` in `ServerProfile.java`.
+  Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
 return Z.685 return new ServerProfile('t', type, mc,…
   Zeile 685: Rückgabe `return new ServerProfile('t', type, mc,…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ServerProfile.ServerProfile**: Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
+> - **return Z.685 return new ServerProfile('t', type, mc,…**: Zeile 685: Rückgabe `return new ServerProfile('t', type, mc,…`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `profile` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

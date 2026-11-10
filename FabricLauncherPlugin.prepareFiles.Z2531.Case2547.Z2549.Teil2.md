@@ -16,7 +16,12 @@ flowchart TD
 if Z.2554 (pick == null)
   Zeile 2554: prüft `(pick == null)`.
 Upstream.download(String,Path,String,String)
-  Liefert zum Herunterladen `download`. Ruft `checkHash`.
+  Dieser Teil holt das. Liefert zum Herunterladen `download`. Ruft `checkHash`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2554 (pick == null)**: Zeile 2554: prüft `(pick == null)`.
+> - **Upstream.download(String,Path,String,String)**: Dieser Teil holt das. Liefert zum Herunterladen `download`. Ruft `checkHash`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549`.

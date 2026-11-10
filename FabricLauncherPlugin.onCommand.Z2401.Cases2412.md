@@ -27,23 +27,36 @@ flowchart TD
 case Z.2412 'task'
   Zeile 2412: Zweig `'task'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2412
-  Rumpf dieses switch-Zweigs ab Zeile 2412.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2412. Rumpf dieses switch-Zweigs ab Zeile 2412.
 case Z.2417 'backup'
   Zeile 2417: Zweig `'backup'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2417
-  Rumpf dieses switch-Zweigs ab Zeile 2417.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2417. Rumpf dieses switch-Zweigs ab Zeile 2417.
 case Z.2429 'versions'
   Zeile 2429: Zweig `'versions'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2429
-  Rumpf dieses switch-Zweigs ab Zeile 2429.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2429. Rumpf dieses switch-Zweigs ab Zeile 2429.
 case Z.2433 'host'
   Zeile 2433: Zweig `'host'`.
 FabricLauncherPlugin.onCommand.Z2401.Case2433
-  Rumpf dieses switch-Zweigs ab Zeile 2433.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2433. Rumpf dieses switch-Zweigs ab Zeile 2433.
 case Z.2448 'plan'
   Zeile 2448: Zweig `'plan'`.
 FabricLauncherPlugin.planText
-  Zeigt den Startplan `planText`. Ruft `text`, `javaBin`, `profile`.
+  Schreibt den [[Glossar#Startplan|Startplan]] als lesbaren Text. Zeigt den Startplan `planText`. Ruft `text`, `javaBin`, `profile`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **case Z.2412 'task'**: Zeile 2412: Zweig `'task'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2412**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2412. Rumpf dieses switch-Zweigs ab Zeile 2412.
+> - **case Z.2417 'backup'**: Zeile 2417: Zweig `'backup'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2417**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2417. Rumpf dieses switch-Zweigs ab Zeile 2417.
+> - **case Z.2429 'versions'**: Zeile 2429: Zweig `'versions'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2429**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2429. Rumpf dieses switch-Zweigs ab Zeile 2429.
+> - **case Z.2433 'host'**: Zeile 2433: Zweig `'host'`.
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2433**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2433. Rumpf dieses switch-Zweigs ab Zeile 2433.
+> - **case Z.2448 'plan'**: Zeile 2448: Zweig `'plan'`.
+> - **FabricLauncherPlugin.planText**: Schreibt den [[Glossar#Startplan|Startplan]] als lesbaren Text. Zeigt den Startplan `planText`. Ruft `text`, `javaBin`, `profile`.
+
+- Weitere Wege der Entscheidung in [[Glossar#Zeile|Zeile]] 2412.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

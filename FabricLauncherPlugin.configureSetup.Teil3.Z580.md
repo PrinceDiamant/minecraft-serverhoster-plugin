@@ -32,7 +32,7 @@ flowchart TD
 try Z.580
   Zeile 580: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.saveSetupConfigAtomically
-  Speichert `saveSetupConfigAtomically`. Ruft `makeWritable`.
+  Das [[Glossar#Plugin|Plugin]] speichert die [[Glossar#Einrichtung|Einrichtung]] die [[Glossar#Einstellungen|Einstellungen]]. Speichert `saveSetupConfigAtomically`. Ruft `makeWritable`.
 catch Z.582 (IOException / RuntimeExcepti…
   Zeile 582: fängt (IOException / RuntimeExcepti….
 if Z.583 (rollbackSource != null && Files.exists(rollbackS…
@@ -44,9 +44,21 @@ Schritt Z.586 Files.move(rollbackSource, rollbackTarget);
 catch Z.587 (IOException rollbackError)
   Zeile 587: fängt (IOException rollbackError).
 FabricLauncherPlugin.reloadProfiles
-  `Profiles.load`, danach nur `getFirst()`. Befund: angemeldet aber nicht umgesetzt (sicher).
+  Liest die Server aus den [[Glossar#Einstellungen|Einstellungen]] neu und behält nur den ersten. `Profiles.load`, danach nur `getFirst()`. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, sicher. FabricLauncherPlugin.java:266–272 getFirst verwirft servers.*
 throw Z.594 throw e;
   Zeile 594: Abbruch `throw e;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil3`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.580**: Zeile 580: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.saveSetupConfigAtomically**: Das [[Glossar#Plugin|Plugin]] speichert die [[Glossar#Einrichtung|Einrichtung]] die [[Glossar#Einstellungen|Einstellungen]]. Speichert `saveSetupConfigAtomically`. Ruft `makeWritable`.
+> - **catch Z.582 (IOException / RuntimeExcepti…**: Zeile 582: fängt (IOException / RuntimeExcepti….
+> - **if Z.583 (rollbackSource != null && Files.exists(rollbackS…**: Zeile 583: prüft `(rollbackSource != null && Files.exists(rollbackS…`.
+> - **try Z.585**: Zeile 585: Versuch. Der Fehlerpfad geht in catch.
+> - **Schritt Z.586 Files.move(rollbackSource, rollbackTarget);**: Zeile 586: Dateioperation. `Files.move(rollbackSource, rollbackTarget);`
+> - **catch Z.587 (IOException rollbackError)**: Zeile 587: fängt (IOException rollbackError).
+> - **FabricLauncherPlugin.reloadProfiles**: Liest die Server aus den [[Glossar#Einstellungen|Einstellungen]] neu und behält nur den ersten. `Profiles.load`, danach nur `getFirst()`. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, sicher. FabricLauncherPlugin.java:266–272 getFirst verwirft servers.*
+> - **throw Z.594 throw e;**: Zeile 594: Abbruch `throw e;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 580 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil3`.

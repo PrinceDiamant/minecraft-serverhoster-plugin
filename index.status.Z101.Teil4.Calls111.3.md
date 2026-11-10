@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 index.status.n
-  `n` in `index.html`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `n` in `index.html`.
 ```
 
-- Fortsetzung von `index.status.Z101.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.status.n**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `n` in `index.html`.
+
+- Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht.
+- Fortsetzung von `index.status.Z101.Teil4`.

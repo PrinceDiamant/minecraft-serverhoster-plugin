@@ -27,19 +27,28 @@ flowchart TD
 
 ```knoten
 if Z.1517 (shuttingDown)
-  Zeile 1517: prüft `(shuttingDown)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1517.
 return Z.1517 return;
-  Zeile 1517: Rückgabe `return;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1517.
 try Z.1519
-  Zeile 1519: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1519.
 FabricLauncherPlugin.schedules
-  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `schedules`.
 catch Z.1521 (RuntimeException e)
-  Zeile 1521: fängt (RuntimeException e).
+  Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 1521.
 return Z.1523 return;
-  Zeile 1523: Rückgabe `return;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1523.
 FabricLauncherPlugin.fireDueSchedules.Z1525
-  Fortsetzung des Ablaufs ab Zeile 1525.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1525 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1525`.
 ```
 
-- `fireDueSchedules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1517 (shuttingDown)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1517.
+> - **return Z.1517 return;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1517.
+> - **try Z.1519**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1519.
+> - **FabricLauncherPlugin.schedules**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `schedules`.
+> - **catch Z.1521 (RuntimeException e)**: Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 1521.
+> - **return Z.1523 return;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1523.
+> - **FabricLauncherPlugin.fireDueSchedules.Z1525**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1525 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1525`.
+
+- Das [[Glossar#Plugin|Plugin]] stößt an Fälliges die Zeitpläne.

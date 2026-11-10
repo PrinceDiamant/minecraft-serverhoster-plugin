@@ -12,10 +12,10 @@ flowchart TD
   n6["FabricLauncherPlugin.resumeConfiguredAutoStart"]:::internal-link
   n7["FabricLauncherPlugin.requestChildEmergencyStop"]:::internal-link
   n8["FabricLauncherPlugin.writeMemoryIncidentReport"]:::internal-link
-  n2 -->|"Z.975"| n4
-  n5 -->|"Z.1131"| n4
-  n7 -->|"Z.1151"| n4
-  n7 -->|"Z.1181"| n8
+  n2 -->|"Zeile 975"| n4
+  n5 -->|"Zeile 1131"| n4
+  n7 -->|"Zeile 1151"| n4
+  n7 -->|"Zeile 1181"| n8
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n7 fill:#f88,stroke:#900
@@ -23,21 +23,31 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.applyCurrentMemorySettings
-  Wendet an `applyCurrentMemorySettings`. Ruft `saveConfigWritable`.
+  Das [[Glossar#Plugin|Plugin]] wendet an den aktuellen Stand den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die [[Glossar#Einstellungen|Einstellungen]].
 FabricLauncherPlugin.loadMemoryRecoveryState
-  Lädt `loadMemoryRecoveryState`. Ruft `memoryRecoveryFile`.
+  Das [[Glossar#Plugin|Plugin]] lädt den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Wiederherstellung den Zustand.
 FabricLauncherPlugin.loadLatestMemoryIncidentReport
-  Lädt `loadLatestMemoryIncidentReport`.
+  Das [[Glossar#Plugin|Plugin]] lädt den letzten Stand den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] den [[Glossar#Vorfall|Vorfall]] den Bericht.
 FabricLauncherPlugin.memoryRecoveryFile
-  Betrifft den Speicher `memoryRecoveryFile`.
+  Die Datei, in der steht, ob der Speicher nach einem [[Glossar#Vorfall|Vorfall]] schon wieder freigegeben wurde.
 FabricLauncherPlugin.clearMemoryRecoveryState
-  Leert `clearMemoryRecoveryState`. Ruft `memoryRecoveryFile`, `finishRecovery`.
+  Das [[Glossar#Plugin|Plugin]] löscht den gemerkten Stand von den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Wiederherstellung den Zustand.
 FabricLauncherPlugin.resumeConfiguredAutoStart
-  Setzt fort `resumeConfiguredAutoStart`. Ruft `notifyNtfy`, `startAsync`.
+  Schaltet das automatische Starten wieder so ein, wie es in den [[Glossar#Einstellungen|Einstellungen]] steht.
 FabricLauncherPlugin.requestChildEmergencyStop
-  Stoppt den Child. Logtext sagt Emergency restart. Befund: Kommentar widerspricht Code (sicher).
+  Schaltet den [[Glossar#Spielserver|Spielserver]] wegen Speichermangels aus. Die Meldung spricht von einem [[Glossar#Neustart|Neustart]], neu gestartet wird nicht. Auffällig: ein Kommentar oder eine Meldung sagt etwas anderes als der Ablauf. Das nennt man [[Glossar#Widerspruch|Widerspruch]].
 FabricLauncherPlugin.writeMemoryIncidentReport
-  Schreibt `writeMemoryIncidentReport`. Ruft `snapshot`, `cgroupUsePercent`, `criticalSamples`.
+  Das [[Glossar#Plugin|Plugin]] schreibt den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] den [[Glossar#Vorfall|Vorfall]] den Bericht.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.applyCurrentMemorySettings**: Das [[Glossar#Plugin|Plugin]] wendet an den aktuellen Stand den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die [[Glossar#Einstellungen|Einstellungen]].
+> - **FabricLauncherPlugin.loadMemoryRecoveryState**: Das [[Glossar#Plugin|Plugin]] lädt den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Wiederherstellung den Zustand.
+> - **FabricLauncherPlugin.loadLatestMemoryIncidentReport**: Das [[Glossar#Plugin|Plugin]] lädt den letzten Stand den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] den [[Glossar#Vorfall|Vorfall]] den Bericht.
+> - **FabricLauncherPlugin.memoryRecoveryFile**: Die Datei, in der steht, ob der Speicher nach einem [[Glossar#Vorfall|Vorfall]] schon wieder freigegeben wurde.
+> - **FabricLauncherPlugin.clearMemoryRecoveryState**: Das [[Glossar#Plugin|Plugin]] löscht den gemerkten Stand von den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Wiederherstellung den Zustand.
+> - **FabricLauncherPlugin.resumeConfiguredAutoStart**: Schaltet das automatische Starten wieder so ein, wie es in den [[Glossar#Einstellungen|Einstellungen]] steht.
+> - **FabricLauncherPlugin.requestChildEmergencyStop**: Schaltet den [[Glossar#Spielserver|Spielserver]] wegen Speichermangels aus. Die Meldung spricht von einem [[Glossar#Neustart|Neustart]], neu gestartet wird nicht. Auffällig: ein Kommentar oder eine Meldung sagt etwas anderes als der Ablauf. Das nennt man [[Glossar#Widerspruch|Widerspruch]].
+> - **FabricLauncherPlugin.writeMemoryIncidentReport**: Das [[Glossar#Plugin|Plugin]] schreibt den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] den [[Glossar#Vorfall|Vorfall]] den Bericht.
 
+- Wird der [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] knapp, schaltet das [[Glossar#Plugin|Plugin]] den [[Glossar#Spielserver|Spielserver]] aus. Eine Meldung spricht von [[Glossar#Neustart|Neustart]], neu gestartet wird aber nicht.

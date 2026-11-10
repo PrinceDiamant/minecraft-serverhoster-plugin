@@ -29,7 +29,7 @@ if Z.2320 (!HostMinimize.ROLLBACK_CONFIRM.equals(confirm))
 throw Z.2321 throw new IllegalArgumentException('Die Bestätigu…
   Zeile 2321: Abbruch `throw new IllegalArgumentException('Die Bestätigu…`.
 FabricLauncherPlugin.readHostMinimizeState
-  Liest `readHostMinimizeState`. Ruft `hostMinimizeStateFile`, `readState`.
+  Das [[Glossar#Plugin|Plugin]] liest den [[Glossar#Host|Host]] das Verkleinern den Zustand. Liest `readHostMinimizeState`. Ruft `hostMinimizeStateFile`, `readState`.
 if Z.2324 (relative.isBlank())
   Zeile 2324: prüft `(relative.isBlank())`.
 throw Z.2324 throw new IllegalStateException('Es gibt keine Ho…
@@ -40,4 +40,14 @@ throw Z.2327 throw new SecurityException('Die Sicherung liegt …
   Zeile 2327: Abbruch `throw new SecurityException('Die Sicherung liegt …`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.hostMinimizeRollback`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2320 (!HostMinimize.ROLLBACK_CONFIRM.equals(confirm))**: Zeile 2320: prüft `(!HostMinimize.ROLLBACK_CONFIRM.equals(confirm))`.
+> - **throw Z.2321 throw new IllegalArgumentException('Die Bestätigu…**: Zeile 2321: Abbruch `throw new IllegalArgumentException('Die Bestätigu…`.
+> - **FabricLauncherPlugin.readHostMinimizeState**: Das [[Glossar#Plugin|Plugin]] liest den [[Glossar#Host|Host]] das Verkleinern den Zustand. Liest `readHostMinimizeState`. Ruft `hostMinimizeStateFile`, `readState`.
+> - **if Z.2324 (relative.isBlank())**: Zeile 2324: prüft `(relative.isBlank())`.
+> - **throw Z.2324 throw new IllegalStateException('Es gibt keine Ho…**: Zeile 2324: Abbruch `throw new IllegalStateException('Es gibt keine Ho…`.
+> - **if Z.2326 (!backup.startsWith(getDataFolder().toPath().toAb…**: Zeile 2326: prüft `(!backup.startsWith(getDataFolder().toPath().toAb…`.
+> - **throw Z.2327 throw new SecurityException('Die Sicherung liegt …**: Zeile 2327: Abbruch `throw new SecurityException('Die Sicherung liegt …`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.hostMinimizeRollback`.

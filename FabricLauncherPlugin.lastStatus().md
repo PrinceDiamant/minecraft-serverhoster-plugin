@@ -15,10 +15,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.focusSlot
-  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+  Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
 return Z.310 return focusSlot().lastStatus;
-  Zeile 310: Rückgabe `return focusSlot().lastStatus;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 310.
 ```
 
-- `lastStatus` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:310–310 kein Aufruf, kein Treffer in plugin.yml/UI/Strings
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.focusSlot**: Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `focusSlot`.
+> - **return Z.310 return focusSlot().lastStatus;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 310.
+
+- Der letzte kurze Zustandstext, zum Beispiel startet oder läuft.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

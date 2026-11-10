@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.529 (address.isBlank() // address.equals('0.0.0.0') /…
-  Zeile 529: prüft `(address.isBlank() // address.equals('0.0.0.0') /…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 529.
 return Z.530 return 'Alle Interfaces (Port ' + port + ')';
-  Zeile 530: Rückgabe `return 'Alle Interfaces (Port ' + port + ')';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 530.
 return Z.531 return (address.contains(':') && !address.startsW…
-  Zeile 531: Rückgabe `return (address.contains(':') && !address.startsW…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 531.
 ```
 
-- `formatBindAddress` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.529 (address.isBlank() // address.equals('0.0.0.0') /…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 529.
+> - **return Z.530 return 'Alle Interfaces (Port ' + port + ')';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 530.
+> - **return Z.531 return (address.contains(':') && !address.startsW…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 531.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht lesbar die Bindung die Adresse.

@@ -34,4 +34,12 @@ return Z.119 return text.toString();
   Zeile 119: Rückgabe `return text.toString();`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.109 (collectors == null // collectors.isEmpty())**: Zeile 109: prüft `(collectors == null // collectors.isEmpty())`.
+> - **return Z.109 return 'none';**: Zeile 109: Rückgabe `return 'none';`.
+> - **for Z.111 (int i = 0; i ( collectors.size(); i++)**: Zeile 111: Schleife `(int i = 0; i ( collectors.size(); i++)`.
+> - **if Z.112 (i ) 0)**: Zeile 112: prüft `(i ) 0)`.
+> - **return Z.119 return text.toString();**: Zeile 119: Rückgabe `return text.toString();`.
+
+- Die Messung macht lesbar die Speicherbereinigung.
 - `formatGc` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

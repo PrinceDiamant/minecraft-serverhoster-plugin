@@ -21,9 +21,14 @@ flowchart TD
 
 ```knoten
 ServerProfile.ServerProfile
-  `ServerProfile` in `ServerProfile.java`.
+  Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
 ProfileMerge.nvl
-  `nvl` in `ServerProfile.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `nvl` in `ServerProfile.java`.
 ```
 
-- Fortsetzung von `ProfileMerge.inherit`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ServerProfile.ServerProfile**: Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
+> - **ProfileMerge.nvl**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `nvl` in `ServerProfile.java`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 7149 aufgerufen werden.
+- Fortsetzung von `ProfileMerge.inherit`.

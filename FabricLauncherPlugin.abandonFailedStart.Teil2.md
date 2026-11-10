@@ -19,11 +19,18 @@ flowchart TD
 try Z.2140
   Zeile 2140: Versuch. Der Fehlerpfad geht in catch.
 ChildProcessRecord.deleteIfMatch
-  Löscht `deleteIfMatch`. Ruft `read`.
+  Dieser Teil löscht hier einen Schritt. Eine Ebene tiefer steht er genauer. Löscht `deleteIfMatch`. Ruft `read`.
 FabricLauncherPlugin.processRecord
-  `processRecord` in `FabricLauncherPlugin.java`.
+  Baut den Merkzettel zum Programm: Nummer und die Prüfungen, ob es noch lebt. `processRecord` in `FabricLauncherPlugin.java`.
 catch Z.2142 (IOException e)
   Zeile 2142: fängt (IOException e).
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.abandonFailedStart`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.2140**: Zeile 2140: Versuch. Der Fehlerpfad geht in catch.
+> - **ChildProcessRecord.deleteIfMatch**: Dieser Teil löscht hier einen Schritt. Eine Ebene tiefer steht er genauer. Löscht `deleteIfMatch`. Ruft `read`.
+> - **FabricLauncherPlugin.processRecord**: Baut den Merkzettel zum Programm: Nummer und die Prüfungen, ob es noch lebt. `processRecord` in `FabricLauncherPlugin.java`.
+> - **catch Z.2142 (IOException e)**: Zeile 2142: fängt (IOException e).
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.abandonFailedStart`.

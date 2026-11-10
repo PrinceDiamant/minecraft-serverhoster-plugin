@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.hostMemoryView
-  Betrifft den Host `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
+  Stellt die Speichermessung so zusammen, wie die [[Glossar#Bedienseite|Bedienseite]] sie zeigt. Betrifft den [[Glossar#Host|Host]] `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
 return Z.908 return m;
   Zeile 908: Rückgabe `return m;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.diagMap(String)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.hostMemoryView**: Stellt die Speichermessung so zusammen, wie die [[Glossar#Bedienseite|Bedienseite]] sie zeigt. Betrifft den [[Glossar#Host|Host]] `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
+> - **return Z.908 return m;**: Zeile 908: Rückgabe `return m;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.diagMap(String)`.

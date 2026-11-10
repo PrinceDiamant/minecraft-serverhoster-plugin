@@ -25,19 +25,28 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.Z22
-  Fortsetzung des Ablaufs ab Zeile 22.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 22 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z22`.
 return Z.39 return ( set(id: EditorId, value: string, path: s…
-  Zeile 39: Rückgabe `return ( set(id: EditorId, value: string, path: s…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 39.
 fileEditor.installFileEditors.editorFor
-  Liefert den Editor `editorFor`. Ruft `get`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Im [[Glossar#Quelltext|Quelltext]] heißt das `editorFor`.
 fileEditor.installFileEditors.set
-  Setzt `set`. Ruft `editorFor`, `modeForPath`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] setzt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `set`.
 fileEditor.installFileEditors.get
-  Liefert `get`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] liefert das. Im [[Glossar#Quelltext|Quelltext]] heißt das `get`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Im [[Glossar#Quelltext|Quelltext]] heißt das `refresh`.
 fileEditor.installFileEditors.setPath
-  Setzt `setPath`. Ruft `editorFor`, `modeForPath`.
+  Die [[Glossar#Bedienseite|Bedienseite]] setzt den Pfad. Im [[Glossar#Quelltext|Quelltext]] heißt das `setPath`.
 ```
 
-- `installFileEditors` in `ui/src/lib/fileEditor.ts`
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.Z22**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 22 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z22`.
+> - **return Z.39 return ( set(id: EditorId, value: string, path: s…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 39.
+> - **fileEditor.installFileEditors.editorFor**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um für. Im [[Glossar#Quelltext|Quelltext]] heißt das `editorFor`.
+> - **fileEditor.installFileEditors.set**: Die [[Glossar#Bedienseite|Bedienseite]] setzt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `set`.
+> - **fileEditor.installFileEditors.get**: Die [[Glossar#Bedienseite|Bedienseite]] liefert das. Im [[Glossar#Quelltext|Quelltext]] heißt das `get`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Im [[Glossar#Quelltext|Quelltext]] heißt das `refresh`.
+> - **fileEditor.installFileEditors.setPath**: Die [[Glossar#Bedienseite|Bedienseite]] setzt den Pfad. Im [[Glossar#Quelltext|Quelltext]] heißt das `setPath`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] richtet ein die Datei die Editoren.

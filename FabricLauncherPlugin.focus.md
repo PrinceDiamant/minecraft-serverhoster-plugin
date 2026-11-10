@@ -15,10 +15,14 @@ flowchart TD
 
 ```knoten
 if Z.336 (!focus.equals(id))
-  Zeile 336: prüft `(!focus.equals(id))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 336.
 throw Z.336 throw new IllegalArgumentException('ServerHoster …
-  Zeile 336: Abbruch `throw new IllegalArgumentException('ServerHoster …`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 336.
 ```
 
-- `focus` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, prüfen. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:335–337 kein Produktionsaufruf im Aufrufgraph; Name kommt in UI, Config oder anderem Text vor
+> [!knoten]- Was die Blöcke tun
+> - **if Z.336 (!focus.equals(id))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 336.
+> - **throw Z.336 throw new IllegalArgumentException('ServerHoster …**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 336.
+
+- Liefert den Server, der gerade gemeint ist.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

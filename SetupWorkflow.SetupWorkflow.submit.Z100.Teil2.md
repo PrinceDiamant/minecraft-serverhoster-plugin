@@ -17,13 +17,20 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 if Z.155 state?.cleanupAvailable
   Zeile 155: prüft `state?.cleanupAvailable`.
 if Z.162 shouldClean
   Zeile 162: prüft `shouldClean`.
 SetupWorkflow.SetupWorkflow.cleanupLegacy
-  Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] räumt auf den alten Weg. Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow.submit.Z100`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+> - **if Z.155 state?.cleanupAvailable**: Zeile 155: prüft `state?.cleanupAvailable`.
+> - **if Z.162 shouldClean**: Zeile 162: prüft `shouldClean`.
+> - **SetupWorkflow.SetupWorkflow.cleanupLegacy**: Die [[Glossar#Bedienseite|Bedienseite]] räumt auf den alten Weg. Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow.submit.Z100`.

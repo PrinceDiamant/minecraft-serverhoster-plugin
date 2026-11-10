@@ -27,23 +27,36 @@ flowchart TD
 case Z.215 'GET /api/fs/read'
   Zeile 215: Zweig `'GET /api/fs/read'`.
 Dashboard.fsRead
-  `fsRead` in `Dashboard.java`. Ruft `safe`, `json`, `text`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Datei. `fsRead` in `Dashboard.java`. Ruft `safe`, `json`, `text`.
 case Z.216 'GET /api/fs/download'
   Zeile 216: Zweig `'GET /api/fs/download'`.
 Dashboard.fsDownload
-  `fsDownload` in `Dashboard.java`. Ruft `safe`, `json`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] holt eine Datei. `fsDownload` in `Dashboard.java`. Ruft `safe`, `json`.
 case Z.217 'POST /api/fs/write'
   Zeile 217: Zweig `'POST /api/fs/write'`.
 Dashboard.fsWrite
-  `fsWrite` in `Dashboard.java`. Ruft `safe`, `json`, `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schreibt eine Datei. `fsWrite` in `Dashboard.java`. Ruft `safe`, `json`, `readBodyText`.
 case Z.218 'POST /api/fs/upload'
   Zeile 218: Zweig `'POST /api/fs/upload'`.
 Dashboard.fsUpload
-  `fsUpload` in `Dashboard.java`. Ruft `safe`, `json`, `rel`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt eine Datei. `fsUpload` in `Dashboard.java`. Ruft `safe`, `json`, `rel`.
 case Z.219 'POST /api/fs/rename'
   Zeile 219: Zweig `'POST /api/fs/rename'`.
 Dashboard.fsRename
-  `fsRename` in `Dashboard.java`. Ruft `readBodyText`, `safe`, `root`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] benennt um eine Datei. `fsRename` in `Dashboard.java`. Ruft `readBodyText`, `safe`, `root`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **case Z.215 'GET /api/fs/read'**: Zeile 215: Zweig `'GET /api/fs/read'`.
+> - **Dashboard.fsRead**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Datei. `fsRead` in `Dashboard.java`. Ruft `safe`, `json`, `text`.
+> - **case Z.216 'GET /api/fs/download'**: Zeile 216: Zweig `'GET /api/fs/download'`.
+> - **Dashboard.fsDownload**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] holt eine Datei. `fsDownload` in `Dashboard.java`. Ruft `safe`, `json`.
+> - **case Z.217 'POST /api/fs/write'**: Zeile 217: Zweig `'POST /api/fs/write'`.
+> - **Dashboard.fsWrite**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schreibt eine Datei. `fsWrite` in `Dashboard.java`. Ruft `safe`, `json`, `readBodyText`.
+> - **case Z.218 'POST /api/fs/upload'**: Zeile 218: Zweig `'POST /api/fs/upload'`.
+> - **Dashboard.fsUpload**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt eine Datei. `fsUpload` in `Dashboard.java`. Ruft `safe`, `json`, `rel`.
+> - **case Z.219 'POST /api/fs/rename'**: Zeile 219: Zweig `'POST /api/fs/rename'`.
+> - **Dashboard.fsRename**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] benennt um eine Datei. `fsRename` in `Dashboard.java`. Ruft `readBodyText`, `safe`, `root`.
+
+- Weitere Wege der Entscheidung in [[Glossar#Zeile|Zeile]] 215.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

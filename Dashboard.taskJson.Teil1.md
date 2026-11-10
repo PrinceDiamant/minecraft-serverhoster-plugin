@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.taskNext
-  `taskNext` in `FabricLauncherPlugin.java`. Ruft `next`.
+  Rechnet, wann eine [[Glossar#Aufgabe|Aufgabe]] das nächste Mal laufen soll. `taskNext` in `FabricLauncherPlugin.java`. Ruft `next`.
 FabricLauncherPlugin.taskLast
-  `taskLast` in `FabricLauncherPlugin.java`.
+  Merkt, wann eine [[Glossar#Aufgabe|Aufgabe]] zuletzt gelaufen ist. `taskLast` in `FabricLauncherPlugin.java`.
 ```
 
-- Fortsetzung von `Dashboard.taskJson`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.taskNext**: Rechnet, wann eine [[Glossar#Aufgabe|Aufgabe]] das nächste Mal laufen soll. `taskNext` in `FabricLauncherPlugin.java`. Ruft `next`.
+> - **FabricLauncherPlugin.taskLast**: Merkt, wann eine [[Glossar#Aufgabe|Aufgabe]] zuletzt gelaufen ist. `taskLast` in `FabricLauncherPlugin.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.taskJson`.

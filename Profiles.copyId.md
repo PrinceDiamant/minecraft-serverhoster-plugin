@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ServerProfile.ServerProfile
-  `ServerProfile` in `ServerProfile.java`.
+  Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
 return Z.125 return new ServerProfile(id, p.type, p.…
   Zeile 125: Rückgabe `return new ServerProfile(id, p.type, p.…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ServerProfile.ServerProfile**: Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
+> - **return Z.125 return new ServerProfile(id, p.type, p.…**: Zeile 125: Rückgabe `return new ServerProfile(id, p.type, p.…`.
+
+- Die Serverbeschreibung kopiert die Kennung.
 - `copyId` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

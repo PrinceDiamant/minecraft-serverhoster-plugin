@@ -19,11 +19,18 @@ flowchart TD
 try Z.254
   Zeile 254: Versuch. Der Fehlerpfad geht in catch.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 catch Z.260 cause
   Zeile 260: fängt cause.
 ```
 
-- Fortsetzung von `SetupWizard.SetupWizard.runFirstSetup`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.254**: Zeile 254: Versuch. Der Fehlerpfad geht in catch.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+> - **catch Z.260 cause**: Zeile 260: fängt cause.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 254 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `SetupWizard.SetupWizard.runFirstSetup`.

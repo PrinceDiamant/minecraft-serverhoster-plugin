@@ -18,4 +18,9 @@ if Z.127 (directories.contains(argument))
   Zeile 127: prüft `(directories.contains(argument))`.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case123`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.124 ('/'.equals(argument))**: Zeile 124: prüft `('/'.equals(argument))`.
+> - **if Z.127 (directories.contains(argument))**: Zeile 127: prüft `(directories.contains(argument))`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 124 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case123`.

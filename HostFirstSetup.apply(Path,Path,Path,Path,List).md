@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.apply(Path,Path,Path,Path,List).Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 HostFirstSetup.apply(Path,Path,Path,Path,List).Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 HostFirstSetup.apply(Path,Path,Path,Path,List).Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 HostFirstSetup.apply(Path,Path,Path,Path,List).Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
 HostFirstSetup.apply(Path,Path,Path,Path,List).Teil5
-  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.apply(Path,Path,Path,Path,List).Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **HostFirstSetup.apply(Path,Path,Path,Path,List).Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **HostFirstSetup.apply(Path,Path,Path,Path,List).Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+> - **HostFirstSetup.apply(Path,Path,Path,Path,List).Teil4**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+> - **HostFirstSetup.apply(Path,Path,Path,Path,List).Teil5**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das.
 - `apply` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

@@ -19,11 +19,18 @@ flowchart TD
 if Z.1786 (ChildSlot.isReadyLine(line))
   Zeile 1786: prüft `(ChildSlot.isReadyLine(line))`.
 ChildSlot.isReadyLine
-  Prüft `isReadyLine`.
+  Dieser Teil prüft eine [[Glossar#Zeile|Zeile]]. Prüft `isReadyLine`.
 if Z.1788 (slot.stopRequested)
   Zeile 1788: prüft `(slot.stopRequested)`.
 FabricLauncherPlugin.stopBlocking
-  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+  Setzt den Zustand auf „stoppt“ und wartet, bis der [[Glossar#Spielserver|Spielserver]] wirklich aus ist. Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.pipe.Z1778.Z1780`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1786 (ChildSlot.isReadyLine(line))**: Zeile 1786: prüft `(ChildSlot.isReadyLine(line))`.
+> - **ChildSlot.isReadyLine**: Dieser Teil prüft eine [[Glossar#Zeile|Zeile]]. Prüft `isReadyLine`.
+> - **if Z.1788 (slot.stopRequested)**: Zeile 1788: prüft `(slot.stopRequested)`.
+> - **FabricLauncherPlugin.stopBlocking**: Setzt den Zustand auf „stoppt“ und wartet, bis der [[Glossar#Spielserver|Spielserver]] wirklich aus ist. Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.pipe.Z1778.Z1780`.

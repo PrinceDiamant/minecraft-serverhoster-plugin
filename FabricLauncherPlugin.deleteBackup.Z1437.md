@@ -25,17 +25,27 @@ flowchart TD
 if Z.1437 (remoteBackupSelected())
   Zeile 1437: prüft `(remoteBackupSelected())`.
 FabricLauncherPlugin.remoteBackupSelected
-  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. `remoteBackupSelected` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.backupCredentials
-  Sichert `backupCredentials`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
 RemoteBackupBridge.delete
-  Löscht `delete`. Ruft `safeId`, `named`, `connect`.
+  Die Sicherung über das Netz löscht das. Löscht `delete`. Ruft `safeId`, `named`, `connect`.
 FabricLauncherPlugin.remoteBackupSettings
-  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. `remoteBackupSettings` in `FabricLauncherPlugin.java`.
 BackupBridge.delete
-  Löscht `delete`. Ruft `file`.
+  Die Sicherung auf diesem Rechner löscht das. Löscht `delete`. Ruft `file`.
 FabricLauncherPlugin.backupSpec
-  Sichert `backupSpec`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Sichert `backupSpec`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.deleteBackup`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1437 (remoteBackupSelected())**: Zeile 1437: prüft `(remoteBackupSelected())`.
+> - **FabricLauncherPlugin.remoteBackupSelected**: Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.backupCredentials**: Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
+> - **RemoteBackupBridge.delete**: Die Sicherung über das Netz löscht das. Löscht `delete`. Ruft `safeId`, `named`, `connect`.
+> - **FabricLauncherPlugin.remoteBackupSettings**: Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+> - **BackupBridge.delete**: Die Sicherung auf diesem Rechner löscht das. Löscht `delete`. Ruft `file`.
+> - **FabricLauncherPlugin.backupSpec**: Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Sichert `backupSpec`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1437 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.deleteBackup`.

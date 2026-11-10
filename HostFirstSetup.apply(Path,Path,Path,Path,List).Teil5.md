@@ -17,13 +17,20 @@ flowchart TD
 
 ```knoten
 PropertiesFile.update
-  Aktualisiert `update`.
+  Dieser Teil ändert das. Aktualisiert `update`.
 HostMinimize.firstSetupProperties
-  `firstSetupProperties` in `HostMinimize.java`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die [[Glossar#Einrichtung|Einrichtung]] die Eigenschaften. `firstSetupProperties` in `HostMinimize.java`.
 HostFirstSetup.writeMarker(Path,String,String,int,String)
-  Schreibt `writeMarker`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`.
 return Z.113 return new Result(true, worldName, List.of(), dis…
   Zeile 113: Rückgabe `return new Result(true, worldName, List.of(), dis…`.
 ```
 
-- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **PropertiesFile.update**: Dieser Teil ändert das. Aktualisiert `update`.
+> - **HostMinimize.firstSetupProperties**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die [[Glossar#Einrichtung|Einrichtung]] die Eigenschaften. `firstSetupProperties` in `HostMinimize.java`.
+> - **HostFirstSetup.writeMarker(Path,String,String,int,String)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`.
+> - **return Z.113 return new Result(true, worldName, List.of(), dis…**: Zeile 113: Rückgabe `return new Result(true, worldName, List.of(), dis…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`.

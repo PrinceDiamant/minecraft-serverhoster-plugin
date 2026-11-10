@@ -33,15 +33,26 @@ if Z.1552 (!schedule.id().equals(id) // !schedule.enabled())
 if Z.1553 (sameScheduleMinute(schedule, timestamp))
   Zeile 1553: prüft `(sameScheduleMinute(schedule, timestamp))`.
 FabricLauncherPlugin.sameScheduleMinute
-  Vergleicht `sameScheduleMinute`.
+  Das [[Glossar#Plugin|Plugin]] plant Zeitpunkt. Vergleicht `sameScheduleMinute`.
 return Z.1553 return null;
   Zeile 1553: Rückgabe `return null;`.
 ScheduleDef.withLastRun
-  Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den letzten Stand den Lauf. Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
 FabricLauncherPlugin.saveSchedules
-  Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+  Das [[Glossar#Plugin|Plugin]] speichert die Zeitpläne. Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
 return Z.1557 return started;
   Zeile 1557: Rückgabe `return started;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.markScheduleRun.Z1547`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.1550 (int i = 0; i ( current.size(); i++)**: Zeile 1550: Schleife `(int i = 0; i ( current.size(); i++)`.
+> - **if Z.1552 (!schedule.id().equals(id) // !schedule.enabled())**: Zeile 1552: prüft `(!schedule.id().equals(id) // !schedule.enabled())`.
+> - **if Z.1553 (sameScheduleMinute(schedule, timestamp))**: Zeile 1553: prüft `(sameScheduleMinute(schedule, timestamp))`.
+> - **FabricLauncherPlugin.sameScheduleMinute**: Das [[Glossar#Plugin|Plugin]] plant Zeitpunkt. Vergleicht `sameScheduleMinute`.
+> - **return Z.1553 return null;**: Zeile 1553: Rückgabe `return null;`.
+> - **ScheduleDef.withLastRun**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den letzten Stand den Lauf. Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
+> - **FabricLauncherPlugin.saveSchedules**: Das [[Glossar#Plugin|Plugin]] speichert die Zeitpläne. Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+> - **return Z.1557 return started;**: Zeile 1557: Rückgabe `return started;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1550 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.markScheduleRun.Z1547`.

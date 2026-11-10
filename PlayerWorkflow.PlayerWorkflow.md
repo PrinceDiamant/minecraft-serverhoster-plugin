@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 PlayerWorkflow.PlayerWorkflow.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 PlayerWorkflow.PlayerWorkflow.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 PlayerWorkflow.PlayerWorkflow.onPageChange
-  Reagiert `onPageChange`. Ruft `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
 PlayerWorkflow.PlayerWorkflow.onVisibilityChange
-  Reagiert `onVisibilityChange`. Ruft `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onVisibilityChange`. Ruft `refresh`.
 PlayerWorkflow.PlayerWorkflow.runPlayerAction
-  Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Spieler|Spieler]] die Tätigkeit. Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **PlayerWorkflow.PlayerWorkflow.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **PlayerWorkflow.PlayerWorkflow.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **PlayerWorkflow.PlayerWorkflow.onPageChange**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
+> - **PlayerWorkflow.PlayerWorkflow.onVisibilityChange**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onVisibilityChange`. Ruft `refresh`.
+> - **PlayerWorkflow.PlayerWorkflow.runPlayerAction**: Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Spieler|Spieler]] die Tätigkeit. Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf.
 - `PlayerWorkflow` in `ui/src/components/PlayerWorkflow.tsx`

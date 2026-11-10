@@ -22,9 +22,16 @@ if Z.145 !accepted
 return Z.145 return;
   Zeile 145: Rückgabe `return;`.
 index.post
-  Sendet POST `post`. Ruft `api`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Sendet POST `post`. Ruft `api`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 ```
 
-- Fortsetzung von `index.del`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.145 !accepted**: Zeile 145: prüft `!accepted`.
+> - **return Z.145 return;**: Zeile 145: Rückgabe `return;`.
+> - **index.post**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Sendet POST `post`. Ruft `api`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.del`.

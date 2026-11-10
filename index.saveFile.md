@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 index.saveFile.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 index.saveFile.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 ```
 
-- `saveFile` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.saveFile.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **index.saveFile.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] speichert die Datei.

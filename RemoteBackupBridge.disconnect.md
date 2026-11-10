@@ -16,4 +16,8 @@ if Z.320 (client.isConnected())
   Zeile 320: prüft `(client.isConnected())`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.320 (client.isConnected())**: Zeile 320: prüft `(client.isConnected())`.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `disconnect` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

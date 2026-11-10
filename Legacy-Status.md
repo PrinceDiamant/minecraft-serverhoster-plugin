@@ -15,42 +15,55 @@ flowchart TD
   n9["index.pushChartValue"]:::internal-link
   n10["index.updateCharts"]:::internal-link
   n11["index.chartCard"]:::internal-link
-  n5 -->|"Z.101"| n4
-  n5 -->|"Z.102"| n3
-  n5 -->|"Z.104"| n1
-  n5 -->|"Z.113"| n10
-  n5 -->|"Z.114"| n8
-  n6 -->|"Z.118"| n5
-  n7 -->|"Z.119"| n6
-  n10 -->|"Z.162"| n9
-  n10 -->|"Z.171"| n11
+  n5 -->|"Zeile 101"| n4
+  n5 -->|"Zeile 102"| n3
+  n5 -->|"Zeile 104"| n1
+  n5 -->|"Zeile 113"| n10
+  n5 -->|"Zeile 114"| n8
+  n6 -->|"Zeile 118"| n5
+  n7 -->|"Zeile 119"| n6
+  n10 -->|"Zeile 162"| n9
+  n10 -->|"Zeile 171"| n11
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 index.fmtUp
-  Formatiert `fmtUp`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Laufzeit.
 index.fmtSize
-  Formatiert `fmtSize`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe.
 index.lifecycleLabel
-  `lifecycleLabel` in `index.html`.
+  Setzt die Beschriftung, die den Zustand in der älteren [[Glossar#Bedienseite|Bedienseite]] zeigt.
 index.updateChildActions
-  Aktualisiert `updateChildActions`. Ruft `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert den [[Glossar#Spielserver|Spielserver]] die Tätigkeiten.
 index.status
-  Liefert den Status `status`. Ruft `api`, `updateChildActions`, `$`.
+  Holt den Zustand und zeichnet ihn in die ältere [[Glossar#Bedienseite|Bedienseite]].
 index.act
-  Sendet start, stop oder restart `act`. Ruft `$`, `post`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] Start, [[Glossar#Stopp|Stopp]] oder [[Glossar#Neustart|Neustart]].
 index.confirmStop
-  Fragt nach `confirmStop`. Ruft `act`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt nach den [[Glossar#Stopp|Stopp]].
 index.spark
-  Zeichnet eine Sparkline `spark`.
+  Zeichnet in der älteren [[Glossar#Bedienseite|Bedienseite]] eine kleine Kurve der letzten Messwerte.
 index.pushChartValue
-  Schiebt einen Wert in `pushChartValue`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] zeichnet den Wert.
 index.updateCharts
-  Aktualisiert `updateCharts`. Ruft `pushChartValue`, `$`, `chartCard`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert die Kurven.
 index.chartCard
-  Zeichnet das Diagramm `chartCard`. Ruft `x`, `y`.
+  Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Karte mit einer Kurve.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **index.fmtUp**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Laufzeit.
+> - **index.fmtSize**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe.
+> - **index.lifecycleLabel**: Setzt die Beschriftung, die den Zustand in der älteren [[Glossar#Bedienseite|Bedienseite]] zeigt.
+> - **index.updateChildActions**: Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert den [[Glossar#Spielserver|Spielserver]] die Tätigkeiten.
+> - **index.status**: Holt den Zustand und zeichnet ihn in die ältere [[Glossar#Bedienseite|Bedienseite]].
+> - **index.act**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] Start, [[Glossar#Stopp|Stopp]] oder [[Glossar#Neustart|Neustart]].
+> - **index.confirmStop**: Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt nach den [[Glossar#Stopp|Stopp]].
+> - **index.spark**: Zeichnet in der älteren [[Glossar#Bedienseite|Bedienseite]] eine kleine Kurve der letzten Messwerte.
+> - **index.pushChartValue**: Die ältere [[Glossar#Bedienseite|Bedienseite]] zeichnet den Wert.
+> - **index.updateCharts**: Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert die Kurven.
+> - **index.chartCard**: Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Karte mit einer Kurve.
 
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt alle drei Sekunden nach, wie es dem [[Glossar#Spielserver|Spielserver]] geht.

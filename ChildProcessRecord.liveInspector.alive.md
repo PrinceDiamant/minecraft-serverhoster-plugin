@@ -16,5 +16,9 @@ return Z.56 return ProcessHandle.of(pid).map(ProcessHandle::i…
   Zeile 56: Rückgabe `return ProcessHandle.of(pid).map(ProcessHandle::i…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.56 return ProcessHandle.of(pid).map(ProcessHandle::i…**: Zeile 56: Rückgabe `return ProcessHandle.of(pid).map(ProcessHandle::i…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `alive` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:55–57 nur von Tests erreicht

@@ -21,9 +21,14 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 ```
 
-- Fortsetzung von `index.loadTasks`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 212 aufgerufen werden.
+- Fortsetzung von `index.loadTasks`.

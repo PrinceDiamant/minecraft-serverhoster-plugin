@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.diagMap()
-  Sammelt die Diagnose `diagMap`. Ruft `diagMap`.
+  Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht. Sammelt die Diagnose `diagMap`. Ruft `diagMap`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.diagMap()**: Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht. Sammelt die Diagnose `diagMap`. Ruft `diagMap`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2489.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

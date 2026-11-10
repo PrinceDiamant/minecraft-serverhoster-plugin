@@ -17,9 +17,14 @@ flowchart TD
 
 ```knoten
 CronExpr.field
-  `field` in `CronExpr.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `field` in `CronExpr.java`.
 return Z.35 return field(f(0), time.getMinute(), 0,…
   Zeile 35: Rückgabe `return field(f(0), time.getMinute(), 0,…`.
 ```
 
-- Fortsetzung von `CronExpr.matches`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **CronExpr.field**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `field` in `CronExpr.java`.
+> - **return Z.35 return field(f(0), time.getMinute(), 0,…**: Zeile 35: Rückgabe `return field(f(0), time.getMinute(), 0,…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CronExpr.matches`.

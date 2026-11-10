@@ -16,5 +16,9 @@ if Z.313 (!surviveTerm)
   Zeile 313: prüft `(!surviveTerm)`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.313 (!surviveTerm)**: Zeile 313: prüft `(!surviveTerm)`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `destroy` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

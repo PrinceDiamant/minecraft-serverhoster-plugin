@@ -19,9 +19,15 @@ flowchart TD
 try Z.324
   Zeile 324: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridge.disconnect
-  Trennt `disconnect`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Trennt `disconnect`.
 catch Z.325 (IOException closeError)
   Zeile 325: fängt (IOException closeError).
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.324**: Zeile 324: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridge.disconnect**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Trennt `disconnect`.
+> - **catch Z.325 (IOException closeError)**: Zeile 325: fängt (IOException closeError).
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `disconnectAfterFailure` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

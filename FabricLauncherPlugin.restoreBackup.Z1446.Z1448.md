@@ -31,23 +31,36 @@ flowchart TD
 try Z.1448
   Zeile 1448: Versuch. Der Fehlerpfad geht in catch.
 FabricLauncherPlugin.backupCredentials
-  Sichert `backupCredentials`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
 try Z.1450
   Zeile 1450: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridge.download
-  Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
+  Die Sicherung über das Netz holt das. Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
 FabricLauncherPlugin.remoteBackupSettings
-  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. `remoteBackupSettings` in `FabricLauncherPlugin.java`.
 BackupBridge.restoreZip
-  Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+  Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
 finally Z.1448
   Läuft danach immer, auch nach einem Fehler.
 Schritt Z.1455 Files.deleteIfExists(temp);
   Zeile 1455: Dateioperation. `Files.deleteIfExists(temp);`
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.restoreBackup.Z1446`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.1448**: Zeile 1448: Versuch. Der Fehlerpfad geht in catch.
+> - **FabricLauncherPlugin.backupCredentials**: Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
+> - **try Z.1450**: Zeile 1450: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridge.download**: Die Sicherung über das Netz holt das. Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
+> - **FabricLauncherPlugin.remoteBackupSettings**: Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+> - **BackupBridge.restoreZip**: Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
+> - **finally Z.1448**: Läuft danach immer, auch nach einem Fehler.
+> - **Schritt Z.1455 Files.deleteIfExists(temp);**: Zeile 1455: Dateioperation. `Files.deleteIfExists(temp);`
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1448 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.restoreBackup.Z1446`.

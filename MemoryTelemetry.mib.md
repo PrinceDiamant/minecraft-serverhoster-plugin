@@ -16,4 +16,8 @@ return Z.123 return bytes ( 0 ? -1 : bytes / (1024 * 1024);
   Zeile 123: Rückgabe `return bytes ( 0 ? -1 : bytes / (1024 * 1024);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.123 return bytes ( 0 ? -1 : bytes / (1024 * 1024);**: Zeile 123: Rückgabe `return bytes ( 0 ? -1 : bytes / (1024 * 1024);`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `mib` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

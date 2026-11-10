@@ -11,31 +11,40 @@ flowchart TD
   n5["MemoryProtectionPolicy"]:::internal-link
   n6["MemoryIncidentReport"]:::internal-link
   n7["RuntimeLimits"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 MemoryTelemetry
-  Heap- und Host-Zahlen, umgerechnet in MiB.
+  Rechnet die Speicherzahlen in eine gut lesbare Einheit um.
 HostMemoryProbe
-  Liest freien Speicher, Swap und die cgroup.
+  Liest, wie viel [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] auf dem [[Glossar#Host|Host]] noch frei ist, inklusive des Wechselbereichs.
 GcDiagnostics
-  Sammelt GC-Daten für den Vorfallbericht.
+  Sammelt Angaben zur automatischen Speicherbereinigung für den Text eines [[Glossar#Vorfall|Vorfalls]].
 ProcessProbe
-  jcmd, Timeout 20 s, Thread FabricLauncher-jcmd.
+  Fragt das laufende Programm über ein Hilfswerkzeug des Java nach seinem Zustand. Die Frage wartet höchstens zwanzig Sekunden.
 MemoryProtectionPolicy
-  Entscheidung NONE, STOP_CHILD, RELEASE_AFTER_STABLE_MEMORY oder RELEASE_WITHOUT_MEMORY_GUARANTEE.
+  Die Entscheidung bei Speichermangel: nichts tun, den [[Glossar#Spielserver|Spielserver]] stoppen, oder eine zuvor vergebene Reserve wieder freigeben.
 MemoryIncidentReport
-  Schreibt den Text des Speicher-Vorfalls.
+  Schreibt den Text auf, wenn der [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] knapp wurde.
 RuntimeLimits
-  Begrenzt Sekunden und Zähler. shutdownHookTimeoutSeconds Standard 25.
+  Hält Zahlen in einem erlaubten Bereich, damit eine Einstellung nicht unsinnig groß oder klein wird. Die Frist beim Ausschalten des [[Glossar#Host|Host]] ist so begrenzt, Ersatzwert 25 Sekunden.
 ```
 
-- `HostMemoryProbe`, `MemoryTelemetry`, `MemoryProtectionPolicy`, `ProcessProbe`.
+> [!knoten] Was die Blöcke tun
+> - **MemoryTelemetry**: Rechnet die Speicherzahlen in eine gut lesbare Einheit um.
+> - **HostMemoryProbe**: Liest, wie viel [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] auf dem [[Glossar#Host|Host]] noch frei ist, inklusive des Wechselbereichs.
+> - **GcDiagnostics**: Sammelt Angaben zur automatischen Speicherbereinigung für den Text eines [[Glossar#Vorfall|Vorfalls]].
+> - **ProcessProbe**: Fragt das laufende Programm über ein Hilfswerkzeug des Java nach seinem Zustand. Die Frage wartet höchstens zwanzig Sekunden.
+> - **MemoryProtectionPolicy**: Die Entscheidung bei Speichermangel: nichts tun, den [[Glossar#Spielserver|Spielserver]] stoppen, oder eine zuvor vergebene Reserve wieder freigeben.
+> - **MemoryIncidentReport**: Schreibt den Text auf, wenn der [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] knapp wurde.
+> - **RuntimeLimits**: Hält Zahlen in einem erlaubten Bereich, damit eine Einstellung nicht unsinnig groß oder klein wird. Die Frist beim Ausschalten des [[Glossar#Host|Host]] ist so begrenzt, Ersatzwert 25 Sekunden.
+
+- Die Teile, die den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] messen, bewerten und bei einem [[Glossar#Vorfall|Vorfall]] einen Text schreiben.

@@ -16,4 +16,8 @@ return Z.164 return value == null ? fallback : String.valueOf(…
   Zeile 164: Rückgabe `return value == null ? fallback : String.valueOf(…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.164 return value == null ? fallback : String.valueOf(…**: Zeile 164: Rückgabe `return value == null ? fallback : String.valueOf(…`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `string` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

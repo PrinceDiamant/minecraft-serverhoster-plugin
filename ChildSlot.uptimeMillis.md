@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
 return Z.49 return running() ? System.currentTimeMi…
   Zeile 49: Rückgabe `return running() ? System.currentTimeMi…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
+> - **return Z.49 return running() ? System.currentTimeMi…**: Zeile 49: Rückgabe `return running() ? System.currentTimeMi…`.
+
+- Dieser Teil kümmert sich um die Zeit.
 - `uptimeMillis` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

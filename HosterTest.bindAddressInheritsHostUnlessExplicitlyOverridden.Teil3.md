@@ -17,7 +17,11 @@ flowchart TD
 
 ```knoten
 Dashboard.formatBindAddress
-  Formatiert `formatBindAddress`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht lesbar die Bindung die Adresse. Formatiert `formatBindAddress`.
 ```
 
-- Fortsetzung von `HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.formatBindAddress**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht lesbar die Bindung die Adresse. Formatiert `formatBindAddress`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden`.

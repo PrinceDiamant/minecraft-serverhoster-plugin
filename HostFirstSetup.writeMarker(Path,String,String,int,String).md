@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.writeMarker(Path,String,String,int,String).Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 HostFirstSetup.writeMarker(Path,String,String,int,String).Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.writeMarker(Path,String,String,int,String).Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **HostFirstSetup.writeMarker(Path,String,String,int,String).Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei.
 - `writeMarker` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

@@ -14,4 +14,8 @@ leer
   Keine weiteren Knoten.
 ```
 
-- Fortsetzung von `LifecycleTestProcess.main.Z11`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **leer**: Keine weiteren Knoten.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 13.
+- Fortsetzung von `LifecycleTestProcess.main.Z11`.

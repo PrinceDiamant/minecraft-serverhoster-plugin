@@ -17,9 +17,15 @@ flowchart TD
 if Z.31 (l.startsWith('VmRSS:'))
   Zeile 31: prüft `(l.startsWith('VmRSS:'))`.
 ProcessProbe.kb
-  `kb` in `ProcessProbe.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `kb` in `ProcessProbe.java`.
 ProcessProbe.snapshot.Teil2.Z29.Z30.Z31.Z32
-  Fortsetzung des Ablaufs ab Zeile 32.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 32 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 32.
 ```
 
-- Fortsetzung von `ProcessProbe.snapshot.Teil2.Z29.Z30`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.31 (l.startsWith('VmRSS:'))**: Zeile 31: prüft `(l.startsWith('VmRSS:'))`.
+> - **ProcessProbe.kb**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `kb` in `ProcessProbe.java`.
+> - **ProcessProbe.snapshot.Teil2.Z29.Z30.Z31.Z32**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 32 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 32.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 31 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `ProcessProbe.snapshot.Teil2.Z29.Z30`.

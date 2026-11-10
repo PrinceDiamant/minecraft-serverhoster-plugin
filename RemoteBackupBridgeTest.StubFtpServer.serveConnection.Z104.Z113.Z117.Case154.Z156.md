@@ -19,11 +19,18 @@ flowchart TD
 try Z.156
   Zeile 156: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridgeTest.StubFtpServer.ftpWriter
-  `ftpWriter` in `RemoteBackupBridgeTest.java`. Ruft `println`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `ftpWriter` in `RemoteBackupBridgeTest.java`. Ruft `println`. Nur Test.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154.Z156.Z159
-  Fortsetzung des Ablaufs ab Zeile 159.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 159 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 159.
 finally Z.156
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.156**: Zeile 156: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridgeTest.StubFtpServer.ftpWriter**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `ftpWriter` in `RemoteBackupBridgeTest.java`. Ruft `println`. Nur Test.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154.Z156.Z159**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 159 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 159.
+> - **finally Z.156**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 156 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154`.

@@ -19,11 +19,18 @@ flowchart TD
 if Z.538 (action.equals('reset'))
   Zeile 538: prüft `(action.equals('reset'))`.
 FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538.Z554
-  Fortsetzung des Ablaufs ab Zeile 554.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 554 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 554.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.538 (action.equals('reset'))**: Zeile 538: prüft `(action.equals('reset'))`.
+> - **FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538.Z554**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 554 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 554.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 538 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535`.

@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.runTask.Z1312
-  Fortsetzung des Ablaufs ab Zeile 1312.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1312 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1312`.
 ```
 
-- `runTask` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.runTask.Z1312**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1312 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1312`.
+
+- Das [[Glossar#Plugin|Plugin]] führt aus die [[Glossar#Aufgabe|Aufgabe]].

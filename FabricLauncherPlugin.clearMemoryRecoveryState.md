@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.clearMemoryRecoveryState.Z1130
-  Fortsetzung des Ablaufs ab Zeile 1130.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1130 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1130`.
 ```
 
-- `clearMemoryRecoveryState` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.clearMemoryRecoveryState.Z1130**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1130 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1130`.
+
+- Das [[Glossar#Plugin|Plugin]] löscht den gemerkten Stand von den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Wiederherstellung den Zustand.

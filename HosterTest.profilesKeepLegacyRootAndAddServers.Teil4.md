@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 Profiles.portClash
-  Wird vom Plugin-Kern nicht ausgewertet. Befund: angemeldet aber nicht umgesetzt (wahrscheinlich).
+  Würde merken, wenn zwei Server dieselbe Türnummer hätten. Der laufende Weg benutzt das nicht. Wird vom [[Glossar#Plugin|Plugin]]-Kern nicht ausgewertet. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, wahrscheinlich. ServerProfile.java:79, nur Tests rufen Profiles.portClash
 Profiles.load
-  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+  Die Serverbeschreibung lädt das. Lädt `load`. Ruft `one`, `str`, `copyId`. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, sicher. ServerProfile.java Profiles.load liest servers.*, reloadProfiles nutzt nur den ersten
 ```
 
-- Fortsetzung von `HosterTest.profilesKeepLegacyRootAndAddServers`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Profiles.portClash**: Würde merken, wenn zwei Server dieselbe Türnummer hätten. Der laufende Weg benutzt das nicht. Wird vom [[Glossar#Plugin|Plugin]]-Kern nicht ausgewertet. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, wahrscheinlich. ServerProfile.java:79, nur Tests rufen Profiles.portClash
+> - **Profiles.load**: Die Serverbeschreibung lädt das. Lädt `load`. Ruft `one`, `str`, `copyId`. [[Glossar#Befund|Befund]]: angemeldet aber nicht umgesetzt, sicher. ServerProfile.java Profiles.load liest servers.*, reloadProfiles nutzt nur den ersten
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.profilesKeepLegacyRootAndAddServers`.

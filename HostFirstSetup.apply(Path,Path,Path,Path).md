@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.apply(Path,Path,Path,Path,List)
-  Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das. Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
 return Z.59 return apply(root, marker, childDirecto…
   Zeile 59: Rückgabe `return apply(root, marker, childDirecto…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.apply(Path,Path,Path,Path,List)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das. Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
+> - **return Z.59 return apply(root, marker, childDirecto…**: Zeile 59: Rückgabe `return apply(root, marker, childDirecto…`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das.
 - `apply` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostFirstSetup.java:58–60 nur von Tests erreicht

@@ -21,13 +21,19 @@ flowchart TD
 
 ```knoten
 RestartPolicy.migrateLegacyUnlimited
-  Übernimmt den alten Wert von `migrateLegacyUnlimited`.
+  Dieser Teil übernimmt den alten Wert von den alten Weg. Im [[Glossar#Quelltext|Quelltext]] heißt das `migrateLegacyUnlimited`.
 if Z.195 (migratedUnlimited)
-  Zeile 195: prüft `(migratedUnlimited)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 195.
 if Z.198 (changed)
-  Zeile 198: prüft `(changed)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 198.
 return Z.199 return changed // migratedUnlimited;
-  Zeile 199: Rückgabe `return changed // migratedUnlimited;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 199.
 ```
 
-- `migrateLegacyRestartPolicy` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **RestartPolicy.migrateLegacyUnlimited**: Dieser Teil übernimmt den alten Wert von den alten Weg. Im [[Glossar#Quelltext|Quelltext]] heißt das `migrateLegacyUnlimited`.
+> - **if Z.195 (migratedUnlimited)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 195.
+> - **if Z.198 (changed)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 198.
+> - **return Z.199 return changed // migratedUnlimited;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 199.
+
+- Dasselbe für eine noch ältere Schreibweise der [[Glossar#Neustart|Neustart]]-Regel.

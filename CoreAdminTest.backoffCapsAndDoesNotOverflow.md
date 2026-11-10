@@ -21,8 +21,12 @@ flowchart TD
 
 ```knoten
 RestartBackoff.delaySeconds
-  Rechnet die Wartezeit `delaySeconds`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Rechnet die Wartezeit `delaySeconds`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **RestartBackoff.delaySeconds**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Rechnet die Wartezeit `delaySeconds`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `backoffCapsAndDoesNotOverflow` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

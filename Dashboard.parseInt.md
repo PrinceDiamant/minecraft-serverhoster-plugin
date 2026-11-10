@@ -24,17 +24,25 @@ flowchart TD
 
 ```knoten
 if Z.928 (s == null // s.isBlank())
-  Zeile 928: prüft `(s == null // s.isBlank())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 928.
 return Z.928 return fallback;
-  Zeile 928: Rückgabe `return fallback;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 928.
 try Z.929
-  Zeile 929: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 929.
 return Z.929 return Integer.parseInt(s);
-  Zeile 929: Rückgabe `return Integer.parseInt(s);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 929.
 catch Z.929 (NumberFormatException e)
-  Zeile 929: fängt (NumberFormatException e).
+  Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 929.
 return Z.929 return fallback;
-  Zeile 929: Rückgabe `return fallback;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 929.
 ```
 
-- `parseInt` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.928 (s == null // s.isBlank())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 928.
+> - **return Z.928 return fallback;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 928.
+> - **try Z.929**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 929.
+> - **return Z.929 return Integer.parseInt(s);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 929.
+> - **catch Z.929 (NumberFormatException e)**: Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 929.
+> - **return Z.929 return fallback;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 929.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Zahl.

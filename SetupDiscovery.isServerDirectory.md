@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 SetupDiscovery.hasServerFiles
-  Prüft `hasServerFiles`.
+  Dieser Teil prüft den Server die Dateien. Prüft `hasServerFiles`.
 return Z.168 return !Files.isSymbolicLink(path) && F…
   Zeile 168: Rückgabe `return !Files.isSymbolicLink(path) && F…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupDiscovery.hasServerFiles**: Dieser Teil prüft den Server die Dateien. Prüft `hasServerFiles`.
+> - **return Z.168 return !Files.isSymbolicLink(path) && F…**: Zeile 168: Rückgabe `return !Files.isSymbolicLink(path) && F…`.
+
+- Dieser Teil prüft den Server.
 - `isServerDirectory` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

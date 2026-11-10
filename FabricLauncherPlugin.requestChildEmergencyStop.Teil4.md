@@ -15,7 +15,12 @@ flowchart TD
 for Z.1196 (ChildSlot slot : List.copyOf(slots.val…
   Zeile 1196: Schleife `(ChildSlot slot : List.copyOf(slots.val…`.
 FabricLauncherPlugin.stopBlocking
-  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+  Setzt den Zustand auf „stoppt“ und wartet, bis der [[Glossar#Spielserver|Spielserver]] wirklich aus ist. Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.1196 (ChildSlot slot : List.copyOf(slots.val…**: Zeile 1196: Schleife `(ChildSlot slot : List.copyOf(slots.val…`.
+> - **FabricLauncherPlugin.stopBlocking**: Setzt den Zustand auf „stoppt“ und wartet, bis der [[Glossar#Spielserver|Spielserver]] wirklich aus ist. Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`.

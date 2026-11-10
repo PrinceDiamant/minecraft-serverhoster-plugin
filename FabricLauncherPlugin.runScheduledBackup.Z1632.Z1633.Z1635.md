@@ -19,11 +19,18 @@ flowchart TD
 if Z.1635 (System.nanoTime() )= nextWaitNotice)
   Zeile 1635: prüft `(System.nanoTime() )= nextWaitNotice)`.
 ConsoleBuffer.add
-  Fügt hinzu `add`.
+  Dieser Teil fügt hinzu das. Fügt hinzu `add`.
 FabricLauncherPlugin.noteTask
-  Merkt `noteTask`.
+  Schreibt auf, dass eine [[Glossar#Aufgabe|Aufgabe]] gelaufen ist. Merkt `noteTask`.
 Schritt Z.1640 nextWaitNotice = System.nanoTime() + TimeUnit.MIN…
   Zeile 1640: rechnet Zeit um oder wartet. `nextWaitNotice = System.nanoTime() + TimeUnit.MIN…`
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632.Z1633`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1635 (System.nanoTime() )= nextWaitNotice)**: Zeile 1635: prüft `(System.nanoTime() )= nextWaitNotice)`.
+> - **ConsoleBuffer.add**: Dieser Teil fügt hinzu das. Fügt hinzu `add`.
+> - **FabricLauncherPlugin.noteTask**: Schreibt auf, dass eine [[Glossar#Aufgabe|Aufgabe]] gelaufen ist. Merkt `noteTask`.
+> - **Schritt Z.1640 nextWaitNotice = System.nanoTime() + TimeUnit.MIN…**: Zeile 1640: rechnet Zeit um oder wartet. `nextWaitNotice = System.nanoTime() + TimeUnit.MIN…`
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1635 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632.Z1633`.

@@ -22,7 +22,7 @@ flowchart TD
 
 ```knoten
 HttpsSupport.normalizeSans
-  Vereinheitlicht `normalizeSans`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Vereinheitlicht `normalizeSans`.
 if Z.96 (!Files.isExecutable(keytool))
   Zeile 96: prüft `(!Files.isExecutable(keytool))`.
 throw Z.96 throw new IOException('keytool missing: ' + keyto…
@@ -35,4 +35,13 @@ throw Z.105 throw new IOException('keytool timeout');
   Zeile 105: Abbruch `throw new IOException('keytool timeout');`.
 ```
 
-- Fortsetzung von `HttpsSupport.ensureSelfSigned`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.normalizeSans**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Vereinheitlicht `normalizeSans`.
+> - **if Z.96 (!Files.isExecutable(keytool))**: Zeile 96: prüft `(!Files.isExecutable(keytool))`.
+> - **throw Z.96 throw new IOException('keytool missing: ' + keyto…**: Zeile 96: Abbruch `throw new IOException('keytool missing: ' + keyto…`.
+> - **Schritt Z.103 Process p = new ProcessBuilder(cmd).redirectError…**: Zeile 103: baut einen Prozess. `Process p = new ProcessBuilder(cmd).redirectError…`
+> - **if Z.105 (!p.waitFor(60, TimeUnit.SECONDS))**: Zeile 105: prüft `(!p.waitFor(60, TimeUnit.SECONDS))`.
+> - **throw Z.105 throw new IOException('keytool timeout');**: Zeile 105: Abbruch `throw new IOException('keytool timeout');`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HttpsSupport.ensureSelfSigned`.

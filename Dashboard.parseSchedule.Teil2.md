@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 ScheduleDef.load
-  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+  Der [[Glossar#Zeitplan|Zeitplan]] lädt das. Lädt `load`. Ruft `asMap`, `Action`, `string`.
 return Z.444 return ScheduleDef.load(List.of(sanitiz…
   Zeile 444: Rückgabe `return ScheduleDef.load(List.of(sanitiz…`.
 ```
 
-- Fortsetzung von `Dashboard.parseSchedule`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.load**: Der [[Glossar#Zeitplan|Zeitplan]] lädt das. Lädt `load`. Ruft `asMap`, `Action`, `string`.
+> - **return Z.444 return ScheduleDef.load(List.of(sanitiz…**: Zeile 444: Rückgabe `return ScheduleDef.load(List.of(sanitiz…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.parseSchedule`.

@@ -16,4 +16,8 @@ return Z.310 return name != null && LOBBY_NAME.matcher(name).m…
   Zeile 310: Rückgabe `return name != null && LOBBY_NAME.matcher(name).m…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.310 return name != null && LOBBY_NAME.matcher(name).m…**: Zeile 310: Rückgabe `return name != null && LOBBY_NAME.matcher(name).m…`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze.
 - `lobbyNameSafe` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

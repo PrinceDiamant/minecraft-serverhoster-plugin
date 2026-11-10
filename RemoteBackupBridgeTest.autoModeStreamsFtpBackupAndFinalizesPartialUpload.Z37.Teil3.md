@@ -23,15 +23,24 @@ flowchart TD
 Schritt Z.63 Files.createDirectories(restore);
   Zeile 63: Dateioperation. `Files.createDirectories(restore);`
 BackupBridge.restoreZip
-  Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+  Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
 Schritt Z.65 assertEquals('world-data', Files.readString(resto…
   Zeile 65: liest Text aus einer Datei. `assertEquals('world-data', Files.readString(resto…`
 RemoteBackupBridge.delete
-  Löscht `delete`. Ruft `safeId`, `named`, `connect`.
+  Die Sicherung über das Netz löscht das. Löscht `delete`. Ruft `safeId`, `named`, `connect`.
 RemoteBackupBridge.list
-  Listet `list`. Ruft `safeId`, `connect`, `enterDirectory`.
+  Die Sicherung über das Netz zeigt das. Listet `list`. Ruft `safeId`, `connect`, `enterDirectory`.
 Schritt Z.68 assertFalse(Files.exists(work.resolve('backups'))…
   Zeile 68: Dateioperation. `assertFalse(Files.exists(work.resolve('backups'))…`
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.63 Files.createDirectories(restore);**: Zeile 63: Dateioperation. `Files.createDirectories(restore);`
+> - **BackupBridge.restoreZip**: Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+> - **Schritt Z.65 assertEquals('world-data', Files.readString(resto…**: Zeile 65: liest Text aus einer Datei. `assertEquals('world-data', Files.readString(resto…`
+> - **RemoteBackupBridge.delete**: Die Sicherung über das Netz löscht das. Löscht `delete`. Ruft `safeId`, `named`, `connect`.
+> - **RemoteBackupBridge.list**: Die Sicherung über das Netz zeigt das. Listet `list`. Ruft `safeId`, `connect`, `enterDirectory`.
+> - **Schritt Z.68 assertFalse(Files.exists(work.resolve('backups'))…**: Zeile 68: Dateioperation. `assertFalse(Files.exists(work.resolve('backups'))…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37`.

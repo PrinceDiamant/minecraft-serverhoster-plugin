@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.requestRestart(String)
-  Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestRestart(String)`.
 ```
 
-- `requestRestart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:320–320 kein Aufruf, kein Treffer in plugin.yml/UI/Strings
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.requestRestart(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestRestart(String)`.
+
+- Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

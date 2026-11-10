@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.loadDiag.row
-  Baut eine Tabellenzeile `row`. Ruft `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Baut eine Tabellenzeile `row`. Ruft `esc`.
 index.loadDiag.metric
-  Formatiert einen Messwert `metric`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Formatiert einen Messwert `metric`.
 ```
 
-- Fortsetzung von `index.loadDiag`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.loadDiag.row**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Baut eine Tabellenzeile `row`. Ruft `esc`.
+> - **index.loadDiag.metric**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Formatiert einen Messwert `metric`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 196 aufgerufen werden.
+- Fortsetzung von `index.loadDiag`.

@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.markManualScheduleRun.Z1584
-  Fortsetzung des Ablaufs ab Zeile 1584.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1584 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1584`.
 throw Z.1597 throw new IllegalArgumentException('Zeitplan nich…
-  Zeile 1597: Abbruch `throw new IllegalArgumentException('Zeitplan nich…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1597.
 ```
 
-- `markManualScheduleRun` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.markManualScheduleRun.Z1584**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1584 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1584`.
+> - **throw Z.1597 throw new IllegalArgumentException('Zeitplan nich…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1597.
+
+- Das [[Glossar#Plugin|Plugin]] merkt sich die Handarbeit den [[Glossar#Zeitplan|Zeitplan]] den Lauf.

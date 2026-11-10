@@ -17,9 +17,14 @@ flowchart TD
 
 ```knoten
 CronExpr.field
-  `field` in `CronExpr.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `field` in `CronExpr.java`.
 return Z.43 return field(expr, cron, 0, 7) // (cron…
   Zeile 43: Rückgabe `return field(expr, cron, 0, 7) // (cron…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **CronExpr.field**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `field` in `CronExpr.java`.
+> - **return Z.43 return field(expr, cron, 0, 7) // (cron…**: Zeile 43: Rückgabe `return field(expr, cron, 0, 7) // (cron…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `dow` in `src/main/java/de/aichele/childlauncher/CronExpr.java`

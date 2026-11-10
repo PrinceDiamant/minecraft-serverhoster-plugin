@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 return Z.87 return control.getLocalPort();
-  Zeile 87: Rückgabe `return control.getLocalPort();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 87.
 ```
 
-- `port` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
-- Auslöser: Test
+> [!knoten]- Was die Blöcke tun
+> - **return Z.87 return control.getLocalPort();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 87.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

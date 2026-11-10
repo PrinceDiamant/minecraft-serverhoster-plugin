@@ -25,17 +25,25 @@ flowchart TD
 
 ```knoten
 if Z.2399 (!s.hasPermission('serverhoster.admin'))
-  Zeile 2399: prüft `(!s.hasPermission('serverhoster.admin'))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2399.
 return Z.2399 return true;
-  Zeile 2399: Rückgabe `return true;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2399.
 if Z.2400 (a.length == 0)
-  Zeile 2400: prüft `(a.length == 0)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2400.
 return Z.2400 return false;
-  Zeile 2400: Rückgabe `return false;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2400.
 FabricLauncherPlugin.onCommand.Z2401
-  Fortsetzung des Ablaufs ab Zeile 2401.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2401 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2401`.
 return Z.2507 return true;
-  Zeile 2507: Rückgabe `return true;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2507.
 ```
 
-- Befehl `/child` auf dem Server-Thread.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2399 (!s.hasPermission('serverhoster.admin'))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2399.
+> - **return Z.2399 return true;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2399.
+> - **if Z.2400 (a.length == 0)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2400.
+> - **return Z.2400 return false;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2400.
+> - **FabricLauncherPlugin.onCommand.Z2401**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2401 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2401`.
+> - **return Z.2507 return true;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2507.
+
+- Nimmt den [[Glossar#Befehl|Befehl]] /child entgegen, zum Beispiel Start, [[Glossar#Stopp|Stopp]], Status oder [[Glossar#Sicherungskopie|Sicherungskopie]].

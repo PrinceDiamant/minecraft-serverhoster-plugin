@@ -27,4 +27,11 @@ return Z.1842 return;
   Zeile 1842: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.trackPlayers`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1841 (m.find())**: Zeile 1841: prüft `(m.find())`.
+> - **return Z.1841 return;**: Zeile 1841: Rückgabe `return;`.
+> - **if Z.1842 (m.find())**: Zeile 1842: prüft `(m.find())`.
+> - **return Z.1842 return;**: Zeile 1842: Rückgabe `return;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.trackPlayers`.

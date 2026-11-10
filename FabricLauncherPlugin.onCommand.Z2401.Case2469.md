@@ -20,7 +20,13 @@ if Z.2470 (a.length ( 2)
 return Z.2470 return true;
   Zeile 2470: Rückgabe `return true;`.
 FabricLauncherPlugin.sendCommand(String)
-  Sendet `sendCommand`. Ruft `sendCommand`.
+  Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Sendet `sendCommand`. Ruft `sendCommand`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2470 (a.length ( 2)**: Zeile 2470: prüft `(a.length ( 2)`.
+> - **return Z.2470 return true;**: Zeile 2470: Rückgabe `return true;`.
+> - **FabricLauncherPlugin.sendCommand(String)**: Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Sendet `sendCommand`. Ruft `sendCommand`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2469.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

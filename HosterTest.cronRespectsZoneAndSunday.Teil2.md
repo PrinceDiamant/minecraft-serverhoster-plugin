@@ -19,9 +19,14 @@ flowchart TD
 
 ```knoten
 CronExpr.matches
-  `matches` in `CronExpr.java`. Ruft `field`, `dow`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `matches` in `CronExpr.java`. Ruft `field`, `dow`.
 CronExpr.next
-  Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+  Dieser Teil geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
 ```
 
-- Fortsetzung von `HosterTest.cronRespectsZoneAndSunday`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **CronExpr.matches**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `matches` in `CronExpr.java`. Ruft `field`, `dow`.
+> - **CronExpr.next**: Dieser Teil geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.cronRespectsZoneAndSunday`.

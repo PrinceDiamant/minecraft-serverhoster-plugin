@@ -17,8 +17,12 @@ flowchart TD
 
 ```knoten
 ChildSlot.isReadyLine
-  Prüft `isReadyLine`.
+  Dieser Teil prüft eine [[Glossar#Zeile|Zeile]]. Prüft `isReadyLine`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ChildSlot.isReadyLine**: Dieser Teil prüft eine [[Glossar#Zeile|Zeile]]. Prüft `isReadyLine`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `childReadinessRequiresTheVanillaDoneLine` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

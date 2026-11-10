@@ -18,11 +18,17 @@ flowchart TD
 
 ```knoten
 HttpsSupport.normalizeSans.Z116
-  Fortsetzung des Ablaufs ab Zeile 116.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 116 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 116.
 if Z.123 (out.isEmpty())
   Zeile 123: prüft `(out.isEmpty())`.
 return Z.124 return out;
   Zeile 124: Rückgabe `return out;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.normalizeSans.Z116**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 116 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 116.
+> - **if Z.123 (out.isEmpty())**: Zeile 123: prüft `(out.isEmpty())`.
+> - **return Z.124 return out;**: Zeile 124: Rückgabe `return out;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `normalizeSans` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

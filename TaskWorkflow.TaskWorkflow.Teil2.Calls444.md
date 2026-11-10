@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.TaskWorkflow.updateDraft
-  Aktualisiert `updateDraft`.
+  Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
 TaskWorkflow.TaskWorkflow.saveDraft
-  Speichert `saveDraft`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] speichert hier einen Schritt. Eine Ebene tiefer steht er genauer. Speichert `saveDraft`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
 ```
 
-- Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.TaskWorkflow.updateDraft**: Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
+> - **TaskWorkflow.TaskWorkflow.saveDraft**: Die [[Glossar#Bedienseite|Bedienseite]] speichert hier einen Schritt. Eine Ebene tiefer steht er genauer. Speichert `saveDraft`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 444 aufgerufen werden.
+- Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`.

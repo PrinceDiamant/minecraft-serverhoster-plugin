@@ -16,4 +16,8 @@ return Z.244 return protectedPath != null && (path.equals(prot…
   Zeile 244: Rückgabe `return protectedPath != null && (path.equals(prot…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.244 return protectedPath != null && (path.equals(prot…**: Zeile 244: Rückgabe `return protectedPath != null && (path.equals(prot…`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Pfad.
 - `protectedPath` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

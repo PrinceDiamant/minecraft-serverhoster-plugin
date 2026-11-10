@@ -25,4 +25,10 @@ return Z.215 return slash )= 0 ? normalized.substring(slash + …
   Zeile 215: Rückgabe `return slash )= 0 ? normalized.substring(slash + …`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.212 (path == null // path.isBlank())**: Zeile 212: prüft `(path == null // path.isBlank())`.
+> - **return Z.212 return '';**: Zeile 212: Rückgabe `return '';`.
+> - **return Z.215 return slash )= 0 ? normalized.substring(slash + …**: Zeile 215: Rückgabe `return slash )= 0 ? normalized.substring(slash + …`.
+
+- Dieser Teil kümmert sich um den Namen.
 - `fileName` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

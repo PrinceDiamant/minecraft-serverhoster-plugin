@@ -16,4 +16,8 @@ return Z.370 return setupRequired;
   Zeile 370: Rückgabe `return setupRequired;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.370 return setupRequired;**: Zeile 370: Rückgabe `return setupRequired;`.
+
+- Das [[Glossar#Plugin|Plugin]] kümmert sich um einen Pflichtwert.
 - `setupRequired` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

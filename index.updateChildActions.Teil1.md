@@ -19,9 +19,14 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 for Z.97 ('child-start','child-restart','child-s…
   Zeile 97: Schleife `('child-start','child-restart','child-s…`.
 ```
 
-- Fortsetzung von `index.updateChildActions`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **for Z.97 ('child-start','child-restart','child-s…**: Zeile 97: Schleife `('child-start','child-restart','child-s…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.updateChildActions`.

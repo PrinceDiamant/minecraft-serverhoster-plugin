@@ -24,7 +24,14 @@ if Z.38 (!Files.isRegularFile(f))
 throw Z.38 throw new IOException('server.properties is not a…
   Zeile 38: Abbruch `throw new IOException('server.properties is not a…`.
 PropertiesFile.preview.Z37.Z39
-  Fortsetzung des Ablaufs ab Zeile 39.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 39 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 39.
 ```
 
-- Fortsetzung von `PropertiesFile.preview`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.37 (f != null && Files.exists(f))**: Zeile 37: prüft `(f != null && Files.exists(f))`.
+> - **if Z.38 (!Files.isRegularFile(f))**: Zeile 38: prüft `(!Files.isRegularFile(f))`.
+> - **throw Z.38 throw new IOException('server.properties is not a…**: Zeile 38: Abbruch `throw new IOException('server.properties is not a…`.
+> - **PropertiesFile.preview.Z37.Z39**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 39 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 39.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 37 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `PropertiesFile.preview`.

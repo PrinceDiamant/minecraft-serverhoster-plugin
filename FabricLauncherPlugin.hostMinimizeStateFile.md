@@ -16,4 +16,8 @@ return Z.2152 return getDataFolder().toPath().resolve('host-min…
   Zeile 2152: Rückgabe `return getDataFolder().toPath().resolve('host-min…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.2152 return getDataFolder().toPath().resolve('host-min…**: Zeile 2152: Rückgabe `return getDataFolder().toPath().resolve('host-min…`.
+
+- Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern den Zustand die Datei.
 - `hostMinimizeStateFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

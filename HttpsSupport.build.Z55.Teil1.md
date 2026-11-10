@@ -21,13 +21,20 @@ flowchart TD
 
 ```knoten
 HttpsSupport.fromKeystore
-  `fromKeystore` in `HttpsSupport.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fromKeystore` in `HttpsSupport.java`.
 HttpsSupport.ensureSelfSigned
-  Stellt sicher `ensureSelfSigned`. Ruft `resolve`, `password`, `normalizeSans`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Stellt sicher `ensureSelfSigned`. Ruft `resolve`, `password`, `normalizeSans`.
 HttpsSupport.password
-  `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
 HttpsSupport.resolve
-  Löst auf `resolve`.
+  Dieser Teil bestimmt das. Löst auf `resolve`.
 ```
 
-- Fortsetzung von `HttpsSupport.build.Z55`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.fromKeystore**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fromKeystore` in `HttpsSupport.java`.
+> - **HttpsSupport.ensureSelfSigned**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Stellt sicher `ensureSelfSigned`. Ruft `resolve`, `password`, `normalizeSans`.
+> - **HttpsSupport.password**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+> - **HttpsSupport.resolve**: Dieser Teil bestimmt das. Löst auf `resolve`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HttpsSupport.build.Z55`.

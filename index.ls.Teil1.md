@@ -21,13 +21,20 @@ flowchart TD
 
 ```knoten
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 for Z.135 parts
   Zeile 135: Schleife `parts`.
 index.jp
-  Baut einen Pfad `jp`.
+  Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen. Baut einen Pfad `jp`.
 ```
 
-- Fortsetzung von `index.ls`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **for Z.135 parts**: Zeile 135: Schleife `parts`.
+> - **index.jp**: Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen. Baut einen Pfad `jp`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.ls`.

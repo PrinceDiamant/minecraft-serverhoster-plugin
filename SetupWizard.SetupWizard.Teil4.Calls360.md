@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 SetupWizard.SetupWizard.runFirstSetup
-  Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+  Der [[Glossar#Assistent|Assistent]] führt aus die erste die [[Glossar#Einrichtung|Einrichtung]]. Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
 SetupWizard.SetupWizard.finish
-  Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
+  Der [[Glossar#Assistent|Assistent]] beendet das. Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
 ```
 
-- Fortsetzung von `SetupWizard.SetupWizard.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SetupWizard.SetupWizard.runFirstSetup**: Der [[Glossar#Assistent|Assistent]] führt aus die erste die [[Glossar#Einrichtung|Einrichtung]]. Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+> - **SetupWizard.SetupWizard.finish**: Der [[Glossar#Assistent|Assistent]] beendet das. Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 360 aufgerufen werden.
+- Fortsetzung von `SetupWizard.SetupWizard.Teil4`.

@@ -22,19 +22,28 @@ flowchart TD
 
 ```knoten
 LaunchPlan.LaunchPlan
-  Startet den Prozess `LaunchPlan`.
+  Dieser Teil startet den [[Glossar#Startplan|Startplan]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `LaunchPlan`.
 LaunchPlan.jarName
-  Betrifft das Jar `jarName`. Ruft `fileName`.
+  Dieser Teil kümmert sich um den Namen. Im [[Glossar#Quelltext|Quelltext]] heißt das `jarName`.
 LaunchPlan.jarPath
-  Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
+  Dieser Teil kümmert sich um den Pfad. Im [[Glossar#Quelltext|Quelltext]] heißt das `jarPath`.
 LaunchPlan.argv(String,ServerProfile)
-  `argv` in `LaunchPlan.java`. Ruft `argv`, `jarPath`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `argv(String,ServerProfile)`.
 LaunchPlan.argv(String,ServerProfile,Path)
-  `argv` in `LaunchPlan.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `argv(String,ServerProfile,Path)`.
 LaunchPlan.text
-  Antwortet mit Text `text`. Ruft `argv`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `text`.
 LaunchPlan.fileName
-  Liefert die Datei `fileName`.
+  Dieser Teil kümmert sich um den Namen. Im [[Glossar#Quelltext|Quelltext]] heißt das `fileName`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LaunchPlan.LaunchPlan**: Dieser Teil startet den [[Glossar#Startplan|Startplan]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `LaunchPlan`.
+> - **LaunchPlan.jarName**: Dieser Teil kümmert sich um den Namen. Im [[Glossar#Quelltext|Quelltext]] heißt das `jarName`.
+> - **LaunchPlan.jarPath**: Dieser Teil kümmert sich um den Pfad. Im [[Glossar#Quelltext|Quelltext]] heißt das `jarPath`.
+> - **LaunchPlan.argv(String,ServerProfile)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `argv(String,ServerProfile)`.
+> - **LaunchPlan.argv(String,ServerProfile,Path)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `argv(String,ServerProfile,Path)`.
+> - **LaunchPlan.text**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `text`.
+> - **LaunchPlan.fileName**: Dieser Teil kümmert sich um den Namen. Im [[Glossar#Quelltext|Quelltext]] heißt das `fileName`.
 
+- Baut die Argumente, mit denen das Programm des [[Glossar#Spielserver|Spielservers]] gestartet wird.

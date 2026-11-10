@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.2156 return getDataFolder().toPath().resolve('host-fir…
-  Zeile 2156: Rückgabe `return getDataFolder().toPath().resolve('host-fir…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2156.
 ```
 
-- `hostFirstSetupMarker` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.2156 return getDataFolder().toPath().resolve('host-fir…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2156.
+
+- Liest oder schreibt die Merkdatei der [[Glossar#Ersteinrichtung|Ersteinrichtung]].

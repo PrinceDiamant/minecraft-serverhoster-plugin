@@ -15,7 +15,12 @@ flowchart TD
 if Z.27 (converted == null // schedules.size() )= Schedul…
   Zeile 27: prüft `(converted == null // schedules.size() )= Schedul…`.
 ScheduleDef.toConfig
-  `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
 ```
 
-- Fortsetzung von `LegacyTaskMigration.migrate.Z19`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.27 (converted == null // schedules.size() )= Schedul…**: Zeile 27: prüft `(converted == null // schedules.size() )= Schedul…`.
+> - **ScheduleDef.toConfig**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LegacyTaskMigration.migrate.Z19`.

@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 SetupWorkflow.SetupWorkflow.runHostFirstSetup
-  Führt aus `runHostFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+  Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Host|Host]] die erste die [[Glossar#Einrichtung|Einrichtung]]. Führt aus `runHostFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
 SetupWorkflow.SetupWorkflow.hostAction
-  Betrifft den Host `hostAction`. Ruft `dashboardRequest`, `jsonBody`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die Tätigkeit. Betrifft den [[Glossar#Host|Host]] `hostAction`. Ruft `dashboardRequest`, `jsonBody`.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SetupWorkflow.SetupWorkflow.runHostFirstSetup**: Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Host|Host]] die erste die [[Glossar#Einrichtung|Einrichtung]]. Führt aus `runHostFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+> - **SetupWorkflow.SetupWorkflow.hostAction**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die Tätigkeit. Betrifft den [[Glossar#Host|Host]] `hostAction`. Ruft `dashboardRequest`, `jsonBody`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 372 aufgerufen werden.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`.

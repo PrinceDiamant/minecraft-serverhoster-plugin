@@ -24,9 +24,16 @@ if Z.22 (beans == null)
 return Z.22 return List.of();
   Zeile 22: Rückgabe `return List.of();`.
 GcDiagnostics.snapshot(List).Z23
-  Fortsetzung des Ablaufs ab Zeile 23.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 23 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 23.
 return Z.32 return List.copyOf(out);
   Zeile 32: Rückgabe `return List.copyOf(out);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.22 (beans == null)**: Zeile 22: prüft `(beans == null)`.
+> - **return Z.22 return List.of();**: Zeile 22: Rückgabe `return List.of();`.
+> - **GcDiagnostics.snapshot(List).Z23**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 23 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 23.
+> - **return Z.32 return List.copyOf(out);**: Zeile 32: Rückgabe `return List.copyOf(out);`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `snapshot` in `src/main/java/de/aichele/childlauncher/GcDiagnostics.java`

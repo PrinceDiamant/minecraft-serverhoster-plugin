@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.jcmd(String,String)
-  `jcmd` in `FabricLauncherPlugin.java`. Ruft `jcmd`, `slot`, `pid`.
+  Fragt ein Hilfswerkzeug von Java, wie es dem laufenden Programm geht. Im [[Glossar#Quelltext|Quelltext]] heißt das `jcmd(String,String)`.
 return Z.1266 return jcmd(focus, command);
-  Zeile 1266: Rückgabe `return jcmd(focus, command);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1266.
 ```
 
-- `jcmd` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.jcmd(String,String)**: Fragt ein Hilfswerkzeug von Java, wie es dem laufenden Programm geht. Im [[Glossar#Quelltext|Quelltext]] heißt das `jcmd(String,String)`.
+> - **return Z.1266 return jcmd(focus, command);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1266.
+
+- Fragt ein Hilfswerkzeug von Java, wie es dem laufenden Programm geht.

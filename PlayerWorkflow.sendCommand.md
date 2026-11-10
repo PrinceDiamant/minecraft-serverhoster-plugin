@@ -19,13 +19,20 @@ flowchart TD
 
 ```knoten
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 if Z.17 !result.ok
   Zeile 17: prüft `!result.ok`.
 throw Z.17 throw new Error('Der Child-Server läuft nicht ode…
   Zeile 17: Abbruch `throw new Error('Der Child-Server läuft nicht ode…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+> - **if Z.17 !result.ok**: Zeile 17: prüft `!result.ok`.
+> - **throw Z.17 throw new Error('Der Child-Server läuft nicht ode…**: Zeile 17: Abbruch `throw new Error('Der Child-Server läuft nicht ode…`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] schickt den [[Glossar#Befehl|Befehl]].
 - `sendCommand` in `ui/src/components/PlayerWorkflow.tsx`

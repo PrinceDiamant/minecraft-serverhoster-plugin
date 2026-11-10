@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.connect.Teil3.Z188
-  Fortsetzung des Ablaufs ab Zeile 188.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 188 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 188.
 ```
 
-- Fortsetzung von `RemoteBackupBridge.connect`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.connect.Teil3.Z188**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 188 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 188.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `RemoteBackupBridge.connect`.

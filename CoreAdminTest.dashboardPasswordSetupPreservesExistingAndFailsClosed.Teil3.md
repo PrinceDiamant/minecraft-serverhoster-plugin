@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 DashboardPassword.read
-  Liest `read`.
+  Dieser Teil liest das. Liest `read`.
 ```
 
-- Fortsetzung von `CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **DashboardPassword.read**: Dieser Teil liest das. Liest `read`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed`.

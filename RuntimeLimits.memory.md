@@ -28,7 +28,7 @@ flowchart TD
 
 ```knoten
 RuntimeLimits.percent
-  `percent` in `RuntimeLimits.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `percent` in `RuntimeLimits.java`.
 if Z.33 (!valid)
   Zeile 33: prüft `(!valid)`.
 return Z.34 return new MemoryPolicy(100, 100, 100, false, Lis…
@@ -41,4 +41,13 @@ return Z.42 return new MemoryPolicy(warning, critical, recove…
   Zeile 42: Rückgabe `return new MemoryPolicy(warning, critical, recove…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **RuntimeLimits.percent**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `percent` in `RuntimeLimits.java`.
+> - **if Z.33 (!valid)**: Zeile 33: prüft `(!valid)`.
+> - **return Z.34 return new MemoryPolicy(100, 100, 100, false, Lis…**: Zeile 34: Rückgabe `return new MemoryPolicy(100, 100, 100, false, Lis…`.
+> - **if Z.38 (recovery ) critical)**: Zeile 38: prüft `(recovery ) critical)`.
+> - **if Z.40 (warning ) critical)**: Zeile 40: prüft `(warning ) critical)`.
+> - **return Z.42 return new MemoryPolicy(warning, critical, recove…**: Zeile 42: Rückgabe `return new MemoryPolicy(warning, critical, recove…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `memory` in `src/main/java/de/aichele/childlauncher/RuntimeLimits.java`

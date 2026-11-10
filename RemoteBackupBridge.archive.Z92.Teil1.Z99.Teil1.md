@@ -22,13 +22,21 @@ flowchart TD
 if Z.101 (transfer == null)
   Zeile 101: prüft `(transfer == null)`.
 RemoteBackupBridge.replyError
-  Antwortet `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
 throw Z.101 throw replyError(client, 'start remote …
   Zeile 101: Abbruch `throw replyError(client, 'start remote …`.
 RemoteBackupBridge.CountingOutputStream.CountingOutputStream
-  `CountingOutputStream` in `RemoteBackupBridge.java`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `CountingOutputStream` in `RemoteBackupBridge.java`.
 RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1.Z104
-  Fortsetzung des Ablaufs ab Zeile 104.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 104 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 104.
 ```
 
-- Fortsetzung von `RemoteBackupBridge.archive.Z92.Teil1.Z99`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.101 (transfer == null)**: Zeile 101: prüft `(transfer == null)`.
+> - **RemoteBackupBridge.replyError**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
+> - **throw Z.101 throw replyError(client, 'start remote …**: Zeile 101: Abbruch `throw replyError(client, 'start remote …`.
+> - **RemoteBackupBridge.CountingOutputStream.CountingOutputStream**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `CountingOutputStream` in `RemoteBackupBridge.java`.
+> - **RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1.Z104**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 104 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 104.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `RemoteBackupBridge.archive.Z92.Teil1.Z99`.

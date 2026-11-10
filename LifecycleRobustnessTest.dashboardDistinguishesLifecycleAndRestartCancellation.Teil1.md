@@ -17,7 +17,11 @@ flowchart TD
 
 ```knoten
 SupervisorHealth.dashboardState
-  `dashboardState` in `SupervisorHealth.java`.
+  Dieser Teil kümmert sich um den Zustand. `dashboardState` in `SupervisorHealth.java`.
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SupervisorHealth.dashboardState**: Dieser Teil kümmert sich um den Zustand. `dashboardState` in `SupervisorHealth.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation`.

@@ -19,9 +19,15 @@ flowchart TD
 Schritt Z.15 Files.createDirectories(workDir);
   Zeile 15: Dateioperation. `Files.createDirectories(workDir);`
 PathGuard.PathGuard
-  Liefert den Pfad `PathGuard`.
+  Dieser Teil kümmert sich um die Grenze. Liefert den Pfad `PathGuard`.
 return Z.16 return new PathGuard(workDir.toRealPath…
   Zeile 16: Rückgabe `return new PathGuard(workDir.toRealPath…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.15 Files.createDirectories(workDir);**: Zeile 15: Dateioperation. `Files.createDirectories(workDir);`
+> - **PathGuard.PathGuard**: Dieser Teil kümmert sich um die Grenze. Liefert den Pfad `PathGuard`.
+> - **return Z.16 return new PathGuard(workDir.toRealPath…**: Zeile 16: Rückgabe `return new PathGuard(workDir.toRealPath…`.
+
+- Dieser Teil öffnet das.
 - `open` in `src/main/java/de/aichele/childlauncher/PathGuard.java`

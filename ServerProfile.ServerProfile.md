@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ServerProfile.ServerProfile.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 ServerProfile.ServerProfile.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ServerProfile.ServerProfile.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **ServerProfile.ServerProfile.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Die Serverbeschreibung kümmert sich um die Beschreibung.
 - `ServerProfile` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

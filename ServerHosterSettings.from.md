@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ServerHosterSettings.ServerHosterSettings
-  `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+  Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Einstellungen|Einstellungen]]. `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
 return Z.45 return new ServerHosterSettings( config…
   Zeile 45: Rückgabe `return new ServerHosterSettings( config…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ServerHosterSettings.ServerHosterSettings**: Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Einstellungen|Einstellungen]]. `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+> - **return Z.45 return new ServerHosterSettings( config…**: Zeile 45: Rückgabe `return new ServerHosterSettings( config…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `from` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 Upstream.download(String,Path,String,String)
-  Liefert zum Herunterladen `download`. Ruft `checkHash`.
+  Dieser Teil holt das. Liefert zum Herunterladen `download`. Ruft `checkHash`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2561.Z2563`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Upstream.download(String,Path,String,String)**: Dieser Teil holt das. Liefert zum Herunterladen `download`. Ruft `checkHash`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2561.Z2563`.

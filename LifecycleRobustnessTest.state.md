@@ -16,5 +16,9 @@ return Z.280 return new SupervisorHealth.State(phase, false, w…
   Zeile 280: Rückgabe `return new SupervisorHealth.State(phase, false, w…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.280 return new SupervisorHealth.State(phase, false, w…**: Zeile 280: Rückgabe `return new SupervisorHealth.State(phase, false, w…`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `state` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

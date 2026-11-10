@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 CronExpr.field.Z47
-  Fortsetzung des Ablaufs ab Zeile 47.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 47 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 47.
 return Z.67 return false;
   Zeile 67: Rückgabe `return false;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **CronExpr.field.Z47**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 47 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 47.
+> - **return Z.67 return false;**: Zeile 67: Rückgabe `return false;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `field` in `src/main/java/de/aichele/childlauncher/CronExpr.java`

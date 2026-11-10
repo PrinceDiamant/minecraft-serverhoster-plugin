@@ -33,4 +33,12 @@ throw Z.828 throw new SecurityException('Migration path conta…
   Zeile 828: Abbruch `throw new SecurityException('Migration path conta…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.824 (Files.isSymbolicLink(current))**: Zeile 824: prüft `(Files.isSymbolicLink(current))`.
+> - **throw Z.824 throw new SecurityException('Migration data root …**: Zeile 824: Abbruch `throw new SecurityException('Migration data root …`.
+> - **for Z.825 (Path segment : root.relativize(path))**: Zeile 825: Schleife `(Path segment : root.relativize(path))`.
+> - **if Z.827 (Files.isSymbolicLink(current))**: Zeile 827: prüft `(Files.isSymbolicLink(current))`.
+> - **throw Z.828 throw new SecurityException('Migration path conta…**: Zeile 828: Abbruch `throw new SecurityException('Migration path conta…`.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `rejectSymbolicLinkSegments` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

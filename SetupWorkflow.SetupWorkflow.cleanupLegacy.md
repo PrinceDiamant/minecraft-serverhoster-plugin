@@ -22,7 +22,13 @@ if Z.178 !accepted
 return Z.178 return;
   Zeile 178: Rückgabe `return;`.
 SetupWorkflow.SetupWorkflow.cleanupLegacy.Z181
-  Fortsetzung des Ablaufs ab Zeile 181.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 181 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 181.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.178 !accepted**: Zeile 178: prüft `!accepted`.
+> - **return Z.178 return;**: Zeile 178: Rückgabe `return;`.
+> - **SetupWorkflow.SetupWorkflow.cleanupLegacy.Z181**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 181 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 181.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] räumt auf den alten Weg.
 - `cleanupLegacy` in `ui/src/components/SetupWorkflow.tsx`

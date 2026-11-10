@@ -22,7 +22,7 @@ flowchart TD
 
 ```knoten
 Upstream.getJson
-  Liefert `getJson`.
+  Dieser Teil liefert die Antwort. Liefert `getJson`.
 if Z.2551 (builds.isEmpty())
   Zeile 2551: prüft `(builds.isEmpty())`.
 throw Z.2551 throw new IOException('No Paper builds for ' + mc…
@@ -32,7 +32,16 @@ for Z.2553 (JsonElement e : builds)
 if Z.2553 ('STABLE'.equalsIgnoreCase(str(b, 'channel')))
   Zeile 2553: prüft `('STABLE'.equalsIgnoreCase(str(b, 'channel')))`.
 FabricLauncherPlugin.str
-  `str` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `FabricLauncherPlugin.java`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Upstream.getJson**: Dieser Teil liefert die Antwort. Liefert `getJson`.
+> - **if Z.2551 (builds.isEmpty())**: Zeile 2551: prüft `(builds.isEmpty())`.
+> - **throw Z.2551 throw new IOException('No Paper builds for ' + mc…**: Zeile 2551: Abbruch `throw new IOException('No Paper builds for ' + mc…`.
+> - **for Z.2553 (JsonElement e : builds)**: Zeile 2553: Schleife `(JsonElement e : builds)`.
+> - **if Z.2553 ('STABLE'.equalsIgnoreCase(str(b, 'channel')))**: Zeile 2553: prüft `('STABLE'.equalsIgnoreCase(str(b, 'channel')))`.
+> - **FabricLauncherPlugin.str**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `FabricLauncherPlugin.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549`.

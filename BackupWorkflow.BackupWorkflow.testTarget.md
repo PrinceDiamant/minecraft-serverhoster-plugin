@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 BackupWorkflow.BackupWorkflow.testTarget.Z86
-  Fortsetzung des Ablaufs ab Zeile 86.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 86 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 86.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupWorkflow.BackupWorkflow.testTarget.Z86**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 86 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 86.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `testTarget` in `ui/src/components/BackupWorkflow.tsx`

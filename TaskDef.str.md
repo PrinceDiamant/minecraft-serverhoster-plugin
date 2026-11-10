@@ -16,4 +16,8 @@ return Z.43 return v == null ? fallback : String.valueOf(v);
   Zeile 43: Rückgabe `return v == null ? fallback : String.valueOf(v);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.43 return v == null ? fallback : String.valueOf(v);**: Zeile 43: Rückgabe `return v == null ? fallback : String.valueOf(v);`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `str` in `src/main/java/de/aichele/childlauncher/TaskDef.java`

@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] ändert das.
 - `update` in `ui/src/components/SettingsWorkflow.tsx`

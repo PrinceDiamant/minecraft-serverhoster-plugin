@@ -41,9 +41,21 @@ Schritt Z.75 assertTrue(Files.isDirectory(root.resolve('server…
 Schritt Z.76 assertTrue(Files.readString(root.resolve('bukkit.…
   Zeile 76: liest Text aus einer Datei. `assertTrue(Files.readString(root.resolve('bukkit.…`
 HostMinimize.restore
-  Stellt wieder her `restore`. Ruft `assertEditable`.
+  Das Verkleinern des [[Glossar#Host|Host]] stellt wieder her das. Stellt wieder her `restore`. Ruft `assertEditable`.
 Schritt Z.81 String restored = Files.readString(root.resolve('…
   Zeile 81: liest Text aus einer Datei. `String restored = Files.readString(root.resolve('…`
 ```
 
-- Fortsetzung von `HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.70 assertEquals('child-world', Files.readString(chil…**: Zeile 70: liest Text aus einer Datei. `assertEquals('child-world', Files.readString(chil…`
+> - **Schritt Z.71 assertTrue(Files.readString(child.resolve('server…**: Zeile 71: liest Text aus einer Datei. `assertTrue(Files.readString(child.resolve('server…`
+> - **Schritt Z.72 assertEquals('backup', Files.readString(backups.r…**: Zeile 72: liest Text aus einer Datei. `assertEquals('backup', Files.readString(backups.r…`
+> - **Schritt Z.73 assertEquals('eula=true/n', Files.readString(root…**: Zeile 73: liest Text aus einer Datei. `assertEquals('eula=true/n', Files.readString(root…`
+> - **Schritt Z.74 assertEquals('runtime', Files.readString(root.res…**: Zeile 74: liest Text aus einer Datei. `assertEquals('runtime', Files.readString(root.res…`
+> - **Schritt Z.75 assertTrue(Files.isDirectory(root.resolve('server…**: Zeile 75: Dateioperation. `assertTrue(Files.isDirectory(root.resolve('server…`
+> - **Schritt Z.76 assertTrue(Files.readString(root.resolve('bukkit.…**: Zeile 76: liest Text aus einer Datei. `assertTrue(Files.readString(root.resolve('bukkit.…`
+> - **HostMinimize.restore**: Das Verkleinern des [[Glossar#Host|Host]] stellt wieder her das. Stellt wieder her `restore`. Ruft `assertEditable`.
+> - **Schritt Z.81 String restored = Files.readString(root.resolve('…**: Zeile 81: liest Text aus einer Datei. `String restored = Files.readString(root.resolve('…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys`.

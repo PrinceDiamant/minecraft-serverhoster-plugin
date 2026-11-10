@@ -27,19 +27,28 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.getWorldRoot
-  Liefert `getWorldRoot`.
+  Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Im [[Glossar#Quelltext|Quelltext]] heißt das `getWorldRoot`.
 if Z.2261 (!Files.isRegularFile(properties, LinkOption.NOFO…
-  Zeile 2261: prüft `(!Files.isRegularFile(properties, LinkOption.NOFO…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2261.
 return Z.2262 return '';
-  Zeile 2262: Rückgabe `return '';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2262.
 for Z.2264 (String line : Files.readAllLines(prope…
-  Zeile 2264: Schleife `(String line : Files.readAllLines(prope…`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 2264.
 if Z.2265 (line.startsWith('level-name='))
-  Zeile 2265: prüft `(line.startsWith('level-name='))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2265.
 HostMinimize.worldNameSafe
-  Betrifft die Welt `worldNameSafe`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. Im [[Glossar#Quelltext|Quelltext]] heißt das `worldNameSafe`.
 return Z.2267 return HostMinimize.worldNameSafe(level…
-  Zeile 2267: Rückgabe `return HostMinimize.worldNameSafe(level…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2267.
 ```
 
-- `configuredHostWorld` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.getWorldRoot**: Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Im [[Glossar#Quelltext|Quelltext]] heißt das `getWorldRoot`.
+> - **if Z.2261 (!Files.isRegularFile(properties, LinkOption.NOFO…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2261.
+> - **return Z.2262 return '';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2262.
+> - **for Z.2264 (String line : Files.readAllLines(prope…**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 2264.
+> - **if Z.2265 (line.startsWith('level-name='))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2265.
+> - **HostMinimize.worldNameSafe**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. Im [[Glossar#Quelltext|Quelltext]] heißt das `worldNameSafe`.
+> - **return Z.2267 return HostMinimize.worldNameSafe(level…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2267.
+
+- Liest, welche [[Glossar#Spielwelt|Spielwelt]] der [[Glossar#Host|Host]] benutzen soll.

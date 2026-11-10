@@ -16,4 +16,8 @@ return Z.56 return emergencyStopStarted;
   Zeile 56: Rückgabe `return emergencyStopStarted;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.56 return emergencyStopStarted;**: Zeile 56: Rückgabe `return emergencyStopStarted;`.
+
+- Dieser Teil stoppt hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `emergencyStopStarted` in `src/main/java/de/aichele/childlauncher/MemoryProtectionPolicy.java`

@@ -34,9 +34,16 @@ for Z.31 (Object item : list)
 if Z.32 (!(item instanceof Map(?, ?) map))
   Zeile 32: prüft `(!(item instanceof Map(?, ?) map))`.
 TaskDef.str
-  `str` in `TaskDef.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `TaskDef.java`.
 TaskDef.TaskDef
-  `TaskDef` in `TaskDef.java`. Ruft `normZone`, `normAction`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `TaskDef` in `TaskDef.java`. Ruft `normZone`, `normAction`.
 ```
 
-- Fortsetzung von `TaskDef.load`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.31 (Object item : list)**: Zeile 31: Schleife `(Object item : list)`.
+> - **if Z.32 (!(item instanceof Map(?, ?) map))**: Zeile 32: prüft `(!(item instanceof Map(?, ?) map))`.
+> - **TaskDef.str**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `TaskDef.java`.
+> - **TaskDef.TaskDef**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `TaskDef` in `TaskDef.java`. Ruft `normZone`, `normAction`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 31 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `TaskDef.load`.

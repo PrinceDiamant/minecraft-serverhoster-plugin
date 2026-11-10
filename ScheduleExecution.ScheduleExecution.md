@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Dieser Teil plant die Ausführung.
 - `ScheduleExecution` in `src/main/java/de/aichele/childlauncher/ScheduleExecution.java`

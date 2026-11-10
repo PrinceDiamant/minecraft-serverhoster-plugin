@@ -25,15 +25,24 @@ flowchart TD
 for Z.72 (String id : serverIds(flat))
   Zeile 72: Schleife `(String id : serverIds(flat))`.
 Profiles.serverIds
-  `serverIds` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `serverIds` in `ServerProfile.java`.
 if Z.73 (id.isBlank())
   Zeile 73: prüft `(id.isBlank())`.
 ProfileMerge.inherit
-  `inherit` in `ServerProfile.java`. Ruft `ServerProfile`, `nvl`, `safeId`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `inherit` in `ServerProfile.java`. Ruft `ServerProfile`, `nvl`, `safeId`.
 Profiles.one
-  Fallback `type` ist `fabric`, ausgelieferte `config.yml` sagt `vanilla`. Befund: Logikrisiko (sicher).
+  Baut die Beschreibung eines Servers. Fehlt die Art, nimmt der [[Glossar#Quelltext|Quelltext]] fabric, die ausgelieferte [[Glossar#Einstellungsdatei|Einstellungsdatei]] sagt vanilla. Fallback `type` ist `fabric`, ausgelieferte `config.yml` sagt `vanilla`. [[Glossar#Befund|Befund]]: Logikrisiko, sicher. ServerProfile.java:103 Fallback fabric, config.yml:2 type vanilla
 return Z.76 return List.copyOf(out.values());
   Zeile 76: Rückgabe `return List.copyOf(out.values());`.
 ```
 
-- Fortsetzung von `Profiles.load`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.72 (String id : serverIds(flat))**: Zeile 72: Schleife `(String id : serverIds(flat))`.
+> - **Profiles.serverIds**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `serverIds` in `ServerProfile.java`.
+> - **if Z.73 (id.isBlank())**: Zeile 73: prüft `(id.isBlank())`.
+> - **ProfileMerge.inherit**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `inherit` in `ServerProfile.java`. Ruft `ServerProfile`, `nvl`, `safeId`.
+> - **Profiles.one**: Baut die Beschreibung eines Servers. Fehlt die Art, nimmt der [[Glossar#Quelltext|Quelltext]] fabric, die ausgelieferte [[Glossar#Einstellungsdatei|Einstellungsdatei]] sagt vanilla. Fallback `type` ist `fabric`, ausgelieferte `config.yml` sagt `vanilla`. [[Glossar#Befund|Befund]]: Logikrisiko, sicher. ServerProfile.java:103 Fallback fabric, config.yml:2 type vanilla
+> - **return Z.76 return List.copyOf(out.values());**: Zeile 76: Rückgabe `return List.copyOf(out.values());`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Profiles.load`.

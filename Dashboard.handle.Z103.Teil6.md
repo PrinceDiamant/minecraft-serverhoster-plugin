@@ -24,15 +24,24 @@ flowchart TD
 if Z.131 (csrfRejected(method, ex.getRequestHeaders().getF…
   Zeile 131: prüft `(csrfRejected(method, ex.getRequestHeaders().getF…`.
 Dashboard.csrfRejected
-  `csrfRejected` in `Dashboard.java`.
+  Lehnt eine Anfrage ab, die nicht von der eigenen [[Glossar#Bedienseite|Bedienseite]] kommt. `csrfRejected` in `Dashboard.java`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 return Z.133 return;
   Zeile 133: Rückgabe `return;`.
 Dashboard.query
-  Fragt ab `query`.
+  Liest eine Angabe aus der Adresse der Anfrage. Fragt ab `query`.
 FabricLauncherPlugin.focusId
-  Liefert oder setzt den Fokus `focusId`.
+  Das [[Glossar#Plugin|Plugin]] liefert die Kennung. Liefert oder setzt den [[Glossar#Fokus|Fokus]] `focusId`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.131 (csrfRejected(method, ex.getRequestHeaders().getF…**: Zeile 131: prüft `(csrfRejected(method, ex.getRequestHeaders().getF…`.
+> - **Dashboard.csrfRejected**: Lehnt eine Anfrage ab, die nicht von der eigenen [[Glossar#Bedienseite|Bedienseite]] kommt. `csrfRejected` in `Dashboard.java`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **return Z.133 return;**: Zeile 133: Rückgabe `return;`.
+> - **Dashboard.query**: Liest eine Angabe aus der Adresse der Anfrage. Fragt ab `query`.
+> - **FabricLauncherPlugin.focusId**: Das [[Glossar#Plugin|Plugin]] liefert die Kennung. Liefert oder setzt den [[Glossar#Fokus|Fokus]] `focusId`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.handle.Z103`.

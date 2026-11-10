@@ -17,9 +17,15 @@ flowchart TD
 if Z.1806 (tickIdx % 20 == 0 && tickIdx ) 0)
   Zeile 1806: prüft `(tickIdx % 20 == 0 && tickIdx ) 0)`.
 FabricLauncherPlugin.startSampler.Z1802.Z1806.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.startSampler.Z1802.Z1806.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.startSampler.Z1802`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1806 (tickIdx % 20 == 0 && tickIdx ) 0)**: Zeile 1806: prüft `(tickIdx % 20 == 0 && tickIdx ) 0)`.
+> - **FabricLauncherPlugin.startSampler.Z1802.Z1806.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.startSampler.Z1802.Z1806.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1806 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.startSampler.Z1802`.

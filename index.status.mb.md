@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 index.status.n
-  `n` in `index.html`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `n` in `index.html`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **index.status.n**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `n` in `index.html`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `mb` in `src/main/resources/web/index.html`

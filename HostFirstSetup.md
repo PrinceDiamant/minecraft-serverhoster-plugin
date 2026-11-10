@@ -7,20 +7,25 @@ flowchart TD
   n1["HostFirstSetup.Teil1"]:::internal-link
   n2["HostFirstSetup.Teil2"]:::internal-link
   n3["HostFirstSetup.Teil3"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 HostFirstSetup.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 HostFirstSetup.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 HostFirstSetup.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **HostFirstSetup.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+> - **HostFirstSetup.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
 
 ```mermaid
 stateDiagram-v2
@@ -36,4 +41,4 @@ stateDiagram-v2
   end note
 ```
 
-
+- Der Stand dieser Merkdatei, von „noch nicht“ bis „fertig“. Manche Stände erlauben den Umbau, andere verlangen einen Menschen oder einen [[Glossar#Neustart|Neustart]].

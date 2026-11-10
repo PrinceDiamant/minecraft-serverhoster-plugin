@@ -26,17 +26,25 @@ flowchart TD
 
 ```knoten
 if Z.920 (name.contains('/') // name.contains('//') // nam…
-  Zeile 920: prüft `(name.contains('/') // name.contains('//') // nam…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 920.
 throw Z.920 throw new SecurityException('Pfad außerhalb des S…
-  Zeile 920: Abbruch `throw new SecurityException('Pfad außerhalb des S…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 920.
 Dashboard.parseInt
-  Wertet aus `parseInt`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Zahl. Im [[Glossar#Quelltext|Quelltext]] heißt das `parseInt`.
 LogQuery.query
-  Fragt ab `query`. Ruft `levelOk`.
+  Dieser Teil fragt ab das. Im [[Glossar#Quelltext|Quelltext]] heißt das `query`.
 Dashboard.safe
-  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `safe`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `json`.
 ```
 
-- `logs` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.920 (name.contains('/') // name.contains('//') // nam…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 920.
+> - **throw Z.920 throw new SecurityException('Pfad außerhalb des S…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 920.
+> - **Dashboard.parseInt**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Zahl. Im [[Glossar#Quelltext|Quelltext]] heißt das `parseInt`.
+> - **LogQuery.query**: Dieser Teil fragt ab das. Im [[Glossar#Quelltext|Quelltext]] heißt das `query`.
+> - **Dashboard.safe**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `safe`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `json`.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.

@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.configure
-  `configure` in `RemoteBackupBridge.java`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `RemoteBackupBridge.java`.
 RemoteBackupBridge.openFtps.Z211
-  Fortsetzung des Ablaufs ab Zeile 211.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 211 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 211.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.configure**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `RemoteBackupBridge.java`.
+> - **RemoteBackupBridge.openFtps.Z211**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 211 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 211.
+
+- Die Sicherung über das Netz öffnet hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `openFtps` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

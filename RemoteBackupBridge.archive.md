@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 PathGuard.open
-  Öffnet `open`. Ruft `PathGuard`.
+  Dieser Teil öffnet das. Öffnet `open`. Ruft `PathGuard`.
 BackupBridge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 RemoteBackupBridge.archive.Z92
-  Fortsetzung des Ablaufs ab Zeile 92.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 92 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 92.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **PathGuard.open**: Dieser Teil öffnet das. Öffnet `open`. Ruft `PathGuard`.
+> - **BackupBridge.safeId**: Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
+> - **RemoteBackupBridge.archive.Z92**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 92 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 92.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `archive` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

@@ -15,7 +15,12 @@ flowchart TD
 if Z.2366 (active)
   Zeile 2366: prüft `(active)`.
 FabricLauncherPlugin.applyLobbyRules
-  Wendet an `applyLobbyRules`. Ruft `apply`, `name`, `spawnFlags`.
+  Das [[Glossar#Plugin|Plugin]] wendet an die Wartewelt. Wendet an `applyLobbyRules`. Ruft `apply`, `name`, `spawnFlags`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.refreshHostMinimize.Z2337`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2366 (active)**: Zeile 2366: prüft `(active)`.
+> - **FabricLauncherPlugin.applyLobbyRules**: Das [[Glossar#Plugin|Plugin]] wendet an die Wartewelt. Wendet an `applyLobbyRules`. Ruft `apply`, `name`, `spawnFlags`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.refreshHostMinimize.Z2337`.

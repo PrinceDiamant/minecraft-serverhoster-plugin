@@ -25,17 +25,27 @@ flowchart TD
 if Z.1428 (remoteBackupSelected())
   Zeile 1428: prüft `(remoteBackupSelected())`.
 FabricLauncherPlugin.remoteBackupSelected
-  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. `remoteBackupSelected` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.backupCredentials
-  Sichert `backupCredentials`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
 RemoteBackupBridge.download
-  Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
+  Die Sicherung über das Netz holt das. Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
 FabricLauncherPlugin.remoteBackupSettings
-  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. `remoteBackupSettings` in `FabricLauncherPlugin.java`.
 BackupBridge.file
-  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
 FabricLauncherPlugin.backupSpec
-  Sichert `backupSpec`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Sichert `backupSpec`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.downloadBackup`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1428 (remoteBackupSelected())**: Zeile 1428: prüft `(remoteBackupSelected())`.
+> - **FabricLauncherPlugin.remoteBackupSelected**: Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.backupCredentials**: Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Sichert `backupCredentials`. Ruft `load`.
+> - **RemoteBackupBridge.download**: Die Sicherung über das Netz holt das. Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
+> - **FabricLauncherPlugin.remoteBackupSettings**: Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+> - **BackupBridge.file**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+> - **FabricLauncherPlugin.backupSpec**: Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Sichert `backupSpec`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1428 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.downloadBackup`.

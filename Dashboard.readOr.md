@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.972 return Files.exists(f) ? Files.readString(f, Stan…
-  Zeile 972: Rückgabe `return Files.exists(f) ? Files.readString(f, Stan…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 972.
 ```
 
-- `readOr` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.972 return Files.exists(f) ? Files.readString(f, Stan…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 972.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest oder den Ersatz.

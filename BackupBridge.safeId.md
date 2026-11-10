@@ -16,4 +16,8 @@ return Z.119 return s.isBlank() ? 'server' : s;
   Zeile 119: Rückgabe `return s.isBlank() ? 'server' : s;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.119 return s.isBlank() ? 'server' : s;**: Zeile 119: Rückgabe `return s.isBlank() ? 'server' : s;`.
+
+- Die Sicherung auf diesem Rechner kümmert sich um die Kennung.
 - `safeId` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

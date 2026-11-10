@@ -16,5 +16,9 @@ try Z.677
   Zeile 677: Versuch. Der Fehlerpfad geht in catch.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.677**: Zeile 677: Versuch. Der Fehlerpfad geht in catch.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `writeLegacyPluginJar` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

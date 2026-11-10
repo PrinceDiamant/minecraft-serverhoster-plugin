@@ -26,17 +26,27 @@ flowchart TD
 if Z.879 (Files.exists(f) && !'1'.equals(q.get('overwrite'…
   Zeile 879: prüft `(Files.exists(f) && !'1'.equals(q.get('overwrite'…`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 return Z.879 return;
   Zeile 879: Rückgabe `return;`.
 Dashboard.fsUpload.Teil2.Z882
-  Fortsetzung des Ablaufs ab Zeile 882.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 882 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 882.
 Schritt Z.886 Files.move(tmp, f, StandardCopyOption.REPLACE_EXI…
   Zeile 886: Dateioperation. `Files.move(tmp, f, StandardCopyOption.REPLACE_EXI…`
 FabricLauncherPlugin.info(String,String)
-  Schreibt eine Infozeile `info`. Ruft `slot`.
+  Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `slot`.
 Dashboard.rel
-  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
 ```
 
-- Fortsetzung von `Dashboard.fsUpload`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.879 (Files.exists(f) && !'1'.equals(q.get('overwrite'…**: Zeile 879: prüft `(Files.exists(f) && !'1'.equals(q.get('overwrite'…`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **return Z.879 return;**: Zeile 879: Rückgabe `return;`.
+> - **Dashboard.fsUpload.Teil2.Z882**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 882 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 882.
+> - **Schritt Z.886 Files.move(tmp, f, StandardCopyOption.REPLACE_EXI…**: Zeile 886: Dateioperation. `Files.move(tmp, f, StandardCopyOption.REPLACE_EXI…`
+> - **FabricLauncherPlugin.info(String,String)**: Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `slot`.
+> - **Dashboard.rel**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.fsUpload`.

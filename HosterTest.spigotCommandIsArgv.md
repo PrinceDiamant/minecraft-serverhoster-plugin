@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 SpigotBuilder.command
-  `command` in `SpigotBuilder.java`. Ruft `assertRev`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `command` in `SpigotBuilder.java`. Ruft `assertRev`.
 SpigotBuilder.assertRev
-  Prüft `assertRev`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertRev`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SpigotBuilder.command**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `command` in `SpigotBuilder.java`. Ruft `assertRev`.
+> - **SpigotBuilder.assertRev**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertRev`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `spigotCommandIsArgv` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

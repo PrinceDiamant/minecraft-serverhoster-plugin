@@ -20,11 +20,18 @@ flowchart TD
 try Z.86
   Zeile 86: Versuch. Der Fehlerpfad geht in catch.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 catch Z.91 cause
   Zeile 91: fängt cause.
 finally Z.86
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `BackupWorkflow.BackupWorkflow.testTarget`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.86**: Zeile 86: Versuch. Der Fehlerpfad geht in catch.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **catch Z.91 cause**: Zeile 91: fängt cause.
+> - **finally Z.86**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 86 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `BackupWorkflow.BackupWorkflow.testTarget`.

@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 SetupRecovery.recover.Z34
-  Fortsetzung des Ablaufs ab Zeile 34.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 34 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 34.
 return Z.81 return List.copyOf(results);
   Zeile 81: Rückgabe `return List.copyOf(results);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupRecovery.recover.Z34**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 34 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 34.
+> - **return Z.81 return List.copyOf(results);**: Zeile 81: Rückgabe `return List.copyOf(results);`.
+
+- Dieser Teil rückt wieder gerade das.
 - `recover` in `src/main/java/de/aichele/childlauncher/SetupRecovery.java`

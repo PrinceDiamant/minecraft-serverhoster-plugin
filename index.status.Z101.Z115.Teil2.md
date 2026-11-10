@@ -17,7 +17,12 @@ flowchart TD
 if Z.115 $('host-connection')
   Zeile 115: prüft `$('host-connection')`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 ```
 
-- Fortsetzung von `index.status.Z101.Z115`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.115 $('host-connection')**: Zeile 115: prüft `$('host-connection')`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.status.Z101.Z115`.

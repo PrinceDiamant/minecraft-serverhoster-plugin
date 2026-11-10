@@ -18,4 +18,9 @@ if Z.41 (trimmed.isEmpty() // trimmed.startsWith('') // t…
   Zeile 41: prüft `(trimmed.isEmpty() // trimmed.startsWith('') // t…`.
 ```
 
-- Fortsetzung von `PropertiesFile.preview.Z37`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.39 (String line : Files.readAllLines(f, St…**: Zeile 39: Schleife `(String line : Files.readAllLines(f, St…`.
+> - **if Z.41 (trimmed.isEmpty() // trimmed.startsWith('') // t…**: Zeile 41: prüft `(trimmed.isEmpty() // trimmed.startsWith('') // t…`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 39 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `PropertiesFile.preview.Z37`.

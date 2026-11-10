@@ -14,4 +14,8 @@ if Z.139 (data != null)
   Zeile 139: prüft `(data != null)`.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.139 (data != null)**: Zeile 139: prüft `(data != null)`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 138.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`.

@@ -16,4 +16,8 @@ return Z.192 return v == null // v.isBlank() ? fallback : v;
   Zeile 192: Rückgabe `return v == null // v.isBlank() ? fallback : v;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.192 return v == null // v.isBlank() ? fallback : v;**: Zeile 192: Rückgabe `return v == null // v.isBlank() ? fallback : v;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `nvl` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

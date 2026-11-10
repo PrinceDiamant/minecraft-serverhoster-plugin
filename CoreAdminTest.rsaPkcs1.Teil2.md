@@ -14,4 +14,8 @@ return Z.329 return java.util.Arrays.copyOfRange(pkcs8, key.co…
   Zeile 329: Rückgabe `return java.util.Arrays.copyOfRange(pkcs8, key.co…`.
 ```
 
-- Fortsetzung von `CoreAdminTest.rsaPkcs1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.329 return java.util.Arrays.copyOfRange(pkcs8, key.co…**: Zeile 329: Rückgabe `return java.util.Arrays.copyOfRange(pkcs8, key.co…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.rsaPkcs1`.

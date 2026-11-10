@@ -17,8 +17,12 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.configMutationLock
-  `configMutationLock` in `FabricLauncherPlugin.java`.
+  Sorgt dafür, dass nicht zwei Änderungen der [[Glossar#Einstellungen|Einstellungen]] gleichzeitig schreiben. `configMutationLock` in `FabricLauncherPlugin.java`.
 ```
 
-- Fortsetzung von `Dashboard.schedulesApi`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.configMutationLock**: Sorgt dafür, dass nicht zwei Änderungen der [[Glossar#Einstellungen|Einstellungen]] gleichzeitig schreiben. `configMutationLock` in `FabricLauncherPlugin.java`.
+
+- Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat.
+- Fortsetzung von `Dashboard.schedulesApi`.
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

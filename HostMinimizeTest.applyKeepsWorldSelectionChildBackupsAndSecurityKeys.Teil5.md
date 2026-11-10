@@ -18,4 +18,9 @@ Schritt Z.85 assertEquals('child-world', Files.readString(chil…
   Zeile 85: liest Text aus einer Datei. `assertEquals('child-world', Files.readString(chil…`
 ```
 
-- Fortsetzung von `HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.83 assertEquals('(/'HostPlayer/')/n', Files.readStri…**: Zeile 83: Dateioperation. `assertEquals('(/'HostPlayer/')/n', Files.readStri…`
+> - **Schritt Z.85 assertEquals('child-world', Files.readString(chil…**: Zeile 85: liest Text aus einer Datei. `assertEquals('child-world', Files.readString(chil…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys`.

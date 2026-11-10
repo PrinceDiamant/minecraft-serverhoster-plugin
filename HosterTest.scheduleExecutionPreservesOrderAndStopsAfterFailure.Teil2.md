@@ -14,4 +14,8 @@ keine Verzweigung
   Schritt. `keine Verzweigung`
 ```
 
-- Fortsetzung von `HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **keine Verzweigung**: Schritt. `keine Verzweigung`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure`.

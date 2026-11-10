@@ -43,9 +43,20 @@ if Z.228 (spec.user != null)
 if Z.229 (spec.password != null)
   Zeile 229: prüft `(spec.password != null)`.
 BackupBridge.connect.Z230
-  Fortsetzung des Ablaufs ab Zeile 230.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 230 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 230.
 return Z.238 return DriverManager.getConnection(spec.jdbcUrl, …
   Zeile 238: Rückgabe `return DriverManager.getConnection(spec.jdbcUrl, …`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.225 (spec.driverClass == null // spec.driverClass.isB…**: Zeile 225: prüft `(spec.driverClass == null // spec.driverClass.isB…`.
+> - **throw Z.225 throw new IllegalArgumentException('driverClass');**: Zeile 225: Abbruch `throw new IllegalArgumentException('driverClass');`.
+> - **if Z.226 (spec.jdbcUrl == null // spec.jdbcUrl.isBlank())**: Zeile 226: prüft `(spec.jdbcUrl == null // spec.jdbcUrl.isBlank())`.
+> - **throw Z.226 throw new IllegalArgumentException('jdbcUrl');**: Zeile 226: Abbruch `throw new IllegalArgumentException('jdbcUrl');`.
+> - **if Z.228 (spec.user != null)**: Zeile 228: prüft `(spec.user != null)`.
+> - **if Z.229 (spec.password != null)**: Zeile 229: prüft `(spec.password != null)`.
+> - **BackupBridge.connect.Z230**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 230 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 230.
+> - **return Z.238 return DriverManager.getConnection(spec.jdbcUrl, …**: Zeile 238: Rückgabe `return DriverManager.getConnection(spec.jdbcUrl, …`.
+
+- Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `connect` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

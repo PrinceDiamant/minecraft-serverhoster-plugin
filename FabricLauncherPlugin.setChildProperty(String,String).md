@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.setChildProperty(String,String,String)
-  Setzt `setChildProperty`. Ruft `profile`, `directory`, `updateProperties`.
+  Das [[Glossar#Plugin|Plugin]] setzt den [[Glossar#Spielserver|Spielserver]] eine Eigenschaft. Im [[Glossar#Quelltext|Quelltext]] heißt das `setChildProperty(String,String,String)`.
 ```
 
-- `setChildProperty` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.setChildProperty(String,String,String)**: Das [[Glossar#Plugin|Plugin]] setzt den [[Glossar#Spielserver|Spielserver]] eine Eigenschaft. Im [[Glossar#Quelltext|Quelltext]] heißt das `setChildProperty(String,String,String)`.
+
+- Das [[Glossar#Plugin|Plugin]] setzt den [[Glossar#Spielserver|Spielserver]] eine Eigenschaft.

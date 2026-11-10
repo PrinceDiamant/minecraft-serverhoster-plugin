@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 Dashboard.saveConfig.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 Dashboard.saveConfig.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 Dashboard.saveConfig.Aufrufe
-  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+  Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
 ```
 
-- `saveConfig` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.saveConfig.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **Dashboard.saveConfig.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+> - **Dashboard.saveConfig.Aufrufe**: Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] speichert die [[Glossar#Einstellungen|Einstellungen]].
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

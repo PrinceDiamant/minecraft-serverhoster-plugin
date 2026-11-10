@@ -22,4 +22,10 @@ if Z.1287 (o instanceof ConfigurationSection s)
   Zeile 1287: prüft `(o instanceof ConfigurationSection s)`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.tasks`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.1282 (Object o : raw)**: Zeile 1282: Schleife `(Object o : raw)`.
+> - **if Z.1283 (o instanceof Map(?, ?) m)**: Zeile 1283: prüft `(o instanceof Map(?, ?) m)`.
+> - **if Z.1287 (o instanceof ConfigurationSection s)**: Zeile 1287: prüft `(o instanceof ConfigurationSection s)`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1282 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.tasks`.

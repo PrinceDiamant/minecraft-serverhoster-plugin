@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 return Z.77 return path
-  Zeile 77: Rückgabe `return path`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 77.
 ```
 
-- Gibt `path` unverändert zurück.
-- Befund: Altlast, sicher. index.html:77 return path
+> [!knoten]- Was die Blöcke tun
+> - **return Z.77 return path**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 77.
+
+- Gibt einen Dateipfad unverändert zurück. Der Name klingt nach einer Prüfung, es ist aber keine.
+- Auffällig: ein alter Weg läuft noch mit. Das nennt man [[Glossar#Altlast|Altlast]].

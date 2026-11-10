@@ -24,9 +24,16 @@ if Z.269 !dialog
 return Z.269 return;
   Zeile 269: Rückgabe `return;`.
 App.App.submitDialog.Z270
-  Fortsetzung des Ablaufs ab Zeile 270.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 270 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 270.
 App.App.closeDialog
-  Schließt `closeDialog`.
+  Die [[Glossar#Bedienseite|Bedienseite]] schließt den Dialog. Schließt `closeDialog`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.269 !dialog**: Zeile 269: prüft `!dialog`.
+> - **return Z.269 return;**: Zeile 269: Rückgabe `return;`.
+> - **App.App.submitDialog.Z270**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 270 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 270.
+> - **App.App.closeDialog**: Die [[Glossar#Bedienseite|Bedienseite]] schließt den Dialog. Schließt `closeDialog`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Dialog.
 - `submitDialog` in `ui/src/App.tsx`

@@ -20,4 +20,9 @@ throw Z.153 throw new IllegalArgumentException('Ungültige Int…
   Zeile 153: Abbruch `throw new IllegalArgumentException('Ungültige Int…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.153 (!valid)**: Zeile 153: prüft `(!valid)`.
+> - **throw Z.153 throw new IllegalArgumentException('Ungültige Int…**: Zeile 153: Abbruch `throw new IllegalArgumentException('Ungültige Int…`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `validateInterval` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

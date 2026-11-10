@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 index.post
-  Sendet POST `post`. Ruft `api`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Im [[Glossar#Quelltext|Quelltext]] heißt das `post`.
 index.toast
-  Zeigt eine Meldung `toast`. Ruft `$`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis. Im [[Glossar#Quelltext|Quelltext]] heißt das `toast`.
 ```
 
-- `runTask` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.post**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen Auftrag, der etwas ändert. Im [[Glossar#Quelltext|Quelltext]] heißt das `post`.
+> - **index.toast**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis. Im [[Glossar#Quelltext|Quelltext]] heißt das `toast`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Aufgabe|Aufgabe]].

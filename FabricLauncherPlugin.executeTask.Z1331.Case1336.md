@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.send
-  Sendet `send`. Ruft `running`.
+  Schickt Text an den laufenden [[Glossar#Spielserver|Spielserver]]. Sendet `send`. Ruft `running`.
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.executeTask.Z1331`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.send**: Schickt Text an den laufenden [[Glossar#Spielserver|Spielserver]]. Sendet `send`. Ruft `running`.
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 1336.
+- Fortsetzung von `FabricLauncherPlugin.executeTask.Z1331`.

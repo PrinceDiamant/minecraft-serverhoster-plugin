@@ -26,19 +26,28 @@ flowchart TD
 
 ```knoten
 if Z.1348 (task.cron == null // task.cron.isBlank())
-  Zeile 1348: prüft `(task.cron == null // task.cron.isBlank())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1348.
 return Z.1348 return '';
-  Zeile 1348: Rückgabe `return '';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1348.
 try Z.1349
-  Zeile 1349: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1349.
 CronExpr.next
-  Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+  Dieser Teil geht weiter bei das. Im [[Glossar#Quelltext|Quelltext]] heißt das `next`.
 return Z.1351 return z == null ? '' : z.toString();
-  Zeile 1351: Rückgabe `return z == null ? '' : z.toString();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1351.
 catch Z.1352 (RuntimeException e)
-  Zeile 1352: fängt (RuntimeException e).
+  Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 1352.
 return Z.1352 return '';
-  Zeile 1352: Rückgabe `return '';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1352.
 ```
 
-- `taskNext` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1348 (task.cron == null // task.cron.isBlank())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1348.
+> - **return Z.1348 return '';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1348.
+> - **try Z.1349**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1349.
+> - **CronExpr.next**: Dieser Teil geht weiter bei das. Im [[Glossar#Quelltext|Quelltext]] heißt das `next`.
+> - **return Z.1351 return z == null ? '' : z.toString();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1351.
+> - **catch Z.1352 (RuntimeException e)**: Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 1352.
+> - **return Z.1352 return '';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1352.
+
+- Rechnet, wann eine [[Glossar#Aufgabe|Aufgabe]] das nächste Mal laufen soll.

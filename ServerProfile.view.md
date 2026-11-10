@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
 return Z.58 return m;
   Zeile 58: Rückgabe `return m;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
+> - **return Z.58 return m;**: Zeile 58: Rückgabe `return m;`.
+
+- Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `view` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ServerProfile.java:54–59 kein Produktionsaufruf im Aufrufgraph

@@ -14,12 +14,17 @@ flowchart TD
 
 ```knoten
 ChildStopSequence.ChildStopSequence
-  Betrifft den Child `ChildStopSequence`.
+  Dieser Teil stoppt die Reihenfolge. Im [[Glossar#Quelltext|Quelltext]] heißt das `ChildStopSequence`.
 ChildStopSequence.stop
-  Stoppt `stop`. Ruft `signal`.
+  Dieser Teil stoppt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `stop`.
 ChildStopSequence.signal
-  `signal` in `ChildStopSequence.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `signal`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **ChildStopSequence.ChildStopSequence**: Dieser Teil stoppt die Reihenfolge. Im [[Glossar#Quelltext|Quelltext]] heißt das `ChildStopSequence`.
+> - **ChildStopSequence.stop**: Dieser Teil stoppt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `stop`.
+> - **ChildStopSequence.signal**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `signal`.
 
 ```mermaid
 stateDiagram-v2
@@ -29,4 +34,4 @@ stateDiagram-v2
   [*] --> INTERRUPTED: Z.71
 ```
 
-
+- Die Schritte des [[Glossar#Stopp|Stopps]]: nachfragen, die Bitte wiederholen, dann hart beenden.

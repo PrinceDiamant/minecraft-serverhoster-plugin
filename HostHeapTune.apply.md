@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 HostHeapTune.apply.Z34
-  Fortsetzung des Ablaufs ab Zeile 34.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 34 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 34.
 return Z.53 return List.copyOf(results);
   Zeile 53: Rückgabe `return List.copyOf(results);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostHeapTune.apply.Z34**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 34 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 34.
+> - **return Z.53 return List.copyOf(results);**: Zeile 53: Rückgabe `return List.copyOf(results);`.
+
+- Dieser Teil wendet an das.
 - `apply` in `src/main/java/de/aichele/childlauncher/HostHeapTune.java`

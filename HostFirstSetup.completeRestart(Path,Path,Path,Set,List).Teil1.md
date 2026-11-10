@@ -18,13 +18,20 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.readState
-  Liest `readState`. Ruft `readState`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest den Zustand. Liest `readState`. Ruft `readState`.
 if Z.123 (!'restart-required'.equals(state.get('status')))
   Zeile 123: prüft `(!'restart-required'.equals(state.get('status')))`.
 return Z.123 return List.of();
   Zeile 123: Rückgabe `return List.of();`.
 HostFirstSetup.requireRoot
-  Verlangt `requireRoot`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Anfang. Verlangt `requireRoot`.
 ```
 
-- Fortsetzung von `HostFirstSetup.completeRestart(Path,Path,Path,Set,List)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.readState**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest den Zustand. Liest `readState`. Ruft `readState`.
+> - **if Z.123 (!'restart-required'.equals(state.get('status')))**: Zeile 123: prüft `(!'restart-required'.equals(state.get('status')))`.
+> - **return Z.123 return List.of();**: Zeile 123: Rückgabe `return List.of();`.
+> - **HostFirstSetup.requireRoot**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Anfang. Verlangt `requireRoot`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostFirstSetup.completeRestart(Path,Path,Path,Set,List)`.

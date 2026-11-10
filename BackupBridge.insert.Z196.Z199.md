@@ -14,4 +14,8 @@ try Z.199
   Zeile 199: Versuch. Der Fehlerpfad geht in catch.
 ```
 
-- Fortsetzung von `BackupBridge.insert.Z196`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.199**: Zeile 199: Versuch. Der Fehlerpfad geht in catch.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 199 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `BackupBridge.insert.Z196`.

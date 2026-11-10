@@ -24,9 +24,16 @@ if Z.734 (!Files.exists(source, LinkOption.NOFOLLOW_LINKS))
 return Z.734 return;
   Zeile 734: Rückgabe `return;`.
 FabricLauncherPlugin.copyLegacyFile
-  Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+  Das [[Glossar#Plugin|Plugin]] kopiert den alten Weg die Datei. Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
 BackupSecrets.load
-  Lädt `load`. Ruft `restrict`.
+  Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.734 (!Files.exists(source, LinkOption.NOFOLLOW_LINKS))**: Zeile 734: prüft `(!Files.exists(source, LinkOption.NOFOLLOW_LINKS))`.
+> - **return Z.734 return;**: Zeile 734: Rückgabe `return;`.
+> - **FabricLauncherPlugin.copyLegacyFile**: Das [[Glossar#Plugin|Plugin]] kopiert den alten Weg die Datei. Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+> - **BackupSecrets.load**: Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
+
+- Das [[Glossar#Plugin|Plugin]] übernimmt den alten Wert von den alten Weg die Zugangsdaten.
 - `migrateLegacySecrets` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

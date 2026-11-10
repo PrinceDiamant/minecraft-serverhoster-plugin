@@ -17,9 +17,15 @@ flowchart TD
 return Z.68 return switch (t) ( case 'vanilla' -) vanilla(up.…
   Zeile 68: Rückgabe `return switch (t) ( case 'vanilla' -) vanilla(up.…`.
 VersionCatalog.fetch.Z68.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 VersionCatalog.fetch.Z68.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `VersionCatalog.fetch`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.68 return switch (t) ( case 'vanilla' -) vanilla(up.…**: Zeile 68: Rückgabe `return switch (t) ( case 'vanilla' -) vanilla(up.…`.
+> - **VersionCatalog.fetch.Z68.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **VersionCatalog.fetch.Z68.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 68 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `VersionCatalog.fetch`.

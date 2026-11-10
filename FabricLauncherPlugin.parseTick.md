@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 TickQueryFilter.consume
-  Filtert `consume`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `consume`.
 if Z.1831 (hide && slot.ticks.tickAt != before)
-  Zeile 1831: prüft `(hide && slot.ticks.tickAt != before)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1831.
 ChildSlot.pushMspt
-  Schiebt einen Wert in `pushMspt`.
+  Dieser Teil kümmert sich um die [[Glossar#Spielschritt|Spielschritte]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `pushMspt`.
 return Z.1837 return hide;
-  Zeile 1837: Rückgabe `return hide;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1837.
 ```
 
-- `parseTick` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **TickQueryFilter.consume**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `consume`.
+> - **if Z.1831 (hide && slot.ticks.tickAt != before)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1831.
+> - **ChildSlot.pushMspt**: Dieser Teil kümmert sich um die [[Glossar#Spielschritt|Spielschritte]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `pushMspt`.
+> - **return Z.1837 return hide;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1837.
+
+- Liest aus einer Antwort, wie lange der letzte [[Glossar#Spielschritt|Spielschritt]] gedauert hat.

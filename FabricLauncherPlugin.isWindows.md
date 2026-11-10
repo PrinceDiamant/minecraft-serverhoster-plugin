@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.2674 return System.getProperty('os.name').toLowerCase(…
-  Zeile 2674: Rückgabe `return System.getProperty('os.name').toLowerCase(…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2674.
 ```
 
-- `isWindows` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.2674 return System.getProperty('os.name').toLowerCase(…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2674.
+
+- Das [[Glossar#Plugin|Plugin]] prüft Windows.

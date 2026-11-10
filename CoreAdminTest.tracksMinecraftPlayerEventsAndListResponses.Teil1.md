@@ -19,9 +19,14 @@ flowchart TD
 
 ```knoten
 ChildSlot.ChildSlot
-  Betrifft den Child `ChildSlot`. Ruft `ConsoleBuffer`.
+  Dieser Teil kümmert sich um den [[Glossar#Platz|Platz]]. Betrifft den Child `ChildSlot`. Ruft `ConsoleBuffer`.
 FabricLauncherPlugin.trackPlayers
-  Führt mit `trackPlayers`.
+  Merkt sich, welche [[Glossar#Spieler|Spieler]] gerade auf dem [[Glossar#Spielserver|Spielserver]] sind. Führt mit `trackPlayers`.
 ```
 
-- Fortsetzung von `CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ChildSlot.ChildSlot**: Dieser Teil kümmert sich um den [[Glossar#Platz|Platz]]. Betrifft den Child `ChildSlot`. Ruft `ConsoleBuffer`.
+> - **FabricLauncherPlugin.trackPlayers**: Merkt sich, welche [[Glossar#Spieler|Spieler]] gerade auf dem [[Glossar#Spielserver|Spielserver]] sind. Führt mit `trackPlayers`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses`.

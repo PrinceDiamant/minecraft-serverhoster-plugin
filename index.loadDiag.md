@@ -25,19 +25,28 @@ flowchart TD
 
 ```knoten
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
 index.loadDiag.Calls196
-  Weitere eigene Aufrufe ab Zeile 196.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 196 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls196`.
 index.loadDiag.Calls200
-  Weitere eigene Aufrufe ab Zeile 200.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 200 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls200`.
 index.loadDiag.Calls202
-  Weitere eigene Aufrufe ab Zeile 202.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 202 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls202`.
 index.loadDiag.metric
-  Formatiert einen Messwert `metric`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `metric`.
 index.loadDiag.row
-  Baut eine Tabellenzeile `row`. Ruft `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `row`.
 ```
 
-- `loadDiag` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
+> - **index.loadDiag.Calls196**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 196 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls196`.
+> - **index.loadDiag.Calls200**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 200 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls200`.
+> - **index.loadDiag.Calls202**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 202 aufgerufen werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Calls202`.
+> - **index.loadDiag.metric**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `metric`.
+> - **index.loadDiag.row**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `row`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Diagnose|Diagnose]].

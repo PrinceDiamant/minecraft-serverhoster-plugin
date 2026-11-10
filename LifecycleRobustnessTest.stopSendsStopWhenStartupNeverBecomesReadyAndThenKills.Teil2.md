@@ -18,4 +18,9 @@ Schritt Z.173 Thread.sleep(50);
   Zeile 173: wartet. `Thread.sleep(50);`
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **while Z.173 (process.isAlive() && System.nanoTime()…**: Zeile 173: Schleife `(process.isAlive() && System.nanoTime()…`.
+> - **Schritt Z.173 Thread.sleep(50);**: Zeile 173: wartet. `Thread.sleep(50);`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`.

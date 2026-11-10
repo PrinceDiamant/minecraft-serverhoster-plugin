@@ -19,8 +19,12 @@ flowchart TD
 
 ```knoten
 HostMinimize.firstSetupWorld
-  `firstSetupWorld` in `HostMinimize.java`. Ruft `lobbyNameSafe`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die [[Glossar#Einrichtung|Einrichtung]] die [[Glossar#Spielwelt|Spielwelt]]. `firstSetupWorld` in `HostMinimize.java`. Ruft `lobbyNameSafe`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.firstSetupWorld**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die [[Glossar#Einrichtung|Einrichtung]] die [[Glossar#Spielwelt|Spielwelt]]. `firstSetupWorld` in `HostMinimize.java`. Ruft `lobbyNameSafe`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

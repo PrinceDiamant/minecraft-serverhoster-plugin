@@ -17,7 +17,12 @@ flowchart TD
 if Z.45 (event as CustomEvent(string)).detail === 'settin…
   Zeile 45: prüft `(event as CustomEvent(string)).detail === 'settin…`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.45 (event as CustomEvent(string)).detail === 'settin…**: Zeile 45: prüft `(event as CustomEvent(string)).detail === 'settin…`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `onPageChange` in `ui/src/components/SettingsWorkflow.tsx`

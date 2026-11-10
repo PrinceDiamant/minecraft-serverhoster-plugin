@@ -29,4 +29,11 @@ throw Z.202 throw new SecurityException('refusing to prepare …
   Zeile 202: Abbruch `throw new SecurityException('refusing to prepare …`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.197 (root == null // Files.isSymbolicLink(root) // !F…**: Zeile 197: prüft `(root == null // Files.isSymbolicLink(root) // !F…`.
+> - **throw Z.198 throw new SecurityException('server root must be …**: Zeile 198: Abbruch `throw new SecurityException('server root must be …`.
+> - **if Z.200 (real.getNameCount() ( 2 // 'LiteStorage'.equalsI…**: Zeile 200: prüft `(real.getNameCount() ( 2 // 'LiteStorage'.equalsI…`.
+> - **throw Z.202 throw new SecurityException('refusing to prepare …**: Zeile 202: Abbruch `throw new SecurityException('refusing to prepare …`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Anfang.
 - `requireRoot` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

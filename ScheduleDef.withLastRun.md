@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ScheduleDef.ScheduleDef
-  Plant `ScheduleDef`. Ruft `validateInterval`.
+  Der [[Glossar#Zeitplan|Zeitplan]] plant hier einen Schritt. Eine Ebene tiefer steht er genauer. Plant `ScheduleDef`. Ruft `validateInterval`.
 return Z.90 return new ScheduleDef(id, name, enable…
   Zeile 90: Rückgabe `return new ScheduleDef(id, name, enable…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.ScheduleDef**: Der [[Glossar#Zeitplan|Zeitplan]] plant hier einen Schritt. Eine Ebene tiefer steht er genauer. Plant `ScheduleDef`. Ruft `validateInterval`.
+> - **return Z.90 return new ScheduleDef(id, name, enable…**: Zeile 90: Rückgabe `return new ScheduleDef(id, name, enable…`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den letzten Stand den Lauf.
 - `withLastRun` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

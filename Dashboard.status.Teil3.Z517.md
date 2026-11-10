@@ -24,15 +24,24 @@ flowchart TD
 if Z.517 (pid ) 0)
   Zeile 517: prüft `(pid ) 0)`.
 Dashboard.cpu
-  Liest `/proc/<pid>/stat` und teilt durch 100. Befund: Logikrisiko (prüfen).
+  Rechnet aus, wie stark der [[Glossar#Prozess|Prozess]] den Rechner beschäftigt. Die Rechnung nimmt an, dass die Uhr des Systems hundert Schritte pro Sekunde hat. Liest `/proc/<pid>/stat` und teilt durch 100. [[Glossar#Befund|Befund]]: Logikrisiko, prüfen. Dashboard.java:676 Kommentar CLK_TCK=100, Division durch 100
 Dashboard.rssMb
-  `rssMb` in `Dashboard.java`.
+  Liest, wie viel [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] der [[Glossar#Prozess|Prozess]] gerade belegt. `rssMb` in `Dashboard.java`.
 Dashboard.procField
-  `procField` in `Dashboard.java`.
+  Liest ein einzelnes Feld aus den Prozessdaten des Betriebssystems. `procField` in `Dashboard.java`.
 FabricLauncherPlugin.maybeQueryChildTick
-  Führt nur aus, wenn die Sperrzeit um ist `maybeQueryChildTick`. Ruft `slot`, `running`, `send`.
+  Fragt nur ab und zu nach dem letzten [[Glossar#Spielschritt|Spielschritt]], frühestens eine halbe Minute nach dem Start und danach höchstens alle zehn Sekunden. Führt nur aus, wenn die Sperrzeit um ist `maybeQueryChildTick`. Ruft `slot`, `running`, `send`.
 if Z.520 (System.currentTimeMillis() - slot.tickAt ( 60_00…
   Zeile 520: prüft `(System.currentTimeMillis() - slot.tickAt ( 60_00…`.
 ```
 
-- Fortsetzung von `Dashboard.status.Teil3`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.517 (pid ) 0)**: Zeile 517: prüft `(pid ) 0)`.
+> - **Dashboard.cpu**: Rechnet aus, wie stark der [[Glossar#Prozess|Prozess]] den Rechner beschäftigt. Die Rechnung nimmt an, dass die Uhr des Systems hundert Schritte pro Sekunde hat. Liest `/proc/<pid>/stat` und teilt durch 100. [[Glossar#Befund|Befund]]: Logikrisiko, prüfen. Dashboard.java:676 Kommentar CLK_TCK=100, Division durch 100
+> - **Dashboard.rssMb**: Liest, wie viel [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] der [[Glossar#Prozess|Prozess]] gerade belegt. `rssMb` in `Dashboard.java`.
+> - **Dashboard.procField**: Liest ein einzelnes Feld aus den Prozessdaten des Betriebssystems. `procField` in `Dashboard.java`.
+> - **FabricLauncherPlugin.maybeQueryChildTick**: Fragt nur ab und zu nach dem letzten [[Glossar#Spielschritt|Spielschritt]], frühestens eine halbe Minute nach dem Start und danach höchstens alle zehn Sekunden. Führt nur aus, wenn die Sperrzeit um ist `maybeQueryChildTick`. Ruft `slot`, `running`, `send`.
+> - **if Z.520 (System.currentTimeMillis() - slot.tickAt ( 60_00…**: Zeile 520: prüft `(System.currentTimeMillis() - slot.tickAt ( 60_00…`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 517 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.status.Teil3`.

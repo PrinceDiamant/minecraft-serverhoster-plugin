@@ -11,7 +11,10 @@ flowchart TD
 
 ```knoten
 SetupDiscovery.Candidate.view
-  Liefert die Sicht `view`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Sicht `view`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupDiscovery.Candidate.view**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Sicht `view`.
 
+- Ein Treffer dieser Suche: ein Ordner, der eine Anlage sein könnte.

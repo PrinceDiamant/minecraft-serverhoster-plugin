@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 if Z.1272 (at != null && now - at ( 600_000 && versionCache…
-  Zeile 1272: prüft `(at != null && now - at ( 600_000 && versionCache…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1272.
 return Z.1272 return versionCache.get(type);
-  Zeile 1272: Rückgabe `return versionCache.get(type);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1272.
 VersionCatalog.fetch
-  Holt `fetch`. Ruft `vanilla`, `getJson`, `fabric`.
+  Dieser Teil holt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `fetch`.
 return Z.1275 return list;
-  Zeile 1275: Rückgabe `return list;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1275.
 ```
 
-- `versions` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1272 (at != null && now - at ( 600_000 && versionCache…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1272.
+> - **return Z.1272 return versionCache.get(type);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1272.
+> - **VersionCatalog.fetch**: Dieser Teil holt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `fetch`.
+> - **return Z.1275 return list;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1275.
+
+- Liefert die bekannten [[Glossar#Version|Versionen]].

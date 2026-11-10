@@ -15,7 +15,12 @@ flowchart TD
 if Z.165 (hostFirstSetupBlocked)
   Zeile 165: prüft `(hostFirstSetupBlocked)`.
 FabricLauncherPlugin.onEnable.Teil5.Z162.Z165.Z167
-  Fortsetzung des Ablaufs ab Zeile 167.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 167 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 167.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil5.Z162`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.165 (hostFirstSetupBlocked)**: Zeile 165: prüft `(hostFirstSetupBlocked)`.
+> - **FabricLauncherPlugin.onEnable.Teil5.Z162.Z165.Z167**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 167 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 167.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 165 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil5.Z162`.

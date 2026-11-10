@@ -25,21 +25,31 @@ flowchart TD
 
 ```knoten
 BackupBridge.BackupBridge
-  Sichert `BackupBridge`.
+  Die Sicherung auf diesem Rechner sichert hier einen Schritt. Eine Ebene tiefer steht er genauer. Sichert `BackupBridge`.
 BackupBridge.list
-  Listet `list`. Ruft `directory`, `safeId`, `named`.
+  Die Sicherung auf diesem Rechner zeigt das. Listet `list`. Ruft `directory`, `safeId`, `named`.
 BackupBridge.file
-  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
 BackupBridge.delete
-  Löscht `delete`. Ruft `file`.
+  Die Sicherung auf diesem Rechner löscht das. Löscht `delete`. Ruft `file`.
 BackupBridge.restore
-  Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
+  Die Sicherung auf diesem Rechner stellt wieder her das. Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
 BackupBridge.restoreZip
-  Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+  Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
 BackupBridge.directory
-  `directory` in `BackupBridge.java`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `BackupBridge.java`.
 BackupBridge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.BackupBridge**: Die Sicherung auf diesem Rechner sichert hier einen Schritt. Eine Ebene tiefer steht er genauer. Sichert `BackupBridge`.
+> - **BackupBridge.list**: Die Sicherung auf diesem Rechner zeigt das. Listet `list`. Ruft `directory`, `safeId`, `named`.
+> - **BackupBridge.file**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+> - **BackupBridge.delete**: Die Sicherung auf diesem Rechner löscht das. Löscht `delete`. Ruft `file`.
+> - **BackupBridge.restore**: Die Sicherung auf diesem Rechner stellt wieder her das. Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
+> - **BackupBridge.restoreZip**: Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+> - **BackupBridge.directory**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `BackupBridge.java`.
+> - **BackupBridge.safeId**: Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

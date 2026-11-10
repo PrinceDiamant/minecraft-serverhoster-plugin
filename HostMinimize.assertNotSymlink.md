@@ -20,4 +20,9 @@ throw Z.289 throw new SecurityException('refusing symbolic li…
   Zeile 289: Abbruch `throw new SecurityException('refusing symbolic li…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.289 (Files.isSymbolicLink(file))**: Zeile 289: prüft `(Files.isSymbolicLink(file))`.
+> - **throw Z.289 throw new SecurityException('refusing symbolic li…**: Zeile 289: Abbruch `throw new SecurityException('refusing symbolic li…`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `assertNotSymlink` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

@@ -16,4 +16,8 @@ return Z.104 return digits.isEmpty() ? -1 : Long.parseLong(dig…
   Zeile 104: Rückgabe `return digits.isEmpty() ? -1 : Long.parseLong(dig…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.104 return digits.isEmpty() ? -1 : Long.parseLong(dig…**: Zeile 104: Rückgabe `return digits.isEmpty() ? -1 : Long.parseLong(dig…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `kb` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

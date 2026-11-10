@@ -19,9 +19,14 @@ flowchart TD
 
 ```knoten
 ChildProcessRecord.required
-  Liest verpflichtend `required`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest verpflichtend `required`.
 return Z.136 return new Loaded(new Identity(pid, sta…
   Zeile 136: Rückgabe `return new Loaded(new Identity(pid, sta…`.
 ```
 
-- Fortsetzung von `ChildProcessRecord.read.Z118`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ChildProcessRecord.required**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest verpflichtend `required`.
+> - **return Z.136 return new Loaded(new Identity(pid, sta…**: Zeile 136: Rückgabe `return new Loaded(new Identity(pid, sta…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `ChildProcessRecord.read.Z118`.

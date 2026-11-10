@@ -35,9 +35,19 @@ Schritt Z.256 Files.writeString(root.resolve('plugins/ServerHos…
 Schritt Z.257 Files.writeString(root.resolve('server.properties…
   Zeile 257: schreibt Text in eine Datei. `Files.writeString(root.resolve('server.properties…`
 HostFirstSetup.shouldRun
-  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] führt aus das. Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], wahrscheinlich. HostFirstSetup.java:35 akzeptiert pending; Schreibstelle nur HostMinimizeTest.java:216
 HostFirstSetup.apply(Path,Path,Path,Path)
-  Wendet an `apply`. Ruft `apply`. Befund: toter Code (wahrscheinlich).
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das. Wendet an `apply`. Ruft `apply`. [[Glossar#Befund|Befund]]: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostFirstSetup.java:58–60 nur von Tests erreicht
 ```
 
-- Fortsetzung von `HostMinimizeTest.firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.253 Files.createDirectories(data);**: Zeile 253: Dateioperation. `Files.createDirectories(data);`
+> - **Schritt Z.254 Files.createDirectories(root.resolve('world'));**: Zeile 254: Dateioperation. `Files.createDirectories(root.resolve('world'));`
+> - **Schritt Z.255 Files.writeString(root.resolve('world/level.dat')…**: Zeile 255: schreibt Text in eine Datei. `Files.writeString(root.resolve('world/level.dat')…`
+> - **Schritt Z.256 Files.writeString(root.resolve('plugins/ServerHos…**: Zeile 256: schreibt Text in eine Datei. `Files.writeString(root.resolve('plugins/ServerHos…`
+> - **Schritt Z.257 Files.writeString(root.resolve('server.properties…**: Zeile 257: schreibt Text in eine Datei. `Files.writeString(root.resolve('server.properties…`
+> - **HostFirstSetup.shouldRun**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] führt aus das. Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], wahrscheinlich. HostFirstSetup.java:35 akzeptiert pending; Schreibstelle nur HostMinimizeTest.java:216
+> - **HostFirstSetup.apply(Path,Path,Path,Path)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] wendet an das. Wendet an `apply`. Ruft `apply`. [[Glossar#Befund|Befund]]: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostFirstSetup.java:58–60 nur von Tests erreicht
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimizeTest.firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged`.

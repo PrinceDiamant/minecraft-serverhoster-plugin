@@ -16,5 +16,9 @@ Schritt Z.50 ProcessHandle.of(pid).ifPresent(ProcessHandle::de…
   Zeile 50: fragt den Prozess ab. `ProcessHandle.of(pid).ifPresent(ProcessHandle::de…`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.50 ProcessHandle.of(pid).ifPresent(ProcessHandle::de…**: Zeile 50: fragt den Prozess ab. `ProcessHandle.of(pid).ifPresent(ProcessHandle::de…`
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `destroy` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:49–51 nur von Tests erreicht

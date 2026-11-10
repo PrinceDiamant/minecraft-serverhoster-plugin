@@ -22,15 +22,22 @@ flowchart TD
 
 ```knoten
 if Z.943 (path.contains('//') // Arrays.asList(path.split(…
-  Zeile 943: prüft `(path.contains('//') // Arrays.asList(path.split(…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 943.
 Dashboard.send
-  Sendet `send`. Ruft `sendBytes`.
+  Schickt die Antwort an den Browser. Im [[Glossar#Quelltext|Quelltext]] heißt das `send`.
 return Z.945 return;
-  Zeile 945: Rückgabe `return;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 945.
 Dashboard.serveWebAsset.Z947
-  Fortsetzung des Ablaufs ab Zeile 947.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 947 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z947`.
 Dashboard.serveWebAsset.Z955
-  Fortsetzung des Ablaufs ab Zeile 955.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 955 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z955`.
 ```
 
-- `serveWebAsset` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.943 (path.contains('//') // Arrays.asList(path.split(…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 943.
+> - **Dashboard.send**: Schickt die Antwort an den Browser. Im [[Glossar#Quelltext|Quelltext]] heißt das `send`.
+> - **return Z.945 return;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 945.
+> - **Dashboard.serveWebAsset.Z947**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 947 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z947`.
+> - **Dashboard.serveWebAsset.Z955**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 955 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z955`.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liefert die Seite eine Datei der Seite.

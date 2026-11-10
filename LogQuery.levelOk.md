@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 LogQuery.levelOk.Z65
-  Fortsetzung des Ablaufs ab Zeile 65.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 65 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 65.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LogQuery.levelOk.Z65**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 65 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 65.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `levelOk` in `src/main/java/de/aichele/childlauncher/LogQuery.java`

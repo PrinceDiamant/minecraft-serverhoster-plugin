@@ -28,23 +28,35 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.connectControl
-  Verbindet `connectControl`. Ruft `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connectControl`. Ruft `replyError`.
 if Z.191 (reply == 234)
   Zeile 191: prüft `(reply == 234)`.
 RemoteBackupBridge.disconnect
-  Trennt `disconnect`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Trennt `disconnect`.
 RemoteBackupBridge.openFtps
-  Öffnet `openFtps`. Ruft `configure`, `connectControl`, `login`.
+  Die Sicherung über das Netz öffnet hier einen Schritt. Eine Ebene tiefer steht er genauer. Öffnet `openFtps`. Ruft `configure`, `connectControl`, `login`.
 return Z.193 return openFtps(settings, username, pas…
   Zeile 193: Rückgabe `return openFtps(settings, username, pas…`.
 if Z.195 (!unsupportedAuthTls(reply))
   Zeile 195: prüft `(!unsupportedAuthTls(reply))`.
 RemoteBackupBridge.unsupportedAuthTls
-  `unsupportedAuthTls` in `RemoteBackupBridge.java`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unsupportedAuthTls` in `RemoteBackupBridge.java`.
 RemoteBackupBridge.replyError
-  Antwortet `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
 throw Z.196 throw replyError(probe, 'negotiate FTPS…
   Zeile 196: Abbruch `throw replyError(probe, 'negotiate FTPS…`.
 ```
 
-- Fortsetzung von `RemoteBackupBridge.connect.Teil3.Z188`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.connectControl**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connectControl`. Ruft `replyError`.
+> - **if Z.191 (reply == 234)**: Zeile 191: prüft `(reply == 234)`.
+> - **RemoteBackupBridge.disconnect**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Trennt `disconnect`.
+> - **RemoteBackupBridge.openFtps**: Die Sicherung über das Netz öffnet hier einen Schritt. Eine Ebene tiefer steht er genauer. Öffnet `openFtps`. Ruft `configure`, `connectControl`, `login`.
+> - **return Z.193 return openFtps(settings, username, pas…**: Zeile 193: Rückgabe `return openFtps(settings, username, pas…`.
+> - **if Z.195 (!unsupportedAuthTls(reply))**: Zeile 195: prüft `(!unsupportedAuthTls(reply))`.
+> - **RemoteBackupBridge.unsupportedAuthTls**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unsupportedAuthTls` in `RemoteBackupBridge.java`.
+> - **RemoteBackupBridge.replyError**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
+> - **throw Z.196 throw replyError(probe, 'negotiate FTPS…**: Zeile 196: Abbruch `throw replyError(probe, 'negotiate FTPS…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `RemoteBackupBridge.connect.Teil3.Z188`.

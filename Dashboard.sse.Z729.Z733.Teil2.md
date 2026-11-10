@@ -14,4 +14,8 @@ keine Verzweigung
   Schritt. `keine Verzweigung`
 ```
 
-- Fortsetzung von `Dashboard.sse.Z729.Z733`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **keine Verzweigung**: Schritt. `keine Verzweigung`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.sse.Z729.Z733`.

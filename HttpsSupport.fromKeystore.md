@@ -29,4 +29,11 @@ return Z.136 return ctx;
   Zeile 136: Rückgabe `return ctx;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.128 (!Files.isRegularFile(ks))**: Zeile 128: prüft `(!Files.isRegularFile(ks))`.
+> - **throw Z.128 throw new IOException('Keystore not found: ' + ks…**: Zeile 128: Abbruch `throw new IOException('Keystore not found: ' + ks…`.
+> - **try Z.131**: Zeile 131: Versuch. Der Fehlerpfad geht in catch.
+> - **return Z.136 return ctx;**: Zeile 136: Rückgabe `return ctx;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `fromKeystore` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

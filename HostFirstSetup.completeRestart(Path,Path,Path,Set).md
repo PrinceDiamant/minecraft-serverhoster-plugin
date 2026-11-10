@@ -15,10 +15,15 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.completeRestart(Path,Path,Path,Set,List)
-  Schließt ab `completeRestart`. Ruft `readState`, `requireRoot`, `lobbyNameSafe`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den [[Glossar#Neustart|Neustart]]. Schließt ab `completeRestart`. Ruft `readState`, `requireRoot`, `lobbyNameSafe`.
 return Z.117 return completeRestart(root, marker, ch…
   Zeile 117: Rückgabe `return completeRestart(root, marker, ch…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.completeRestart(Path,Path,Path,Set,List)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den [[Glossar#Neustart|Neustart]]. Schließt ab `completeRestart`. Ruft `readState`, `requireRoot`, `lobbyNameSafe`.
+> - **return Z.117 return completeRestart(root, marker, ch…**: Zeile 117: Rückgabe `return completeRestart(root, marker, ch…`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den [[Glossar#Neustart|Neustart]].
 - `completeRestart` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostFirstSetup.java:116–118 nur von Tests erreicht

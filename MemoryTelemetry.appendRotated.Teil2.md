@@ -14,4 +14,8 @@ Schritt Z.105 Files.writeString(file, line + '/n', StandardChar…
   Zeile 105: schreibt Text in eine Datei. `Files.writeString(file, line + '/n', StandardChar…`
 ```
 
-- Fortsetzung von `MemoryTelemetry.appendRotated`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.105 Files.writeString(file, line + '/n', StandardChar…**: Zeile 105: schreibt Text in eine Datei. `Files.writeString(file, line + '/n', StandardChar…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `MemoryTelemetry.appendRotated`.

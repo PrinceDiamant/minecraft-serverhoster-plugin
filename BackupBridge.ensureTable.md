@@ -16,4 +16,8 @@ try Z.213
   Zeile 213: Versuch. Der Fehlerpfad geht in catch.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.213**: Zeile 213: Versuch. Der Fehlerpfad geht in catch.
+
+- Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `ensureTable` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

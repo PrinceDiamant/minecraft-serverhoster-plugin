@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 GcDiagnostics.snapshot(List)
-  `snapshot` in `GcDiagnostics.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `GcDiagnostics.java`.
 return Z.17 return snapshot(ManagementFactory.getGa…
   Zeile 17: Rückgabe `return snapshot(ManagementFactory.getGa…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **GcDiagnostics.snapshot(List)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `GcDiagnostics.java`.
+> - **return Z.17 return snapshot(ManagementFactory.getGa…**: Zeile 17: Rückgabe `return snapshot(ManagementFactory.getGa…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `snapshot` in `src/main/java/de/aichele/childlauncher/GcDiagnostics.java`

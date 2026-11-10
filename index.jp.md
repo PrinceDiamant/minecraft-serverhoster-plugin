@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.133 return a?a+'/'+b:b
-  Zeile 133: Rückgabe `return a?a+'/'+b:b`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 133.
 ```
 
-- `jp` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.133 return a?a+'/'+b:b**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 133.
+
+- Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen.

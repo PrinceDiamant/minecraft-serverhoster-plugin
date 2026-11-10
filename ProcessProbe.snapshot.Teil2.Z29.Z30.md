@@ -15,7 +15,12 @@ flowchart TD
 for Z.30 (String l : Files.readAllLines(Path.of(…
   Zeile 30: Schleife `(String l : Files.readAllLines(Path.of(…`.
 ProcessProbe.snapshot.Teil2.Z29.Z30.Z31
-  Fortsetzung des Ablaufs ab Zeile 31.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 31 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 31.
 ```
 
-- Fortsetzung von `ProcessProbe.snapshot.Teil2.Z29`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.30 (String l : Files.readAllLines(Path.of(…**: Zeile 30: Schleife `(String l : Files.readAllLines(Path.of(…`.
+> - **ProcessProbe.snapshot.Teil2.Z29.Z30.Z31**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 31 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 31.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 30 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `ProcessProbe.snapshot.Teil2.Z29`.

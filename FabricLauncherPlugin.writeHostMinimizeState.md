@@ -20,13 +20,20 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.hostMinimizeStateFile
-  Betrifft den Host `hostMinimizeStateFile`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern den Zustand die Datei. Betrifft den [[Glossar#Host|Host]] `hostMinimizeStateFile`.
 if Z.2192 (Files.isSymbolicLink(file))
   Zeile 2192: prüft `(Files.isSymbolicLink(file))`.
 throw Z.2192 throw new SecurityException('host minimization st…
   Zeile 2192: Abbruch `throw new SecurityException('host minimization st…`.
 HostMinimize.stateText
-  Liefert den Zustand `stateText`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Text. Liefert den Zustand `stateText`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.hostMinimizeStateFile**: Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern den Zustand die Datei. Betrifft den [[Glossar#Host|Host]] `hostMinimizeStateFile`.
+> - **if Z.2192 (Files.isSymbolicLink(file))**: Zeile 2192: prüft `(Files.isSymbolicLink(file))`.
+> - **throw Z.2192 throw new SecurityException('host minimization st…**: Zeile 2192: Abbruch `throw new SecurityException('host minimization st…`.
+> - **HostMinimize.stateText**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Text. Liefert den Zustand `stateText`.
+
+- Das [[Glossar#Plugin|Plugin]] schreibt den [[Glossar#Host|Host]] das Verkleinern den Zustand.
 - `writeHostMinimizeState` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

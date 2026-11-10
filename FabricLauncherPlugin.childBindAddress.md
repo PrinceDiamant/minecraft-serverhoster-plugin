@@ -17,11 +17,16 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.effectiveBindAddress
-  Liefert den wirksamen Wert `effectiveBindAddress`.
+  Die Adresse, die nach allen Ersatzregeln wirklich gilt. Im [[Glossar#Quelltext|Quelltext]] heißt das `effectiveBindAddress`.
 FabricLauncherPlugin.hostBindAddress
-  Betrifft den Host `hostBindAddress`.
+  Die Adresse, unter der der [[Glossar#Host|Host]] selbst erreichbar sein soll. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostBindAddress`.
 return Z.286 return effectiveBindAddress(profile.ser…
-  Zeile 286: Rückgabe `return effectiveBindAddress(profile.ser…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 286.
 ```
 
-- `childBindAddress` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.effectiveBindAddress**: Die Adresse, die nach allen Ersatzregeln wirklich gilt. Im [[Glossar#Quelltext|Quelltext]] heißt das `effectiveBindAddress`.
+> - **FabricLauncherPlugin.hostBindAddress**: Die Adresse, unter der der [[Glossar#Host|Host]] selbst erreichbar sein soll. Im [[Glossar#Quelltext|Quelltext]] heißt das `hostBindAddress`.
+> - **return Z.286 return effectiveBindAddress(profile.ser…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 286.
+
+- Die Adresse, unter der der [[Glossar#Spielserver|Spielserver]] erreichbar sein soll.

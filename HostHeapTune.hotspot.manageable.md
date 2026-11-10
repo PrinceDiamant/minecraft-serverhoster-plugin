@@ -28,4 +28,11 @@ return Z.65 return false;
   Zeile 65: Rückgabe `return false;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.61**: Zeile 61: Versuch. Der Fehlerpfad geht in catch.
+> - **return Z.63 return option != null && option.isWriteable();**: Zeile 63: Rückgabe `return option != null && option.isWriteable();`.
+> - **catch Z.64 (RuntimeException e)**: Zeile 64: fängt (RuntimeException e).
+> - **return Z.65 return false;**: Zeile 65: Rückgabe `return false;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `manageable` in `src/main/java/de/aichele/childlauncher/HostHeapTune.java`

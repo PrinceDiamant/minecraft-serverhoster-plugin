@@ -20,9 +20,15 @@ flowchart TD
 if Z.433 (configuredBackup == null // configuredBackup.isB…
   Zeile 433: prüft `(configuredBackup == null // configuredBackup.isB…`.
 FabricLauncherPlugin.addLegacyDataToPreserve
-  Fügt hinzu `addLegacyDataToPreserve`.
+  Das [[Glossar#Plugin|Plugin]] fügt hinzu den alten Weg. Fügt hinzu `addLegacyDataToPreserve`.
 if Z.437 (!backupDirectory.isAbsolute())
   Zeile 437: prüft `(!backupDirectory.isAbsolute())`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.legacyDataToPreserve`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.433 (configuredBackup == null // configuredBackup.isB…**: Zeile 433: prüft `(configuredBackup == null // configuredBackup.isB…`.
+> - **FabricLauncherPlugin.addLegacyDataToPreserve**: Das [[Glossar#Plugin|Plugin]] fügt hinzu den alten Weg. Fügt hinzu `addLegacyDataToPreserve`.
+> - **if Z.437 (!backupDirectory.isAbsolute())**: Zeile 437: prüft `(!backupDirectory.isAbsolute())`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 433 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.legacyDataToPreserve`.

@@ -19,13 +19,19 @@ flowchart TD
 
 ```knoten
 CrashIndex.list
-  Listet `list`. Ruft `open`, `resolve`.
+  Dieser Teil zeigt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `list`.
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `profile`.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `directory`.
 return Z.856 return CrashIndex.list(profile(id).dire…
-  Zeile 856: Rückgabe `return CrashIndex.list(profile(id).dire…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 856.
 ```
 
-- `crashFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **CrashIndex.list**: Dieser Teil zeigt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `list`.
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `profile`.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `directory`.
+> - **return Z.856 return CrashIndex.list(profile(id).dire…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 856.
+
+- Listet die [[Glossar#Absturzbericht|Absturzberichte]].

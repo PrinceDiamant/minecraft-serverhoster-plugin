@@ -23,4 +23,10 @@ return Z.52 return new Result(!process.isAlive(), code, detai…
   Zeile 52: Rückgabe `return new Result(!process.isAlive(), code, detai…`.
 ```
 
-- Fortsetzung von `ChildLaunchCleanup.abandon.Teil2.Z34`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.47**: Zeile 47: Versuch. Der Fehlerpfad geht in catch.
+> - **catch Z.49 (IllegalThreadStateException …**: Zeile 49: fängt (IllegalThreadStateException ….
+> - **return Z.52 return new Result(!process.isAlive(), code, detai…**: Zeile 52: Rückgabe `return new Result(!process.isAlive(), code, detai…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `ChildLaunchCleanup.abandon.Teil2.Z34`.

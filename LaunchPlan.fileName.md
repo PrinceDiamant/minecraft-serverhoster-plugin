@@ -25,4 +25,10 @@ return Z.61 return name.isBlank() ? 'server.jar' : name;
   Zeile 61: Rückgabe `return name.isBlank() ? 'server.jar' : name;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.57 (customJar == null // customJar.isBlank())**: Zeile 57: prüft `(customJar == null // customJar.isBlank())`.
+> - **return Z.57 return 'server.jar';**: Zeile 57: Rückgabe `return 'server.jar';`.
+> - **return Z.61 return name.isBlank() ? 'server.jar' : name;**: Zeile 61: Rückgabe `return name.isBlank() ? 'server.jar' : name;`.
+
+- Dieser Teil kümmert sich um den Namen.
 - `fileName` in `src/main/java/de/aichele/childlauncher/LaunchPlan.java`

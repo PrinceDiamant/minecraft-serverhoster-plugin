@@ -16,4 +16,8 @@ if Z.101 chosen?.configured
   Zeile 101: prüft `chosen?.configured`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.101 chosen?.configured**: Zeile 101: prüft `chosen?.configured`.
+
+- Der [[Glossar#Assistent|Assistent]] wählt hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `chooseCandidate` in `ui/src/components/SetupWizard.tsx`

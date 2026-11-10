@@ -21,17 +21,26 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.TaskWorkflow.Teil2.Calls254
-  Weitere eigene Aufrufe ab Zeile 254.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 254 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 254.
 TaskWorkflow.TaskWorkflow.Teil2.Calls332
-  Weitere eigene Aufrufe ab Zeile 332.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 332 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 332.
 TaskWorkflow.TaskWorkflow.Teil2.Calls384
-  Weitere eigene Aufrufe ab Zeile 384.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 384 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 384.
 TaskWorkflow.TaskWorkflow.Teil2.Calls420
-  Weitere eigene Aufrufe ab Zeile 420.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 420 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 420.
 TaskWorkflow.TaskWorkflow.Teil2.Calls444
-  Weitere eigene Aufrufe ab Zeile 444.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 444 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 444.
 return Z.243 return ( (div className='feature-workfl…
   Zeile 243: Rückgabe `return ( (div className='feature-workfl…`.
 ```
 
-- Fortsetzung von `TaskWorkflow.TaskWorkflow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.TaskWorkflow.Teil2.Calls254**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 254 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 254.
+> - **TaskWorkflow.TaskWorkflow.Teil2.Calls332**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 332 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 332.
+> - **TaskWorkflow.TaskWorkflow.Teil2.Calls384**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 384 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 384.
+> - **TaskWorkflow.TaskWorkflow.Teil2.Calls420**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 420 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 420.
+> - **TaskWorkflow.TaskWorkflow.Teil2.Calls444**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 444 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 444.
+> - **return Z.243 return ( (div className='feature-workfl…**: Zeile 243: Rückgabe `return ( (div className='feature-workfl…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `TaskWorkflow.TaskWorkflow`.

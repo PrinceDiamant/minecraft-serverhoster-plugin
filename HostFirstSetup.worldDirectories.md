@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.worldDirectories.Z208
-  Fortsetzung des Ablaufs ab Zeile 208.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 208 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 208.
 HostFirstSetup.worldDirectories.Z214
-  Fortsetzung des Ablaufs ab Zeile 214.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 214 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 214.
 return Z.222 return worlds;
   Zeile 222: Rückgabe `return worlds;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.worldDirectories.Z208**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 208 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 208.
+> - **HostFirstSetup.worldDirectories.Z214**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 214 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 214.
+> - **return Z.222 return worlds;**: Zeile 222: Rückgabe `return worlds;`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `worldDirectories` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

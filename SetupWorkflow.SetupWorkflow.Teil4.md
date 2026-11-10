@@ -26,17 +26,27 @@ flowchart TD
 if Z.248 state.required
   Zeile 248: prüft `state.required`.
 SetupWizard.SetupWizard
-  `SetupWizard` in `SetupWizard.tsx`. Ruft `loadBackupSettings`, `chooseAction`, `chooseCandidate`.
+  Der [[Glossar#Assistent|Assistent]] kümmert sich um den Assistenten. `SetupWizard` in `SetupWizard.tsx`. Ruft `loadBackupSettings`, `chooseAction`, `chooseCandidate`.
 return Z.248 return (SetupWizard state=(state) host=…
   Zeile 248: Rückgabe `return (SetupWizard state=(state) host=…`.
 SetupWorkflow.SetupWorkflow.Teil4.Calls258
-  Weitere eigene Aufrufe ab Zeile 258.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 258 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 258.
 SetupWorkflow.SetupWorkflow.Teil4.Calls328
-  Weitere eigene Aufrufe ab Zeile 328.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 328 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 328.
 SetupWorkflow.SetupWorkflow.Teil4.Calls372
-  Weitere eigene Aufrufe ab Zeile 372.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 372 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 372.
 return Z.250 return ( (section className='setup-work…
   Zeile 250: Rückgabe `return ( (section className='setup-work…`.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.248 state.required**: Zeile 248: prüft `state.required`.
+> - **SetupWizard.SetupWizard**: Der [[Glossar#Assistent|Assistent]] kümmert sich um den Assistenten. `SetupWizard` in `SetupWizard.tsx`. Ruft `loadBackupSettings`, `chooseAction`, `chooseCandidate`.
+> - **return Z.248 return (SetupWizard state=(state) host=…**: Zeile 248: Rückgabe `return (SetupWizard state=(state) host=…`.
+> - **SetupWorkflow.SetupWorkflow.Teil4.Calls258**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 258 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 258.
+> - **SetupWorkflow.SetupWorkflow.Teil4.Calls328**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 328 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 328.
+> - **SetupWorkflow.SetupWorkflow.Teil4.Calls372**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 372 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 372.
+> - **return Z.250 return ( (section className='setup-work…**: Zeile 250: Rückgabe `return ( (section className='setup-work…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow`.

@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 HostMinimize.writeEmptyWhitelist
-  Schreibt `writeEmptyWhitelist`. Ruft `assertEditable`.
+  Das Verkleinern des [[Glossar#Host|Host]] schreibt hier einen Schritt. Eine Ebene tiefer steht er genauer. Schreibt `writeEmptyWhitelist`. Ruft `assertEditable`.
 ```
 
-- Fortsetzung von `HostMinimize.apply.Teil4.Z177`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.writeEmptyWhitelist**: Das Verkleinern des [[Glossar#Host|Host]] schreibt hier einen Schritt. Eine Ebene tiefer steht er genauer. Schreibt `writeEmptyWhitelist`. Ruft `assertEditable`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimize.apply.Teil4.Z177`.

@@ -18,4 +18,9 @@ return Z.46 return report;
   Zeile 46: Rückgabe `return report;`.
 ```
 
-- Fortsetzung von `MemoryIncidentReport.write`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.45 Files.writeString(report, text, StandardCharsets.…**: Zeile 45: schreibt Text in eine Datei. `Files.writeString(report, text, StandardCharsets.…`
+> - **return Z.46 return report;**: Zeile 46: Rückgabe `return report;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `MemoryIncidentReport.write`.

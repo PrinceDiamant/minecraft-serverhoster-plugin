@@ -24,11 +24,19 @@ try Z.955
 if Z.956 (in == null)
   Zeile 956: prüft `(in == null)`.
 Dashboard.send
-  Sendet `send`. Ruft `sendBytes`.
+  Schickt die Antwort an den Browser. Sendet `send`. Ruft `sendBytes`.
 return Z.958 return;
   Zeile 958: Rückgabe `return;`.
 Dashboard.sendBytes
-  Sendet `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe. Sendet `sendBytes`.
 ```
 
-- Fortsetzung von `Dashboard.serveWebAsset`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.955**: Zeile 955: Versuch. Der Fehlerpfad geht in catch.
+> - **if Z.956 (in == null)**: Zeile 956: prüft `(in == null)`.
+> - **Dashboard.send**: Schickt die Antwort an den Browser. Sendet `send`. Ruft `sendBytes`.
+> - **return Z.958 return;**: Zeile 958: Rückgabe `return;`.
+> - **Dashboard.sendBytes**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe. Sendet `sendBytes`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 955 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.serveWebAsset`.

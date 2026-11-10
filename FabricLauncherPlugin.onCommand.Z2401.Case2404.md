@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.requestRestart(String)
-  Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.requestRestart(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] neu zu starten. Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2404.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

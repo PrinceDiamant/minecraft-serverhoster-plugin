@@ -16,4 +16,8 @@ return Z.123 return name != null && name.matches('backup-' + P…
   Zeile 123: Rückgabe `return name != null && name.matches('backup-' + P…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.123 return name != null && name.matches('backup-' + P…**: Zeile 123: Rückgabe `return name != null && name.matches('backup-' + P…`.
+
+- Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `named` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

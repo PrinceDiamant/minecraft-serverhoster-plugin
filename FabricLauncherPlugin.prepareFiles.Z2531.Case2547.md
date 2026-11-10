@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549
-  Fortsetzung des Ablaufs ab Zeile 2549.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2549 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2549.
 return Z.2559 return jar;
   Zeile 2559: Rückgabe `return jar;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2549 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2549.
+> - **return Z.2559 return jar;**: Zeile 2559: Rückgabe `return jar;`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2547.
+- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531`.

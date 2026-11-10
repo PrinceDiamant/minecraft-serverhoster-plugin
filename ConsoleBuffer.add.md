@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 ConsoleBuffer.add.Z15
-  Fortsetzung des Ablaufs ab Zeile 15.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 15 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 15.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ConsoleBuffer.add.Z15**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 15 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 15.
+
+- Dieser Teil fügt hinzu das.
 - `add` in `src/main/java/de/aichele/childlauncher/ConsoleBuffer.java`

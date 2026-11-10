@@ -18,4 +18,9 @@ if Z.48 (nl )= 0 && nl + 1 ( data.length())
   Zeile 48: prüft `(nl )= 0 && nl + 1 ( data.length())`.
 ```
 
-- Fortsetzung von `LogQuery.query.Teil1.Z31.Z40`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.42**: Zeile 42: Versuch. Der Fehlerpfad geht in catch.
+> - **if Z.48 (nl )= 0 && nl + 1 ( data.length())**: Zeile 48: prüft `(nl )= 0 && nl + 1 ( data.length())`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 42 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `LogQuery.query.Teil1.Z31.Z40`.

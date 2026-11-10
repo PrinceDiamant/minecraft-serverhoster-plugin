@@ -19,9 +19,14 @@ flowchart TD
 
 ```knoten
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 return Z.32 return ( settings, credentials: ( ...credentials,…
   Zeile 32: Rückgabe `return ( settings, credentials: ( ...credentials,…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **return Z.32 return ( settings, credentials: ( ...credentials,…**: Zeile 32: Rückgabe `return ( settings, credentials: ( ...credentials,…`.
+
+- Dieser Teil lädt die [[Glossar#Sicherungskopie|Sicherungskopie]] die [[Glossar#Einstellungen|Einstellungen]].
 - `loadBackupSettings` in `ui/src/components/BackupSettings.tsx`

@@ -21,9 +21,14 @@ flowchart TD
 
 ```knoten
 index.status.mb
-  `mb` in `index.html`. Ruft `n`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mb` in `index.html`. Ruft `n`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 ```
 
-- Fortsetzung von `index.status.Z101.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.status.mb**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mb` in `index.html`. Ruft `n`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 111 aufgerufen werden.
+- Fortsetzung von `index.status.Z101.Teil4`.

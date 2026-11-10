@@ -17,9 +17,15 @@ flowchart TD
 for Z.118 (Object item : list)
   Zeile 118: Schleife `(Object item : list)`.
 ScheduleDef.load.Z118.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 ScheduleDef.load.Z118.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `ScheduleDef.load`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.118 (Object item : list)**: Zeile 118: Schleife `(Object item : list)`.
+> - **ScheduleDef.load.Z118.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **ScheduleDef.load.Z118.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 118 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `ScheduleDef.load`.

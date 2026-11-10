@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.1574 (!activeSchedules.add(id))
-  Zeile 1574: prüft `(!activeSchedules.add(id))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1574.
 throw Z.1574 throw new IllegalStateException('Zeitplan läuft b…
-  Zeile 1574: Abbruch `throw new IllegalStateException('Zeitplan läuft b…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1574.
 FabricLauncherPlugin.runScheduleNow.Z1575
-  Fortsetzung des Ablaufs ab Zeile 1575.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1575 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1575`.
 ```
 
-- `runScheduleNow` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1574 (!activeSchedules.add(id))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1574.
+> - **throw Z.1574 throw new IllegalStateException('Zeitplan läuft b…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1574.
+> - **FabricLauncherPlugin.runScheduleNow.Z1575**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1575 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1575`.
+
+- Das [[Glossar#Plugin|Plugin]] führt aus den [[Glossar#Zeitplan|Zeitplan]] sofort.

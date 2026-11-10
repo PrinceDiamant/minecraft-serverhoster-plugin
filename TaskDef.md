@@ -15,11 +15,16 @@ flowchart TD
 
 ```knoten
 TaskDef.TaskDef
-  `TaskDef` in `TaskDef.java`. Ruft `normZone`, `normAction`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `TaskDef`.
 TaskDef.load
-  Lädt `load`. Ruft `str`, `TaskDef`.
+  Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
 TaskDef.str
-  `str` in `TaskDef.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `str`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **TaskDef.TaskDef**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `TaskDef`.
+> - **TaskDef.load**: Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
+> - **TaskDef.str**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `str`.
 
+- Eine [[Glossar#Aufgabe|Aufgabe]] aus der älteren Liste.

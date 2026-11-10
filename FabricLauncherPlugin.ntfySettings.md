@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 Schritt Z.203 FileConfiguration c = getConfig();
-  Zeile 203: liest die Config. `FileConfiguration c = getConfig();`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 203.
 return Z.204 return new NtfyNotifier.Settings(c.getBoolean('no…
-  Zeile 204: Rückgabe `return new NtfyNotifier.Settings(c.getBoolean('no…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 204.
 ```
 
-- `ntfySettings` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.203 FileConfiguration c = getConfig();**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 203.
+> - **return Z.204 return new NtfyNotifier.Settings(c.getBoolean('no…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 204.
+
+- Liest die [[Glossar#Einstellungen|Einstellungen]] für den Mitteilungsdienst.

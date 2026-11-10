@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 ProfileMerge.nvl
-  `nvl` in `ServerProfile.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `nvl` in `ServerProfile.java`.
 ProfileMerge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Dieser Teil kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 ProfileMerge.mergeProps
-  Mischt `mergeProps`.
+  Dieser Teil mischt die Eigenschaften. Mischt `mergeProps`.
 ```
 
-- Fortsetzung von `ProfileMerge.inherit`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ProfileMerge.nvl**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `nvl` in `ServerProfile.java`.
+> - **ProfileMerge.safeId**: Dieser Teil kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
+> - **ProfileMerge.mergeProps**: Dieser Teil mischt die Eigenschaften. Mischt `mergeProps`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 7524 aufgerufen werden.
+- Fortsetzung von `ProfileMerge.inherit`.

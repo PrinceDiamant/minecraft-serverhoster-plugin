@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 SetupWorkflow.SetupWorkflow.submit
-  Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
 VersionSelect.versionIsValid
-  `versionIsValid` in `VersionSelect.tsx`.
+  Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. `versionIsValid` in `VersionSelect.tsx`.
 VersionSelect.VersionSelect
-  `VersionSelect` in `VersionSelect.tsx`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wählt das. `VersionSelect` in `VersionSelect.tsx`.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SetupWorkflow.SetupWorkflow.submit**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
+> - **VersionSelect.versionIsValid**: Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. `versionIsValid` in `VersionSelect.tsx`.
+> - **VersionSelect.VersionSelect**: Die [[Glossar#Bedienseite|Bedienseite]] wählt das. `VersionSelect` in `VersionSelect.tsx`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 328 aufgerufen werden.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`.

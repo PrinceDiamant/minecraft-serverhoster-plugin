@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 SettingsWorkflow.SettingsWorkflow.Teil2.Calls81
-  Weitere eigene Aufrufe ab Zeile 81.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 81 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 81.
 SettingsWorkflow.SettingsWorkflow.Teil2.Calls118
-  Weitere eigene Aufrufe ab Zeile 118.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 118 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 118.
 return Z.73 return ( (section className='feature-wo…
   Zeile 73: Rückgabe `return ( (section className='feature-wo…`.
 ```
 
-- Fortsetzung von `SettingsWorkflow.SettingsWorkflow`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SettingsWorkflow.SettingsWorkflow.Teil2.Calls81**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 81 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 81.
+> - **SettingsWorkflow.SettingsWorkflow.Teil2.Calls118**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 118 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 118.
+> - **return Z.73 return ( (section className='feature-wo…**: Zeile 73: Rückgabe `return ( (section className='feature-wo…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SettingsWorkflow.SettingsWorkflow`.

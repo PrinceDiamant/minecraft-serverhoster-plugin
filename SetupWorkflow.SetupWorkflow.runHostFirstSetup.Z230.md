@@ -22,13 +22,21 @@ flowchart TD
 try Z.230
   Zeile 230: Versuch. Der Fehlerpfad geht in catch.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 catch Z.237 cause
   Zeile 237: fängt cause.
 finally Z.230
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow.runHostFirstSetup`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.230**: Zeile 230: Versuch. Der Fehlerpfad geht in catch.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+> - **catch Z.237 cause**: Zeile 237: fängt cause.
+> - **finally Z.230**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 230 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow.runHostFirstSetup`.

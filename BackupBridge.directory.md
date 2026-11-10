@@ -25,4 +25,10 @@ return Z.114 return Path.of(spec.directory).toAbsolutePath().n…
   Zeile 114: Rückgabe `return Path.of(spec.directory).toAbsolutePath().n…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.113 (spec.directory == null // spec.directory.isBlank…**: Zeile 113: prüft `(spec.directory == null // spec.directory.isBlank…`.
+> - **throw Z.113 throw new IllegalArgumentException('backup direct…**: Zeile 113: Abbruch `throw new IllegalArgumentException('backup direct…`.
+> - **return Z.114 return Path.of(spec.directory).toAbsolutePath().n…**: Zeile 114: Rückgabe `return Path.of(spec.directory).toAbsolutePath().n…`.
+
+- Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `directory` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

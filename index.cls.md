@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.120 return //bERROR/b/Exception/FATAL/.test(l)?'E'://…
-  Zeile 120: Rückgabe `return //bERROR/b/Exception/FATAL/.test(l)?'E'://…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 120.
 ```
 
-- `cls` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.120 return //bERROR/b/Exception/FATAL/.test(l)?'E'://…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 120.
+
+- Leert die Anzeige der [[Glossar#Konsole|Konsole]] in der älteren [[Glossar#Bedienseite|Bedienseite]].

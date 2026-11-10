@@ -28,9 +28,16 @@ if Z.308 (Files.isSymbolicLink(root))
 throw Z.308 throw new SecurityException('refusing symbolic li…
   Zeile 308: Abbruch `throw new SecurityException('refusing symbolic li…`.
 HostFirstSetup.deleteTree.visitFile
-  `visitFile` in `HostFirstSetup.java`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die Datei. `visitFile` in `HostFirstSetup.java`.
 HostFirstSetup.deleteTree.postVisitDirectory
-  Sendet POST `postVisitDirectory`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schickt hier einen Schritt. Eine Ebene tiefer steht er genauer. Sendet POST `postVisitDirectory`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.308 (Files.isSymbolicLink(root))**: Zeile 308: prüft `(Files.isSymbolicLink(root))`.
+> - **throw Z.308 throw new SecurityException('refusing symbolic li…**: Zeile 308: Abbruch `throw new SecurityException('refusing symbolic li…`.
+> - **HostFirstSetup.deleteTree.visitFile**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die Datei. `visitFile` in `HostFirstSetup.java`.
+> - **HostFirstSetup.deleteTree.postVisitDirectory**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schickt hier einen Schritt. Eine Ebene tiefer steht er genauer. Sendet POST `postVisitDirectory`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] löscht hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `deleteTree` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

@@ -17,9 +17,14 @@ flowchart TD
 
 ```knoten
 HostMinimize.lobbyNameSafe
-  `lobbyNameSafe` in `HostMinimize.java`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. `lobbyNameSafe` in `HostMinimize.java`.
 HostLobbyRuntime.apply
-  Wendet an `apply`. Ruft `worldNameSafe`.
+  Dieser Teil wendet an das. Wendet an `apply`. Ruft `worldNameSafe`.
 ```
 
-- Fortsetzung von `HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.lobbyNameSafe**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. `lobbyNameSafe` in `HostMinimize.java`.
+> - **HostLobbyRuntime.apply**: Dieser Teil wendet an das. Wendet an `apply`. Ruft `worldNameSafe`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`.

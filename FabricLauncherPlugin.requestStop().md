@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.requestStop(String)
-  Fordert an `requestStop`. Ruft `slot`, `stopBlocking`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestStop(String)`.
 ```
 
-- `requestStop` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:319–319 kein Aufruf, kein Treffer in plugin.yml/UI/Strings
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.requestStop(String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen. Im [[Glossar#Quelltext|Quelltext]] heißt das `requestStop(String)`.
+
+- Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu stoppen.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

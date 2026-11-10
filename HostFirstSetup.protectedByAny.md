@@ -28,11 +28,19 @@ for Z.249 (Path protectedPath : protectedPaths)
 if Z.251 (protectedPath(path, absolute) // Files.exists(ab…
   Zeile 251: prüft `(protectedPath(path, absolute) // Files.exists(ab…`.
 HostFirstSetup.protectedPath
-  `protectedPath` in `HostFirstSetup.java`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Pfad. `protectedPath` in `HostFirstSetup.java`.
 return Z.252 return true;
   Zeile 252: Rückgabe `return true;`.
 return Z.254 return false;
   Zeile 254: Rückgabe `return false;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **for Z.249 (Path protectedPath : protectedPaths)**: Zeile 249: Schleife `(Path protectedPath : protectedPaths)`.
+> - **if Z.251 (protectedPath(path, absolute) // Files.exists(ab…**: Zeile 251: prüft `(protectedPath(path, absolute) // Files.exists(ab…`.
+> - **HostFirstSetup.protectedPath**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Pfad. `protectedPath` in `HostFirstSetup.java`.
+> - **return Z.252 return true;**: Zeile 252: Rückgabe `return true;`.
+> - **return Z.254 return false;**: Zeile 254: Rückgabe `return false;`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `protectedByAny` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

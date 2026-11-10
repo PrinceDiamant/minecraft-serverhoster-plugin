@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 index.loadLog
-  Lädt `loadLog`. Ruft `$`, `api`, `renderLog`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt das Protokoll. Lädt `loadLog`. Ruft `$`, `api`, `renderLog`.
 ```
 
-- Fortsetzung von `index.loadLogs.Z150`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.loadLog**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt das Protokoll. Lädt `loadLog`. Ruft `$`, `api`, `renderLog`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.loadLogs.Z150`.

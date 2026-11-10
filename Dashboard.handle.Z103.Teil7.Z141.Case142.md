@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 Dashboard.token
-  `token` in `Dashboard.java`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `token` in `Dashboard.java`.
 Dashboard.cookie
-  `cookie` in `Dashboard.java`.
+  Liest oder setzt die [[Glossar#Anmeldung|Anmeldung]], die der Browser mitschickt. `cookie` in `Dashboard.java`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.token**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `token` in `Dashboard.java`.
+> - **Dashboard.cookie**: Liest oder setzt die [[Glossar#Anmeldung|Anmeldung]], die der Browser mitschickt. `cookie` in `Dashboard.java`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 142.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

@@ -14,4 +14,8 @@ return Z.153 return ctx;
   Zeile 153: Rückgabe `return ctx;`.
 ```
 
-- Fortsetzung von `HttpsSupport.fromPem`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.153 return ctx;**: Zeile 153: Rückgabe `return ctx;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HttpsSupport.fromPem`.

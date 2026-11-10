@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 kein eigener Aufruf
-  In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+  Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
 ```
 
-- `LifecycleTestProcess` in `src/test/java/de/aichele/childlauncher/LifecycleTestProcess.java`
-- Auslöser: Test
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

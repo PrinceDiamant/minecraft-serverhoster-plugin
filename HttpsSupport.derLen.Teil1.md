@@ -23,4 +23,10 @@ while Z.189 (v ) 0)
   Zeile 189: Schleife `(v ) 0)`.
 ```
 
-- Fortsetzung von `HttpsSupport.derLen`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.185 (len ( 128)**: Zeile 185: prüft `(len ( 128)`.
+> - **return Z.185 return new byte() ( (byte) len );**: Zeile 185: Rückgabe `return new byte() ( (byte) len );`.
+> - **while Z.189 (v ) 0)**: Zeile 189: Schleife `(v ) 0)`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HttpsSupport.derLen`.

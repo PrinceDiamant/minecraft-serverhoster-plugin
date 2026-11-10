@@ -15,10 +15,14 @@ flowchart TD
 
 ```knoten
 Dashboard.handle.Z103
-  Fortsetzung des Ablaufs ab Zeile 103.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 103 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z103`.
 Dashboard.handle.Aufrufe
-  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+  Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
 ```
 
-- Ein HTTP-Kontext `/`, verzweigt nach Methode und Pfad.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.handle.Z103**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 103 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z103`.
+> - **Dashboard.handle.Aufrufe**: Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
+
+- Nimmt eine Anfrage des Browsers an und verteilt sie an [[Glossar#Anmeldung|Anmeldung]], Zustand, Dateien oder die anderen Aufträge.
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

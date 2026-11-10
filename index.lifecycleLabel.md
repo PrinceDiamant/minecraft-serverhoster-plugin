@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.92 return s.setupRequired?'Einrichtung erforderlich'…
-  Zeile 92: Rückgabe `return s.setupRequired?'Einrichtung erforderlich'…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 92.
 ```
 
-- `lifecycleLabel` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.92 return s.setupRequired?'Einrichtung erforderlich'…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 92.
+
+- Setzt die Beschriftung, die den Zustand in der älteren [[Glossar#Bedienseite|Bedienseite]] zeigt.

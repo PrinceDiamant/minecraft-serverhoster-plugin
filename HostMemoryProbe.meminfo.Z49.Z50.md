@@ -31,4 +31,12 @@ catch Z.56 (NumberFormatException ignore…
   Zeile 56: fängt (NumberFormatException ignore….
 ```
 
-- Fortsetzung von `HostMemoryProbe.meminfo.Z49`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.50 (String line : Files.readAllLines(path))**: Zeile 50: Schleife `(String line : Files.readAllLines(path))`.
+> - **if Z.52 (colon ( 0)**: Zeile 52: prüft `(colon ( 0)`.
+> - **if Z.54 (parts.length ) 0)**: Zeile 54: prüft `(parts.length ) 0)`.
+> - **try Z.55**: Zeile 55: Versuch. Der Fehlerpfad geht in catch.
+> - **catch Z.56 (NumberFormatException ignore…**: Zeile 56: fängt (NumberFormatException ignore….
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 50 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostMemoryProbe.meminfo.Z49`.

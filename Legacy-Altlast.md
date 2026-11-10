@@ -13,32 +13,43 @@ flowchart TD
   n7["index.restoreBackup"]:::internal-link
   n8["index.doBackup"]:::internal-link
   n9["index.testBackup"]:::internal-link
-  n6 -->|"Z.216"| n5
-  n7 -->|"Z.217"| n5
-  n8 -->|"Z.218"| n5
+  n6 -->|"Zeile 216"| n5
+  n7 -->|"Zeile 217"| n5
+  n8 -->|"Zeile 218"| n5
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 index.pc
-  Sendet einen Spielerbefehl `pc`. Ruft `$`, `toast`, `cmd`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen [[Glossar#Befehl|Befehl]], der einen [[Glossar#Spieler|Spieler]] betrifft.
 index.loadPlayers
-  Lädt `loadPlayers`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Spieler|Spieler]].
 index.loadTasks
-  Lädt `loadTasks`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Aufgabe|Aufgaben]].
 index.runTask
-  Führt aus `runTask`. Ruft `post`, `toast`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Aufgabe|Aufgabe]].
 index.loadBackup
-  Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Sicherungskopie|Sicherungskopie]].
 index.delBackup
-  Löscht `delBackup`. Ruft `post`, `toast`, `loadBackup`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] löscht die [[Glossar#Sicherungskopie|Sicherungskopie]].
 index.restoreBackup
-  Stellt wieder her `restoreBackup`. Ruft `post`, `toast`, `loadBackup`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] stellt wieder her die [[Glossar#Sicherungskopie|Sicherungskopie]].
 index.doBackup
-  Führt aus `doBackup`. Ruft `post`, `$`, `toast`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Sicherungskopie|Sicherungskopie]].
 index.testBackup
-  Prüft `testBackup`. Ruft `post`, `toast`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] prüft die [[Glossar#Sicherungskopie|Sicherungskopie]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **index.pc**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] einen [[Glossar#Befehl|Befehl]], der einen [[Glossar#Spieler|Spieler]] betrifft.
+> - **index.loadPlayers**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Spieler|Spieler]].
+> - **index.loadTasks**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Aufgabe|Aufgaben]].
+> - **index.runTask**: Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Aufgabe|Aufgabe]].
+> - **index.loadBackup**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Sicherungskopie|Sicherungskopie]].
+> - **index.delBackup**: Die ältere [[Glossar#Bedienseite|Bedienseite]] löscht die [[Glossar#Sicherungskopie|Sicherungskopie]].
+> - **index.restoreBackup**: Die ältere [[Glossar#Bedienseite|Bedienseite]] stellt wieder her die [[Glossar#Sicherungskopie|Sicherungskopie]].
+> - **index.doBackup**: Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Sicherungskopie|Sicherungskopie]].
+> - **index.testBackup**: Die ältere [[Glossar#Bedienseite|Bedienseite]] prüft die [[Glossar#Sicherungskopie|Sicherungskopie]].
 
+- Bereiche der älteren [[Glossar#Bedienseite|Bedienseite]], die die neuere Seite aus dem laufenden Text herausschneidet. Sie bleiben in der Datei, laufen aber nicht mit.

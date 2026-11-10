@@ -23,13 +23,20 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 index.updateCharts
-  Aktualisiert `updateCharts`. Ruft `pushChartValue`, `$`, `chartCard`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert die Kurven. Aktualisiert `updateCharts`. Ruft `pushChartValue`, `$`, `chartCard`.
 index.spark
-  Zeichnet eine Sparkline `spark`.
+  Zeichnet in der älteren [[Glossar#Bedienseite|Bedienseite]] eine kleine Kurve der letzten Messwerte. Zeichnet eine Sparkline `spark`.
 ```
 
-- Fortsetzung von `index.status.Z101`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **index.updateCharts**: Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert die Kurven. Aktualisiert `updateCharts`. Ruft `pushChartValue`, `$`, `chartCard`.
+> - **index.spark**: Zeichnet in der älteren [[Glossar#Bedienseite|Bedienseite]] eine kleine Kurve der letzten Messwerte. Zeichnet eine Sparkline `spark`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.status.Z101`.

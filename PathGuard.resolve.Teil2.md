@@ -23,4 +23,10 @@ return Z.30 return p;
   Zeile 30: Rückgabe `return p;`.
 ```
 
-- Fortsetzung von `PathGuard.resolve`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.29 (check == null // !check.toRealPath().startsWith(…**: Zeile 29: prüft `(check == null // !check.toRealPath().startsWith(…`.
+> - **throw Z.29 throw new SecurityException('Pfad außerhalb des S…**: Zeile 29: Abbruch `throw new SecurityException('Pfad außerhalb des S…`.
+> - **return Z.30 return p;**: Zeile 30: Rückgabe `return p;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `PathGuard.resolve`.

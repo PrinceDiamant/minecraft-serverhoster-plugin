@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 PathGuard.root
-  Liefert die Wurzel `root`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Wurzel `root`.
 return Z.184 return p.toRealPath().startsWith(guard.…
   Zeile 184: Rückgabe `return p.toRealPath().startsWith(guard.…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **PathGuard.root**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Wurzel `root`.
+> - **return Z.184 return p.toRealPath().startsWith(guard.…**: Zeile 184: Rückgabe `return p.toRealPath().startsWith(guard.…`.
+
+- Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `pRealInside` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

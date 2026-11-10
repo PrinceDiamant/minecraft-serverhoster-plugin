@@ -31,7 +31,15 @@ if Z.163 (whitelistExisted)
 for Z.164 (Path file : files)
   Zeile 164: Schleife `(Path file : files)`.
 HostMinimize.assertEditable
-  Prüft `assertEditable`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertEditable`.
 ```
 
-- Fortsetzung von `HostMinimize.apply`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.160 (Files.exists(root.resolve('spigot.yml'), LinkOpt…**: Zeile 160: prüft `(Files.exists(root.resolve('spigot.yml'), LinkOpt…`.
+> - **Schritt Z.162 boolean whitelistExisted = Files.exists(whitelist…**: Zeile 162: Dateioperation. `boolean whitelistExisted = Files.exists(whitelist…`
+> - **if Z.163 (whitelistExisted)**: Zeile 163: prüft `(whitelistExisted)`.
+> - **for Z.164 (Path file : files)**: Zeile 164: Schleife `(Path file : files)`.
+> - **HostMinimize.assertEditable**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertEditable`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimize.apply`.

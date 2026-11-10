@@ -26,4 +26,10 @@ return Z.189 return m;
   Zeile 189: Rückgabe `return m;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.187 (base != null)**: Zeile 187: prüft `(base != null)`.
+> - **if Z.188 (over != null)**: Zeile 188: prüft `(over != null)`.
+> - **return Z.189 return m;**: Zeile 189: Rückgabe `return m;`.
+
+- Dieser Teil mischt die Eigenschaften.
 - `mergeProps` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

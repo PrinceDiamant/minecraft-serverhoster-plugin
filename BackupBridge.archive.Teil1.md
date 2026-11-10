@@ -24,11 +24,19 @@ if Z.127 (spec.directory == null // spec.directory.isBlank…
 throw Z.127 throw new IOException('backup directory');
   Zeile 127: Abbruch `throw new IOException('backup directory');`.
 PathGuard.open
-  Öffnet `open`. Ruft `PathGuard`.
+  Dieser Teil öffnet das. Öffnet `open`. Ruft `PathGuard`.
 Schritt Z.130 Files.createDirectories(dir);
   Zeile 130: Dateioperation. `Files.createDirectories(dir);`
 BackupBridge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 ```
 
-- Fortsetzung von `BackupBridge.archive`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.127 (spec.directory == null // spec.directory.isBlank…**: Zeile 127: prüft `(spec.directory == null // spec.directory.isBlank…`.
+> - **throw Z.127 throw new IOException('backup directory');**: Zeile 127: Abbruch `throw new IOException('backup directory');`.
+> - **PathGuard.open**: Dieser Teil öffnet das. Öffnet `open`. Ruft `PathGuard`.
+> - **Schritt Z.130 Files.createDirectories(dir);**: Zeile 130: Dateioperation. `Files.createDirectories(dir);`
+> - **BackupBridge.safeId**: Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `BackupBridge.archive`.

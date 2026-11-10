@@ -14,4 +14,8 @@ Schritt Z.1206 Runtime runtime = Runtime.getRuntime();
   Zeile 1206: fragt die JVM-Laufzeit. `Runtime runtime = Runtime.getRuntime();`
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.writeMemoryIncidentReport`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.1206 Runtime runtime = Runtime.getRuntime();**: Zeile 1206: fragt die JVM-Laufzeit. `Runtime runtime = Runtime.getRuntime();`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.writeMemoryIncidentReport`.

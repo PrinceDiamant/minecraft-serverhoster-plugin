@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 SettingsWorkflow.SettingsWorkflow.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 SettingsWorkflow.SettingsWorkflow.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 SettingsWorkflow.SettingsWorkflow.onPageChange
-  Reagiert `onPageChange`. Ruft `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
 SettingsWorkflow.SettingsWorkflow.update
-  Aktualisiert `update`.
+  Die [[Glossar#Bedienseite|Bedienseite]] ändert das. Aktualisiert `update`.
 SettingsWorkflow.SettingsWorkflow.save
-  Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
+  Die [[Glossar#Bedienseite|Bedienseite]] speichert das. Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SettingsWorkflow.SettingsWorkflow.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **SettingsWorkflow.SettingsWorkflow.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **SettingsWorkflow.SettingsWorkflow.onPageChange**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
+> - **SettingsWorkflow.SettingsWorkflow.update**: Die [[Glossar#Bedienseite|Bedienseite]] ändert das. Aktualisiert `update`.
+> - **SettingsWorkflow.SettingsWorkflow.save**: Die [[Glossar#Bedienseite|Bedienseite]] speichert das. Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf.
 - `SettingsWorkflow` in `ui/src/components/SettingsWorkflow.tsx`

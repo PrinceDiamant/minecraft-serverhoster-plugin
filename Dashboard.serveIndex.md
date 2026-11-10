@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 try Z.934
-  Zeile 934: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 934.
 Dashboard.sendBytes
-  Sendet `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendBytes`.
 ```
 
-- `serveIndex` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **try Z.934**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 934.
+> - **Dashboard.sendBytes**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendBytes`.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liefert die Position.

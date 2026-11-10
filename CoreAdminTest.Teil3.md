@@ -22,21 +22,31 @@ flowchart TD
 
 ```knoten
 CoreAdminTest.logQueryFiltersFromTheEnd
-  `logQueryFiltersFromTheEnd` in `CoreAdminTest.java`. Ruft `query`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `logQueryFiltersFromTheEnd`.
 CoreAdminTest.checksumMismatch
-  `checksumMismatch` in `CoreAdminTest.java`. Ruft `digest`, `checkHash`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `checksumMismatch`.
 CoreAdminTest.selfSignedHandshakeAndPem
-  `selfSignedHandshakeAndPem` in `CoreAdminTest.java`. Ruft `build`, `configure`, `client`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `selfSignedHandshakeAndPem`.
 CoreAdminTest.pem
-  `pem` in `CoreAdminTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `pem`.
 CoreAdminTest.rsaPkcs1
-  `rsaPkcs1` in `CoreAdminTest.java`. Ruft `derValue`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `rsaPkcs1`.
 CoreAdminTest.derValue
-  `derValue` in `CoreAdminTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `derValue`.
 CoreAdminTest.probeAndIndexContract
-  `probeAndIndexContract` in `CoreAdminTest.java`. Ruft `snapshot`, `jcmd`, `disk`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `probeAndIndexContract`.
 CoreAdminTest.client
-  `client` in `CoreAdminTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `client`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **CoreAdminTest.logQueryFiltersFromTheEnd**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `logQueryFiltersFromTheEnd`.
+> - **CoreAdminTest.checksumMismatch**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `checksumMismatch`.
+> - **CoreAdminTest.selfSignedHandshakeAndPem**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `selfSignedHandshakeAndPem`.
+> - **CoreAdminTest.pem**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `pem`.
+> - **CoreAdminTest.rsaPkcs1**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `rsaPkcs1`.
+> - **CoreAdminTest.derValue**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `derValue`.
+> - **CoreAdminTest.probeAndIndexContract**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `probeAndIndexContract`.
+> - **CoreAdminTest.client**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `client`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

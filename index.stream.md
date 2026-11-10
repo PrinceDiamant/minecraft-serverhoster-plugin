@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 if Z.123 es
-  Zeile 123: prüft `es`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 123.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
 index.addLine
-  Fügt hinzu `addLine`. Ruft `$`, `cls`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] fügt hinzu eine [[Glossar#Zeile|Zeile]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `addLine`.
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
 ```
 
-- `stream` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.123 es**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 123.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
+> - **index.addLine**: Die ältere [[Glossar#Bedienseite|Bedienseite]] fügt hinzu eine [[Glossar#Zeile|Zeile]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `addLine`.
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `api`.
+
+- Hält die Verbindung offen, damit neue Konsolenzeilen von selbst nachkommen.

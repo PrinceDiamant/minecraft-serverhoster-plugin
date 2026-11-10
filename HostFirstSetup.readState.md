@@ -33,9 +33,18 @@ if Z.192 (!Files.isRegularFile(marker, LinkOption.NOFOLLOW…
 return Z.192 return Map.of();
   Zeile 192: Rückgabe `return Map.of();`.
 HostMinimize.readState
-  Liest `readState`.
+  Das Verkleinern des [[Glossar#Host|Host]] liest den Zustand. Liest `readState`.
 return Z.193 return HostMinimize.readState(Files.rea…
   Zeile 193: Rückgabe `return HostMinimize.readState(Files.rea…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.191 (Files.isSymbolicLink(marker))**: Zeile 191: prüft `(Files.isSymbolicLink(marker))`.
+> - **throw Z.191 throw new SecurityException('host setup marker mu…**: Zeile 191: Abbruch `throw new SecurityException('host setup marker mu…`.
+> - **if Z.192 (!Files.isRegularFile(marker, LinkOption.NOFOLLOW…**: Zeile 192: prüft `(!Files.isRegularFile(marker, LinkOption.NOFOLLOW…`.
+> - **return Z.192 return Map.of();**: Zeile 192: Rückgabe `return Map.of();`.
+> - **HostMinimize.readState**: Das Verkleinern des [[Glossar#Host|Host]] liest den Zustand. Liest `readState`.
+> - **return Z.193 return HostMinimize.readState(Files.rea…**: Zeile 193: Rückgabe `return HostMinimize.readState(Files.rea…`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest den Zustand.
 - `readState` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

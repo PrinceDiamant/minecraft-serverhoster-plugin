@@ -16,4 +16,8 @@ return Z.2381 return world.getName();
   Zeile 2381: Rückgabe `return world.getName();`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.2381 return world.getName();**: Zeile 2381: Rückgabe `return world.getName();`.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `name` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

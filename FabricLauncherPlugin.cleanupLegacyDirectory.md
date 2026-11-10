@@ -23,11 +23,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.cleanupLegacyDirectory.preVisitDirectory
-  `preVisitDirectory` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `preVisitDirectory` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.cleanupLegacyDirectory.visitFile
-  `visitFile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um die Datei. `visitFile` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.cleanupLegacyDirectory.postVisitDirectory
-  Sendet POST `postVisitDirectory`.
+  Das [[Glossar#Plugin|Plugin]] schickt hier einen Schritt. Eine Ebene tiefer steht er genauer. Sendet POST `postVisitDirectory`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.cleanupLegacyDirectory.preVisitDirectory**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `preVisitDirectory` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.cleanupLegacyDirectory.visitFile**: Das [[Glossar#Plugin|Plugin]] kümmert sich um die Datei. `visitFile` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.cleanupLegacyDirectory.postVisitDirectory**: Das [[Glossar#Plugin|Plugin]] schickt hier einen Schritt. Eine Ebene tiefer steht er genauer. Sendet POST `postVisitDirectory`.
+
+- Das [[Glossar#Plugin|Plugin]] räumt auf den alten Weg.
 - `cleanupLegacyDirectory` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

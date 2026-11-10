@@ -14,4 +14,8 @@ return Z.2017 return outcome == ChildStopSequence.Outcome.CLEAN;
   Zeile 2017: Rückgabe `return outcome == ChildStopSequence.Outcome.CLEAN;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.2017 return outcome == ChildStopSequence.Outcome.CLEAN;**: Zeile 2017: Rückgabe `return outcome == ChildStopSequence.Outcome.CLEAN;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994`.

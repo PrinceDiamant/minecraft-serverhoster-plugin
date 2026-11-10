@@ -18,11 +18,17 @@ flowchart TD
 
 ```knoten
 HostFirstSetup.readLevelNames.Z259
-  Fortsetzung des Ablaufs ab Zeile 259.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 259 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 259.
 if Z.265 (names.isEmpty())
   Zeile 265: prüft `(names.isEmpty())`.
 return Z.266 return names;
   Zeile 266: Rückgabe `return names;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostFirstSetup.readLevelNames.Z259**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 259 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 259.
+> - **if Z.265 (names.isEmpty())**: Zeile 265: prüft `(names.isEmpty())`.
+> - **return Z.266 return names;**: Zeile 266: Rückgabe `return names;`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest die Namen.
 - `readLevelNames` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

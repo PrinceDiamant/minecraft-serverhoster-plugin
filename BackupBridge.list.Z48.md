@@ -26,9 +26,17 @@ for Z.49 (Path p : ds)
 if Z.50 (!named(safe, p.getFileName().toString()) // !Fil…
   Zeile 50: prüft `(!named(safe, p.getFileName().toString()) // !Fil…`.
 BackupBridge.named
-  `named` in `BackupBridge.java`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `named` in `BackupBridge.java`.
 Schritt Z.51 BasicFileAttributes a = Files.readAttributes(p, B…
   Zeile 51: Dateioperation. `BasicFileAttributes a = Files.readAttributes(p, B…`
 ```
 
-- Fortsetzung von `BackupBridge.list`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.48**: Zeile 48: Versuch. Der Fehlerpfad geht in catch.
+> - **for Z.49 (Path p : ds)**: Zeile 49: Schleife `(Path p : ds)`.
+> - **if Z.50 (!named(safe, p.getFileName().toString()) // !Fil…**: Zeile 50: prüft `(!named(safe, p.getFileName().toString()) // !Fil…`.
+> - **BackupBridge.named**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `named` in `BackupBridge.java`.
+> - **Schritt Z.51 BasicFileAttributes a = Files.readAttributes(p, B…**: Zeile 51: Dateioperation. `BasicFileAttributes a = Files.readAttributes(p, B…`
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 48 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `BackupBridge.list`.

@@ -29,4 +29,11 @@ return Z.320 return FileVisitResult.CONTINUE;
   Zeile 320: Rückgabe `return FileVisitResult.CONTINUE;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.318 (error != null)**: Zeile 318: prüft `(error != null)`.
+> - **throw Z.318 throw error;**: Zeile 318: Abbruch `throw error;`.
+> - **Schritt Z.319 Files.delete(directory);**: Zeile 319: Dateioperation. `Files.delete(directory);`
+> - **return Z.320 return FileVisitResult.CONTINUE;**: Zeile 320: Rückgabe `return FileVisitResult.CONTINUE;`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schickt hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `postVisitDirectory` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

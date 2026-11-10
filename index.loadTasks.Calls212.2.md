@@ -17,7 +17,11 @@ flowchart TD
 
 ```knoten
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 ```
 
-- Fortsetzung von `index.loadTasks`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+
+- Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht.
+- Fortsetzung von `index.loadTasks`.

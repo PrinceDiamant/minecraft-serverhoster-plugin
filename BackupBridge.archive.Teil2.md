@@ -22,7 +22,7 @@ flowchart TD
 
 ```knoten
 BackupBridge.archive.Teil2.Z136
-  Fortsetzung des Ablaufs ab Zeile 136.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 136 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 136.
 if Z.156 (files == 0)
   Zeile 156: prüft `(files == 0)`.
 Schritt Z.156 Files.deleteIfExists(zip);
@@ -32,7 +32,16 @@ throw Z.156 throw new IOException('nothing to archive');
 Schritt Z.158 long bytes = Files.size(zip);
   Zeile 158: Dateioperation. `long bytes = Files.size(zip);`
 BackupBridge.retain
-  Behält die letzten Stücke `retain`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Behält die letzten Stücke `retain`.
 ```
 
-- Fortsetzung von `BackupBridge.archive`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.archive.Teil2.Z136**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 136 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 136.
+> - **if Z.156 (files == 0)**: Zeile 156: prüft `(files == 0)`.
+> - **Schritt Z.156 Files.deleteIfExists(zip);**: Zeile 156: Dateioperation. `Files.deleteIfExists(zip);`
+> - **throw Z.156 throw new IOException('nothing to archive');**: Zeile 156: Abbruch `throw new IOException('nothing to archive');`.
+> - **Schritt Z.158 long bytes = Files.size(zip);**: Zeile 158: Dateioperation. `long bytes = Files.size(zip);`
+> - **BackupBridge.retain**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Behält die letzten Stücke `retain`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `BackupBridge.archive`.

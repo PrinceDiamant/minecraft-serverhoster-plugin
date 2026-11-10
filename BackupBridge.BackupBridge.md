@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die Sicherung auf diesem Rechner sichert hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `BackupBridge` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

@@ -24,17 +24,25 @@ flowchart TD
 
 ```knoten
 if Z.804 (!request.has(key) // !request.get(key).isJsonPri…
-  Zeile 804: prüft `(!request.has(key) // !request.get(key).isJsonPri…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 804.
 throw Z.805 throw new IllegalArgumentException(key + ' muss e…
-  Zeile 805: Abbruch `throw new IllegalArgumentException(key + ' muss e…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 805.
 try Z.806
-  Zeile 806: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 806.
 return Z.806 return request.get(key).getAsBigDecimal().longVal…
-  Zeile 806: Rückgabe `return request.get(key).getAsBigDecimal().longVal…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 806.
 catch Z.807 (ArithmeticException / Number…
-  Zeile 807: fängt (ArithmeticException / Number….
+  Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 807.
 throw Z.808 throw new IllegalArgumentException(key + ' muss e…
-  Zeile 808: Abbruch `throw new IllegalArgumentException(key + ' muss e…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 808.
 ```
 
-- `requiredLong` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.804 (!request.has(key) // !request.get(key).isJsonPri…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 804.
+> - **throw Z.805 throw new IllegalArgumentException(key + ' muss e…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 805.
+> - **try Z.806**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 806.
+> - **return Z.806 return request.get(key).getAsBigDecimal().longVal…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 806.
+> - **catch Z.807 (ArithmeticException / Number…**: Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 807.
+> - **throw Z.808 throw new IllegalArgumentException(key + ' muss e…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 808.
+
+- Liest eine große Zahl, die in der Anfrage dabei sein muss.

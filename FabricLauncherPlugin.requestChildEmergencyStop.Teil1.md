@@ -24,15 +24,24 @@ flowchart TD
 if Z.1148 (memoryProtectionPolicy.emergencyStopStarted())
   Zeile 1148: prüft `(memoryProtectionPolicy.emergencyStopStarted())`.
 MemoryProtectionPolicy.emergencyStopStarted
-  `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+  Dieser Teil stoppt hier einen Schritt. Eine Ebene tiefer steht er genauer. `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
 return Z.1148 return;
   Zeile 1148: Rückgabe `return;`.
 FabricLauncherPlugin.requestChildEmergencyStop.Teil1.Z1150
-  Fortsetzung des Ablaufs ab Zeile 1150.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1150 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1150.
 MemoryProtectionPolicy.startEmergencyStop
-  Startet `startEmergencyStop`.
+  Dieser Teil startet den [[Glossar#Notstopp|Notstopp]] den [[Glossar#Stopp|Stopp]]. Startet `startEmergencyStop`.
 HostMemoryProbe.Snapshot.cgroupUsePercent
-  `cgroupUsePercent` in `HostMemoryProbe.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroupUsePercent` in `HostMemoryProbe.java`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1148 (memoryProtectionPolicy.emergencyStopStarted())**: Zeile 1148: prüft `(memoryProtectionPolicy.emergencyStopStarted())`.
+> - **MemoryProtectionPolicy.emergencyStopStarted**: Dieser Teil stoppt hier einen Schritt. Eine Ebene tiefer steht er genauer. `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+> - **return Z.1148 return;**: Zeile 1148: Rückgabe `return;`.
+> - **FabricLauncherPlugin.requestChildEmergencyStop.Teil1.Z1150**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1150 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1150.
+> - **MemoryProtectionPolicy.startEmergencyStop**: Dieser Teil startet den [[Glossar#Notstopp|Notstopp]] den [[Glossar#Stopp|Stopp]]. Startet `startEmergencyStop`.
+> - **HostMemoryProbe.Snapshot.cgroupUsePercent**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroupUsePercent` in `HostMemoryProbe.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`.

@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 PropertiesFile.preview.Z37
-  Fortsetzung des Ablaufs ab Zeile 37.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 37 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 37.
 PropertiesFile.preview.Z51
-  Fortsetzung des Ablaufs ab Zeile 51.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 51 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 51.
 return Z.61 return List.copyOf(result);
   Zeile 61: Rückgabe `return List.copyOf(result);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **PropertiesFile.preview.Z37**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 37 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 37.
+> - **PropertiesFile.preview.Z51**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 51 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 51.
+> - **return Z.61 return List.copyOf(result);**: Zeile 61: Rückgabe `return List.copyOf(result);`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `preview` in `src/main/java/de/aichele/childlauncher/PropertiesFile.java`

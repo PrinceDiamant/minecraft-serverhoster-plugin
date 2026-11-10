@@ -23,13 +23,21 @@ flowchart TD
 for Z.88 TABS
   Zeile 88: Schleife `TABS`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 if Z.89 t==='props'
   Zeile 89: prüft `t==='props'`.
 index.loadTxt
-  Lädt `loadTxt`. Ruft `api`, `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den Text. Lädt `loadTxt`. Ruft `api`, `$`.
 index.loadPropertiesPreview
-  Lädt `loadPropertiesPreview`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die Eigenschaften die Vorschau. Lädt `loadPropertiesPreview`. Ruft `api`, `$`, `esc`.
 ```
 
-- Fortsetzung von `index.tab`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.88 TABS**: Zeile 88: Schleife `TABS`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **if Z.89 t==='props'**: Zeile 89: prüft `t==='props'`.
+> - **index.loadTxt**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den Text. Lädt `loadTxt`. Ruft `api`, `$`.
+> - **index.loadPropertiesPreview**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die Eigenschaften die Vorschau. Lädt `loadPropertiesPreview`. Ruft `api`, `$`, `esc`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.tab`.

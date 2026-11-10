@@ -42,9 +42,20 @@ if Z.279 (!running.getParent().equals(realPlugins))
 throw Z.280 throw new SecurityException('the running ServerHo…
   Zeile 280: Abbruch `throw new SecurityException('the running ServerHo…`.
 HostFirstSetup.otherPluginJars.Z282
-  Fortsetzung des Ablaufs ab Zeile 282.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 282 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 282.
 return Z.296 return List.copyOf(result);
   Zeile 296: Rückgabe `return List.copyOf(result);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.271 (Files.isSymbolicLink(plugins) // !Files.isDirect…**: Zeile 271: prüft `(Files.isSymbolicLink(plugins) // !Files.isDirect…`.
+> - **throw Z.272 throw new IOException('plugins must be a regular …**: Zeile 272: Abbruch `throw new IOException('plugins must be a regular …`.
+> - **if Z.273 (runningPluginJar == null // Files.isSymbolicLink…**: Zeile 273: prüft `(runningPluginJar == null // Files.isSymbolicLink…`.
+> - **throw Z.275 throw new IOException('Could not identify the run…**: Zeile 275: Abbruch `throw new IOException('Could not identify the run…`.
+> - **if Z.279 (!running.getParent().equals(realPlugins))**: Zeile 279: prüft `(!running.getParent().equals(realPlugins))`.
+> - **throw Z.280 throw new SecurityException('the running ServerHo…**: Zeile 280: Abbruch `throw new SecurityException('the running ServerHo…`.
+> - **HostFirstSetup.otherPluginJars.Z282**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 282 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 282.
+> - **return Z.296 return List.copyOf(result);**: Zeile 296: Rückgabe `return List.copyOf(result);`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `otherPluginJars` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

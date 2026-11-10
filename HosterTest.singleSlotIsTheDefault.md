@@ -16,5 +16,9 @@ Schritt Z.65 String yml = Files.readString(Path.of('src/main/r…
   Zeile 65: liest Text aus einer Datei. `String yml = Files.readString(Path.of('src/main/r…`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.65 String yml = Files.readString(Path.of('src/main/r…**: Zeile 65: liest Text aus einer Datei. `String yml = Files.readString(Path.of('src/main/r…`
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `singleSlotIsTheDefault` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

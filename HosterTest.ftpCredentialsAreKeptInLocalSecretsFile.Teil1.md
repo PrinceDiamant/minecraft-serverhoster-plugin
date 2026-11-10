@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 BackupSecrets.load
-  Lädt `load`. Ruft `restrict`.
+  Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
 Schritt Z.37 Files.writeString(secrets, 'backup:/n ftp:/n user…
   Zeile 37: schreibt Text in eine Datei. `Files.writeString(secrets, 'backup:/n ftp:/n user…`
 ```
 
-- Fortsetzung von `HosterTest.ftpCredentialsAreKeptInLocalSecretsFile`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupSecrets.load**: Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
+> - **Schritt Z.37 Files.writeString(secrets, 'backup:/n ftp:/n user…**: Zeile 37: schreibt Text in eine Datei. `Files.writeString(secrets, 'backup:/n ftp:/n user…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.ftpCredentialsAreKeptInLocalSecretsFile`.

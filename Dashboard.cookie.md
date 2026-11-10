@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.91 return 'FLS=' + token + '; Path=/; Max-Age=' + ma…
-  Zeile 91: Rückgabe `return 'FLS=' + token + '; Path=/; Max-Age=' + ma…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 91.
 ```
 
-- `cookie` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.91 return 'FLS=' + token + '; Path=/; Max-Age=' + ma…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 91.
+
+- Liest oder setzt die [[Glossar#Anmeldung|Anmeldung]], die der Browser mitschickt.

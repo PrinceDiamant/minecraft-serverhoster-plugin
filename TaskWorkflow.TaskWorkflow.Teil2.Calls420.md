@@ -21,9 +21,14 @@ flowchart TD
 
 ```knoten
 TaskWorkflow.TaskWorkflow.updateDraft
-  Aktualisiert `updateDraft`.
+  Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
 TaskWorkflow.newId
-  `newId` in `TaskWorkflow.tsx`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die Kennung. `newId` in `TaskWorkflow.tsx`.
 ```
 
-- Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **TaskWorkflow.TaskWorkflow.updateDraft**: Die [[Glossar#Bedienseite|Bedienseite]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateDraft`.
+> - **TaskWorkflow.newId**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die Kennung. `newId` in `TaskWorkflow.tsx`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 420 aufgerufen werden.
+- Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`.

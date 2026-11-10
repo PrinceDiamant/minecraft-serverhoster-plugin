@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 return Z.161 return;
   Zeile 161: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1.Z157`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **return Z.161 return;**: Zeile 161: Rückgabe `return;`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 161.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1.Z157`.

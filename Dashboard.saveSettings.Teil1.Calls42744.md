@@ -17,9 +17,14 @@ flowchart TD
 
 ```knoten
 Dashboard.requiredString
-  Liest verpflichtend `requiredString`.
+  Liest einen Text, der in der Anfrage dabei sein muss. Liest verpflichtend `requiredString`.
 Dashboard.requiredInt
-  Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+  Liest eine Zahl, die in der Anfrage dabei sein muss. Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
 ```
 
-- Fortsetzung von `Dashboard.saveSettings.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.requiredString**: Liest einen Text, der in der Anfrage dabei sein muss. Liest verpflichtend `requiredString`.
+> - **Dashboard.requiredInt**: Liest eine Zahl, die in der Anfrage dabei sein muss. Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 42744 aufgerufen werden.
+- Fortsetzung von `Dashboard.saveSettings.Teil1`.

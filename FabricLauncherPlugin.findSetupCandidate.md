@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 SetupDiscovery.scan
-  Durchsucht `scan`. Ruft `legacyPluginVersion`, `isAtLeast`, `loadLegacyConfig`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Durchsucht `scan`. Ruft `legacyPluginVersion`, `isAtLeast`, `loadLegacyConfig`.
 return Z.665 return SetupDiscovery.scan(root, oldCon…
   Zeile 665: Rückgabe `return SetupDiscovery.scan(root, oldCon…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupDiscovery.scan**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Durchsucht `scan`. Ruft `legacyPluginVersion`, `isAtLeast`, `loadLegacyConfig`.
+> - **return Z.665 return SetupDiscovery.scan(root, oldCon…**: Zeile 665: Rückgabe `return SetupDiscovery.scan(root, oldCon…`.
+
+- Das [[Glossar#Plugin|Plugin]] sucht die [[Glossar#Einrichtung|Einrichtung]].
 - `findSetupCandidate` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

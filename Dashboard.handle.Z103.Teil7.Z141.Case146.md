@@ -26,19 +26,29 @@ flowchart TD
 
 ```knoten
 Dashboard.body
-  `body` in `Dashboard.java`. Ruft `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `body` in `Dashboard.java`. Ruft `readBodyText`.
 if Z.148 (c.isEmpty())
   Zeile 148: prüft `(c.isEmpty())`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 return Z.148 return;
   Zeile 148: Rückgabe `return;`.
 FabricLauncherPlugin.console(String)
-  Liefert die Konsole `console`. Ruft `slot`.
+  Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]]. Liefert die Konsole `console`. Ruft `slot`.
 ConsoleBuffer.add
-  Fügt hinzu `add`.
+  Dieser Teil fügt hinzu das. Fügt hinzu `add`.
 FabricLauncherPlugin.sendCommand(String,String)
-  Sendet `sendCommand`. Ruft `send`, `slot`.
+  Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Sendet `sendCommand`. Ruft `send`, `slot`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.body**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `body` in `Dashboard.java`. Ruft `readBodyText`.
+> - **if Z.148 (c.isEmpty())**: Zeile 148: prüft `(c.isEmpty())`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **return Z.148 return;**: Zeile 148: Rückgabe `return;`.
+> - **FabricLauncherPlugin.console(String)**: Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]]. Liefert die Konsole `console`. Ruft `slot`.
+> - **ConsoleBuffer.add**: Dieser Teil fügt hinzu das. Fügt hinzu `add`.
+> - **FabricLauncherPlugin.sendCommand(String,String)**: Schickt einen [[Glossar#Befehl|Befehl]] in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Sendet `sendCommand`. Ruft `send`, `slot`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 146.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

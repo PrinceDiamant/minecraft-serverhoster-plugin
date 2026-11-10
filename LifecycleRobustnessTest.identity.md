@@ -16,5 +16,9 @@ return Z.285 return new ChildProcessRecord.Identity(pid, start…
   Zeile 285: Rückgabe `return new ChildProcessRecord.Identity(pid, start…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.285 return new ChildProcessRecord.Identity(pid, start…**: Zeile 285: Rückgabe `return new ChildProcessRecord.Identity(pid, start…`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `identity` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

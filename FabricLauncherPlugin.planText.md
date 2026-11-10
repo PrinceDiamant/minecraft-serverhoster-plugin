@@ -19,13 +19,19 @@ flowchart TD
 
 ```knoten
 LaunchPlan.text
-  Antwortet mit Text `text`. Ruft `argv`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `text`.
 FabricLauncherPlugin.javaBin
-  Liefert das Java-Binary `javaBin`. Ruft `isWindows`.
+  Liefert das Java-Programm, mit dem der [[Glossar#Spielserver|Spielserver]] gestartet wird. Im [[Glossar#Quelltext|Quelltext]] heißt das `javaBin`.
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `profile`.
 return Z.853 return LaunchPlan.text(javaBin(), profi…
-  Zeile 853: Rückgabe `return LaunchPlan.text(javaBin(), profi…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 853.
 ```
 
-- `planText` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **LaunchPlan.text**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `text`.
+> - **FabricLauncherPlugin.javaBin**: Liefert das Java-Programm, mit dem der [[Glossar#Spielserver|Spielserver]] gestartet wird. Im [[Glossar#Quelltext|Quelltext]] heißt das `javaBin`.
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `profile`.
+> - **return Z.853 return LaunchPlan.text(javaBin(), profi…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 853.
+
+- Schreibt den [[Glossar#Startplan|Startplan]] als lesbaren Text.

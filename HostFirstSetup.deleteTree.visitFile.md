@@ -20,4 +20,9 @@ return Z.313 return FileVisitResult.CONTINUE;
   Zeile 313: Rückgabe `return FileVisitResult.CONTINUE;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.312 Files.delete(file);**: Zeile 312: Dateioperation. `Files.delete(file);`
+> - **return Z.313 return FileVisitResult.CONTINUE;**: Zeile 313: Rückgabe `return FileVisitResult.CONTINUE;`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die Datei.
 - `visitFile` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

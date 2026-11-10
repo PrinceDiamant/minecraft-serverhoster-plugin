@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 ChildProcessRecord.reap
-  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+  Dieser Teil räumt weg das. Räumt übrige [[Glossar#Prozess|Prozesse]] ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
 LifecycleRobustnessTest.FakeProcesses.FakeProcesses
-  `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
 Schritt Z.119 assertTrue(Files.isSymbolicLink(link));
   Zeile 119: Dateioperation. `assertTrue(Files.isSymbolicLink(link));`
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.symlinkRecordIsRejected`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ChildProcessRecord.reap**: Dieser Teil räumt weg das. Räumt übrige [[Glossar#Prozess|Prozesse]] ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+> - **LifecycleRobustnessTest.FakeProcesses.FakeProcesses**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+> - **Schritt Z.119 assertTrue(Files.isSymbolicLink(link));**: Zeile 119: Dateioperation. `assertTrue(Files.isSymbolicLink(link));`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.symlinkRecordIsRejected`.

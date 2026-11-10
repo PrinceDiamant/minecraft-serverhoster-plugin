@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 BackupBridge.insert.Z196
-  Fortsetzung des Ablaufs ab Zeile 196.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 196 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 196.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.insert.Z196**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 196 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 196.
+
+- Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `insert` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

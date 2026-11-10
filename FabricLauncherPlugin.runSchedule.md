@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.noteTask
-  Merkt `noteTask`.
+  Schreibt auf, dass eine [[Glossar#Aufgabe|Aufgabe]] gelaufen ist. Im [[Glossar#Quelltext|Quelltext]] heißt das `noteTask`.
 FabricLauncherPlugin.runSchedule.Z1602
-  Fortsetzung des Ablaufs ab Zeile 1602.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1602 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1602`.
 FabricLauncherPlugin.runSchedule.Aufrufe
-  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+  Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
 ```
 
-- `runSchedule` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.noteTask**: Schreibt auf, dass eine [[Glossar#Aufgabe|Aufgabe]] gelaufen ist. Im [[Glossar#Quelltext|Quelltext]] heißt das `noteTask`.
+> - **FabricLauncherPlugin.runSchedule.Z1602**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1602 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1602`.
+> - **FabricLauncherPlugin.runSchedule.Aufrufe**: Aufrufe, die das Diagramm nicht in den gezeichneten Ablauf gesetzt hat. Im [[Glossar#Quelltext|Quelltext]] heißt das `Aufrufe`.
+
+- Das [[Glossar#Plugin|Plugin]] führt aus den [[Glossar#Zeitplan|Zeitplan]].
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

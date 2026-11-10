@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 SettingsWorkflow.SettingsWorkflow.save
-  Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
+  Die [[Glossar#Bedienseite|Bedienseite]] speichert das. Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
 SettingsWorkflow.SettingsWorkflow.update
-  Aktualisiert `update`.
+  Die [[Glossar#Bedienseite|Bedienseite]] ändert das. Aktualisiert `update`.
 ```
 
-- Fortsetzung von `SettingsWorkflow.SettingsWorkflow.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+> - **SettingsWorkflow.SettingsWorkflow.save**: Die [[Glossar#Bedienseite|Bedienseite]] speichert das. Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
+> - **SettingsWorkflow.SettingsWorkflow.update**: Die [[Glossar#Bedienseite|Bedienseite]] ändert das. Aktualisiert `update`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 81 aufgerufen werden.
+- Fortsetzung von `SettingsWorkflow.SettingsWorkflow.Teil2`.

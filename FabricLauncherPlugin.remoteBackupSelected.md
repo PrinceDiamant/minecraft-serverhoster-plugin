@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 Schritt Z.1465 String storage = getConfig().getString('backup.st…
-  Zeile 1465: liest die Config. `String storage = getConfig().getString('backup.st…`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1465.
 if Z.1466 (storage == null)
-  Zeile 1466: prüft `(storage == null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1466.
 return Z.1467 return switch (storage.trim().toLowerCase(Locale.…
-  Zeile 1467: Rückgabe `return switch (storage.trim().toLowerCase(Locale.…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1467.
 ```
 
-- `remoteBackupSelected` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.1465 String storage = getConfig().getString('backup.st…**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1465.
+> - **if Z.1466 (storage == null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1466.
+> - **return Z.1467 return switch (storage.trim().toLowerCase(Locale.…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1467.
+
+- Das [[Glossar#Plugin|Plugin]] sichert die Auswahl.

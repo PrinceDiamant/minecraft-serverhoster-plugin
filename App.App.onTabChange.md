@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `onTabChange` in `ui/src/App.tsx`

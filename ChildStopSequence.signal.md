@@ -24,4 +24,10 @@ catch Z.78 (RuntimeException e)
   Zeile 78: fängt (RuntimeException e).
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.76**: Zeile 76: Versuch. Der Fehlerpfad geht in catch.
+> - **Schritt Z.77 process.descendants().forEach(force ? ProcessHand…**: Zeile 77: `process.descendants().forEach(force ? ProcessHand…`
+> - **catch Z.78 (RuntimeException e)**: Zeile 78: fängt (RuntimeException e).
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `signal` in `src/main/java/de/aichele/childlauncher/ChildStopSequence.java`

@@ -15,7 +15,12 @@ flowchart TD
 try Z.282
   Zeile 282: Versuch. Der Fehlerpfad geht in catch.
 HostFirstSetup.otherPluginJars.Z282.Z283
-  Fortsetzung des Ablaufs ab Zeile 283.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 283 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 283.
 ```
 
-- Fortsetzung von `HostFirstSetup.otherPluginJars`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.282**: Zeile 282: Versuch. Der Fehlerpfad geht in catch.
+> - **HostFirstSetup.otherPluginJars.Z282.Z283**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 283 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 283.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 282 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostFirstSetup.otherPluginJars`.

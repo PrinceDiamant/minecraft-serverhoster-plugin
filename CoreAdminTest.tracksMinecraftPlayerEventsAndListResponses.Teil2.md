@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.trackPlayers
-  Führt mit `trackPlayers`.
+  Merkt sich, welche [[Glossar#Spieler|Spieler]] gerade auf dem [[Glossar#Spielserver|Spielserver]] sind. Führt mit `trackPlayers`.
 ```
 
-- Fortsetzung von `CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.trackPlayers**: Merkt sich, welche [[Glossar#Spieler|Spieler]] gerade auf dem [[Glossar#Spielserver|Spielserver]] sind. Führt mit `trackPlayers`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses`.

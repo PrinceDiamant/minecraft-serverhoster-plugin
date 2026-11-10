@@ -26,11 +26,19 @@ if Z.26 ('custom'.equalsIgnoreCase(profile.type))
 return Z.26 return Paths.get(profile.customJar == null // pro…
   Zeile 26: Rückgabe `return Paths.get(profile.customJar == null // pro…`.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
 LaunchPlan.jarName
-  Betrifft das Jar `jarName`. Ruft `fileName`.
+  Dieser Teil kümmert sich um den Namen. Betrifft das Jar `jarName`. Ruft `fileName`.
 return Z.27 return profile.directory().resolve(jarN…
   Zeile 27: Rückgabe `return profile.directory().resolve(jarN…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.26 ('custom'.equalsIgnoreCase(profile.type))**: Zeile 26: prüft `('custom'.equalsIgnoreCase(profile.type))`.
+> - **return Z.26 return Paths.get(profile.customJar == null // pro…**: Zeile 26: Rückgabe `return Paths.get(profile.customJar == null // pro…`.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
+> - **LaunchPlan.jarName**: Dieser Teil kümmert sich um den Namen. Betrifft das Jar `jarName`. Ruft `fileName`.
+> - **return Z.27 return profile.directory().resolve(jarN…**: Zeile 27: Rückgabe `return profile.directory().resolve(jarN…`.
+
+- Dieser Teil kümmert sich um den Pfad.
 - `jarPath` in `src/main/java/de/aichele/childlauncher/LaunchPlan.java`

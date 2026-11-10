@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.1564 (schedule.lastRun() (= 0)
-  Zeile 1564: prüft `(schedule.lastRun() (= 0)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1564.
 return Z.1564 return false;
-  Zeile 1564: Rückgabe `return false;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1564.
 return Z.1570 return previous.equals(current);
-  Zeile 1570: Rückgabe `return previous.equals(current);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1570.
 ```
 
-- `sameScheduleMinute` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1564 (schedule.lastRun() (= 0)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1564.
+> - **return Z.1564 return false;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1564.
+> - **return Z.1570 return previous.equals(current);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1570.
+
+- Das [[Glossar#Plugin|Plugin]] plant Zeitpunkt.

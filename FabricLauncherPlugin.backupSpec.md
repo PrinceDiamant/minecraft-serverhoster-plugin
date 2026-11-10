@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 Schritt Z.1486 FileConfiguration c = getConfig();
-  Zeile 1486: liest die Config. `FileConfiguration c = getConfig();`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1486.
 if Z.1489 (!path.isAbsolute())
-  Zeile 1489: prüft `(!path.isAbsolute())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1489.
 return Z.1490 return new BackupBridge.Spec(path.toString(), c.g…
-  Zeile 1490: Rückgabe `return new BackupBridge.Spec(path.toString(), c.g…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1490.
 ```
 
-- `backupSpec` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.1486 FileConfiguration c = getConfig();**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1486.
+> - **if Z.1489 (!path.isAbsolute())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1489.
+> - **return Z.1490 return new BackupBridge.Spec(path.toString(), c.g…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1490.
+
+- Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe.

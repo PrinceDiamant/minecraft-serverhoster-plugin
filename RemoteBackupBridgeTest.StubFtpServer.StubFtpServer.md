@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridgeTest.StubFtpServer.serve
-  Liefert `serve`. Ruft `serveConnection`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `serve`.
 ```
 
-- `StubFtpServer` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
-- Auslöser: Test
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridgeTest.StubFtpServer.serve**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `serve`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

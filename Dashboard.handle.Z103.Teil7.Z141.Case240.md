@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 FabricLauncherPlugin.setupView
-  `setupView` in `FabricLauncherPlugin.java`. Ruft `getWorldRoot`, `scan`, `view`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um die Ansicht. `setupView` in `FabricLauncherPlugin.java`. Ruft `getWorldRoot`, `scan`, `view`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **FabricLauncherPlugin.setupView**: Das [[Glossar#Plugin|Plugin]] kümmert sich um die Ansicht. `setupView` in `FabricLauncherPlugin.java`. Ruft `getWorldRoot`, `scan`, `view`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 240.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

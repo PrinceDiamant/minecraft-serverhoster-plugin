@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 BackupBridge.file
-  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
 BackupBridge.restoreZip
-  Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+  Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
 return Z.76 return restoreZip(work, zip);
   Zeile 76: Rückgabe `return restoreZip(work, zip);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.file**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+> - **BackupBridge.restoreZip**: Die Sicherung auf diesem Rechner stellt wieder her hier einen Schritt. Eine Ebene tiefer steht er genauer. Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+> - **return Z.76 return restoreZip(work, zip);**: Zeile 76: Rückgabe `return restoreZip(work, zip);`.
+
+- Die Sicherung auf diesem Rechner stellt wieder her das.
 - `restore` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 BackupSecrets.saveFtp
-  Speichert `saveFtp`. Ruft `load`, `restrict`.
+  Dieser Teil speichert die Übertragung. Speichert `saveFtp`. Ruft `load`, `restrict`.
 BackupSecrets.load
-  Lädt `load`. Ruft `restrict`.
+  Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
 Schritt Z.97 assertTrue(Files.readString(tmp.resolve('secrets.…
   Zeile 97: liest Text aus einer Datei. `assertTrue(Files.readString(tmp.resolve('secrets.…`
 ```
 
-- Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupSecrets.saveFtp**: Dieser Teil speichert die Übertragung. Speichert `saveFtp`. Ruft `load`, `restrict`.
+> - **BackupSecrets.load**: Dieser Teil lädt das. Lädt `load`. Ruft `restrict`.
+> - **Schritt Z.97 assertTrue(Files.readString(tmp.resolve('secrets.…**: Zeile 97: liest Text aus einer Datei. `assertTrue(Files.readString(tmp.resolve('secrets.…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`.

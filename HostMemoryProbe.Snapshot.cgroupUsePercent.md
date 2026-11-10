@@ -16,4 +16,8 @@ return Z.31 return cgroupLimitMb ) 0 && cgroupCurrentMb )= 0 …
   Zeile 31: Rückgabe `return cgroupLimitMb ) 0 && cgroupCurrentMb )= 0 …`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.31 return cgroupLimitMb ) 0 && cgroupCurrentMb )= 0 …**: Zeile 31: Rückgabe `return cgroupLimitMb ) 0 && cgroupCurrentMb )= 0 …`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `cgroupUsePercent` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 ProcessProbe.jcmd(long,String,long)
-  `jcmd` in `ProcessProbe.java`. Ruft `abbreviate`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `jcmd` in `ProcessProbe.java`. Ruft `abbreviate`.
 return Z.71 return jcmd(pid, command, 20);
   Zeile 71: Rückgabe `return jcmd(pid, command, 20);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ProcessProbe.jcmd(long,String,long)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `jcmd` in `ProcessProbe.java`. Ruft `abbreviate`.
+> - **return Z.71 return jcmd(pid, command, 20);**: Zeile 71: Rückgabe `return jcmd(pid, command, 20);`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `jcmd` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

@@ -19,9 +19,15 @@ flowchart TD
 Schritt Z.256 Files.writeString(log, 'INFO start/nWARN disk/nER…
   Zeile 256: schreibt Text in eine Datei. `Files.writeString(log, 'INFO start/nWARN disk/nER…`
 LogQuery.query
-  Fragt ab `query`. Ruft `levelOk`.
+  Dieser Teil fragt ab das. Fragt ab `query`. Ruft `levelOk`.
 Schritt Z.264 Files.write(tmp.resolve('big.log'), big);
   Zeile 264: Dateioperation. `Files.write(tmp.resolve('big.log'), big);`
 ```
 
-- Fortsetzung von `CoreAdminTest.logQueryFiltersFromTheEnd`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.256 Files.writeString(log, 'INFO start/nWARN disk/nER…**: Zeile 256: schreibt Text in eine Datei. `Files.writeString(log, 'INFO start/nWARN disk/nER…`
+> - **LogQuery.query**: Dieser Teil fragt ab das. Fragt ab `query`. Ruft `levelOk`.
+> - **Schritt Z.264 Files.write(tmp.resolve('big.log'), big);**: Zeile 264: Dateioperation. `Files.write(tmp.resolve('big.log'), big);`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.logQueryFiltersFromTheEnd`.

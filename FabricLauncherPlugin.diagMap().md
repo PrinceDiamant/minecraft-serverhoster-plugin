@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.diagMap(String)
-  Sammelt die Diagnose `diagMap`. Ruft `slot`, `pid`, `running`.
+  Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `diagMap(String)`.
 return Z.879 return diagMap(focus);
-  Zeile 879: Rückgabe `return diagMap(focus);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 879.
 ```
 
-- `diagMap` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.diagMap(String)**: Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `diagMap(String)`.
+> - **return Z.879 return diagMap(focus);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 879.
+
+- Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht.

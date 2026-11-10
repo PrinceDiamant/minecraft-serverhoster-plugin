@@ -27,23 +27,36 @@ flowchart TD
 case Z.142 'POST /api/logout'
   Zeile 142: Zweig `'POST /api/logout'`.
 Dashboard.handle.Z103.Teil7.Z141.Case142
-  Rumpf dieses switch-Zweigs ab Zeile 142.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 142. Rumpf dieses switch-Zweigs ab Zeile 142.
 case Z.143 'GET /api/status'
   Zeile 143: Zweig `'GET /api/status'`.
 Dashboard.handle.Z103.Teil7.Z141.Case143
-  Rumpf dieses switch-Zweigs ab Zeile 143.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 143. Rumpf dieses switch-Zweigs ab Zeile 143.
 case Z.144 'GET /api/console'
   Zeile 144: Zweig `'GET /api/console'`.
 Dashboard.handle.Z103.Teil7.Z141.Case144
-  Rumpf dieses switch-Zweigs ab Zeile 144.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 144. Rumpf dieses switch-Zweigs ab Zeile 144.
 case Z.145 'GET /api/console/stream'
   Zeile 145: Zweig `'GET /api/console/stream'`.
 Dashboard.sse
-  `sse` in `Dashboard.java`. Ruft `console`, `subscribe`, `unsubscribe`.
+  Hält eine Verbindung offen, über die neue Konsolenzeilen an den Browser laufen. `sse` in `Dashboard.java`. Ruft `console`, `subscribe`, `unsubscribe`.
 case Z.146 'POST /api/cmd'
   Zeile 146: Zweig `'POST /api/cmd'`.
 Dashboard.handle.Z103.Teil7.Z141.Case146
-  Rumpf dieses switch-Zweigs ab Zeile 146.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 146. Rumpf dieses switch-Zweigs ab Zeile 146.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **case Z.142 'POST /api/logout'**: Zeile 142: Zweig `'POST /api/logout'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case142**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 142. Rumpf dieses switch-Zweigs ab Zeile 142.
+> - **case Z.143 'GET /api/status'**: Zeile 143: Zweig `'GET /api/status'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case143**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 143. Rumpf dieses switch-Zweigs ab Zeile 143.
+> - **case Z.144 'GET /api/console'**: Zeile 144: Zweig `'GET /api/console'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case144**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 144. Rumpf dieses switch-Zweigs ab Zeile 144.
+> - **case Z.145 'GET /api/console/stream'**: Zeile 145: Zweig `'GET /api/console/stream'`.
+> - **Dashboard.sse**: Hält eine Verbindung offen, über die neue Konsolenzeilen an den Browser laufen. `sse` in `Dashboard.java`. Ruft `console`, `subscribe`, `unsubscribe`.
+> - **case Z.146 'POST /api/cmd'**: Zeile 146: Zweig `'POST /api/cmd'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case146**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 146. Rumpf dieses switch-Zweigs ab Zeile 146.
+
+- Weitere Wege der Entscheidung in [[Glossar#Zeile|Zeile]] 142.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

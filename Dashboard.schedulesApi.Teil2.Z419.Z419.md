@@ -19,11 +19,18 @@ flowchart TD
 sync Z.419
   Zeile 419: synchronisierter Block.
 FabricLauncherPlugin.schedules
-  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
 Dashboard.scheduleIndex
-  Plant `scheduleIndex`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Position. Plant `scheduleIndex`.
 FabricLauncherPlugin.saveSchedules
-  Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+  Das [[Glossar#Plugin|Plugin]] speichert die Zeitpläne. Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
 ```
 
-- Fortsetzung von `Dashboard.schedulesApi.Teil2.Z419`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.419**: Zeile 419: synchronisierter Block.
+> - **FabricLauncherPlugin.schedules**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+> - **Dashboard.scheduleIndex**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Position. Plant `scheduleIndex`.
+> - **FabricLauncherPlugin.saveSchedules**: Das [[Glossar#Plugin|Plugin]] speichert die Zeitpläne. Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 419 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.schedulesApi.Teil2.Z419`.

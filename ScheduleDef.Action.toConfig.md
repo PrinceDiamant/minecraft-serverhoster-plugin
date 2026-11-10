@@ -16,4 +16,8 @@ return Z.53 return result;
   Zeile 53: Rückgabe `return result;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.53 return result;**: Zeile 53: Rückgabe `return result;`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]].
 - `toConfig` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

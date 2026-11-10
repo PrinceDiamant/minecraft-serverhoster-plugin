@@ -27,19 +27,28 @@ flowchart TD
 
 ```knoten
 if Z.1301 (schedules.size() ) ScheduleDef.MAX_SCHEDULES)
-  Zeile 1301: prüft `(schedules.size() ) ScheduleDef.MAX_SCHEDULES)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1301.
 throw Z.1302 throw new IllegalArgumentException('Zu viele Zeit…
-  Zeile 1302: Abbruch `throw new IllegalArgumentException('Zu viele Zeit…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1302.
 if Z.1303 (schedules.stream().map(ScheduleDef::id).distinct…
-  Zeile 1303: prüft `(schedules.stream().map(ScheduleDef::id).distinct…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1303.
 throw Z.1304 throw new IllegalArgumentException('Schedule-IDs …
-  Zeile 1304: Abbruch `throw new IllegalArgumentException('Schedule-IDs …`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1304.
 sync Z.1305
-  Zeile 1305: synchronisierter Block.
+  Hier wartet die [[Glossar#Funktion|Funktion]], damit nicht zwei Arbeitsstränge denselben Schritt gleichzeitig machen. Das steht in [[Glossar#Zeile|Zeile]] 1305.
 ScheduleDef.toConfig
-  `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `toConfig`.
 FabricLauncherPlugin.saveConfigWritable
-  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+  Speichert die [[Glossar#Einstellungsdatei|Einstellungsdatei]] und setzt danach die [[Glossar#Dateirechte|Dateirechte]] so, dass sie beschreibbar bleibt. Im [[Glossar#Quelltext|Quelltext]] heißt das `saveConfigWritable`.
 ```
 
-- `saveSchedules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1301 (schedules.size() ) ScheduleDef.MAX_SCHEDULES)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1301.
+> - **throw Z.1302 throw new IllegalArgumentException('Zu viele Zeit…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1302.
+> - **if Z.1303 (schedules.stream().map(ScheduleDef::id).distinct…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1303.
+> - **throw Z.1304 throw new IllegalArgumentException('Schedule-IDs …**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1304.
+> - **sync Z.1305**: Hier wartet die [[Glossar#Funktion|Funktion]], damit nicht zwei Arbeitsstränge denselben Schritt gleichzeitig machen. Das steht in [[Glossar#Zeile|Zeile]] 1305.
+> - **ScheduleDef.toConfig**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die [[Glossar#Einstellungen|Einstellungen]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `toConfig`.
+> - **FabricLauncherPlugin.saveConfigWritable**: Speichert die [[Glossar#Einstellungsdatei|Einstellungsdatei]] und setzt danach die [[Glossar#Dateirechte|Dateirechte]] so, dass sie beschreibbar bleibt. Im [[Glossar#Quelltext|Quelltext]] heißt das `saveConfigWritable`.
+
+- Das [[Glossar#Plugin|Plugin]] speichert die Zeitpläne.

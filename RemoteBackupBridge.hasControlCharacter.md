@@ -38,4 +38,13 @@ return Z.310 return false;
   Zeile 310: Rückgabe `return false;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.305 (value == null)**: Zeile 305: prüft `(value == null)`.
+> - **return Z.305 return false;**: Zeile 305: Rückgabe `return false;`.
+> - **for Z.306 (int i = 0; i ( value.length(); i++)**: Zeile 306: Schleife `(int i = 0; i ( value.length(); i++)`.
+> - **if Z.308 (c ( 0x20 // c == 0x7f)**: Zeile 308: prüft `(c ( 0x20 // c == 0x7f)`.
+> - **return Z.308 return true;**: Zeile 308: Rückgabe `return true;`.
+> - **return Z.310 return false;**: Zeile 310: Rückgabe `return false;`.
+
+- Die Sicherung über das Netz prüft hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `hasControlCharacter` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

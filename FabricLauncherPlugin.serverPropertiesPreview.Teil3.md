@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 PropertiesFile.preview
-  Zeigt die Vorschau `preview`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Zeigt die Vorschau `preview`.
 return Z.2666 return PropertiesFile.preview(propertie…
   Zeile 2666: Rückgabe `return PropertiesFile.preview(propertie…`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.serverPropertiesPreview`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **PropertiesFile.preview**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Zeigt die Vorschau `preview`.
+> - **return Z.2666 return PropertiesFile.preview(propertie…**: Zeile 2666: Rückgabe `return PropertiesFile.preview(propertie…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.serverPropertiesPreview`.

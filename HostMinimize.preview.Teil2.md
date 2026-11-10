@@ -19,11 +19,18 @@ flowchart TD
 for Z.143 (var entry : spigotChanges().entrySet())
   Zeile 143: Schleife `(var entry : spigotChanges().entrySet())`.
 HostMinimize.spigotChanges
-  `spigotChanges` in `HostMinimize.java`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spigotChanges` in `HostMinimize.java`.
 HostMinimize.preservedNotes
-  `preservedNotes` in `HostMinimize.java`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `preservedNotes` in `HostMinimize.java`.
 return Z.146 return new Preview(List.copyOf(changes)…
   Zeile 146: Rückgabe `return new Preview(List.copyOf(changes)…`.
 ```
 
-- Fortsetzung von `HostMinimize.preview`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.143 (var entry : spigotChanges().entrySet())**: Zeile 143: Schleife `(var entry : spigotChanges().entrySet())`.
+> - **HostMinimize.spigotChanges**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spigotChanges` in `HostMinimize.java`.
+> - **HostMinimize.preservedNotes**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `preservedNotes` in `HostMinimize.java`.
+> - **return Z.146 return new Preview(List.copyOf(changes)…**: Zeile 146: Rückgabe `return new Preview(List.copyOf(changes)…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimize.preview`.

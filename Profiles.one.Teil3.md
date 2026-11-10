@@ -32,13 +32,23 @@ if Z.116 (flags == null)
 if Z.117 (args == null)
   Zeile 117: prüft `(args == null)`.
 Profiles.bool
-  `bool` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bool` in `ServerProfile.java`.
 ServerProfile.ServerProfile
-  `ServerProfile` in `ServerProfile.java`.
+  Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
 Profiles.props
-  `props` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `props` in `ServerProfile.java`.
 return Z.120 return new ServerProfile(id, type, mc, …
   Zeile 120: Rückgabe `return new ServerProfile(id, type, mc, …`.
 ```
 
-- Fortsetzung von `Profiles.one`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.115 (rootDefaults)**: Zeile 115: prüft `(rootDefaults)`.
+> - **if Z.116 (flags == null)**: Zeile 116: prüft `(flags == null)`.
+> - **if Z.117 (args == null)**: Zeile 117: prüft `(args == null)`.
+> - **Profiles.bool**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bool` in `ServerProfile.java`.
+> - **ServerProfile.ServerProfile**: Die Serverbeschreibung kümmert sich um die Beschreibung. `ServerProfile` in `ServerProfile.java`.
+> - **Profiles.props**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `props` in `ServerProfile.java`.
+> - **return Z.120 return new ServerProfile(id, type, mc, …**: Zeile 120: Rückgabe `return new ServerProfile(id, type, mc, …`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Profiles.one`.

@@ -2,6 +2,8 @@
 
 # befunde
 
+Jede Zeile ist ein [[Glossar#Befund|Befund]]. Was die Kategorien bedeuten, steht im [[Glossar]].
+
 | Kategorie | Einschätzung | Fundstelle | Diagramm |
 | --- | --- | --- | --- |
 | doppelte Implementierung | sicher | ui/src/App.tsx:100–141 und src/main/resources/web/index.html | [[Dashboard-UI]] |

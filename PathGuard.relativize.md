@@ -16,4 +16,8 @@ return Z.33 return root.relativize(p).toString().replace('//'…
   Zeile 33: Rückgabe `return root.relativize(p).toString().replace('//'…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.33 return root.relativize(p).toString().replace('//'…**: Zeile 33: Rückgabe `return root.relativize(p).toString().replace('//'…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `relativize` in `src/main/java/de/aichele/childlauncher/PathGuard.java`

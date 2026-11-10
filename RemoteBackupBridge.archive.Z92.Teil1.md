@@ -15,11 +15,17 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.enterDirectory
-  Wechselt hinein `enterDirectory`. Ruft `enterBaseDirectory`, `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterDirectory`. Ruft `enterBaseDirectory`, `replyError`.
 RemoteBackupBridge.archive.Z92.Teil1.Z99
-  Fortsetzung des Ablaufs ab Zeile 99.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 99 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 99.
 RemoteBackupBridge.CountingOutputStream.count
-  Zählt `count`.
+  Die Sicherung über das Netz zählt das. Zählt `count`.
 ```
 
-- Fortsetzung von `RemoteBackupBridge.archive.Z92`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.enterDirectory**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Wechselt hinein `enterDirectory`. Ruft `enterBaseDirectory`, `replyError`.
+> - **RemoteBackupBridge.archive.Z92.Teil1.Z99**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 99 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 99.
+> - **RemoteBackupBridge.CountingOutputStream.count**: Die Sicherung über das Netz zählt das. Zählt `count`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `RemoteBackupBridge.archive.Z92`.

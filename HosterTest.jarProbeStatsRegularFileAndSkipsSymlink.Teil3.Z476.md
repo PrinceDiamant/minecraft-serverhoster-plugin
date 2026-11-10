@@ -21,13 +21,21 @@ flowchart TD
 if Z.476 (tryCreateSymbolicLink(dir.resolve('spigot-26.3.j…
   Zeile 476: prüft `(tryCreateSymbolicLink(dir.resolve('spigot-26.3.j…`.
 HosterTest.tryCreateSymbolicLink
-  `tryCreateSymbolicLink` in `HosterTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `tryCreateSymbolicLink` in `HosterTest.java`. Nur Test.
 JarProbe.inspect
-  `inspect` in `JarProbe.java`. Ruft `jarPath`, `jarName`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `inspect` in `JarProbe.java`. Ruft `jarPath`, `jarName`.
 HosterTest.profile
-  `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
 JarProbe.text
-  Antwortet mit Text `text`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`.
 ```
 
-- Fortsetzung von `HosterTest.jarProbeStatsRegularFileAndSkipsSymlink.Teil3`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.476 (tryCreateSymbolicLink(dir.resolve('spigot-26.3.j…**: Zeile 476: prüft `(tryCreateSymbolicLink(dir.resolve('spigot-26.3.j…`.
+> - **HosterTest.tryCreateSymbolicLink**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `tryCreateSymbolicLink` in `HosterTest.java`. Nur Test.
+> - **JarProbe.inspect**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `inspect` in `JarProbe.java`. Ruft `jarPath`, `jarName`.
+> - **HosterTest.profile**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
+> - **JarProbe.text**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 476 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HosterTest.jarProbeStatsRegularFileAndSkipsSymlink.Teil3`.

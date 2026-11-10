@@ -27,4 +27,11 @@ for Z.344 (int i = 0; i ( count; i++)
   Zeile 344: Schleife `(int i = 0; i ( count; i++)`.
 ```
 
-- Fortsetzung von `CoreAdminTest.derValue`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.337 (firstLength ( 0x80)**: Zeile 337: prüft `(firstLength ( 0x80)`.
+> - **if Z.341 (count == 0 // count ) 4 // content + count ) der…**: Zeile 341: prüft `(count == 0 // count ) 4 // content + count ) der…`.
+> - **throw Z.342 throw new IllegalArgumentException('Invalid DER l…**: Zeile 342: Abbruch `throw new IllegalArgumentException('Invalid DER l…`.
+> - **for Z.344 (int i = 0; i ( count; i++)**: Zeile 344: Schleife `(int i = 0; i ( count; i++)`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 337 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `CoreAdminTest.derValue`.

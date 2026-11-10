@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.notifyNtfy
-  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+  Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
 FabricLauncherPlugin.scheduleRestart.Teil3.Z1934
-  Fortsetzung des Ablaufs ab Zeile 1934.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1934 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1934.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.scheduleRestart`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.notifyNtfy**: Das [[Glossar#Plugin|Plugin]] meldet den Mitteilungsdienst. Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+> - **FabricLauncherPlugin.scheduleRestart.Teil3.Z1934**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1934 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1934.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.scheduleRestart`.

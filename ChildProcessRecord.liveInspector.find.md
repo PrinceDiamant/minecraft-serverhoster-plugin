@@ -16,10 +16,15 @@ flowchart TD
 
 ```knoten
 ChildProcessRecord.observe
-  Liest den lebenden Prozess `observe`. Befund: toter Code (wahrscheinlich).
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest den lebenden [[Glossar#Prozess|Prozess]] `observe`. [[Glossar#Befund|Befund]]: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:61–74 nur von Tests erreicht
 return Z.47 return ProcessHandle.of(pid).map(ChildP…
   Zeile 47: Rückgabe `return ProcessHandle.of(pid).map(ChildP…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ChildProcessRecord.observe**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest den lebenden [[Glossar#Prozess|Prozess]] `observe`. [[Glossar#Befund|Befund]]: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:61–74 nur von Tests erreicht
+> - **return Z.47 return ProcessHandle.of(pid).map(ChildP…**: Zeile 47: Rückgabe `return ProcessHandle.of(pid).map(ChildP…`.
+
+- Dieser Teil sucht das.
 - `find` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:46–48 nur von Tests erreicht

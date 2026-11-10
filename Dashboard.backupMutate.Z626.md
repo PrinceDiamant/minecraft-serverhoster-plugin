@@ -25,13 +25,21 @@ flowchart TD
 if Z.626 (restore)
   Zeile 626: prüft `(restore)`.
 FabricLauncherPlugin.restoreBackup
-  Stellt wieder her `restoreBackup`. Ruft `slot`, `running`, `remoteBackupSelected`.
+  Das [[Glossar#Plugin|Plugin]] stellt wieder her die [[Glossar#Sicherungskopie|Sicherungskopie]]. Stellt wieder her `restoreBackup`. Ruft `slot`, `running`, `remoteBackupSelected`.
 FabricLauncherPlugin.info(String,String)
-  Schreibt eine Infozeile `info`. Ruft `slot`.
+  Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `slot`.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
 FabricLauncherPlugin.deleteBackup
-  Löscht `deleteBackup`. Ruft `remoteBackupSelected`, `backupCredentials`, `delete`.
+  Das [[Glossar#Plugin|Plugin]] löscht die [[Glossar#Sicherungskopie|Sicherungskopie]]. Löscht `deleteBackup`. Ruft `remoteBackupSelected`, `backupCredentials`, `delete`.
 ```
 
-- Fortsetzung von `Dashboard.backupMutate`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.626 (restore)**: Zeile 626: prüft `(restore)`.
+> - **FabricLauncherPlugin.restoreBackup**: Das [[Glossar#Plugin|Plugin]] stellt wieder her die [[Glossar#Sicherungskopie|Sicherungskopie]]. Stellt wieder her `restoreBackup`. Ruft `slot`, `running`, `remoteBackupSelected`.
+> - **FabricLauncherPlugin.info(String,String)**: Schreibt eine Hinweiszeile in die [[Glossar#Konsole|Konsole]] des [[Glossar#Spielserver|Spielservers]]. Schreibt eine Infozeile `info`. Ruft `slot`.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit JSON `json`. Ruft `sendBytes`.
+> - **FabricLauncherPlugin.deleteBackup**: Das [[Glossar#Plugin|Plugin]] löscht die [[Glossar#Sicherungskopie|Sicherungskopie]]. Löscht `deleteBackup`. Ruft `remoteBackupSelected`, `backupCredentials`, `delete`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 626 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.backupMutate`.

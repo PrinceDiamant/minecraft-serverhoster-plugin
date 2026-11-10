@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.markScheduleRun.Z1547
-  Fortsetzung des Ablaufs ab Zeile 1547.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1547 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1547`.
 return Z.1560 return null;
-  Zeile 1560: Rückgabe `return null;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1560.
 ```
 
-- `markScheduleRun` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.markScheduleRun.Z1547**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1547 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1547`.
+> - **return Z.1560 return null;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1560.
+
+- Das [[Glossar#Plugin|Plugin]] merkt sich den [[Glossar#Zeitplan|Zeitplan]] den Lauf.

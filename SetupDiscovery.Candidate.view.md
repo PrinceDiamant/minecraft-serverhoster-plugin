@@ -16,4 +16,8 @@ return Z.30 return result;
   Zeile 30: Rückgabe `return result;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.30 return result;**: Zeile 30: Rückgabe `return result;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `view` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

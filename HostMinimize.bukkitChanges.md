@@ -20,4 +20,9 @@ return Z.80 return values;
   Zeile 80: Rückgabe `return values;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **for Z.77 (String kind : List.of('monsters', 'ani…**: Zeile 77: Schleife `(String kind : List.of('monsters', 'ani…`.
+> - **return Z.80 return values;**: Zeile 80: Rückgabe `return values;`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `bukkitChanges` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

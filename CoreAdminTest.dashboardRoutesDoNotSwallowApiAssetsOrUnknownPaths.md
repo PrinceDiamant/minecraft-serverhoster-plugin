@@ -21,10 +21,16 @@ flowchart TD
 for Z.31 (String path : List.of('/', '/index.htm…
   Zeile 31: Schleife `(String path : List.of('/', '/index.htm…`.
 Dashboard.isDashboardPage
-  Prüft `isDashboardPage`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] prüft die [[Glossar#Bedienseite|Bedienseite]] die Seite. Prüft `isDashboardPage`.
 for Z.35 (String path : List.of('/api/status', '…
   Zeile 35: Schleife `(String path : List.of('/api/status', '…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **for Z.31 (String path : List.of('/', '/index.htm…**: Zeile 31: Schleife `(String path : List.of('/', '/index.htm…`.
+> - **Dashboard.isDashboardPage**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] prüft die [[Glossar#Bedienseite|Bedienseite]] die Seite. Prüft `isDashboardPage`.
+> - **for Z.35 (String path : List.of('/api/status', '…**: Zeile 35: Schleife `(String path : List.of('/api/status', '…`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

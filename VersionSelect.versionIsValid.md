@@ -16,4 +16,8 @@ return Z.42 return type === 'custom' ? !!version.trim() : ver…
   Zeile 42: Rückgabe `return type === 'custom' ? !!version.trim() : ver…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.42 return type === 'custom' ? !!version.trim() : ver…**: Zeile 42: Rückgabe `return type === 'custom' ? !!version.trim() : ver…`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `versionIsValid` in `ui/src/components/VersionSelect.tsx`

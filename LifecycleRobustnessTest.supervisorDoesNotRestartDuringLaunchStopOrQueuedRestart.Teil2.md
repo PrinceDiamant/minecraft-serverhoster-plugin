@@ -17,9 +17,14 @@ flowchart TD
 
 ```knoten
 SupervisorHealth.assess
-  Bewertet `assess`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Bewertet `assess`.
 LifecycleRobustnessTest.state
-  Liefert den Zustand `state`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Liefert den Zustand `state`. Nur Test.
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SupervisorHealth.assess**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Bewertet `assess`.
+> - **LifecycleRobustnessTest.state**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Liefert den Zustand `state`. Nur Test.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart`.

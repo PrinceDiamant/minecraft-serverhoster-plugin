@@ -25,21 +25,33 @@ flowchart TD
 case Z.123 'CWD'
   Zeile 123: Zweig `'CWD'`.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case123
-  Rumpf dieses switch-Zweigs ab Zeile 123.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 123. Rumpf dieses switch-Zweigs ab Zeile 123.
 case Z.134 'MKD'
   Zeile 134: Zweig `'MKD'`.
 case Z.138 'PASV'
   Zeile 138: Zweig `'PASV'`.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case138
-  Rumpf dieses switch-Zweigs ab Zeile 138.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 138. Rumpf dieses switch-Zweigs ab Zeile 138.
 case Z.144 'STOR'
   Zeile 144: Zweig `'STOR'`.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case144
-  Rumpf dieses switch-Zweigs ab Zeile 144.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 144. Rumpf dieses switch-Zweigs ab Zeile 144.
 case Z.154 'LIST'
   Zeile 154: Zweig `'LIST'`.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154
-  Rumpf dieses switch-Zweigs ab Zeile 154.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 154. Rumpf dieses switch-Zweigs ab Zeile 154.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **case Z.123 'CWD'**: Zeile 123: Zweig `'CWD'`.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case123**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 123. Rumpf dieses switch-Zweigs ab Zeile 123.
+> - **case Z.134 'MKD'**: Zeile 134: Zweig `'MKD'`.
+> - **case Z.138 'PASV'**: Zeile 138: Zweig `'PASV'`.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case138**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 138. Rumpf dieses switch-Zweigs ab Zeile 138.
+> - **case Z.144 'STOR'**: Zeile 144: Zweig `'STOR'`.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case144**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 144. Rumpf dieses switch-Zweigs ab Zeile 144.
+> - **case Z.154 'LIST'**: Zeile 154: Zweig `'LIST'`.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 154. Rumpf dieses switch-Zweigs ab Zeile 154.
+
+- Weitere Wege der Entscheidung in [[Glossar#Zeile|Zeile]] 123.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`.

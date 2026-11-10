@@ -14,4 +14,8 @@ return Z.525 return m;
   Zeile 525: Rückgabe `return m;`.
 ```
 
-- Fortsetzung von `Dashboard.status`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.525 return m;**: Zeile 525: Rückgabe `return m;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.status`.

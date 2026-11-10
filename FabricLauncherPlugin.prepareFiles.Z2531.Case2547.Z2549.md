@@ -17,9 +17,15 @@ flowchart TD
 if Z.2549 (!Files.exists(jar))
   Zeile 2549: prüft `(!Files.exists(jar))`.
 FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2549 (!Files.exists(jar))**: Zeile 2549: prüft `(!Files.exists(jar))`.
+> - **FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2549 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547`.

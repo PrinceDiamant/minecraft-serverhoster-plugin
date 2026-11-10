@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.copyLegacyFile.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.copyLegacyFile.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.copyLegacyFile.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.copyLegacyFile.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Das [[Glossar#Plugin|Plugin]] kopiert den alten Weg die Datei.
 - `copyLegacyFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

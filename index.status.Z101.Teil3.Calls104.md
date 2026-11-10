@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 index.lifecycleLabel
-  `lifecycleLabel` in `index.html`.
+  Setzt die Beschriftung, die den Zustand in der älteren [[Glossar#Bedienseite|Bedienseite]] zeigt. `lifecycleLabel` in `index.html`.
 index.fmtUp
-  Formatiert `fmtUp`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Laufzeit. Formatiert `fmtUp`.
 ```
 
-- Fortsetzung von `index.status.Z101.Teil3`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **index.lifecycleLabel**: Setzt die Beschriftung, die den Zustand in der älteren [[Glossar#Bedienseite|Bedienseite]] zeigt. `lifecycleLabel` in `index.html`.
+> - **index.fmtUp**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Laufzeit. Formatiert `fmtUp`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 104 aufgerufen werden.
+- Fortsetzung von `index.status.Z101.Teil3`.

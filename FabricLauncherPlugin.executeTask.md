@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.1329 (!focus.equals(id))
-  Zeile 1329: prüft `(!focus.equals(id))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1329.
 throw Z.1330 throw new IllegalArgumentException('Task ' + task…
-  Zeile 1330: Abbruch `throw new IllegalArgumentException('Task ' + task…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1330.
 FabricLauncherPlugin.executeTask.Z1331
-  Fortsetzung des Ablaufs ab Zeile 1331.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1331 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1331`.
 ```
 
-- `executeTask` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1329 (!focus.equals(id))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1329.
+> - **throw Z.1330 throw new IllegalArgumentException('Task ' + task…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1330.
+> - **FabricLauncherPlugin.executeTask.Z1331**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1331 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1331`.
+
+- Das [[Glossar#Plugin|Plugin]] führt aus die [[Glossar#Aufgabe|Aufgabe]].

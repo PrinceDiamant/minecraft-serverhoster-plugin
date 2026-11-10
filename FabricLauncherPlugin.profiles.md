@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 return Z.290 return profiles;
-  Zeile 290: Rückgabe `return profiles;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 290.
 ```
 
-- `profiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
-- Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:290–290 kein Produktionsaufruf im Aufrufgraph
+> [!knoten]- Was die Blöcke tun
+> - **return Z.290 return profiles;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 290.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+- Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].

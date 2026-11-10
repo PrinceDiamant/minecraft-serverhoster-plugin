@@ -16,4 +16,8 @@ return Z.170 return names.stream().map(name -) Base64.getUrlEn…
   Zeile 170: Rückgabe `return names.stream().map(name -) Base64.getUrlEn…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.170 return names.stream().map(name -) Base64.getUrlEn…**: Zeile 170: Rückgabe `return names.stream().map(name -) Base64.getUrlEn…`.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die [[Glossar#Spielwelt|Spielwelt]] die Namen.
 - `encodeWorldNames` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

@@ -9,25 +9,32 @@ flowchart TD
   n3["HostLobbyRuntime"]:::internal-link
   n4["Host-Minimieren.Teil1"]:::internal-link
   n5["Host-Minimieren.Teil2"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 HostMinimize
-  Phase active oder staged, Spieler blockieren, anwenden oder zurücknehmen.
+  Wendet das Verkleinern an oder nimmt es zurück. [[Glossar#Spieler|Spieler]] können dabei auf dem [[Glossar#Host|Host]] blockiert sein.
 HostHeapTune
-  Setzt die JVM-Flags für den verkleinerten Host.
+  Setzt die Speicherwerte, mit denen der verkleinerte [[Glossar#Host|Host]] starten soll.
 HostLobbyRuntime
-  Hält die Lobby-Welt, während der Child läuft.
+  Hält auf dem [[Glossar#Host|Host]] eine kleine Wartewelt, während der [[Glossar#Spielserver|Spielserver]] läuft.
 Host-Minimieren.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht.
 Host-Minimieren.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **HostMinimize**: Wendet das Verkleinern an oder nimmt es zurück. [[Glossar#Spieler|Spieler]] können dabei auf dem [[Glossar#Host|Host]] blockiert sein.
+> - **HostHeapTune**: Setzt die Speicherwerte, mit denen der verkleinerte [[Glossar#Host|Host]] starten soll.
+> - **HostLobbyRuntime**: Hält auf dem [[Glossar#Host|Host]] eine kleine Wartewelt, während der [[Glossar#Spielserver|Spielserver]] läuft.
+> - **Host-Minimieren.Teil1**: Ein weiterer Abschnitt derselben Übersicht.
+> - **Host-Minimieren.Teil2**: Ein weiterer Abschnitt derselben Übersicht.
 
+- Macht den [[Glossar#Host|Host]] kleiner, solange der [[Glossar#Spielserver|Spielserver]] läuft, damit beide in den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] passen. Dazu eine Wartewelt und angepasste Startwerte.

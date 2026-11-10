@@ -25,4 +25,10 @@ return Z.105 return Number.isNaN(time.getTime()) ? value : tim…
   Zeile 105: Rückgabe `return Number.isNaN(time.getTime()) ? value : tim…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.103 !value**: Zeile 103: prüft `!value`.
+> - **return Z.103 return 'Noch nicht ausgeführt';**: Zeile 103: Rückgabe `return 'Noch nicht ausgeführt';`.
+> - **return Z.105 return Number.isNaN(time.getTime()) ? value : tim…**: Zeile 105: Rückgabe `return Number.isNaN(time.getTime()) ? value : tim…`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die Beschriftung.
 - `dateLabel` in `ui/src/components/TaskWorkflow.tsx`

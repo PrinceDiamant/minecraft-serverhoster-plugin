@@ -43,4 +43,14 @@ return Z.28 return new Bounded(configured, List.of());
   Zeile 28: Rückgabe `return new Bounded(configured, List.of());`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.20 (configured ( 0)**: Zeile 20: prüft `(configured ( 0)`.
+> - **return Z.21 return new Bounded(0, List.of('A negative wait of…**: Zeile 21: Rückgabe `return new Bounded(0, List.of('A negative wait of…`.
+> - **if Z.23 (configured ) MAX_WAIT_SECONDS)**: Zeile 23: prüft `(configured ) MAX_WAIT_SECONDS)`.
+> - **return Z.24 return new Bounded(MAX_WAIT_SECONDS, List.of('A w…**: Zeile 24: Rückgabe `return new Bounded(MAX_WAIT_SECONDS, List.of('A w…`.
+> - **if Z.27 (fallback ( 0)**: Zeile 27: prüft `(fallback ( 0)`.
+> - **throw Z.27 throw new IllegalArgumentException('fallback');**: Zeile 27: Abbruch `throw new IllegalArgumentException('fallback');`.
+> - **return Z.28 return new Bounded(configured, List.of());**: Zeile 28: Rückgabe `return new Bounded(configured, List.of());`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `boundedSeconds` in `src/main/java/de/aichele/childlauncher/RuntimeLimits.java`

@@ -39,10 +39,21 @@ Schritt Z.216 Files.writeString(tmp.resolve('cgroup/memory.max'…
 Schritt Z.217 Files.writeString(tmp.resolve('cgroup/memory.curr…
   Zeile 217: schreibt Text in eine Datei. `Files.writeString(tmp.resolve('cgroup/memory.curr…`
 HostMemoryProbe.snapshot(Path,Path)
-  `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
 HostMemoryProbe.Snapshot.cgroupUsePercent
-  `cgroupUsePercent` in `HostMemoryProbe.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroupUsePercent` in `HostMemoryProbe.java`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.212 Path proc = Files.createDirectories(tmp.resolve('…**: Zeile 212: Dateioperation. `Path proc = Files.createDirectories(tmp.resolve('…`
+> - **Schritt Z.213 Files.createDirectories(tmp.resolve('cgroup'));**: Zeile 213: Dateioperation. `Files.createDirectories(tmp.resolve('cgroup'));`
+> - **Schritt Z.214 Files.writeString(tmp.resolve('proc/meminfo'), 'M…**: Zeile 214: schreibt Text in eine Datei. `Files.writeString(tmp.resolve('proc/meminfo'), 'M…`
+> - **Schritt Z.215 Files.writeString(proc.resolve('cgroup'), '0:://n…**: Zeile 215: schreibt Text in eine Datei. `Files.writeString(proc.resolve('cgroup'), '0:://n…`
+> - **Schritt Z.216 Files.writeString(tmp.resolve('cgroup/memory.max'…**: Zeile 216: schreibt Text in eine Datei. `Files.writeString(tmp.resolve('cgroup/memory.max'…`
+> - **Schritt Z.217 Files.writeString(tmp.resolve('cgroup/memory.curr…**: Zeile 217: schreibt Text in eine Datei. `Files.writeString(tmp.resolve('cgroup/memory.curr…`
+> - **HostMemoryProbe.snapshot(Path,Path)**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
+> - **HostMemoryProbe.Snapshot.cgroupUsePercent**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroupUsePercent` in `HostMemoryProbe.java`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `hostMemoryProbeReportsUnknownCgroupLimits` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

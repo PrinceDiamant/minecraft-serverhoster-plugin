@@ -23,7 +23,7 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.configureSetup.Teil4.Z603
-  Fortsetzung des Ablaufs ab Zeile 603.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 603 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 603.
 if Z.612 (pendingArchive != null)
   Zeile 612: prüft `(pendingArchive != null)`.
 try Z.613
@@ -36,4 +36,13 @@ return Z.621 return result;
   Zeile 621: Rückgabe `return result;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.configureSetup`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.configureSetup.Teil4.Z603**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 603 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 603.
+> - **if Z.612 (pendingArchive != null)**: Zeile 612: prüft `(pendingArchive != null)`.
+> - **try Z.613**: Zeile 613: Versuch. Der Fehlerpfad geht in catch.
+> - **Schritt Z.614 Files.move(pendingArchive, finalArchive);**: Zeile 614: Dateioperation. `Files.move(pendingArchive, finalArchive);`
+> - **catch Z.615 (IOException e)**: Zeile 615: fängt (IOException e).
+> - **return Z.621 return result;**: Zeile 621: Rückgabe `return result;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.configureSetup`.

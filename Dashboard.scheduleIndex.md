@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 for Z.475 (int i = 0; i ( schedules.size(); i++)
-  Zeile 475: Schleife `(int i = 0; i ( schedules.size(); i++)`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 475.
 if Z.476 (schedules.get(i).id().equals(id))
-  Zeile 476: prüft `(schedules.get(i).id().equals(id))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 476.
 return Z.476 return i;
-  Zeile 476: Rückgabe `return i;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 476.
 throw Z.477 throw new IllegalArgumentException('Zeitplan nich…
-  Zeile 477: Abbruch `throw new IllegalArgumentException('Zeitplan nich…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 477.
 ```
 
-- `scheduleIndex` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **for Z.475 (int i = 0; i ( schedules.size(); i++)**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 475.
+> - **if Z.476 (schedules.get(i).id().equals(id))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 476.
+> - **return Z.476 return i;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 476.
+> - **throw Z.477 throw new IllegalArgumentException('Zeitplan nich…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 477.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Position.

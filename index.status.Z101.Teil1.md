@@ -24,17 +24,26 @@ flowchart TD
 
 ```knoten
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
 if Z.101 generation!==statusGeneration
   Zeile 101: prüft `generation!==statusGeneration`.
 return Z.101 return;
   Zeile 101: Rückgabe `return;`.
 index.updateChildActions
-  Aktualisiert `updateChildActions`. Ruft `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert den [[Glossar#Spielserver|Spielserver]] die Tätigkeiten. Aktualisiert `updateChildActions`. Ruft `$`.
 if Z.101 $('host-connection')
   Zeile 101: prüft `$('host-connection')`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 ```
 
-- Fortsetzung von `index.status.Z101`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+> - **if Z.101 generation!==statusGeneration**: Zeile 101: prüft `generation!==statusGeneration`.
+> - **return Z.101 return;**: Zeile 101: Rückgabe `return;`.
+> - **index.updateChildActions**: Die ältere [[Glossar#Bedienseite|Bedienseite]] ändert den [[Glossar#Spielserver|Spielserver]] die Tätigkeiten. Aktualisiert `updateChildActions`. Ruft `$`.
+> - **if Z.101 $('host-connection')**: Zeile 101: prüft `$('host-connection')`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.status.Z101`.

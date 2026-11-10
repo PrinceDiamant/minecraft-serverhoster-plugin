@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.Session.close.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 RemoteBackupBridge.Session.close.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.Session.close.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **RemoteBackupBridge.Session.close.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Die Sicherung über das Netz schließt das.
 - `close` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

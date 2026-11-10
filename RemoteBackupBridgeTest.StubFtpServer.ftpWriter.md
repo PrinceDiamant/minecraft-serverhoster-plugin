@@ -17,10 +17,14 @@ flowchart TD
 
 ```knoten
 return Z.213 return new PrintWriter(new OutputStreamWriter(str…
-  Zeile 213: Rückgabe `return new PrintWriter(new OutputStreamWriter(str…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 213.
 RemoteBackupBridgeTest.StubFtpServer.ftpWriter.println
-  `println` in `RemoteBackupBridgeTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `println`.
 ```
 
-- `ftpWriter` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
-- Auslöser: Test
+> [!knoten]- Was die Blöcke tun
+> - **return Z.213 return new PrintWriter(new OutputStreamWriter(str…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 213.
+> - **RemoteBackupBridgeTest.StubFtpServer.ftpWriter.println**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `println`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

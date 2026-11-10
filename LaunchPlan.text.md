@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 LaunchPlan.argv(String,ServerProfile)
-  `argv` in `LaunchPlan.java`. Ruft `argv`, `jarPath`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `argv` in `LaunchPlan.java`. Ruft `argv`, `jarPath`.
 return Z.53 return String.join(' ', argv(javaBin, p…
   Zeile 53: Rückgabe `return String.join(' ', argv(javaBin, p…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LaunchPlan.argv(String,ServerProfile)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `argv` in `LaunchPlan.java`. Ruft `argv`, `jarPath`.
+> - **return Z.53 return String.join(' ', argv(javaBin, p…**: Zeile 53: Rückgabe `return String.join(' ', argv(javaBin, p…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `text` in `src/main/java/de/aichele/childlauncher/LaunchPlan.java`

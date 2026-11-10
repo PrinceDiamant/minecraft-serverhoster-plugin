@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 HostMemoryProbe.snapshot(Path,Path)
-  `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
 return Z.37 return snapshot(Path.of('/proc'), Path.…
   Zeile 37: Rückgabe `return snapshot(Path.of('/proc'), Path.…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMemoryProbe.snapshot(Path,Path)**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
+> - **return Z.37 return snapshot(Path.of('/proc'), Path.…**: Zeile 37: Rückgabe `return snapshot(Path.of('/proc'), Path.…`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `snapshot` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

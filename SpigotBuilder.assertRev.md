@@ -20,4 +20,9 @@ throw Z.18 throw new IllegalArgumentException('mcVersion');
   Zeile 18: Abbruch `throw new IllegalArgumentException('mcVersion');`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.18 (mc == null // !mc.matches('(0-9A-Za-z)(0-9A-Za-z…**: Zeile 18: prüft `(mc == null // !mc.matches('(0-9A-Za-z)(0-9A-Za-z…`.
+> - **throw Z.18 throw new IllegalArgumentException('mcVersion');**: Zeile 18: Abbruch `throw new IllegalArgumentException('mcVersion');`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `assertRev` in `src/main/java/de/aichele/childlauncher/SpigotBuilder.java`

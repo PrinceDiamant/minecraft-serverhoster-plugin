@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 App.App.Teil3.Calls219
-  Weitere eigene Aufrufe ab Zeile 219.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 219 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 219.
 App.App.Teil3.Calls241
-  Weitere eigene Aufrufe ab Zeile 241.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 241 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 241.
 ```
 
-- Fortsetzung von `App.App`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **App.App.Teil3.Calls219**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 219 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 219.
+> - **App.App.Teil3.Calls241**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 241 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 241.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `App.App`.

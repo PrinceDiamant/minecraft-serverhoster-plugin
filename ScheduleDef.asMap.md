@@ -34,4 +34,12 @@ return Z.159 return null;
   Zeile 159: Rückgabe `return null;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.157 (value instanceof Map(?, ?) map)**: Zeile 157: prüft `(value instanceof Map(?, ?) map)`.
+> - **return Z.157 return map;**: Zeile 157: Rückgabe `return map;`.
+> - **if Z.158 (value instanceof ConfigurationSection section)**: Zeile 158: prüft `(value instanceof ConfigurationSection section)`.
+> - **return Z.158 return section.getValues(false);**: Zeile 158: Rückgabe `return section.getValues(false);`.
+> - **return Z.159 return null;**: Zeile 159: Rückgabe `return null;`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um die Übersicht.
 - `asMap` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

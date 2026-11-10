@@ -21,11 +21,18 @@ flowchart TD
 try Z.427
   Zeile 427: Versuch. Der Fehlerpfad geht in catch.
 BackupBridge.restore
-  Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
+  Die Sicherung auf diesem Rechner stellt wieder her das. Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
 Schritt Z.433 assertFalse(Files.exists(tmp.resolve('secret.txt'…
   Zeile 433: Dateioperation. `assertFalse(Files.exists(tmp.resolve('secret.txt'…`
 BackupBridge.delete
-  Löscht `delete`. Ruft `file`.
+  Die Sicherung auf diesem Rechner löscht das. Löscht `delete`. Ruft `file`.
 ```
 
-- Fortsetzung von `HosterTest.backupZipAndExternalJdbc`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.427**: Zeile 427: Versuch. Der Fehlerpfad geht in catch.
+> - **BackupBridge.restore**: Die Sicherung auf diesem Rechner stellt wieder her das. Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
+> - **Schritt Z.433 assertFalse(Files.exists(tmp.resolve('secret.txt'…**: Zeile 433: Dateioperation. `assertFalse(Files.exists(tmp.resolve('secret.txt'…`
+> - **BackupBridge.delete**: Die Sicherung auf diesem Rechner löscht das. Löscht `delete`. Ruft `file`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.backupZipAndExternalJdbc`.

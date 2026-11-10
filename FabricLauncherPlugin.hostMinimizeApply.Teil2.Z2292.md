@@ -18,4 +18,9 @@ return Z.2299 return row;
   Zeile 2299: Rückgabe `return row;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.2292 List(Map(String, Object)) heap = tuned.stream().m…**: Zeile 2292: `List(Map(String, Object)) heap = tuned.stream().m…`
+> - **return Z.2299 return row;**: Zeile 2299: Rückgabe `return row;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2292 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply.Teil2`.

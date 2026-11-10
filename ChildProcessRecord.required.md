@@ -25,4 +25,10 @@ return Z.221 return value;
   Zeile 221: Rückgabe `return value;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.220 (value == null)**: Zeile 220: prüft `(value == null)`.
+> - **throw Z.220 throw new NumberFormatException('missing ' + key);**: Zeile 220: Abbruch `throw new NumberFormatException('missing ' + key);`.
+> - **return Z.221 return value;**: Zeile 221: Rückgabe `return value;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `required` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 Schritt Z.1475 FileConfiguration c = getConfig();
-  Zeile 1475: liest die Config. `FileConfiguration c = getConfig();`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1475.
 return Z.1476 return new RemoteBackupBridge.Settings(c.getStrin…
-  Zeile 1476: Rückgabe `return new RemoteBackupBridge.Settings(c.getStrin…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1476.
 ```
 
-- `remoteBackupSettings` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.1475 FileConfiguration c = getConfig();**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1475.
+> - **return Z.1476 return new RemoteBackupBridge.Settings(c.getStrin…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1476.
+
+- Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]].

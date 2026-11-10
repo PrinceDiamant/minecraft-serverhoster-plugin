@@ -21,4 +21,9 @@ return Z.11 return 'start failed: ' + message;
   Zeile 11: Rückgabe `return 'start failed: ' + message;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.9 (message == null // message.isBlank())**: Zeile 9: prüft `(message == null // message.isBlank())`.
+> - **return Z.11 return 'start failed: ' + message;**: Zeile 11: Rückgabe `return 'start failed: ' + message;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `text` in `src/main/java/de/aichele/childlauncher/StartFailureStatus.java`

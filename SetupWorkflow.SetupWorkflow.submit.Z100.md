@@ -22,13 +22,21 @@ flowchart TD
 try Z.100
   Zeile 100: Versuch. Der Fehlerpfad geht in catch.
 SetupWorkflow.SetupWorkflow.submit.Z100.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 SetupWorkflow.SetupWorkflow.submit.Z100.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 catch Z.164 cause
   Zeile 164: fängt cause.
 finally Z.100
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow.submit`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.100**: Zeile 100: Versuch. Der Fehlerpfad geht in catch.
+> - **SetupWorkflow.SetupWorkflow.submit.Z100.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupWorkflow.SetupWorkflow.submit.Z100.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **catch Z.164 cause**: Zeile 164: fängt cause.
+> - **finally Z.100**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 100 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow.submit`.

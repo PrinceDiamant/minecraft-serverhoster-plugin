@@ -17,9 +17,15 @@ flowchart TD
 for Z.2028 (ChildSlot slot : List.copyOf(slots.val…
   Zeile 2028: Schleife `(ChildSlot slot : List.copyOf(slots.val…`.
 SupervisorHealth.assess
-  Bewertet `assess`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Bewertet `assess`.
 FabricLauncherPlugin.recoverChildSupervision.Z2028.Z2034
-  Fortsetzung des Ablaufs ab Zeile 2034.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2034 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2034.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.recoverChildSupervision`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.2028 (ChildSlot slot : List.copyOf(slots.val…**: Zeile 2028: Schleife `(ChildSlot slot : List.copyOf(slots.val…`.
+> - **SupervisorHealth.assess**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Bewertet `assess`.
+> - **FabricLauncherPlugin.recoverChildSupervision.Z2028.Z2034**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2034 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2034.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2028 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.recoverChildSupervision`.

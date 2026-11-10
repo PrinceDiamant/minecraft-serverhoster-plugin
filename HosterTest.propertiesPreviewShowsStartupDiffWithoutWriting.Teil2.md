@@ -14,4 +14,8 @@ Schritt Z.173 assertEquals(original, Files.readString(propertie…
   Zeile 173: liest Text aus einer Datei. `assertEquals(original, Files.readString(propertie…`
 ```
 
-- Fortsetzung von `HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.173 assertEquals(original, Files.readString(propertie…**: Zeile 173: liest Text aus einer Datei. `assertEquals(original, Files.readString(propertie…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting`.

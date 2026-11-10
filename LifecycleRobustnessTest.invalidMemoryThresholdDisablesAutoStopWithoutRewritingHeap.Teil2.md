@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 RuntimeLimits.boundedSeconds
-  Begrenzt `boundedSeconds`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt `boundedSeconds`.
 Schritt Z.222 String config = Files.readString(Path.of('src/mai…
   Zeile 222: liest Text aus einer Datei. `String config = Files.readString(Path.of('src/mai…`
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RuntimeLimits.boundedSeconds**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt `boundedSeconds`.
+> - **Schritt Z.222 String config = Files.readString(Path.of('src/mai…**: Zeile 222: liest Text aus einer Datei. `String config = Files.readString(Path.of('src/mai…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap`.

@@ -16,4 +16,8 @@ return Z.78 return switch (interval) ( case HOURLY -) interva…
   Zeile 78: Rückgabe `return switch (interval) ( case HOURLY -) interva…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.78 return switch (interval) ( case HOURLY -) interva…**: Zeile 78: Rückgabe `return switch (interval) ( case HOURLY -) interva…`.
+
+- Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `cron` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

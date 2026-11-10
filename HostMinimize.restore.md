@@ -33,9 +33,18 @@ if Z.196 (!realBackup.startsWith(data))
 throw Z.196 throw new SecurityException('backup is outside th…
   Zeile 196: Abbruch `throw new SecurityException('backup is outside th…`.
 HostMinimize.restore.Z197
-  Fortsetzung des Ablaufs ab Zeile 197.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 197 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 197.
 HostMinimize.restore.Z203
-  Fortsetzung des Ablaufs ab Zeile 203.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 203 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 203.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.192 (Files.isSymbolicLink(backupDirectory) // !Files.…**: Zeile 192: prüft `(Files.isSymbolicLink(backupDirectory) // !Files.…`.
+> - **throw Z.193 throw new IOException('host minimization backup i…**: Zeile 193: Abbruch `throw new IOException('host minimization backup i…`.
+> - **if Z.196 (!realBackup.startsWith(data))**: Zeile 196: prüft `(!realBackup.startsWith(data))`.
+> - **throw Z.196 throw new SecurityException('backup is outside th…**: Zeile 196: Abbruch `throw new SecurityException('backup is outside th…`.
+> - **HostMinimize.restore.Z197**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 197 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 197.
+> - **HostMinimize.restore.Z203**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 203 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 203.
+
+- Das Verkleinern des [[Glossar#Host|Host]] stellt wieder her das.
 - `restore` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

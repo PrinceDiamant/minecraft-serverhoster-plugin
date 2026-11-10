@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 MemoryProtectionPolicy.sample
-  Misst `sample`.
+  Dieser Teil misst das. Misst `sample`.
 MemoryProtectionPolicy.startEmergencyStop
-  Startet `startEmergencyStop`.
+  Dieser Teil startet den [[Glossar#Notstopp|Notstopp]] den [[Glossar#Stopp|Stopp]]. Startet `startEmergencyStop`.
 MemoryProtectionPolicy.emergencyStopStarted
-  `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+  Dieser Teil stoppt hier einen Schritt. Eine Ebene tiefer steht er genauer. `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
 ```
 
-- Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **MemoryProtectionPolicy.sample**: Dieser Teil misst das. Misst `sample`.
+> - **MemoryProtectionPolicy.startEmergencyStop**: Dieser Teil startet den [[Glossar#Notstopp|Notstopp]] den [[Glossar#Stopp|Stopp]]. Startet `startEmergencyStop`.
+> - **MemoryProtectionPolicy.emergencyStopStarted**: Dieser Teil stoppt hier einen Schritt. Eine Ebene tiefer steht er genauer. `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`.

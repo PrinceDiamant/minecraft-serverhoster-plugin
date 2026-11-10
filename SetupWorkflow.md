@@ -11,7 +11,10 @@ flowchart TD
 
 ```knoten
 SetupWorkflow.SetupWorkflow
-  `SetupWorkflow` in `SetupWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `SetupWizard`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. Im [[Glossar#Quelltext|Quelltext]] heißt das `SetupWorkflow`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupWorkflow.SetupWorkflow**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. Im [[Glossar#Quelltext|Quelltext]] heißt das `SetupWorkflow`.
 
+- Die Einrichtungsseite in der [[Glossar#Bedienseite|Bedienseite]].

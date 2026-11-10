@@ -19,15 +19,22 @@ flowchart TD
 
 ```knoten
 BackupSecrets.BackupSecrets
-  Sichert `BackupSecrets`.
+  Dieser Teil sichert die Zugangsdaten. Im [[Glossar#Quelltext|Quelltext]] heißt das `BackupSecrets`.
 BackupSecrets.readExisting
-  Liest `readExisting`. Ruft `load`.
+  Dieser Teil liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `readExisting`.
 BackupSecrets.load
-  Lädt `load`. Ruft `restrict`.
+  Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
 BackupSecrets.saveFtp
-  Speichert `saveFtp`. Ruft `load`, `restrict`.
+  Dieser Teil speichert die Übertragung. Im [[Glossar#Quelltext|Quelltext]] heißt das `saveFtp`.
 BackupSecrets.restrict
-  `restrict` in `BackupSecrets.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `restrict`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupSecrets.BackupSecrets**: Dieser Teil sichert die Zugangsdaten. Im [[Glossar#Quelltext|Quelltext]] heißt das `BackupSecrets`.
+> - **BackupSecrets.readExisting**: Dieser Teil liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `readExisting`.
+> - **BackupSecrets.load**: Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
+> - **BackupSecrets.saveFtp**: Dieser Teil speichert die Übertragung. Im [[Glossar#Quelltext|Quelltext]] heißt das `saveFtp`.
+> - **BackupSecrets.restrict**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `restrict`.
 
+- Die Zugangsdaten für die [[Glossar#Sicherungskopie|Sicherungskopie]] auf einem anderen Rechner.

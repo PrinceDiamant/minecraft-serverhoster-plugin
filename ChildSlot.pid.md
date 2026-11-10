@@ -16,4 +16,8 @@ return Z.48 return p != null && p.isAlive() ? p.pid() : -1;
   Zeile 48: Rückgabe `return p != null && p.isAlive() ? p.pid() : -1;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.48 return p != null && p.isAlive() ? p.pid() : -1;**: Zeile 48: Rückgabe `return p != null && p.isAlive() ? p.pid() : -1;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `pid` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

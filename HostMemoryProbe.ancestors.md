@@ -30,4 +30,11 @@ return Z.120 return out;
   Zeile 120: Rückgabe `return out;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **while Z.114 (p != null && p.startsWith(root))**: Zeile 114: Schleife `(p != null && p.startsWith(root))`.
+> - **if Z.116 (p.equals(root))**: Zeile 116: prüft `(p.equals(root))`.
+> - **if Z.119 (!out.contains(root))**: Zeile 119: prüft `(!out.contains(root))`.
+> - **return Z.120 return out;**: Zeile 120: Rückgabe `return out;`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `ancestors` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

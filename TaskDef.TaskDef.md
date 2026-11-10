@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 CronExpr.normZone
-  `normZone` in `CronExpr.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `normZone` in `CronExpr.java`.
 CronExpr.normAction
-  `normAction` in `CronExpr.java`.
+  Dieser Teil kümmert sich um die Tätigkeit. `normAction` in `CronExpr.java`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **CronExpr.normZone**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `normZone` in `CronExpr.java`.
+> - **CronExpr.normAction**: Dieser Teil kümmert sich um die Tätigkeit. `normAction` in `CronExpr.java`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `TaskDef` in `src/main/java/de/aichele/childlauncher/TaskDef.java`

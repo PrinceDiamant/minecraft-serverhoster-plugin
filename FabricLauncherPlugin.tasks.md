@@ -24,17 +24,25 @@ flowchart TD
 
 ```knoten
 Schritt Z.1279 List(?) raw = getConfig().getList('tasks');
-  Zeile 1279: liest die Config. `List(?) raw = getConfig().getList('tasks');`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1279.
 if Z.1280 (raw == null)
-  Zeile 1280: prüft `(raw == null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1280.
 return Z.1280 return List.of();
-  Zeile 1280: Rückgabe `return List.of();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1280.
 FabricLauncherPlugin.tasks.Z1282
-  Fortsetzung des Ablaufs ab Zeile 1282.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1282 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1282`.
 TaskDef.load
-  Lädt `load`. Ruft `str`, `TaskDef`.
+  Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
 return Z.1289 return TaskDef.load(maps);
-  Zeile 1289: Rückgabe `return TaskDef.load(maps);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1289.
 ```
 
-- `tasks` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.1279 List(?) raw = getConfig().getList('tasks');**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 1279.
+> - **if Z.1280 (raw == null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1280.
+> - **return Z.1280 return List.of();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1280.
+> - **FabricLauncherPlugin.tasks.Z1282**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1282 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1282`.
+> - **TaskDef.load**: Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
+> - **return Z.1289 return TaskDef.load(maps);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1289.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.

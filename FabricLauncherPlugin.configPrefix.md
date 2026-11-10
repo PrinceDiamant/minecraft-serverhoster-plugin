@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.367 return profiles.isEmpty() // profiles.get(0).id.e…
-  Zeile 367: Rückgabe `return profiles.isEmpty() // profiles.get(0).id.e…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 367.
 ```
 
-- `configPrefix` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.367 return profiles.isEmpty() // profiles.get(0).id.e…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 367.
+
+- Der Anfang der Namen, unter denen die Werte eines Servers in den [[Glossar#Einstellungen|Einstellungen]] stehen.

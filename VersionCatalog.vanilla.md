@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 VersionCatalog.vanilla.Z22
-  Fortsetzung des Ablaufs ab Zeile 22.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 22 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 22.
 return Z.27 return ids;
   Zeile 27: Rückgabe `return ids;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.vanilla.Z22**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 22 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 22.
+> - **return Z.27 return ids;**: Zeile 27: Rückgabe `return ids;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `vanilla` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

@@ -22,4 +22,10 @@ if Z.42 (fl != null && !fl.contains('G1RSetUpdatingPauseI…
   Zeile 42: prüft `(fl != null && !fl.contains('G1RSetUpdatingPauseI…`.
 ```
 
-- Fortsetzung von `LaunchPlan.argv(String,ServerProfile,Path)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.40 (profile.jvmFlags != null)**: Zeile 40: prüft `(profile.jvmFlags != null)`.
+> - **for Z.41 (String fl : profile.jvmFlags)**: Zeile 41: Schleife `(String fl : profile.jvmFlags)`.
+> - **if Z.42 (fl != null && !fl.contains('G1RSetUpdatingPauseI…**: Zeile 42: prüft `(fl != null && !fl.contains('G1RSetUpdatingPauseI…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LaunchPlan.argv(String,ServerProfile,Path)`.

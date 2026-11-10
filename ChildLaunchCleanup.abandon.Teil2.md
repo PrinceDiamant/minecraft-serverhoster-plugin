@@ -20,7 +20,13 @@ try Z.27
 catch Z.29 (IOException e)
   Zeile 29: fängt (IOException e).
 ChildLaunchCleanup.abandon.Teil2.Z34
-  Fortsetzung des Ablaufs ab Zeile 34.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 34 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 34.
 ```
 
-- Fortsetzung von `ChildLaunchCleanup.abandon`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.27**: Zeile 27: Versuch. Der Fehlerpfad geht in catch.
+> - **catch Z.29 (IOException e)**: Zeile 29: fängt (IOException e).
+> - **ChildLaunchCleanup.abandon.Teil2.Z34**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 34 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 34.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `ChildLaunchCleanup.abandon`.

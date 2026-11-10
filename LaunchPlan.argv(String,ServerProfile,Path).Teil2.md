@@ -19,4 +19,9 @@ return Z.49 return List.copyOf(cmd);
   Zeile 49: Rückgabe `return List.copyOf(cmd);`.
 ```
 
-- Fortsetzung von `LaunchPlan.argv(String,ServerProfile,Path)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.48 (profile.serverArgs != null)**: Zeile 48: prüft `(profile.serverArgs != null)`.
+> - **return Z.49 return List.copyOf(cmd);**: Zeile 49: Rückgabe `return List.copyOf(cmd);`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LaunchPlan.argv(String,ServerProfile,Path)`.

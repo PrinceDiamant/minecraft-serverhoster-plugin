@@ -21,12 +21,19 @@ flowchart TD
 try Z.242
   Zeile 242: Versuch. Der Fehlerpfad geht in catch.
 BackupBridge.connect
-  Verbindet `connect`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connect`.
 BackupBridge.table
-  `table` in `BackupBridge.java`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `table` in `BackupBridge.java`.
 return Z.244 return rs.getInt(1);
   Zeile 244: Rückgabe `return rs.getInt(1);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.242**: Zeile 242: Versuch. Der Fehlerpfad geht in catch.
+> - **BackupBridge.connect**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connect`.
+> - **BackupBridge.table**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `table` in `BackupBridge.java`.
+> - **return Z.244 return rs.getInt(1);**: Zeile 244: Rückgabe `return rs.getInt(1);`.
+
+- Die Sicherung auf diesem Rechner zählt das.
 - `count` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/BackupBridge.java:241–246 nur von Tests erreicht

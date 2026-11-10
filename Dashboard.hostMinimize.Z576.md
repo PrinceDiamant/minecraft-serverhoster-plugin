@@ -19,11 +19,18 @@ flowchart TD
 return Z.576 return switch (action) ( case 'preview' -) pl.hos…
   Zeile 576: Rückgabe `return switch (action) ( case 'preview' -) pl.hos…`.
 FabricLauncherPlugin.hostMinimizeView
-  Betrifft den Host `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern die Ansicht. Betrifft den [[Glossar#Host|Host]] `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
 FabricLauncherPlugin.hostMinimizeApply
-  Betrifft den Host `hostMinimizeApply`. Ruft `focusSlot`, `running`, `stopBlocking`.
+  Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern das Anwenden. Betrifft den [[Glossar#Host|Host]] `hostMinimizeApply`. Ruft `focusSlot`, `running`, `stopBlocking`.
 FabricLauncherPlugin.hostMinimizeRollback
-  Betrifft den Host `hostMinimizeRollback`. Ruft `readHostMinimizeState`, `restore`, `getWorldRoot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Betrifft den [[Glossar#Host|Host]] `hostMinimizeRollback`. Ruft `readHostMinimizeState`, `restore`, `getWorldRoot`.
 ```
 
-- Fortsetzung von `Dashboard.hostMinimize`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.576 return switch (action) ( case 'preview' -) pl.hos…**: Zeile 576: Rückgabe `return switch (action) ( case 'preview' -) pl.hos…`.
+> - **FabricLauncherPlugin.hostMinimizeView**: Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern die Ansicht. Betrifft den [[Glossar#Host|Host]] `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
+> - **FabricLauncherPlugin.hostMinimizeApply**: Das [[Glossar#Plugin|Plugin]] kümmert sich um das Verkleinern das Anwenden. Betrifft den [[Glossar#Host|Host]] `hostMinimizeApply`. Ruft `focusSlot`, `running`, `stopBlocking`.
+> - **FabricLauncherPlugin.hostMinimizeRollback**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Betrifft den [[Glossar#Host|Host]] `hostMinimizeRollback`. Ruft `readHostMinimizeState`, `restore`, `getWorldRoot`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 576 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.hostMinimize`.

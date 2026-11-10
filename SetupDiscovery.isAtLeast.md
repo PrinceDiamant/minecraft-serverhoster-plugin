@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 SetupDiscovery.isAtLeast.Z145
-  Fortsetzung des Ablaufs ab Zeile 145.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 145 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 145.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupDiscovery.isAtLeast.Z145**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 145 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 145.
+
+- Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `isAtLeast` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

@@ -20,7 +20,13 @@ for Z.34 (Flag flag : FLAGS)
 if Z.35 ('Xmx'.equals(flag.name()) // flag.name().startsW…
   Zeile 35: prüft `('Xmx'.equals(flag.name()) // flag.name().startsW…`.
 HostHeapTune.apply.Z34.Z39
-  Fortsetzung des Ablaufs ab Zeile 39.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 39 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 39.
 ```
 
-- Fortsetzung von `HostHeapTune.apply`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.34 (Flag flag : FLAGS)**: Zeile 34: Schleife `(Flag flag : FLAGS)`.
+> - **if Z.35 ('Xmx'.equals(flag.name()) // flag.name().startsW…**: Zeile 35: prüft `('Xmx'.equals(flag.name()) // flag.name().startsW…`.
+> - **HostHeapTune.apply.Z34.Z39**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 39 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 39.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 34 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostHeapTune.apply`.

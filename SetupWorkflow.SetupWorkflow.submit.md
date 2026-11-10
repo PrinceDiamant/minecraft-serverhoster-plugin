@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 SetupWorkflow.SetupWorkflow.submit.Z100
-  Fortsetzung des Ablaufs ab Zeile 100.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 100 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 100.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupWorkflow.SetupWorkflow.submit.Z100**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 100 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 100.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `submit` in `ui/src/components/SetupWorkflow.tsx`

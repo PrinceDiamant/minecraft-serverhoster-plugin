@@ -21,11 +21,17 @@ flowchart TD
 
 ```knoten
 index.loadDiag.row
-  Baut eine Tabellenzeile `row`. Ruft `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Baut eine Tabellenzeile `row`. Ruft `esc`.
 index.loadDiag.metric
-  Formatiert einen Messwert `metric`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Formatiert einen Messwert `metric`.
 index.fmtSize
-  Formatiert `fmtSize`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe. Formatiert `fmtSize`.
 ```
 
-- Fortsetzung von `index.loadDiag`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.loadDiag.row**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Baut eine Tabellenzeile `row`. Ruft `esc`.
+> - **index.loadDiag.metric**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Formatiert einen Messwert `metric`.
+> - **index.fmtSize**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe. Formatiert `fmtSize`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 202 aufgerufen werden.
+- Fortsetzung von `index.loadDiag`.

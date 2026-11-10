@@ -28,7 +28,14 @@ if Z.129 (eq (= 0)
 return Z.129 return new Loaded(null, 'process record line is m…
   Zeile 129: Rückgabe `return new Loaded(null, 'process record line is m…`.
 ChildProcessRecord.required
-  Liest verpflichtend `required`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest verpflichtend `required`.
 ```
 
-- Fortsetzung von `ChildProcessRecord.read.Z118`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.126 (int i = 1; i ( lines.size(); i++)**: Zeile 126: Schleife `(int i = 1; i ( lines.size(); i++)`.
+> - **if Z.129 (eq (= 0)**: Zeile 129: prüft `(eq (= 0)`.
+> - **return Z.129 return new Loaded(null, 'process record line is m…**: Zeile 129: Rückgabe `return new Loaded(null, 'process record line is m…`.
+> - **ChildProcessRecord.required**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest verpflichtend `required`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `ChildProcessRecord.read.Z118`.

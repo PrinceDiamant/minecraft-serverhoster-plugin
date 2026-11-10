@@ -23,15 +23,22 @@ flowchart TD
 
 ```knoten
 if Z.988 (raw == null)
-  Zeile 988: prüft `(raw == null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 988.
 return Z.988 return m;
-  Zeile 988: Rückgabe `return m;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 988.
 for Z.989 (String kv : raw.split('&'))
-  Zeile 989: Schleife `(String kv : raw.split('&'))`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 989.
 if Z.991 (i ) 0)
-  Zeile 991: prüft `(i ) 0)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 991.
 return Z.993 return m;
-  Zeile 993: Rückgabe `return m;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 993.
 ```
 
-- `query` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.988 (raw == null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 988.
+> - **return Z.988 return m;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 988.
+> - **for Z.989 (String kv : raw.split('&'))**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 989.
+> - **if Z.991 (i ) 0)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 991.
+> - **return Z.993 return m;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 993.
+
+- Liest eine Angabe aus der Adresse der Anfrage.

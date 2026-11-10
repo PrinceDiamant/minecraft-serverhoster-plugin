@@ -26,19 +26,29 @@ flowchart TD
 
 ```knoten
 PropertiesFile.update
-  Aktualisiert `update`.
+  Dieser Teil ändert das. Aktualisiert `update`.
 HostMinimize.outerProperties
-  `outerProperties` in `HostMinimize.java`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die Eigenschaften. `outerProperties` in `HostMinimize.java`.
 if Z.179 (files.stream().anyMatch(file -) file.getFileName…
   Zeile 179: prüft `(files.stream().anyMatch(file -) file.getFileName…`.
 HostMinimize.updateYaml
-  Aktualisiert `updateYaml`. Ruft `assertNotSymlink`.
+  Das Verkleinern des [[Glossar#Host|Host]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateYaml`. Ruft `assertNotSymlink`.
 HostMinimize.bukkitChanges
-  `bukkitChanges` in `HostMinimize.java`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bukkitChanges` in `HostMinimize.java`.
 if Z.181 (files.stream().anyMatch(file -) file.getFileName…
   Zeile 181: prüft `(files.stream().anyMatch(file -) file.getFileName…`.
 HostMinimize.spigotChanges
-  `spigotChanges` in `HostMinimize.java`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spigotChanges` in `HostMinimize.java`.
 ```
 
-- Fortsetzung von `HostMinimize.apply.Teil4.Z177`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **PropertiesFile.update**: Dieser Teil ändert das. Aktualisiert `update`.
+> - **HostMinimize.outerProperties**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die Eigenschaften. `outerProperties` in `HostMinimize.java`.
+> - **if Z.179 (files.stream().anyMatch(file -) file.getFileName…**: Zeile 179: prüft `(files.stream().anyMatch(file -) file.getFileName…`.
+> - **HostMinimize.updateYaml**: Das Verkleinern des [[Glossar#Host|Host]] ändert hier einen Schritt. Eine Ebene tiefer steht er genauer. Aktualisiert `updateYaml`. Ruft `assertNotSymlink`.
+> - **HostMinimize.bukkitChanges**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bukkitChanges` in `HostMinimize.java`.
+> - **if Z.181 (files.stream().anyMatch(file -) file.getFileName…**: Zeile 181: prüft `(files.stream().anyMatch(file -) file.getFileName…`.
+> - **HostMinimize.spigotChanges**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spigotChanges` in `HostMinimize.java`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimize.apply.Teil4.Z177`.

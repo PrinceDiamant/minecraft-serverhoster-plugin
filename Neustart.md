@@ -6,16 +6,20 @@
 flowchart TD
   n1["FabricLauncherPlugin.scheduleRestart"]:::internal-link
   n2["FabricLauncherPlugin.restartSingle"]:::internal-link
-  n1 -->|"Z.1949"| n2
+  n1 -->|"Zeile 1949"| n2
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 FabricLauncherPlugin.scheduleRestart
-  Plant `scheduleRestart`. Ruft `maxAttempts`, `mayRetry`, `notifyNtfy`.
+  Wartet die [[Glossar#Pause|Pause]] und startet den [[Glossar#Spielserver|Spielserver]] dann neu. Am Anfang sind das fünf Sekunden, höchstens fünf Minuten.
 FabricLauncherPlugin.restartSingle
-  `restartSingle` in `FabricLauncherPlugin.java`. Ruft `running`, `launch`, `profile`.
+  Schaltet genau diesen einen [[Glossar#Spielserver|Spielserver]] aus und wieder an.
 ```
 
-- Backoff `autoRestart.initialDelaySeconds` Standard 5 s, Deckel `maxDelaySeconds` Standard 300 s.
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.scheduleRestart**: Wartet die [[Glossar#Pause|Pause]] und startet den [[Glossar#Spielserver|Spielserver]] dann neu. Am Anfang sind das fünf Sekunden, höchstens fünf Minuten.
+> - **FabricLauncherPlugin.restartSingle**: Schaltet genau diesen einen [[Glossar#Spielserver|Spielserver]] aus und wieder an.
+
+- Endet der [[Glossar#Spielserver|Spielserver]] unerwartet, wartet das [[Glossar#Plugin|Plugin]] eine [[Glossar#Pause|Pause]] und schaltet ihn wieder ein. Die Pause wird länger, wenn das kurz hintereinander oft passiert.

@@ -16,9 +16,13 @@ flowchart TD
 
 ```knoten
 if Z.95 (server != null)
-  Zeile 95: prüft `(server != null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 95.
 if Z.96 (pool != null)
-  Zeile 96: prüft `(pool != null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 96.
 ```
 
-- `stop` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.95 (server != null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 95.
+> - **if Z.96 (pool != null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 96.
+
+- Schließt die Tür der [[Glossar#Web-Schnittstelle|Web-Schnittstelle]].

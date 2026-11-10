@@ -27,13 +27,22 @@ for Z.138 (String rel : paths)
 try Z.140
   Zeile 140: Versuch. Der Fehlerpfad geht in catch.
 PathGuard.resolve
-  Löst auf `resolve`.
+  Dieser Teil bestimmt das. Löst auf `resolve`.
 catch Z.140 (SecurityException e)
   Zeile 140: fängt (SecurityException e).
 if Z.141 (!Files.exists(start) // Files.isSymbolicLink(sta…
   Zeile 141: prüft `(!Files.exists(start) // Files.isSymbolicLink(sta…`.
 BackupBridge.archive.Teil2.Z136.Z138.Z142
-  Fortsetzung des Ablaufs ab Zeile 142.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 142 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 142.
 ```
 
-- Fortsetzung von `BackupBridge.archive.Teil2.Z136`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.138 (String rel : paths)**: Zeile 138: Schleife `(String rel : paths)`.
+> - **try Z.140**: Zeile 140: Versuch. Der Fehlerpfad geht in catch.
+> - **PathGuard.resolve**: Dieser Teil bestimmt das. Löst auf `resolve`.
+> - **catch Z.140 (SecurityException e)**: Zeile 140: fängt (SecurityException e).
+> - **if Z.141 (!Files.exists(start) // Files.isSymbolicLink(sta…**: Zeile 141: prüft `(!Files.exists(start) // Files.isSymbolicLink(sta…`.
+> - **BackupBridge.archive.Teil2.Z136.Z138.Z142**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 142 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 142.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 138 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `BackupBridge.archive.Teil2.Z136`.

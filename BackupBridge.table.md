@@ -25,4 +25,10 @@ return Z.221 return t;
   Zeile 221: Rückgabe `return t;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.220 (!t.matches('(A-Za-z_)(A-Za-z0-9_)(0,63)'))**: Zeile 220: prüft `(!t.matches('(A-Za-z_)(A-Za-z0-9_)(0,63)'))`.
+> - **throw Z.220 throw new IllegalArgumentException('backup.databa…**: Zeile 220: Abbruch `throw new IllegalArgumentException('backup.databa…`.
+> - **return Z.221 return t;**: Zeile 221: Rückgabe `return t;`.
+
+- Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `table` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

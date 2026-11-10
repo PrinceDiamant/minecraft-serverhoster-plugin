@@ -19,7 +19,13 @@ if Z.40 (!truncated)
 Schritt Z.40 data = Files.readString(file, StandardCharsets.UT…
   Zeile 40: liest Text aus einer Datei. `data = Files.readString(file, StandardCharsets.UT…`
 LogQuery.query.Teil1.Z31.Z40.Z42
-  Fortsetzung des Ablaufs ab Zeile 42.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 42 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 42.
 ```
 
-- Fortsetzung von `LogQuery.query.Teil1.Z31`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.40 (!truncated)**: Zeile 40: prüft `(!truncated)`.
+> - **Schritt Z.40 data = Files.readString(file, StandardCharsets.UT…**: Zeile 40: liest Text aus einer Datei. `data = Files.readString(file, StandardCharsets.UT…`
+> - **LogQuery.query.Teil1.Z31.Z40.Z42**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 42 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 42.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 40 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `LogQuery.query.Teil1.Z31`.

@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.armWatch.Z2057
-  Fortsetzung des Ablaufs ab Zeile 2057.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2057 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2057`.
 ```
 
-- `armWatch` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.armWatch.Z2057**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2057 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2057`.
+
+- Schaltet die [[Glossar#Aufsicht|Aufsicht]] an, die merkt, wenn das Programm endet.

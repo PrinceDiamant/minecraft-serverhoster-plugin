@@ -22,9 +22,16 @@ for Z.32 (JsonElement e : games)
 if Z.34 (o.has('stable') && o.get('stable').getAsBoolean(…
   Zeile 34: prüft `(o.has('stable') && o.get('stable').getAsBoolean(…`.
 VersionCatalog.str
-  `str` in `VersionCatalog.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `VersionCatalog.java`.
 if Z.35 (ids.size() )= limit)
   Zeile 35: prüft `(ids.size() )= limit)`.
 ```
 
-- Fortsetzung von `VersionCatalog.fabric`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.32 (JsonElement e : games)**: Zeile 32: Schleife `(JsonElement e : games)`.
+> - **if Z.34 (o.has('stable') && o.get('stable').getAsBoolean(…**: Zeile 34: prüft `(o.has('stable') && o.get('stable').getAsBoolean(…`.
+> - **VersionCatalog.str**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `VersionCatalog.java`.
+> - **if Z.35 (ids.size() )= limit)**: Zeile 35: prüft `(ids.size() )= limit)`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 32 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `VersionCatalog.fabric`.

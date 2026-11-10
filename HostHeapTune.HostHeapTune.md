@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Dieser Teil kümmert sich um den Programmspeicher die Anpassung.
 - `HostHeapTune` in `src/main/java/de/aichele/childlauncher/HostHeapTune.java`

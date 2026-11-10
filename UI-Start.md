@@ -11,7 +11,10 @@ flowchart TD
 
 ```knoten
 leer
-  Keine weiteren Knoten.
+  In diesem [[Glossar#Kapitel|Kapitel]] gibt es keine weiteren Blöcke.
 ```
 
-- `ui/src/main.tsx` ruft `createRoot` und rendert `App`. Kein benannter Funktionsrumpf.
+> [!knoten] Was die Blöcke tun
+> - **leer**: In diesem [[Glossar#Kapitel|Kapitel]] gibt es keine weiteren Blöcke.
+
+- Der Einstieg der neueren [[Glossar#Bedienseite|Bedienseite]]. Er hängt die Seite in den Browser ein. Eine eigene [[Glossar#Funktion|Funktion]] hat dieser Einstieg nicht.

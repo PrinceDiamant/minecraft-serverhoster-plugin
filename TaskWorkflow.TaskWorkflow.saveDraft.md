@@ -22,7 +22,13 @@ if Z.160 !draft
 return Z.160 return;
   Zeile 160: Rückgabe `return;`.
 TaskWorkflow.TaskWorkflow.saveDraft.Z163
-  Fortsetzung des Ablaufs ab Zeile 163.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 163 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 163.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.160 !draft**: Zeile 160: prüft `!draft`.
+> - **return Z.160 return;**: Zeile 160: Rückgabe `return;`.
+> - **TaskWorkflow.TaskWorkflow.saveDraft.Z163**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 163 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 163.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] speichert hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `saveDraft` in `ui/src/components/TaskWorkflow.tsx`

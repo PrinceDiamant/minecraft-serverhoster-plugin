@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 ProfileMerge.inherit.Calls7149
-  Weitere eigene Aufrufe ab Zeile 7149.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 7149 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 7149.
 ProfileMerge.inherit.Calls7524
-  Weitere eigene Aufrufe ab Zeile 7524.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 7524 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 7524.
 return Z.168 return new ServerProfile(child.id, nvl(…
   Zeile 168: Rückgabe `return new ServerProfile(child.id, nvl(…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **ProfileMerge.inherit.Calls7149**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 7149 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 7149.
+> - **ProfileMerge.inherit.Calls7524**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 7524 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 7524.
+> - **return Z.168 return new ServerProfile(child.id, nvl(…**: Zeile 168: Rückgabe `return new ServerProfile(child.id, nvl(…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `inherit` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

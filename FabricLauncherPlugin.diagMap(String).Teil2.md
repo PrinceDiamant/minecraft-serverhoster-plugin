@@ -20,11 +20,18 @@ flowchart TD
 if Z.891 (pid ) 0)
   Zeile 891: prüft `(pid ) 0)`.
 ProcessProbe.snapshot
-  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `ProcessProbe.java`. Ruft `kb`.
 FabricLauncherPlugin.diagMap(String).Teil2.Z893
-  Fortsetzung des Ablaufs ab Zeile 893.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 893 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 893.
 FabricLauncherPlugin.diskCached
-  Liest die Platte `diskCached`. Ruft `disk`, `workDir`.
+  Sagt, wie voll die Festplatte ist. Der Wert darf kurz zwischengespeichert sein. Liest die Platte `diskCached`. Ruft `disk`, `workDir`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.diagMap(String)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.891 (pid ) 0)**: Zeile 891: prüft `(pid ) 0)`.
+> - **ProcessProbe.snapshot**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+> - **FabricLauncherPlugin.diagMap(String).Teil2.Z893**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 893 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 893.
+> - **FabricLauncherPlugin.diskCached**: Sagt, wie voll die Festplatte ist. Der Wert darf kurz zwischengespeichert sein. Liest die Platte `diskCached`. Ruft `disk`, `workDir`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.diagMap(String)`.

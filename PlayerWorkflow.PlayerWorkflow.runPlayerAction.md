@@ -36,7 +36,16 @@ if Z.93 !accepted
 return Z.93 return;
   Zeile 93: Rückgabe `return;`.
 PlayerWorkflow.PlayerWorkflow.runPlayerAction.Z98
-  Fortsetzung des Ablaufs ab Zeile 98.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 98 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 98.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.82 !/^/w(1,16)$/.test(name)**: Zeile 82: prüft `!/^/w(1,16)$/.test(name)`.
+> - **return Z.84 return;**: Zeile 84: Rückgabe `return;`.
+> - **if Z.86 dangerous**: Zeile 86: prüft `dangerous`.
+> - **if Z.93 !accepted**: Zeile 93: prüft `!accepted`.
+> - **return Z.93 return;**: Zeile 93: Rückgabe `return;`.
+> - **PlayerWorkflow.PlayerWorkflow.runPlayerAction.Z98**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 98 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 98.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Spieler|Spieler]] die Tätigkeit.
 - `runPlayerAction` in `ui/src/components/PlayerWorkflow.tsx`

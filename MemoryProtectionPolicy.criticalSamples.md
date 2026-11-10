@@ -16,4 +16,8 @@ return Z.48 return criticalSamples;
   Zeile 48: Rückgabe `return criticalSamples;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.48 return criticalSamples;**: Zeile 48: Rückgabe `return criticalSamples;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `criticalSamples` in `src/main/java/de/aichele/childlauncher/MemoryProtectionPolicy.java`

@@ -22,13 +22,20 @@ flowchart TD
 
 ```knoten
 DashboardPassword.create
-  Legt an `create`.
+  Dieser Teil legt an das. Legt an `create`.
 DashboardPassword.read
-  Liest `read`.
+  Dieser Teil liest das. Liest `read`.
 if Z.78 (Files.getFileStore(tmp).supportsFileAttributeVie…
   Zeile 78: prüft `(Files.getFileStore(tmp).supportsFileAttributeVie…`.
 Schritt Z.80 Files.writeString(file, '');
   Zeile 80: schreibt Text in eine Datei. `Files.writeString(file, '');`
 ```
 
-- Fortsetzung von `CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **DashboardPassword.create**: Dieser Teil legt an das. Legt an `create`.
+> - **DashboardPassword.read**: Dieser Teil liest das. Liest `read`.
+> - **if Z.78 (Files.getFileStore(tmp).supportsFileAttributeVie…**: Zeile 78: prüft `(Files.getFileStore(tmp).supportsFileAttributeVie…`.
+> - **Schritt Z.80 Files.writeString(file, '');**: Zeile 80: schreibt Text in eine Datei. `Files.writeString(file, '');`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed`.

@@ -16,5 +16,9 @@ return Z.103 return 'staged'.equals(status) // 'active'.equals…
   Zeile 103: Rückgabe `return 'staged'.equals(status) // 'active'.equals…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.103 return 'staged'.equals(status) // 'active'.equals…**: Zeile 103: Rückgabe `return 'staged'.equals(status) // 'active'.equals…`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `playersBlocked` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostMinimize.java:102–104 nur von Tests erreicht

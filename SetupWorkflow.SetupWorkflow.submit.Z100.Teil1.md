@@ -33,15 +33,26 @@ throw Z.102 throw new Error('Bitte zuerst einen Serverordner …
 if Z.103 action !== 'import' && !versionIsValid(type, mcVe…
   Zeile 103: prüft `action !== 'import' && !versionIsValid(type, mcVe…`.
 VersionSelect.versionIsValid
-  `versionIsValid` in `VersionSelect.tsx`.
+  Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. `versionIsValid` in `VersionSelect.tsx`.
 throw Z.104 throw new Error('Bitte eine verfügbare Minecraft-…
   Zeile 104: Abbruch `throw new Error('Bitte eine verfügbare Minecraft-…`.
 SetupWorkflow.SetupWorkflow.submit.Z100.Teil1.Z106
-  Fortsetzung des Ablaufs ab Zeile 106.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 106 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 106.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 ```
 
-- Fortsetzung von `SetupWorkflow.SetupWorkflow.submit.Z100`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.102 !path**: Zeile 102: prüft `!path`.
+> - **throw Z.102 throw new Error('Bitte zuerst einen Serverordner …**: Zeile 102: Abbruch `throw new Error('Bitte zuerst einen Serverordner …`.
+> - **if Z.103 action !== 'import' && !versionIsValid(type, mcVe…**: Zeile 103: prüft `action !== 'import' && !versionIsValid(type, mcVe…`.
+> - **VersionSelect.versionIsValid**: Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. `versionIsValid` in `VersionSelect.tsx`.
+> - **throw Z.104 throw new Error('Bitte eine verfügbare Minecraft-…**: Zeile 104: Abbruch `throw new Error('Bitte eine verfügbare Minecraft-…`.
+> - **SetupWorkflow.SetupWorkflow.submit.Z100.Teil1.Z106**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 106 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 106.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SetupWorkflow.SetupWorkflow.submit.Z100`.

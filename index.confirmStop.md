@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 if Z.119 accepted
-  Zeile 119: prüft `accepted`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 119.
 index.act
-  Sendet start, stop oder restart `act`. Ruft `$`, `post`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] Start, [[Glossar#Stopp|Stopp]] oder [[Glossar#Neustart|Neustart]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `act`.
 ```
 
-- `confirmStop` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.119 accepted**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 119.
+> - **index.act**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] Start, [[Glossar#Stopp|Stopp]] oder [[Glossar#Neustart|Neustart]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `act`.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt nach den [[Glossar#Stopp|Stopp]].

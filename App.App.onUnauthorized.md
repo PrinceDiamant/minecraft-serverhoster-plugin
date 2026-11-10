@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 index.showLogin
-  Zeigt `showLogin`. Ruft `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] zeigt die [[Glossar#Anmeldung|Anmeldung]]. Zeigt `showLogin`. Ruft `$`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **index.showLogin**: Die ältere [[Glossar#Bedienseite|Bedienseite]] zeigt die [[Glossar#Anmeldung|Anmeldung]]. Zeigt `showLogin`. Ruft `$`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `onUnauthorized` in `ui/src/App.tsx`

@@ -27,7 +27,7 @@ flowchart TD
 if Z.33 (Files.isRegularFile(marker, LinkOption.NOFOLLOW_…
   Zeile 33: prüft `(Files.isRegularFile(marker, LinkOption.NOFOLLOW_…`.
 HostMinimize.readState
-  Liest `readState`.
+  Das Verkleinern des [[Glossar#Host|Host]] liest den Zustand. Liest `readState`.
 if Z.35 ('pending'.equals(status) // 'preparing'.equals(s…
   Zeile 35: prüft `('pending'.equals(status) // 'preparing'.equals(s…`.
 return Z.35 return true;
@@ -40,4 +40,14 @@ throw Z.37 throw new IOException('host setup marker has an u…
   Zeile 37: Abbruch `throw new IOException('host setup marker has an u…`.
 ```
 
-- Fortsetzung von `HostFirstSetup.shouldRun`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.33 (Files.isRegularFile(marker, LinkOption.NOFOLLOW_…**: Zeile 33: prüft `(Files.isRegularFile(marker, LinkOption.NOFOLLOW_…`.
+> - **HostMinimize.readState**: Das Verkleinern des [[Glossar#Host|Host]] liest den Zustand. Liest `readState`.
+> - **if Z.35 ('pending'.equals(status) // 'preparing'.equals(s…**: Zeile 35: prüft `('pending'.equals(status) // 'preparing'.equals(s…`.
+> - **return Z.35 return true;**: Zeile 35: Rückgabe `return true;`.
+> - **if Z.36 ('done'.equals(status) // 'restart-required'.equa…**: Zeile 36: prüft `('done'.equals(status) // 'restart-required'.equa…`.
+> - **return Z.36 return false;**: Zeile 36: Rückgabe `return false;`.
+> - **throw Z.37 throw new IOException('host setup marker has an u…**: Zeile 37: Abbruch `throw new IOException('host setup marker has an u…`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 33 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostFirstSetup.shouldRun`.

@@ -15,7 +15,11 @@ flowchart TD
 
 ```knoten
 HttpsSupport.configure.configure
-  `configure` in `HttpsSupport.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `HttpsSupport.java`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.configure.configure**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `HttpsSupport.java`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `configure` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um das Verkleinern.
 - `HostMinimize` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

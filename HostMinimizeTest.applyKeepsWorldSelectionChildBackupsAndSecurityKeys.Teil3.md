@@ -18,4 +18,9 @@ Schritt Z.66 assertEquals('(/'ChildPlayer/')/n', Files.readStr…
   Zeile 66: Dateioperation. `assertEquals('(/'ChildPlayer/')/n', Files.readStr…`
 ```
 
-- Fortsetzung von `HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.65 assertEquals('()/n', Files.readString(root.resolv…**: Zeile 65: liest Text aus einer Datei. `assertEquals('()/n', Files.readString(root.resolv…`
+> - **Schritt Z.66 assertEquals('(/'ChildPlayer/')/n', Files.readStr…**: Zeile 66: Dateioperation. `assertEquals('(/'ChildPlayer/')/n', Files.readStr…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostMinimizeTest.applyKeepsWorldSelectionChildBackupsAndSecurityKeys`.

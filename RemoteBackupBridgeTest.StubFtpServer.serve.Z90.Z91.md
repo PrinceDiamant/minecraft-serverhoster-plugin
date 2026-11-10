@@ -29,7 +29,7 @@ flowchart TD
 try Z.91
   Zeile 91: Versuch. Der Fehlerpfad geht in catch.
 RemoteBackupBridgeTest.StubFtpServer.serveConnection
-  Liefert `serveConnection`. Ruft `ftpWriter`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Liefert `serveConnection`. Ruft `ftpWriter`. Nur Test.
 catch Z.93 (SocketException e)
   Zeile 93: fängt (SocketException e).
 if Z.94 (!control.isClosed())
@@ -44,4 +44,15 @@ return Z.98 return;
   Zeile 98: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serve.Z90`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.91**: Zeile 91: Versuch. Der Fehlerpfad geht in catch.
+> - **RemoteBackupBridgeTest.StubFtpServer.serveConnection**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Liefert `serveConnection`. Ruft `ftpWriter`. Nur Test.
+> - **catch Z.93 (SocketException e)**: Zeile 93: fängt (SocketException e).
+> - **if Z.94 (!control.isClosed())**: Zeile 94: prüft `(!control.isClosed())`.
+> - **return Z.95 return;**: Zeile 95: Rückgabe `return;`.
+> - **catch Z.96 (IOException e)**: Zeile 96: fängt (IOException e).
+> - **if Z.97 (!control.isClosed())**: Zeile 97: prüft `(!control.isClosed())`.
+> - **return Z.98 return;**: Zeile 98: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 91 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serve.Z90`.

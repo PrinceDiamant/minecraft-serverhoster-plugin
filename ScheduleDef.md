@@ -7,19 +7,24 @@ flowchart TD
   n1["Action"]:::internal-link
   n2["ScheduleDef.Teil1"]:::internal-link
   n3["ScheduleDef.Teil2"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Action
-  Eine Aktion im Zeitplan: Id, Typ, Befehl.
+  Die eine Tätigkeit in einem [[Glossar#Zeitplan|Zeitplan]], zum Beispiel ein [[Glossar#Befehl|Befehl]].
 ScheduleDef.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 ScheduleDef.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Action**: Die eine Tätigkeit in einem [[Glossar#Zeitplan|Zeitplan]], zum Beispiel ein [[Glossar#Befehl|Befehl]].
+> - **ScheduleDef.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **ScheduleDef.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 
+- Die Beschreibung eines [[Glossar#Zeitplan|Zeitplans]]: wann, was, und ob er an ist.

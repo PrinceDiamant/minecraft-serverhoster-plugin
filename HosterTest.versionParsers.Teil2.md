@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 VersionCatalog.compare
-  Vergleicht `compare`. Ruft `num`.
+  Dieser Teil vergleicht das. Vergleicht `compare`. Ruft `num`.
 ```
 
-- Fortsetzung von `HosterTest.versionParsers`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.compare**: Dieser Teil vergleicht das. Vergleicht `compare`. Ruft `num`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.versionParsers`.

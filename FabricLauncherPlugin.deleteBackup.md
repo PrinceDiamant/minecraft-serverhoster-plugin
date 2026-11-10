@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.deleteBackup.Z1437
-  Fortsetzung des Ablaufs ab Zeile 1437.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1437 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1437`.
 ```
 
-- `deleteBackup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.deleteBackup.Z1437**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1437 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1437`.
+
+- Das [[Glossar#Plugin|Plugin]] löscht die [[Glossar#Sicherungskopie|Sicherungskopie]].

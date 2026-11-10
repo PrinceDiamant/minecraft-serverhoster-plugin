@@ -22,9 +22,16 @@ if Z.788 (timestamp (= 0)
 throw Z.788 throw new IOException('Legacy memory recovery tim…
   Zeile 788: Abbruch `throw new IOException('Legacy memory recovery tim…`.
 FabricLauncherPlugin.memoryRecoveryFile
-  Betrifft den Speicher `memoryRecoveryFile`.
+  Die Datei, in der steht, ob der Speicher nach einem [[Glossar#Vorfall|Vorfall]] schon wieder freigegeben wurde. Betrifft den Speicher `memoryRecoveryFile`.
 FabricLauncherPlugin.copyLegacyFile
-  Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+  Das [[Glossar#Plugin|Plugin]] kopiert den alten Weg die Datei. Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.migrateMemoryRecoveryState`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.788 (timestamp (= 0)**: Zeile 788: prüft `(timestamp (= 0)`.
+> - **throw Z.788 throw new IOException('Legacy memory recovery tim…**: Zeile 788: Abbruch `throw new IOException('Legacy memory recovery tim…`.
+> - **FabricLauncherPlugin.memoryRecoveryFile**: Die Datei, in der steht, ob der Speicher nach einem [[Glossar#Vorfall|Vorfall]] schon wieder freigegeben wurde. Betrifft den Speicher `memoryRecoveryFile`.
+> - **FabricLauncherPlugin.copyLegacyFile**: Das [[Glossar#Plugin|Plugin]] kopiert den alten Weg die Datei. Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.migrateMemoryRecoveryState`.

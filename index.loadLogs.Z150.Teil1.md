@@ -19,15 +19,23 @@ flowchart TD
 
 ```knoten
 index.api
-  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+  Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 if Z.151 prev&&fs.some(e=)e.name===prev)
   Zeile 151: prüft `prev&&fs.some(e=)e.name===prev)`.
 if Z.151 fs.some(e=)e.name==='latest.log')
   Zeile 151: prüft `fs.some(e=)e.name==='latest.log')`.
 ```
 
-- Fortsetzung von `index.loadLogs.Z150`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.api**: Schickt von der älteren [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]]. Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **if Z.151 prev&&fs.some(e=)e.name===prev)**: Zeile 151: prüft `prev&&fs.some(e=)e.name===prev)`.
+> - **if Z.151 fs.some(e=)e.name==='latest.log')**: Zeile 151: prüft `fs.some(e=)e.name==='latest.log')`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.loadLogs.Z150`.

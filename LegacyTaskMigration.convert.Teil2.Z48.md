@@ -15,7 +15,12 @@ flowchart TD
 if Z.48 (fields(1).equals('*') && fields(4).equals('*'))
   Zeile 48: prüft `(fields(1).equals('*') && fields(4).equals('*'))`.
 LegacyTaskMigration.convert.Teil2.Z48.Z52
-  Fortsetzung des Ablaufs ab Zeile 52.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 52 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 52.
 ```
 
-- Fortsetzung von `LegacyTaskMigration.convert.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.48 (fields(1).equals('*') && fields(4).equals('*'))**: Zeile 48: prüft `(fields(1).equals('*') && fields(4).equals('*'))`.
+> - **LegacyTaskMigration.convert.Teil2.Z48.Z52**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 52 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 52.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 48 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `LegacyTaskMigration.convert.Teil2`.

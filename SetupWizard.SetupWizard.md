@@ -33,23 +33,35 @@ flowchart TD
 
 ```knoten
 SetupWizard.SetupWizard.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 SetupWizard.SetupWizard.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 SetupWizard.SetupWizard.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 SetupWizard.SetupWizard.Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
 SetupWizard.SetupWizard.chooseAction
-  Wählt `chooseAction`.
+  Der [[Glossar#Assistent|Assistent]] wählt die Tätigkeit. Wählt `chooseAction`.
 SetupWizard.SetupWizard.chooseCandidate
-  Wählt `chooseCandidate`.
+  Der [[Glossar#Assistent|Assistent]] wählt hier einen Schritt. Eine Ebene tiefer steht er genauer. Wählt `chooseCandidate`.
 SetupWizard.SetupWizard.next
-  Geht zum nächsten Schritt `next`. Ruft `versionIsValid`.
+  Der [[Glossar#Assistent|Assistent]] geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `versionIsValid`.
 SetupWizard.SetupWizard.finish
-  Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
+  Der [[Glossar#Assistent|Assistent]] beendet das. Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
 SetupWizard.SetupWizard.runFirstSetup
-  Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+  Der [[Glossar#Assistent|Assistent]] führt aus die erste die [[Glossar#Einrichtung|Einrichtung]]. Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupWizard.SetupWizard.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupWizard.SetupWizard.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupWizard.SetupWizard.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupWizard.SetupWizard.Teil4**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupWizard.SetupWizard.chooseAction**: Der [[Glossar#Assistent|Assistent]] wählt die Tätigkeit. Wählt `chooseAction`.
+> - **SetupWizard.SetupWizard.chooseCandidate**: Der [[Glossar#Assistent|Assistent]] wählt hier einen Schritt. Eine Ebene tiefer steht er genauer. Wählt `chooseCandidate`.
+> - **SetupWizard.SetupWizard.next**: Der [[Glossar#Assistent|Assistent]] geht weiter bei das. Geht zum nächsten Schritt `next`. Ruft `versionIsValid`.
+> - **SetupWizard.SetupWizard.finish**: Der [[Glossar#Assistent|Assistent]] beendet das. Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
+> - **SetupWizard.SetupWizard.runFirstSetup**: Der [[Glossar#Assistent|Assistent]] führt aus die erste die [[Glossar#Einrichtung|Einrichtung]]. Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+
+- Der [[Glossar#Assistent|Assistent]] kümmert sich um den Assistenten.
 - `SetupWizard` in `ui/src/components/SetupWizard.tsx`

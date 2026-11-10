@@ -24,15 +24,24 @@ flowchart TD
 if Z.108 hm.lastIncidentReport
   Zeile 108: prüft `hm.lastIncidentReport`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.status.Z101.Teil4.Calls111
-  Weitere eigene Aufrufe ab Zeile 111.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 111 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 111.
 index.status.Z101.Teil4.Calls111.2
-  Seite `index.status.Z101.Teil4.Calls111.2`.
+  Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Seite `index.status.Z101.Teil4.Calls111.2`.
 index.status.Z101.Teil4.Calls111.3
-  Seite `index.status.Z101.Teil4.Calls111.3`.
+  Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Seite `index.status.Z101.Teil4.Calls111.3`.
 ```
 
-- Fortsetzung von `index.status.Z101`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.108 hm.lastIncidentReport**: Zeile 108: prüft `hm.lastIncidentReport`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.status.Z101.Teil4.Calls111**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 111 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 111.
+> - **index.status.Z101.Teil4.Calls111.2**: Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Seite `index.status.Z101.Teil4.Calls111.2`.
+> - **index.status.Z101.Teil4.Calls111.3**: Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Seite `index.status.Z101.Teil4.Calls111.3`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.status.Z101`.

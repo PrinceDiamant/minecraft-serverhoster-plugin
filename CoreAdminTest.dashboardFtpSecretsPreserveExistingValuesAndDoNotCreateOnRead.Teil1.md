@@ -19,13 +19,20 @@ flowchart TD
 
 ```knoten
 BackupSecrets.readExisting
-  Liest `readExisting`. Ruft `load`.
+  Dieser Teil liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Liest `readExisting`. Ruft `load`.
 Schritt Z.86 assertFalse(Files.exists(tmp.resolve('secrets.yml…
   Zeile 86: Dateioperation. `assertFalse(Files.exists(tmp.resolve('secrets.yml…`
 Schritt Z.87 Files.writeString(tmp.resolve('secrets.yml'), 'no…
   Zeile 87: schreibt Text in eine Datei. `Files.writeString(tmp.resolve('secrets.yml'), 'no…`
 BackupSecrets.saveFtp
-  Speichert `saveFtp`. Ruft `load`, `restrict`.
+  Dieser Teil speichert die Übertragung. Speichert `saveFtp`. Ruft `load`, `restrict`.
 ```
 
-- Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupSecrets.readExisting**: Dieser Teil liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Liest `readExisting`. Ruft `load`.
+> - **Schritt Z.86 assertFalse(Files.exists(tmp.resolve('secrets.yml…**: Zeile 86: Dateioperation. `assertFalse(Files.exists(tmp.resolve('secrets.yml…`
+> - **Schritt Z.87 Files.writeString(tmp.resolve('secrets.yml'), 'no…**: Zeile 87: schreibt Text in eine Datei. `Files.writeString(tmp.resolve('secrets.yml'), 'no…`
+> - **BackupSecrets.saveFtp**: Dieser Teil speichert die Übertragung. Speichert `saveFtp`. Ruft `load`, `restrict`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`.

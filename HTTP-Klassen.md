@@ -8,22 +8,28 @@ flowchart TD
   n2["LogQuery"]:::internal-link
   n3["DashboardPassword"]:::internal-link
   n4["HttpsSupport"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 CrashIndex
-  Sucht Crash-Reports und liefert den Text.
+  Sucht [[Glossar#Absturzbericht|Absturzberichte]] und liefert ihren Text.
 LogQuery
-  Filtert Logzeilen für die Ansicht.
+  Sucht [[Glossar#Zeile|Zeilen]] im Protokoll, die zu einer Frage passen.
 DashboardPassword
-  Prüft das Dashboard-Passwort und die Sitzung.
+  Prüft das Passwort der [[Glossar#Bedienseite|Bedienseite]] und merkt sich die [[Glossar#Anmeldung|Anmeldung]].
 HttpsSupport
-  TLS für den HTTP-Server.
+  Baut die [[Glossar#Verschlüsselung|Verschlüsselung]] für die Verbindung zur [[Glossar#Bedienseite|Bedienseite]], wenn sie eingeschaltet ist.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **CrashIndex**: Sucht [[Glossar#Absturzbericht|Absturzberichte]] und liefert ihren Text.
+> - **LogQuery**: Sucht [[Glossar#Zeile|Zeilen]] im Protokoll, die zu einer Frage passen.
+> - **DashboardPassword**: Prüft das Passwort der [[Glossar#Bedienseite|Bedienseite]] und merkt sich die [[Glossar#Anmeldung|Anmeldung]].
+> - **HttpsSupport**: Baut die [[Glossar#Verschlüsselung|Verschlüsselung]] für die Verbindung zur [[Glossar#Bedienseite|Bedienseite]], wenn sie eingeschaltet ist.
 
+- Die Helfer daneben: Passwort, [[Glossar#Verschlüsselung|Verschlüsselung]], Protokoll und [[Glossar#Absturzbericht|Absturzberichte]].

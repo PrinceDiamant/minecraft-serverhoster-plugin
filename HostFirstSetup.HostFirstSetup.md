@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um die erste die [[Glossar#Einrichtung|Einrichtung]].
 - `HostFirstSetup` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

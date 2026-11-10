@@ -24,9 +24,16 @@ if Z.172 !schedule // scheduleCreated
 return Z.172 return;
   Zeile 172: Rückgabe `return;`.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.172 !schedule // scheduleCreated**: Zeile 172: prüft `!schedule // scheduleCreated`.
+> - **return Z.172 return;**: Zeile 172: Rückgabe `return;`.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+
+- Der [[Glossar#Assistent|Assistent]] legt an den [[Glossar#Zeitplan|Zeitplan]].
 - `createSchedule` in `ui/src/components/SetupWizard.tsx`

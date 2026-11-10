@@ -18,7 +18,12 @@ flowchart TD
 if Z.142 window.dashboardEditors
   Zeile 142: prüft `window.dashboardEditors`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 ```
 
-- Fortsetzung von `index.openFile`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.142 window.dashboardEditors**: Zeile 142: prüft `window.dashboardEditors`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.openFile`.

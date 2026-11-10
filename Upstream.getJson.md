@@ -25,4 +25,10 @@ return Z.40 return JsonParser.parseString(r.body());
   Zeile 40: Rückgabe `return JsonParser.parseString(r.body());`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.39 (r.statusCode() / 100 != 2)**: Zeile 39: prüft `(r.statusCode() / 100 != 2)`.
+> - **throw Z.39 throw new IOException('HTTP ' + r.statusCode() + …**: Zeile 39: Abbruch `throw new IOException('HTTP ' + r.statusCode() + …`.
+> - **return Z.40 return JsonParser.parseString(r.body());**: Zeile 40: Rückgabe `return JsonParser.parseString(r.body());`.
+
+- Dieser Teil liefert die Antwort.
 - `getJson` in `src/main/java/de/aichele/childlauncher/Upstream.java`

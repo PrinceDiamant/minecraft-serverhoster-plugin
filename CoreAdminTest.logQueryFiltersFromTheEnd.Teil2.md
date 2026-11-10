@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 LogQuery.query
-  Fragt ab `query`. Ruft `levelOk`.
+  Dieser Teil fragt ab das. Fragt ab `query`. Ruft `levelOk`.
 ```
 
-- Fortsetzung von `CoreAdminTest.logQueryFiltersFromTheEnd`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **LogQuery.query**: Dieser Teil fragt ab das. Fragt ab `query`. Ruft `levelOk`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.logQueryFiltersFromTheEnd`.

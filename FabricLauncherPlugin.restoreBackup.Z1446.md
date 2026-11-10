@@ -27,19 +27,30 @@ flowchart TD
 if Z.1446 (remoteBackupSelected())
   Zeile 1446: prüft `(remoteBackupSelected())`.
 FabricLauncherPlugin.remoteBackupSelected
-  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. `remoteBackupSelected` in `FabricLauncherPlugin.java`.
 Schritt Z.1447 Path temp = Files.createTempFile(getDataFolder().…
   Zeile 1447: Dateioperation. `Path temp = Files.createTempFile(getDataFolder().…`
 FabricLauncherPlugin.restoreBackup.Z1446.Z1448
-  Fortsetzung des Ablaufs ab Zeile 1448.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1448 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1448.
 BackupBridge.restore
-  Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
+  Die Sicherung auf diesem Rechner stellt wieder her das. Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
 ServerProfile.directory
-  `directory` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
 FabricLauncherPlugin.backupSpec
-  Sichert `backupSpec`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Sichert `backupSpec`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.restoreBackup`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1446 (remoteBackupSelected())**: Zeile 1446: prüft `(remoteBackupSelected())`.
+> - **FabricLauncherPlugin.remoteBackupSelected**: Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+> - **Schritt Z.1447 Path temp = Files.createTempFile(getDataFolder().…**: Zeile 1447: Dateioperation. `Path temp = Files.createTempFile(getDataFolder().…`
+> - **FabricLauncherPlugin.restoreBackup.Z1446.Z1448**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1448 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1448.
+> - **BackupBridge.restore**: Die Sicherung auf diesem Rechner stellt wieder her das. Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
+> - **ServerProfile.directory**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `ServerProfile.java`.
+> - **FabricLauncherPlugin.backupSpec**: Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Sichert `backupSpec`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1446 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.restoreBackup`.

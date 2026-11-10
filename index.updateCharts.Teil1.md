@@ -21,7 +21,11 @@ flowchart TD
 
 ```knoten
 index.pushChartValue
-  Schiebt einen Wert in `pushChartValue`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] zeichnet den Wert. Schiebt einen Wert in `pushChartValue`.
 ```
 
-- Fortsetzung von `index.updateCharts`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.pushChartValue**: Die ältere [[Glossar#Bedienseite|Bedienseite]] zeichnet den Wert. Schiebt einen Wert in `pushChartValue`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.updateCharts`.

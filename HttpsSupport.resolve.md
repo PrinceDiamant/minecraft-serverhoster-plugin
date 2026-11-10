@@ -16,4 +16,8 @@ return Z.208 return p.isAbsolute() ? p : base.resolve(p);
   Zeile 208: Rückgabe `return p.isAbsolute() ? p : base.resolve(p);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.208 return p.isAbsolute() ? p : base.resolve(p);**: Zeile 208: Rückgabe `return p.isAbsolute() ? p : base.resolve(p);`.
+
+- Dieser Teil bestimmt das.
 - `resolve` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

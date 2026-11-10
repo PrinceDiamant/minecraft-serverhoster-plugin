@@ -17,7 +17,12 @@ flowchart TD
 if Z.146 (event as CustomEvent(string)).detail === 'tasks'
   Zeile 146: prüft `(event as CustomEvent(string)).detail === 'tasks'`.
 fileEditor.installFileEditors.refresh
-  Lädt neu `refresh`. Ruft `editorFor`.
+  Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.146 (event as CustomEvent(string)).detail === 'tasks'**: Zeile 146: prüft `(event as CustomEvent(string)).detail === 'tasks'`.
+> - **fileEditor.installFileEditors.refresh**: Die [[Glossar#Bedienseite|Bedienseite]] lädt neu das. Lädt neu `refresh`. Ruft `editorFor`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `onPageChange` in `ui/src/components/TaskWorkflow.tsx`

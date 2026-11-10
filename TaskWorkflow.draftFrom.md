@@ -16,4 +16,8 @@ return Z.82 return ( id: schedule.id, name: schedule.name, en…
   Zeile 82: Rückgabe `return ( id: schedule.id, name: schedule.name, en…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.82 return ( id: schedule.id, name: schedule.name, en…**: Zeile 82: Rückgabe `return ( id: schedule.id, name: schedule.name, en…`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um aus.
 - `draftFrom` in `ui/src/components/TaskWorkflow.tsx`

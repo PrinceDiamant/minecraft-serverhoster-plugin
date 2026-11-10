@@ -18,9 +18,15 @@ flowchart TD
 if Z.2630 (c.serverProperties != null)
   Zeile 2630: prüft `(c.serverProperties != null)`.
 FabricLauncherPlugin.forcedProperties
-  Erzwingt `forcedProperties`. Ruft `effectiveBindAddress`.
+  Werte, die das [[Glossar#Plugin|Plugin]] in der Eigenschaftsdatei fest setzt, auch wenn dort etwas anderes steht. Erzwingt `forcedProperties`. Ruft `effectiveBindAddress`.
 FabricLauncherPlugin.hostBindAddress
-  Betrifft den Host `hostBindAddress`.
+  Die Adresse, unter der der [[Glossar#Host|Host]] selbst erreichbar sein soll. Betrifft den Host `hostBindAddress`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.writeProperties`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2630 (c.serverProperties != null)**: Zeile 2630: prüft `(c.serverProperties != null)`.
+> - **FabricLauncherPlugin.forcedProperties**: Werte, die das [[Glossar#Plugin|Plugin]] in der Eigenschaftsdatei fest setzt, auch wenn dort etwas anderes steht. Erzwingt `forcedProperties`. Ruft `effectiveBindAddress`.
+> - **FabricLauncherPlugin.hostBindAddress**: Die Adresse, unter der der [[Glossar#Host|Host]] selbst erreichbar sein soll. Betrifft den Host `hostBindAddress`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.writeProperties`.

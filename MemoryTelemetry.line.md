@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 MemoryTelemetry.Heap.usedMiB
-  `usedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `usedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
 MemoryTelemetry.Heap.committedMiB
-  `committedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `committedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
 MemoryTelemetry.Heap.maxMiB
-  Begrenzt nach oben `maxMiB`. Ruft `mib`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt nach oben `maxMiB`. Ruft `mib`.
 MemoryTelemetry.formatGc
-  Formatiert `formatGc`.
+  Die Messung macht lesbar die Speicherbereinigung. Formatiert `formatGc`.
 return Z.58 return 'timestamp=' + time + ' heapJvm=…
   Zeile 58: Rückgabe `return 'timestamp=' + time + ' heapJvm=…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **MemoryTelemetry.Heap.usedMiB**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `usedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+> - **MemoryTelemetry.Heap.committedMiB**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `committedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+> - **MemoryTelemetry.Heap.maxMiB**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Begrenzt nach oben `maxMiB`. Ruft `mib`.
+> - **MemoryTelemetry.formatGc**: Die Messung macht lesbar die Speicherbereinigung. Formatiert `formatGc`.
+> - **return Z.58 return 'timestamp=' + time + ' heapJvm=…**: Zeile 58: Rückgabe `return 'timestamp=' + time + ' heapJvm=…`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `line` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

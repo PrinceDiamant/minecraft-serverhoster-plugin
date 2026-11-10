@@ -11,7 +11,10 @@ flowchart TD
 
 ```knoten
 BackupOptions.BackupOptions
-  Sichert `BackupOptions`.
+  Dieser Teil sichert die Optionen. Im [[Glossar#Quelltext|Quelltext]] heißt das `BackupOptions`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupOptions.BackupOptions**: Dieser Teil sichert die Optionen. Im [[Glossar#Quelltext|Quelltext]] heißt das `BackupOptions`.
 
+- Die Angaben für einen einzelnen Sicherungslauf, zum Beispiel was mit hineinkommt.

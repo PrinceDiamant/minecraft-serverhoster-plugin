@@ -27,17 +27,27 @@ flowchart TD
 if Z.100 ('restart-required'.equals(HostFirstSetup.readSta…
   Zeile 100: prüft `('restart-required'.equals(HostFirstSetup.readSta…`.
 HostFirstSetup.readState
-  Liest `readState`. Ruft `readState`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest den Zustand. Liest `readState`. Ruft `readState`.
 FabricLauncherPlugin.hostFirstSetupMarker
-  Betrifft den Host `hostFirstSetupMarker`.
+  Liest oder schreibt die Merkdatei der [[Glossar#Ersteinrichtung|Ersteinrichtung]]. Betrifft den [[Glossar#Host|Host]] `hostFirstSetupMarker`.
 HostFirstSetup.completeRestart(Path,Path,Path,Set,List)
-  Schließt ab `completeRestart`. Ruft `readState`, `requireRoot`, `lobbyNameSafe`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den [[Glossar#Neustart|Neustart]]. Schließt ab `completeRestart`. Ruft `readState`, `requireRoot`, `lobbyNameSafe`.
 FabricLauncherPlugin.getWorldRoot
-  Liefert `getWorldRoot`.
+  Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
 FabricLauncherPlugin.configuredPath
-  Liest den konfigurierten Wert `configuredPath`. Ruft `getWorldRoot`.
+  Liest einen Ordner so, wie er in den [[Glossar#Einstellungen|Einstellungen]] steht. Liest den konfigurierten Wert `configuredPath`. Ruft `getWorldRoot`.
 FabricLauncherPlugin.hostProtectedPaths
-  Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
+  Die Ordner des [[Glossar#Host|Host]], die nicht gelöscht oder überschrieben werden dürfen. Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil1.Z98.Z99`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.100 ('restart-required'.equals(HostFirstSetup.readSta…**: Zeile 100: prüft `('restart-required'.equals(HostFirstSetup.readSta…`.
+> - **HostFirstSetup.readState**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest den Zustand. Liest `readState`. Ruft `readState`.
+> - **FabricLauncherPlugin.hostFirstSetupMarker**: Liest oder schreibt die Merkdatei der [[Glossar#Ersteinrichtung|Ersteinrichtung]]. Betrifft den [[Glossar#Host|Host]] `hostFirstSetupMarker`.
+> - **HostFirstSetup.completeRestart(Path,Path,Path,Set,List)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den [[Glossar#Neustart|Neustart]]. Schließt ab `completeRestart`. Ruft `readState`, `requireRoot`, `lobbyNameSafe`.
+> - **FabricLauncherPlugin.getWorldRoot**: Das [[Glossar#Plugin|Plugin]] liefert die [[Glossar#Spielwelt|Spielwelt]] den Anfang. Liefert `getWorldRoot`.
+> - **FabricLauncherPlugin.configuredPath**: Liest einen Ordner so, wie er in den [[Glossar#Einstellungen|Einstellungen]] steht. Liest den konfigurierten Wert `configuredPath`. Ruft `getWorldRoot`.
+> - **FabricLauncherPlugin.hostProtectedPaths**: Die Ordner des [[Glossar#Host|Host]], die nicht gelöscht oder überschrieben werden dürfen. Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 100 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil1.Z98.Z99`.

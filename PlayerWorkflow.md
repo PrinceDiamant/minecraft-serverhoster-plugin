@@ -13,9 +13,13 @@ flowchart TD
 
 ```knoten
 PlayerWorkflow.sendCommand
-  Sendet `sendCommand`. Ruft `dashboardRequest`, `jsonBody`.
+  Die [[Glossar#Bedienseite|Bedienseite]] schickt den [[Glossar#Befehl|Befehl]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendCommand`.
 PlayerWorkflow.PlayerWorkflow
-  `PlayerWorkflow` in `PlayerWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `runPlayerAction`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. Im [[Glossar#Quelltext|Quelltext]] heißt das `PlayerWorkflow`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **PlayerWorkflow.sendCommand**: Die [[Glossar#Bedienseite|Bedienseite]] schickt den [[Glossar#Befehl|Befehl]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `sendCommand`.
+> - **PlayerWorkflow.PlayerWorkflow**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. Im [[Glossar#Quelltext|Quelltext]] heißt das `PlayerWorkflow`.
 
+- Der Ablauf in der [[Glossar#Bedienseite|Bedienseite]], mit dem man etwas für einen [[Glossar#Spieler|Spieler]] tut.

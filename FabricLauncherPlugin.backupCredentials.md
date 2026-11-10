@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 BackupSecrets.load
-  Lädt `load`. Ruft `restrict`.
+  Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
 return Z.1482 return BackupSecrets.load(getDataFolder…
-  Zeile 1482: Rückgabe `return BackupSecrets.load(getDataFolder…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1482.
 ```
 
-- `backupCredentials` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **BackupSecrets.load**: Dieser Teil lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
+> - **return Z.1482 return BackupSecrets.load(getDataFolder…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1482.
+
+- Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten.

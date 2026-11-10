@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.277 return address == null ? '' : address.trim();
-  Zeile 277: Rückgabe `return address == null ? '' : address.trim();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 277.
 ```
 
-- `hostBindAddress` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.277 return address == null ? '' : address.trim();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 277.
+
+- Die Adresse, unter der der [[Glossar#Host|Host]] selbst erreichbar sein soll.

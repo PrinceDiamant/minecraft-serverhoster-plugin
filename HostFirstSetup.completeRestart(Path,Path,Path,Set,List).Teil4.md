@@ -21,13 +21,21 @@ flowchart TD
 for Z.160 (Path world : removable)
   Zeile 160: Schleife `(Path world : removable)`.
 HostFirstSetup.deleteTree
-  Löscht `deleteTree`. Ruft `visitFile`, `postVisitDirectory`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] löscht hier einen Schritt. Eine Ebene tiefer steht er genauer. Löscht `deleteTree`. Ruft `visitFile`, `postVisitDirectory`.
 HostFirstSetup.writeMarker(Path,String,String,int)
-  Schreibt `writeMarker`. Ruft `writeMarker`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
 HostFirstSetup.parseCount
-  Wertet aus `parseCount`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Wertet aus `parseCount`.
 return Z.166 return List.copyOf(removed);
   Zeile 166: Rückgabe `return List.copyOf(removed);`.
 ```
 
-- Fortsetzung von `HostFirstSetup.completeRestart(Path,Path,Path,Set,List)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.160 (Path world : removable)**: Zeile 160: Schleife `(Path world : removable)`.
+> - **HostFirstSetup.deleteTree**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] löscht hier einen Schritt. Eine Ebene tiefer steht er genauer. Löscht `deleteTree`. Ruft `visitFile`, `postVisitDirectory`.
+> - **HostFirstSetup.writeMarker(Path,String,String,int)**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] schreibt die Merkdatei. Schreibt `writeMarker`. Ruft `writeMarker`.
+> - **HostFirstSetup.parseCount**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest hier einen Schritt. Eine Ebene tiefer steht er genauer. Wertet aus `parseCount`.
+> - **return Z.166 return List.copyOf(removed);**: Zeile 166: Rückgabe `return List.copyOf(removed);`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostFirstSetup.completeRestart(Path,Path,Path,Set,List)`.

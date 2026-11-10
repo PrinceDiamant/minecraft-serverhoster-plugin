@@ -17,7 +17,12 @@ flowchart TD
 if Z.182 becameRequired
   Zeile 182: prüft `becameRequired`.
 App.App.navigateTo
-  Wechselt die Route `navigateTo`. Ruft `tab`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.182 becameRequired**: Zeile 182: prüft `becameRequired`.
+> - **App.App.navigateTo**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um die [[Glossar#Einrichtung|Einrichtung]] einen Pflichtwert.
 - `onSetupRequired` in `ui/src/App.tsx`

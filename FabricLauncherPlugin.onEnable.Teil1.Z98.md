@@ -15,7 +15,12 @@ flowchart TD
 if Z.98 (!hostFirstSetupRestartRequired && !hostFirstSetu…
   Zeile 98: prüft `(!hostFirstSetupRestartRequired && !hostFirstSetu…`.
 FabricLauncherPlugin.onEnable.Teil1.Z98.Z99
-  Fortsetzung des Ablaufs ab Zeile 99.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 99 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 99.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.98 (!hostFirstSetupRestartRequired && !hostFirstSetu…**: Zeile 98: prüft `(!hostFirstSetupRestartRequired && !hostFirstSetu…`.
+> - **FabricLauncherPlugin.onEnable.Teil1.Z98.Z99**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 99 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 99.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 98 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.onEnable.Teil1`.

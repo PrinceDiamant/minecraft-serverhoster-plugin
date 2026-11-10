@@ -19,14 +19,20 @@ flowchart TD
 
 ```knoten
 Schritt Z.31 Files.createDirectories(work.resolve('world'));
-  Zeile 31: Dateioperation. `Files.createDirectories(work.resolve('world'));`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 31.
 Schritt Z.32 Files.writeString(work.resolve('world').resolve('…
-  Zeile 32: schreibt Text in eine Datei. `Files.writeString(work.resolve('world').resolve('…`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 32.
 Schritt Z.33 Files.writeString(work.resolve('world').resolve('…
-  Zeile 33: schreibt Text in eine Datei. `Files.writeString(work.resolve('world').resolve('…`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 33.
 RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37
-  Fortsetzung des Ablaufs ab Zeile 37.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 37 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z37`.
 ```
 
-- `autoModeStreamsFtpBackupAndFinalizesPartialUpload` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
-- Auslöser: Test
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.31 Files.createDirectories(work.resolve('world'));**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 31.
+> - **Schritt Z.32 Files.writeString(work.resolve('world').resolve('…**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 32.
+> - **Schritt Z.33 Files.writeString(work.resolve('world').resolve('…**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 33.
+> - **RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 37 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z37`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

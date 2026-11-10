@@ -13,33 +13,44 @@ flowchart TD
   n7["Dashboard.text"]:::internal-link
   n8["Dashboard.send"]:::internal-link
   n9["Dashboard.sendBytes"]:::internal-link
-  n4 -->|"Z.983"| n3
-  n6 -->|"Z.996"| n9
-  n7 -->|"Z.997"| n9
-  n8 -->|"Z.998"| n9
+  n4 -->|"Zeile 983"| n3
+  n6 -->|"Zeile 996"| n9
+  n7 -->|"Zeile 997"| n9
+  n8 -->|"Zeile 998"| n9
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Dashboard.parseInt
-  Wertet aus `parseInt`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Zahl.
 Dashboard.readOr
-  Liest `readOr`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest oder den Ersatz.
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text.
 Dashboard.body
-  `body` in `Dashboard.java`. Ruft `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 Dashboard.query
-  Fragt ab `query`.
+  Liest eine Angabe aus der Adresse der Anfrage.
 Dashboard.json
-  Antwortet mit JSON `json`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 Dashboard.text
-  Antwortet mit Text `text`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 Dashboard.send
-  Sendet `send`. Ruft `sendBytes`.
+  Schickt die Antwort an den Browser.
 Dashboard.sendBytes
-  Sendet `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **Dashboard.parseInt**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest eine Zahl.
+> - **Dashboard.readOr**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest oder den Ersatz.
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text.
+> - **Dashboard.body**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **Dashboard.query**: Liest eine Angabe aus der Adresse der Anfrage.
+> - **Dashboard.json**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **Dashboard.text**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **Dashboard.send**: Schickt die Antwort an den Browser.
+> - **Dashboard.sendBytes**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] schickt die Größe.
 
+- Wie eine Antwort an den Browser aussieht: Text, Zahlen oder eine Fehlermeldung.

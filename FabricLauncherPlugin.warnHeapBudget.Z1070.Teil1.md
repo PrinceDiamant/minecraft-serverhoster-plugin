@@ -20,9 +20,15 @@ flowchart TD
 if Z.1074 (!willRun)
   Zeile 1074: prüft `(!willRun)`.
 FabricLauncherPlugin.parseMemoryBytes
-  Wertet aus `parseMemoryBytes`.
+  Das [[Glossar#Plugin|Plugin]] liest den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Größe. Wertet aus `parseMemoryBytes`.
 FabricLauncherPlugin.warnHeapBudget.Z1070.Teil1.Z1077
-  Fortsetzung des Ablaufs ab Zeile 1077.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1077 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1077.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.warnHeapBudget.Z1070`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1074 (!willRun)**: Zeile 1074: prüft `(!willRun)`.
+> - **FabricLauncherPlugin.parseMemoryBytes**: Das [[Glossar#Plugin|Plugin]] liest den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Größe. Wertet aus `parseMemoryBytes`.
+> - **FabricLauncherPlugin.warnHeapBudget.Z1070.Teil1.Z1077**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1077 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1077.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.warnHeapBudget.Z1070`.

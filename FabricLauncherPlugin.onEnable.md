@@ -23,18 +23,26 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.onEnable.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 FabricLauncherPlugin.onEnable.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 FabricLauncherPlugin.onEnable.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
 FabricLauncherPlugin.onEnable.Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil4`.
 FabricLauncherPlugin.onEnable.Teil5
-  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil5`.
 FabricLauncherPlugin.onEnable.Teil6
-  Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil6`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.onEnable.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **FabricLauncherPlugin.onEnable.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+> - **FabricLauncherPlugin.onEnable.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
+> - **FabricLauncherPlugin.onEnable.Teil4**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil4`.
+> - **FabricLauncherPlugin.onEnable.Teil5**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil5`.
+> - **FabricLauncherPlugin.onEnable.Teil6**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil6`.
 
 ```mermaid
 sequenceDiagram
@@ -51,5 +59,5 @@ sequenceDiagram
   Note over Hook: shutdownHookTimeoutSeconds Standard 25 s, Z.135
 ```
 
-- Spigot `onEnable`: Profile, Sampler, Dashboard, fünf Scheduler.
-- Befund: Logikrisiko, sicher. Z.153 Fallback 30 s, writeMemoryIncidentReport Z.1223 Fallback 15 s, config.yml:38 ist 15
+- Läuft, wenn der [[Glossar#Host|Host]] das [[Glossar#Plugin|Plugin]] einschaltet. [[Glossar#Einstellungen|Einstellungen]] werden gelesen, die [[Glossar#Wecker|Wecker]] starten, die [[Glossar#Bedienseite|Bedienseite]] geht auf.
+- Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].

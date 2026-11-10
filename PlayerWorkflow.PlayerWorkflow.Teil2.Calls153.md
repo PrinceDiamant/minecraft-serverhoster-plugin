@@ -21,9 +21,14 @@ flowchart TD
 
 ```knoten
 PlayerWorkflow.PlayerWorkflow.runPlayerAction
-  Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Spieler|Spieler]] die Tätigkeit. Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
 PlayerWorkflow.sendCommand
-  Sendet `sendCommand`. Ruft `dashboardRequest`, `jsonBody`.
+  Die [[Glossar#Bedienseite|Bedienseite]] schickt den [[Glossar#Befehl|Befehl]]. Sendet `sendCommand`. Ruft `dashboardRequest`, `jsonBody`.
 ```
 
-- Fortsetzung von `PlayerWorkflow.PlayerWorkflow.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **PlayerWorkflow.PlayerWorkflow.runPlayerAction**: Die [[Glossar#Bedienseite|Bedienseite]] führt aus den [[Glossar#Spieler|Spieler]] die Tätigkeit. Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
+> - **PlayerWorkflow.sendCommand**: Die [[Glossar#Bedienseite|Bedienseite]] schickt den [[Glossar#Befehl|Befehl]]. Sendet `sendCommand`. Ruft `dashboardRequest`, `jsonBody`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 153 aufgerufen werden.
+- Fortsetzung von `PlayerWorkflow.PlayerWorkflow.Teil2`.

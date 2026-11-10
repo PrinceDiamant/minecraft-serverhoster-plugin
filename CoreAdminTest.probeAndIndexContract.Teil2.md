@@ -19,15 +19,23 @@ flowchart TD
 
 ```knoten
 ProcessProbe.jcmd(long,String)
-  `jcmd` in `ProcessProbe.java`. Ruft `jcmd`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `jcmd` in `ProcessProbe.java`. Ruft `jcmd`.
 Schritt Z.366 Path dir = Files.createDirectories(tmp.resolve('d…
   Zeile 366: Dateioperation. `Path dir = Files.createDirectories(tmp.resolve('d…`
 Schritt Z.367 Files.writeString(dir.resolve('a.txt'), '12345');
   Zeile 367: schreibt Text in eine Datei. `Files.writeString(dir.resolve('a.txt'), '12345');`
 ProcessProbe.disk
-  Liest die Platte `disk`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest die Platte `disk`.
 Schritt Z.371 String html = Files.readString(Path.of('src/main/…
   Zeile 371: liest Text aus einer Datei. `String html = Files.readString(Path.of('src/main/…`
 ```
 
-- Fortsetzung von `CoreAdminTest.probeAndIndexContract`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ProcessProbe.jcmd(long,String)**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `jcmd` in `ProcessProbe.java`. Ruft `jcmd`.
+> - **Schritt Z.366 Path dir = Files.createDirectories(tmp.resolve('d…**: Zeile 366: Dateioperation. `Path dir = Files.createDirectories(tmp.resolve('d…`
+> - **Schritt Z.367 Files.writeString(dir.resolve('a.txt'), '12345');**: Zeile 367: schreibt Text in eine Datei. `Files.writeString(dir.resolve('a.txt'), '12345');`
+> - **ProcessProbe.disk**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liest die Platte `disk`.
+> - **Schritt Z.371 String html = Files.readString(Path.of('src/main/…**: Zeile 371: liest Text aus einer Datei. `String html = Files.readString(Path.of('src/main/…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.probeAndIndexContract`.

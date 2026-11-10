@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.startSampler.Z1802
-  Fortsetzung des Ablaufs ab Zeile 1802.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1802 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1802`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.startSampler.Z1802**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1802 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1802`.
 
 ```mermaid
 sequenceDiagram
@@ -23,5 +26,5 @@ sequenceDiagram
   Note over Main: outerMspt nur wenn tickIdx % 20 == 0, Z.1806
 ```
 
-- Server-Thread, `runTaskTimer` 1 Tick / 1 Tick.
-- Befund: Kommentar widerspricht Code, sicher. Feldkommentar Z.66 once per second, runTaskTimer Z.1815 Periode 1 Tick, Schreiben alle 20 Ticks Z.1806
+- Lässt regelmäßig aufschreiben, wie der [[Glossar#Spielserver|Spielserver]] gerade läuft. Der Abstand ist ein [[Glossar#Spielschritt|Spielschritt]] des [[Glossar#Host|Host]].
+- Auffällig: ein Kommentar oder eine Meldung sagt etwas anderes als der Ablauf. Das nennt man [[Glossar#Widerspruch|Widerspruch]].

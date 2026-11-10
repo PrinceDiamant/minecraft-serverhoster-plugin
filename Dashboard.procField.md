@@ -25,17 +25,25 @@ flowchart TD
 
 ```knoten
 try Z.661
-  Zeile 661: Versuch. Der Fehlerpfad geht in catch.
+  Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 661.
 for Z.661 (String l : Files.readAllLines(Paths.ge…
-  Zeile 661: Schleife `(String l : Files.readAllLines(Paths.ge…`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 661.
 if Z.661 (l.startsWith(key))
-  Zeile 661: prüft `(l.startsWith(key))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 661.
 return Z.661 return Long.parseLong(l.replaceAll('//D', ''));
-  Zeile 661: Rückgabe `return Long.parseLong(l.replaceAll('//D', ''));`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 661.
 catch Z.662 (Exception ignored)
-  Zeile 662: fängt (Exception ignored).
+  Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 662.
 return Z.663 return -1;
-  Zeile 663: Rückgabe `return -1;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 663.
 ```
 
-- `procField` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **try Z.661**: Das Programm versucht diesen Schritt. Geht er schief, führt der andere Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 661.
+> - **for Z.661 (String l : Files.readAllLines(Paths.ge…**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 661.
+> - **if Z.661 (l.startsWith(key))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 661.
+> - **return Z.661 return Long.parseLong(l.replaceAll('//D', ''));**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 661.
+> - **catch Z.662 (Exception ignored)**: Dieser Weg gilt, wenn der Schritt davor schiefgegangen ist. Das steht in [[Glossar#Zeile|Zeile]] 662.
+> - **return Z.663 return -1;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 663.
+
+- Liest ein einzelnes Feld aus den Prozessdaten des Betriebssystems.

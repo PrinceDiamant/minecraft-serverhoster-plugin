@@ -20,4 +20,9 @@ return Z.294 return base + '/' + server + '/' + name;
   Zeile 294: Rückgabe `return base + '/' + server + '/' + name;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **while Z.293 (base.endsWith('/'))**: Zeile 293: Schleife `(base.endsWith('/'))`.
+> - **return Z.294 return base + '/' + server + '/' + name;**: Zeile 294: Rückgabe `return base + '/' + server + '/' + name;`.
+
+- Die Sicherung über das Netz kümmert sich um den Pfad.
 - `remotePath` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

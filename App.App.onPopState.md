@@ -21,9 +21,15 @@ flowchart TD
 if Z.187 document.getElementById('app')?.classList.contain…
   Zeile 187: prüft `document.getElementById('app')?.classList.contain…`.
 App.tabFromPath
-  Wechselt den Tab `tabFromPath`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad. Wechselt den Tab `tabFromPath`.
 App.App.navigateTo
-  Wechselt die Route `navigateTo`. Ruft `tab`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.187 document.getElementById('app')?.classList.contain…**: Zeile 187: prüft `document.getElementById('app')?.classList.contain…`.
+> - **App.tabFromPath**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu aus den Pfad. Wechselt den Tab `tabFromPath`.
+> - **App.App.navigateTo**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `onPopState` in `ui/src/App.tsx`

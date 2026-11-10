@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.289 return focus;
-  Zeile 289: Rückgabe `return focus;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 289.
 ```
 
-- `focusId` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.289 return focus;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 289.
+
+- Das [[Glossar#Plugin|Plugin]] liefert die Kennung.

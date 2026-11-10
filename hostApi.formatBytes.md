@@ -28,19 +28,28 @@ flowchart TD
 
 ```knoten
 if Z.72 bytes ( 1024
-  Zeile 72: prüft `bytes ( 1024`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 72.
 return Z.72 return '$(bytes) B';
-  Zeile 72: Rückgabe `return '$(bytes) B';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 72.
 if Z.73 bytes ( 1024 ** 2
-  Zeile 73: prüft `bytes ( 1024 ** 2`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 73.
 return Z.73 return '$((bytes / 1024).toFixed(1)) KB';
-  Zeile 73: Rückgabe `return '$((bytes / 1024).toFixed(1)) KB';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 73.
 if Z.74 bytes ( 1024 ** 3
-  Zeile 74: prüft `bytes ( 1024 ** 3`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 74.
 return Z.74 return '$((bytes / 1024 ** 2).toFixed(1)) MB';
-  Zeile 74: Rückgabe `return '$((bytes / 1024 ** 2).toFixed(1)) MB';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 74.
 return Z.75 return '$((bytes / 1024 ** 3).toFixed(2)) GB';
-  Zeile 75: Rückgabe `return '$((bytes / 1024 ** 3).toFixed(2)) GB';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 75.
 ```
 
-- `formatBytes` in `ui/src/lib/hostApi.ts`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.72 bytes ( 1024**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 72.
+> - **return Z.72 return '$(bytes) B';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 72.
+> - **if Z.73 bytes ( 1024 ** 2**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 73.
+> - **return Z.73 return '$((bytes / 1024).toFixed(1)) KB';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 73.
+> - **if Z.74 bytes ( 1024 ** 3**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 74.
+> - **return Z.74 return '$((bytes / 1024 ** 2).toFixed(1)) MB';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 74.
+> - **return Z.75 return '$((bytes / 1024 ** 3).toFixed(2)) GB';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 75.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe.

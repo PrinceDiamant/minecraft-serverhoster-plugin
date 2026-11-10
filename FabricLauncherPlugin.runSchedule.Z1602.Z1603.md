@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 ScheduleExecution.run
-  Führt aus `run`.
+  Dieser Teil führt aus das. Führt aus `run`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.runSchedule.Z1602`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleExecution.run**: Dieser Teil führt aus das. Führt aus `run`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1603 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.runSchedule.Z1602`.

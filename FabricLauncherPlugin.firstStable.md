@@ -23,15 +23,22 @@ flowchart TD
 
 ```knoten
 for Z.2584 (JsonElement e : arr)
-  Zeile 2584: Schleife `(JsonElement e : arr)`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 2584.
 if Z.2586 (loaderWrapped)
-  Zeile 2586: prüft `(loaderWrapped)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2586.
 if Z.2587 (o.get('stable').getAsBoolean())
-  Zeile 2587: prüft `(o.get('stable').getAsBoolean())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2587.
 return Z.2587 return o.get('version').getAsString();
-  Zeile 2587: Rückgabe `return o.get('version').getAsString();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2587.
 return Z.2590 return (loaderWrapped ? o.getAsJsonObject('loader…
-  Zeile 2590: Rückgabe `return (loaderWrapped ? o.getAsJsonObject('loader…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2590.
 ```
 
-- `firstStable` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **for Z.2584 (JsonElement e : arr)**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 2584.
+> - **if Z.2586 (loaderWrapped)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2586.
+> - **if Z.2587 (o.get('stable').getAsBoolean())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2587.
+> - **return Z.2587 return o.get('version').getAsString();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2587.
+> - **return Z.2590 return (loaderWrapped ? o.getAsJsonObject('loader…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2590.
+
+- Sucht die neueste [[Glossar#Version|Version]], die als stabil gilt.

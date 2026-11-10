@@ -23,7 +23,7 @@ flowchart TD
 if Z.58 (fields(1).matches('//d(1,2)') && fields(4).match…
   Zeile 58: prüft `(fields(1).matches('//d(1,2)') && fields(4).match…`.
 LegacyTaskMigration.number
-  `number` in `LegacyTaskMigration.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `number` in `LegacyTaskMigration.java`.
 if Z.61 (hour ( 0 // day ( 0)
   Zeile 61: prüft `(hour ( 0 // day ( 0)`.
 return Z.61 return null;
@@ -32,4 +32,12 @@ return Z.66 return null;
   Zeile 66: Rückgabe `return null;`.
 ```
 
-- Fortsetzung von `LegacyTaskMigration.convert.Teil2.Z48.Z52`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.58 (fields(1).matches('//d(1,2)') && fields(4).match…**: Zeile 58: prüft `(fields(1).matches('//d(1,2)') && fields(4).match…`.
+> - **LegacyTaskMigration.number**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `number` in `LegacyTaskMigration.java`.
+> - **if Z.61 (hour ( 0 // day ( 0)**: Zeile 61: prüft `(hour ( 0 // day ( 0)`.
+> - **return Z.61 return null;**: Zeile 61: Rückgabe `return null;`.
+> - **return Z.66 return null;**: Zeile 66: Rückgabe `return null;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 58 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `LegacyTaskMigration.convert.Teil2.Z48.Z52`.

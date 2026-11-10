@@ -7,19 +7,24 @@ flowchart TD
   n1["Backup-Lauf"]:::internal-link
   n2["Backup-Dateien"]:::internal-link
   n3["Backup-Bruecken"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 Backup-Lauf
-  Der Backup-Durchlauf im Plugin: sperren, packen, ablegen.
+  Ein Durchlauf, der die [[Glossar#Sicherungskopie|Sicherungskopie]] packt und ablegt.
 Backup-Dateien
-  Dateiname, Pfad und welche Stücke behalten werden.
+  Wie die [[Glossar#Sicherungskopie|Sicherungskopie]] heißt, wo sie liegt, und wie viele alte Kopien behalten werden.
 Backup-Bruecken
-  Lokale Brücke, Fern-Brücke, Geheimnisse und Optionen.
+  Die beiden Wege für die [[Glossar#Sicherungskopie|Sicherungskopie]]: auf diesem Rechner, oder über das Netz. Dazu Zugangsdaten und Optionen.
 ```
 
-- Lokales Zip über `BackupBridge` oder FTP/FTPS über `RemoteBackupBridge`.
+> [!knoten] Was die Blöcke tun
+> - **Backup-Lauf**: Ein Durchlauf, der die [[Glossar#Sicherungskopie|Sicherungskopie]] packt und ablegt.
+> - **Backup-Dateien**: Wie die [[Glossar#Sicherungskopie|Sicherungskopie]] heißt, wo sie liegt, und wie viele alte Kopien behalten werden.
+> - **Backup-Bruecken**: Die beiden Wege für die [[Glossar#Sicherungskopie|Sicherungskopie]]: auf diesem Rechner, oder über das Netz. Dazu Zugangsdaten und Optionen.
+
+- Eine [[Glossar#Sicherungskopie|Sicherungskopie]] der [[Glossar#Spielwelt|Spielwelt]], entweder auf diesem Rechner oder über das Netz auf einen anderen.

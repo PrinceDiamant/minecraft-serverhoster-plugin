@@ -19,11 +19,18 @@ flowchart TD
 while Z.1632 (true)
   Zeile 1632: Schleife `(true)`.
 FabricLauncherPlugin.runScheduledBackup.Z1632.Z1633
-  Fortsetzung des Ablaufs ab Zeile 1633.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1633 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1633.
 FabricLauncherPlugin.runScheduledBackup.Z1632.Z1643
-  Fortsetzung des Ablaufs ab Zeile 1643.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1643 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1643.
 return Z.1666 return;
   Zeile 1666: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.runScheduledBackup`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **while Z.1632 (true)**: Zeile 1632: Schleife `(true)`.
+> - **FabricLauncherPlugin.runScheduledBackup.Z1632.Z1633**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1633 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1633.
+> - **FabricLauncherPlugin.runScheduledBackup.Z1632.Z1643**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1643 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1643.
+> - **return Z.1666 return;**: Zeile 1666: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1632 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.runScheduledBackup`.

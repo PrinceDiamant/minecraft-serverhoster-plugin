@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Dieser Teil kümmert sich um die [[Glossar#Pause|Pause]].
 - `RestartBackoff` in `src/main/java/de/aichele/childlauncher/RestartBackoff.java`

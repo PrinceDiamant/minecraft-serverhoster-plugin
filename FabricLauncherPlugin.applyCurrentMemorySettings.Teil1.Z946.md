@@ -17,9 +17,15 @@ flowchart TD
 if Z.946 (policy )= 3)
   Zeile 946: prüft `(policy )= 3)`.
 FabricLauncherPlugin.applyCurrentMemorySettings.Teil1.Z946.Z947
-  Fortsetzung des Ablaufs ab Zeile 947.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 947 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 947.
 return Z.955 return;
   Zeile 955: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.applyCurrentMemorySettings.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.946 (policy )= 3)**: Zeile 946: prüft `(policy )= 3)`.
+> - **FabricLauncherPlugin.applyCurrentMemorySettings.Teil1.Z946.Z947**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 947 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 947.
+> - **return Z.955 return;**: Zeile 955: Rückgabe `return;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 946 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.applyCurrentMemorySettings.Teil1`.

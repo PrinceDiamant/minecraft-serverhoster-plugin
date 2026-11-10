@@ -24,11 +24,19 @@ if Z.2475 (a.length ( 4 // !a(1).equalsIgnoreCase('set'))
 return Z.2475 return true;
   Zeile 2475: Rückgabe `return true;`.
 FabricLauncherPlugin.parseValue
-  Wertet aus `parseValue`.
+  Das [[Glossar#Plugin|Plugin]] liest den Wert. Wertet aus `parseValue`.
 FabricLauncherPlugin.saveConfigWritable
-  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+  Speichert die [[Glossar#Einstellungsdatei|Einstellungsdatei]] und setzt danach die [[Glossar#Dateirechte|Dateirechte]] so, dass sie beschreibbar bleibt. Speichert `saveConfigWritable`. Ruft `makeWritable`.
 Schritt Z.2479 s.sendMessage('config.yml: ' + a(2) + ' = ' + get…
   Zeile 2479: `s.sendMessage('config.yml: ' + a(2) + ' = ' + get…`
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2475 (a.length ( 4 // !a(1).equalsIgnoreCase('set'))**: Zeile 2475: prüft `(a.length ( 4 // !a(1).equalsIgnoreCase('set'))`.
+> - **return Z.2475 return true;**: Zeile 2475: Rückgabe `return true;`.
+> - **FabricLauncherPlugin.parseValue**: Das [[Glossar#Plugin|Plugin]] liest den Wert. Wertet aus `parseValue`.
+> - **FabricLauncherPlugin.saveConfigWritable**: Speichert die [[Glossar#Einstellungsdatei|Einstellungsdatei]] und setzt danach die [[Glossar#Dateirechte|Dateirechte]] so, dass sie beschreibbar bleibt. Speichert `saveConfigWritable`. Ruft `makeWritable`.
+> - **Schritt Z.2479 s.sendMessage('config.yml: ' + a(2) + ' = ' + get…**: Zeile 2479: `s.sendMessage('config.yml: ' + a(2) + ' = ' + get…`
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2474.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

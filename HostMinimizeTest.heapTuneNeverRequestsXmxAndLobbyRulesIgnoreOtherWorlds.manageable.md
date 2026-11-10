@@ -16,5 +16,9 @@ return Z.327 return 'MinHeapFreeRatio'.equals(name);
   Zeile 327: Rückgabe `return 'MinHeapFreeRatio'.equals(name);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.327 return 'MinHeapFreeRatio'.equals(name);**: Zeile 327: Rückgabe `return 'MinHeapFreeRatio'.equals(name);`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `manageable` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

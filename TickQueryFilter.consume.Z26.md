@@ -27,4 +27,11 @@ return Z.33 return true;
   Zeile 33: Rückgabe `return true;`.
 ```
 
-- Fortsetzung von `TickQueryFilter.consume`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.26 (avg.find())**: Zeile 26: prüft `(avg.find())`.
+> - **try Z.27**: Zeile 27: Versuch. Der Fehlerpfad geht in catch.
+> - **catch Z.32 (NumberFormatException ignore…**: Zeile 32: fängt (NumberFormatException ignore….
+> - **return Z.33 return true;**: Zeile 33: Rückgabe `return true;`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 26 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `TickQueryFilter.consume`.

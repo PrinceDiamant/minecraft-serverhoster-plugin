@@ -21,8 +21,12 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.parseMemoryBytes
-  Wertet aus `parseMemoryBytes`.
+  Das [[Glossar#Plugin|Plugin]] liest den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Größe. Wertet aus `parseMemoryBytes`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.parseMemoryBytes**: Das [[Glossar#Plugin|Plugin]] liest den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Größe. Wertet aus `parseMemoryBytes`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `heapSizeParserHandlesJvmSuffixesAndInvalidValues` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

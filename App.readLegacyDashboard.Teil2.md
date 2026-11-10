@@ -14,4 +14,8 @@ return Z.141 return ( panels: main.innerHTML, script: safeScri…
   Zeile 141: Rückgabe `return ( panels: main.innerHTML, script: safeScri…`.
 ```
 
-- Fortsetzung von `App.readLegacyDashboard`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.141 return ( panels: main.innerHTML, script: safeScri…**: Zeile 141: Rückgabe `return ( panels: main.innerHTML, script: safeScri…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `App.readLegacyDashboard`.

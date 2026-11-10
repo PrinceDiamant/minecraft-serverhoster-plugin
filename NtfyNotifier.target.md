@@ -31,7 +31,15 @@ if Z.45 (topic == null // !topic.matches('(A-Za-z0-9_-)(1…
 throw Z.46 throw new IOException('notifications.ntfy.topic m…
   Zeile 46: Abbruch `throw new IOException('notifications.ntfy.topic m…`.
 NtfyNotifier.target.Z47
-  Fortsetzung des Ablaufs ab Zeile 47.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 47 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 47.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.44 (server == null // server.isBlank())**: Zeile 44: prüft `(server == null // server.isBlank())`.
+> - **throw Z.44 throw new IOException('notifications.ntfy.server …**: Zeile 44: Abbruch `throw new IOException('notifications.ntfy.server …`.
+> - **if Z.45 (topic == null // !topic.matches('(A-Za-z0-9_-)(1…**: Zeile 45: prüft `(topic == null // !topic.matches('(A-Za-z0-9_-)(1…`.
+> - **throw Z.46 throw new IOException('notifications.ntfy.topic m…**: Zeile 46: Abbruch `throw new IOException('notifications.ntfy.topic m…`.
+> - **NtfyNotifier.target.Z47**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 47 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 47.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `target` in `src/main/java/de/aichele/childlauncher/NtfyNotifier.java`

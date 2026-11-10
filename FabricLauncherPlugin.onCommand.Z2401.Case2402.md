@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.requestStart(CommandSender,String)
-  Fordert an `requestStart`. Ruft `startAsync`.
+  Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Fordert an `requestStart`. Ruft `startAsync`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.requestStart(CommandSender,String)**: Bittet darum, den [[Glossar#Spielserver|Spielserver]] zu starten. Fordert an `requestStart`. Ruft `startAsync`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2402.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

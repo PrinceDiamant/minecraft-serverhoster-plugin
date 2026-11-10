@@ -15,10 +15,14 @@ flowchart TD
 
 ```knoten
 App.readLegacyDashboard.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 App.readLegacyDashboard.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 ```
 
-- Ersetzt Legacy-Abschnitte und löscht vier `load…`-Aufrufe aus dem Script.
-- Befund: doppelte Implementierung, sicher. App.tsx:100–141 entfernt loadPlayers/loadSetup/loadBackup/loadTasks
+> [!knoten]- Was die Blöcke tun
+> - **App.readLegacyDashboard.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **App.readLegacyDashboard.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+
+- Liest die ältere [[Glossar#Bedienseite|Bedienseite]] und schneidet die Bereiche heraus, die die neuere Seite selbst übernimmt.
+- Auffällig: derselbe Teil ist zweimal vorhanden. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].

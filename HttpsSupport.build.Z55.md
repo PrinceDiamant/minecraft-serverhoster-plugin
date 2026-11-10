@@ -17,9 +17,15 @@ flowchart TD
 return Z.55 return switch (mode) ( case 'self-signed' -) from…
   Zeile 55: Rückgabe `return switch (mode) ( case 'self-signed' -) from…`.
 HttpsSupport.build.Z55.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 HttpsSupport.build.Z55.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `HttpsSupport.build`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.55 return switch (mode) ( case 'self-signed' -) from…**: Zeile 55: Rückgabe `return switch (mode) ( case 'self-signed' -) from…`.
+> - **HttpsSupport.build.Z55.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **HttpsSupport.build.Z55.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 55 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HttpsSupport.build`.

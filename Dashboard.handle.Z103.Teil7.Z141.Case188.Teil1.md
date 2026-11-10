@@ -24,9 +24,9 @@ flowchart TD
 
 ```knoten
 Dashboard.parseJsonObject
-  Wertet aus `parseJsonObject`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt. Wertet aus `parseJsonObject`.
 Dashboard.readBodyText
-  Liest `readBodyText`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
 if Z.190 (!request.has('paths') // !request.get('paths').i…
   Zeile 190: prüft `(!request.has('paths') // !request.get('paths').i…`.
 throw Z.191 throw new IllegalArgumentException('Backup-Pfade …
@@ -39,4 +39,14 @@ throw Z.195 throw new IllegalArgumentException('Backup-Pfade …
   Zeile 195: Abbruch `throw new IllegalArgumentException('Backup-Pfade …`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case188`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.parseJsonObject**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest die Antwort den Inhalt. Wertet aus `parseJsonObject`.
+> - **Dashboard.readBodyText**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den Text den Text. Liest `readBodyText`.
+> - **if Z.190 (!request.has('paths') // !request.get('paths').i…**: Zeile 190: prüft `(!request.has('paths') // !request.get('paths').i…`.
+> - **throw Z.191 throw new IllegalArgumentException('Backup-Pfade …**: Zeile 191: Abbruch `throw new IllegalArgumentException('Backup-Pfade …`.
+> - **for Z.193 (JsonElement element : request.getAsJso…**: Zeile 193: Schleife `(JsonElement element : request.getAsJso…`.
+> - **if Z.194 (!element.isJsonPrimitive() // !element.getAsJson…**: Zeile 194: prüft `(!element.isJsonPrimitive() // !element.getAsJson…`.
+> - **throw Z.195 throw new IllegalArgumentException('Backup-Pfade …**: Zeile 195: Abbruch `throw new IllegalArgumentException('Backup-Pfade …`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case188`.

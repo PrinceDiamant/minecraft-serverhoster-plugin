@@ -11,7 +11,10 @@ flowchart TD
 
 ```knoten
 HostMemoryProbe.Cgroup.unavailable
-  `unavailable` in `HostMemoryProbe.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unavailable` in `HostMemoryProbe.java`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMemoryProbe.Cgroup.unavailable**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unavailable` in `HostMemoryProbe.java`.
 
+- Eine Messung aus der Gruppenbegrenzung von Linux, falls der [[Glossar#Host|Host]] so begrenzt ist. Sie sagt, wie viel die Gruppe gerade verbraucht und wie viel sie darf.

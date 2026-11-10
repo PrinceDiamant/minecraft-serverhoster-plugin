@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 SpigotBuilder.assertRev
-  Prüft `assertRev`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertRev`.
 return Z.23 return List.of(javaBin, '-jar', buildTools.toStri…
   Zeile 23: Rückgabe `return List.of(javaBin, '-jar', buildTools.toStri…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SpigotBuilder.assertRev**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertRev`.
+> - **return Z.23 return List.of(javaBin, '-jar', buildTools.toStri…**: Zeile 23: Rückgabe `return List.of(javaBin, '-jar', buildTools.toStri…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `command` in `src/main/java/de/aichele/childlauncher/SpigotBuilder.java`

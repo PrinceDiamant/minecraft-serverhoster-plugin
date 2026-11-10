@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 Dashboard.createSession
-  Legt an `createSession`. Ruft `cookie`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] legt an die [[Glossar#Anmeldung|Anmeldung]]. Legt an `createSession`. Ruft `cookie`.
 ```
 
-- Fortsetzung von `Dashboard.setupPassword.Teil2.Z304`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.createSession**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] legt an die [[Glossar#Anmeldung|Anmeldung]]. Legt an `createSession`. Ruft `cookie`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.setupPassword.Teil2.Z304`.

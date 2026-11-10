@@ -21,15 +21,23 @@ flowchart TD
 
 ```knoten
 App.App.savePassword
-  Speichert `savePassword`. Ruft `dashboardRequest`, `jsonBody`, `start`.
+  Die [[Glossar#Bedienseite|Bedienseite]] speichert das Passwort. Speichert `savePassword`. Ruft `dashboardRequest`, `jsonBody`, `start`.
 index.doLogin
-  Führt aus `doLogin`. Ruft `$`, `start`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Anmeldung|Anmeldung]]. Führt aus `doLogin`. Ruft `$`, `start`.
 App.App.navigateTo
-  Wechselt die Route `navigateTo`. Ruft `tab`.
+  Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
 index.logout
-  Meldet ab `logout`. Ruft `post`, `showLogin`.
+  Meldet von der älteren [[Glossar#Bedienseite|Bedienseite]] ab. Meldet ab `logout`. Ruft `post`, `showLogin`.
 App.App.closeDialog
-  Schließt `closeDialog`.
+  Die [[Glossar#Bedienseite|Bedienseite]] schließt den Dialog. Schließt `closeDialog`.
 ```
 
-- Fortsetzung von `App.App.Teil4`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **App.App.savePassword**: Die [[Glossar#Bedienseite|Bedienseite]] speichert das Passwort. Speichert `savePassword`. Ruft `dashboardRequest`, `jsonBody`, `start`.
+> - **index.doLogin**: Die ältere [[Glossar#Bedienseite|Bedienseite]] führt aus die [[Glossar#Anmeldung|Anmeldung]]. Führt aus `doLogin`. Ruft `$`, `start`.
+> - **App.App.navigateTo**: Die [[Glossar#Bedienseite|Bedienseite]] wechselt zu das. Wechselt die Route `navigateTo`. Ruft `tab`.
+> - **index.logout**: Meldet von der älteren [[Glossar#Bedienseite|Bedienseite]] ab. Meldet ab `logout`. Ruft `post`, `showLogin`.
+> - **App.App.closeDialog**: Die [[Glossar#Bedienseite|Bedienseite]] schließt den Dialog. Schließt `closeDialog`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 324 aufgerufen werden.
+- Fortsetzung von `App.App.Teil4`.

@@ -7,18 +7,23 @@ flowchart TD
   n1["FabricLauncherPlugin.onCommand"]:::internal-link
   n2["FabricLauncherPlugin.onTabComplete"]:::internal-link
   n3["FabricLauncherPlugin.msg"]:::internal-link
-  n1 -->|"Z.2403"| n3
+  n1 -->|"Zeile 2403"| n3
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 FabricLauncherPlugin.onCommand
-  Befehl `/child` auf dem Server-Thread.
+  Nimmt den [[Glossar#Befehl|Befehl]] /child entgegen, zum Beispiel Start, [[Glossar#Stopp|Stopp]], Status oder [[Glossar#Sicherungskopie|Sicherungskopie]].
 FabricLauncherPlugin.onTabComplete
-  Reagiert `onTabComplete`. Ruft `crashFiles`.
+  Schlägt die nächsten Wörter vor, während jemand /child tippt.
 FabricLauncherPlugin.msg
-  Sendet eine Chat-Zeile `msg`.
+  Schickt eine [[Glossar#Zeile|Zeile]] an den Menschen, der einen [[Glossar#Befehl|Befehl]] getippt hat.
 ```
 
-- `plugin.yml` Befehl `child`, Permission `serverhoster.admin` (Default op).
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.onCommand**: Nimmt den [[Glossar#Befehl|Befehl]] /child entgegen, zum Beispiel Start, [[Glossar#Stopp|Stopp]], Status oder [[Glossar#Sicherungskopie|Sicherungskopie]].
+> - **FabricLauncherPlugin.onTabComplete**: Schlägt die nächsten Wörter vor, während jemand /child tippt.
+> - **FabricLauncherPlugin.msg**: Schickt eine [[Glossar#Zeile|Zeile]] an den Menschen, der einen [[Glossar#Befehl|Befehl]] getippt hat.
+
+- Der [[Glossar#Befehl|Befehl]] /child. Damit startet, stoppt oder prüft man den [[Glossar#Spielserver|Spielserver]]. Nur jemand mit Operator-Recht darf das.

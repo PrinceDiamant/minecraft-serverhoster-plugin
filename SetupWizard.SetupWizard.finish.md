@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 SetupWizard.SetupWizard.finish.Z135
-  Fortsetzung des Ablaufs ab Zeile 135.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 135 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 135.
 SetupWizard.finish.createSchedule
-  Legt an `createSchedule`. Ruft `dashboardRequest`, `jsonBody`.
+  Der [[Glossar#Assistent|Assistent]] legt an den [[Glossar#Zeitplan|Zeitplan]]. Legt an `createSchedule`. Ruft `dashboardRequest`, `jsonBody`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupWizard.SetupWizard.finish.Z135**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 135 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 135.
+> - **SetupWizard.finish.createSchedule**: Der [[Glossar#Assistent|Assistent]] legt an den [[Glossar#Zeitplan|Zeitplan]]. Legt an `createSchedule`. Ruft `dashboardRequest`, `jsonBody`.
+
+- Der [[Glossar#Assistent|Assistent]] beendet das.
 - `finish` in `ui/src/components/SetupWizard.tsx`

@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 HostMemoryProbe.cgroup.Z64
-  Fortsetzung des Ablaufs ab Zeile 64.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 64 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 64.
 HostMemoryProbe.Cgroup.unavailable
-  `unavailable` in `HostMemoryProbe.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unavailable` in `HostMemoryProbe.java`.
 return Z.98 return Cgroup.unavailable();
   Zeile 98: Rückgabe `return Cgroup.unavailable();`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMemoryProbe.cgroup.Z64**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 64 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 64.
+> - **HostMemoryProbe.Cgroup.unavailable**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `unavailable` in `HostMemoryProbe.java`.
+> - **return Z.98 return Cgroup.unavailable();**: Zeile 98: Rückgabe `return Cgroup.unavailable();`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `cgroup` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

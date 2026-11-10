@@ -15,7 +15,12 @@ flowchart TD
 Schritt Z.156 Files.writeString(properties, original);
   Zeile 156: schreibt Text in eine Datei. `Files.writeString(properties, original);`
 PropertiesFile.preview
-  Zeigt die Vorschau `preview`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Zeigt die Vorschau `preview`.
 ```
 
-- Fortsetzung von `HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.156 Files.writeString(properties, original);**: Zeile 156: schreibt Text in eine Datei. `Files.writeString(properties, original);`
+> - **PropertiesFile.preview**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Zeigt die Vorschau `preview`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting`.

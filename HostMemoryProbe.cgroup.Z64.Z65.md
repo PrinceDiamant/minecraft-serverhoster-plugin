@@ -20,7 +20,13 @@ for Z.65 (String line : Files.readAllLines(proc.…
 if Z.67 (fields.length != 3)
   Zeile 67: prüft `(fields.length != 3)`.
 HostMemoryProbe.cgroup.Z64.Z65.Z68
-  Fortsetzung des Ablaufs ab Zeile 68.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 68 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 68.
 ```
 
-- Fortsetzung von `HostMemoryProbe.cgroup.Z64`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.65 (String line : Files.readAllLines(proc.…**: Zeile 65: Schleife `(String line : Files.readAllLines(proc.…`.
+> - **if Z.67 (fields.length != 3)**: Zeile 67: prüft `(fields.length != 3)`.
+> - **HostMemoryProbe.cgroup.Z64.Z65.Z68**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 68 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 68.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 65 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostMemoryProbe.cgroup.Z64`.

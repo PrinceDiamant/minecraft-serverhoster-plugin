@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 index.chartCard
-  Zeichnet das Diagramm `chartCard`. Ruft `x`, `y`.
+  Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Karte mit einer Kurve. Zeichnet das Diagramm `chartCard`. Ruft `x`, `y`.
 ```
 
-- Fortsetzung von `index.updateCharts`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **index.chartCard**: Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] eine Karte mit einer Kurve. Zeichnet das Diagramm `chartCard`. Ruft `x`, `y`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.updateCharts`.

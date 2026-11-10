@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.onCommand.Z2401.Case2495.Z2497
-  Fortsetzung des Ablaufs ab Zeile 2497.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2497 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2497.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.onCommand.Z2401.Case2495.Z2497**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2497 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 2497.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 2495.
+- Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`.

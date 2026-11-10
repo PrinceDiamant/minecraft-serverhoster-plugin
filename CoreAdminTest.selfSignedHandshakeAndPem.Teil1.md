@@ -19,11 +19,18 @@ flowchart TD
 Schritt Z.279 Path dir = Files.createDirectories(tmp.resolve('t…
   Zeile 279: Dateioperation. `Path dir = Files.createDirectories(tmp.resolve('t…`
 HttpsSupport.build
-  Baut `build`. Ruft `fromKeystore`, `ensureSelfSigned`, `password`.
+  Dieser Teil baut das. Baut `build`. Ruft `fromKeystore`, `ensureSelfSigned`, `password`.
 Schritt Z.282 assertTrue(Files.isRegularFile(dir.resolve('dashb…
   Zeile 282: Dateioperation. `assertTrue(Files.isRegularFile(dir.resolve('dashb…`
 HttpsSupport.configure
-  `configure` in `HttpsSupport.java`. Ruft `configure`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `HttpsSupport.java`. Ruft `configure`.
 ```
 
-- Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.279 Path dir = Files.createDirectories(tmp.resolve('t…**: Zeile 279: Dateioperation. `Path dir = Files.createDirectories(tmp.resolve('t…`
+> - **HttpsSupport.build**: Dieser Teil baut das. Baut `build`. Ruft `fromKeystore`, `ensureSelfSigned`, `password`.
+> - **Schritt Z.282 assertTrue(Files.isRegularFile(dir.resolve('dashb…**: Zeile 282: Dateioperation. `assertTrue(Files.isRegularFile(dir.resolve('dashb…`
+> - **HttpsSupport.configure**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `configure` in `HttpsSupport.java`. Ruft `configure`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`.

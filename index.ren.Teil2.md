@@ -24,13 +24,21 @@ flowchart TD
 if Z.144 ep===p//ep.startsWith(p+'/')
   Zeile 144: prüft `ep===p//ep.startsWith(p+'/')`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 fileEditor.installFileEditors.setPath
-  Setzt `setPath`. Ruft `editorFor`, `modeForPath`.
+  Die [[Glossar#Bedienseite|Bedienseite]] setzt den Pfad. Setzt `setPath`. Ruft `editorFor`, `modeForPath`.
 index.toast
-  Zeigt eine Meldung `toast`. Ruft `$`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis. Zeigt eine Meldung `toast`. Ruft `$`.
 index.ls
-  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
 ```
 
-- Fortsetzung von `index.ren`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.144 ep===p//ep.startsWith(p+'/')**: Zeile 144: prüft `ep===p//ep.startsWith(p+'/')`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+> - **fileEditor.installFileEditors.setPath**: Die [[Glossar#Bedienseite|Bedienseite]] setzt den Pfad. Setzt `setPath`. Ruft `editorFor`, `modeForPath`.
+> - **index.toast**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] einen kurzen Hinweis. Zeigt eine Meldung `toast`. Ruft `$`.
+> - **index.ls**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.ren`.

@@ -24,15 +24,24 @@ flowchart TD
 try Z.135
   Zeile 135: Versuch. Der Fehlerpfad geht in catch.
 SetupWizard.SetupWizard.finish.Z135.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 SetupWizard.SetupWizard.finish.Z135.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 SetupWizard.SetupWizard.finish.Z135.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
 catch Z.236 cause
   Zeile 236: fängt cause.
 finally Z.135
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `SetupWizard.SetupWizard.finish`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.135**: Zeile 135: Versuch. Der Fehlerpfad geht in catch.
+> - **SetupWizard.SetupWizard.finish.Z135.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupWizard.SetupWizard.finish.Z135.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupWizard.SetupWizard.finish.Z135.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+> - **catch Z.236 cause**: Zeile 236: fängt cause.
+> - **finally Z.135**: Läuft danach immer, auch nach einem Fehler.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 135 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `SetupWizard.SetupWizard.finish`.

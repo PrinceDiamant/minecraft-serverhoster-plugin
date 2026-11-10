@@ -11,31 +11,40 @@ flowchart TD
   n5["HostMinimizeTest.RecordingWorld.spawnFlags"]:::internal-link
   n6["HostMinimizeTest.RecordingWorld.keepSpawnInMemory"]:::internal-link
   n7["HostMinimizeTest.RecordingWorld.ruleOff"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 HostMinimizeTest.firstSetupProtectsConfiguredBackupWorldDirectories
-  `firstSetupProtectsConfiguredBackupWorldDirectories` in `HostMinimizeTest.java`. Ruft `shouldRun`, `apply`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupProtectsConfiguredBackupWorldDirectories`.
 HostMinimizeTest.completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby
-  `completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby` in `HostMinimizeTest.java`. Ruft `firstSetupWorld`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby`.
 HostMinimizeTest.upgradesRequireManualConfirmationButFreshInstallsRunAutomatically
-  `upgradesRequireManualConfirmationButFreshInstallsRunAutomatically` in `HostMinimizeTest.java`. Ruft `shouldRun`, `readState`, `requestManual`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `upgradesRequireManualConfirmationButFreshInstallsRunAutomatically`.
 HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds
-  Betrifft den Heap `heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`. Ruft `lobbyNameSafe`, `apply`, `manageable`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`.
 HostMinimizeTest.RecordingWorld.spawnFlags
-  `spawnFlags` in `HostMinimizeTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `spawnFlags`.
 HostMinimizeTest.RecordingWorld.keepSpawnInMemory
-  `keepSpawnInMemory` in `HostMinimizeTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `keepSpawnInMemory`.
 HostMinimizeTest.RecordingWorld.ruleOff
-  `ruleOff` in `HostMinimizeTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `ruleOff`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimizeTest.firstSetupProtectsConfiguredBackupWorldDirectories**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `firstSetupProtectsConfiguredBackupWorldDirectories`.
+> - **HostMinimizeTest.completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby`.
+> - **HostMinimizeTest.upgradesRequireManualConfirmationButFreshInstallsRunAutomatically**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `upgradesRequireManualConfirmationButFreshInstallsRunAutomatically`.
+> - **HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`.
+> - **HostMinimizeTest.RecordingWorld.spawnFlags**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `spawnFlags`.
+> - **HostMinimizeTest.RecordingWorld.keepSpawnInMemory**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `keepSpawnInMemory`.
+> - **HostMinimizeTest.RecordingWorld.ruleOff**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `ruleOff`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

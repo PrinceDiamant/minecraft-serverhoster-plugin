@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.567 return Set.of('/', '/index.html', '/dashboard', '…
-  Zeile 567: Rückgabe `return Set.of('/', '/index.html', '/dashboard', '…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 567.
 ```
 
-- `isDashboardPage` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.567 return Set.of('/', '/index.html', '/dashboard', '…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 567.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] prüft die [[Glossar#Bedienseite|Bedienseite]] die Seite.

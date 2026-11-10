@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 MemoryTelemetry.appendRotated
-  Hängt an `appendRotated`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Hängt an `appendRotated`.
 Schritt Z.273 assertEquals('two/n', Files.readString(log));
   Zeile 273: liest Text aus einer Datei. `assertEquals('two/n', Files.readString(log));`
 Schritt Z.274 assertEquals('one/n', Files.readString(tmp.resolv…
   Zeile 274: liest Text aus einer Datei. `assertEquals('one/n', Files.readString(tmp.resolv…`
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **MemoryTelemetry.appendRotated**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Hängt an `appendRotated`.
+> - **Schritt Z.273 assertEquals('two/n', Files.readString(log));**: Zeile 273: liest Text aus einer Datei. `assertEquals('two/n', Files.readString(log));`
+> - **Schritt Z.274 assertEquals('one/n', Files.readString(tmp.resolv…**: Zeile 274: liest Text aus einer Datei. `assertEquals('one/n', Files.readString(tmp.resolv…`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates`.

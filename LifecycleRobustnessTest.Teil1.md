@@ -12,34 +12,44 @@ flowchart TD
   n6["LifecycleRobustnessTest.failedStartDrainsProcessThatIgnoresTerm"]:::internal-link
   n7["LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop"]:::internal-link
   n8["LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 LifecycleRobustnessTest.identityRequiresStartInstantAndCommandNotJustPid
-  `identityRequiresStartInstantAndCommandNotJustPid` in `LifecycleRobustnessTest.java`. Ruft `identity`, `ours`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `identityRequiresStartInstantAndCommandNotJustPid`.
 LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord
-  Räumt übrige Prozesse ab `reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`. Ruft `identity`, `write`, `read`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`.
 LifecycleRobustnessTest.reapKillsOnlyAfterGracefulStopFails
-  Räumt übrige Prozesse ab `reapKillsOnlyAfterGracefulStopFails`. Ruft `write`, `identity`, `FakeProcesses`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `reapKillsOnlyAfterGracefulStopFails`.
 LifecycleRobustnessTest.liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt
-  `liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt` in `LifecycleRobustnessTest.java`. Ruft `testProcess`, `write`, `identity`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt`.
 LifecycleRobustnessTest.symlinkRecordIsRejected
-  `symlinkRecordIsRejected` in `LifecycleRobustnessTest.java`. Ruft `read`, `reap`, `FakeProcesses`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `symlinkRecordIsRejected`.
 LifecycleRobustnessTest.failedStartDrainsProcessThatIgnoresTerm
-  `failedStartDrainsProcessThatIgnoresTerm` in `LifecycleRobustnessTest.java`. Ruft `testProcess`, `abandon`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `failedStartDrainsProcessThatIgnoresTerm`.
 LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop
-  Stoppt `stopWaitsUntilReadyBeforeSendingStop`. Ruft `testProcess`, `stop`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `stopWaitsUntilReadyBeforeSendingStop`.
 LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills
-  Stoppt `stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`. Ruft `testProcess`, `stop`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LifecycleRobustnessTest.identityRequiresStartInstantAndCommandNotJustPid**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `identityRequiresStartInstantAndCommandNotJustPid`.
+> - **LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`.
+> - **LifecycleRobustnessTest.reapKillsOnlyAfterGracefulStopFails**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `reapKillsOnlyAfterGracefulStopFails`.
+> - **LifecycleRobustnessTest.liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt`.
+> - **LifecycleRobustnessTest.symlinkRecordIsRejected**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `symlinkRecordIsRejected`.
+> - **LifecycleRobustnessTest.failedStartDrainsProcessThatIgnoresTerm**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `failedStartDrainsProcessThatIgnoresTerm`.
+> - **LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `stopWaitsUntilReadyBeforeSendingStop`.
+> - **LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

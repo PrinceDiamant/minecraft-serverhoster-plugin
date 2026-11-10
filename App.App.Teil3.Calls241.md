@@ -18,13 +18,20 @@ flowchart TD
 
 ```knoten
 SetupWorkflow.SetupWorkflow
-  `SetupWorkflow` in `SetupWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `SetupWizard`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. `SetupWorkflow` in `SetupWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `SetupWizard`.
 TaskWorkflow.TaskWorkflow
-  `TaskWorkflow` in `TaskWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `newDraft`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. `TaskWorkflow` in `TaskWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `newDraft`.
 BackupWorkflow.BackupWorkflow
-  Sichert `BackupWorkflow`. Ruft `dashboardRequest`, `refresh`, `testTarget`. Befund: Altlast (sicher).
+  Die [[Glossar#Bedienseite|Bedienseite]] sichert den Ablauf. Sichert `BackupWorkflow`. Ruft `dashboardRequest`, `refresh`, `testTarget`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], sicher. BackupWorkflow.tsx:214 server= aus #srv; index.html hat nur CSS #srv
 SettingsWorkflow.SettingsWorkflow
-  `SettingsWorkflow` in `SettingsWorkflow.tsx`. Ruft `loadBackupSettings`, `refresh`, `save`.
+  Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. `SettingsWorkflow` in `SettingsWorkflow.tsx`. Ruft `loadBackupSettings`, `refresh`, `save`.
 ```
 
-- Fortsetzung von `App.App.Teil3`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **SetupWorkflow.SetupWorkflow**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. `SetupWorkflow` in `SetupWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `SetupWizard`.
+> - **TaskWorkflow.TaskWorkflow**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. `TaskWorkflow` in `TaskWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `newDraft`.
+> - **BackupWorkflow.BackupWorkflow**: Die [[Glossar#Bedienseite|Bedienseite]] sichert den Ablauf. Sichert `BackupWorkflow`. Ruft `dashboardRequest`, `refresh`, `testTarget`. [[Glossar#Befund|Befund]]: [[Glossar#Altlast|Altlast]], sicher. BackupWorkflow.tsx:214 server= aus #srv; index.html hat nur CSS #srv
+> - **SettingsWorkflow.SettingsWorkflow**: Die [[Glossar#Bedienseite|Bedienseite]] kümmert sich um den Ablauf. `SettingsWorkflow` in `SettingsWorkflow.tsx`. Ruft `loadBackupSettings`, `refresh`, `save`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 241 aufgerufen werden.
+- Fortsetzung von `App.App.Teil3`.

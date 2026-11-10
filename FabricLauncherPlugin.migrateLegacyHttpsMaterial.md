@@ -22,7 +22,13 @@ if Z.741 (!old.getBoolean('dashboard.https.enabled', false…
 return Z.741 return;
   Zeile 741: Rückgabe `return;`.
 FabricLauncherPlugin.migrateLegacyHttpsMaterial.Z744
-  Fortsetzung des Ablaufs ab Zeile 744.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 744 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 744.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.741 (!old.getBoolean('dashboard.https.enabled', false…**: Zeile 741: prüft `(!old.getBoolean('dashboard.https.enabled', false…`.
+> - **return Z.741 return;**: Zeile 741: Rückgabe `return;`.
+> - **FabricLauncherPlugin.migrateLegacyHttpsMaterial.Z744**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 744 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 744.
+
+- Das [[Glossar#Plugin|Plugin]] übernimmt den alten Wert von den alten Weg die [[Glossar#Verschlüsselung|Verschlüsselung]].
 - `migrateLegacyHttpsMaterial` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

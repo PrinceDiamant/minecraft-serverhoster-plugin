@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 Dashboard.cookie
-  `cookie` in `Dashboard.java`.
+  Liest oder setzt die [[Glossar#Anmeldung|Anmeldung]], die der Browser mitschickt. Im [[Glossar#Quelltext|Quelltext]] heißt das `cookie`.
 ```
 
-- `createSession` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.cookie**: Liest oder setzt die [[Glossar#Anmeldung|Anmeldung]], die der Browser mitschickt. Im [[Glossar#Quelltext|Quelltext]] heißt das `cookie`.
+
+- Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] legt an die [[Glossar#Anmeldung|Anmeldung]].

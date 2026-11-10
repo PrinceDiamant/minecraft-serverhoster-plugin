@@ -17,13 +17,20 @@ flowchart TD
 
 ```knoten
 index.status.Z101.Teil3.Calls104
-  Weitere eigene Aufrufe ab Zeile 104.
+  Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 104 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 104.
 index.status.Z101.Teil3.Calls104.2
-  Seite `index.status.Z101.Teil3.Calls104.2`.
+  Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Seite `index.status.Z101.Teil3.Calls104.2`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 if Z.107 hm.recoveryPending
   Zeile 107: prüft `hm.recoveryPending`.
 ```
 
-- Fortsetzung von `index.status.Z101`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.status.Z101.Teil3.Calls104**: Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 104 aufgerufen werden. Weitere eigene Aufrufe ab Zeile 104.
+> - **index.status.Z101.Teil3.Calls104.2**: Ein [[Glossar#Kapitel|Kapitel]] in dieser Übersicht. Seite `index.status.Z101.Teil3.Calls104.2`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **if Z.107 hm.recoveryPending**: Zeile 107: prüft `hm.recoveryPending`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.status.Z101`.

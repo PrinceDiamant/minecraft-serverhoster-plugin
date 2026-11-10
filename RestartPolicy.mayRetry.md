@@ -16,4 +16,8 @@ return Z.26 return scheduledAttempts ( maximumAttempts;
   Zeile 26: Rückgabe `return scheduledAttempts ( maximumAttempts;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.26 return scheduledAttempts ( maximumAttempts;**: Zeile 26: Rückgabe `return scheduledAttempts ( maximumAttempts;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `mayRetry` in `src/main/java/de/aichele/childlauncher/RestartPolicy.java`

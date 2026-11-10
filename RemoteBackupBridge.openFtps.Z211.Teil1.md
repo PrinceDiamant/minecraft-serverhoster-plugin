@@ -26,13 +26,13 @@ flowchart TD
 
 ```knoten
 RemoteBackupBridge.connectControl
-  Verbindet `connectControl`. Ruft `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connectControl`. Ruft `replyError`.
 RemoteBackupBridge.login
-  Meldet an `login`. Ruft `replyError`.
+  Die Sicherung über das Netz meldet an bei das. Meldet an `login`. Ruft `replyError`.
 if Z.215 (!FTPReply.isPositiveCompletion(client.getReplyCo…
   Zeile 215: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
 RemoteBackupBridge.replyError
-  Antwortet `replyError`.
+  Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
 throw Z.215 throw replyError(client, 'set FTPS prot…
   Zeile 215: Abbruch `throw replyError(client, 'set FTPS prot…`.
 if Z.217 (!FTPReply.isPositiveCompletion(client.getReplyCo…
@@ -41,4 +41,14 @@ throw Z.217 throw replyError(client, 'enable protec…
   Zeile 217: Abbruch `throw replyError(client, 'enable protec…`.
 ```
 
-- Fortsetzung von `RemoteBackupBridge.openFtps.Z211`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **RemoteBackupBridge.connectControl**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Verbindet `connectControl`. Ruft `replyError`.
+> - **RemoteBackupBridge.login**: Die Sicherung über das Netz meldet an bei das. Meldet an `login`. Ruft `replyError`.
+> - **if Z.215 (!FTPReply.isPositiveCompletion(client.getReplyCo…**: Zeile 215: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
+> - **RemoteBackupBridge.replyError**: Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet `replyError`.
+> - **throw Z.215 throw replyError(client, 'set FTPS prot…**: Zeile 215: Abbruch `throw replyError(client, 'set FTPS prot…`.
+> - **if Z.217 (!FTPReply.isPositiveCompletion(client.getReplyCo…**: Zeile 217: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
+> - **throw Z.217 throw replyError(client, 'enable protec…**: Zeile 217: Abbruch `throw replyError(client, 'enable protec…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `RemoteBackupBridge.openFtps.Z211`.

@@ -16,4 +16,8 @@ return Z.94 return s.chars().allMatch(Character::isDigit) && …
   Zeile 94: Rückgabe `return s.chars().allMatch(Character::isDigit) && …`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.94 return s.chars().allMatch(Character::isDigit) && …**: Zeile 94: Rückgabe `return s.chars().allMatch(Character::isDigit) && …`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `num` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

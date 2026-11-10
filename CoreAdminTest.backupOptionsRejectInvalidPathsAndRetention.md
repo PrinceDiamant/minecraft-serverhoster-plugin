@@ -23,8 +23,12 @@ flowchart TD
 
 ```knoten
 BackupOptions.BackupOptions
-  Sichert `BackupOptions`.
+  Dieser Teil sichert die Optionen. Sichert `BackupOptions`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupOptions.BackupOptions**: Dieser Teil sichert die Optionen. Sichert `BackupOptions`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `backupOptionsRejectInvalidPathsAndRetention` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

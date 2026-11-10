@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.68 return JSON.stringify(value);
-  Zeile 68: Rückgabe `return JSON.stringify(value);`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 68.
 ```
 
-- `jsonBody` in `ui/src/lib/hostApi.ts`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.68 return JSON.stringify(value);**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 68.
+
+- Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt.

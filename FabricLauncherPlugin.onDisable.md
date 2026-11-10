@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.onDisable.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 FabricLauncherPlugin.onDisable.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 ```
 
-- Spigot `onDisable`: Child stoppen, Dashboard stoppen, Pool `shutdownNow`.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.onDisable.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **FabricLauncherPlugin.onDisable.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+
+- Läuft, wenn der [[Glossar#Host|Host]] das [[Glossar#Plugin|Plugin]] ausschaltet. Der [[Glossar#Spielserver|Spielserver]] wird gestoppt, die [[Glossar#Bedienseite|Bedienseite]] geht zu, laufende Arbeiten werden abgebrochen.

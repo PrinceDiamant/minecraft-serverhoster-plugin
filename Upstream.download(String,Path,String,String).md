@@ -39,7 +39,7 @@ throw Z.49 throw new IOException('HTTP ' + r.statusCode() + …
 try Z.50
   Zeile 50: Versuch. Der Fehlerpfad geht in catch.
 Upstream.checkHash
-  Prüft `checkHash`. Ruft `digest`.
+  Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `checkHash`. Ruft `digest`.
 catch Z.51 (IOException e)
   Zeile 51: fängt (IOException e).
 Schritt Z.51 Files.deleteIfExists(tmp);
@@ -50,4 +50,16 @@ Schritt Z.52 Files.move(tmp, target, StandardCopyOption.REPLAC…
   Zeile 52: Dateioperation. `Files.move(tmp, target, StandardCopyOption.REPLAC…`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.49 (r.statusCode() / 100 != 2)**: Zeile 49: prüft `(r.statusCode() / 100 != 2)`.
+> - **Schritt Z.49 Files.deleteIfExists(tmp);**: Zeile 49: Dateioperation. `Files.deleteIfExists(tmp);`
+> - **throw Z.49 throw new IOException('HTTP ' + r.statusCode() + …**: Zeile 49: Abbruch `throw new IOException('HTTP ' + r.statusCode() + …`.
+> - **try Z.50**: Zeile 50: Versuch. Der Fehlerpfad geht in catch.
+> - **Upstream.checkHash**: Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `checkHash`. Ruft `digest`.
+> - **catch Z.51 (IOException e)**: Zeile 51: fängt (IOException e).
+> - **Schritt Z.51 Files.deleteIfExists(tmp);**: Zeile 51: Dateioperation. `Files.deleteIfExists(tmp);`
+> - **throw Z.51 throw e;**: Zeile 51: Abbruch `throw e;`.
+> - **Schritt Z.52 Files.move(tmp, target, StandardCopyOption.REPLAC…**: Zeile 52: Dateioperation. `Files.move(tmp, target, StandardCopyOption.REPLAC…`
+
+- Dieser Teil holt das.
 - `download` in `src/main/java/de/aichele/childlauncher/Upstream.java`

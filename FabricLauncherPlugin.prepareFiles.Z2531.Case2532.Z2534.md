@@ -31,13 +31,22 @@ if Z.2534 (!Files.exists(jar))
 if Z.2537 ('latest'.equalsIgnoreCase(loader))
   Zeile 2537: prüft `('latest'.equalsIgnoreCase(loader))`.
 FabricLauncherPlugin.firstStable
-  `firstStable` in `FabricLauncherPlugin.java`.
+  Sucht die neueste [[Glossar#Version|Version]], die als stabil gilt. `firstStable` in `FabricLauncherPlugin.java`.
 Upstream.getJson
-  Liefert `getJson`.
+  Dieser Teil liefert die Antwort. Liefert `getJson`.
 if Z.2538 ('latest'.equalsIgnoreCase(inst))
   Zeile 2538: prüft `('latest'.equalsIgnoreCase(inst))`.
 Upstream.download(String,Path)
-  Liefert zum Herunterladen `download`. Ruft `download`.
+  Dieser Teil holt das. Liefert zum Herunterladen `download`. Ruft `download`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2532`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2534 (!Files.exists(jar))**: Zeile 2534: prüft `(!Files.exists(jar))`.
+> - **if Z.2537 ('latest'.equalsIgnoreCase(loader))**: Zeile 2537: prüft `('latest'.equalsIgnoreCase(loader))`.
+> - **FabricLauncherPlugin.firstStable**: Sucht die neueste [[Glossar#Version|Version]], die als stabil gilt. `firstStable` in `FabricLauncherPlugin.java`.
+> - **Upstream.getJson**: Dieser Teil liefert die Antwort. Liefert `getJson`.
+> - **if Z.2538 ('latest'.equalsIgnoreCase(inst))**: Zeile 2538: prüft `('latest'.equalsIgnoreCase(inst))`.
+> - **Upstream.download(String,Path)**: Dieser Teil holt das. Liefert zum Herunterladen `download`. Ruft `download`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2534 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2532`.

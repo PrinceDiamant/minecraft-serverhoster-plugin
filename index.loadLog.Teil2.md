@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 index.renderLog
-  Zeichnet `renderLog`. Ruft `$`, `cls`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] zeichnet das Protokoll. Zeichnet `renderLog`. Ruft `$`, `cls`.
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
 ```
 
-- Fortsetzung von `index.loadLog`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **index.renderLog**: Die ältere [[Glossar#Bedienseite|Bedienseite]] zeichnet das Protokoll. Zeichnet `renderLog`. Ruft `$`, `cls`.
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. `$` in `index.html`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.loadLog`.

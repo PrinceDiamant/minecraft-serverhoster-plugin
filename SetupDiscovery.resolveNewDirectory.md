@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 SetupDiscovery.resolveNewDirectory.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 SetupDiscovery.resolveNewDirectory.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupDiscovery.resolveNewDirectory.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **SetupDiscovery.resolveNewDirectory.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Dieser Teil bestimmt hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `resolveNewDirectory` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

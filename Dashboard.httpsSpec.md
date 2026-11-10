@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 return Z.78 return new HttpsSupport.Spec( c.getString('dashbo…
-  Zeile 78: Rückgabe `return new HttpsSupport.Spec( c.getString('dashbo…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 78.
 ```
 
-- `httpsSpec` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+> [!knoten]- Was die Blöcke tun
+> - **return Z.78 return new HttpsSupport.Spec( c.getString('dashbo…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 78.
+
+- Liest, ob und wie die [[Glossar#Verschlüsselung|Verschlüsselung]] eingestellt ist.

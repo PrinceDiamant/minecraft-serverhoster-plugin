@@ -20,7 +20,7 @@ flowchart TD
 
 ```knoten
 HostMinimize.assertEditable
-  Prüft `assertEditable`.
+  Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertEditable`.
 if Z.224 (Files.isSymbolicLink(whitelist))
   Zeile 224: prüft `(Files.isSymbolicLink(whitelist))`.
 throw Z.224 throw new SecurityException('refusing symbolic li…
@@ -29,4 +29,11 @@ Schritt Z.225 Files.writeString(whitelist, '()/n');
   Zeile 225: schreibt Text in eine Datei. `Files.writeString(whitelist, '()/n');`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.assertEditable**: Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Prüft `assertEditable`.
+> - **if Z.224 (Files.isSymbolicLink(whitelist))**: Zeile 224: prüft `(Files.isSymbolicLink(whitelist))`.
+> - **throw Z.224 throw new SecurityException('refusing symbolic li…**: Zeile 224: Abbruch `throw new SecurityException('refusing symbolic li…`.
+> - **Schritt Z.225 Files.writeString(whitelist, '()/n');**: Zeile 225: schreibt Text in eine Datei. `Files.writeString(whitelist, '()/n');`
+
+- Das Verkleinern des [[Glossar#Host|Host]] schreibt hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `writeEmptyWhitelist` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

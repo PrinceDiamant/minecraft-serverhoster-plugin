@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.updateProperties
-  Aktualisiert `updateProperties`. Ruft `update`.
+  Das [[Glossar#Plugin|Plugin]] ändert die Eigenschaften. Aktualisiert `updateProperties`. Ruft `update`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.writeProperties`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.updateProperties**: Das [[Glossar#Plugin|Plugin]] ändert die Eigenschaften. Aktualisiert `updateProperties`. Ruft `update`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.writeProperties`.

@@ -20,7 +20,13 @@ if Z.95 (target.getParent() != null)
 Schritt Z.95 Files.createDirectories(target.getParent());
   Zeile 95: Dateioperation. `Files.createDirectories(target.getParent());`
 BackupBridge.restoreZip.Z84.Z87.Teil2.Z96
-  Fortsetzung des Ablaufs ab Zeile 96.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 96 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 96.
 ```
 
-- Fortsetzung von `BackupBridge.restoreZip.Z84.Z87`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.95 (target.getParent() != null)**: Zeile 95: prüft `(target.getParent() != null)`.
+> - **Schritt Z.95 Files.createDirectories(target.getParent());**: Zeile 95: Dateioperation. `Files.createDirectories(target.getParent());`
+> - **BackupBridge.restoreZip.Z84.Z87.Teil2.Z96**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 96 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 96.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `BackupBridge.restoreZip.Z84.Z87`.

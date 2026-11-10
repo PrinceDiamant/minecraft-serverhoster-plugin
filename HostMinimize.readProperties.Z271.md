@@ -23,4 +23,10 @@ if Z.275 (eq ( 0)
   Zeile 275: prüft `(eq ( 0)`.
 ```
 
-- Fortsetzung von `HostMinimize.readProperties`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.271 (String line : Files.readAllLines(file))**: Zeile 271: Schleife `(String line : Files.readAllLines(file))`.
+> - **if Z.273 (trimmed.isEmpty() // trimmed.startsWith('') // t…**: Zeile 273: prüft `(trimmed.isEmpty() // trimmed.startsWith('') // t…`.
+> - **if Z.275 (eq ( 0)**: Zeile 275: prüft `(eq ( 0)`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 271 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `HostMinimize.readProperties`.

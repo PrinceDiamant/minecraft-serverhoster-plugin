@@ -17,12 +17,17 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.console(String)
-  Liefert die Konsole `console`. Ruft `slot`.
+  Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `console(String)`.
 ConsoleBuffer.subscribe
-  Hängt einen Hörer an `subscribe`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `subscribe`.
 Dashboard.sse.Z729
-  Fortsetzung des Ablaufs ab Zeile 729.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 729 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z729`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.console(String)**: Liefert die letzten [[Glossar#Zeile|Zeilen]] der [[Glossar#Konsole|Konsole]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `console(String)`.
+> - **ConsoleBuffer.subscribe**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `subscribe`.
+> - **Dashboard.sse.Z729**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 729 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z729`.
 
 ```mermaid
 sequenceDiagram
@@ -32,4 +37,4 @@ sequenceDiagram
   Note over Q: Kapazitaet 5000, Batch im Code danach
 ```
 
-- `sse` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
+- Hält eine Verbindung offen, über die neue Konsolenzeilen an den Browser laufen.

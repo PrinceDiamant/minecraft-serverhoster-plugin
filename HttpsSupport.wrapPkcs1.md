@@ -23,11 +23,17 @@ flowchart TD
 
 ```knoten
 HttpsSupport.concat
-  `concat` in `HttpsSupport.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `concat` in `HttpsSupport.java`.
 HttpsSupport.derLen
-  `derLen` in `HttpsSupport.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `derLen` in `HttpsSupport.java`.
 return Z.181 return concat(new byte() ( 0x30 ), derL…
   Zeile 181: Rückgabe `return concat(new byte() ( 0x30 ), derL…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.concat**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `concat` in `HttpsSupport.java`.
+> - **HttpsSupport.derLen**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `derLen` in `HttpsSupport.java`.
+> - **return Z.181 return concat(new byte() ( 0x30 ), derL…**: Zeile 181: Rückgabe `return concat(new byte() ( 0x30 ), derL…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `wrapPkcs1` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

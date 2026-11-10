@@ -22,7 +22,7 @@ flowchart TD
 
 ```knoten
 Profiles.str
-  `str` in `ServerProfile.java`.
+  Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `ServerProfile.java`.
 for Z.87 (ServerProfile p : profiles)
   Zeile 87: Schleife `(ServerProfile p : profiles)`.
 if Z.87 (p.id.equals(id))
@@ -33,5 +33,13 @@ return Z.88 return profiles.get(0).id;
   Zeile 88: Rückgabe `return profiles.get(0).id;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Profiles.str**: Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `ServerProfile.java`.
+> - **for Z.87 (ServerProfile p : profiles)**: Zeile 87: Schleife `(ServerProfile p : profiles)`.
+> - **if Z.87 (p.id.equals(id))**: Zeile 87: prüft `(p.id.equals(id))`.
+> - **return Z.87 return id;**: Zeile 87: Rückgabe `return id;`.
+> - **return Z.88 return profiles.get(0).id;**: Zeile 88: Rückgabe `return profiles.get(0).id;`.
+
+- Würde den gemeinten Server aus den [[Glossar#Einstellungen|Einstellungen]] lesen. Der laufende Weg benutzt das nicht.
 - Wird vom Plugin-Kern nicht für die laufende Auswahl benutzt.
 - Befund: angemeldet aber nicht umgesetzt, wahrscheinlich. ServerProfile.java:85, nur Tests rufen Profiles.focus

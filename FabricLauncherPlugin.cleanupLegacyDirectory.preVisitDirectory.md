@@ -25,4 +25,10 @@ return Z.461 return java.nio.file.FileVisitResult.CONTINUE;
   Zeile 461: Rückgabe `return java.nio.file.FileVisitResult.CONTINUE;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.458 (!normalized.equals(root) && normalizedPreserved.…**: Zeile 458: prüft `(!normalized.equals(root) && normalizedPreserved.…`.
+> - **return Z.460 return java.nio.file.FileVisitResult.SKIP_SUBTREE;**: Zeile 460: Rückgabe `return java.nio.file.FileVisitResult.SKIP_SUBTREE;`.
+> - **return Z.461 return java.nio.file.FileVisitResult.CONTINUE;**: Zeile 461: Rückgabe `return java.nio.file.FileVisitResult.CONTINUE;`.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `preVisitDirectory` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.281 (override != null && !override.isBlank())
-  Zeile 281: prüft `(override != null && !override.isBlank())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 281.
 return Z.281 return override.trim();
-  Zeile 281: Rückgabe `return override.trim();`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 281.
 return Z.282 return hostAddress == null ? '' : hostAddress.tri…
-  Zeile 282: Rückgabe `return hostAddress == null ? '' : hostAddress.tri…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 282.
 ```
 
-- `effectiveBindAddress` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.281 (override != null && !override.isBlank())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 281.
+> - **return Z.281 return override.trim();**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 281.
+> - **return Z.282 return hostAddress == null ? '' : hostAddress.tri…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 282.
+
+- Die Adresse, die nach allen Ersatzregeln wirklich gilt.

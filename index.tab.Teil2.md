@@ -30,19 +30,30 @@ flowchart TD
 if Z.89 t==='config'
   Zeile 89: prüft `t==='config'`.
 index.loadTxt
-  Lädt `loadTxt`. Ruft `api`, `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den Text. Lädt `loadTxt`. Ruft `api`, `$`.
 if Z.89 t==='files'
   Zeile 89: prüft `t==='files'`.
 index.ls
-  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+  Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
 if Z.89 t==='logs'
   Zeile 89: prüft `t==='logs'`.
 index.loadLogs
-  Lädt `loadLogs`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die Protokolle. Lädt `loadLogs`. Ruft `api`, `$`, `esc`.
 if Z.89 t==='players'
   Zeile 89: prüft `t==='players'`.
 index.loadPlayers
-  Lädt `loadPlayers`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Spieler|Spieler]]. Lädt `loadPlayers`. Ruft `api`, `$`, `esc`.
 ```
 
-- Fortsetzung von `index.tab`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.89 t==='config'**: Zeile 89: prüft `t==='config'`.
+> - **index.loadTxt**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den Text. Lädt `loadTxt`. Ruft `api`, `$`.
+> - **if Z.89 t==='files'**: Zeile 89: prüft `t==='files'`.
+> - **index.ls**: Zeigt in der älteren [[Glossar#Bedienseite|Bedienseite]] den Inhalt eines Ordners. Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+> - **if Z.89 t==='logs'**: Zeile 89: prüft `t==='logs'`.
+> - **index.loadLogs**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die Protokolle. Lädt `loadLogs`. Ruft `api`, `$`, `esc`.
+> - **if Z.89 t==='players'**: Zeile 89: prüft `t==='players'`.
+> - **index.loadPlayers**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Spieler|Spieler]]. Lädt `loadPlayers`. Ruft `api`, `$`, `esc`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.tab`.

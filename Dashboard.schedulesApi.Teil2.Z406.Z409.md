@@ -21,13 +21,21 @@ flowchart TD
 sync Z.409
   Zeile 409: synchronisierter Block.
 FabricLauncherPlugin.schedules
-  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
 Dashboard.scheduleIndex
-  Plant `scheduleIndex`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Position. Plant `scheduleIndex`.
 ScheduleDef.withLastRun
-  Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den letzten Stand den Lauf. Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
 FabricLauncherPlugin.saveSchedules
-  Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+  Das [[Glossar#Plugin|Plugin]] speichert die Zeitpläne. Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
 ```
 
-- Fortsetzung von `Dashboard.schedulesApi.Teil2.Z406`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.409**: Zeile 409: synchronisierter Block.
+> - **FabricLauncherPlugin.schedules**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+> - **Dashboard.scheduleIndex**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] plant die Position. Plant `scheduleIndex`.
+> - **ScheduleDef.withLastRun**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den letzten Stand den Lauf. Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
+> - **FabricLauncherPlugin.saveSchedules**: Das [[Glossar#Plugin|Plugin]] speichert die Zeitpläne. Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 409 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.schedulesApi.Teil2.Z406`.

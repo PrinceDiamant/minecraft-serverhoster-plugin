@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 MemoryTelemetry.mib
-  `mib` in `MemoryTelemetry.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mib` in `MemoryTelemetry.java`.
 return Z.35 return mib(committedBytes);
   Zeile 35: Rückgabe `return mib(committedBytes);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **MemoryTelemetry.mib**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `mib` in `MemoryTelemetry.java`.
+> - **return Z.35 return mib(committedBytes);**: Zeile 35: Rückgabe `return mib(committedBytes);`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `committedMiB` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

@@ -17,8 +17,12 @@ flowchart TD
 
 ```knoten
 StartFailureStatus.text
-  Antwortet mit Text `text`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **StartFailureStatus.text**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `retryExhaustionKeepsTheStartFailureInsteadOfPreparing` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

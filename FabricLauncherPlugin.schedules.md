@@ -22,15 +22,22 @@ flowchart TD
 
 ```knoten
 sync Z.1292
-  Zeile 1292: synchronisierter Block.
+  Hier wartet die [[Glossar#Funktion|Funktion]], damit nicht zwei Arbeitsstränge denselben Schritt gleichzeitig machen. Das steht in [[Glossar#Zeile|Zeile]] 1292.
 if Z.1294 (getConfig().contains('schedules') && !(getConfig…
-  Zeile 1294: prüft `(getConfig().contains('schedules') && !(getConfig…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1294.
 throw Z.1295 throw new IllegalArgumentException('schedules mus…
-  Zeile 1295: Abbruch `throw new IllegalArgumentException('schedules mus…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1295.
 ScheduleDef.load
-  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+  Der [[Glossar#Zeitplan|Zeitplan]] lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
 return Z.1296 return ScheduleDef.load(getConfig().get…
-  Zeile 1296: Rückgabe `return ScheduleDef.load(getConfig().get…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1296.
 ```
 
-- `schedules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.1292**: Hier wartet die [[Glossar#Funktion|Funktion]], damit nicht zwei Arbeitsstränge denselben Schritt gleichzeitig machen. Das steht in [[Glossar#Zeile|Zeile]] 1292.
+> - **if Z.1294 (getConfig().contains('schedules') && !(getConfig…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1294.
+> - **throw Z.1295 throw new IllegalArgumentException('schedules mus…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 1295.
+> - **ScheduleDef.load**: Der [[Glossar#Zeitplan|Zeitplan]] lädt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `load`.
+> - **return Z.1296 return ScheduleDef.load(getConfig().get…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1296.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.

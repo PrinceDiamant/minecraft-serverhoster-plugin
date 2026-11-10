@@ -15,9 +15,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.invalidateRestarts
-  Verwirft `invalidateRestarts`.
+  Vergisst geplante [[Glossar#Neustart|Neustarts]], damit ein absichtlicher [[Glossar#Stopp|Stopp]] nicht gleich wieder startet. Im [[Glossar#Quelltext|Quelltext]] heißt das `invalidateRestarts`.
 FabricLauncherPlugin.stopBlocking.Z1985
-  Fortsetzung des Ablaufs ab Zeile 1985.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1985 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1985`.
 ```
 
-- `stopBlocking` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.invalidateRestarts**: Vergisst geplante [[Glossar#Neustart|Neustarts]], damit ein absichtlicher [[Glossar#Stopp|Stopp]] nicht gleich wieder startet. Im [[Glossar#Quelltext|Quelltext]] heißt das `invalidateRestarts`.
+> - **FabricLauncherPlugin.stopBlocking.Z1985**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1985 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z1985`.
+
+- Setzt den Zustand auf „stoppt“ und wartet, bis der [[Glossar#Spielserver|Spielserver]] wirklich aus ist.

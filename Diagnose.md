@@ -16,9 +16,9 @@ flowchart TD
   n10["FabricLauncherPlugin.diagMap(String)"]:::internal-link
   n11["FabricLauncherPlugin.jcmd(String)"]:::internal-link
   n12["FabricLauncherPlugin.jcmd(String,String)"]:::internal-link
-  n9 -->|"Z.879"| n10
-  n10 -->|"Z.903"| n8
-  n11 -->|"Z.1266"| n12
+  n9 -->|"Zeile 879"| n10
+  n10 -->|"Zeile 903"| n8
+  n11 -->|"Zeile 1266"| n12
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n6 fill:#f88,stroke:#900
@@ -27,29 +27,43 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.planText
-  Zeigt den Startplan `planText`. Ruft `text`, `javaBin`, `profile`.
+  Schreibt den [[Glossar#Startplan|Startplan]] als lesbaren Text.
 FabricLauncherPlugin.jarView
-  Betrifft das Jar `jarView`. Ruft `view`, `inspect`, `profile`.
+  Zeigt, welche [[Glossar#Programmdatei|Programmdatei]] der [[Glossar#Spielserver|Spielserver]] benutzt.
 FabricLauncherPlugin.jarText
-  Betrifft das Jar `jarText`. Ruft `text`, `inspect`, `profile`.
+  Zeigt Einzelheiten aus der [[Glossar#Programmdatei|Programmdatei]].
 FabricLauncherPlugin.crashFiles
-  Betrifft Crash-Reports `crashFiles`. Ruft `list`, `profile`, `directory`.
+  Listet die [[Glossar#Absturzbericht|Absturzberichte]].
 FabricLauncherPlugin.crashText
-  Betrifft Crash-Reports `crashText`. Ruft `read`, `profile`, `directory`.
+  Zeigt den Text eines [[Glossar#Absturzbericht|Absturzberichts]].
 FabricLauncherPlugin.msptHistory()
-  Liefert die Tickzeiten `msptHistory`. Ruft `focusSlot`, `msptHistory`. Befund: toter Code (prüfen).
+  Liefert den Verlauf, wie lange ein [[Glossar#Spielschritt|Spielschritt]] jeweils gedauert hat. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.msptHistory(String)
-  Liefert die Tickzeiten `msptHistory`. Ruft `slot`, `msptHistory`. Befund: toter Code (prüfen).
+  Liefert den Verlauf, wie lange ein [[Glossar#Spielschritt|Spielschritt]] jeweils gedauert hat. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.diskCached
-  Liest die Platte `diskCached`. Ruft `disk`, `workDir`.
+  Sagt, wie voll die Festplatte ist. Der Wert darf kurz zwischengespeichert sein.
 FabricLauncherPlugin.diagMap()
-  Sammelt die Diagnose `diagMap`. Ruft `diagMap`.
+  Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht.
 FabricLauncherPlugin.diagMap(String)
-  Sammelt die Diagnose `diagMap`. Ruft `slot`, `pid`, `running`.
+  Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht.
 FabricLauncherPlugin.jcmd(String)
-  `jcmd` in `FabricLauncherPlugin.java`. Ruft `jcmd`.
+  Fragt ein Hilfswerkzeug von Java, wie es dem laufenden Programm geht.
 FabricLauncherPlugin.jcmd(String,String)
-  `jcmd` in `FabricLauncherPlugin.java`. Ruft `jcmd`, `slot`, `pid`.
+  Fragt ein Hilfswerkzeug von Java, wie es dem laufenden Programm geht.
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.planText**: Schreibt den [[Glossar#Startplan|Startplan]] als lesbaren Text.
+> - **FabricLauncherPlugin.jarView**: Zeigt, welche [[Glossar#Programmdatei|Programmdatei]] der [[Glossar#Spielserver|Spielserver]] benutzt.
+> - **FabricLauncherPlugin.jarText**: Zeigt Einzelheiten aus der [[Glossar#Programmdatei|Programmdatei]].
+> - **FabricLauncherPlugin.crashFiles**: Listet die [[Glossar#Absturzbericht|Absturzberichte]].
+> - **FabricLauncherPlugin.crashText**: Zeigt den Text eines [[Glossar#Absturzbericht|Absturzberichts]].
+> - **FabricLauncherPlugin.msptHistory()**: Liefert den Verlauf, wie lange ein [[Glossar#Spielschritt|Spielschritt]] jeweils gedauert hat. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.msptHistory(String)**: Liefert den Verlauf, wie lange ein [[Glossar#Spielschritt|Spielschritt]] jeweils gedauert hat. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.diskCached**: Sagt, wie voll die Festplatte ist. Der Wert darf kurz zwischengespeichert sein.
+> - **FabricLauncherPlugin.diagMap()**: Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht.
+> - **FabricLauncherPlugin.diagMap(String)**: Sammelt die [[Glossar#Diagnose|Diagnose]] in einer Übersicht.
+> - **FabricLauncherPlugin.jcmd(String)**: Fragt ein Hilfswerkzeug von Java, wie es dem laufenden Programm geht.
+> - **FabricLauncherPlugin.jcmd(String,String)**: Fragt ein Hilfswerkzeug von Java, wie es dem laufenden Programm geht.
 
+- Eine Übersicht zum Nachsehen: Platte, [[Glossar#Startplan|Startplan]], [[Glossar#Programmdatei|Programmdatei]], [[Glossar#Absturzbericht|Absturzberichte]] und die Dauer der [[Glossar#Spielschritt|Spielschritte]].

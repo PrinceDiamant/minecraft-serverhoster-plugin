@@ -13,10 +13,10 @@ flowchart TD
   n7["FabricLauncherPlugin.workDir()"]:::internal-link
   n8["FabricLauncherPlugin.workDir(String)"]:::internal-link
   n9["FabricLauncherPlugin.workDirs"]:::internal-link
-  n4 -->|"Z.299"| n3
-  n5 -->|"Z.303"| n4
-  n7 -->|"Z.859"| n3
-  n8 -->|"Z.860"| n3
+  n4 -->|"Zeile 299"| n3
+  n5 -->|"Zeile 303"| n4
+  n7 -->|"Zeile 859"| n3
+  n8 -->|"Zeile 860"| n3
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n2 fill:#f88,stroke:#900
@@ -27,23 +27,34 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.focusId
-  Liefert oder setzt den Fokus `focusId`.
+  Das [[Glossar#Plugin|Plugin]] liefert die Kennung.
 FabricLauncherPlugin.profiles
-  Liefert die Profile `profiles`. Befund: toter Code (wahrscheinlich).
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 FabricLauncherPlugin.focusSlot
-  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+  Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]].
 FabricLauncherPlugin.focus
-  Liefert oder setzt den Fokus `focus`. Befund: toter Code (prüfen).
+  Liefert den Server, der gerade gemeint ist. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.workDir()
-  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`. Befund: toter Code (wahrscheinlich).
+  Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 FabricLauncherPlugin.workDir(String)
-  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+  Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet.
 FabricLauncherPlugin.workDirs
-  `workDirs` in `FabricLauncherPlugin.java`. Ruft `directory`. Befund: toter Code (sicher).
+  Die Ordner, in denen die Server arbeiten. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.focusId**: Das [[Glossar#Plugin|Plugin]] liefert die Kennung.
+> - **FabricLauncherPlugin.profiles**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **FabricLauncherPlugin.focusSlot**: Das [[Glossar#Plugin|Plugin]] liefert den [[Glossar#Platz|Platz]].
+> - **FabricLauncherPlugin.focus**: Liefert den Server, der gerade gemeint ist. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.workDir()**: Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
+> - **FabricLauncherPlugin.workDir(String)**: Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet.
+> - **FabricLauncherPlugin.workDirs**: Die Ordner, in denen die Server arbeiten. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 
+- Welcher Server gerade gemeint ist. Praktisch ist es immer derselbe eine.

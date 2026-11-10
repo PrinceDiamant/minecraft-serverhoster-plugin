@@ -16,4 +16,8 @@ return Z.88 return values;
   Zeile 88: Rückgabe `return values;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.88 return values;**: Zeile 88: Rückgabe `return values;`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `spigotChanges` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

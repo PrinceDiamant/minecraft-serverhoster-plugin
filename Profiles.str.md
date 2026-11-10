@@ -16,4 +16,8 @@ return Z.138 return v == null ? fallback : String.valueOf(v);
   Zeile 138: Rückgabe `return v == null ? fallback : String.valueOf(v);`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.138 return v == null ? fallback : String.valueOf(v);**: Zeile 138: Rückgabe `return v == null ? fallback : String.valueOf(v);`.
+
+- Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `str` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

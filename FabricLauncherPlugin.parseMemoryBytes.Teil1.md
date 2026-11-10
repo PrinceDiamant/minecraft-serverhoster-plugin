@@ -32,4 +32,12 @@ return Z.1110 return -1;
   Zeile 1110: Rückgabe `return -1;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.parseMemoryBytes`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1107 (value == null)**: Zeile 1107: prüft `(value == null)`.
+> - **return Z.1107 return -1;**: Zeile 1107: Rückgabe `return -1;`.
+> - **if Z.1109 (normalized.endsWith('B'))**: Zeile 1109: prüft `(normalized.endsWith('B'))`.
+> - **if Z.1110 (normalized.isEmpty())**: Zeile 1110: prüft `(normalized.isEmpty())`.
+> - **return Z.1110 return -1;**: Zeile 1110: Rückgabe `return -1;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.parseMemoryBytes`.

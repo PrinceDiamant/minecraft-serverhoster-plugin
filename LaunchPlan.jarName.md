@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 LaunchPlan.jarName.Z15
-  Fortsetzung des Ablaufs ab Zeile 15.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 15 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 15.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **LaunchPlan.jarName.Z15**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 15 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 15.
+
+- Dieser Teil kümmert sich um den Namen.
 - `jarName` in `src/main/java/de/aichele/childlauncher/LaunchPlan.java`

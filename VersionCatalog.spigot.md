@@ -29,7 +29,7 @@ while Z.56 (m.find())
 if Z.58 (name.equals('latest.json') // name.contains('/'))
   Zeile 58: prüft `(name.equals('latest.json') // name.contains('/'))`.
 VersionCatalog.compare
-  Vergleicht `compare`. Ruft `num`.
+  Dieser Teil vergleicht das. Vergleicht `compare`. Ruft `num`.
 if Z.62 (ids.size() ) limit)
   Zeile 62: prüft `(ids.size() ) limit)`.
 return Z.62 return new ArrayList()(ids.subList(0, limit));
@@ -38,4 +38,13 @@ return Z.63 return ids;
   Zeile 63: Rückgabe `return ids;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **while Z.56 (m.find())**: Zeile 56: Schleife `(m.find())`.
+> - **if Z.58 (name.equals('latest.json') // name.contains('/'))**: Zeile 58: prüft `(name.equals('latest.json') // name.contains('/'))`.
+> - **VersionCatalog.compare**: Dieser Teil vergleicht das. Vergleicht `compare`. Ruft `num`.
+> - **if Z.62 (ids.size() ) limit)**: Zeile 62: prüft `(ids.size() ) limit)`.
+> - **return Z.62 return new ArrayList()(ids.subList(0, limit));**: Zeile 62: Rückgabe `return new ArrayList()(ids.subList(0, limit));`.
+> - **return Z.63 return ids;**: Zeile 63: Rückgabe `return ids;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `spigot` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

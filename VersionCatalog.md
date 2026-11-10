@@ -30,25 +30,37 @@ flowchart TD
 
 ```knoten
 VersionCatalog.VersionCatalog
-  `VersionCatalog` in `VersionCatalog.java`.
+  Dieser Teil kümmert sich um die Versionsliste. Im [[Glossar#Quelltext|Quelltext]] heißt das `VersionCatalog`.
 VersionCatalog.vanilla
-  `vanilla` in `VersionCatalog.java`. Ruft `str`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `vanilla`.
 VersionCatalog.fabric
-  `fabric` in `VersionCatalog.java`. Ruft `str`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `fabric`.
 VersionCatalog.paper
-  `paper` in `VersionCatalog.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `paper`.
 VersionCatalog.spigot
-  `spigot` in `VersionCatalog.java`. Ruft `compare`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `spigot`.
 VersionCatalog.fetch
-  Holt `fetch`. Ruft `vanilla`, `getJson`, `fabric`.
+  Dieser Teil holt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `fetch`.
 VersionCatalog.compare
-  Vergleicht `compare`. Ruft `num`.
+  Dieser Teil vergleicht das. Im [[Glossar#Quelltext|Quelltext]] heißt das `compare`.
 VersionCatalog.num
-  `num` in `VersionCatalog.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `num`.
 VersionCatalog.str
-  `str` in `VersionCatalog.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `str`.
 VersionCatalog.newestFirst
-  `newestFirst` in `VersionCatalog.java`. Ruft `compare`. Befund: toter Code (sicher).
+  Dieser Teil kümmert sich um die erste. Im [[Glossar#Quelltext|Quelltext]] heißt das `newestFirst`. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.VersionCatalog**: Dieser Teil kümmert sich um die Versionsliste. Im [[Glossar#Quelltext|Quelltext]] heißt das `VersionCatalog`.
+> - **VersionCatalog.vanilla**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `vanilla`.
+> - **VersionCatalog.fabric**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `fabric`.
+> - **VersionCatalog.paper**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `paper`.
+> - **VersionCatalog.spigot**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `spigot`.
+> - **VersionCatalog.fetch**: Dieser Teil holt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `fetch`.
+> - **VersionCatalog.compare**: Dieser Teil vergleicht das. Im [[Glossar#Quelltext|Quelltext]] heißt das `compare`.
+> - **VersionCatalog.num**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `num`.
+> - **VersionCatalog.str**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `str`.
+> - **VersionCatalog.newestFirst**: Dieser Teil kümmert sich um die erste. Im [[Glossar#Quelltext|Quelltext]] heißt das `newestFirst`. Auffällig: im normalen Betrieb ruft das niemand auf. Das nennt man [[Glossar#Ungenutzt|Ungenutzt]].
 
+- Holt die Liste der [[Glossar#Version|Versionen]] aus dem Netz und vergleicht sie.

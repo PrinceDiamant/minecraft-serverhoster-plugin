@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 VersionCatalog.fetch.Z68
-  Fortsetzung des Ablaufs ab Zeile 68.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 68 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 68.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.fetch.Z68**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 68 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 68.
+
+- Dieser Teil holt das.
 - `fetch` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

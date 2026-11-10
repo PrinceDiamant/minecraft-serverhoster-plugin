@@ -95,8 +95,7 @@ class KnotenChild extends MarkdownRenderChild {
       const tip = lookup(this.tips, nodeText(node));
       if (!tip) return;
       node.addEventListener("mouseenter", (event) => this.plugin.show(tip, event));
-      node.addEventListener("mousemove", (event) => this.plugin.move(event));
-      node.addEventListener("mouseleave", () => this.plugin.hide());
+      node.addEventListener("mouseleave", () => this.plugin.scheduleHide());
     });
   }
 }
@@ -106,6 +105,16 @@ module.exports = class MermaidKnotenHover extends Plugin {
     this.tipEl = document.createElement("div");
     this.tipEl.className = "knoten-hover";
     this.tipEl.style.display = "none";
+    this.hideTimer = null;
+    this.tipEl.addEventListener("mouseenter", () => this.cancelHide());
+    this.tipEl.addEventListener("mouseleave", () => this.hide());
+    this.tipEl.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (!link) return;
+      event.preventDefault();
+      const href = link.dataset.href || "";
+      this.app.workspace.openLinkText(href, "", "tab");
+    });
     document.body.appendChild(this.tipEl);
     this.register(() => this.tipEl.remove());
 
@@ -116,7 +125,8 @@ module.exports = class MermaidKnotenHover extends Plugin {
   }
 
   show(text, event) {
-    this.tipEl.textContent = text;
+    this.cancelHide();
+    this.tipEl.replaceChildren(renderTip(text));
     this.tipEl.style.display = "block";
     this.move(event);
   }
@@ -125,15 +135,52 @@ module.exports = class MermaidKnotenHover extends Plugin {
     if (this.tipEl.style.display === "none") return;
     const pad = 12;
     const rect = this.tipEl.getBoundingClientRect();
-    let x = event.clientX + 14;
-    let y = event.clientY + 18;
-    if (x + rect.width > window.innerWidth - pad) x = Math.max(pad, event.clientX - rect.width - 14);
-    if (y + rect.height > window.innerHeight - pad) y = Math.max(pad, event.clientY - rect.height - 12);
+    let x = event.clientX + 16;
+    let y = event.clientY + 22;
+    if (x + rect.width > window.innerWidth - pad) x = Math.max(pad, event.clientX - rect.width - 16);
+    if (y + rect.height > window.innerHeight - pad) y = Math.max(pad, event.clientY - rect.height - 14);
     this.tipEl.style.left = x + "px";
     this.tipEl.style.top = y + "px";
   }
 
+  scheduleHide() {
+    this.cancelHide();
+    this.hideTimer = window.setTimeout(() => this.hide(), 280);
+  }
+
+  cancelHide() {
+    if (this.hideTimer) {
+      window.clearTimeout(this.hideTimer);
+      this.hideTimer = null;
+    }
+  }
+
   hide() {
+    this.cancelHide();
     if (this.tipEl) this.tipEl.style.display = "none";
   }
 };
+
+function renderTip(text) {
+  const frag = document.createDocumentFragment();
+  const re = /\[\[([^\]|#]+)(?:#([^\]|]+))?\|([^\]]+)\]\]|`([^`]+)`/g;
+  let last = 0;
+  let match;
+  while ((match = re.exec(text))) {
+    if (match.index > last) frag.append(text.slice(last, match.index));
+    if (match[4]) {
+      const code = document.createElement("code");
+      code.textContent = match[4];
+      frag.append(code);
+    } else {
+      const link = document.createElement("a");
+      link.className = "internal-link";
+      link.dataset.href = match[2] ? `${match[1]}#${match[2]}` : match[1];
+      link.textContent = match[3];
+      frag.append(link);
+    }
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) frag.append(text.slice(last));
+  return frag;
+}

@@ -21,15 +21,22 @@ flowchart TD
 
 ```knoten
 App.App.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
 App.App.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
 App.App.Teil3
-  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
 App.App.Teil4
-  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil4`.
 App.App.Innere
-  Innere Funktionen dieses Blocks.
+  [[Glossar#Funktion|Funktionen]], die nur innen in diesem Block gebraucht werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Innere`.
 ```
 
-- `App` in `ui/src/App.tsx`
+> [!knoten]- Was die Blöcke tun
+> - **App.App.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil1`.
+> - **App.App.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil2`.
+> - **App.App.Teil3**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil3`.
+> - **App.App.Teil4**: Ein weiterer Abschnitt derselben Übersicht. Im [[Glossar#Quelltext|Quelltext]] heißt das `Teil4`.
+> - **App.App.Innere**: [[Glossar#Funktion|Funktionen]], die nur innen in diesem Block gebraucht werden. Im [[Glossar#Quelltext|Quelltext]] heißt das `Innere`.
+
+- Baut die [[Glossar#Bedienseite|Bedienseite]] zusammen, wenn sie im Browser erscheint.

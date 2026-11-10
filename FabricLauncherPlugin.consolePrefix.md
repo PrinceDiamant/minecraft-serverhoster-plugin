@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 Schritt Z.2097 String base = getConfig().getString('logPrefix', …
-  Zeile 2097: liest die Config. `String base = getConfig().getString('logPrefix', …`
+  Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 2097.
 if Z.2098 (profile == null)
-  Zeile 2098: prüft `(profile == null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2098.
 return Z.2098 return base;
-  Zeile 2098: Rückgabe `return base;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2098.
 return Z.2099 return !'default'.equals(profile.id) && profiles.…
-  Zeile 2099: Rückgabe `return !'default'.equals(profile.id) && profiles.…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2099.
 ```
 
-- `consolePrefix` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.2097 String base = getConfig().getString('logPrefix', …**: Ein einzelner Arbeitsschritt, ohne eine weitere eigene [[Glossar#Funktion|Funktion]] aufzurufen. Das steht in [[Glossar#Zeile|Zeile]] 2097.
+> - **if Z.2098 (profile == null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2098.
+> - **return Z.2098 return base;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2098.
+> - **return Z.2099 return !'default'.equals(profile.id) && profiles.…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2099.
+
+- Setzt eine kurze Kennung vor jede [[Glossar#Zeile|Zeile]], damit man sie dem [[Glossar#Spielserver|Spielserver]] zuordnen kann.

@@ -24,15 +24,24 @@ flowchart TD
 if Z.119 (path.equals('/api/login') && method.equals('POST…
   Zeile 119: prüft `(path.equals('/api/login') && method.equals('POST…`.
 Dashboard.login
-  Meldet an `login`. Ruft `ip`, `json`, `body`.
+  Prüft das Passwort und merkt die [[Glossar#Anmeldung|Anmeldung]]. Meldet an `login`. Ruft `ip`, `json`, `body`.
 return Z.119 return;
   Zeile 119: Rückgabe `return;`.
 if Z.120 (!path.startsWith('/api/'))
   Zeile 120: prüft `(!path.startsWith('/api/'))`.
 Dashboard.send
-  Sendet `send`. Ruft `sendBytes`.
+  Schickt die Antwort an den Browser. Sendet `send`. Ruft `sendBytes`.
 return Z.120 return;
   Zeile 120: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.119 (path.equals('/api/login') && method.equals('POST…**: Zeile 119: prüft `(path.equals('/api/login') && method.equals('POST…`.
+> - **Dashboard.login**: Prüft das Passwort und merkt die [[Glossar#Anmeldung|Anmeldung]]. Meldet an `login`. Ruft `ip`, `json`, `body`.
+> - **return Z.119 return;**: Zeile 119: Rückgabe `return;`.
+> - **if Z.120 (!path.startsWith('/api/'))**: Zeile 120: prüft `(!path.startsWith('/api/'))`.
+> - **Dashboard.send**: Schickt die Antwort an den Browser. Sendet `send`. Ruft `sendBytes`.
+> - **return Z.120 return;**: Zeile 120: Rückgabe `return;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `Dashboard.handle.Z103`.

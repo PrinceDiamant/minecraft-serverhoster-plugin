@@ -17,9 +17,15 @@ flowchart TD
 try Z.292
   Zeile 292: Versuch. Der Fehlerpfad geht in catch.
 CoreAdminTest.client
-  `client` in `CoreAdminTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `client` in `CoreAdminTest.java`. Nur Test.
 finally Z.292
   Läuft danach immer, auch nach einem Fehler.
 ```
 
-- Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.292**: Zeile 292: Versuch. Der Fehlerpfad geht in catch.
+> - **CoreAdminTest.client**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `client` in `CoreAdminTest.java`. Nur Test.
+> - **finally Z.292**: Läuft danach immer, auch nach einem Fehler.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`.

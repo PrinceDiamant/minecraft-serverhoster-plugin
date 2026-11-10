@@ -27,23 +27,36 @@ flowchart TD
 case Z.172 'POST /api/config'
   Zeile 172: Zweig `'POST /api/config'`.
 Dashboard.saveConfig
-  Speichert `saveConfig`. Ruft `readBodyText`, `json`, `configMutationLock`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] speichert die [[Glossar#Einstellungen|Einstellungen]]. Speichert `saveConfig`. Ruft `readBodyText`, `json`, `configMutationLock`.
 case Z.173 'GET /api/settings'
   Zeile 173: Zweig `'GET /api/settings'`.
 Dashboard.handle.Z103.Teil7.Z141.Case173
-  Rumpf dieses switch-Zweigs ab Zeile 173.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 173. Rumpf dieses switch-Zweigs ab Zeile 173.
 case Z.174 'POST /api/settings'
   Zeile 174: Zweig `'POST /api/settings'`.
 Dashboard.handle.Z103.Teil7.Z141.Case174
-  Rumpf dieses switch-Zweigs ab Zeile 174.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 174. Rumpf dieses switch-Zweigs ab Zeile 174.
 case Z.175 'GET /api/backup/credentials'
   Zeile 175: Zweig `'GET /api/backup/credentials'`.
 Dashboard.handle.Z103.Teil7.Z141.Case175
-  Rumpf dieses switch-Zweigs ab Zeile 175.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 175. Rumpf dieses switch-Zweigs ab Zeile 175.
 case Z.180 'POST /api/backup/credentials'
   Zeile 180: Zweig `'POST /api/backup/credentials'`.
 Dashboard.handle.Z103.Teil7.Z141.Case180
-  Rumpf dieses switch-Zweigs ab Zeile 180.
+  Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 180. Rumpf dieses switch-Zweigs ab Zeile 180.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **case Z.172 'POST /api/config'**: Zeile 172: Zweig `'POST /api/config'`.
+> - **Dashboard.saveConfig**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] speichert die [[Glossar#Einstellungen|Einstellungen]]. Speichert `saveConfig`. Ruft `readBodyText`, `json`, `configMutationLock`.
+> - **case Z.173 'GET /api/settings'**: Zeile 173: Zweig `'GET /api/settings'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case173**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 173. Rumpf dieses switch-Zweigs ab Zeile 173.
+> - **case Z.174 'POST /api/settings'**: Zeile 174: Zweig `'POST /api/settings'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case174**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 174. Rumpf dieses switch-Zweigs ab Zeile 174.
+> - **case Z.175 'GET /api/backup/credentials'**: Zeile 175: Zweig `'GET /api/backup/credentials'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case175**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 175. Rumpf dieses switch-Zweigs ab Zeile 175.
+> - **case Z.180 'POST /api/backup/credentials'**: Zeile 180: Zweig `'POST /api/backup/credentials'`.
+> - **Dashboard.handle.Z103.Teil7.Z141.Case180**: Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 180. Rumpf dieses switch-Zweigs ab Zeile 180.
+
+- Weitere Wege der Entscheidung in [[Glossar#Zeile|Zeile]] 172.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

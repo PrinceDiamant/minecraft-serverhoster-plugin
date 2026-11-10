@@ -13,7 +13,11 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.recoverPendingSetupDirectories.Z837
-  Fortsetzung des Ablaufs ab Zeile 837.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 837 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 837.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.recoverPendingSetupDirectories.Z837**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 837 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 837.
+
+- Das [[Glossar#Plugin|Plugin]] rückt wieder gerade die [[Glossar#Einrichtung|Einrichtung]].
 - `recoverPendingSetupDirectories` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

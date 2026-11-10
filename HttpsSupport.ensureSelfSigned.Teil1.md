@@ -24,7 +24,7 @@ flowchart TD
 
 ```knoten
 HttpsSupport.resolve
-  Löst auf `resolve`.
+  Dieser Teil bestimmt das. Löst auf `resolve`.
 if Z.88 (Files.exists(ks))
   Zeile 88: prüft `(Files.exists(ks))`.
 return Z.88 return ks;
@@ -32,11 +32,21 @@ return Z.88 return ks;
 Schritt Z.89 Files.createDirectories(ks.getParent() == null ? …
   Zeile 89: Dateioperation. `Files.createDirectories(ks.getParent() == null ? …`
 HttpsSupport.password
-  `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
 if Z.92 (dn.indexOf('/n') )= 0 // dn.indexOf('/r') )= 0 /…
   Zeile 92: prüft `(dn.indexOf('/n') )= 0 // dn.indexOf('/r') )= 0 /…`.
 throw Z.92 throw new IllegalArgumentException('dashboard.htt…
   Zeile 92: Abbruch `throw new IllegalArgumentException('dashboard.htt…`.
 ```
 
-- Fortsetzung von `HttpsSupport.ensureSelfSigned`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **HttpsSupport.resolve**: Dieser Teil bestimmt das. Löst auf `resolve`.
+> - **if Z.88 (Files.exists(ks))**: Zeile 88: prüft `(Files.exists(ks))`.
+> - **return Z.88 return ks;**: Zeile 88: Rückgabe `return ks;`.
+> - **Schritt Z.89 Files.createDirectories(ks.getParent() == null ? …**: Zeile 89: Dateioperation. `Files.createDirectories(ks.getParent() == null ? …`
+> - **HttpsSupport.password**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+> - **if Z.92 (dn.indexOf('/n') )= 0 // dn.indexOf('/r') )= 0 /…**: Zeile 92: prüft `(dn.indexOf('/n') )= 0 // dn.indexOf('/r') )= 0 /…`.
+> - **throw Z.92 throw new IllegalArgumentException('dashboard.htt…**: Zeile 92: Abbruch `throw new IllegalArgumentException('dashboard.htt…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HttpsSupport.ensureSelfSigned`.

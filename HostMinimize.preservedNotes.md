@@ -16,4 +16,8 @@ return Z.122 return List.of( 'Does not delete worlds, plugins,…
   Zeile 122: Rückgabe `return List.of( 'Does not delete worlds, plugins,…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.122 return List.of( 'Does not delete worlds, plugins,…**: Zeile 122: Rückgabe `return List.of( 'Does not delete worlds, plugins,…`.
+
+- Das Verkleinern des [[Glossar#Host|Host]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `preservedNotes` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

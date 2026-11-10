@@ -10,28 +10,36 @@ flowchart TD
   n4["index.loadJar"]:::internal-link
   n5["index.loadCrashes"]:::internal-link
   n6["index.readCrash"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 index.loadDiag
-  Lädt `loadDiag`. Ruft `api`, `$`, `row`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Diagnose|Diagnose]].
 index.jcmd
-  `jcmd` in `index.html`. Ruft `post`, `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 index.loadPlan
-  Lädt `loadPlan`. Ruft `$`, `api`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den [[Glossar#Startplan|Startplan]].
 index.loadJar
-  Lädt `loadJar`. Ruft `api`, `$`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Programmdatei|Programmdatei]].
 index.loadCrashes
-  Lädt `loadCrashes`. Ruft `api`, `$`, `esc`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Absturzbericht|Absturzberichte]].
 index.readCrash
-  Liest `readCrash`. Ruft `$`, `toast`, `api`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] liest den [[Glossar#Absturzbericht|Absturzbericht]].
 ```
 
+> [!knoten] Was die Blöcke tun
+> - **index.loadDiag**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Diagnose|Diagnose]].
+> - **index.jcmd**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
+> - **index.loadPlan**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt den [[Glossar#Startplan|Startplan]].
+> - **index.loadJar**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Programmdatei|Programmdatei]].
+> - **index.loadCrashes**: Die ältere [[Glossar#Bedienseite|Bedienseite]] lädt die [[Glossar#Absturzbericht|Absturzberichte]].
+> - **index.readCrash**: Die ältere [[Glossar#Bedienseite|Bedienseite]] liest den [[Glossar#Absturzbericht|Absturzbericht]].
 
+- Die Diagnosekarten in der älteren [[Glossar#Bedienseite|Bedienseite]].

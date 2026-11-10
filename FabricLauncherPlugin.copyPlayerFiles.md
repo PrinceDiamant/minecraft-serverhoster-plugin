@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.copyPlayerFiles.Z2595
-  Fortsetzung des Ablaufs ab Zeile 2595.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2595 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2595`.
 ```
 
-- `copyPlayerFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.copyPlayerFiles.Z2595**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 2595 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z2595`.
+
+- Das [[Glossar#Plugin|Plugin]] kopiert den [[Glossar#Spieler|Spieler]] die Dateien.

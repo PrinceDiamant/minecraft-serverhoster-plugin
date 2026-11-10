@@ -24,9 +24,16 @@ if Z.28 (!(raw instanceof List(?) list))
 return Z.28 return List.of();
   Zeile 28: Rückgabe `return List.of();`.
 TaskDef.load.Z31
-  Fortsetzung des Ablaufs ab Zeile 31.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 31 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 31.
 return Z.38 return out;
   Zeile 38: Rückgabe `return out;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.28 (!(raw instanceof List(?) list))**: Zeile 28: prüft `(!(raw instanceof List(?) list))`.
+> - **return Z.28 return List.of();**: Zeile 28: Rückgabe `return List.of();`.
+> - **TaskDef.load.Z31**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 31 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 31.
+> - **return Z.38 return out;**: Zeile 38: Rückgabe `return out;`.
+
+- Dieser Teil lädt das.
 - `load` in `src/main/java/de/aichele/childlauncher/TaskDef.java`

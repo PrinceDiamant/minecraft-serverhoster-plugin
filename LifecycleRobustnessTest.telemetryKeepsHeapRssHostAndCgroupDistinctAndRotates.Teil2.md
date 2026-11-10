@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 GcDiagnostics.snapshot()
-  `snapshot` in `GcDiagnostics.java`. Ruft `snapshot`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `GcDiagnostics.java`. Ruft `snapshot`.
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **GcDiagnostics.snapshot()**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `snapshot` in `GcDiagnostics.java`. Ruft `snapshot`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates`.

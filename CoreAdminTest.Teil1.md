@@ -12,34 +12,44 @@ flowchart TD
   n6["CoreAdminTest.backupOptionsRejectInvalidPathsAndRetention"]:::internal-link
   n7["CoreAdminTest.backoffCapsAndDoesNotOverflow"]:::internal-link
   n8["CoreAdminTest.tickQueryHidesOnlyTheReply"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 CoreAdminTest.dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths
-  `dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths` in `CoreAdminTest.java`. Ruft `isDashboardPage`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths`.
 CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses
-  `tracksMinecraftPlayerEventsAndListResponses` in `CoreAdminTest.java`. Ruft `ChildSlot`, `trackPlayers`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `tracksMinecraftPlayerEventsAndListResponses`.
 CoreAdminTest.playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty
-  `playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty` in `CoreAdminTest.java`. Ruft `readPlayerNames`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty`.
 CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed
-  `dashboardPasswordSetupPreservesExistingAndFailsClosed` in `CoreAdminTest.java`. Ruft `read`, `create`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardPasswordSetupPreservesExistingAndFailsClosed`.
 CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead
-  `dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead` in `CoreAdminTest.java`. Ruft `readExisting`, `saveFtp`, `load`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`.
 CoreAdminTest.backupOptionsRejectInvalidPathsAndRetention
-  Sichert `backupOptionsRejectInvalidPathsAndRetention`. Ruft `BackupOptions`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupOptionsRejectInvalidPathsAndRetention`.
 CoreAdminTest.backoffCapsAndDoesNotOverflow
-  `backoffCapsAndDoesNotOverflow` in `CoreAdminTest.java`. Ruft `delaySeconds`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `backoffCapsAndDoesNotOverflow`.
 CoreAdminTest.tickQueryHidesOnlyTheReply
-  `tickQueryHidesOnlyTheReply` in `CoreAdminTest.java`. Ruft `consume`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `tickQueryHidesOnlyTheReply`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **CoreAdminTest.dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths`.
+> - **CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `tracksMinecraftPlayerEventsAndListResponses`.
+> - **CoreAdminTest.playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty`.
+> - **CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardPasswordSetupPreservesExistingAndFailsClosed`.
+> - **CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`.
+> - **CoreAdminTest.backupOptionsRejectInvalidPathsAndRetention**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupOptionsRejectInvalidPathsAndRetention`.
+> - **CoreAdminTest.backoffCapsAndDoesNotOverflow**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `backoffCapsAndDoesNotOverflow`.
+> - **CoreAdminTest.tickQueryHidesOnlyTheReply**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `tickQueryHidesOnlyTheReply`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

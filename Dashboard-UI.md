@@ -15,45 +15,57 @@ flowchart TD
   n9["Legacy-Logs"]:::internal-link
   n10["Legacy-Diag"]:::internal-link
   n11["UI-Workflows"]:::internal-link
-  n1 -->|"Quelltext"| n2
-  n2 -->|"Quelltext"| n3
-  n3 -->|"Quelltext"| n4
-  n4 -->|"Quelltext"| n5
-  n5 -->|"Quelltext"| n6
-  n6 -->|"Quelltext"| n7
-  n7 -->|"Quelltext"| n8
-  n8 -->|"Quelltext"| n9
-  n9 -->|"Quelltext"| n10
-  n10 -->|"Quelltext"| n11
+  n1 -->|"Kapitel im Text"| n2
+  n2 -->|"Kapitel im Text"| n3
+  n3 -->|"Kapitel im Text"| n4
+  n4 -->|"Kapitel im Text"| n5
+  n5 -->|"Kapitel im Text"| n6
+  n6 -->|"Kapitel im Text"| n7
+  n7 -->|"Kapitel im Text"| n8
+  n8 -->|"Kapitel im Text"| n9
+  n9 -->|"Kapitel im Text"| n10
+  n10 -->|"Kapitel im Text"| n11
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
 ```
 
 ```knoten
 UI-Start
-  ui/src/main.tsx hängt App mit createRoot ein. Kein eigener Funktionsrumpf.
+  Der Einstieg der neueren [[Glossar#Bedienseite|Bedienseite]]. Er hängt die Seite in den Browser ein. Eine eigene [[Glossar#Funktion|Funktion]] hat dieser Einstieg nicht.
 UI-App
-  App liest das Legacy-HTML, schneidet alte Tabs heraus und hängt die Workflows ein.
+  Die neuere [[Glossar#Bedienseite|Bedienseite]]. Sie übernimmt die ältere Seite, schneidet alte Bereiche heraus und hängt die neuen Abläufe ein.
 UI-Client
-  hostApi sendet die HTTP-Requests, fileEditor liest und schreibt Dateien.
+  Der Teil der [[Glossar#Bedienseite|Bedienseite]], der Aufträge an das [[Glossar#Plugin|Plugin]] schickt und Dateien bearbeitet.
 Legacy-Sitzung
-  Login und Sitzung im alten index.html.
+  [[Glossar#Anmeldung|Anmeldung]] und Abmeldung in der älteren [[Glossar#Bedienseite|Bedienseite]].
 Legacy-Status
-  Status-Poll im alten index.html, setInterval 3000 ms.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt alle drei Sekunden nach, wie es dem [[Glossar#Spielserver|Spielserver]] geht.
 Legacy-Konsole
-  Konsole, Befehlszeile und SSE im alten index.html.
+  [[Glossar#Konsole|Konsole]] und Befehlszeile in der älteren [[Glossar#Bedienseite|Bedienseite]].
 Legacy-Altlast
-  Tabs und Funktionen im alten HTML, die React aus dem laufenden Script schneidet.
+  Bereiche der älteren [[Glossar#Bedienseite|Bedienseite]], die die neuere Seite aus dem laufenden Text herausschneidet. Sie bleiben in der Datei, laufen aber nicht mit.
 Legacy-Dateien
-  Datei-Browser im alten index.html.
+  Der Datei-Browser in der älteren [[Glossar#Bedienseite|Bedienseite]].
 Legacy-Logs
-  Logansicht im alten index.html.
+  Die Protokollansicht in der älteren [[Glossar#Bedienseite|Bedienseite]].
 Legacy-Diag
-  Diagnosekarten im alten index.html.
+  Die Diagnosekarten in der älteren [[Glossar#Bedienseite|Bedienseite]].
 UI-Workflows
-  Die React-Abläufe für Spieler, Backup, Tasks, Einstellungen, Version und Einrichtung.
+  Die einzelnen Abläufe der [[Glossar#Bedienseite|Bedienseite]]: [[Glossar#Spieler|Spieler]], [[Glossar#Sicherungskopie|Sicherungskopie]], [[Glossar#Aufgabe|Aufgaben]], [[Glossar#Einstellungen|Einstellungen]], [[Glossar#Version|Version]] und [[Glossar#Einrichtung|Einrichtung]].
 ```
 
-- React-Hülle um `src/main/resources/web/index.html`.
-- Befund: doppelte Oberfläche.
-- Befund: doppelte Implementierung (sicher)
+> [!knoten] Was die Blöcke tun
+> - **UI-Start**: Der Einstieg der neueren [[Glossar#Bedienseite|Bedienseite]]. Er hängt die Seite in den Browser ein. Eine eigene [[Glossar#Funktion|Funktion]] hat dieser Einstieg nicht.
+> - **UI-App**: Die neuere [[Glossar#Bedienseite|Bedienseite]]. Sie übernimmt die ältere Seite, schneidet alte Bereiche heraus und hängt die neuen Abläufe ein.
+> - **UI-Client**: Der Teil der [[Glossar#Bedienseite|Bedienseite]], der Aufträge an das [[Glossar#Plugin|Plugin]] schickt und Dateien bearbeitet.
+> - **Legacy-Sitzung**: [[Glossar#Anmeldung|Anmeldung]] und Abmeldung in der älteren [[Glossar#Bedienseite|Bedienseite]].
+> - **Legacy-Status**: Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt alle drei Sekunden nach, wie es dem [[Glossar#Spielserver|Spielserver]] geht.
+> - **Legacy-Konsole**: [[Glossar#Konsole|Konsole]] und Befehlszeile in der älteren [[Glossar#Bedienseite|Bedienseite]].
+> - **Legacy-Altlast**: Bereiche der älteren [[Glossar#Bedienseite|Bedienseite]], die die neuere Seite aus dem laufenden Text herausschneidet. Sie bleiben in der Datei, laufen aber nicht mit.
+> - **Legacy-Dateien**: Der Datei-Browser in der älteren [[Glossar#Bedienseite|Bedienseite]].
+> - **Legacy-Logs**: Die Protokollansicht in der älteren [[Glossar#Bedienseite|Bedienseite]].
+> - **Legacy-Diag**: Die Diagnosekarten in der älteren [[Glossar#Bedienseite|Bedienseite]].
+> - **UI-Workflows**: Die einzelnen Abläufe der [[Glossar#Bedienseite|Bedienseite]]: [[Glossar#Spieler|Spieler]], [[Glossar#Sicherungskopie|Sicherungskopie]], [[Glossar#Aufgabe|Aufgaben]], [[Glossar#Einstellungen|Einstellungen]], [[Glossar#Version|Version]] und [[Glossar#Einrichtung|Einrichtung]].
+
+- Die [[Glossar#Bedienseite|Bedienseite]], die man im Browser sieht. Dieselbe Seite ist zweimal gebaut, einmal älter und einmal neuer. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].
+- Auffällig: derselbe Teil ist zweimal vorhanden. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].

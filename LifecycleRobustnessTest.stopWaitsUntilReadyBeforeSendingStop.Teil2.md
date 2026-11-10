@@ -11,7 +11,11 @@ flowchart TD
 
 ```knoten
 ChildStopSequence.stop
-  Stoppt `stop`. Ruft `signal`.
+  Dieser Teil stoppt das. Stoppt `stop`. Ruft `signal`.
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ChildStopSequence.stop**: Dieser Teil stoppt das. Stoppt `stop`. Ruft `signal`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop`.

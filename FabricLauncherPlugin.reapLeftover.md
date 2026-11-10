@@ -31,25 +31,37 @@ flowchart TD
 
 ```knoten
 ChildProcessRecord.reap
-  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+  Dieser Teil räumt weg das. Im [[Glossar#Quelltext|Quelltext]] heißt das `reap`.
 FabricLauncherPlugin.processRecord
-  `processRecord` in `FabricLauncherPlugin.java`.
+  Baut den Merkzettel zum Programm: Nummer und die Prüfungen, ob es noch lebt. Im [[Glossar#Quelltext|Quelltext]] heißt das `processRecord`.
 switch Z.2120 (result.kind())
-  Zeile 2120: Verzweigung nach `(result.kind())`.
+  Hier gibt es mehrere Wege. Einer davon wird gewählt. Das steht in [[Glossar#Zeile|Zeile]] 2120.
 case Z.2121 NO_RECORD
-  Zeile 2121: Zweig `NO_RECORD`.
+  Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2121.
 case Z.2122 CLEARED
-  Zeile 2122: Zweig `CLEARED`.
+  Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2122.
 case Z.2123 INVALID_RECORD
-  Zeile 2123: Zweig `INVALID_RECORD`.
+  Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2123.
 case Z.2124 REFUSED
-  Zeile 2124: Zweig `REFUSED`.
+  Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2124.
 case Z.2125 REAPED
-  Zeile 2125: Zweig `REAPED`.
+  Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2125.
 case Z.2126 STILL_ALIVE
-  Zeile 2126: Zweig `STILL_ALIVE`.
+  Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2126.
 throw Z.2126 throw new IOException('Leftover child is still ru…
-  Zeile 2126: Abbruch `throw new IOException('Leftover child is still ru…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 2126.
 ```
 
-- `reapLeftover` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **ChildProcessRecord.reap**: Dieser Teil räumt weg das. Im [[Glossar#Quelltext|Quelltext]] heißt das `reap`.
+> - **FabricLauncherPlugin.processRecord**: Baut den Merkzettel zum Programm: Nummer und die Prüfungen, ob es noch lebt. Im [[Glossar#Quelltext|Quelltext]] heißt das `processRecord`.
+> - **switch Z.2120 (result.kind())**: Hier gibt es mehrere Wege. Einer davon wird gewählt. Das steht in [[Glossar#Zeile|Zeile]] 2120.
+> - **case Z.2121 NO_RECORD**: Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2121.
+> - **case Z.2122 CLEARED**: Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2122.
+> - **case Z.2123 INVALID_RECORD**: Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2123.
+> - **case Z.2124 REFUSED**: Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2124.
+> - **case Z.2125 REAPED**: Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2125.
+> - **case Z.2126 STILL_ALIVE**: Einer dieser Wege. Das steht in [[Glossar#Zeile|Zeile]] 2126.
+> - **throw Z.2126 throw new IOException('Leftover child is still ru…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 2126.
+
+- Beendet ein Programm, das von einem früheren Start noch übrig ist.

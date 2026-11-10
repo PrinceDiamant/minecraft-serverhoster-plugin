@@ -21,13 +21,20 @@ flowchart TD
 
 ```knoten
 ScheduleDef.ScheduleDef
-  Plant `ScheduleDef`. Ruft `validateInterval`.
+  Der [[Glossar#Zeitplan|Zeitplan]] plant hier einen Schritt. Eine Ebene tiefer steht er genauer. Plant `ScheduleDef`. Ruft `validateInterval`.
 ScheduleDef.string
-  `string` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `string` in `ScheduleDef.java`.
 ScheduleDef.bool
-  `bool` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bool` in `ScheduleDef.java`.
 ScheduleDef.enumValue
-  `enumValue` in `ScheduleDef.java`.
+  Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den Wert. `enumValue` in `ScheduleDef.java`.
 ```
 
-- Fortsetzung von `ScheduleDef.load.Z118.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **ScheduleDef.ScheduleDef**: Der [[Glossar#Zeitplan|Zeitplan]] plant hier einen Schritt. Eine Ebene tiefer steht er genauer. Plant `ScheduleDef`. Ruft `validateInterval`.
+> - **ScheduleDef.string**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `string` in `ScheduleDef.java`.
+> - **ScheduleDef.bool**: Der [[Glossar#Zeitplan|Zeitplan]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `bool` in `ScheduleDef.java`.
+> - **ScheduleDef.enumValue**: Der [[Glossar#Zeitplan|Zeitplan]] kümmert sich um den Wert. `enumValue` in `ScheduleDef.java`.
+
+- Weitere [[Glossar#Funktion|Funktionen]], die ab [[Glossar#Zeile|Zeile]] 5700 aufgerufen werden.
+- Fortsetzung von `ScheduleDef.load.Z118.Teil2`.

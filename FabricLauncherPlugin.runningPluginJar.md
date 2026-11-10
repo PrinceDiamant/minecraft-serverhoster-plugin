@@ -18,11 +18,16 @@ flowchart TD
 
 ```knoten
 if Z.2161 (source == null)
-  Zeile 2161: prüft `(source == null)`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2161.
 throw Z.2161 throw new IOException('Could not identify the run…
-  Zeile 2161: Abbruch `throw new IOException('Could not identify the run…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 2161.
 return Z.2162 return Path.of(source.getLocation().toURI()).toAb…
-  Zeile 2162: Rückgabe `return Path.of(source.getLocation().toURI()).toAb…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2162.
 ```
 
-- `runningPluginJar` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.2161 (source == null)**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 2161.
+> - **throw Z.2161 throw new IOException('Could not identify the run…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 2161.
+> - **return Z.2162 return Path.of(source.getLocation().toURI()).toAb…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 2162.
+
+- Das [[Glossar#Plugin|Plugin]] prüft, ob läuft, das Plugin die [[Glossar#Programmdatei|Programmdatei]].

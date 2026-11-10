@@ -25,11 +25,18 @@ flowchart TD
 if Z.85 (num(x) && num(y))
   Zeile 85: prüft `(num(x) && num(y))`.
 VersionCatalog.num
-  `num` in `VersionCatalog.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `num` in `VersionCatalog.java`.
 if Z.86 (num(y))
   Zeile 86: prüft `(num(y))`.
 if Z.87 (num(x))
   Zeile 87: prüft `(num(x))`.
 ```
 
-- Fortsetzung von `VersionCatalog.compare.Z81`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.85 (num(x) && num(y))**: Zeile 85: prüft `(num(x) && num(y))`.
+> - **VersionCatalog.num**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `num` in `VersionCatalog.java`.
+> - **if Z.86 (num(y))**: Zeile 86: prüft `(num(y))`.
+> - **if Z.87 (num(x))**: Zeile 87: prüft `(num(x))`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 85 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `VersionCatalog.compare.Z81`.

@@ -26,13 +26,22 @@ if Z.1008 (!getConfig().getBoolean('memoryTelemetry.enabled…
 for Z.1012 (ChildSlot slot : slots.values())
   Zeile 1012: Schleife `(ChildSlot slot : slots.values())`.
 ChildSlot.pid
-  Liefert die Prozessnummer `pid`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Prozessnummer `pid`.
 if Z.1014 (pid ) 0)
   Zeile 1014: prüft `(pid ) 0)`.
 MemoryTelemetry.read
-  Liest `read`. Ruft `snapshot`, `number`, `current`.
+  Die Messung liest das. Liest `read`. Ruft `snapshot`, `number`, `current`.
 FabricLauncherPlugin.maybeWriteTelemetry
-  Führt nur aus, wenn die Sperrzeit um ist `maybeWriteTelemetry`. Ruft `boundedSeconds`, `warnOnce`, `line`.
+  Das [[Glossar#Plugin|Plugin]] macht, wenn die Zeit reif ist, das Aufschreiben die Messreihe. Führt nur aus, wenn die Sperrzeit um ist `maybeWriteTelemetry`. Ruft `boundedSeconds`, `warnOnce`, `line`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.sampleHostMemory.Teil1`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1008 (!getConfig().getBoolean('memoryTelemetry.enabled…**: Zeile 1008: prüft `(!getConfig().getBoolean('memoryTelemetry.enabled…`.
+> - **for Z.1012 (ChildSlot slot : slots.values())**: Zeile 1012: Schleife `(ChildSlot slot : slots.values())`.
+> - **ChildSlot.pid**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Liefert die Prozessnummer `pid`.
+> - **if Z.1014 (pid ) 0)**: Zeile 1014: prüft `(pid ) 0)`.
+> - **MemoryTelemetry.read**: Die Messung liest das. Liest `read`. Ruft `snapshot`, `number`, `current`.
+> - **FabricLauncherPlugin.maybeWriteTelemetry**: Das [[Glossar#Plugin|Plugin]] macht, wenn die Zeit reif ist, das Aufschreiben die Messreihe. Führt nur aus, wenn die Sperrzeit um ist `maybeWriteTelemetry`. Ruft `boundedSeconds`, `warnOnce`, `line`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1008 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.sampleHostMemory.Teil1`.

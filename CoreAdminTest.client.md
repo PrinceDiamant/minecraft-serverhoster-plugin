@@ -20,5 +20,10 @@ return Z.388 return HttpClient.newBuilder().sslContext(ctx).bu…
   Zeile 388: Rückgabe `return HttpClient.newBuilder().sslContext(ctx).bu…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.383**: Zeile 383: Versuch. Der Fehlerpfad geht in catch.
+> - **return Z.388 return HttpClient.newBuilder().sslContext(ctx).bu…**: Zeile 388: Rückgabe `return HttpClient.newBuilder().sslContext(ctx).bu…`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `client` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

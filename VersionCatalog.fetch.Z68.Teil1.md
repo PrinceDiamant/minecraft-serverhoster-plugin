@@ -25,17 +25,26 @@ flowchart TD
 
 ```knoten
 VersionCatalog.vanilla
-  `vanilla` in `VersionCatalog.java`. Ruft `str`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `vanilla` in `VersionCatalog.java`. Ruft `str`.
 Upstream.getJson
-  Liefert `getJson`.
+  Dieser Teil liefert die Antwort. Liefert `getJson`.
 VersionCatalog.fabric
-  `fabric` in `VersionCatalog.java`. Ruft `str`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fabric` in `VersionCatalog.java`. Ruft `str`.
 VersionCatalog.paper
-  `paper` in `VersionCatalog.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `paper` in `VersionCatalog.java`.
 VersionCatalog.spigot
-  `spigot` in `VersionCatalog.java`. Ruft `compare`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spigot` in `VersionCatalog.java`. Ruft `compare`.
 Upstream.getText
-  Liefert `getText`.
+  Dieser Teil liefert den Text. Liefert `getText`.
 ```
 
-- Fortsetzung von `VersionCatalog.fetch.Z68`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **VersionCatalog.vanilla**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `vanilla` in `VersionCatalog.java`. Ruft `str`.
+> - **Upstream.getJson**: Dieser Teil liefert die Antwort. Liefert `getJson`.
+> - **VersionCatalog.fabric**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `fabric` in `VersionCatalog.java`. Ruft `str`.
+> - **VersionCatalog.paper**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `paper` in `VersionCatalog.java`.
+> - **VersionCatalog.spigot**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `spigot` in `VersionCatalog.java`. Ruft `compare`.
+> - **Upstream.getText**: Dieser Teil liefert den Text. Liefert `getText`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `VersionCatalog.fetch.Z68`.

@@ -13,9 +13,13 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.refreshHostMinimize
-  Lädt neu `refreshHostMinimize`. Ruft `readHostMinimizeState`, `worldNameSafe`, `apply`.
+  Das [[Glossar#Plugin|Plugin]] lädt neu den [[Glossar#Host|Host]] das Verkleinern. Im [[Glossar#Quelltext|Quelltext]] heißt das `refreshHostMinimize`.
 FabricLauncherPlugin.applyLobbyRules
-  Wendet an `applyLobbyRules`. Ruft `apply`, `name`, `spawnFlags`.
+  Das [[Glossar#Plugin|Plugin]] wendet an die Wartewelt. Im [[Glossar#Quelltext|Quelltext]] heißt das `applyLobbyRules`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.refreshHostMinimize**: Das [[Glossar#Plugin|Plugin]] lädt neu den [[Glossar#Host|Host]] das Verkleinern. Im [[Glossar#Quelltext|Quelltext]] heißt das `refreshHostMinimize`.
+> - **FabricLauncherPlugin.applyLobbyRules**: Das [[Glossar#Plugin|Plugin]] wendet an die Wartewelt. Im [[Glossar#Quelltext|Quelltext]] heißt das `applyLobbyRules`.
 
+- Ein weiterer Abschnitt derselben Übersicht.

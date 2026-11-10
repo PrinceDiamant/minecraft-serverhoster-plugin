@@ -24,4 +24,10 @@ return Z.68 return HexFormat.of().formatHex(md.digest());
   Zeile 68: Rückgabe `return HexFormat.of().formatHex(md.digest());`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **try Z.63**: Zeile 63: Versuch. Der Fehlerpfad geht in catch.
+> - **while Z.66 ((n = in.read(buf)) ) 0)**: Zeile 66: Schleife `((n = in.read(buf)) ) 0)`.
+> - **return Z.68 return HexFormat.of().formatHex(md.digest());**: Zeile 68: Rückgabe `return HexFormat.of().formatHex(md.digest());`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `digest` in `src/main/java/de/aichele/childlauncher/Upstream.java`

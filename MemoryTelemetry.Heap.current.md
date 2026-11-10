@@ -20,4 +20,9 @@ return Z.31 return new Heap(committed - runtime.freeMemory(),…
   Zeile 31: Rückgabe `return new Heap(committed - runtime.freeMemory(),…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.29 Runtime runtime = Runtime.getRuntime();**: Zeile 29: fragt die JVM-Laufzeit. `Runtime runtime = Runtime.getRuntime();`
+> - **return Z.31 return new Heap(committed - runtime.freeMemory(),…**: Zeile 31: Rückgabe `return new Heap(committed - runtime.freeMemory(),…`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `current` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

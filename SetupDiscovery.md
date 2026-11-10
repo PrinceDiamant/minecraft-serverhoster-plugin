@@ -30,29 +30,43 @@ flowchart TD
 
 ```knoten
 Candidate
-  Ein Treffer der Suche: Pfad, Profil, ob schon Dateien da sind.
+  Ein Treffer dieser Suche: ein Ordner, der eine Anlage sein könnte.
 SetupDiscovery.SetupDiscovery
-  `SetupDiscovery` in `SetupDiscovery.java`.
+  Dieser Teil kümmert sich um die Suche. Im [[Glossar#Quelltext|Quelltext]] heißt das `SetupDiscovery`.
 SetupDiscovery.scan
-  Durchsucht `scan`. Ruft `legacyPluginVersion`, `isAtLeast`, `loadLegacyConfig`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `scan`.
 SetupDiscovery.loadLegacyConfig
-  Lädt `loadLegacyConfig`.
+  Dieser Teil lädt den alten Weg die [[Glossar#Einstellungen|Einstellungen]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `loadLegacyConfig`.
 SetupDiscovery.resolveNewDirectory
-  Löst auf `resolveNewDirectory`.
+  Dieser Teil bestimmt hier einen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `resolveNewDirectory`.
 SetupDiscovery.legacyPluginVersion
-  `legacyPluginVersion` in `SetupDiscovery.java`.
+  Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Version|Version]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `legacyPluginVersion`.
 SetupDiscovery.isAtLeast
-  Prüft `isAtLeast`.
+  Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `isAtLeast`.
 SetupDiscovery.isSafeArchiveTarget
-  Prüft `isSafeArchiveTarget`.
+  Dieser Teil prüft die erlaubte Grenze. Im [[Glossar#Quelltext|Quelltext]] heißt das `isSafeArchiveTarget`.
 SetupDiscovery.isServerDirectory
-  Prüft `isServerDirectory`. Ruft `hasServerFiles`.
+  Dieser Teil prüft den Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `isServerDirectory`.
 SetupDiscovery.isAllowedConfiguredDirectory
-  Prüft `isAllowedConfiguredDirectory`.
+  Dieser Teil prüft die Einstellung. Im [[Glossar#Quelltext|Quelltext]] heißt das `isAllowedConfiguredDirectory`.
 SetupDiscovery.hasServerFiles
-  Prüft `hasServerFiles`.
+  Dieser Teil prüft den Server die Dateien. Im [[Glossar#Quelltext|Quelltext]] heißt das `hasServerFiles`.
 SetupDiscovery.topLevelEntries
-  `topLevelEntries` in `SetupDiscovery.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `topLevelEntries`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Candidate**: Ein Treffer dieser Suche: ein Ordner, der eine Anlage sein könnte.
+> - **SetupDiscovery.SetupDiscovery**: Dieser Teil kümmert sich um die Suche. Im [[Glossar#Quelltext|Quelltext]] heißt das `SetupDiscovery`.
+> - **SetupDiscovery.scan**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `scan`.
+> - **SetupDiscovery.loadLegacyConfig**: Dieser Teil lädt den alten Weg die [[Glossar#Einstellungen|Einstellungen]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `loadLegacyConfig`.
+> - **SetupDiscovery.resolveNewDirectory**: Dieser Teil bestimmt hier einen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `resolveNewDirectory`.
+> - **SetupDiscovery.legacyPluginVersion**: Dieser Teil kümmert sich um das [[Glossar#Plugin|Plugin]] die [[Glossar#Version|Version]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `legacyPluginVersion`.
+> - **SetupDiscovery.isAtLeast**: Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `isAtLeast`.
+> - **SetupDiscovery.isSafeArchiveTarget**: Dieser Teil prüft die erlaubte Grenze. Im [[Glossar#Quelltext|Quelltext]] heißt das `isSafeArchiveTarget`.
+> - **SetupDiscovery.isServerDirectory**: Dieser Teil prüft den Server. Im [[Glossar#Quelltext|Quelltext]] heißt das `isServerDirectory`.
+> - **SetupDiscovery.isAllowedConfiguredDirectory**: Dieser Teil prüft die Einstellung. Im [[Glossar#Quelltext|Quelltext]] heißt das `isAllowedConfiguredDirectory`.
+> - **SetupDiscovery.hasServerFiles**: Dieser Teil prüft den Server die Dateien. Im [[Glossar#Quelltext|Quelltext]] heißt das `hasServerFiles`.
+> - **SetupDiscovery.topLevelEntries**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `topLevelEntries`.
 
+- Sucht Ordner, die schon wie ein Server aussehen.

@@ -17,9 +17,15 @@ flowchart TD
 while Z.733 (!Thread.currentThread().isInterrupted(…
   Zeile 733: Schleife `(!Thread.currentThread().isInterrupted(…`.
 Dashboard.sse.Z729.Z733.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 Dashboard.sse.Z729.Z733.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `Dashboard.sse.Z729`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **while Z.733 (!Thread.currentThread().isInterrupted(…**: Zeile 733: Schleife `(!Thread.currentThread().isInterrupted(…`.
+> - **Dashboard.sse.Z729.Z733.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **Dashboard.sse.Z729.Z733.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 733 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `Dashboard.sse.Z729`.

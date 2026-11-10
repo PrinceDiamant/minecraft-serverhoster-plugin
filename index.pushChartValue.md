@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 if Z.160 a.length)CHART_HISTORY_LIMIT
-  Zeile 160: prüft `a.length)CHART_HISTORY_LIMIT`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 160.
 ```
 
-- `pushChartValue` in `src/main/resources/web/index.html`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.160 a.length)CHART_HISTORY_LIMIT**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 160.
+
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] zeichnet den Wert.

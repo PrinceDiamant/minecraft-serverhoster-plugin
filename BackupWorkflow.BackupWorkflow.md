@@ -25,20 +25,30 @@ flowchart TD
 
 ```knoten
 BackupWorkflow.BackupWorkflow.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 BackupWorkflow.BackupWorkflow.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 BackupWorkflow.BackupWorkflow.onPageChange
-  Reagiert `onPageChange`. Ruft `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
 BackupWorkflow.BackupWorkflow.onServerChange
-  Reagiert `onServerChange`. Ruft `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onServerChange`. Ruft `refresh`.
 BackupWorkflow.BackupWorkflow.createBackup
-  Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] legt an die [[Glossar#Sicherungskopie|Sicherungskopie]]. Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
 BackupWorkflow.BackupWorkflow.testTarget
-  Prüft `testTarget`. Ruft `dashboardRequest`.
+  Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `testTarget`. Ruft `dashboardRequest`.
 BackupWorkflow.BackupWorkflow.mutateBackup
-  `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+  Die [[Glossar#Bedienseite|Bedienseite]] sichert das. `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **BackupWorkflow.BackupWorkflow.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **BackupWorkflow.BackupWorkflow.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+> - **BackupWorkflow.BackupWorkflow.onPageChange**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onPageChange`. Ruft `refresh`.
+> - **BackupWorkflow.BackupWorkflow.onServerChange**: Die [[Glossar#Bedienseite|Bedienseite]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Reagiert `onServerChange`. Ruft `refresh`.
+> - **BackupWorkflow.BackupWorkflow.createBackup**: Die [[Glossar#Bedienseite|Bedienseite]] legt an die [[Glossar#Sicherungskopie|Sicherungskopie]]. Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
+> - **BackupWorkflow.BackupWorkflow.testTarget**: Die [[Glossar#Bedienseite|Bedienseite]] prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `testTarget`. Ruft `dashboardRequest`.
+> - **BackupWorkflow.BackupWorkflow.mutateBackup**: Die [[Glossar#Bedienseite|Bedienseite]] sichert das. `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+
+- Die [[Glossar#Bedienseite|Bedienseite]] sichert den Ablauf.
 - `BackupWorkflow` in `ui/src/components/BackupWorkflow.tsx`
 - Befund: Altlast, sicher. BackupWorkflow.tsx:214 server= aus #srv; index.html hat nur CSS #srv

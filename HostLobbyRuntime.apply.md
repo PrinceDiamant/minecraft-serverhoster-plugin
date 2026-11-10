@@ -24,13 +24,21 @@ flowchart TD
 if Z.21 (!HostMinimize.worldNameSafe(lobbyName))
   Zeile 21: prüft `(!HostMinimize.worldNameSafe(lobbyName))`.
 HostMinimize.worldNameSafe
-  Betrifft die Welt `worldNameSafe`.
+  Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. Betrifft die Welt `worldNameSafe`.
 return Z.21 return 0;
   Zeile 21: Rückgabe `return 0;`.
 HostLobbyRuntime.apply.Z23
-  Fortsetzung des Ablaufs ab Zeile 23.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 23 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 23.
 return Z.30 return changed;
   Zeile 30: Rückgabe `return changed;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.21 (!HostMinimize.worldNameSafe(lobbyName))**: Zeile 21: prüft `(!HostMinimize.worldNameSafe(lobbyName))`.
+> - **HostMinimize.worldNameSafe**: Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um den Namen die erlaubte Grenze. Betrifft die Welt `worldNameSafe`.
+> - **return Z.21 return 0;**: Zeile 21: Rückgabe `return 0;`.
+> - **HostLobbyRuntime.apply.Z23**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 23 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 23.
+> - **return Z.30 return changed;**: Zeile 30: Rückgabe `return changed;`.
+
+- Dieser Teil wendet an das.
 - `apply` in `src/main/java/de/aichele/childlauncher/HostLobbyRuntime.java`

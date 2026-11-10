@@ -19,11 +19,18 @@ flowchart TD
 Schritt Z.66 assertTrue(Files.exists(file));
   Zeile 66: Dateioperation. `assertTrue(Files.exists(file));`
 LifecycleRobustnessTest.FakeProcesses.FakeProcesses
-  `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+  Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
 ChildProcessRecord.reap
-  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+  Dieser Teil räumt weg das. Räumt übrige [[Glossar#Prozess|Prozesse]] ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
 Schritt Z.71 assertFalse(Files.exists(file));
   Zeile 71: Dateioperation. `assertFalse(Files.exists(file));`
 ```
 
-- Fortsetzung von `LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.66 assertTrue(Files.exists(file));**: Zeile 66: Dateioperation. `assertTrue(Files.exists(file));`
+> - **LifecycleRobustnessTest.FakeProcesses.FakeProcesses**: Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server. `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+> - **ChildProcessRecord.reap**: Dieser Teil räumt weg das. Räumt übrige [[Glossar#Prozess|Prozesse]] ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+> - **Schritt Z.71 assertFalse(Files.exists(file));**: Zeile 71: Dateioperation. `assertFalse(Files.exists(file));`
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`.

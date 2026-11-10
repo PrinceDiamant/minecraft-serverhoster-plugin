@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die Messung kümmert sich um den [[Glossar#Arbeitsspeicher|Arbeitsspeicher]] die Messung.
 - `HostMemoryProbe` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

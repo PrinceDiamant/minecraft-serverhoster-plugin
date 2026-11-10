@@ -21,11 +21,18 @@ flowchart TD
 for Z.137 d.entries
   Zeile 137: Schleife `d.entries`.
 index.jp
-  Baut einen Pfad `jp`.
+  Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen. Baut einen Pfad `jp`.
 index.esc
-  Maskiert HTML `esc`.
+  Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
 index.fmtSize
-  Formatiert `fmtSize`.
+  Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe. Formatiert `fmtSize`.
 ```
 
-- Fortsetzung von `index.ls.Teil2`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.137 d.entries**: Zeile 137: Schleife `d.entries`.
+> - **index.jp**: Baut in der älteren [[Glossar#Bedienseite|Bedienseite]] einen Dateipfad aus seinen Teilen. Baut einen Pfad `jp`.
+> - **index.esc**: Macht einen Text so ungefährlich, dass die Seite ihn anzeigen kann. Maskiert HTML `esc`.
+> - **index.fmtSize**: Die ältere [[Glossar#Bedienseite|Bedienseite]] macht lesbar die Größe. Formatiert `fmtSize`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 137 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `index.ls.Teil2`.

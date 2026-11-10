@@ -16,4 +16,8 @@ kein eigener Aufruf
   In diesem Stück gibt es keinen weiteren eigenen Aufruf.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+
+- Die Serverbeschreibung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `Profiles` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

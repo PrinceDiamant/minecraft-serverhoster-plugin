@@ -23,4 +23,10 @@ return Z.51 return jar;
   Zeile 51: Rückgabe `return jar;`.
 ```
 
-- Fortsetzung von `SpigotBuilder.build`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.50 (p.exitValue() != 0 // !Files.isRegularFile(jar))**: Zeile 50: prüft `(p.exitValue() != 0 // !Files.isRegularFile(jar))`.
+> - **throw Z.50 throw new IOException('BuildTools exit ' + p.exit…**: Zeile 50: Abbruch `throw new IOException('BuildTools exit ' + p.exit…`.
+> - **return Z.51 return jar;**: Zeile 51: Rückgabe `return jar;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `SpigotBuilder.build`.

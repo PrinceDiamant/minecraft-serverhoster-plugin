@@ -33,4 +33,12 @@ return Z.191 return true;
   Zeile 191: Rückgabe `return true;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **while Z.187 (inspector.alive(pid))**: Zeile 187: Schleife `(inspector.alive(pid))`.
+> - **if Z.188 (System.nanoTime() )= deadline)**: Zeile 188: prüft `(System.nanoTime() )= deadline)`.
+> - **return Z.188 return false;**: Zeile 188: Rückgabe `return false;`.
+> - **Schritt Z.189 Thread.sleep(Math.min(50, Math.max(1, java.util.c…**: Zeile 189: wartet. `Thread.sleep(Math.min(50, Math.max(1, java.util.c…`
+> - **return Z.191 return true;**: Zeile 191: Rückgabe `return true;`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `waitUntilDead` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

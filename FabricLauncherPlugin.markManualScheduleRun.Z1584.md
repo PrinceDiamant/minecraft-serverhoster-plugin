@@ -17,9 +17,15 @@ flowchart TD
 sync Z.1584
   Zeile 1584: synchronisierter Block.
 FabricLauncherPlugin.schedules
-  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
 FabricLauncherPlugin.markManualScheduleRun.Z1584.Z1587
-  Fortsetzung des Ablaufs ab Zeile 1587.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1587 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1587.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.markManualScheduleRun`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **sync Z.1584**: Zeile 1584: synchronisierter Block.
+> - **FabricLauncherPlugin.schedules**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+> - **FabricLauncherPlugin.markManualScheduleRun.Z1584.Z1587**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1587 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 1587.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1584 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.markManualScheduleRun`.

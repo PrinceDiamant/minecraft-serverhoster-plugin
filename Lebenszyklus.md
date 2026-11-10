@@ -12,11 +12,11 @@ flowchart TD
   n6["FabricLauncherPlugin.makeWritable"]:::internal-link
   n7["FabricLauncherPlugin.saveConfigWritable"]:::internal-link
   n8["FabricLauncherPlugin.warnOnce"]:::internal-link
-  n2 -->|"Z.115"| n3
-  n2 -->|"Z.122"| n6
-  n3 -->|"Z.185"| n4
-  n3 -->|"Z.188"| n7
-  n7 -->|"Z.248"| n6
+  n2 -->|"Zeile 115"| n3
+  n2 -->|"Zeile 122"| n6
+  n3 -->|"Zeile 185"| n4
+  n3 -->|"Zeile 188"| n7
+  n7 -->|"Zeile 248"| n6
   classDef internal-link fill:#ddeeff,stroke:#4488cc
   classDef befund fill:#f88
   style n2 fill:#f88,stroke:#900
@@ -25,22 +25,31 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.onLoad
-  Spigot `onLoad`: Marker `HostFirstSetup`, bevor Welten laden.
+  Läuft ganz am Anfang, noch bevor die Welten des [[Glossar#Host|Host]] geladen sind. Hier wird die Merkdatei der [[Glossar#Ersteinrichtung|Ersteinrichtung]] angeschaut.
 FabricLauncherPlugin.onEnable
-  Spigot `onEnable`: Profile, Sampler, Dashboard, fünf Scheduler. Befund: Logikrisiko (sicher).
+  Läuft, wenn der [[Glossar#Host|Host]] das [[Glossar#Plugin|Plugin]] einschaltet. [[Glossar#Einstellungen|Einstellungen]] werden gelesen, die [[Glossar#Wecker|Wecker]] starten, die [[Glossar#Bedienseite|Bedienseite]] geht auf. Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].
 FabricLauncherPlugin.migrateRestartPolicy
-  Übernimmt den alten Wert von `migrateRestartPolicy`. Ruft `migrateLegacyUnlimited`, `migrateLegacyRestartPolicy`, `saveConfigWritable`.
+  Übernimmt eine ältere Schreibweise der [[Glossar#Neustart|Neustart]]-Regel in die heutige.
 FabricLauncherPlugin.migrateLegacyRestartPolicy
-  Übernimmt den alten Wert von `migrateLegacyRestartPolicy`. Ruft `migrateLegacyUnlimited`.
+  Dasselbe für eine noch ältere Schreibweise der [[Glossar#Neustart|Neustart]]-Regel.
 FabricLauncherPlugin.onDisable
-  Spigot `onDisable`: Child stoppen, Dashboard stoppen, Pool `shutdownNow`.
+  Läuft, wenn der [[Glossar#Host|Host]] das [[Glossar#Plugin|Plugin]] ausschaltet. Der [[Glossar#Spielserver|Spielserver]] wird gestoppt, die [[Glossar#Bedienseite|Bedienseite]] geht zu, laufende Arbeiten werden abgebrochen.
 FabricLauncherPlugin.makeWritable
-  Setzt POSIX `rwxrwxrwx` für Ordner und `rw-rw-rw-` für Dateien. Befund: Logikrisiko (sicher).
+  Setzt die [[Glossar#Dateirechte|Dateirechte]] eines Ordners oder einer Datei sehr offen, damit der [[Glossar#Spielserver|Spielserver]] dort schreiben kann. Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].
 FabricLauncherPlugin.saveConfigWritable
-  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+  Speichert die [[Glossar#Einstellungsdatei|Einstellungsdatei]] und setzt danach die [[Glossar#Dateirechte|Dateirechte]] so, dass sie beschreibbar bleibt.
 FabricLauncherPlugin.warnOnce
-  Warnt `warnOnce`.
+  Schreibt eine Warnung nur ein einziges Mal, damit das Protokoll nicht vollläuft.
 ```
 
-- Spigot ruft `onLoad`, `onEnable`, `onDisable`.
-- Threads: `ServerhosterPlugin`, `-Save`, `-Memory`, `-Supervisor`, `-ShutdownHook`.
+> [!knoten] Was die Blöcke tun
+> - **FabricLauncherPlugin.onLoad**: Läuft ganz am Anfang, noch bevor die Welten des [[Glossar#Host|Host]] geladen sind. Hier wird die Merkdatei der [[Glossar#Ersteinrichtung|Ersteinrichtung]] angeschaut.
+> - **FabricLauncherPlugin.onEnable**: Läuft, wenn der [[Glossar#Host|Host]] das [[Glossar#Plugin|Plugin]] einschaltet. [[Glossar#Einstellungen|Einstellungen]] werden gelesen, die [[Glossar#Wecker|Wecker]] starten, die [[Glossar#Bedienseite|Bedienseite]] geht auf. Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].
+> - **FabricLauncherPlugin.migrateRestartPolicy**: Übernimmt eine ältere Schreibweise der [[Glossar#Neustart|Neustart]]-Regel in die heutige.
+> - **FabricLauncherPlugin.migrateLegacyRestartPolicy**: Dasselbe für eine noch ältere Schreibweise der [[Glossar#Neustart|Neustart]]-Regel.
+> - **FabricLauncherPlugin.onDisable**: Läuft, wenn der [[Glossar#Host|Host]] das [[Glossar#Plugin|Plugin]] ausschaltet. Der [[Glossar#Spielserver|Spielserver]] wird gestoppt, die [[Glossar#Bedienseite|Bedienseite]] geht zu, laufende Arbeiten werden abgebrochen.
+> - **FabricLauncherPlugin.makeWritable**: Setzt die [[Glossar#Dateirechte|Dateirechte]] eines Ordners oder einer Datei sehr offen, damit der [[Glossar#Spielserver|Spielserver]] dort schreiben kann. Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].
+> - **FabricLauncherPlugin.saveConfigWritable**: Speichert die [[Glossar#Einstellungsdatei|Einstellungsdatei]] und setzt danach die [[Glossar#Dateirechte|Dateirechte]] so, dass sie beschreibbar bleibt.
+> - **FabricLauncherPlugin.warnOnce**: Schreibt eine Warnung nur ein einziges Mal, damit das Protokoll nicht vollläuft.
+
+- Was passiert, wenn der [[Glossar#Host|Host]] das [[Glossar#Plugin|Plugin]] lädt, einschaltet und wieder ausschaltet. Hier starten auch die [[Glossar#Wecker|Wecker]].

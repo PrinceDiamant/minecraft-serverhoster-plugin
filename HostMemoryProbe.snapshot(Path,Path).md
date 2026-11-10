@@ -17,11 +17,17 @@ flowchart TD
 
 ```knoten
 HostMemoryProbe.meminfo
-  `meminfo` in `HostMemoryProbe.java`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `meminfo` in `HostMemoryProbe.java`.
 HostMemoryProbe.cgroup
-  `cgroup` in `HostMemoryProbe.java`. Ruft `resolve`, `ancestors`, `number`.
+  Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroup` in `HostMemoryProbe.java`. Ruft `resolve`, `ancestors`, `number`.
 return Z.42 return new Snapshot(host.getOrDefault('MemAvailab…
   Zeile 42: Rückgabe `return new Snapshot(host.getOrDefault('MemAvailab…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMemoryProbe.meminfo**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `meminfo` in `HostMemoryProbe.java`.
+> - **HostMemoryProbe.cgroup**: Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `cgroup` in `HostMemoryProbe.java`. Ruft `resolve`, `ancestors`, `number`.
+> - **return Z.42 return new Snapshot(host.getOrDefault('MemAvailab…**: Zeile 42: Rückgabe `return new Snapshot(host.getOrDefault('MemAvailab…`.
+
+- Die Messung macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `snapshot` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

@@ -39,11 +39,21 @@ if Z.38 !Number.isInteger(options.keep) // options.keep (…
 throw Z.39 throw new Error('Die Anzahl der Backups muss zwis…
   Zeile 39: Abbruch `throw new Error('Die Anzahl der Backups muss zwis…`.
 BackupSettings.saveBackupSettings.Z40
-  Fortsetzung des Ablaufs ab Zeile 40.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 40 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 40.
 hostApi.dashboardRequest
-  `dashboardRequest` in `hostApi.ts`.
+  Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
 hostApi.jsonBody
-  Antwortet mit JSON `jsonBody`.
+  Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.36 !options.paths.length // options.paths.some((path…**: Zeile 36: prüft `!options.paths.length // options.paths.some((path…`.
+> - **throw Z.37 throw new Error('Bitte mindestens einen Backup-Pf…**: Zeile 37: Abbruch `throw new Error('Bitte mindestens einen Backup-Pf…`.
+> - **if Z.38 !Number.isInteger(options.keep) // options.keep (…**: Zeile 38: prüft `!Number.isInteger(options.keep) // options.keep (…`.
+> - **throw Z.39 throw new Error('Die Anzahl der Backups muss zwis…**: Zeile 39: Abbruch `throw new Error('Die Anzahl der Backups muss zwis…`.
+> - **BackupSettings.saveBackupSettings.Z40**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 40 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 40.
+> - **hostApi.dashboardRequest**: Schickt von der [[Glossar#Bedienseite|Bedienseite]] eine Anfrage an das [[Glossar#Plugin|Plugin]]. `dashboardRequest` in `hostApi.ts`.
+> - **hostApi.jsonBody**: Baut den Text, den die [[Glossar#Bedienseite|Bedienseite]] als Auftrag mitschickt. Antwortet mit JSON `jsonBody`.
+
+- Dieser Teil speichert die [[Glossar#Sicherungskopie|Sicherungskopie]] die [[Glossar#Einstellungen|Einstellungen]].
 - `saveBackupSettings` in `ui/src/components/BackupSettings.tsx`

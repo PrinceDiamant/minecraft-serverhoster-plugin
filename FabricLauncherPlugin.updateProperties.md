@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 PropertiesFile.update
-  Aktualisiert `update`.
+  Dieser Teil ändert das. Im [[Glossar#Quelltext|Quelltext]] heißt das `update`.
 ```
 
-- `updateProperties` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **PropertiesFile.update**: Dieser Teil ändert das. Im [[Glossar#Quelltext|Quelltext]] heißt das `update`.
+
+- Das [[Glossar#Plugin|Plugin]] ändert die Eigenschaften.

@@ -22,7 +22,7 @@ flowchart TD
 
 ```knoten
 SetupWizard.SetupWizard.next.Z110
-  Fortsetzung des Ablaufs ab Zeile 110.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 110 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 110.
 if Z.121 step === 2 && (!backupSettings // (schedule && !/…
   Zeile 121: prüft `step === 2 && (!backupSettings // (schedule && !/…`.
 return Z.123 return;
@@ -33,4 +33,12 @@ return Z.127 return;
   Zeile 127: Rückgabe `return;`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **SetupWizard.SetupWizard.next.Z110**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 110 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 110.
+> - **if Z.121 step === 2 && (!backupSettings // (schedule && !/…**: Zeile 121: prüft `step === 2 && (!backupSettings // (schedule && !/…`.
+> - **return Z.123 return;**: Zeile 123: Rückgabe `return;`.
+> - **if Z.125 step === 3 && ntfy.enabled && (!ntfy.server.trim(…**: Zeile 125: prüft `step === 3 && ntfy.enabled && (!ntfy.server.trim(…`.
+> - **return Z.127 return;**: Zeile 127: Rückgabe `return;`.
+
+- Der [[Glossar#Assistent|Assistent]] geht weiter bei das.
 - `next` in `ui/src/components/SetupWizard.tsx`

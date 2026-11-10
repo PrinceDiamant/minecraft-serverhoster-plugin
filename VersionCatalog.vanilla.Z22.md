@@ -24,9 +24,16 @@ for Z.22 (JsonElement e : manifest.getAsJsonArra…
 if Z.24 ('release'.equals(str(o, 'type')))
   Zeile 24: prüft `('release'.equals(str(o, 'type')))`.
 VersionCatalog.str
-  `str` in `VersionCatalog.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `VersionCatalog.java`.
 if Z.25 (ids.size() )= limit)
   Zeile 25: prüft `(ids.size() )= limit)`.
 ```
 
-- Fortsetzung von `VersionCatalog.vanilla`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **for Z.22 (JsonElement e : manifest.getAsJsonArra…**: Zeile 22: Schleife `(JsonElement e : manifest.getAsJsonArra…`.
+> - **if Z.24 ('release'.equals(str(o, 'type')))**: Zeile 24: prüft `('release'.equals(str(o, 'type')))`.
+> - **VersionCatalog.str**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `str` in `VersionCatalog.java`.
+> - **if Z.25 (ids.size() )= limit)**: Zeile 25: prüft `(ids.size() )= limit)`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 22 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `VersionCatalog.vanilla`.

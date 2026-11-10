@@ -17,9 +17,15 @@ flowchart TD
 Schritt Z.1935 exec.submit(() -) ( boolean failed = false; try (…
   Zeile 1935: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( boolean failed = false; try (…`
 FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil3.Z1934`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Schritt Z.1935 exec.submit(() -) ( boolean failed = false; try (…**: Zeile 1935: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( boolean failed = false; try (…`
+> - **FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 1935 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil3.Z1934`.

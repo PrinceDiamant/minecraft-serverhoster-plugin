@@ -15,9 +15,14 @@ flowchart TD
 
 ```knoten
 HostMinimize.outerProperties.Teil1
-  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
 HostMinimize.outerProperties.Teil2
-  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+  Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **HostMinimize.outerProperties.Teil1**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+> - **HostMinimize.outerProperties.Teil2**: Ein weiterer Abschnitt derselben Übersicht. Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+
+- Das Verkleinern des [[Glossar#Host|Host]] kümmert sich um die Eigenschaften.
 - `outerProperties` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

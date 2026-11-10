@@ -38,27 +38,40 @@ flowchart TD
 
 ```knoten
 if Z.12 name.endsWith('.yml') // name.endsWith('.yaml')
-  Zeile 12: prüft `name.endsWith('.yml') // name.endsWith('.yaml')`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 12.
 return Z.12 return 'yaml';
-  Zeile 12: Rückgabe `return 'yaml';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 12.
 if Z.13 name.endsWith('.json') // name.endsWith('.json.gz…
-  Zeile 13: prüft `name.endsWith('.json') // name.endsWith('.json.gz…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 13.
 return Z.13 return 'application/json';
-  Zeile 13: Rückgabe `return 'application/json';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 13.
 if Z.14 name.endsWith('.properties')
-  Zeile 14: prüft `name.endsWith('.properties')`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 14.
 return Z.14 return 'properties';
-  Zeile 14: Rückgabe `return 'properties';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 14.
 if Z.15 name.endsWith('.toml')
-  Zeile 15: prüft `name.endsWith('.toml')`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 15.
 return Z.15 return 'toml';
-  Zeile 15: Rückgabe `return 'toml';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 15.
 if Z.16 name.endsWith('.js')
-  Zeile 16: prüft `name.endsWith('.js')`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 16.
 return Z.16 return 'javascript';
-  Zeile 16: Rückgabe `return 'javascript';`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 16.
 return Z.17 return null;
-  Zeile 17: Rückgabe `return null;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 17.
 ```
 
-- `modeForPath` in `ui/src/lib/fileEditor.ts`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.12 name.endsWith('.yml') // name.endsWith('.yaml')**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 12.
+> - **return Z.12 return 'yaml';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 12.
+> - **if Z.13 name.endsWith('.json') // name.endsWith('.json.gz…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 13.
+> - **return Z.13 return 'application/json';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 13.
+> - **if Z.14 name.endsWith('.properties')**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 14.
+> - **return Z.14 return 'properties';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 14.
+> - **if Z.15 name.endsWith('.toml')**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 15.
+> - **return Z.15 return 'toml';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 15.
+> - **if Z.16 name.endsWith('.js')**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 16.
+> - **return Z.16 return 'javascript';**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 16.
+> - **return Z.17 return null;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 17.
+
+- Wählt, wie eine Datei in der [[Glossar#Bedienseite|Bedienseite]] bearbeitet wird, je nach Art der Datei.

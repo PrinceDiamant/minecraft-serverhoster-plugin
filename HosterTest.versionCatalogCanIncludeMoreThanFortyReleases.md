@@ -19,8 +19,13 @@ flowchart TD
 for Z.367 (int i = 0; i ( 50; i++)
   Zeile 367: Schleife `(int i = 0; i ( 50; i++)`.
 VersionCatalog.vanilla
-  `vanilla` in `VersionCatalog.java`. Ruft `str`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `vanilla` in `VersionCatalog.java`. Ruft `str`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **for Z.367 (int i = 0; i ( 50; i++)**: Zeile 367: Schleife `(int i = 0; i ( 50; i++)`.
+> - **VersionCatalog.vanilla**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `vanilla` in `VersionCatalog.java`. Ruft `str`.
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `versionCatalogCanIncludeMoreThanFortyReleases` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

@@ -21,14 +21,20 @@ flowchart TD
 
 ```knoten
 index.$
-  `$` in `index.html`.
+  Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
 index.status
-  Liefert den Status `status`. Ruft `api`, `updateChildActions`, `$`.
+  Holt den Zustand und zeichnet ihn in die ältere [[Glossar#Bedienseite|Bedienseite]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `status`.
 index.stream
-  Hält den Strom offen `stream`. Ruft `$`, `addLine`, `api`.
+  Hält die Verbindung offen, damit neue Konsolenzeilen von selbst nachkommen. Im [[Glossar#Quelltext|Quelltext]] heißt das `stream`.
 index.tab
-  Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+  Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich. Im [[Glossar#Quelltext|Quelltext]] heißt das `tab`.
 ```
+
+> [!knoten]- Was die Blöcke tun
+> - **index.$**: Sucht auf der älteren [[Glossar#Bedienseite|Bedienseite]] ein einzelnes Element. Im [[Glossar#Quelltext|Quelltext]] heißt das `$`.
+> - **index.status**: Holt den Zustand und zeichnet ihn in die ältere [[Glossar#Bedienseite|Bedienseite]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `status`.
+> - **index.stream**: Hält die Verbindung offen, damit neue Konsolenzeilen von selbst nachkommen. Im [[Glossar#Quelltext|Quelltext]] heißt das `stream`.
+> - **index.tab**: Wechselt in der älteren [[Glossar#Bedienseite|Bedienseite]] den sichtbaren Bereich. Im [[Glossar#Quelltext|Quelltext]] heißt das `tab`.
 
 ```mermaid
 sequenceDiagram
@@ -37,5 +43,5 @@ sequenceDiagram
   Browser->>Browser: stream und tab
 ```
 
-- Browser-Timer 3000 ms für `status`.
-- Befund: doppelte Implementierung, sicher. index.html:220 setInterval 3000 ms läuft in der React-Hülle weiter
+- Die ältere [[Glossar#Bedienseite|Bedienseite]] fragt ab jetzt alle drei Sekunden nach dem Zustand.
+- Auffällig: derselbe Teil ist zweimal vorhanden. Das nennt man [[Glossar#Doppelt gebaut|Doppelt gebaut]].

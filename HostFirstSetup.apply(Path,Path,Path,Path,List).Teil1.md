@@ -32,7 +32,7 @@ if Z.64 (Files.isSymbolicLink(marker))
 throw Z.64 throw new SecurityException('host setup marker mu…
   Zeile 64: Abbruch `throw new SecurityException('host setup marker mu…`.
 HostFirstSetup.readState
-  Liest `readState`. Ruft `readState`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest den Zustand. Liest `readState`. Ruft `readState`.
 if Z.67 ('done'.equals(previousStatus) // 'restart-requir…
   Zeile 67: prüft `('done'.equals(previousStatus) // 'restart-requir…`.
 return Z.68 return new Result(false, '', List.of(), List.of()…
@@ -42,7 +42,18 @@ if Z.70 (previousStatus == null // !Set.of('pending', 'pr…
 throw Z.71 throw new IllegalStateException('Host setup is no…
   Zeile 71: Abbruch `throw new IllegalStateException('Host setup is no…`.
 HostFirstSetup.requireRoot
-  Verlangt `requireRoot`.
+  Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Anfang. Verlangt `requireRoot`.
 ```
 
-- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.64 (Files.isSymbolicLink(marker))**: Zeile 64: prüft `(Files.isSymbolicLink(marker))`.
+> - **throw Z.64 throw new SecurityException('host setup marker mu…**: Zeile 64: Abbruch `throw new SecurityException('host setup marker mu…`.
+> - **HostFirstSetup.readState**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] liest den Zustand. Liest `readState`. Ruft `readState`.
+> - **if Z.67 ('done'.equals(previousStatus) // 'restart-requir…**: Zeile 67: prüft `('done'.equals(previousStatus) // 'restart-requir…`.
+> - **return Z.68 return new Result(false, '', List.of(), List.of()…**: Zeile 68: Rückgabe `return new Result(false, '', List.of(), List.of()…`.
+> - **if Z.70 (previousStatus == null // !Set.of('pending', 'pr…**: Zeile 70: prüft `(previousStatus == null // !Set.of('pending', 'pr…`.
+> - **throw Z.71 throw new IllegalStateException('Host setup is no…**: Zeile 71: Abbruch `throw new IllegalStateException('Host setup is no…`.
+> - **HostFirstSetup.requireRoot**: Die [[Glossar#Ersteinrichtung|Ersteinrichtung]] kümmert sich um den Anfang. Verlangt `requireRoot`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`.

@@ -22,7 +22,13 @@ if Z.251 !accepted
 return Z.251 return;
   Zeile 251: Rückgabe `return;`.
 SetupWizard.SetupWizard.runFirstSetup.Z254
-  Fortsetzung des Ablaufs ab Zeile 254.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 254 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 254.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.251 !accepted**: Zeile 251: prüft `!accepted`.
+> - **return Z.251 return;**: Zeile 251: Rückgabe `return;`.
+> - **SetupWizard.SetupWizard.runFirstSetup.Z254**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 254 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 254.
+
+- Der [[Glossar#Assistent|Assistent]] führt aus die erste die [[Glossar#Einrichtung|Einrichtung]].
 - `runFirstSetup` in `ui/src/components/SetupWizard.tsx`

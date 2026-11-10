@@ -33,7 +33,7 @@ flowchart TD
 if Z.1715 (!slot(id).wantRunning)
   Zeile 1715: prüft `(!slot(id).wantRunning)`.
 FabricLauncherPlugin.slot
-  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
 return Z.1715 return;
   Zeile 1715: Rückgabe `return;`.
 if Z.1717 (!slot.wantRunning)
@@ -43,11 +43,23 @@ return Z.1717 return;
 if Z.1718 (slot.running())
   Zeile 1718: prüft `(slot.running())`.
 ChildSlot.running
-  Sagt, ob der Prozess läuft `running`.
+  Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
 FabricLauncherPlugin.msg
-  Sendet eine Chat-Zeile `msg`.
+  Schickt eine [[Glossar#Zeile|Zeile]] an den Menschen, der einen [[Glossar#Befehl|Befehl]] getippt hat. Sendet eine Chat-Zeile `msg`.
 return Z.1718 return;
   Zeile 1718: Rückgabe `return;`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.openChild.Z1714`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1715 (!slot(id).wantRunning)**: Zeile 1715: prüft `(!slot(id).wantRunning)`.
+> - **FabricLauncherPlugin.slot**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+> - **return Z.1715 return;**: Zeile 1715: Rückgabe `return;`.
+> - **if Z.1717 (!slot.wantRunning)**: Zeile 1717: prüft `(!slot.wantRunning)`.
+> - **return Z.1717 return;**: Zeile 1717: Rückgabe `return;`.
+> - **if Z.1718 (slot.running())**: Zeile 1718: prüft `(slot.running())`.
+> - **ChildSlot.running**: Dieser Teil prüft, ob läuft, das. Sagt, ob der [[Glossar#Prozess|Prozess]] läuft `running`.
+> - **FabricLauncherPlugin.msg**: Schickt eine [[Glossar#Zeile|Zeile]] an den Menschen, der einen [[Glossar#Befehl|Befehl]] getippt hat. Sendet eine Chat-Zeile `msg`.
+> - **return Z.1718 return;**: Zeile 1718: Rückgabe `return;`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.openChild.Z1714`.

@@ -19,15 +19,23 @@ flowchart TD
 
 ```knoten
 FabricLauncherPlugin.profile
-  `profile` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
 FabricLauncherPlugin.configPrefix
-  `configPrefix` in `FabricLauncherPlugin.java`.
+  Der Anfang der Namen, unter denen die Werte eines Servers in den [[Glossar#Einstellungen|Einstellungen]] stehen. `configPrefix` in `FabricLauncherPlugin.java`.
 for Z.346 (String k : p.stringPropertyNames())
   Zeile 346: Schleife `(String k : p.stringPropertyNames())`.
 if Z.348 (cur != null && !p.getProperty(k).equals(cur))
   Zeile 348: prüft `(cur != null && !p.getProperty(k).equals(cur))`.
 FabricLauncherPlugin.parseValue
-  Wertet aus `parseValue`.
+  Das [[Glossar#Plugin|Plugin]] liest den Wert. Wertet aus `parseValue`.
 ```
 
-- Fortsetzung von `FabricLauncherPlugin.syncPropertiesEdit`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **FabricLauncherPlugin.profile**: Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `profile` in `FabricLauncherPlugin.java`.
+> - **FabricLauncherPlugin.configPrefix**: Der Anfang der Namen, unter denen die Werte eines Servers in den [[Glossar#Einstellungen|Einstellungen]] stehen. `configPrefix` in `FabricLauncherPlugin.java`.
+> - **for Z.346 (String k : p.stringPropertyNames())**: Zeile 346: Schleife `(String k : p.stringPropertyNames())`.
+> - **if Z.348 (cur != null && !p.getProperty(k).equals(cur))**: Zeile 348: prüft `(cur != null && !p.getProperty(k).equals(cur))`.
+> - **FabricLauncherPlugin.parseValue**: Das [[Glossar#Plugin|Plugin]] liest den Wert. Wertet aus `parseValue`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `FabricLauncherPlugin.syncPropertiesEdit`.

@@ -13,8 +13,11 @@ flowchart TD
 
 ```knoten
 Dashboard.cpu.Z667
-  Fortsetzung des Ablaufs ab Zeile 667.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 667 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z667`.
 ```
 
-- Liest `/proc/<pid>/stat` und teilt durch 100.
-- Befund: Logikrisiko, prüfen. Dashboard.java:676 Kommentar CLK_TCK=100, Division durch 100
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.cpu.Z667**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 667 weiter. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `Z667`.
+
+- Rechnet aus, wie stark der [[Glossar#Prozess|Prozess]] den Rechner beschäftigt. Die Rechnung nimmt an, dass die Uhr des Systems hundert Schritte pro Sekunde hat.
+- Auffällig: das kann sich anders verhalten, als man erwartet. Das nennt man [[Glossar#Unerwartetes Verhalten|Unerwartetes Verhalten]].

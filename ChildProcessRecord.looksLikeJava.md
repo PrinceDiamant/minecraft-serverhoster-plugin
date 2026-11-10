@@ -33,9 +33,18 @@ if Z.197 (executable.equals(javaBin))
 return Z.197 return true;
   Zeile 197: Rückgabe `return true;`.
 ChildProcessRecord.fileName
-  Liefert die Datei `fileName`.
+  Dieser Teil kümmert sich um den Namen. Liefert die Datei `fileName`.
 return Z.199 return name.equals('java') // name.equals('java.e…
   Zeile 199: Rückgabe `return name.equals('java') // name.equals('java.e…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **if Z.195 (command.isEmpty())**: Zeile 195: prüft `(command.isEmpty())`.
+> - **return Z.195 return false;**: Zeile 195: Rückgabe `return false;`.
+> - **if Z.197 (executable.equals(javaBin))**: Zeile 197: prüft `(executable.equals(javaBin))`.
+> - **return Z.197 return true;**: Zeile 197: Rückgabe `return true;`.
+> - **ChildProcessRecord.fileName**: Dieser Teil kümmert sich um den Namen. Liefert die Datei `fileName`.
+> - **return Z.199 return name.equals('java') // name.equals('java.e…**: Zeile 199: Rückgabe `return name.equals('java') // name.equals('java.e…`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `looksLikeJava` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

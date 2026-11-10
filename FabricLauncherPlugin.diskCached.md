@@ -22,15 +22,22 @@ flowchart TD
 
 ```knoten
 if Z.873 (cached != null && at != null && now - at ( 60_00…
-  Zeile 873: prüft `(cached != null && at != null && now - at ( 60_00…`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 873.
 return Z.873 return cached;
-  Zeile 873: Rückgabe `return cached;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 873.
 ProcessProbe.disk
-  Liest die Platte `disk`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `disk`.
 FabricLauncherPlugin.workDir(String)
-  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+  Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Im [[Glossar#Quelltext|Quelltext]] heißt das `workDir(String)`.
 return Z.876 return fresh;
-  Zeile 876: Rückgabe `return fresh;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 876.
 ```
 
-- `diskCached` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.873 (cached != null && at != null && now - at ( 60_00…**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 873.
+> - **return Z.873 return cached;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 873.
+> - **ProcessProbe.disk**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Im [[Glossar#Quelltext|Quelltext]] heißt das `disk`.
+> - **FabricLauncherPlugin.workDir(String)**: Liefert den Ordner, in dem der [[Glossar#Spielserver|Spielserver]] arbeitet. Im [[Glossar#Quelltext|Quelltext]] heißt das `workDir(String)`.
+> - **return Z.876 return fresh;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 876.
+
+- Sagt, wie voll die Festplatte ist. Der Wert darf kurz zwischengespeichert sein.

@@ -18,4 +18,9 @@ return Z.177 return '(article class='chart-card')(div class='c…
   Zeile 177: Rückgabe `return '(article class='chart-card')(div class='c…`.
 ```
 
-- Fortsetzung von `index.chartCard`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **if Z.177 all.length(2**: Zeile 177: prüft `all.length(2`.
+> - **return Z.177 return '(article class='chart-card')(div class='c…**: Zeile 177: Rückgabe `return '(article class='chart-card')(div class='c…`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `index.chartCard`.

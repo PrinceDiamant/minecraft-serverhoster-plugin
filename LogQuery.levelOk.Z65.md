@@ -23,9 +23,15 @@ flowchart TD
 return Z.65 return switch (level) ( case 'error' -) isError(l…
   Zeile 65: Rückgabe `return switch (level) ( case 'error' -) isError(l…`.
 LogQuery.isError
-  Prüft `isError`.
+  Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `isError`.
 LogQuery.isWarn
-  Prüft `isWarn`.
+  Dieser Teil prüft die Warnung. Prüft `isWarn`.
 ```
 
-- Fortsetzung von `LogQuery.levelOk`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **return Z.65 return switch (level) ( case 'error' -) isError(l…**: Zeile 65: Rückgabe `return switch (level) ( case 'error' -) isError(l…`.
+> - **LogQuery.isError**: Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer. Prüft `isError`.
+> - **LogQuery.isWarn**: Dieser Teil prüft die Warnung. Prüft `isWarn`.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 65 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `LogQuery.levelOk`.

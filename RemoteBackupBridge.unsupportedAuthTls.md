@@ -16,4 +16,8 @@ return Z.171 return replyCode == 500 // replyCode == 501 // re…
   Zeile 171: Rückgabe `return replyCode == 500 // replyCode == 501 // re…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.171 return replyCode == 500 // replyCode == 501 // re…**: Zeile 171: Rückgabe `return replyCode == 500 // replyCode == 501 // re…`.
+
+- Die Sicherung über das Netz macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `unsupportedAuthTls` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

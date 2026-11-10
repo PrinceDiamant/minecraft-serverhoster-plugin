@@ -16,4 +16,8 @@ return Z.73 return line.contains('ERROR') // line.contains('F…
   Zeile 73: Rückgabe `return line.contains('ERROR') // line.contains('F…`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.73 return line.contains('ERROR') // line.contains('F…**: Zeile 73: Rückgabe `return line.contains('ERROR') // line.contains('F…`.
+
+- Dieser Teil prüft hier einen Schritt. Eine Ebene tiefer steht er genauer.
 - `isError` in `src/main/java/de/aichele/childlauncher/LogQuery.java`

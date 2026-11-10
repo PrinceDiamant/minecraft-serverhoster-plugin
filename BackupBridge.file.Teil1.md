@@ -29,15 +29,15 @@ flowchart TD
 
 ```knoten
 BackupBridge.safeId
-  Prüft die Pfadgrenze `safeId`.
+  Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
 if Z.61 (!named(safe, name))
   Zeile 61: prüft `(!named(safe, name))`.
 BackupBridge.named
-  `named` in `BackupBridge.java`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `named` in `BackupBridge.java`.
 throw Z.61 throw new IllegalArgumentException('backup name');
   Zeile 61: Abbruch `throw new IllegalArgumentException('backup name');`.
 BackupBridge.directory
-  `directory` in `BackupBridge.java`.
+  Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `BackupBridge.java`.
 if Z.64 (f.getParent() == null // !f.getParent().equals(d…
   Zeile 64: prüft `(f.getParent() == null // !f.getParent().equals(d…`.
 throw Z.64 throw new IllegalArgumentException('backup name');
@@ -48,4 +48,16 @@ throw Z.65 throw new IllegalArgumentException('backup name');
   Zeile 65: Abbruch `throw new IllegalArgumentException('backup name');`.
 ```
 
-- Fortsetzung von `BackupBridge.file`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **BackupBridge.safeId**: Die Sicherung auf diesem Rechner kümmert sich um die Kennung. Prüft die Pfadgrenze `safeId`.
+> - **if Z.61 (!named(safe, name))**: Zeile 61: prüft `(!named(safe, name))`.
+> - **BackupBridge.named**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `named` in `BackupBridge.java`.
+> - **throw Z.61 throw new IllegalArgumentException('backup name');**: Zeile 61: Abbruch `throw new IllegalArgumentException('backup name');`.
+> - **BackupBridge.directory**: Die Sicherung auf diesem Rechner macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `directory` in `BackupBridge.java`.
+> - **if Z.64 (f.getParent() == null // !f.getParent().equals(d…**: Zeile 64: prüft `(f.getParent() == null // !f.getParent().equals(d…`.
+> - **throw Z.64 throw new IllegalArgumentException('backup name');**: Zeile 64: Abbruch `throw new IllegalArgumentException('backup name');`.
+> - **if Z.65 (!Files.isRegularFile(f) // Files.isSymbolicLink(…**: Zeile 65: prüft `(!Files.isRegularFile(f) // Files.isSymbolicLink(…`.
+> - **throw Z.65 throw new IllegalArgumentException('backup name');**: Zeile 65: Abbruch `throw new IllegalArgumentException('backup name');`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `BackupBridge.file`.

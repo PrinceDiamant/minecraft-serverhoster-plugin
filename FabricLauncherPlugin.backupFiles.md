@@ -30,23 +30,34 @@ flowchart TD
 
 ```knoten
 if Z.1415 (remoteBackupSelected())
-  Zeile 1415: prüft `(remoteBackupSelected())`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1415.
 FabricLauncherPlugin.remoteBackupSelected
-  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. Im [[Glossar#Quelltext|Quelltext]] heißt das `remoteBackupSelected`.
 FabricLauncherPlugin.backupCredentials
-  Sichert `backupCredentials`. Ruft `load`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupCredentials`.
 RemoteBackupBridge.list
-  Listet `list`. Ruft `safeId`, `connect`, `enterDirectory`.
+  Die Sicherung über das Netz zeigt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `list`.
 FabricLauncherPlugin.remoteBackupSettings
-  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+  Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `remoteBackupSettings`.
 return Z.1417 return RemoteBackupBridge.list(remoteBa…
-  Zeile 1417: Rückgabe `return RemoteBackupBridge.list(remoteBa…`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1417.
 BackupBridge.list
-  Listet `list`. Ruft `directory`, `safeId`, `named`.
+  Die Sicherung auf diesem Rechner zeigt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `list`.
 FabricLauncherPlugin.backupSpec
-  Sichert `backupSpec`.
+  Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupSpec`.
 return Z.1419 return BackupBridge.list(backupSpec(), …
-  Zeile 1419: Rückgabe `return BackupBridge.list(backupSpec(), …`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1419.
 ```
 
-- `backupFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **if Z.1415 (remoteBackupSelected())**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 1415.
+> - **FabricLauncherPlugin.remoteBackupSelected**: Das [[Glossar#Plugin|Plugin]] sichert die Auswahl. Im [[Glossar#Quelltext|Quelltext]] heißt das `remoteBackupSelected`.
+> - **FabricLauncherPlugin.backupCredentials**: Das [[Glossar#Plugin|Plugin]] sichert die Zugangsdaten. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupCredentials`.
+> - **RemoteBackupBridge.list**: Die Sicherung über das Netz zeigt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `list`.
+> - **FabricLauncherPlugin.remoteBackupSettings**: Das [[Glossar#Plugin|Plugin]] sichert die [[Glossar#Einstellungen|Einstellungen]]. Im [[Glossar#Quelltext|Quelltext]] heißt das `remoteBackupSettings`.
+> - **return Z.1417 return RemoteBackupBridge.list(remoteBa…**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1417.
+> - **BackupBridge.list**: Die Sicherung auf diesem Rechner zeigt das. Im [[Glossar#Quelltext|Quelltext]] heißt das `list`.
+> - **FabricLauncherPlugin.backupSpec**: Das [[Glossar#Plugin|Plugin]] sichert die Vorgabe. Im [[Glossar#Quelltext|Quelltext]] heißt das `backupSpec`.
+> - **return Z.1419 return BackupBridge.list(backupSpec(), …**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 1419.
+
+- Das [[Glossar#Plugin|Plugin]] sichert die Dateien.

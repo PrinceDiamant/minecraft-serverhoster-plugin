@@ -13,7 +13,10 @@ flowchart TD
 
 ```knoten
 kein eigener Aufruf
-  In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+  Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
 ```
 
-- `noteTask` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **kein eigener Aufruf**: Dieser Abschnitt ruft keine weitere eigene [[Glossar#Funktion|Funktion]] auf.
+
+- Schreibt auf, dass eine [[Glossar#Aufgabe|Aufgabe]] gelaufen ist.

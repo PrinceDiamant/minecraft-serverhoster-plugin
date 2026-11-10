@@ -13,9 +13,14 @@ flowchart TD
 
 ```knoten
 Dashboard.text
-  Antwortet mit Text `text`. Ruft `sendBytes`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`. Ruft `sendBytes`.
 Dashboard.readOr
-  Liest `readOr`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest oder den Ersatz. Liest `readOr`.
 ```
 
-- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.text**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. Antwortet mit Text `text`. Ruft `sendBytes`.
+> - **Dashboard.readOr**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest oder den Ersatz. Liest `readOr`.
+
+- Das Innere eines Wegs, ab [[Glossar#Zeile|Zeile]] 171.
+- Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`.

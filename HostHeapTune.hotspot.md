@@ -27,11 +27,18 @@ flowchart TD
 return Z.57 return new Options() ( private final HotSpotDiagn…
   Zeile 57: Rückgabe `return new Options() ( private final HotSpotDiagn…`.
 HostHeapTune.hotspot.manageable
-  `manageable` in `HostHeapTune.java`.
+  Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `manageable` in `HostHeapTune.java`.
 HostHeapTune.hotspot.get
-  Liefert `get`.
+  Dieser Teil liefert das. Liefert `get`.
 HostHeapTune.hotspot.set
-  Setzt `set`.
+  Dieser Teil setzt das. Setzt `set`.
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **return Z.57 return new Options() ( private final HotSpotDiagn…**: Zeile 57: Rückgabe `return new Options() ( private final HotSpotDiagn…`.
+> - **HostHeapTune.hotspot.manageable**: Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer. `manageable` in `HostHeapTune.java`.
+> - **HostHeapTune.hotspot.get**: Dieser Teil liefert das. Liefert `get`.
+> - **HostHeapTune.hotspot.set**: Dieser Teil setzt das. Setzt `set`.
+
+- Dieser Teil macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
 - `hotspot` in `src/main/java/de/aichele/childlauncher/HostHeapTune.java`

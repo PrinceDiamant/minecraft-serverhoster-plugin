@@ -25,7 +25,7 @@ flowchart TD
 
 ```knoten
 Dashboard.readPlayerNames
-  Liest `readPlayerNames`.
+  Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Spieler|Spieler]] die Namen. Liest `readPlayerNames`.
 Schritt Z.58 Files.writeString(file, '((/'uuid/':/'id/',/'name…
   Zeile 58: schreibt Text in eine Datei. `Files.writeString(file, '((/'uuid/':/'id/',/'name…`
 Schritt Z.60 Files.writeString(file, '(/'name/':/'wrong shape/…
@@ -34,5 +34,12 @@ Schritt Z.62 Files.writeString(file, '((/'uuid/':/'id/'))');
   Zeile 62: schreibt Text in eine Datei. `Files.writeString(file, '((/'uuid/':/'id/'))');`
 ```
 
+> [!knoten]- Was die Blöcke tun
+> - **Dashboard.readPlayerNames**: Die [[Glossar#Web-Schnittstelle|Web-Schnittstelle]] liest den [[Glossar#Spieler|Spieler]] die Namen. Liest `readPlayerNames`.
+> - **Schritt Z.58 Files.writeString(file, '((/'uuid/':/'id/',/'name…**: Zeile 58: schreibt Text in eine Datei. `Files.writeString(file, '((/'uuid/':/'id/',/'name…`
+> - **Schritt Z.60 Files.writeString(file, '(/'name/':/'wrong shape/…**: Zeile 60: schreibt Text in eine Datei. `Files.writeString(file, '(/'name/':/'wrong shape/…`
+> - **Schritt Z.62 Files.writeString(file, '((/'uuid/':/'id/'))');**: Zeile 62: schreibt Text in eine Datei. `Files.writeString(file, '((/'uuid/':/'id/'))');`
+
+- Ein Schritt in einem [[Glossar#Probelauf|Probelauf]]. Er gehört nicht zum laufenden Server.
 - `playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
-- Auslöser: Test
+- Das ist ein Probelauf, kein Teil des laufenden Servers.

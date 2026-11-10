@@ -21,13 +21,20 @@ flowchart TD
 
 ```knoten
 MemoryProtectionPolicy.finishRecovery
-  Schließt ab `finishRecovery`.
+  Dieser Teil beendet die Wiederherstellung. Schließt ab `finishRecovery`.
 MemoryProtectionPolicy.emergencyStopStarted
-  `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+  Dieser Teil stoppt hier einen Schritt. Eine Ebene tiefer steht er genauer. `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
 MemoryProtectionPolicy.sample
-  Misst `sample`.
+  Dieser Teil misst das. Misst `sample`.
 MemoryProtectionPolicy.startEmergencyStop
-  Startet `startEmergencyStop`.
+  Dieser Teil startet den [[Glossar#Notstopp|Notstopp]] den [[Glossar#Stopp|Stopp]]. Startet `startEmergencyStop`.
 ```
 
-- Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **MemoryProtectionPolicy.finishRecovery**: Dieser Teil beendet die Wiederherstellung. Schließt ab `finishRecovery`.
+> - **MemoryProtectionPolicy.emergencyStopStarted**: Dieser Teil stoppt hier einen Schritt. Eine Ebene tiefer steht er genauer. `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+> - **MemoryProtectionPolicy.sample**: Dieser Teil misst das. Misst `sample`.
+> - **MemoryProtectionPolicy.startEmergencyStop**: Dieser Teil startet den [[Glossar#Notstopp|Notstopp]] den [[Glossar#Stopp|Stopp]]. Startet `startEmergencyStop`.
+
+- Ein weiterer Abschnitt derselben Übersicht.
+- Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`.

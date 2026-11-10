@@ -15,7 +15,12 @@ flowchart TD
 try Z.26
   Zeile 26: Versuch. Der Fehlerpfad geht in catch.
 CrashIndex.list.Z26.Z27
-  Fortsetzung des Ablaufs ab Zeile 27.
+  Der Ablauf geht in [[Glossar#Zeile|Zeile]] 27 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 27.
 ```
 
-- Fortsetzung von `CrashIndex.list`, Quellreihenfolge.
+> [!knoten]- Was die Blöcke tun
+> - **try Z.26**: Zeile 26: Versuch. Der Fehlerpfad geht in catch.
+> - **CrashIndex.list.Z26.Z27**: Der Ablauf geht in [[Glossar#Zeile|Zeile]] 27 weiter. Eine Ebene tiefer steht er genauer. Fortsetzung des Ablaufs ab Zeile 27.
+
+- Der Ablauf geht in [[Glossar#Zeile|Zeile]] 26 weiter. Eine Ebene tiefer steht er genauer.
+- Fortsetzung von `CrashIndex.list`.

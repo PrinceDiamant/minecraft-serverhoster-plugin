@@ -20,13 +20,19 @@ flowchart TD
 
 ```knoten
 for Z.293 (ServerProfile p : profiles)
-  Zeile 293: Schleife `(ServerProfile p : profiles)`.
+  Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 293.
 if Z.293 (p.id.equals(key))
-  Zeile 293: prüft `(p.id.equals(key))`.
+  Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 293.
 return Z.293 return p;
-  Zeile 293: Rückgabe `return p;`.
+  Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 293.
 throw Z.294 throw new IllegalArgumentException('unknown serve…
-  Zeile 294: Abbruch `throw new IllegalArgumentException('unknown serve…`.
+  Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 294.
 ```
 
-- `profile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
+> [!knoten]- Was die Blöcke tun
+> - **for Z.293 (ServerProfile p : profiles)**: Dasselbe wird für jeden Eintrag wiederholt. Das steht in [[Glossar#Zeile|Zeile]] 293.
+> - **if Z.293 (p.id.equals(key))**: Hier fällt eine Entscheidung. Nur wenn sie zutrifft, geht es den Ja-Weg weiter. Das steht in [[Glossar#Zeile|Zeile]] 293.
+> - **return Z.293 return p;**: Hier endet die [[Glossar#Funktion|Funktion]] und liefert ein Ergebnis zurück. Das steht in [[Glossar#Zeile|Zeile]] 293.
+> - **throw Z.294 throw new IllegalArgumentException('unknown serve…**: Hier bricht die [[Glossar#Funktion|Funktion]] ab, weil etwas nicht geklappt hat. Das steht in [[Glossar#Zeile|Zeile]] 294.
+
+- Das [[Glossar#Plugin|Plugin]] macht hier einen einzelnen Schritt. Eine Ebene tiefer steht er genauer.
