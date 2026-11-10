@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.1292
+  Zeile 1292: synchronisierter Block.
+if Z.1294 (getConfig().contains('schedules') && !(getConfig…
+  Zeile 1294: prüft `(getConfig().contains('schedules') && !(getConfig…`.
+throw Z.1295 throw new IllegalArgumentException('schedules mus…
+  Zeile 1295: Abbruch `throw new IllegalArgumentException('schedules mus…`.
+ScheduleDef.load
+  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+return Z.1296 return ScheduleDef.load(getConfig().get…
+  Zeile 1296: Rückgabe `return ScheduleDef.load(getConfig().get…`.
+```
+
 - `schedules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

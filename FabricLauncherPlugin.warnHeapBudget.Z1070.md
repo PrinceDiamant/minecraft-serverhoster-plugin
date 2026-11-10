@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.1070 (ServerProfile profile : profiles)
+  Zeile 1070: Schleife `(ServerProfile profile : profiles)`.
+FabricLauncherPlugin.warnHeapBudget.Z1070.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.warnHeapBudget.Z1070.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.warnHeapBudget`, Quellreihenfolge.

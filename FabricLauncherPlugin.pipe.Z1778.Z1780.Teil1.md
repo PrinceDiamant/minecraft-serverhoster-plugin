@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1782 (parseTick(slot, line))
+  Zeile 1782: prüft `(parseTick(slot, line))`.
+FabricLauncherPlugin.parseTick
+  Wertet aus `parseTick`. Ruft `consume`, `pushMspt`.
+ConsoleBuffer.add
+  Fügt hinzu `add`.
+FabricLauncherPlugin.trackPlayers
+  Führt mit `trackPlayers`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.pipe.Z1778.Z1780`, Quellreihenfolge.

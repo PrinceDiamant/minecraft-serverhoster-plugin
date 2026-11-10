@@ -21,4 +21,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.85 (num(x) && num(y))
+  Zeile 85: prüft `(num(x) && num(y))`.
+VersionCatalog.num
+  `num` in `VersionCatalog.java`.
+if Z.86 (num(y))
+  Zeile 86: prüft `(num(y))`.
+if Z.87 (num(x))
+  Zeile 87: prüft `(num(x))`.
+```
+
 - Fortsetzung von `VersionCatalog.compare.Z81`, Quellreihenfolge.

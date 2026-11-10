@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `dashboardPasswordSetupPreservesExistingAndFailsClosed` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

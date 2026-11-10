@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+kein eigener Aufruf
+  In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+```
+
 - `ProcessProbe` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

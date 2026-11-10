@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.121 $('auto').checked
+  Zeile 121: prüft `$('auto').checked`.
+index.$
+  `$` in `index.html`.
+```
+
 - Fortsetzung von `index.addLine`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWorkflow.SetupWorkflow.runHostFirstSetup
+  Führt aus `runHostFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+SetupWorkflow.SetupWorkflow.hostAction
+  Betrifft den Host `hostAction`. Ruft `dashboardRequest`, `jsonBody`.
+```
+
 - Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`, Quellreihenfolge.

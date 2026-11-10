@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+JarProbe.text
+  Antwortet mit Text `text`.
+JarProbe.inspect
+  `inspect` in `JarProbe.java`. Ruft `jarPath`, `jarName`.
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+return Z.855 return JarProbe.text(JarProbe.inspect(p…
+  Zeile 855: Rückgabe `return JarProbe.text(JarProbe.inspect(p…`.
+```
+
 - `jarText` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

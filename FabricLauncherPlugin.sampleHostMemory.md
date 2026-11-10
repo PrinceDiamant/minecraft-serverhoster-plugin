@@ -17,6 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.sampleHostMemory.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.sampleHostMemory.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.sampleHostMemory.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.sampleHostMemory.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 ```mermaid
 sequenceDiagram
   participant Mem as ServerhosterPlugin-Memory

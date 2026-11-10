@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.serverPropertiesPreview.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.serverPropertiesPreview.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.serverPropertiesPreview.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `serverPropertiesPreview` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

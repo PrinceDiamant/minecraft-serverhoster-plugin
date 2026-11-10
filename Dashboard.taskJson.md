@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.taskJson.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.taskJson.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `taskJson` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

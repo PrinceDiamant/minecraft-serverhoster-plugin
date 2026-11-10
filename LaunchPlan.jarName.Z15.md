@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.15 return switch (t) ( case 'fabric' -) 'fabric-serv…
+  Zeile 15: Rückgabe `return switch (t) ( case 'fabric' -) 'fabric-serv…`.
+LaunchPlan.fileName
+  Liefert die Datei `fileName`.
+```
+
 - Fortsetzung von `LaunchPlan.jarName`, Quellreihenfolge.

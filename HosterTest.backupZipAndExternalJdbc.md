@@ -21,5 +21,20 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.backupZipAndExternalJdbc.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.backupZipAndExternalJdbc.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.backupZipAndExternalJdbc.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.backupZipAndExternalJdbc.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.backupZipAndExternalJdbc.Teil5
+  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.backupZipAndExternalJdbc.Teil6
+  Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `backupZipAndExternalJdbc` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

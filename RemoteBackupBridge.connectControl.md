@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.241 (!FTPReply.isPositiveCompletion(client.getReplyCo…
+  Zeile 241: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+throw Z.241 throw replyError(client, 'connect');
+  Zeile 241: Abbruch `throw replyError(client, 'connect');`.
+```
+
 - `connectControl` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

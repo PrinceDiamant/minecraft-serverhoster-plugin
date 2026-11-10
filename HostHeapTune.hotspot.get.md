@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.70
+  Zeile 70: Versuch. Der Fehlerpfad geht in catch.
+return Z.72 return option == null ? '' : option.getValue();
+  Zeile 72: Rückgabe `return option == null ? '' : option.getValue();`.
+catch Z.73 (RuntimeException e)
+  Zeile 73: fängt (RuntimeException e).
+return Z.74 return '';
+  Zeile 74: Rückgabe `return '';`.
+```
+
 - `get` in `src/main/java/de/aichele/childlauncher/HostHeapTune.java`

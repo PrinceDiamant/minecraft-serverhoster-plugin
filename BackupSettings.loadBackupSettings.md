@@ -17,4 +17,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+return Z.32 return ( settings, credentials: ( ...credentials,…
+  Zeile 32: Rückgabe `return ( settings, credentials: ( ...credentials,…`.
+```
+
 - `loadBackupSettings` in `ui/src/components/BackupSettings.tsx`

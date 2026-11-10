@@ -19,5 +19,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.271 Files.writeString(f, 'abc');
+  Zeile 271: schreibt Text in eine Datei. `Files.writeString(f, 'abc');`
+Upstream.digest
+  `digest` in `Upstream.java`.
+Upstream.checkHash
+  Prüft `checkHash`. Ruft `digest`.
+```
+
 - `checksumMismatch` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

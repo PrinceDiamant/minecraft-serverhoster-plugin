@@ -17,4 +17,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart
+  `supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart` in `LifecycleRobustnessTest.java`. Ruft `assess`, `state`. Nur Test.
+LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation
+  `dashboardDistinguishesLifecycleAndRestartCancellation` in `LifecycleRobustnessTest.java`. Ruft `dashboardState`. Nur Test.
+LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap
+  `invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap` in `LifecycleRobustnessTest.java`. Ruft `memory`, `boundedSeconds`. Nur Test.
+LifecycleRobustnessTest.retryExhaustionKeepsTheStartFailureInsteadOfPreparing
+  `retryExhaustionKeepsTheStartFailureInsteadOfPreparing` in `LifecycleRobustnessTest.java`. Ruft `text`. Nur Test.
+LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates
+  `telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates` in `LifecycleRobustnessTest.java`. Ruft `line`, `snapshot`, `appendRotated`. Nur Test.
+LifecycleRobustnessTest.state
+  Liefert den Zustand `state`. Nur Test.
+LifecycleRobustnessTest.identity
+  `identity` in `LifecycleRobustnessTest.java`. Nur Test.
+LifecycleRobustnessTest.testProcess
+  Prüft `testProcess`. Nur Test.
+```
+
 

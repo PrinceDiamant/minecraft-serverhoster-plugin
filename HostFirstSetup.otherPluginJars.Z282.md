@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.282
+  Zeile 282: Versuch. Der Fehlerpfad geht in catch.
+HostFirstSetup.otherPluginJars.Z282.Z283
+  Fortsetzung des Ablaufs ab Zeile 283.
+```
+
 - Fortsetzung von `HostFirstSetup.otherPluginJars`, Quellreihenfolge.

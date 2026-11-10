@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.242
+  Zeile 242: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.242 Files.setPosixFilePermissions(p, java.nio.file.at…
+  Zeile 242: setzt POSIX-Dateirechte. `Files.setPosixFilePermissions(p, java.nio.file.at…`
+catch Z.242 (Exception ignored)
+  Zeile 242: fängt (Exception ignored).
+```
+
 - Setzt POSIX `rwxrwxrwx` für Ordner und `rw-rw-rw-` für Dateien.
 - Befund: Logikrisiko, sicher. FabricLauncherPlugin.java:241–242 rwxrwxrwx und rw-rw-rw-. Kommentar Z.240 sagt rw für group/other

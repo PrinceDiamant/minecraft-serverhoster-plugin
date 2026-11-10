@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.220 (value == null)
+  Zeile 220: prüft `(value == null)`.
+throw Z.220 throw new NumberFormatException('missing ' + key);
+  Zeile 220: Abbruch `throw new NumberFormatException('missing ' + key);`.
+return Z.221 return value;
+  Zeile 221: Rückgabe `return value;`.
+```
+
 - `required` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

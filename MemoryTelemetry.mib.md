@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.123 return bytes ( 0 ? -1 : bytes / (1024 * 1024);
+  Zeile 123: Rückgabe `return bytes ( 0 ? -1 : bytes / (1024 * 1024);`.
+```
+
 - `mib` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

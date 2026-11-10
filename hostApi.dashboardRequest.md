@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+hostApi.dashboardRequest.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+hostApi.dashboardRequest.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `dashboardRequest` in `ui/src/lib/hostApi.ts`

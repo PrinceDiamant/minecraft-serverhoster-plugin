@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+keine Verzweigung
+  Schritt. `keine Verzweigung`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.startSampler.Z1802.Z1806`, Quellreihenfolge.

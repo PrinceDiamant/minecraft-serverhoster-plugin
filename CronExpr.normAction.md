@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.75 return action == null ? '' : action.toLowerCase(L…
+  Zeile 75: Rückgabe `return action == null ? '' : action.toLowerCase(L…`.
+```
+
 - `normAction` in `src/main/java/de/aichele/childlauncher/CronExpr.java`

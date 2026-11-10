@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleExecution.run
+  Führt aus `run`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runSchedule.Z1602`, Quellreihenfolge.

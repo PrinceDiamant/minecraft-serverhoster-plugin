@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.83 return String(s).replace(/(&()'')/g,c=)(('&':'&am…
+  Zeile 83: Rückgabe `return String(s).replace(/(&()'')/g,c=)(('&':'&am…`.
+```
+
 - `esc` in `src/main/resources/web/index.html`

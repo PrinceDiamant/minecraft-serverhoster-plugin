@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.migrateHttpsFile.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.migrateHttpsFile.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `migrateHttpsFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

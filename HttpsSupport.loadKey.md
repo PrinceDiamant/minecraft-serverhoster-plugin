@@ -25,4 +25,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.pemBlock
+  `pemBlock` in `HttpsSupport.java`.
+if Z.159 (rsa == null && pkcs8 == null)
+  Zeile 159: prüft `(rsa == null && pkcs8 == null)`.
+throw Z.159 throw new IllegalArgumentException('Expected PKCS…
+  Zeile 159: Abbruch `throw new IllegalArgumentException('Expected PKCS…`.
+if Z.161 (rsa != null)
+  Zeile 161: prüft `(rsa != null)`.
+HttpsSupport.wrapPkcs1
+  Hüllt ein `wrapPkcs1`. Ruft `concat`, `derLen`.
+return Z.162 return KeyFactory.getInstance('RSA').generatePriv…
+  Zeile 162: Rückgabe `return KeyFactory.getInstance('RSA').generatePriv…`.
+```
+
 - `loadKey` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

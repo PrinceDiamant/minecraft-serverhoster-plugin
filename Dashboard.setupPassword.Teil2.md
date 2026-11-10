@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.301 (until != null && until ) now)
+  Zeile 301: prüft `(until != null && until ) now)`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.301 return;
+  Zeile 301: Rückgabe `return;`.
+Dashboard.parseJsonObject
+  Wertet aus `parseJsonObject`.
+Dashboard.readBodyText
+  Liest `readBodyText`.
+Dashboard.requiredString
+  Liest verpflichtend `requiredString`.
+Dashboard.setupPassword.Teil2.Z304
+  Fortsetzung des Ablaufs ab Zeile 304.
+```
+
 - Fortsetzung von `Dashboard.setupPassword`, Quellreihenfolge.

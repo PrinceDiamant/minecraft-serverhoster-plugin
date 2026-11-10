@@ -15,4 +15,13 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+Profiles.focus
+  Wird vom Plugin-Kern nicht für die laufende Auswahl benutzt. Befund: angemeldet aber nicht umgesetzt (wahrscheinlich).
+Profiles.portClash
+  Wird vom Plugin-Kern nicht ausgewertet. Befund: angemeldet aber nicht umgesetzt (wahrscheinlich).
+```
+
 - Fortsetzung von `HosterTest.profilesKeepLegacyRootAndAddServers`, Quellreihenfolge.

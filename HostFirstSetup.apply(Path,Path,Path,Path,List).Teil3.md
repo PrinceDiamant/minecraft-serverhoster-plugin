@@ -25,4 +25,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.decodeWorldNames
+  Dekodiert `decodeWorldNames`. Ruft `safeWorldName`.
+HostFirstSetup.readLevelNames
+  Liest `readLevelNames`. Ruft `safeWorldName`.
+if Z.91 (!'preparing'.equals(previousStatus))
+  Zeile 91: prüft `(!'preparing'.equals(previousStatus))`.
+HostMinimize.newLobbyName(Path)
+  `newLobbyName` in `HostMinimize.java`. Ruft `newLobbyName`.
+if Z.92 (!HostMinimize.lobbyNameSafe(worldName))
+  Zeile 92: prüft `(!HostMinimize.lobbyNameSafe(worldName))`.
+HostMinimize.lobbyNameSafe
+  `lobbyNameSafe` in `HostMinimize.java`.
+throw Z.92 throw new IOException('Invalid prepared lobby nam…
+  Zeile 92: Abbruch `throw new IOException('Invalid prepared lobby nam…`.
+HostFirstSetup.worldDirectories
+  Betrifft die Welt `worldDirectories`. Ruft `safeWorldName`, `addIfDirectory`.
+```
+
 - Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`, Quellreihenfolge.

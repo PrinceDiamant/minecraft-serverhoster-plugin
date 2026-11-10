@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridgeTest.StubFtpServer.serve.Z90
+  Fortsetzung des Ablaufs ab Zeile 90.
+```
+
 - `serve` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
 - Auslöser: Test

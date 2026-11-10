@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.228 Files.writeString(f, ' head/nmotd=old/nview-dista…
+  Zeile 228: schreibt Text in eine Datei. `Files.writeString(f, ' head/nmotd=old/nview-dista…`
+PropertiesFile.update
+  Aktualisiert `update`.
+Schritt Z.230 String text = Files.readString(f);
+  Zeile 230: liest Text aus einer Datei. `String text = Files.readString(f);`
+```
+
 - `propertiesKeepCommentsAndForeignKeys` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

@@ -14,4 +14,13 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+Profiles.load
+  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+FabricLauncherPlugin.forcedProperties
+  Erzwingt `forcedProperties`. Ruft `effectiveBindAddress`.
+Schritt Z.113 String config = Files.readString(Path.of('src/mai…
+  Zeile 113: liest Text aus einer Datei. `String config = Files.readString(Path.of('src/mai…`
+```
+
 - Fortsetzung von `HosterTest.defaultsKeepVanillaGameplayAndNeverPauseWhenEmpty`, Quellreihenfolge.

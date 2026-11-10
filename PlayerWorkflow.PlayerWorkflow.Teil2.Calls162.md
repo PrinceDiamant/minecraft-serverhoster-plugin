@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - Fortsetzung von `PlayerWorkflow.PlayerWorkflow.Teil2`, Quellreihenfolge.

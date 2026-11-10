@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.effectiveBindAddress
+  Liefert den wirksamen Wert `effectiveBindAddress`.
+return Z.2646 return force;
+  Zeile 2646: Rückgabe `return force;`.
+```
+
 - `forcedProperties` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

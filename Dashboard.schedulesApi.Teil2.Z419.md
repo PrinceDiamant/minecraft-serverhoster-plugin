@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.419 (method.equals('DELETE'))
+  Zeile 419: prüft `(method.equals('DELETE'))`.
+Dashboard.schedulesApi.Teil2.Z419.Z419
+  Fortsetzung des Ablaufs ab Zeile 419.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.426 return;
+  Zeile 426: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.schedulesApi.Teil2`, Quellreihenfolge.

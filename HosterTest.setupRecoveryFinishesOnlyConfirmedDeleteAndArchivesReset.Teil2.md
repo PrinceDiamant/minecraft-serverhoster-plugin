@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.602 assertEquals('preserve this child', Files.readStr…
+  Zeile 602: Dateioperation. `assertEquals('preserve this child', Files.readStr…`
+Schritt Z.603 assertFalse(Files.exists(pendingDelete));
+  Zeile 603: Dateioperation. `assertFalse(Files.exists(pendingDelete));`
+Schritt Z.604 assertFalse(Files.exists(pendingReset));
+  Zeile 604: Dateioperation. `assertFalse(Files.exists(pendingReset));`
+```
+
 - Fortsetzung von `HosterTest.setupRecoveryFinishesOnlyConfirmedDeleteAndArchivesReset`, Quellreihenfolge.

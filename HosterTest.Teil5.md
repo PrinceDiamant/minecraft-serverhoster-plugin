@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.legacyCleanupRetainsBackupsAndMemoryReports
+  `legacyCleanupRetainsBackupsAndMemoryReports` in `HosterTest.java`. Ruft `cleanupLegacyDirectory`. Nur Test.
+HosterTest.writeLegacyPluginJar
+  Schreibt `writeLegacyPluginJar`. Nur Test.
+HosterTest.profile
+  `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
+HosterTest.tryCreateSymbolicLink
+  `tryCreateSymbolicLink` in `HosterTest.java`. Nur Test.
+```
+
 

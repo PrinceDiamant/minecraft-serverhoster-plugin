@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+ChildSlot.uptimeMillis
+  Liefert die Laufzeit `uptimeMillis`. Ruft `running`.
+return Z.309 return slot(id).uptimeMillis();
+  Zeile 309: Rückgabe `return slot(id).uptimeMillis();`.
+```
+
 - `uptimeMillis` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:309–309 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

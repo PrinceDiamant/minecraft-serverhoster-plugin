@@ -15,4 +15,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.esc
+  Maskiert HTML `esc`.
+```
+
 - Fortsetzung von `index.loadTasks`, Quellreihenfolge.

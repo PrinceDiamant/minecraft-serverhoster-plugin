@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.ScheduleDef
+  Plant `ScheduleDef`. Ruft `validateInterval`.
+return Z.86 return new ScheduleDef(id, name, value,…
+  Zeile 86: Rückgabe `return new ScheduleDef(id, name, value,…`.
+```
+
 - `withEnabled` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

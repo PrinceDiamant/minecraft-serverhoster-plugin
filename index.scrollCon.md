@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+```
+
 - `scrollCon` in `src/main/resources/web/index.html`

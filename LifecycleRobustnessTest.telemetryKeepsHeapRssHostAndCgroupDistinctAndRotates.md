@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

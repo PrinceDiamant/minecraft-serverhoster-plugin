@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.21 (!HostMinimize.worldNameSafe(lobbyName))
+  Zeile 21: prüft `(!HostMinimize.worldNameSafe(lobbyName))`.
+HostMinimize.worldNameSafe
+  Betrifft die Welt `worldNameSafe`.
+return Z.21 return 0;
+  Zeile 21: Rückgabe `return 0;`.
+HostLobbyRuntime.apply.Z23
+  Fortsetzung des Ablaufs ab Zeile 23.
+return Z.30 return changed;
+  Zeile 30: Rückgabe `return changed;`.
+```
+
 - `apply` in `src/main/java/de/aichele/childlauncher/HostLobbyRuntime.java`

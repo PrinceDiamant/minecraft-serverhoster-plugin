@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.2198 (HostHeapTune.Result result : results)
+  Zeile 2198: Schleife `(HostHeapTune.Result result : results)`.
+if Z.2199 (!result.applied() // result.previous().isBlank()…
+  Zeile 2199: prüft `(!result.applied() // result.previous().isBlank()…`.
+if Z.2200 (!encoded.isEmpty())
+  Zeile 2200: prüft `(!encoded.isEmpty())`.
+return Z.2203 return encoded.toString();
+  Zeile 2203: Rückgabe `return encoded.toString();`.
+```
+
 - `heapPrevious` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

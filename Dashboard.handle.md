@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.handle.Z103
+  Fortsetzung des Ablaufs ab Zeile 103.
+Dashboard.handle.Aufrufe
+  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+```
+
 - Ein HTTP-Kontext `/`, verzweigt nach Methode und Pfad.
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

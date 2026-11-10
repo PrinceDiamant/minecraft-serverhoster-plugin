@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+catch Z.269 (SecurityException e)
+  Zeile 269: fängt (SecurityException e).
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+catch Z.271 (IllegalStateException e)
+  Zeile 271: fängt (IllegalStateException e).
+catch Z.273 (IllegalArgumentException e)
+  Zeile 273: fängt (IllegalArgumentException e).
+catch Z.275 (Exception e)
+  Zeile 275: fängt (Exception e).
+try Z.277
+  Zeile 277: Versuch. Der Fehlerpfad geht in catch.
+catch Z.277 (Exception ignored)
+  Zeile 277: fängt (Exception ignored).
+```
+
 - Fortsetzung von `Dashboard.handle.Z103`, Quellreihenfolge.

@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.81 (int i = 0; i ( n; i++)
+  Zeile 81: Schleife `(int i = 0; i ( n; i++)`.
+VersionCatalog.compare.Z81.Z85
+  Fortsetzung des Ablaufs ab Zeile 85.
+if Z.89 (c != 0)
+  Zeile 89: prüft `(c != 0)`.
+return Z.89 return c;
+  Zeile 89: Rückgabe `return c;`.
+```
+
 - Fortsetzung von `VersionCatalog.compare`, Quellreihenfolge.

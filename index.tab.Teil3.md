@@ -26,4 +26,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.89 t==='console'
+  Zeile 89: prüft `t==='console'`.
+index.scrollCon
+  Scrollt die Konsole `scrollCon`. Ruft `$`.
+if Z.89 t==='diag'
+  Zeile 89: prüft `t==='diag'`.
+index.loadDiag
+  Lädt `loadDiag`. Ruft `api`, `$`, `row`.
+if Z.89 t==='tasks'
+  Zeile 89: prüft `t==='tasks'`.
+index.loadTasks
+  Lädt `loadTasks`. Ruft `api`, `$`, `esc`.
+if Z.89 t==='backup'
+  Zeile 89: prüft `t==='backup'`.
+index.loadBackup
+  Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
+```
+
 - Fortsetzung von `index.tab`, Quellreihenfolge.

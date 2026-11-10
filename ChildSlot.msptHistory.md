@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.59 (int i = 0; i ( n; i++)
+  Zeile 59: Schleife `(int i = 0; i ( n; i++)`.
+return Z.60 return out;
+  Zeile 60: Rückgabe `return out;`.
+```
+
 - `msptHistory` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

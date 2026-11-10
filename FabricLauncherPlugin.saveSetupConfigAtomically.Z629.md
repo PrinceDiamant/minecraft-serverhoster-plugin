@@ -27,4 +27,25 @@ flowchart TD
   style n7 fill:#f88,stroke:#900
 ```
 
+```knoten
+try Z.629
+  Zeile 629: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.630 getConfig().save(temporary.toFile());
+  Zeile 630: liest die Config. `getConfig().save(temporary.toFile());`
+try Z.631
+  Zeile 631: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.632 Files.move(temporary, configFile, java.nio.file.S…
+  Zeile 632: Dateioperation. `Files.move(temporary, configFile, java.nio.file.S…`
+catch Z.634 (java.nio.file.AtomicMoveNotS…
+  Zeile 634: fängt (java.nio.file.AtomicMoveNotS….
+Schritt Z.635 Files.move(temporary, configFile, java.nio.file.S…
+  Zeile 635: Dateioperation. `Files.move(temporary, configFile, java.nio.file.S…`
+FabricLauncherPlugin.makeWritable
+  Setzt POSIX `rwxrwxrwx` für Ordner und `rw-rw-rw-` für Dateien. Befund: Logikrisiko (sicher).
+finally Z.629
+  Läuft danach immer, auch nach einem Fehler.
+Schritt Z.639 Files.deleteIfExists(temporary);
+  Zeile 639: Dateioperation. `Files.deleteIfExists(temporary);`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.saveSetupConfigAtomically`, Quellreihenfolge.

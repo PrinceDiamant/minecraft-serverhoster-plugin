@@ -24,4 +24,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.147 !n
+  Zeile 147: prüft `!n`.
+return Z.147 return;
+  Zeile 147: Rückgabe `return;`.
+index.post
+  Sendet POST `post`. Ruft `api`.
+index.jp
+  Baut einen Pfad `jp`.
+index.ls
+  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+index.openFile
+  Öffnet `openFile`. Ruft `api`, `$`.
+```
+
 - `newFile` in `src/main/resources/web/index.html`

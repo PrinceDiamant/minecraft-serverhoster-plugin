@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.946 (policy )= 3)
+  Zeile 946: prüft `(policy )= 3)`.
+FabricLauncherPlugin.applyCurrentMemorySettings.Teil1.Z946.Z947
+  Fortsetzung des Ablaufs ab Zeile 947.
+return Z.955 return;
+  Zeile 955: Rückgabe `return;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.applyCurrentMemorySettings.Teil1`, Quellreihenfolge.

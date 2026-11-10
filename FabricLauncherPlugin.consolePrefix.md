@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.2097 String base = getConfig().getString('logPrefix', …
+  Zeile 2097: liest die Config. `String base = getConfig().getString('logPrefix', …`
+if Z.2098 (profile == null)
+  Zeile 2098: prüft `(profile == null)`.
+return Z.2098 return base;
+  Zeile 2098: Rückgabe `return base;`.
+return Z.2099 return !'default'.equals(profile.id) && profiles.…
+  Zeile 2099: Rückgabe `return !'default'.equals(profile.id) && profiles.…`.
+```
+
 - `consolePrefix` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

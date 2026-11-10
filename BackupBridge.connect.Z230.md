@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.230 (spec.driverJar != null && !spec.driverJar.isBlan…
+  Zeile 230: prüft `(spec.driverJar != null && !spec.driverJar.isBlan…`.
+if Z.234 (c == null)
+  Zeile 234: prüft `(c == null)`.
+throw Z.234 throw new java.sql.SQLException('driver rejected …
+  Zeile 234: Abbruch `throw new java.sql.SQLException('driver rejected …`.
+return Z.235 return c;
+  Zeile 235: Rückgabe `return c;`.
+```
+
 - Fortsetzung von `BackupBridge.connect`, Quellreihenfolge.

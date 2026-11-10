@@ -17,4 +17,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildSlot.ChildSlot
+  Betrifft den Child `ChildSlot`. Ruft `ConsoleBuffer`.
+FabricLauncherPlugin.trackPlayers
+  Führt mit `trackPlayers`.
+```
+
 - Fortsetzung von `CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses`, Quellreihenfolge.

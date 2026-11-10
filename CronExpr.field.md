@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CronExpr.field.Z47
+  Fortsetzung des Ablaufs ab Zeile 47.
+return Z.67 return false;
+  Zeile 67: Rückgabe `return false;`.
+```
+
 - `field` in `src/main/java/de/aichele/childlauncher/CronExpr.java`

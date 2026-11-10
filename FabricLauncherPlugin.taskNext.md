@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1348 (task.cron == null // task.cron.isBlank())
+  Zeile 1348: prüft `(task.cron == null // task.cron.isBlank())`.
+return Z.1348 return '';
+  Zeile 1348: Rückgabe `return '';`.
+try Z.1349
+  Zeile 1349: Versuch. Der Fehlerpfad geht in catch.
+CronExpr.next
+  Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+return Z.1351 return z == null ? '' : z.toString();
+  Zeile 1351: Rückgabe `return z == null ? '' : z.toString();`.
+catch Z.1352 (RuntimeException e)
+  Zeile 1352: fängt (RuntimeException e).
+return Z.1352 return '';
+  Zeile 1352: Rückgabe `return '';`.
+```
+
 - `taskNext` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

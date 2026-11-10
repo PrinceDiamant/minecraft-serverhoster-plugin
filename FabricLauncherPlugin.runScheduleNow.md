@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1574 (!activeSchedules.add(id))
+  Zeile 1574: prüft `(!activeSchedules.add(id))`.
+throw Z.1574 throw new IllegalStateException('Zeitplan läuft b…
+  Zeile 1574: Abbruch `throw new IllegalStateException('Zeitplan läuft b…`.
+FabricLauncherPlugin.runScheduleNow.Z1575
+  Fortsetzung des Ablaufs ab Zeile 1575.
+```
+
 - `runScheduleNow` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

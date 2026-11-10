@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.clearMemoryRecoveryState.Z1130
+  Fortsetzung des Ablaufs ab Zeile 1130.
+```
+
 - `clearMemoryRecoveryState` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

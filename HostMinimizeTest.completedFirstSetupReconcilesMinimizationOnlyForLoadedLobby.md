@@ -17,5 +17,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.firstSetupWorld
+  `firstSetupWorld` in `HostMinimize.java`. Ruft `lobbyNameSafe`.
+```
+
 - `completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
 - Auslöser: Test

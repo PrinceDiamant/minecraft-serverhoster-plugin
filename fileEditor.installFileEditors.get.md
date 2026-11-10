@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.editorFor
+  Liefert den Editor `editorFor`. Ruft `get`.
+return Z.47 return editorFor(id).getValue();
+  Zeile 47: Rückgabe `return editorFor(id).getValue();`.
+```
+
 - `get` in `ui/src/lib/fileEditor.ts`

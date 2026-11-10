@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.529 (address.isBlank() // address.equals('0.0.0.0') /…
+  Zeile 529: prüft `(address.isBlank() // address.equals('0.0.0.0') /…`.
+return Z.530 return 'Alle Interfaces (Port ' + port + ')';
+  Zeile 530: Rückgabe `return 'Alle Interfaces (Port ' + port + ')';`.
+return Z.531 return (address.contains(':') && !address.startsW…
+  Zeile 531: Rückgabe `return (address.contains(':') && !address.startsW…`.
+```
+
 - `formatBindAddress` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

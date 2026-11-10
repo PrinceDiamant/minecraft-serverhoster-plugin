@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryTelemetry.appendRotated.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+MemoryTelemetry.appendRotated.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `appendRotated` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

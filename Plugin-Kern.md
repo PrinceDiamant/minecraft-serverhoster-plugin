@@ -31,4 +31,31 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Lebenszyklus
+  Spigot ruft onLoad, onEnable und onDisable; dort starten die Scheduler und der Shutdown-Hook.
+Benachrichtigung
+  Schickt den Text an den konfigurierten ntfy-Dienst.
+Konfiguration
+  reloadProfiles behält nur den ersten Server; ServerHosterSettings prüft die Grenzen.
+Bind-Adresse
+  Liest Host-Bind, die wirksame Adresse und die Adresse des Child.
+Fokus
+  Die eine Server-Id, die der Kern wirklich benutzt.
+Slot-Status
+  Ob der Prozess läuft, pid, Laufzeit, letzte Zeile, Konsole, Spieler.
+Slot-Aktionen
+  Befehl an den Child, starten, stoppen, neu starten.
+Properties
+  Schreibt, liest und erzwingt server.properties und Spielerdateien.
+Host-Pfade
+  Weltwurzel, Java-Binary, Plugin-Jar und geschützte Host-Pfade.
+Diagnose
+  Sammelt Diagnose, Platte, Startplan, Jar, Crashes, Tickzeiten und jcmd.
+Befehle
+  Befehl /child aus plugin.yml, Permission serverhoster.admin, Default op.
+Setup
+  Einrichtung, Aufräumen und Import der alten FabricLauncher-Daten.
+```
+
 - `FabricLauncherPlugin`: Lebenszyklus, `/child`, Config, ein Fokus-Slot.

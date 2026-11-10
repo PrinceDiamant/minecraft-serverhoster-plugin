@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.2431
+  Zeile 2431: Versuch. Der Fehlerpfad geht in catch.
+for Z.2431 (String v : versions(a(1)).stream().lim…
+  Zeile 2431: Schleife `(String v : versions(a(1)).stream().lim…`.
+FabricLauncherPlugin.versions
+  `versions` in `FabricLauncherPlugin.java`. Ruft `fetch`.
+FabricLauncherPlugin.msg
+  Sendet eine Chat-Zeile `msg`.
+catch Z.2431 (Exception e)
+  Zeile 2431: fängt (Exception e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2429.Z2431`, Quellreihenfolge.

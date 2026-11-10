@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleTestProcess.LifecycleTestProcess
+  `LifecycleTestProcess` in `LifecycleTestProcess.java`. Nur Test.
+LifecycleTestProcess.main
+  `main` in `LifecycleTestProcess.java`. Nur Test.
+```
+
 

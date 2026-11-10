@@ -28,4 +28,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RestartPolicy.maxAttempts
+  Begrenzt nach oben `maxAttempts`.
+if Z.22 (initialRestartDelaySeconds ( 1 // initialRestart…
+  Zeile 22: prüft `(initialRestartDelaySeconds ( 1 // initialRestart…`.
+throw Z.23 throw new IllegalArgumentException('Initial resta…
+  Zeile 23: Abbruch `throw new IllegalArgumentException('Initial resta…`.
+if Z.24 (maximumRestartDelaySeconds ( initialRestartDelay…
+  Zeile 24: prüft `(maximumRestartDelaySeconds ( initialRestartDelay…`.
+throw Z.25 throw new IllegalArgumentException('Maximum resta…
+  Zeile 25: Abbruch `throw new IllegalArgumentException('Maximum resta…`.
+if Z.26 (restartResetAfterSeconds ( 60 // restartResetAft…
+  Zeile 26: prüft `(restartResetAfterSeconds ( 60 // restartResetAft…`.
+throw Z.27 throw new IllegalArgumentException('Restart count…
+  Zeile 27: Abbruch `throw new IllegalArgumentException('Restart count…`.
+ServerHosterSettings.enumValue
+  `enumValue` in `ServerHosterSettings.java`.
+```
+
 - Fortsetzung von `ServerHosterSettings.ServerHosterSettings`, Quellreihenfolge.

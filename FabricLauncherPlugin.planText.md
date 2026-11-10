@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LaunchPlan.text
+  Antwortet mit Text `text`. Ruft `argv`.
+FabricLauncherPlugin.javaBin
+  Liefert das Java-Binary `javaBin`. Ruft `isWindows`.
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+return Z.853 return LaunchPlan.text(javaBin(), profi…
+  Zeile 853: Rückgabe `return LaunchPlan.text(javaBin(), profi…`.
+```
+
 - `planText` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

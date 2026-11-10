@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+```
+
 - Fortsetzung von `App.App`, Quellreihenfolge.

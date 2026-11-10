@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.prepareFiles
+  Bereitet vor `prepareFiles`. Ruft `firstStable`, `getJson`, `download`.
+Schritt Z.1739 Files.writeString(wd.resolve('eula.txt'), 'eula=t…
+  Zeile 1739: schreibt Text in eine Datei. `Files.writeString(wd.resolve('eula.txt'), 'eula=t…`
+FabricLauncherPlugin.writeProperties
+  Schreibt `writeProperties`. Ruft `forcedProperties`, `hostBindAddress`, `updateProperties`.
+FabricLauncherPlugin.javaBin
+  Liefert das Java-Binary `javaBin`. Ruft `isWindows`.
+LaunchPlan.argv(String,ServerProfile,Path)
+  `argv` in `LaunchPlan.java`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.launch.Z1728.Z1728`, Quellreihenfolge.

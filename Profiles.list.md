@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.157 (!(raw instanceof List(?) l))
+  Zeile 157: prüft `(!(raw instanceof List(?) l))`.
+return Z.157 return null;
+  Zeile 157: Rückgabe `return null;`.
+for Z.159 (Object o : l)
+  Zeile 159: Schleife `(Object o : l)`.
+if Z.159 (o != null)
+  Zeile 159: prüft `(o != null)`.
+return Z.160 return out;
+  Zeile 160: Rückgabe `return out;`.
+```
+
 - `list` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

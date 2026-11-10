@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.685
+  Zeile 685: Versuch. Der Fehlerpfad geht in catch.
+for Z.686 (String l : Files.readAllLines(Paths.ge…
+  Zeile 686: Schleife `(String l : Files.readAllLines(Paths.ge…`.
+if Z.687 (l.startsWith('VmRSS:'))
+  Zeile 687: prüft `(l.startsWith('VmRSS:'))`.
+return Z.687 return Long.parseLong(l.replaceAll('//D', '')) / …
+  Zeile 687: Rückgabe `return Long.parseLong(l.replaceAll('//D', '')) / …`.
+catch Z.688 (Exception ignored)
+  Zeile 688: fängt (Exception ignored).
+return Z.689 return -1;
+  Zeile 689: Rückgabe `return -1;`.
+```
+
 - `rssMb` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

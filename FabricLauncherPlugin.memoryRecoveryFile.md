@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.1002 return getDataFolder().toPath().resolve('memory-r…
+  Zeile 1002: Rückgabe `return getDataFolder().toPath().resolve('memory-r…`.
+```
+
 - `memoryRecoveryFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -24,4 +24,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.118 Files.createDirectories(data);
+  Zeile 118: Dateioperation. `Files.createDirectories(data);`
+Schritt Z.119 Files.createDirectories(child);
+  Zeile 119: Dateioperation. `Files.createDirectories(child);`
+Schritt Z.120 Files.writeString(child.resolve('server.propertie…
+  Zeile 120: schreibt Text in eine Datei. `Files.writeString(child.resolve('server.propertie…`
+try Z.121
+  Zeile 121: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.122 Files.createSymbolicLink(root.resolve('server.pro…
+  Zeile 122: Dateioperation. `Files.createSymbolicLink(root.resolve('server.pro…`
+catch Z.123 (UnsupportedOperationExceptio…
+  Zeile 123: fängt (UnsupportedOperationExceptio….
+HostMinimize.apply
+  Wendet an `apply`. Ruft `assertRoot`, `assertEditable`, `update`.
+Schritt Z.128 assertEquals('server-port=2063/n', Files.readStri…
+  Zeile 128: Dateioperation. `assertEquals('server-port=2063/n', Files.readStri…`
+```
+
 - Fortsetzung von `HostMinimizeTest.symlinkAndChildRootAreRefused`, Quellreihenfolge.

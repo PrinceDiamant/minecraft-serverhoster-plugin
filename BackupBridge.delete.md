@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.file
+  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+```
+
 - `delete` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

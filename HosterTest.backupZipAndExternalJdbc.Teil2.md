@@ -19,4 +19,17 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+if Z.400 (linked)
+  Zeile 400: prüft `(linked)`.
+try Z.401
+  Zeile 401: Versuch. Der Fehlerpfad geht in catch.
+BackupBridge.count
+  Zählt `count`. Ruft `connect`, `table`. Befund: toter Code (wahrscheinlich).
+try Z.406
+  Zeile 406: Versuch. Der Fehlerpfad geht in catch.
+BackupBridge.archive
+  Packt `archive`. Ruft `open`, `safeId`, `resolve`.
+```
+
 - Fortsetzung von `HosterTest.backupZipAndExternalJdbc`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryProtectionPolicy.sample
+  Misst `sample`.
+MemoryProtectionPolicy.criticalSamples
+  `criticalSamples` in `MemoryProtectionPolicy.java`.
+```
+
 - Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`, Quellreihenfolge.

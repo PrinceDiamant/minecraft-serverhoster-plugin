@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.150
+  Zeile 150: Versuch. Der Fehlerpfad geht in catch.
+index.loadLogs.Z150.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+index.loadLogs.Z150.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+catch Z.151 e
+  Zeile 151: fängt e.
+index.$
+  `$` in `index.html`.
+```
+
 - Fortsetzung von `index.loadLogs`, Quellreihenfolge.

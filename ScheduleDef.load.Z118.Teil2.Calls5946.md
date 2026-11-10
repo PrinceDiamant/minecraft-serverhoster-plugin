@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.integer
+  `integer` in `ScheduleDef.java`.
+ScheduleDef.string
+  `string` in `ScheduleDef.java`.
+ScheduleDef.optionalLong
+  Liest optional `optionalLong`.
+```
+
 - Fortsetzung von `ScheduleDef.load.Z118.Teil2`, Quellreihenfolge.

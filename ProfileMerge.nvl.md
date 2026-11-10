@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.192 return v == null // v.isBlank() ? fallback : v;
+  Zeile 192: Rückgabe `return v == null // v.isBlank() ? fallback : v;`.
+```
+
 - `nvl` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

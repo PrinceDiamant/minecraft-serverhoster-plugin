@@ -33,4 +33,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.645
+  Zeile 645: Versuch. Der Fehlerpfad geht in catch.
+catch Z.647 (IllegalArgumentException e)
+  Zeile 647: fängt (IllegalArgumentException e).
+throw Z.648 throw new IllegalArgumentException('Ungültige ntf…
+  Zeile 648: Abbruch `throw new IllegalArgumentException('Ungültige ntf…`.
+if Z.650 (!('https'.equalsIgnoreCase(uri.getScheme()) // '…
+  Zeile 650: prüft `(!('https'.equalsIgnoreCase(uri.getScheme()) // '…`.
+throw Z.652 throw new IllegalArgumentException('ntfy-Server m…
+  Zeile 652: Abbruch `throw new IllegalArgumentException('ntfy-Server m…`.
+if Z.654 (normalizedTopic.length() ) 128 // (!normalizedTo…
+  Zeile 654: prüft `(normalizedTopic.length() ) 128 // (!normalizedTo…`.
+throw Z.656 throw new IllegalArgumentException('ntfy-Thema da…
+  Zeile 656: Abbruch `throw new IllegalArgumentException('ntfy-Thema da…`.
+if Z.657 (enabled && normalizedTopic.isEmpty())
+  Zeile 657: prüft `(enabled && normalizedTopic.isEmpty())`.
+throw Z.658 throw new IllegalArgumentException('Für ntfy muss…
+  Zeile 658: Abbruch `throw new IllegalArgumentException('Für ntfy muss…`.
+return Z.659 return new NtfySetup(enabled, uri.toString().repl…
+  Zeile 659: Rückgabe `return new NtfySetup(enabled, uri.toString().repl…`.
+```
+
 - `validateNtfySetup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

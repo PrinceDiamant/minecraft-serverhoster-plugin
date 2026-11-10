@@ -21,4 +21,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+index.$
+  `$` in `index.html`.
+index.esc
+  Maskiert HTML `esc`.
+index.fmtSize
+  Formatiert `fmtSize`.
+```
+
 - `loadBackup` in `src/main/resources/web/index.html`

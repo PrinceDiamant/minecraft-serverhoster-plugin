@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.addProcessDiagnostics.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.addProcessDiagnostics.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `addProcessDiagnostics` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

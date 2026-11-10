@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.313 (!surviveTerm)
+  Zeile 313: prüft `(!surviveTerm)`.
+```
+
 - `destroy` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

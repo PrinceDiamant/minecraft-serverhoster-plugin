@@ -15,6 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.console(String)
+  Liefert die Konsole `console`. Ruft `slot`.
+ConsoleBuffer.subscribe
+  Hängt einen Hörer an `subscribe`.
+Dashboard.sse.Z729
+  Fortsetzung des Ablaufs ab Zeile 729.
+```
+
 ```mermaid
 sequenceDiagram
   participant HTTP as ServerhosterPlugin-Web

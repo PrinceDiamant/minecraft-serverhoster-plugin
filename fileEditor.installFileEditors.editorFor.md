@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.get
+  Liefert `get`. Ruft `editorFor`.
+if Z.36 !editor
+  Zeile 36: prüft `!editor`.
+throw Z.36 throw new Error('Editor $(id) is missing');
+  Zeile 36: Abbruch `throw new Error('Editor $(id) is missing');`.
+return Z.37 return editor;
+  Zeile 37: Rückgabe `return editor;`.
+```
+
 - `editorFor` in `ui/src/lib/fileEditor.ts`

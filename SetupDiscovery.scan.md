@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.scan.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+SetupDiscovery.scan.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+SetupDiscovery.scan.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `scan` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

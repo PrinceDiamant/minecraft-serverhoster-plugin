@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSecrets.load.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+BackupSecrets.load.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `load` in `src/main/java/de/aichele/childlauncher/BackupSecrets.java`

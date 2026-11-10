@@ -31,4 +31,29 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.554 (action.equals('delete'))
+  Zeile 554: prüft `(action.equals('delete'))`.
+FabricLauncherPlugin.findSetupCandidate
+  Sucht `findSetupCandidate`. Ruft `scan`.
+if Z.557 (!expected.equals(confirm))
+  Zeile 557: prüft `(!expected.equals(confirm))`.
+throw Z.557 throw new IllegalArgumentException('Die Löschbest…
+  Zeile 557: Abbruch `throw new IllegalArgumentException('Die Löschbest…`.
+if Z.558 (!SetupDiscovery.isSafeArchiveTarget(root, candid…
+  Zeile 558: prüft `(!SetupDiscovery.isSafeArchiveTarget(root, candid…`.
+SetupDiscovery.isSafeArchiveTarget
+  Prüft `isSafeArchiveTarget`.
+throw Z.559 throw new IllegalArgumentException('Dieser Ordner…
+  Zeile 559: Abbruch `throw new IllegalArgumentException('Dieser Ordner…`.
+Schritt Z.562 Files.move(candidate.path(), pendingDelete);
+  Zeile 562: Dateioperation. `Files.move(candidate.path(), pendingDelete);`
+SetupDiscovery.resolveNewDirectory
+  Löst auf `resolveNewDirectory`.
+FabricLauncherPlugin.applySetupProfile
+  Wendet an `applySetupProfile`.
+throw Z.568 throw new IllegalArgumentException('Unbekannte Ei…
+  Zeile 568: Abbruch `throw new IllegalArgumentException('Unbekannte Ei…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538`, Quellreihenfolge.

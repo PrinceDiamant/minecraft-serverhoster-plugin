@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.load
+  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+return Z.444 return ScheduleDef.load(List.of(sanitiz…
+  Zeile 444: Rückgabe `return ScheduleDef.load(List.of(sanitiz…`.
+```
+
 - Fortsetzung von `Dashboard.parseSchedule`, Quellreihenfolge.

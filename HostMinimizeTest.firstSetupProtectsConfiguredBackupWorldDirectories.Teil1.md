@@ -20,4 +20,19 @@ flowchart TD
   style n6 fill:#f88,stroke:#900
 ```
 
+```knoten
+Schritt Z.277 Files.createDirectories(data);
+  Zeile 277: Dateioperation. `Files.createDirectories(data);`
+Schritt Z.278 Files.createDirectories(backup);
+  Zeile 278: Dateioperation. `Files.createDirectories(backup);`
+Schritt Z.279 Files.writeString(backup.resolve('level.dat'), 'b…
+  Zeile 279: schreibt Text in eine Datei. `Files.writeString(backup.resolve('level.dat'), 'b…`
+Schritt Z.280 Files.writeString(root.resolve('plugins/ServerHos…
+  Zeile 280: schreibt Text in eine Datei. `Files.writeString(root.resolve('plugins/ServerHos…`
+Schritt Z.281 Files.writeString(root.resolve('server.properties…
+  Zeile 281: schreibt Text in eine Datei. `Files.writeString(root.resolve('server.properties…`
+HostFirstSetup.shouldRun
+  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+```
+
 - Fortsetzung von `HostMinimizeTest.firstSetupProtectsConfiguredBackupWorldDirectories`, Quellreihenfolge.

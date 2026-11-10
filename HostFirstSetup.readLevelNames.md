@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.readLevelNames.Z259
+  Fortsetzung des Ablaufs ab Zeile 259.
+if Z.265 (names.isEmpty())
+  Zeile 265: prüft `(names.isEmpty())`.
+return Z.266 return names;
+  Zeile 266: Rückgabe `return names;`.
+```
+
 - `readLevelNames` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

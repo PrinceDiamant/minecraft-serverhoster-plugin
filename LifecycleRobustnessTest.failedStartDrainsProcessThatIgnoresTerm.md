@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.testProcess
+  Prüft `testProcess`. Nur Test.
+ChildLaunchCleanup.abandon
+  Bricht den fehlgeschlagenen Start ab `abandon`.
+```
+
 - `failedStartDrainsProcessThatIgnoresTerm` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

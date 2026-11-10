@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.84
+  Zeile 84: Versuch. Der Fehlerpfad geht in catch.
+catch Z.84 (IOException ignored)
+  Zeile 84: fängt (IOException ignored).
+ProcessProbe.jcmd(long,String,long).Teil2.Z88
+  Fortsetzung des Ablaufs ab Zeile 88.
+if Z.97 (text.length() ) 1_500_000)
+  Zeile 97: prüft `(text.length() ) 1_500_000)`.
+if Z.98 (p.exitValue() != 0)
+  Zeile 98: prüft `(p.exitValue() != 0)`.
+ProcessProbe.abbreviate
+  `abbreviate` in `ProcessProbe.java`.
+throw Z.98 throw new IOException('jcmd exit ' + p.…
+  Zeile 98: Abbruch `throw new IOException('jcmd exit ' + p.…`.
+```
+
 - Fortsetzung von `ProcessProbe.jcmd(long,String,long)`, Quellreihenfolge.

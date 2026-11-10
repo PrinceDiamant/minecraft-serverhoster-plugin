@@ -20,4 +20,13 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+FabricLauncherPlugin.forcedProperties
+  Erzwingt `forcedProperties`. Ruft `effectiveBindAddress`.
+Profiles.load
+  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+FabricLauncherPlugin.effectiveBindAddress
+  Liefert den wirksamen Wert `effectiveBindAddress`.
+```
+
 - Fortsetzung von `HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden`, Quellreihenfolge.

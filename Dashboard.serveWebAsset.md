@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.943 (path.contains('//') // Arrays.asList(path.split(…
+  Zeile 943: prüft `(path.contains('//') // Arrays.asList(path.split(…`.
+Dashboard.send
+  Sendet `send`. Ruft `sendBytes`.
+return Z.945 return;
+  Zeile 945: Rückgabe `return;`.
+Dashboard.serveWebAsset.Z947
+  Fortsetzung des Ablaufs ab Zeile 947.
+Dashboard.serveWebAsset.Z955
+  Fortsetzung des Ablaufs ab Zeile 955.
+```
+
 - `serveWebAsset` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

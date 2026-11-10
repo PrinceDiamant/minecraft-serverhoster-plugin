@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+if Z.130 window.dashboardEditors
+  Zeile 130: prüft `window.dashboardEditors`.
+index.$
+  `$` in `index.html`.
+```
+
 - `loadTxt` in `src/main/resources/web/index.html`

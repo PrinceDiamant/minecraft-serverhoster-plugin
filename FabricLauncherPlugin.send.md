@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1974 (w == null // !slot.running())
+  Zeile 1974: prüft `(w == null // !slot.running())`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+return Z.1974 return false;
+  Zeile 1974: Rückgabe `return false;`.
+FabricLauncherPlugin.send.Z1975
+  Fortsetzung des Ablaufs ab Zeile 1975.
+```
+
 - `send` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

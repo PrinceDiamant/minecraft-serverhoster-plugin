@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.111 (path.startsWith('/assets/') && method.equals('GE…
+  Zeile 111: prüft `(path.startsWith('/assets/') && method.equals('GE…`.
+Dashboard.serveWebAsset
+  Liefert `serveWebAsset`. Ruft `send`, `sendBytes`.
+return Z.111 return;
+  Zeile 111: Rückgabe `return;`.
+if Z.112 (path.equals('/third-party-notices') && method.eq…
+  Zeile 112: prüft `(path.equals('/third-party-notices') && method.eq…`.
+Dashboard.serveThirdPartyNotices
+  Liefert `serveThirdPartyNotices`. Ruft `send`.
+return Z.112 return;
+  Zeile 112: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103`, Quellreihenfolge.

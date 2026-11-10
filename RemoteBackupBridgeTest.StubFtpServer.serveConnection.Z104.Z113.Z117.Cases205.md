@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+case Z.205 default
+  Zeile 205: Zweig `default`.
+```
+
 - Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117`, Quellreihenfolge.

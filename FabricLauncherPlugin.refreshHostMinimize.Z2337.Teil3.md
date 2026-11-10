@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.firstSetupWorld
+  `firstSetupWorld` in `HostMinimize.java`. Ruft `lobbyNameSafe`.
+if Z.2356 (!worldName.equals(reconciled))
+  Zeile 2356: prüft `(!worldName.equals(reconciled))`.
+HostMinimize.phase
+  Liefert die Phase `phase`. Ruft `worldNameSafe`.
+FabricLauncherPlugin.writeHostMinimizeState
+  Schreibt `writeHostMinimizeState`. Ruft `hostMinimizeStateFile`, `stateText`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.refreshHostMinimize.Z2337`, Quellreihenfolge.

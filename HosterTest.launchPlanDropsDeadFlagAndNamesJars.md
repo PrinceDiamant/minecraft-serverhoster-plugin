@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.launchPlanDropsDeadFlagAndNamesJars.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.launchPlanDropsDeadFlagAndNamesJars.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `launchPlanDropsDeadFlagAndNamesJars` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1841 (m.find())
+  Zeile 1841: prüft `(m.find())`.
+return Z.1841 return;
+  Zeile 1841: Rückgabe `return;`.
+if Z.1842 (m.find())
+  Zeile 1842: prüft `(m.find())`.
+return Z.1842 return;
+  Zeile 1842: Rückgabe `return;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.trackPlayers`, Quellreihenfolge.

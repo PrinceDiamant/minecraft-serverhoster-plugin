@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2674 return System.getProperty('os.name').toLowerCase(…
+  Zeile 2674: Rückgabe `return System.getProperty('os.name').toLowerCase(…`.
+```
+
 - `isWindows` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - Fortsetzung von `Dashboard.saveConfig`, Quellreihenfolge.

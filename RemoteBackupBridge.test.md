@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.61
+  Zeile 61: Versuch. Der Fehlerpfad geht in catch.
+RemoteBackupBridge.connect
+  Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
+RemoteBackupBridge.enterBaseDirectory
+  Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
+return Z.63 return session.encrypted();
+  Zeile 63: Rückgabe `return session.encrypted();`.
+```
+
 - `test` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

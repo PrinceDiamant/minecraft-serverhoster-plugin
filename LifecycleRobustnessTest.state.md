@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.280 return new SupervisorHealth.State(phase, false, w…
+  Zeile 280: Rückgabe `return new SupervisorHealth.State(phase, false, w…`.
+```
+
 - `state` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

@@ -19,6 +19,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryProtectionPolicy.sample
+  Misst `sample`.
+MemoryProtectionPolicy.criticalSamples
+  `criticalSamples` in `MemoryProtectionPolicy.java`.
+MemoryProtectionPolicy.resetCriticalSamples
+  Setzt zurück `resetCriticalSamples`.
+MemoryProtectionPolicy.emergencyStopStarted
+  `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+MemoryProtectionPolicy.startEmergencyStop
+  Startet `startEmergencyStop`.
+MemoryProtectionPolicy.finishRecovery
+  Schließt ab `finishRecovery`.
+```
+
 ```mermaid
 stateDiagram-v2
   [*] --> NONE

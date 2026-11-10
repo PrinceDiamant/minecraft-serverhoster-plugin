@@ -15,4 +15,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.esc
+  Maskiert HTML `esc`.
+```
+
 - `row` in `src/main/resources/web/index.html`

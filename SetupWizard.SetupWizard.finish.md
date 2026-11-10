@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWizard.SetupWizard.finish.Z135
+  Fortsetzung des Ablaufs ab Zeile 135.
+SetupWizard.finish.createSchedule
+  Legt an `createSchedule`. Ruft `dashboardRequest`, `jsonBody`.
+```
+
 - `finish` in `ui/src/components/SetupWizard.tsx`

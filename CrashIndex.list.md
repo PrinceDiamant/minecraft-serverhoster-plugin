@@ -27,4 +27,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PathGuard.open
+  Öffnet `open`. Ruft `PathGuard`.
+PathGuard.resolve
+  Löst auf `resolve`.
+if Z.23 (Files.isSymbolicLink(dir))
+  Zeile 23: prüft `(Files.isSymbolicLink(dir))`.
+throw Z.23 throw new SecurityException('Pfad außerhalb des S…
+  Zeile 23: Abbruch `throw new SecurityException('Pfad außerhalb des S…`.
+if Z.24 (!Files.isDirectory(dir, LinkOption.NOFOLLOW_LINK…
+  Zeile 24: prüft `(!Files.isDirectory(dir, LinkOption.NOFOLLOW_LINK…`.
+return Z.24 return List.of();
+  Zeile 24: Rückgabe `return List.of();`.
+CrashIndex.list.Z26
+  Fortsetzung des Ablaufs ab Zeile 26.
+return Z.35 return List.copyOf(names);
+  Zeile 35: Rückgabe `return List.copyOf(names);`.
+```
+
 - `list` in `src/main/java/de/aichele/childlauncher/CrashIndex.java`

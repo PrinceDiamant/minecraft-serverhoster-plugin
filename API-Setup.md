@@ -26,4 +26,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.setup
+  `setup` in `Dashboard.java`. Ruft `parseJsonObject`, `readBodyText`, `requiredString`.
+Dashboard.hostMinimize
+  Betrifft den Host `hostMinimize`. Ruft `parseJsonObject`, `readBodyText`, `requiredString`.
+Dashboard.requiredString
+  Liest verpflichtend `requiredString`.
+Dashboard.optionalString
+  Liest optional `optionalString`.
+Dashboard.saveProps
+  Speichert `saveProps`. Ruft `readBodyText`, `workDir`, `syncPropertiesEdit`.
+Dashboard.saveConfig
+  Speichert `saveConfig`. Ruft `readBodyText`, `json`, `configMutationLock`.
+Dashboard.saveSettings
+  Speichert `saveSettings`. Ruft `parseJsonObject`, `readBodyText`, `ServerHosterSettings`.
+Dashboard.requiredInt
+  Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+Dashboard.requiredLong
+  Liest verpflichtend `requiredLong`.
+Dashboard.guard
+  Prüft den Zugriff `guard`. Ruft `open`, `workDir`.
+```
+
 

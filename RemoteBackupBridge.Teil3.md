@@ -18,4 +18,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.retain
+  Behält die letzten Stücke `retain`. Ruft `named`, `replyError`.
+RemoteBackupBridge.remotePath
+  `remotePath` in `RemoteBackupBridge.java`.
+RemoteBackupBridge.validateCredentials
+  Prüft `validateCredentials`. Ruft `hasControlCharacter`.
+RemoteBackupBridge.hasControlCharacter
+  Prüft `hasControlCharacter`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+RemoteBackupBridge.disconnect
+  Trennt `disconnect`.
+RemoteBackupBridge.disconnectAfterFailure
+  Trennt `disconnectAfterFailure`. Ruft `disconnect`.
+```
+
 

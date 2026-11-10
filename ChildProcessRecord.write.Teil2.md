@@ -25,4 +25,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildProcessRecord.safe
+  Prüft die Pfadgrenze `safe`.
+Schritt Z.109 Files.writeString(temporary, text, StandardCharse…
+  Zeile 109: schreibt Text in eine Datei. `Files.writeString(temporary, text, StandardCharse…`
+try Z.110
+  Zeile 110: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.111 Files.move(temporary, file, StandardCopyOption.AT…
+  Zeile 111: Dateioperation. `Files.move(temporary, file, StandardCopyOption.AT…`
+catch Z.112 (AtomicMoveNotSupportedExcept…
+  Zeile 112: fängt (AtomicMoveNotSupportedExcept….
+Schritt Z.113 Files.move(temporary, file, StandardCopyOption.RE…
+  Zeile 113: Dateioperation. `Files.move(temporary, file, StandardCopyOption.RE…`
+```
+
 - Fortsetzung von `ChildProcessRecord.write`, Quellreihenfolge.

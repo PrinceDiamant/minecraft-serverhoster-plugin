@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildProcessRecord.read.Z118
+  Fortsetzung des Ablaufs ab Zeile 118.
+```
+
 - `read` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

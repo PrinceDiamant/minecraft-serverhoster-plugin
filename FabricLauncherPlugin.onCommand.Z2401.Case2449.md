@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.2450
+  Zeile 2450: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.jarText
+  Betrifft das Jar `jarText`. Ruft `text`, `inspect`, `profile`.
+catch Z.2451 (IOException e)
+  Zeile 2451: fängt (IOException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

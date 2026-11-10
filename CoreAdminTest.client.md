@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.383
+  Zeile 383: Versuch. Der Fehlerpfad geht in catch.
+return Z.388 return HttpClient.newBuilder().sslContext(ctx).bu…
+  Zeile 388: Rückgabe `return HttpClient.newBuilder().sslContext(ctx).bu…`.
+```
+
 - `client` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

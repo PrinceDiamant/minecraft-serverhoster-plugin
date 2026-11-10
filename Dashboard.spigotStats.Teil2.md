@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.rssMb
+  `rssMb` in `Dashboard.java`.
+Schritt Z.656 o.put('cores', Runtime.getRuntime().availableProc…
+  Zeile 656: fragt die JVM-Laufzeit. `o.put('cores', Runtime.getRuntime().availableProc…`
+return Z.657 return o;
+  Zeile 657: Rückgabe `return o;`.
+```
+
 - Fortsetzung von `Dashboard.spigotStats`, Quellreihenfolge.

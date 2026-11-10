@@ -15,4 +15,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SupervisorHealth.dashboardState
+  `dashboardState` in `SupervisorHealth.java`.
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation`, Quellreihenfolge.

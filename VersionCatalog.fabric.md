@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog.fabric.Z32
+  Fortsetzung des Ablaufs ab Zeile 32.
+return Z.37 return ids;
+  Zeile 37: Rückgabe `return ids;`.
+```
+
 - `fabric` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

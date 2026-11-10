@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostMinimize.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HostMinimize.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+HostMinimize.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 

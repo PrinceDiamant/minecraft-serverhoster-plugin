@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.42 assertFalse(Files.readString(Path.of('src/main/re…
+  Zeile 42: liest Text aus einer Datei. `assertFalse(Files.readString(Path.of('src/main/re…`
+```
+
 - Fortsetzung von `HosterTest.ftpCredentialsAreKeptInLocalSecretsFile`, Quellreihenfolge.

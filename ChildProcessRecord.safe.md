@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.225 return value == null ? '' : value.replace('/r', '…
+  Zeile 225: Rückgabe `return value == null ? '' : value.replace('/r', '…`.
+```
+
 - `safe` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

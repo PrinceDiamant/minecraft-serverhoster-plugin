@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1037 (use )= warning && now - lastMemoryWarningAt )= 3…
+  Zeile 1037: prüft `(use )= warning && now - lastMemoryWarningAt )= 3…`.
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+Schritt Z.1046 long cooldown = TimeUnit.SECONDS.toMillis(Math.ma…
+  Zeile 1046: rechnet Zeit um oder wartet. `long cooldown = TimeUnit.SECONDS.toMillis(Math.ma…`
+MemoryProtectionPolicy.sample
+  Misst `sample`.
+FabricLauncherPlugin.sampleHostMemory.Teil3.Z1052
+  Fortsetzung des Ablaufs ab Zeile 1052.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.sampleHostMemory`, Quellreihenfolge.

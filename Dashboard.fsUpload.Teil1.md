@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.safe
+  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+if Z.877 (name.isBlank() // name.contains('/') // name.con…
+  Zeile 877: prüft `(name.isBlank() // name.contains('/') // name.con…`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.877 return;
+  Zeile 877: Rückgabe `return;`.
+Dashboard.rel
+  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+```
+
 - Fortsetzung von `Dashboard.fsUpload`, Quellreihenfolge.

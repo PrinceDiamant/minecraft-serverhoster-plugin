@@ -22,4 +22,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.188 (keep (= 0)
+  Zeile 188: prüft `(keep (= 0)`.
+return Z.188 return;
+  Zeile 188: Rückgabe `return;`.
+try Z.190
+  Zeile 190: Versuch. Der Fehlerpfad geht in catch.
+for Z.190 (Path p : ds)
+  Zeile 190: Schleife `(Path p : ds)`.
+for Z.192 (int i = keep; i ( zips.size(); i++)
+  Zeile 192: Schleife `(int i = keep; i ( zips.size(); i++)`.
+Schritt Z.192 Files.deleteIfExists(zips.get(i));
+  Zeile 192: Dateioperation. `Files.deleteIfExists(zips.get(i));`
+```
+
 - `retain` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

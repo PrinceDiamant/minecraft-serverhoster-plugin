@@ -13,4 +13,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RuntimeLimits.RuntimeLimits
+  `RuntimeLimits` in `RuntimeLimits.java`.
+RuntimeLimits.boundedSeconds
+  Begrenzt `boundedSeconds`.
+RuntimeLimits.memory
+  Betrifft den Speicher `memory`. Ruft `percent`.
+RuntimeLimits.percent
+  `percent` in `RuntimeLimits.java`.
+```
+
 

@@ -22,4 +22,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.308 (Files.isSymbolicLink(root))
+  Zeile 308: prüft `(Files.isSymbolicLink(root))`.
+throw Z.308 throw new SecurityException('refusing symbolic li…
+  Zeile 308: Abbruch `throw new SecurityException('refusing symbolic li…`.
+HostFirstSetup.deleteTree.visitFile
+  `visitFile` in `HostFirstSetup.java`.
+HostFirstSetup.deleteTree.postVisitDirectory
+  Sendet POST `postVisitDirectory`.
+```
+
 - `deleteTree` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

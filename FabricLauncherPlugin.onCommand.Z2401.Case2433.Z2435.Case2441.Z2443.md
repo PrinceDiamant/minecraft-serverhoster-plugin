@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.2443 exec.submit(() -) ( try ( msg(s, String.valueOf(h…
+  Zeile 2443: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( try ( msg(s, String.valueOf(h…`
+try Z.2443
+  Zeile 2443: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.msg
+  Sendet eine Chat-Zeile `msg`.
+FabricLauncherPlugin.hostMinimizeRollback
+  Betrifft den Host `hostMinimizeRollback`. Ruft `readHostMinimizeState`, `restore`, `getWorldRoot`.
+catch Z.2443 (Exception e)
+  Zeile 2443: fängt (Exception e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2433.Z2435.Case2441`, Quellreihenfolge.

@@ -26,4 +26,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.384 (parts.length == 2 && parts(1).equals('toggle') &…
+  Zeile 384: prüft `(parts.length == 2 && parts(1).equals('toggle') &…`.
+Dashboard.parseJsonObject
+  Wertet aus `parseJsonObject`.
+Dashboard.readBodyText
+  Liest `readBodyText`.
+if Z.386 (!request.has('enabled') // !request.get('enabled…
+  Zeile 386: prüft `(!request.has('enabled') // !request.get('enabled…`.
+throw Z.388 throw new IllegalArgumentException('enabled muss …
+  Zeile 388: Abbruch `throw new IllegalArgumentException('enabled muss …`.
+Dashboard.schedulesApi.Teil2.Z384.Z390
+  Fortsetzung des Ablaufs ab Zeile 390.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+ScheduleDef.toJson
+  `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+return Z.399 return;
+  Zeile 399: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.schedulesApi.Teil2`, Quellreihenfolge.

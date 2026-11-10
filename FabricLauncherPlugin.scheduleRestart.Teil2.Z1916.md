@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1916 (!RestartPolicy.mayRetry(slot.attempts, max))
+  Zeile 1916: prüft `(!RestartPolicy.mayRetry(slot.attempts, max))`.
+RestartPolicy.mayRetry
+  `mayRetry` in `RestartPolicy.java`.
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+return Z.1923 return;
+  Zeile 1923: Rückgabe `return;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil2`, Quellreihenfolge.

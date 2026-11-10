@@ -1,0 +1,15 @@
+.knoten-hover {
+  position: fixed;
+  z-index: 9999;
+  max-width: 28rem;
+  padding: 8px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  box-shadow: var(--shadow-s);
+  font-size: 13px;
+  line-height: 1.35;
+  pointer-events: none;
+  white-space: normal;
+}

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.hostFirstSetupMarker
+  Betrifft den Host `hostFirstSetupMarker`.
+Schritt Z.71 boolean freshInstall = !Files.exists(getDataFolde…
+  Zeile 71: Dateioperation. `boolean freshInstall = !Files.exists(getDataFolde…`
+FabricLauncherPlugin.onLoad.Z73
+  Fortsetzung des Ablaufs ab Zeile 73.
+```
+
 - Spigot `onLoad`: Marker `HostFirstSetup`, bevor Welten laden.

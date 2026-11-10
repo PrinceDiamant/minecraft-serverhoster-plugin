@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.327 return 'MinHeapFreeRatio'.equals(name);
+  Zeile 327: Rückgabe `return 'MinHeapFreeRatio'.equals(name);`.
+```
+
 - `manageable` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
 - Auslöser: Test

@@ -16,4 +16,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+NtfyNotifier.NtfyNotifier
+  `NtfyNotifier` in `NtfyNotifier.java`.
+NtfyNotifier.send
+  Sendet `send`. Ruft `target`, `encodeHeader`, `validPriority`.
+NtfyNotifier.target
+  `target` in `NtfyNotifier.java`.
+NtfyNotifier.encodeHeader
+  Kodiert `encodeHeader`.
+NtfyNotifier.validPriority
+  `validPriority` in `NtfyNotifier.java`.
+```
+
 

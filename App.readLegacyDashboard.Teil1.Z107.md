@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.107 ( ('t-players', 'player-workflow-root')…
+  Zeile 107: Schleife `( ('t-players', 'player-workflow-root')…`.
+if Z.114 !section
+  Zeile 114: prüft `!section`.
+throw Z.114 throw new Error('Dashboard section $(sectionId) i…
+  Zeile 114: Abbruch `throw new Error('Dashboard section $(sectionId) i…`.
+```
+
 - Fortsetzung von `App.readLegacyDashboard.Teil1`, Quellreihenfolge.

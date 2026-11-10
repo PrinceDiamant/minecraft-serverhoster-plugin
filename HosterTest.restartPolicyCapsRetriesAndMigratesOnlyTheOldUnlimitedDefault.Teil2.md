@@ -13,4 +13,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RestartPolicy.maxAttempts
+  Begrenzt nach oben `maxAttempts`.
+```
+
 - Fortsetzung von `HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault`, Quellreihenfolge.

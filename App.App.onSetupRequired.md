@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.182 becameRequired
+  Zeile 182: prüft `becameRequired`.
+App.App.navigateTo
+  Wechselt die Route `navigateTo`. Ruft `tab`.
+```
+
 - `onSetupRequired` in `ui/src/App.tsx`

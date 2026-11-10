@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.rsaPkcs1.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.rsaPkcs1.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `rsaPkcs1` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

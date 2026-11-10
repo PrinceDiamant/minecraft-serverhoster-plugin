@@ -31,4 +31,31 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.loadTxt
+  Lädt `loadTxt`. Ruft `api`, `$`.
+index.saveTxt
+  Speichert `saveTxt`. Ruft `$`, `post`, `toast`.
+index.loadPropertiesPreview
+  Lädt `loadPropertiesPreview`. Ruft `api`, `$`, `esc`.
+index.jp
+  Baut einen Pfad `jp`.
+index.ls
+  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+index.openFile
+  Öffnet `openFile`. Ruft `api`, `$`.
+index.saveFile
+  Speichert `saveFile`. Ruft `$`, `toast`, `post`.
+index.ren
+  Benennt um `ren`. Ruft `post`, `$`, `setPath`.
+index.del
+  Löscht `del`. Ruft `post`, `$`, `toast`.
+index.mkdir
+  Legt einen Ordner an `mkdir`. Ruft `post`, `jp`, `ls`.
+index.newFile
+  `newFile` in `index.html`. Ruft `post`, `jp`, `ls`.
+index.upload
+  Lädt hoch `upload`. Ruft `api`, `toast`, `$`.
+```
+
 

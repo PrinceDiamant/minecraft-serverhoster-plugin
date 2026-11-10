@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.2337
+  Zeile 2337: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.refreshHostMinimize.Z2337.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.refreshHostMinimize.Z2337.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.refreshHostMinimize.Z2337.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.refreshHostMinimize.Z2337.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+catch Z.2374 (Exception e)
+  Zeile 2374: fängt (Exception e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.refreshHostMinimize`, Quellreihenfolge.

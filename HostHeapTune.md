@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostHeapTune.HostHeapTune
+  Betrifft den Host `HostHeapTune`.
+HostHeapTune.apply
+  Wendet an `apply`.
+HostHeapTune.hotspot
+  `hotspot` in `HostHeapTune.java`. Ruft `manageable`, `get`, `set`.
+```
+
 

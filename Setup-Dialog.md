@@ -20,4 +20,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.setupRequired
+  `setupRequired` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.dashboardStartBlockReason
+  `dashboardStartBlockReason` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.setupView
+  `setupView` in `FabricLauncherPlugin.java`. Ruft `getWorldRoot`, `scan`, `view`.
+FabricLauncherPlugin.configureSetup
+  `configureSetup` in `FabricLauncherPlugin.java`. Ruft `validateNtfySetup`, `getWorldRoot`, `scan`.
+FabricLauncherPlugin.saveSetupConfigAtomically
+  Speichert `saveSetupConfigAtomically`. Ruft `makeWritable`.
+FabricLauncherPlugin.validateNtfySetup
+  Prüft `validateNtfySetup`.
+FabricLauncherPlugin.findSetupCandidate
+  Sucht `findSetupCandidate`. Ruft `scan`.
+FabricLauncherPlugin.applySetupProfile
+  Wendet an `applySetupProfile`.
+```
+
 

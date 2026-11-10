@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.52 return Paths.get(workingDir).toAbsolutePath().nor…
+  Zeile 52: Rückgabe `return Paths.get(workingDir).toAbsolutePath().nor…`.
+```
+
 - `directory` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

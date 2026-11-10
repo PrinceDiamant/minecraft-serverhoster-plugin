@@ -17,5 +17,16 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.242
+  Zeile 242: Versuch. Der Fehlerpfad geht in catch.
+BackupBridge.connect
+  Verbindet `connect`.
+BackupBridge.table
+  `table` in `BackupBridge.java`.
+return Z.244 return rs.getInt(1);
+  Zeile 244: Rückgabe `return rs.getInt(1);`.
+```
+
 - `count` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/BackupBridge.java:241–246 nur von Tests erreicht

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.scan
+  Durchsucht `scan`. Ruft `legacyPluginVersion`, `isAtLeast`, `loadLegacyConfig`.
+return Z.665 return SetupDiscovery.scan(root, oldCon…
+  Zeile 665: Rückgabe `return SetupDiscovery.scan(root, oldCon…`.
+```
+
 - `findSetupCandidate` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

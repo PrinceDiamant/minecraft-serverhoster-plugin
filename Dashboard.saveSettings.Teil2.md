@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.settingsView
+  `settingsView` in `FabricLauncherPlugin.java`. Ruft `from`, `view`.
+return Z.793 return Map.of('ok', true, 'settings', p…
+  Zeile 793: Rückgabe `return Map.of('ok', true, 'settings', p…`.
+```
+
 - Fortsetzung von `Dashboard.saveSettings`, Quellreihenfolge.

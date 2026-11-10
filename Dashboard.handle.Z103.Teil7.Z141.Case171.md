@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.text
+  Antwortet mit Text `text`. Ruft `sendBytes`.
+Dashboard.readOr
+  Liest `readOr`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.

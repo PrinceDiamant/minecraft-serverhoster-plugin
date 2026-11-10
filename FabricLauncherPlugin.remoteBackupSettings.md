@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1475 FileConfiguration c = getConfig();
+  Zeile 1475: liest die Config. `FileConfiguration c = getConfig();`
+return Z.1476 return new RemoteBackupBridge.Settings(c.getStrin…
+  Zeile 1476: Rückgabe `return new RemoteBackupBridge.Settings(c.getStrin…`.
+```
+
 - `remoteBackupSettings` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.66 return f;
+  Zeile 66: Rückgabe `return f;`.
+```
+
 - Fortsetzung von `BackupBridge.file`, Quellreihenfolge.

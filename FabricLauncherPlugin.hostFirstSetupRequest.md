@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.requestManual
+  Fordert an `requestManual`. Ruft `readState`, `writeMarker`.
+FabricLauncherPlugin.hostFirstSetupMarker
+  Betrifft den Host `hostFirstSetupMarker`.
+return Z.2256 return Map.of('firstSetupStatus', 'requested', 's…
+  Zeile 2256: Rückgabe `return Map.of('firstSetupStatus', 'requested', 's…`.
+```
+
 - `hostFirstSetupRequest` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

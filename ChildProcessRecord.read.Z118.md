@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.118
+  Zeile 118: Versuch. Der Fehlerpfad geht in catch.
+ChildProcessRecord.read.Z118.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ChildProcessRecord.read.Z118.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+ChildProcessRecord.read.Z118.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+catch Z.138 (IOException / NumberFormatEx…
+  Zeile 138: fängt (IOException / NumberFormatEx….
+return Z.139 return new Loaded(null, e.getMessage() == null ? …
+  Zeile 139: Rückgabe `return new Loaded(null, e.getMessage() == null ? …`.
+```
+
 - Fortsetzung von `ChildProcessRecord.read`, Quellreihenfolge.

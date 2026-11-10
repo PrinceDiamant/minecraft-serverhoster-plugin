@@ -27,4 +27,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.12 (!(raw instanceof Number number))
+  Zeile 12: prüft `(!(raw instanceof Number number))`.
+throw Z.13 throw new IllegalArgumentException('autoRestart.m…
+  Zeile 13: Abbruch `throw new IllegalArgumentException('autoRestart.m…`.
+try Z.14
+  Zeile 14: Versuch. Der Fehlerpfad geht in catch.
+if Z.16 (value ( 1 // value ) MAX_ATTEMPTS_LIMIT)
+  Zeile 16: prüft `(value ( 1 // value ) MAX_ATTEMPTS_LIMIT)`.
+throw Z.17 throw new IllegalArgumentException('autoRestart.m…
+  Zeile 17: Abbruch `throw new IllegalArgumentException('autoRestart.m…`.
+return Z.19 return value;
+  Zeile 19: Rückgabe `return value;`.
+catch Z.20 (NumberFormatException / Arit…
+  Zeile 20: fängt (NumberFormatException / Arit….
+throw Z.21 throw new IllegalArgumentException('autoRestart.m…
+  Zeile 21: Abbruch `throw new IllegalArgumentException('autoRestart.m…`.
+```
+
 - `maxAttempts` in `src/main/java/de/aichele/childlauncher/RestartPolicy.java`

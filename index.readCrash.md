@@ -22,4 +22,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+if Z.211 !n
+  Zeile 211: prüft `!n`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+return Z.211 return
+  Zeile 211: Rückgabe `return`.
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+```
+
 - `readCrash` in `src/main/resources/web/index.html`

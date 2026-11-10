@@ -21,4 +21,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.107 (String relative : paths)
+  Zeile 107: Schleife `(String relative : paths)`.
+try Z.109
+  Zeile 109: Versuch. Der Fehlerpfad geht in catch.
+PathGuard.resolve
+  Löst auf `resolve`.
+catch Z.110 (SecurityException e)
+  Zeile 110: fängt (SecurityException e).
+if Z.111 (!Files.exists(start) // Files.isSymbolicLink(sta…
+  Zeile 111: prüft `(!Files.exists(start) // Files.isSymbolicLink(sta…`.
+RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1.Z104.Z107.Z112
+  Fortsetzung des Ablaufs ab Zeile 112.
+```
+
 - Fortsetzung von `RemoteBackupBridge.archive.Z92.Teil1.Z99.Teil1.Z104`, Quellreihenfolge.

@@ -20,4 +20,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+if Z.126 !v
+  Zeile 126: prüft `!v`.
+return Z.126 return;
+  Zeile 126: Rückgabe `return;`.
+index.cmd
+  Sendet einen Befehl `cmd`. Ruft `post`, `toast`.
+```
+
 - `sendCmd` in `src/main/resources/web/index.html`

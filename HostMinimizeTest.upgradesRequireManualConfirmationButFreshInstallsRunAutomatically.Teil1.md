@@ -19,4 +19,13 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+HostFirstSetup.shouldRun
+  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+HostFirstSetup.requestManual
+  Fordert an `requestManual`. Ruft `readState`, `writeMarker`.
+```
+
 - Fortsetzung von `HostMinimizeTest.upgradesRequireManualConfirmationButFreshInstallsRunAutomatically`, Quellreihenfolge.

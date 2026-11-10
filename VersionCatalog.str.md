@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.95 return e == null // e.isJsonNull() ? '' : e.getAs…
+  Zeile 95: Rückgabe `return e == null // e.isJsonNull() ? '' : e.getAs…`.
+```
+
 - `str` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.ScheduleDef
+  Plant `ScheduleDef`. Ruft `validateInterval`.
+ScheduleExecution.run
+  Führt aus `run`.
+```
+
 - Fortsetzung von `HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure`, Quellreihenfolge.

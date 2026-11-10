@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.22 (JsonElement e : manifest.getAsJsonArra…
+  Zeile 22: Schleife `(JsonElement e : manifest.getAsJsonArra…`.
+if Z.24 ('release'.equals(str(o, 'type')))
+  Zeile 24: prüft `('release'.equals(str(o, 'type')))`.
+VersionCatalog.str
+  `str` in `VersionCatalog.java`.
+if Z.25 (ids.size() )= limit)
+  Zeile 25: prüft `(ids.size() )= limit)`.
+```
+
 - Fortsetzung von `VersionCatalog.vanilla`, Quellreihenfolge.

@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildStopSequence.signal
+  `signal` in `ChildStopSequence.java`.
+if Z.60 (!process.waitFor(Math.max(0, termGraceSeconds), …
+  Zeile 60: prüft `(!process.waitFor(Math.max(0, termGraceSeconds), …`.
+Schritt Z.63 process.waitFor(Math.max(0, termGraceSeconds), Ti…
+  Zeile 63: `process.waitFor(Math.max(0, termGraceSeconds), Ti…`
+return Z.66 return Outcome.KILLED;
+  Zeile 66: Rückgabe `return Outcome.KILLED;`.
+```
+
 - Fortsetzung von `ChildStopSequence.stop.Z21`, Quellreihenfolge.

@@ -16,4 +16,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CrashIndex.read
+  Liest `read`. Ruft `open`, `resolve`, `query`.
+if Z.496 (linked)
+  Zeile 496: prüft `(linked)`.
+```
+
 - Fortsetzung von `HosterTest.crashIndexReadsAndRejectsEscape`, Quellreihenfolge.

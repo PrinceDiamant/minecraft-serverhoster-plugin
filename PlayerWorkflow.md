@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PlayerWorkflow.sendCommand
+  Sendet `sendCommand`. Ruft `dashboardRequest`, `jsonBody`.
+PlayerWorkflow.PlayerWorkflow
+  `PlayerWorkflow` in `PlayerWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `runPlayerAction`.
+```
+
 

@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerProfile.ServerProfile
+  `ServerProfile` in `ServerProfile.java`.
+return Z.685 return new ServerProfile('t', type, mc,…
+  Zeile 685: Rückgabe `return new ServerProfile('t', type, mc,…`.
+```
+
 - `profile` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.460 (schedule.enabled())
+  Zeile 460: prüft `(schedule.enabled())`.
+try Z.461
+  Zeile 461: Versuch. Der Fehlerpfad geht in catch.
+CronExpr.next
+  Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+ScheduleDef.cron
+  `cron` in `ScheduleDef.java`.
+catch Z.465 (RuntimeException e)
+  Zeile 465: fängt (RuntimeException e).
+```
+
 - Fortsetzung von `Dashboard.scheduleJson`, Quellreihenfolge.

@@ -18,4 +18,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ProcessProbe.ProcessProbe
+  `ProcessProbe` in `ProcessProbe.java`.
+ProcessProbe.snapshot
+  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+ProcessProbe.disk
+  Liest die Platte `disk`.
+ProcessProbe.jcmd(long,String)
+  `jcmd` in `ProcessProbe.java`. Ruft `jcmd`.
+ProcessProbe.jcmd(long,String,long)
+  `jcmd` in `ProcessProbe.java`. Ruft `abbreviate`.
+ProcessProbe.kb
+  `kb` in `ProcessProbe.java`.
+ProcessProbe.abbreviate
+  `abbreviate` in `ProcessProbe.java`.
+```
+
 

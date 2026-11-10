@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.354 long pid = ProcessHandle.current().pid();
+  Zeile 354: fragt den Prozess ab. `long pid = ProcessHandle.current().pid();`
+ProcessProbe.snapshot
+  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+if Z.356 (System.getProperty('os.name', '').toLowerCase().…
+  Zeile 356: prüft `(System.getProperty('os.name', '').toLowerCase().…`.
+ProcessProbe.jcmd(long,String)
+  `jcmd` in `ProcessProbe.java`. Ruft `jcmd`.
+```
+
 - Fortsetzung von `CoreAdminTest.probeAndIndexContract`, Quellreihenfolge.

@@ -27,4 +27,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1602
+  Zeile 1602: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.runSchedule.Z1602.Z1603
+  Fortsetzung des Ablaufs ab Zeile 1603.
+FabricLauncherPlugin.noteTask
+  Merkt `noteTask`.
+catch Z.1616 (InterruptedException e)
+  Zeile 1616: fängt (InterruptedException e).
+catch Z.1620 (Exception e)
+  Zeile 1620: fängt (Exception e).
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+finally Z.1602
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runSchedule`, Quellreihenfolge.

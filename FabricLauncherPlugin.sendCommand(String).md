@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.sendCommand(String,String)
+  Sendet `sendCommand`. Ruft `send`, `slot`.
+return Z.316 return sendCommand(focus, c);
+  Zeile 316: Rückgabe `return sendCommand(focus, c);`.
+```
+
 - `sendCommand` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

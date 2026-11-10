@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.safeId
+  Prüft die Pfadgrenze `safeId`.
+RemoteBackupBridge.list.Z70
+  Fortsetzung des Ablaufs ab Zeile 70.
+```
+
 - `list` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

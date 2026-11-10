@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.71 return result;
+  Zeile 71: Rückgabe `return result;`.
+```
+
 - `view` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

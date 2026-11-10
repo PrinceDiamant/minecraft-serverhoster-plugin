@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskDef
+  Ein alter Task aus der Liste tasks.
+ScheduleDef
+  Ein Zeitplan: Id, Cron, Aktion, an oder aus.
+ScheduleExecution
+  Führt einen fälligen Zeitplan aus.
+LegacyTaskMigration
+  Übernimmt alte tasks in schedules.
+CronExpr
+  Wertet den Cron-Ausdruck aus und sagt, ob er fällig ist.
+```
+
 

@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.123 es
+  Zeile 123: prüft `es`.
+index.$
+  `$` in `index.html`.
+index.addLine
+  Fügt hinzu `addLine`. Ruft `$`, `cls`.
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+```
+
 - `stream` in `src/main/resources/web/index.html`

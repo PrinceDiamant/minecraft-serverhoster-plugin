@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.identityRequiresStartInstantAndCommandNotJustPid.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.identityRequiresStartInstantAndCommandNotJustPid.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `identityRequiresStartInstantAndCommandNotJustPid` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

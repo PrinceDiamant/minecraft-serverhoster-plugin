@@ -23,4 +23,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+case Z.237 'POST /api/host-minimize'
+  Zeile 237: Zweig `'POST /api/host-minimize'`.
+Dashboard.handle.Z103.Teil7.Z141.Case237
+  Rumpf dieses switch-Zweigs ab Zeile 237.
+case Z.238 'POST /api/host-first-setup'
+  Zeile 238: Zweig `'POST /api/host-first-setup'`.
+Dashboard.handle.Z103.Teil7.Z141.Case238
+  Rumpf dieses switch-Zweigs ab Zeile 238.
+case Z.240 'GET /api/setup'
+  Zeile 240: Zweig `'GET /api/setup'`.
+Dashboard.handle.Z103.Teil7.Z141.Case240
+  Rumpf dieses switch-Zweigs ab Zeile 240.
+case Z.241 'POST /api/setup'
+  Zeile 241: Zweig `'POST /api/setup'`.
+Dashboard.handle.Z103.Teil7.Z141.Case241
+  Rumpf dieses switch-Zweigs ab Zeile 241.
+case Z.242 'POST /api/setup/cleanup'
+  Zeile 242: Zweig `'POST /api/setup/cleanup'`.
+Dashboard.handle.Z103.Teil7.Z141.Case242
+  Rumpf dieses switch-Zweigs ab Zeile 242.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.

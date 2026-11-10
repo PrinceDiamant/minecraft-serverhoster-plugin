@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PropertiesFile.preview
+  Zeigt die Vorschau `preview`.
+return Z.2666 return PropertiesFile.preview(propertie…
+  Zeile 2666: Rückgabe `return PropertiesFile.preview(propertie…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.serverPropertiesPreview`, Quellreihenfolge.

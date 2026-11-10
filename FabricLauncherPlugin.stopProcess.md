@@ -11,6 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.stopProcess.Z1994
+  Fortsetzung des Ablaufs ab Zeile 1994.
+```
+
 ```mermaid
 sequenceDiagram
   participant Caller

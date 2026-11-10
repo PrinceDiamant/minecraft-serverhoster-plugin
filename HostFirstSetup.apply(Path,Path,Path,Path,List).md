@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.apply(Path,Path,Path,Path,List).Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.apply(Path,Path,Path,Path,List).Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.apply(Path,Path,Path,Path,List).Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.apply(Path,Path,Path,Path,List).Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.apply(Path,Path,Path,Path,List).Teil5
+  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `apply` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

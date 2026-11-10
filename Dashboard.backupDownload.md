@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.backupFiles
+  Sichert `backupFiles`. Ruft `remoteBackupSelected`, `backupCredentials`, `list`.
+try Z.618
+  Zeile 618: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.downloadBackup
+  Liefert zum Herunterladen `downloadBackup`. Ruft `remoteBackupSelected`, `backupCredentials`, `download`.
+```
+
 - `backupDownload` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
 - Befund: Logikrisiko, sicher. Dashboard.java nimmt die Fokus-ID, Query server wird ignoriert

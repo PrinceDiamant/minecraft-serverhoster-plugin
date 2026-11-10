@@ -17,4 +17,15 @@ flowchart TD
   style n4 fill:#f88,stroke:#900
 ```
 
+```knoten
+Schritt Z.187 assertTrue(Files.exists(root.resolve('plugins/Oth…
+  Zeile 187: Dateioperation. `assertTrue(Files.exists(root.resolve('plugins/Oth…`
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+HostFirstSetup.shouldRun
+  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+HostFirstSetup.completeRestart(Path,Path,Path,Set)
+  Schließt ab `completeRestart`. Ruft `completeRestart`. Befund: toter Code (wahrscheinlich).
+```
+
 - Fortsetzung von `HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby`, Quellreihenfolge.

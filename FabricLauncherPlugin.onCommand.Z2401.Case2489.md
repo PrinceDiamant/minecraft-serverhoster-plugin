@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.diagMap()
+  Sammelt die Diagnose `diagMap`. Ruft `diagMap`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

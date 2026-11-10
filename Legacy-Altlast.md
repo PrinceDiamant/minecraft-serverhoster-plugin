@@ -20,4 +20,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.pc
+  Sendet einen Spielerbefehl `pc`. Ruft `$`, `toast`, `cmd`.
+index.loadPlayers
+  Lädt `loadPlayers`. Ruft `api`, `$`, `esc`.
+index.loadTasks
+  Lädt `loadTasks`. Ruft `api`, `$`, `esc`.
+index.runTask
+  Führt aus `runTask`. Ruft `post`, `toast`.
+index.loadBackup
+  Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
+index.delBackup
+  Löscht `delBackup`. Ruft `post`, `toast`, `loadBackup`.
+index.restoreBackup
+  Stellt wieder her `restoreBackup`. Ruft `post`, `toast`, `loadBackup`.
+index.doBackup
+  Führt aus `doBackup`. Ruft `post`, `$`, `toast`.
+index.testBackup
+  Prüft `testBackup`. Ruft `post`, `toast`.
+```
+
 

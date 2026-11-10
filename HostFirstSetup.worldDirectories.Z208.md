@@ -20,4 +20,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.208 (String name : previousWorlds)
+  Zeile 208: Schleife `(String name : previousWorlds)`.
+if Z.209 (!safeWorldName(name))
+  Zeile 209: prüft `(!safeWorldName(name))`.
+HostFirstSetup.safeWorldName
+  Prüft die Pfadgrenze `safeWorldName`.
+HostFirstSetup.addIfDirectory
+  Fügt hinzu `addIfDirectory`. Ruft `safeWorldName`.
+```
+
 - Fortsetzung von `HostFirstSetup.worldDirectories`, Quellreihenfolge.

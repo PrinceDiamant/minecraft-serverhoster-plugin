@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.96 return host.chars().anyMatch(c -) Character.isWhi…
+  Zeile 96: Rückgabe `return host.chars().anyMatch(c -) Character.isWhi…`.
+```
+
 - `hasUnsafeHostCharacter` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

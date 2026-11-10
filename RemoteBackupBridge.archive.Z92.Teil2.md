@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.retain
+  Behält die letzten Stücke `retain`. Ruft `named`, `replyError`.
+RemoteBackupBridge.remotePath
+  `remotePath` in `RemoteBackupBridge.java`.
+if Z.142 (backup.dbEnabled())
+  Zeile 142: prüft `(backup.dbEnabled())`.
+try Z.143
+  Zeile 143: Versuch. Der Fehlerpfad geht in catch.
+BackupBridge.insert
+  Fügt ein `insert`. Ruft `connect`, `table`, `ensureTable`.
+catch Z.144 (Exception e)
+  Zeile 144: fängt (Exception e).
+return Z.146 return new Result(id, remotePath, bytes, sha, db,…
+  Zeile 146: Rückgabe `return new Result(id, remotePath, bytes, sha, db,…`.
+```
+
 - Fortsetzung von `RemoteBackupBridge.archive.Z92`, Quellreihenfolge.

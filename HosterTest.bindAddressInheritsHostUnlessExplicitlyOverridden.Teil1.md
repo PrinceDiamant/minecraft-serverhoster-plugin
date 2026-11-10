@@ -20,4 +20,11 @@ flowchart TD
   style n6 fill:#f88,stroke:#900
 ```
 
+```knoten
+FabricLauncherPlugin.effectiveBindAddress
+  Liefert den wirksamen Wert `effectiveBindAddress`.
+Profiles.load
+  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+```
+
 - Fortsetzung von `HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden`, Quellreihenfolge.

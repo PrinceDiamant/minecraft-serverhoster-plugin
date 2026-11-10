@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.215
+  Zeile 215: Versuch. Der Fehlerpfad geht in catch.
+return Z.216 return Enum.valueOf(type, value.toUpperCase(Local…
+  Zeile 216: Rückgabe `return Enum.valueOf(type, value.toUpperCase(Local…`.
+catch Z.217 (IllegalArgumentException e)
+  Zeile 217: fängt (IllegalArgumentException e).
+throw Z.218 throw new IllegalArgumentException('Ungültiger We…
+  Zeile 218: Abbruch `throw new IllegalArgumentException('Ungültiger We…`.
+```
+
 - `enumValue` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

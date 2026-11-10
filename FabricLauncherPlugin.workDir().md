@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+return Z.859 return profile(focus).directory();
+  Zeile 859: Rückgabe `return profile(focus).directory();`.
+```
+
 - `workDir` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:859–859 kein Produktionsaufruf im Aufrufgraph

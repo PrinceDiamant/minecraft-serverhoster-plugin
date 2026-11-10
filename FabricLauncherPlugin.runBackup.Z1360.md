@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.1360
+  Zeile 1360: synchronisierter Block.
+FabricLauncherPlugin.runBackup.Z1360.Z1362
+  Fortsetzung des Ablaufs ab Zeile 1362.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runBackup`, Quellreihenfolge.

@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.226 (!safeWorldName(name))
+  Zeile 226: prüft `(!safeWorldName(name))`.
+HostFirstSetup.safeWorldName
+  Prüft die Pfadgrenze `safeWorldName`.
+return Z.226 return;
+  Zeile 226: Rückgabe `return;`.
+if Z.228 (candidate.getParent() != null && candidate.getPa…
+  Zeile 228: prüft `(candidate.getParent() != null && candidate.getPa…`.
+```
+
 - `addIfDirectory` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

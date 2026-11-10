@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.ScheduleDef
+  Plant `ScheduleDef`. Ruft `validateInterval`.
+ScheduleDef.string
+  `string` in `ScheduleDef.java`.
+ScheduleDef.bool
+  `bool` in `ScheduleDef.java`.
+ScheduleDef.enumValue
+  `enumValue` in `ScheduleDef.java`.
+```
+
 - Fortsetzung von `ScheduleDef.load.Z118.Teil2`, Quellreihenfolge.

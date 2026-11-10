@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+GcDiagnostics.snapshot()
+  `snapshot` in `GcDiagnostics.java`. Ruft `snapshot`.
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.telemetryKeepsHeapRssHostAndCgroupDistinctAndRotates`, Quellreihenfolge.

@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.142 (Files.isDirectory(start))
+  Zeile 142: prüft `(Files.isDirectory(start))`.
+BackupBridge.archive.Teil2.Z136.Z138.Z142.Z143
+  Fortsetzung des Ablaufs ab Zeile 143.
+if Z.150 (pRealInside(guard, start))
+  Zeile 150: prüft `(pRealInside(guard, start))`.
+BackupBridge.pRealInside
+  `pRealInside` in `BackupBridge.java`. Ruft `root`.
+BackupBridge.write
+  Schreibt `write`.
+PathGuard.root
+  Liefert die Wurzel `root`.
+```
+
 - Fortsetzung von `BackupBridge.archive.Teil2.Z136.Z138`, Quellreihenfolge.

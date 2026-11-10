@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.281 (override != null && !override.isBlank())
+  Zeile 281: prüft `(override != null && !override.isBlank())`.
+return Z.281 return override.trim();
+  Zeile 281: Rückgabe `return override.trim();`.
+return Z.282 return hostAddress == null ? '' : hostAddress.tri…
+  Zeile 282: Rückgabe `return hostAddress == null ? '' : hostAddress.tri…`.
+```
+
 - `effectiveBindAddress` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

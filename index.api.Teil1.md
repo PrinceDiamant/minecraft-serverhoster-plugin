@@ -16,4 +16,15 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+index.scoped
+  Gibt `path` unverändert zurück. Befund: Altlast (sicher).
+if Z.79 r.status===401
+  Zeile 79: prüft `r.status===401`.
+index.showLogin
+  Zeigt `showLogin`. Ruft `$`.
+throw Z.79 throw new Error('Nicht angemeldet')
+  Zeile 79: Abbruch `throw new Error('Nicht angemeldet')`.
+```
+
 - Fortsetzung von `index.api`, Quellreihenfolge.

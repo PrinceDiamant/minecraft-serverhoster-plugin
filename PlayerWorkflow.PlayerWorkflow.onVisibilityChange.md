@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.64 active.current && !document.hidden
+  Zeile 64: prüft `active.current && !document.hidden`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - `onVisibilityChange` in `ui/src/components/PlayerWorkflow.tsx`

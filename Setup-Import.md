@@ -18,4 +18,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.importLegacyConfiguration
+  Importiert `importLegacyConfiguration`. Ruft `loadLegacyConfig`, `directory`, `migrateLegacySecrets`.
+FabricLauncherPlugin.migrateLegacySecrets
+  Übernimmt den alten Wert von `migrateLegacySecrets`. Ruft `copyLegacyFile`, `load`.
+FabricLauncherPlugin.migrateLegacyHttpsMaterial
+  Übernimmt den alten Wert von `migrateLegacyHttpsMaterial`. Ruft `migrateHttpsFile`.
+FabricLauncherPlugin.migrateHttpsFile
+  Übernimmt den alten Wert von `migrateHttpsFile`. Ruft `copyLegacyFile`.
+FabricLauncherPlugin.migrateMemoryRecoveryState
+  Übernimmt den alten Wert von `migrateMemoryRecoveryState`. Ruft `memoryRecoveryFile`, `copyLegacyFile`.
+FabricLauncherPlugin.recoverPendingSetupDirectories
+  Hebt hängende Zustände auf `recoverPendingSetupDirectories`. Ruft `recover`, `getWorldRoot`, `cleanupLegacyDirectory`.
+```
+
 

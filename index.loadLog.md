@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.loadLog.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+index.loadLog.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `loadLog` in `src/main/resources/web/index.html`

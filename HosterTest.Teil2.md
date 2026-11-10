@@ -23,4 +23,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting
+  `propertiesPreviewShowsStartupDiffWithoutWriting` in `HosterTest.java`. Ruft `preview`. Nur Test.
+HosterTest.dashboardKeepsHosterDataAndBundledVoxelDashAttribution
+  `dashboardKeepsHosterDataAndBundledVoxelDashAttribution` in `HosterTest.java`. Nur Test.
+HosterTest.cronRespectsZoneAndSunday
+  `cronRespectsZoneAndSunday` in `HosterTest.java`. Ruft `matches`, `next`. Nur Test.
+HosterTest.tasksParse
+  `tasksParse` in `HosterTest.java`. Ruft `load`. Nur Test.
+HosterTest.schedulesValidateVoxelDashIntervalsAndKeepOrderedActions
+  `schedulesValidateVoxelDashIntervalsAndKeepOrderedActions` in `HosterTest.java`. Ruft `ScheduleDef`, `cron`, `load`. Nur Test.
+HosterTest.scheduleExecutionPreservesOrderAndStopsAfterFailure
+  Plant `scheduleExecutionPreservesOrderAndStopsAfterFailure`. Ruft `ScheduleDef`, `run`. Nur Test.
+HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault
+  `restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault` in `HosterTest.java`. Ruft `maxAttempts`, `mayRetry`, `migrateLegacyUnlimited`. Nur Test.
+HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault
+  `restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault` in `HosterTest.java`. Ruft `migrateLegacyRestartPolicy`. Nur Test.
+```
+
 

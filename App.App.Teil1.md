@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.tabFromPath
+  Wechselt den Tab `tabFromPath`.
+```
+
 - Fortsetzung von `App.App`, Quellreihenfolge.

@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.Session.close
+  Schließt `close`. Ruft `replyError`.
+```
+
 

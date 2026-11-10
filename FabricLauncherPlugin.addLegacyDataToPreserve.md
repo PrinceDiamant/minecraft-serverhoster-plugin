@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.445 (Files.isSymbolicLink(normalized))
+  Zeile 445: prüft `(Files.isSymbolicLink(normalized))`.
+throw Z.446 throw new SecurityException('Refusing to clean le…
+  Zeile 446: Abbruch `throw new SecurityException('Refusing to clean le…`.
+if Z.447 (Files.exists(normalized, LinkOption.NOFOLLOW_LIN…
+  Zeile 447: prüft `(Files.exists(normalized, LinkOption.NOFOLLOW_LIN…`.
+```
+
 - `addLegacyDataToPreserve` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

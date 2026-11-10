@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.1643
+  Zeile 1643: synchronisierter Block.
+if Z.1646 (target.running() && !target.onlinePlayers.isEmpt…
+  Zeile 1646: prüft `(target.running() && !target.onlinePlayers.isEmpt…`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+FabricLauncherPlugin.runScheduledBackup.Z1632.Z1643.Z1649
+  Fortsetzung des Ablaufs ab Zeile 1649.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632`, Quellreihenfolge.

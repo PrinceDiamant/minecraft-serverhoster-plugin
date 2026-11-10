@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.733 (!Thread.currentThread().isInterrupted(…
+  Zeile 733: Schleife `(!Thread.currentThread().isInterrupted(…`.
+Dashboard.sse.Z729.Z733.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.sse.Z729.Z733.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `Dashboard.sse.Z729`, Quellreihenfolge.

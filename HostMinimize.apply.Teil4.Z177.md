@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.177
+  Zeile 177: Versuch. Der Fehlerpfad geht in catch.
+HostMinimize.apply.Teil4.Z177.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostMinimize.apply.Teil4.Z177.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+catch Z.184 (IOException / RuntimeExcepti…
+  Zeile 184: fängt (IOException / RuntimeExcepti….
+HostMinimize.restore
+  Stellt wieder her `restore`. Ruft `assertEditable`.
+throw Z.186 throw e;
+  Zeile 186: Abbruch `throw e;`.
+```
+
 - Fortsetzung von `HostMinimize.apply.Teil4`, Quellreihenfolge.

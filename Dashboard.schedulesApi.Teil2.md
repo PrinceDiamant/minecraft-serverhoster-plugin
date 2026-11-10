@@ -22,4 +22,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.schedulesApi.Teil2.Z384
+  Fortsetzung des Ablaufs ab Zeile 384.
+if Z.402 (parts.length != 1)
+  Zeile 402: prüft `(parts.length != 1)`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.404 return;
+  Zeile 404: Rückgabe `return;`.
+Dashboard.schedulesApi.Teil2.Z406
+  Fortsetzung des Ablaufs ab Zeile 406.
+Dashboard.schedulesApi.Teil2.Z419
+  Fortsetzung des Ablaufs ab Zeile 419.
+```
+
 - Fortsetzung von `Dashboard.schedulesApi`, Quellreihenfolge.

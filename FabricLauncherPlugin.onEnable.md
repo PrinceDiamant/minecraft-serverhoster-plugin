@@ -21,6 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.onEnable.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.onEnable.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.onEnable.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.onEnable.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.onEnable.Teil5
+  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.onEnable.Teil6
+  Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
+```
+
 ```mermaid
 sequenceDiagram
   participant Main as Main-Thread

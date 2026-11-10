@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.289 return focus;
+  Zeile 289: Rückgabe `return focus;`.
+```
+
 - `focusId` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerHosterSettings.ServerHosterSettings
+  `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+Dashboard.requiredInt
+  Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+Dashboard.requiredLong
+  Liest verpflichtend `requiredLong`.
+Dashboard.requiredString
+  Liest verpflichtend `requiredString`.
+```
+
 - Fortsetzung von `Dashboard.saveSettings.Teil1`, Quellreihenfolge.

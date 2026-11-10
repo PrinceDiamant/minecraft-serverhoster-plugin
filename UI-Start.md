@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+leer
+  Keine weiteren Knoten.
+```
+
 - `ui/src/main.tsx` ruft `createRoot` und rendert `App`. Kein benannter Funktionsrumpf.

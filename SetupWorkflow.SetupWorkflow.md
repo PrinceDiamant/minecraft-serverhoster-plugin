@@ -27,4 +27,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWorkflow.SetupWorkflow.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+SetupWorkflow.SetupWorkflow.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+SetupWorkflow.SetupWorkflow.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+SetupWorkflow.SetupWorkflow.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+SetupWorkflow.SetupWorkflow.onPageChange
+  Reagiert `onPageChange`. Ruft `refresh`.
+SetupWorkflow.SetupWorkflow.submit
+  Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
+SetupWorkflow.SetupWorkflow.cleanupLegacy
+  Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+SetupWorkflow.SetupWorkflow.hostAction
+  Betrifft den Host `hostAction`. Ruft `dashboardRequest`, `jsonBody`.
+SetupWorkflow.SetupWorkflow.runHostFirstSetup
+  Führt aus `runHostFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+```
+
 - `SetupWorkflow` in `ui/src/components/SetupWorkflow.tsx`

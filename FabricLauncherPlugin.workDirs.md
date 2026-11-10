@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.861 (ServerProfile p : profiles)
+  Zeile 861: Schleife `(ServerProfile p : profiles)`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+return Z.861 return out;
+  Zeile 861: Rückgabe `return out;`.
+```
+
 - `workDirs` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:861–861 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

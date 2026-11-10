@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.54 (importSupported)
+  Zeile 54: prüft `(importSupported)`.
+SetupDiscovery.scan.Teil2.Z54.Z55
+  Fortsetzung des Ablaufs ab Zeile 55.
+```
+
 - Fortsetzung von `SetupDiscovery.scan.Teil2`, Quellreihenfolge.

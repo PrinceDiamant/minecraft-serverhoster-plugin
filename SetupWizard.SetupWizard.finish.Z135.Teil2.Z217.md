@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.217 minimizeConfirmation
+  Zeile 217: prüft `minimizeConfirmation`.
+SetupWizard.SetupWizard.finish.Z135.Teil2.Z217.Z218
+  Fortsetzung des Ablaufs ab Zeile 218.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.finish.Z135.Teil2`, Quellreihenfolge.

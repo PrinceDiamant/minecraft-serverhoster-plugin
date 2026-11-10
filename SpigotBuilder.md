@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SpigotBuilder.SpigotBuilder
+  `SpigotBuilder` in `SpigotBuilder.java`.
+SpigotBuilder.assertRev
+  Prüft `assertRev`.
+SpigotBuilder.command
+  `command` in `SpigotBuilder.java`. Ruft `assertRev`.
+SpigotBuilder.build
+  Baut `build`. Ruft `assertRev`, `download`, `commandExists`.
+SpigotBuilder.commandExists
+  `commandExists` in `SpigotBuilder.java`.
+```
+
 

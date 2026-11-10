@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+index.esc
+  Maskiert HTML `esc`.
+index.ls.Teil2.Z137
+  Fortsetzung des Ablaufs ab Zeile 137.
+```
+
 - Fortsetzung von `index.ls`, Quellreihenfolge.

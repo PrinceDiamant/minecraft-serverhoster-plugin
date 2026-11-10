@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.294 newPassword !== passwordConfirmation
+  Zeile 294: prüft `newPassword !== passwordConfirmation`.
+return Z.296 return;
+  Zeile 296: Rückgabe `return;`.
+App.App.savePassword.Z300
+  Fortsetzung des Ablaufs ab Zeile 300.
+```
+
 - `savePassword` in `ui/src/App.tsx`

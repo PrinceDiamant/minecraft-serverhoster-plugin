@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.47 (childPid ) 0)
+  Zeile 47: prüft `(childPid ) 0)`.
+ProcessProbe.snapshot
+  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+MemoryTelemetry.number
+  `number` in `MemoryTelemetry.java`.
+```
+
 - Fortsetzung von `MemoryTelemetry.read`, Quellreihenfolge.

@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.2292 List(Map(String, Object)) heap = tuned.stream().m…
+  Zeile 2292: `List(Map(String, Object)) heap = tuned.stream().m…`
+return Z.2299 return row;
+  Zeile 2299: Rückgabe `return row;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply.Teil2`, Quellreihenfolge.

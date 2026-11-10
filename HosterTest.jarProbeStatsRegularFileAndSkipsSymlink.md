@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.jarProbeStatsRegularFileAndSkipsSymlink.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.jarProbeStatsRegularFileAndSkipsSymlink.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.jarProbeStatsRegularFileAndSkipsSymlink.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `jarProbeStatsRegularFileAndSkipsSymlink` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

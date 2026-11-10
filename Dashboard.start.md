@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.start.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.start.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.start.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `start` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

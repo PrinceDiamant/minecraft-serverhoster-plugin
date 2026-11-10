@@ -23,4 +23,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SupervisorHealth.assess
+  Bewertet `assess`.
+LifecycleRobustnessTest.state
+  Liefert den Zustand `state`. Nur Test.
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.supervisorDoesNotRestartDuringLaunchStopOrQueuedRestart`, Quellreihenfolge.

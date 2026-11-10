@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.assertEditable
+  Prüft `assertEditable`.
+if Z.224 (Files.isSymbolicLink(whitelist))
+  Zeile 224: prüft `(Files.isSymbolicLink(whitelist))`.
+throw Z.224 throw new SecurityException('refusing symbolic li…
+  Zeile 224: Abbruch `throw new SecurityException('refusing symbolic li…`.
+Schritt Z.225 Files.writeString(whitelist, '()/n');
+  Zeile 225: schreibt Text in eine Datei. `Files.writeString(whitelist, '()/n');`
+```
+
 - `writeEmptyWhitelist` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

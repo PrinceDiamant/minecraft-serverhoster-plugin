@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.writeEmptyWhitelist
+  Schreibt `writeEmptyWhitelist`. Ruft `assertEditable`.
+```
+
 - Fortsetzung von `HostMinimize.apply.Teil4.Z177`, Quellreihenfolge.

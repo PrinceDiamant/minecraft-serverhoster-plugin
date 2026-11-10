@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.load
+  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+ScheduleDef.withLastRun
+  Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
+ScheduleDef.toConfig
+  `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+ScheduleDef.ScheduleDef
+  Plant `ScheduleDef`. Ruft `validateInterval`.
+```
+
 - Fortsetzung von `HosterTest.schedulesValidateVoxelDashIntervalsAndKeepOrderedActions`, Quellreihenfolge.

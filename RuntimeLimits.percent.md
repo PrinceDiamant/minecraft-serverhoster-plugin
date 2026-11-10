@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.46 return Double.isFinite(value) && value ) 0 && val…
+  Zeile 46: Rückgabe `return Double.isFinite(value) && value ) 0 && val…`.
+```
+
 - `percent` in `src/main/java/de/aichele/childlauncher/RuntimeLimits.java`

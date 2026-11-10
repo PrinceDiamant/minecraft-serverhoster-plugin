@@ -25,4 +25,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1301 (schedules.size() ) ScheduleDef.MAX_SCHEDULES)
+  Zeile 1301: prüft `(schedules.size() ) ScheduleDef.MAX_SCHEDULES)`.
+throw Z.1302 throw new IllegalArgumentException('Zu viele Zeit…
+  Zeile 1302: Abbruch `throw new IllegalArgumentException('Zu viele Zeit…`.
+if Z.1303 (schedules.stream().map(ScheduleDef::id).distinct…
+  Zeile 1303: prüft `(schedules.stream().map(ScheduleDef::id).distinct…`.
+throw Z.1304 throw new IllegalArgumentException('Schedule-IDs …
+  Zeile 1304: Abbruch `throw new IllegalArgumentException('Schedule-IDs …`.
+sync Z.1305
+  Zeile 1305: synchronisierter Block.
+ScheduleDef.toConfig
+  `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+FabricLauncherPlugin.saveConfigWritable
+  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+```
+
 - `saveSchedules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

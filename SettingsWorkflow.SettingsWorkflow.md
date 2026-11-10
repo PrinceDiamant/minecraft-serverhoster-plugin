@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SettingsWorkflow.SettingsWorkflow.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+SettingsWorkflow.SettingsWorkflow.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+SettingsWorkflow.SettingsWorkflow.onPageChange
+  Reagiert `onPageChange`. Ruft `refresh`.
+SettingsWorkflow.SettingsWorkflow.update
+  Aktualisiert `update`.
+SettingsWorkflow.SettingsWorkflow.save
+  Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
+```
+
 - `SettingsWorkflow` in `ui/src/components/SettingsWorkflow.tsx`

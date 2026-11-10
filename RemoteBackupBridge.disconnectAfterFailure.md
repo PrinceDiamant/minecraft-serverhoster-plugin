@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.324
+  Zeile 324: Versuch. Der Fehlerpfad geht in catch.
+RemoteBackupBridge.disconnect
+  Trennt `disconnect`.
+catch Z.325 (IOException closeError)
+  Zeile 325: fängt (IOException closeError).
+```
+
 - `disconnectAfterFailure` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

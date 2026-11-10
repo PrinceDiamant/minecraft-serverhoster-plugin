@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.90
+  Zeile 90: Versuch. Der Fehlerpfad geht in catch.
+return Z.92 return parsed )= min && parsed (= max ? parsed : …
+  Zeile 92: Rückgabe `return parsed )= min && parsed (= max ? parsed : …`.
+catch Z.93 (NumberFormatException e)
+  Zeile 93: fängt (NumberFormatException e).
+return Z.94 return -1;
+  Zeile 94: Rückgabe `return -1;`.
+```
+
 - `number` in `src/main/java/de/aichele/childlauncher/LegacyTaskMigration.java`

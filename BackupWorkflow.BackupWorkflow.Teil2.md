@@ -21,4 +21,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupWorkflow.BackupWorkflow.testTarget
+  Prüft `testTarget`. Ruft `dashboardRequest`.
+BackupWorkflow.BackupWorkflow.createBackup
+  Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+hostApi.formatBytes
+  Formatiert `formatBytes`.
+BackupWorkflow.BackupWorkflow.mutateBackup
+  `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+return Z.137 return ( (div className='feature-workfl…
+  Zeile 137: Rückgabe `return ( (div className='feature-workfl…`.
+```
+
 - Fortsetzung von `BackupWorkflow.BackupWorkflow`, Quellreihenfolge.

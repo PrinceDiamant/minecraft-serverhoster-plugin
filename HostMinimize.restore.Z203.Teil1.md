@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.205 (!Files.isRegularFile(source, LinkOption.NOFOLLOW…
+  Zeile 205: prüft `(!Files.isRegularFile(source, LinkOption.NOFOLLOW…`.
+HostMinimize.assertEditable
+  Prüft `assertEditable`.
+if Z.209 (Files.isSymbolicLink(temporary))
+  Zeile 209: prüft `(Files.isSymbolicLink(temporary))`.
+throw Z.209 throw new SecurityException('temporary restore fi…
+  Zeile 209: Abbruch `throw new SecurityException('temporary restore fi…`.
+Schritt Z.210 Files.copy(source, temporary, StandardCopyOption.…
+  Zeile 210: Dateioperation. `Files.copy(source, temporary, StandardCopyOption.…`
+```
+
 - Fortsetzung von `HostMinimize.restore.Z203`, Quellreihenfolge.

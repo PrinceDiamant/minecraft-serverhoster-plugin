@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryTelemetry.Heap.usedMiB
+  `usedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+MemoryTelemetry.Heap.committedMiB
+  `committedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+MemoryTelemetry.Heap.maxMiB
+  Begrenzt nach oben `maxMiB`. Ruft `mib`.
+MemoryTelemetry.formatGc
+  Formatiert `formatGc`.
+return Z.58 return 'timestamp=' + time + ' heapJvm=…
+  Zeile 58: Rückgabe `return 'timestamp=' + time + ' heapJvm=…`.
+```
+
 - `line` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

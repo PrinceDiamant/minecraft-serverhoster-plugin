@@ -28,4 +28,25 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+Schritt Z.154 memorySched.scheduleAtFixedRate(() -) ( try ( sam…
+  Zeile 154: startet einen festen Timer. `memorySched.scheduleAtFixedRate(() -) ( try ( sam…`
+try Z.155
+  Zeile 155: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.sampleHostMemory
+  Ein Sample auf `ServerhosterPlugin-Memory`. Befund: Altlast (sicher).
+catch Z.156 (Throwable t)
+  Zeile 156: fängt (Throwable t).
+Schritt Z.158 healthSched.scheduleAtFixedRate(() -) ( try ( rec…
+  Zeile 158: startet einen festen Timer. `healthSched.scheduleAtFixedRate(() -) ( try ( rec…`
+try Z.159
+  Zeile 159: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.recoverChildSupervision
+  Hebt hängende Zustände auf `recoverChildSupervision`. Ruft `assess`, `armWatch`, `armPipe`.
+catch Z.160 (Throwable t)
+  Zeile 160: fängt (Throwable t).
+FabricLauncherPlugin.onEnable.Teil5.Z162
+  Fortsetzung des Ablaufs ab Zeile 162.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable`, Quellreihenfolge.

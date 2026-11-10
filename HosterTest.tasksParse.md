@@ -13,5 +13,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskDef.load
+  Lädt `load`. Ruft `str`, `TaskDef`.
+```
+
 - `tasksParse` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

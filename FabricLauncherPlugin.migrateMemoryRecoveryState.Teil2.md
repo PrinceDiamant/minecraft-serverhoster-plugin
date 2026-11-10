@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.788 (timestamp (= 0)
+  Zeile 788: prüft `(timestamp (= 0)`.
+throw Z.788 throw new IOException('Legacy memory recovery tim…
+  Zeile 788: Abbruch `throw new IOException('Legacy memory recovery tim…`.
+FabricLauncherPlugin.memoryRecoveryFile
+  Betrifft den Speicher `memoryRecoveryFile`.
+FabricLauncherPlugin.copyLegacyFile
+  Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.migrateMemoryRecoveryState`, Quellreihenfolge.

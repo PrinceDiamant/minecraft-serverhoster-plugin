@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSecrets.readExisting
+  Liest `readExisting`. Ruft `load`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.

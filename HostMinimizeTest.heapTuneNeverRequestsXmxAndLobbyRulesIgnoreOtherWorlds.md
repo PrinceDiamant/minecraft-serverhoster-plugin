@@ -19,5 +19,18 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.manageable
+  `manageable` in `HostMinimizeTest.java`. Nur Test.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.get
+  Liefert `get`. Nur Test.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.set
+  Setzt `set`. Nur Test.
+```
+
 - `heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
 - Auslöser: Test

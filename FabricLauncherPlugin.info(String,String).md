@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+```
+
 - `info` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

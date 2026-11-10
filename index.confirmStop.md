@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.119 accepted
+  Zeile 119: prüft `accepted`.
+index.act
+  Sendet start, stop oder restart `act`. Ruft `$`, `post`, `toast`.
+```
+
 - `confirmStop` in `src/main/resources/web/index.html`

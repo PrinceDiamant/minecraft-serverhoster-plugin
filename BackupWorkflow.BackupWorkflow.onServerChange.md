@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - `onServerChange` in `ui/src/components/BackupWorkflow.tsx`

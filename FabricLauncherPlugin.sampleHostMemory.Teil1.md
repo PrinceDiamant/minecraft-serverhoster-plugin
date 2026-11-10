@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.snapshot()
+  `snapshot` in `HostMemoryProbe.java`. Ruft `snapshot`.
+FabricLauncherPlugin.sampleHostMemory.Teil1.Z1008
+  Fortsetzung des Ablaufs ab Zeile 1008.
+sync Z.1019
+  Zeile 1019: synchronisierter Block.
+while Z.1022 (memoryHistory.size() ) 240)
+  Zeile 1022: Schleife `(memoryHistory.size() ) 240)`.
+HostMemoryProbe.Snapshot.cgroupUsePercent
+  `cgroupUsePercent` in `HostMemoryProbe.java`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.sampleHostMemory`, Quellreihenfolge.

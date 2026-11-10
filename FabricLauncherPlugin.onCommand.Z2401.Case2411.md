@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.2411 (TaskDef t : tasks())
+  Zeile 2411: Schleife `(TaskDef t : tasks())`.
+FabricLauncherPlugin.tasks
+  `tasks` in `FabricLauncherPlugin.java`. Ruft `load`.
+FabricLauncherPlugin.taskNext
+  `taskNext` in `FabricLauncherPlugin.java`. Ruft `next`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+index.$
+  `$` in `index.html`.
+index.loadDiag.Calls196
+  Weitere eigene Aufrufe ab Zeile 196.
+index.loadDiag.Calls200
+  Weitere eigene Aufrufe ab Zeile 200.
+index.loadDiag.Calls202
+  Weitere eigene Aufrufe ab Zeile 202.
+index.loadDiag.metric
+  Formatiert einen Messwert `metric`.
+index.loadDiag.row
+  Baut eine Tabellenzeile `row`. Ruft `esc`.
+```
+
 - `loadDiag` in `src/main/resources/web/index.html`

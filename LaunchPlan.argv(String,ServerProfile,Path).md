@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LaunchPlan.argv(String,ServerProfile,Path).Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LaunchPlan.argv(String,ServerProfile,Path).Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `argv` in `src/main/java/de/aichele/childlauncher/LaunchPlan.java`

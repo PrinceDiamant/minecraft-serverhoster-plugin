@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.updateProperties
+  Aktualisiert `updateProperties`. Ruft `update`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.writeProperties`, Quellreihenfolge.

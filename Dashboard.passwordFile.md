@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.99 return pl.getDataFolder().toPath().resolve('dashb…
+  Zeile 99: Rückgabe `return pl.getDataFolder().toPath().resolve('dashb…`.
+```
+
 - `passwordFile` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

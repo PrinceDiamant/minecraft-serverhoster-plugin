@@ -25,4 +25,25 @@ flowchart TD
   style n9 fill:#f88,stroke:#900
 ```
 
+```knoten
+FabricLauncherPlugin.focusId
+  Liefert oder setzt den Fokus `focusId`.
+FabricLauncherPlugin.profiles
+  Liefert die Profile `profiles`. Befund: toter Code (wahrscheinlich).
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+FabricLauncherPlugin.focusSlot
+  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+FabricLauncherPlugin.focus
+  Liefert oder setzt den Fokus `focus`. Befund: toter Code (prüfen).
+FabricLauncherPlugin.workDir()
+  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`. Befund: toter Code (wahrscheinlich).
+FabricLauncherPlugin.workDir(String)
+  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+FabricLauncherPlugin.workDirs
+  `workDirs` in `FabricLauncherPlugin.java`. Ruft `directory`. Befund: toter Code (sicher).
+```
+
 

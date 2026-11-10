@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SettingsWorkflow.SettingsWorkflow.save.Z59
+  Fortsetzung des Ablaufs ab Zeile 59.
+```
+
 - `save` in `ui/src/components/SettingsWorkflow.tsx`

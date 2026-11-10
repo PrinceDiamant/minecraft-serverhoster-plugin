@@ -20,6 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+if Z.1822 (!slot.running() // now - slot.queryAt ( 10_000 /…
+  Zeile 1822: prüft `(!slot.running() // now - slot.queryAt ( 10_000 /…`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+return Z.1822 return;
+  Zeile 1822: Rückgabe `return;`.
+FabricLauncherPlugin.send
+  Sendet `send`. Ruft `running`.
+```
+
 ```mermaid
 sequenceDiagram
   participant HTTP as Dashboard-Thread

@@ -17,4 +17,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.252 window.location.pathname !== path
+  Zeile 252: prüft `window.location.pathname !== path`.
+if Z.253 mode === 'push'
+  Zeile 253: prüft `mode === 'push'`.
+index.tab
+  Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+```
+
 - `navigateTo` in `ui/src/App.tsx`

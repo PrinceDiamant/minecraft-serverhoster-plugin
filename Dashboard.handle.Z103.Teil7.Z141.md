@@ -31,4 +31,31 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+switch Z.141 (method + ' ' + path)
+  Zeile 141: Verzweigung nach `(method + ' ' + path)`.
+Dashboard.handle.Z103.Teil7.Z141.Cases142
+  Weitere switch-Zweige ab Zeile 142.
+Dashboard.handle.Z103.Teil7.Z141.Cases152
+  Weitere switch-Zweige ab Zeile 152.
+Dashboard.handle.Z103.Teil7.Z141.Cases172
+  Weitere switch-Zweige ab Zeile 172.
+Dashboard.handle.Z103.Teil7.Z141.Cases186
+  Weitere switch-Zweige ab Zeile 186.
+Dashboard.handle.Z103.Teil7.Z141.Cases215
+  Weitere switch-Zweige ab Zeile 215.
+Dashboard.handle.Z103.Teil7.Z141.Cases220
+  Weitere switch-Zweige ab Zeile 220.
+Dashboard.handle.Z103.Teil7.Z141.Cases225
+  Weitere switch-Zweige ab Zeile 225.
+Dashboard.handle.Z103.Teil7.Z141.Cases237
+  Weitere switch-Zweige ab Zeile 237.
+Dashboard.handle.Z103.Teil7.Z141.Cases247
+  Weitere switch-Zweige ab Zeile 247.
+Dashboard.handle.Z103.Teil7.Z141.Cases255
+  Weitere switch-Zweige ab Zeile 255.
+Dashboard.handle.Z103.Teil7.Z141.Cases266
+  Weitere switch-Zweige ab Zeile 266.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7`, Quellreihenfolge.

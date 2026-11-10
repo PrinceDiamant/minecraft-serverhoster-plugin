@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.worldNameSafe
+  Betrifft die Welt `worldNameSafe`.
+```
+
 

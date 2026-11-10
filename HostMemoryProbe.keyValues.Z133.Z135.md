@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.135 (lines.size() == 1 && !lines.get(0).contains(' '))
+  Zeile 135: prüft `(lines.size() == 1 && !lines.get(0).contains(' '))`.
+try Z.136
+  Zeile 136: Versuch. Der Fehlerpfad geht in catch.
+catch Z.136 (NumberFormatException ignore…
+  Zeile 136: fängt (NumberFormatException ignore….
+for Z.137 (String line : lines)
+  Zeile 137: Schleife `(String line : lines)`.
+if Z.139 (fields.length == 2)
+  Zeile 139: prüft `(fields.length == 2)`.
+try Z.139
+  Zeile 139: Versuch. Der Fehlerpfad geht in catch.
+catch Z.139 (NumberFormatException ignore…
+  Zeile 139: fängt (NumberFormatException ignore….
+```
+
 - Fortsetzung von `HostMemoryProbe.keyValues.Z133`, Quellreihenfolge.

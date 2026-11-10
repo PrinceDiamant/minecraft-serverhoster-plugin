@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.198 (byte() p : parts)
+  Zeile 198: Schleife `(byte() p : parts)`.
+for Z.201 (byte() p : parts)
+  Zeile 201: Schleife `(byte() p : parts)`.
+return Z.202 return out;
+  Zeile 202: Rückgabe `return out;`.
+```
+
 - `concat` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

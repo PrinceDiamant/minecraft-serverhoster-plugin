@@ -14,4 +14,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.9 (message == null // message.isBlank())
+  Zeile 9: prüft `(message == null // message.isBlank())`.
+return Z.11 return 'start failed: ' + message;
+  Zeile 11: Rückgabe `return 'start failed: ' + message;`.
+```
+
 - `text` in `src/main/java/de/aichele/childlauncher/StartFailureStatus.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.315 return new IOException(action + ' failed (' + cli…
+  Zeile 315: Rückgabe `return new IOException(action + ' failed (' + cli…`.
+```
+
 - `replyError` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

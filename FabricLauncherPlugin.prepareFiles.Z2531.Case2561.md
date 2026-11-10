@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.prepareFiles.Z2531.Case2561.Z2563
+  Fortsetzung des Ablaufs ab Zeile 2563.
+return Z.2572 return jar;
+  Zeile 2572: Rückgabe `return jar;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531`, Quellreihenfolge.

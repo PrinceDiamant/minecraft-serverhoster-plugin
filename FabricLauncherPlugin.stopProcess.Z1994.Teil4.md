@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2017 return outcome == ChildStopSequence.Outcome.CLEAN;
+  Zeile 2017: Rückgabe `return outcome == ChildStopSequence.Outcome.CLEAN;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994`, Quellreihenfolge.

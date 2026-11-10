@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.35 (!process.waitFor(wait, TimeUnit.MILLISECONDS))
+  Zeile 35: prüft `(!process.waitFor(wait, TimeUnit.MILLISECONDS))`.
+if Z.37 (!process.waitFor(wait, TimeUnit.MILLISECONDS))
+  Zeile 37: prüft `(!process.waitFor(wait, TimeUnit.MILLISECONDS))`.
+return Z.40 return new Result(false, -1, detail + 'process st…
+  Zeile 40: Rückgabe `return new Result(false, -1, detail + 'process st…`.
+if Z.44 (drain.isAlive())
+  Zeile 44: prüft `(drain.isAlive())`.
+if Z.45 (!drainError.get().isBlank())
+  Zeile 45: prüft `(!drainError.get().isBlank())`.
+```
+
 - Fortsetzung von `ChildLaunchCleanup.abandon.Teil2.Z34`, Quellreihenfolge.

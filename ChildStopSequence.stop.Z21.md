@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.21
+  Zeile 21: Versuch. Der Fehlerpfad geht in catch.
+ChildStopSequence.stop.Z21.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ChildStopSequence.stop.Z21.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+catch Z.67 (InterruptedException e)
+  Zeile 67: fängt (InterruptedException e).
+return Z.71 return Outcome.INTERRUPTED;
+  Zeile 71: Rückgabe `return Outcome.INTERRUPTED;`.
+```
+
 - Fortsetzung von `ChildStopSequence.stop`, Quellreihenfolge.

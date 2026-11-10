@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.310 return name != null && LOBBY_NAME.matcher(name).m…
+  Zeile 310: Rückgabe `return name != null && LOBBY_NAME.matcher(name).m…`.
+```
+
 - `lobbyNameSafe` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

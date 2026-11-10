@@ -33,4 +33,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.178 (value instanceof Number number)
+  Zeile 178: prüft `(value instanceof Number number)`.
+if Z.180 (numeric != Math.rint(numeric) // numeric ( Integ…
+  Zeile 180: prüft `(numeric != Math.rint(numeric) // numeric ( Integ…`.
+throw Z.181 throw new IllegalArgumentException('Ungültige Zah…
+  Zeile 181: Abbruch `throw new IllegalArgumentException('Ungültige Zah…`.
+return Z.182 return number.intValue();
+  Zeile 182: Rückgabe `return number.intValue();`.
+if Z.184 (value instanceof String text)
+  Zeile 184: prüft `(value instanceof String text)`.
+try Z.185
+  Zeile 185: Versuch. Der Fehlerpfad geht in catch.
+return Z.186 return Integer.parseInt(text);
+  Zeile 186: Rückgabe `return Integer.parseInt(text);`.
+catch Z.187 (NumberFormatException e)
+  Zeile 187: fängt (NumberFormatException e).
+throw Z.188 throw new IllegalArgumentException('Ungültige Zah…
+  Zeile 188: Abbruch `throw new IllegalArgumentException('Ungültige Zah…`.
+throw Z.191 throw new IllegalArgumentException('Zahl fehlt: '…
+  Zeile 191: Abbruch `throw new IllegalArgumentException('Zahl fehlt: '…`.
+```
+
 - `integer` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

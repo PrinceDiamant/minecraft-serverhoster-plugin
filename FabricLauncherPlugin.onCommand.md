@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2399 (!s.hasPermission('serverhoster.admin'))
+  Zeile 2399: prüft `(!s.hasPermission('serverhoster.admin'))`.
+return Z.2399 return true;
+  Zeile 2399: Rückgabe `return true;`.
+if Z.2400 (a.length == 0)
+  Zeile 2400: prüft `(a.length == 0)`.
+return Z.2400 return false;
+  Zeile 2400: Rückgabe `return false;`.
+FabricLauncherPlugin.onCommand.Z2401
+  Fortsetzung des Ablaufs ab Zeile 2401.
+return Z.2507 return true;
+  Zeile 2507: Rückgabe `return true;`.
+```
+
 - Befehl `/child` auf dem Server-Thread.

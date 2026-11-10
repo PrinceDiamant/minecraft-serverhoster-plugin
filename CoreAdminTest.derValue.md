@@ -18,5 +18,16 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.derValue.Z337
+  Fortsetzung des Ablaufs ab Zeile 337.
+if Z.347 (end ) der.length)
+  Zeile 347: prüft `(end ) der.length)`.
+throw Z.347 throw new IllegalArgumentException('Truncated DER…
+  Zeile 347: Abbruch `throw new IllegalArgumentException('Truncated DER…`.
+return Z.348 return new DerValue(tag, content, end);
+  Zeile 348: Rückgabe `return new DerValue(tag, content, end);`.
+```
+
 - `derValue` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

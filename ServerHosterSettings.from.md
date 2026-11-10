@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerHosterSettings.ServerHosterSettings
+  `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+return Z.45 return new ServerHosterSettings( config…
+  Zeile 45: Rückgabe `return new ServerHosterSettings( config…`.
+```
+
 - `from` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

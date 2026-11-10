@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.92 (worldNameSafe(worldName) && worldName.equals(lev…
+  Zeile 92: prüft `(worldNameSafe(worldName) && worldName.equals(lev…`.
+HostMinimize.worldNameSafe
+  Betrifft die Welt `worldNameSafe`.
+return Z.92 return 'active';
+  Zeile 92: Rückgabe `return 'active';`.
+return Z.93 return 'staged';
+  Zeile 93: Rückgabe `return 'staged';`.
+```
+
 - `phase` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

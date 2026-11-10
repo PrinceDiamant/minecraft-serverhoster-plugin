@@ -21,4 +21,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.concat
+  `concat` in `HttpsSupport.java`.
+HttpsSupport.derLen
+  `derLen` in `HttpsSupport.java`.
+return Z.181 return concat(new byte() ( 0x30 ), derL…
+  Zeile 181: Rückgabe `return concat(new byte() ( 0x30 ), derL…`.
+```
+
 - `wrapPkcs1` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

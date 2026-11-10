@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.734 (!Files.exists(source, LinkOption.NOFOLLOW_LINKS))
+  Zeile 734: prüft `(!Files.exists(source, LinkOption.NOFOLLOW_LINKS))`.
+return Z.734 return;
+  Zeile 734: Rückgabe `return;`.
+FabricLauncherPlugin.copyLegacyFile
+  Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+BackupSecrets.load
+  Lädt `load`. Ruft `restrict`.
+```
+
 - `migrateLegacySecrets` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

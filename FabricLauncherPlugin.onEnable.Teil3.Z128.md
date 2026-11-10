@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.128 (getConfig().getBoolean('dashboard.enabled', true…
+  Zeile 128: prüft `(getConfig().getBoolean('dashboard.enabled', true…`.
+try Z.129
+  Zeile 129: Versuch. Der Fehlerpfad geht in catch.
+Dashboard.Dashboard
+  `Dashboard` in `Dashboard.java`.
+Dashboard.start
+  Startet `start`. Ruft `read`, `passwordFile`, `setupRequired`.
+catch Z.130 (Exception e)
+  Zeile 130: fängt (Exception e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable.Teil3`, Quellreihenfolge.

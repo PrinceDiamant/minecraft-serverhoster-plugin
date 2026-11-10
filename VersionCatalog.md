@@ -28,4 +28,27 @@ flowchart TD
   style n10 fill:#f88,stroke:#900
 ```
 
+```knoten
+VersionCatalog.VersionCatalog
+  `VersionCatalog` in `VersionCatalog.java`.
+VersionCatalog.vanilla
+  `vanilla` in `VersionCatalog.java`. Ruft `str`.
+VersionCatalog.fabric
+  `fabric` in `VersionCatalog.java`. Ruft `str`.
+VersionCatalog.paper
+  `paper` in `VersionCatalog.java`.
+VersionCatalog.spigot
+  `spigot` in `VersionCatalog.java`. Ruft `compare`.
+VersionCatalog.fetch
+  Holt `fetch`. Ruft `vanilla`, `getJson`, `fabric`.
+VersionCatalog.compare
+  Vergleicht `compare`. Ruft `num`.
+VersionCatalog.num
+  `num` in `VersionCatalog.java`.
+VersionCatalog.str
+  `str` in `VersionCatalog.java`.
+VersionCatalog.newestFirst
+  `newestFirst` in `VersionCatalog.java`. Ruft `compare`. Befund: toter Code (sicher).
+```
+
 

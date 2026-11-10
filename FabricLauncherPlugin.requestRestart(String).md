@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.requestRestart(String).Z334
+  Fortsetzung des Ablaufs ab Zeile 334.
+```
+
 - `requestRestart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

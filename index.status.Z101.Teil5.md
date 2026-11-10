@@ -21,4 +21,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+index.esc
+  Maskiert HTML `esc`.
+index.updateCharts
+  Aktualisiert `updateCharts`. Ruft `pushChartValue`, `$`, `chartCard`.
+index.spark
+  Zeichnet eine Sparkline `spark`.
+```
+
 - Fortsetzung von `index.status.Z101`, Quellreihenfolge.

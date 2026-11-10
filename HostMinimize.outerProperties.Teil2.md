@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.70 return values;
+  Zeile 70: Rückgabe `return values;`.
+```
+
 - Fortsetzung von `HostMinimize.outerProperties`, Quellreihenfolge.

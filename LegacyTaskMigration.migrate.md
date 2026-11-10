@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LegacyTaskMigration.migrate.Z19
+  Fortsetzung des Ablaufs ab Zeile 19.
+return Z.34 return new Result(List.copyOf(schedules), List.co…
+  Zeile 34: Rückgabe `return new Result(List.copyOf(schedules), List.co…`.
+```
+
 - `migrate` in `src/main/java/de/aichele/childlauncher/LegacyTaskMigration.java`

@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SpigotBuilder
+  Lädt oder baut das Spigot-Jar.
+PathGuard
+  Prüft, dass ein Pfad unter der erlaubten Wurzel bleibt.
+PropertiesFile
+  Liest und schreibt eine Properties-Datei.
+JarProbe
+  Liest Metadaten aus dem Server-Jar.
+LaunchPlan
+  Baut Argumente und Dateien für den Prozessstart.
+```
+
 

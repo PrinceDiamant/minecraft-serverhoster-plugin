@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.312 Files.delete(file);
+  Zeile 312: Dateioperation. `Files.delete(file);`
+return Z.313 return FileVisitResult.CONTINUE;
+  Zeile 313: Rückgabe `return FileVisitResult.CONTINUE;`.
+```
+
 - `visitFile` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

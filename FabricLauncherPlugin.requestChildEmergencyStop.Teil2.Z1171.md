@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.1171 (ChildSlot slot : List.copyOf(slots.val…
+  Zeile 1171: Schleife `(ChildSlot slot : List.copyOf(slots.val…`.
+if Z.1172 (!slot.running())
+  Zeile 1172: prüft `(!slot.running())`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+FabricLauncherPlugin.send
+  Sendet `send`. Ruft `running`.
+if Z.1178 (!saved)
+  Zeile 1178: prüft `(!saved)`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop.Teil2`, Quellreihenfolge.

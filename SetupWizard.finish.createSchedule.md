@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.172 !schedule // scheduleCreated
+  Zeile 172: prüft `!schedule // scheduleCreated`.
+return Z.172 return;
+  Zeile 172: Rückgabe `return;`.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+```
+
 - `createSchedule` in `ui/src/components/SetupWizard.tsx`

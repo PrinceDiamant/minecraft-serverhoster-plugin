@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.file
+  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+BackupBridge.restoreZip
+  Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+return Z.76 return restoreZip(work, zip);
+  Zeile 76: Rückgabe `return restoreZip(work, zip);`.
+```
+
 - `restore` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

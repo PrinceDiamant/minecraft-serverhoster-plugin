@@ -22,4 +22,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.HttpsSupport
+  `HttpsSupport` in `HttpsSupport.java`.
+HttpsSupport.configure
+  `configure` in `HttpsSupport.java`. Ruft `configure`.
+HttpsSupport.build
+  Baut `build`. Ruft `fromKeystore`, `ensureSelfSigned`, `password`.
+HttpsSupport.password
+  `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+HttpsSupport.readOrCreatePass
+  Liest `readOrCreatePass`.
+HttpsSupport.ensureSelfSigned
+  Stellt sicher `ensureSelfSigned`. Ruft `resolve`, `password`, `normalizeSans`.
+HttpsSupport.normalizeSans
+  Vereinheitlicht `normalizeSans`.
+HttpsSupport.fromKeystore
+  `fromKeystore` in `HttpsSupport.java`.
+```
+
 

@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1329 (!focus.equals(id))
+  Zeile 1329: prüft `(!focus.equals(id))`.
+throw Z.1330 throw new IllegalArgumentException('Task ' + task…
+  Zeile 1330: Abbruch `throw new IllegalArgumentException('Task ' + task…`.
+FabricLauncherPlugin.executeTask.Z1331
+  Fortsetzung des Ablaufs ab Zeile 1331.
+```
+
 - `executeTask` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -27,4 +27,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.407 (setupRequired)
+  Zeile 407: prüft `(setupRequired)`.
+throw Z.407 throw new IllegalStateException('Die Einrichtung …
+  Zeile 407: Abbruch `throw new IllegalStateException('Die Einrichtung …`.
+if Z.408 (!'DELETE FABRICLAUNCHER'.equals(confirm))
+  Zeile 408: prüft `(!'DELETE FABRICLAUNCHER'.equals(confirm))`.
+throw Z.409 throw new IllegalArgumentException('Die Bereinigu…
+  Zeile 409: Abbruch `throw new IllegalArgumentException('Die Bereinigu…`.
+FabricLauncherPlugin.legacyJarNames
+  `legacyJarNames` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.cleanupLegacyFiles.Z413
+  Fortsetzung des Ablaufs ab Zeile 413.
+for Z.422 (String name : oldJars)
+  Zeile 422: Schleife `(String name : oldJars)`.
+Schritt Z.422 Files.delete(plugins.resolve(name));
+  Zeile 422: Dateioperation. `Files.delete(plugins.resolve(name));`
+```
+
 - `cleanupLegacyFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

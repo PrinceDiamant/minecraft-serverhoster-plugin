@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1002 (b.length ) 0)
+  Zeile 1002: prüft `(b.length ) 0)`.
+try Z.1002
+  Zeile 1002: Versuch. Der Fehlerpfad geht in catch.
+```
+
 - `sendBytes` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.saveProps.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.saveProps.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `saveProps` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

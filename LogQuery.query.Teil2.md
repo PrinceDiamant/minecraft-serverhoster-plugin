@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LogQuery.query.Teil2.Z56
+  Fortsetzung des Ablaufs ab Zeile 56.
+return Z.61 return new Result(truncated // dropped, new Array…
+  Zeile 61: Rückgabe `return new Result(truncated // dropped, new Array…`.
+```
+
 - Fortsetzung von `LogQuery.query`, Quellreihenfolge.

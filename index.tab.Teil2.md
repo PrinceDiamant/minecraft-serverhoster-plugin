@@ -26,4 +26,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.89 t==='config'
+  Zeile 89: prüft `t==='config'`.
+index.loadTxt
+  Lädt `loadTxt`. Ruft `api`, `$`.
+if Z.89 t==='files'
+  Zeile 89: prüft `t==='files'`.
+index.ls
+  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+if Z.89 t==='logs'
+  Zeile 89: prüft `t==='logs'`.
+index.loadLogs
+  Lädt `loadLogs`. Ruft `api`, `$`, `esc`.
+if Z.89 t==='players'
+  Zeile 89: prüft `t==='players'`.
+index.loadPlayers
+  Lädt `loadPlayers`. Ruft `api`, `$`, `esc`.
+```
+
 - Fortsetzung von `index.tab`, Quellreihenfolge.

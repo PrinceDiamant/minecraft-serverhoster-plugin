@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog.compare
+  Vergleicht `compare`. Ruft `num`.
+return Z.97 return VersionCatalog::compare;
+  Zeile 97: Rückgabe `return VersionCatalog::compare;`.
+```
+
 - `newestFirst` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/VersionCatalog.java:97–97 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

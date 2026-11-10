@@ -26,4 +26,29 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Snapshot
+  Eine Messung: frei, Swap, cgroup-Stand.
+Cgroup
+  current, limit und swap der cgroup in MiB.
+HostMemoryProbe.HostMemoryProbe
+  Betrifft den Host `HostMemoryProbe`.
+HostMemoryProbe.snapshot()
+  `snapshot` in `HostMemoryProbe.java`. Ruft `snapshot`.
+HostMemoryProbe.snapshot(Path,Path)
+  `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
+HostMemoryProbe.meminfo
+  `meminfo` in `HostMemoryProbe.java`.
+HostMemoryProbe.cgroup
+  `cgroup` in `HostMemoryProbe.java`. Ruft `resolve`, `ancestors`, `number`.
+HostMemoryProbe.resolve
+  Löst auf `resolve`.
+HostMemoryProbe.ancestors
+  `ancestors` in `HostMemoryProbe.java`.
+HostMemoryProbe.number
+  `number` in `HostMemoryProbe.java`.
+HostMemoryProbe.keyValues
+  `keyValues` in `HostMemoryProbe.java`.
+```
+
 

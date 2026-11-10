@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.602 return m;
+  Zeile 602: Rückgabe `return m;`.
+```
+
 - Fortsetzung von `Dashboard.taskJson`, Quellreihenfolge.

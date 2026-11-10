@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2421 (a.length )= 3 && a(1).equalsIgnoreCase('delete'))
+  Zeile 2421: prüft `(a.length )= 3 && a(1).equalsIgnoreCase('delete'))`.
+try Z.2422
+  Zeile 2422: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.deleteBackup
+  Löscht `deleteBackup`. Ruft `remoteBackupSelected`, `backupCredentials`, `delete`.
+catch Z.2423 (Exception e)
+  Zeile 2423: fängt (Exception e).
+FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421.Z2424
+  Fortsetzung des Ablaufs ab Zeile 2424.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418`, Quellreihenfolge.

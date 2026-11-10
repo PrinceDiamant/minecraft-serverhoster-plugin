@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.216 c!==name
+  Zeile 216: prüft `c!==name`.
+return Z.216 return;
+  Zeile 216: Rückgabe `return;`.
+index.post
+  Sendet POST `post`. Ruft `api`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+index.loadBackup
+  Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
+```
+
 - `delBackup` in `src/main/resources/web/index.html`

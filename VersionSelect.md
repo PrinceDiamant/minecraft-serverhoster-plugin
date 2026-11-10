@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionSelect.useVersionCatalog
+  Benutzt `useVersionCatalog`. Ruft `dashboardRequest`.
+VersionSelect.versionIsValid
+  `versionIsValid` in `VersionSelect.tsx`.
+VersionSelect.VersionSelect
+  `VersionSelect` in `VersionSelect.tsx`.
+```
+
 

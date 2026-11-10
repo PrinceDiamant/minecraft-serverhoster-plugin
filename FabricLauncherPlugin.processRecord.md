@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2103 return getDataFolder().toPath().resolve('child-pr…
+  Zeile 2103: Rückgabe `return getDataFolder().toPath().resolve('child-pr…`.
+```
+
 - `processRecord` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

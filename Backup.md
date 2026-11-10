@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Backup-Lauf
+  Der Backup-Durchlauf im Plugin: sperren, packen, ablegen.
+Backup-Dateien
+  Dateiname, Pfad und welche Stücke behalten werden.
+Backup-Bruecken
+  Lokale Brücke, Fern-Brücke, Geheimnisse und Optionen.
+```
+
 - Lokales Zip über `BackupBridge` oder FTP/FTPS über `RemoteBackupBridge`.

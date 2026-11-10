@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935.Teil2.Z1948
+  Fortsetzung des Ablaufs ab Zeile 1948.
+if Z.1957 (failed && slot.scheduleToken.get() == token)
+  Zeile 1957: prüft `(failed && slot.scheduleToken.get() == token)`.
+FabricLauncherPlugin.scheduleRestart
+  Plant `scheduleRestart`. Ruft `maxAttempts`, `mayRetry`, `notifyNtfy`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935`, Quellreihenfolge.

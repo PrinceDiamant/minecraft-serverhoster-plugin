@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+return Z.303 return slot(focus);
+  Zeile 303: Rückgabe `return slot(focus);`.
+```
+
 - `focusSlot` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

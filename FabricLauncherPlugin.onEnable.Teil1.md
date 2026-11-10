@@ -24,4 +24,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.onEnable.Teil1.Z98
+  Fortsetzung des Ablaufs ab Zeile 98.
+try Z.113
+  Zeile 113: Versuch. Der Fehlerpfad geht in catch.
+HostMinimize.clearIdlePause
+  Leert `clearIdlePause`. Ruft `lobbyNameSafe`.
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+catch Z.114 (IOException e)
+  Zeile 114: fängt (IOException e).
+FabricLauncherPlugin.migrateRestartPolicy
+  Übernimmt den alten Wert von `migrateRestartPolicy`. Ruft `migrateLegacyUnlimited`, `migrateLegacyRestartPolicy`, `saveConfigWritable`.
+Schritt Z.116 setupRequired = !getConfig().getBoolean('setup.co…
+  Zeile 116: liest die Config. `setupRequired = !getConfig().getBoolean('setup.co…`
+FabricLauncherPlugin.applyCurrentMemorySettings
+  Wendet an `applyCurrentMemorySettings`. Ruft `saveConfigWritable`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable`, Quellreihenfolge.

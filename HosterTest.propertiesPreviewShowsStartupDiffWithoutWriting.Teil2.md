@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.173 assertEquals(original, Files.readString(propertie…
+  Zeile 173: liest Text aus einer Datei. `assertEquals(original, Files.readString(propertie…`
+```
+
 - Fortsetzung von `HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting`, Quellreihenfolge.

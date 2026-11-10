@@ -17,5 +17,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.31 (String path : List.of('/', '/index.htm…
+  Zeile 31: Schleife `(String path : List.of('/', '/index.htm…`.
+Dashboard.isDashboardPage
+  Prüft `isDashboardPage`.
+for Z.35 (String path : List.of('/api/status', '…
+  Zeile 35: Schleife `(String path : List.of('/api/status', '…`.
+```
+
 - `dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

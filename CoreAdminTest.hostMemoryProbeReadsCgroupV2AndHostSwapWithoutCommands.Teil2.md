@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.Snapshot.cgroupUsePercent
+  `cgroupUsePercent` in `HostMemoryProbe.java`.
+```
+
 - Fortsetzung von `CoreAdminTest.hostMemoryProbeReadsCgroupV2AndHostSwapWithoutCommands`, Quellreihenfolge.

@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+GcDiagnostics.snapshot()
+  `snapshot` in `GcDiagnostics.java`. Ruft `snapshot`.
+HostMemoryProbe.Snapshot.cgroupUsePercent
+  `cgroupUsePercent` in `HostMemoryProbe.java`.
+MemoryProtectionPolicy.criticalSamples
+  `criticalSamples` in `MemoryProtectionPolicy.java`.
+Schritt Z.1220 facts.put('Protection thresholds', 'warning=' + g…
+  Zeile 1220: `facts.put('Protection thresholds', 'warning=' + g…`
+HostMemoryProbe.Snapshot.view
+  Liefert die Sicht `view`.
+FabricLauncherPlugin.addProcessDiagnostics
+  Fügt hinzu `addProcessDiagnostics`. Ruft `snapshot`, `jcmd`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.writeMemoryIncidentReport`, Quellreihenfolge.

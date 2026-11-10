@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

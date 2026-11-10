@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CrashIndex
+  Sucht Crash-Reports und liefert den Text.
+LogQuery
+  Filtert Logzeilen für die Ansicht.
+DashboardPassword
+  Prüft das Dashboard-Passwort und die Sitzung.
+HttpsSupport
+  TLS für den HTTP-Server.
+```
+
 

@@ -22,4 +22,21 @@ flowchart TD
   style n5 fill:#f88,stroke:#900
 ```
 
+```knoten
+Dashboard.status
+  Liefert den Status `status`. Ruft `profile`, `slot`, `pid`.
+Dashboard.formatBindAddress
+  Formatiert `formatBindAddress`.
+Dashboard.spigotStats
+  `spigotStats` in `Dashboard.java`. Ruft `rssMb`.
+Dashboard.procField
+  `procField` in `Dashboard.java`.
+Dashboard.cpu
+  Liest `/proc/<pid>/stat` und teilt durch 100. Befund: Logikrisiko (prüfen).
+Dashboard.rssMb
+  `rssMb` in `Dashboard.java`.
+Dashboard.sse
+  `sse` in `Dashboard.java`. Ruft `console`, `subscribe`, `unsubscribe`.
+```
+
 

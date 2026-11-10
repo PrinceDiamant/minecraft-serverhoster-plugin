@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.213
+  Zeile 213: Versuch. Der Fehlerpfad geht in catch.
+```
+
 - `ensureTable` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

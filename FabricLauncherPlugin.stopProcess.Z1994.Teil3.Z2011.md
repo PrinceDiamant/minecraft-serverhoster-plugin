@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildStopSequence.stop
+  Stoppt `stop`. Ruft `signal`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994.Teil3`, Quellreihenfolge.

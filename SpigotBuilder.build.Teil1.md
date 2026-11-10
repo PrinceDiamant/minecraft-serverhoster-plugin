@@ -22,4 +22,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SpigotBuilder.assertRev
+  Prüft `assertRev`.
+if Z.29 (Files.isRegularFile(jar))
+  Zeile 29: prüft `(Files.isRegularFile(jar))`.
+return Z.29 return jar;
+  Zeile 29: Rückgabe `return jar;`.
+Schritt Z.31 Files.createDirectories(tools);
+  Zeile 31: Dateioperation. `Files.createDirectories(tools);`
+Schritt Z.32 Files.createDirectories(outputDir);
+  Zeile 32: Dateioperation. `Files.createDirectories(outputDir);`
+if Z.34 (!Files.isRegularFile(bt))
+  Zeile 34: prüft `(!Files.isRegularFile(bt))`.
+Upstream.download(String,Path)
+  Liefert zum Herunterladen `download`. Ruft `download`.
+```
+
 - Fortsetzung von `SpigotBuilder.build`, Quellreihenfolge.

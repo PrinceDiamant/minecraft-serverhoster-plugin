@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.Z22
+  Fortsetzung des Ablaufs ab Zeile 22.
+return Z.39 return ( set(id: EditorId, value: string, path: s…
+  Zeile 39: Rückgabe `return ( set(id: EditorId, value: string, path: s…`.
+fileEditor.installFileEditors.editorFor
+  Liefert den Editor `editorFor`. Ruft `get`.
+fileEditor.installFileEditors.set
+  Setzt `set`. Ruft `editorFor`, `modeForPath`, `refresh`.
+fileEditor.installFileEditors.get
+  Liefert `get`. Ruft `editorFor`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+fileEditor.installFileEditors.setPath
+  Setzt `setPath`. Ruft `editorFor`, `modeForPath`.
+```
+
 - `installFileEditors` in `ui/src/lib/fileEditor.ts`

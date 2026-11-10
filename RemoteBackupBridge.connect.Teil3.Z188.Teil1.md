@@ -26,4 +26,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.connectControl
+  Verbindet `connectControl`. Ruft `replyError`.
+if Z.191 (reply == 234)
+  Zeile 191: prüft `(reply == 234)`.
+RemoteBackupBridge.disconnect
+  Trennt `disconnect`.
+RemoteBackupBridge.openFtps
+  Öffnet `openFtps`. Ruft `configure`, `connectControl`, `login`.
+return Z.193 return openFtps(settings, username, pas…
+  Zeile 193: Rückgabe `return openFtps(settings, username, pas…`.
+if Z.195 (!unsupportedAuthTls(reply))
+  Zeile 195: prüft `(!unsupportedAuthTls(reply))`.
+RemoteBackupBridge.unsupportedAuthTls
+  `unsupportedAuthTls` in `RemoteBackupBridge.java`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+throw Z.196 throw replyError(probe, 'negotiate FTPS…
+  Zeile 196: Abbruch `throw replyError(probe, 'negotiate FTPS…`.
+```
+
 - Fortsetzung von `RemoteBackupBridge.connect.Teil3.Z188`, Quellreihenfolge.

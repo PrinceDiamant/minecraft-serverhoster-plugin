@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.115 $('host-connection')
+  Zeile 115: prüft `$('host-connection')`.
+index.$
+  `$` in `index.html`.
+```
+
 - Fortsetzung von `index.status.Z101.Z115`, Quellreihenfolge.

@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.677
+  Zeile 677: Versuch. Der Fehlerpfad geht in catch.
+```
+
 - `writeLegacyPluginJar` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.77 return path
+  Zeile 77: Rückgabe `return path`.
+```
+
 - Gibt `path` unverändert zurück.
 - Befund: Altlast, sicher. index.html:77 return path

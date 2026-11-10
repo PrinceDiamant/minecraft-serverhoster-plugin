@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.19 (Object sourceTask : source)
+  Zeile 19: Schleife `(Object sourceTask : source)`.
+LegacyTaskMigration.migrate.Z19.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LegacyTaskMigration.migrate.Z19.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `LegacyTaskMigration.migrate`, Quellreihenfolge.

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerHosterSettings.ServerHosterSettings.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ServerHosterSettings.ServerHosterSettings.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+ServerHosterSettings.ServerHosterSettings.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `ServerHosterSettings` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.setupPassword.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.setupPassword.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.setupPassword.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `setupPassword` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

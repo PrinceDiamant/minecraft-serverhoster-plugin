@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.1499 (TaskDef task : tasks())
+  Zeile 1499: Schleife `(TaskDef task : tasks())`.
+FabricLauncherPlugin.tasks
+  `tasks` in `FabricLauncherPlugin.java`. Ruft `load`.
+FabricLauncherPlugin.fireDueTasks.Z1499.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.fireDueTasks.Z1499.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.fireDueTasks.Z1499.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.fireDueTasks`, Quellreihenfolge.

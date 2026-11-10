@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.98 (!hostFirstSetupRestartRequired && !hostFirstSetu…
+  Zeile 98: prüft `(!hostFirstSetupRestartRequired && !hostFirstSetu…`.
+FabricLauncherPlugin.onEnable.Teil1.Z98.Z99
+  Fortsetzung des Ablaufs ab Zeile 99.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable.Teil1`, Quellreihenfolge.

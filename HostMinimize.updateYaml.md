@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.assertNotSymlink
+  Prüft `assertNotSymlink`.
+for Z.284 (var entry : values.entrySet())
+  Zeile 284: Schleife `(var entry : values.entrySet())`.
+```
+
 - `updateYaml` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

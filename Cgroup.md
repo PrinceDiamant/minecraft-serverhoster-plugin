@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.Cgroup.unavailable
+  `unavailable` in `HostMemoryProbe.java`.
+```
+
 

@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWizard.SetupWizard.runFirstSetup
+  Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+SetupWizard.SetupWizard.finish
+  Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.Teil4`, Quellreihenfolge.

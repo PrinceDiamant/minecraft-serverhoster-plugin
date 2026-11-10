@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1437 (remoteBackupSelected())
+  Zeile 1437: prüft `(remoteBackupSelected())`.
+FabricLauncherPlugin.remoteBackupSelected
+  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.backupCredentials
+  Sichert `backupCredentials`. Ruft `load`.
+RemoteBackupBridge.delete
+  Löscht `delete`. Ruft `safeId`, `named`, `connect`.
+FabricLauncherPlugin.remoteBackupSettings
+  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+BackupBridge.delete
+  Löscht `delete`. Ruft `file`.
+FabricLauncherPlugin.backupSpec
+  Sichert `backupSpec`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.deleteBackup`, Quellreihenfolge.

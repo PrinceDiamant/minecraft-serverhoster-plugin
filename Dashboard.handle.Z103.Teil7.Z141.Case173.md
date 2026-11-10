@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+FabricLauncherPlugin.settingsView
+  `settingsView` in `FabricLauncherPlugin.java`. Ruft `from`, `view`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.

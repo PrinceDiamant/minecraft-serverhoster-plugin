@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.354 (port != null && !port.trim().equals(String.value…
+  Zeile 354: prüft `(port != null && !port.trim().equals(String.value…`.
+try Z.355
+  Zeile 355: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.355 getConfig().set(prefix + 'port', Integer.parseInt…
+  Zeile 355: liest die Config. `getConfig().set(prefix + 'port', Integer.parseInt…`
+catch Z.355 (NumberFormatException ignore…
+  Zeile 355: fängt (NumberFormatException ignore….
+if Z.358 (ip != null && !ip.equals(childBindAddress(pr)))
+  Zeile 358: prüft `(ip != null && !ip.equals(childBindAddress(pr)))`.
+FabricLauncherPlugin.childBindAddress
+  Betrifft den Child `childBindAddress`. Ruft `effectiveBindAddress`, `hostBindAddress`.
+Schritt Z.359 getConfig().set(prefix + 'serverIp', ip);
+  Zeile 359: liest die Config. `getConfig().set(prefix + 'serverIp', ip);`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.syncPropertiesEdit`, Quellreihenfolge.

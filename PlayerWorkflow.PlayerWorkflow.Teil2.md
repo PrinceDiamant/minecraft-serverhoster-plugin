@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+PlayerWorkflow.PlayerWorkflow.Teil2.Calls125
+  Weitere eigene Aufrufe ab Zeile 125.
+PlayerWorkflow.PlayerWorkflow.Teil2.Calls153
+  Weitere eigene Aufrufe ab Zeile 153.
+PlayerWorkflow.PlayerWorkflow.Teil2.Calls162
+  Weitere eigene Aufrufe ab Zeile 162.
+return Z.118 return ( (div className='feature-workfl…
+  Zeile 118: Rückgabe `return ( (div className='feature-workfl…`.
+```
+
 - Fortsetzung von `PlayerWorkflow.PlayerWorkflow`, Quellreihenfolge.

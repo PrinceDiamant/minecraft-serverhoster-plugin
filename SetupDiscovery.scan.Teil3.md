@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.82 (var entry : configured.entrySet())
+  Zeile 82: Schleife `(var entry : configured.entrySet())`.
+SetupDiscovery.hasServerFiles
+  Prüft `hasServerFiles`.
+SetupDiscovery.topLevelEntries
+  `topLevelEntries` in `SetupDiscovery.java`.
+return Z.88 return List.copyOf(result);
+  Zeile 88: Rückgabe `return List.copyOf(result);`.
+```
+
 - Fortsetzung von `SetupDiscovery.scan`, Quellreihenfolge.

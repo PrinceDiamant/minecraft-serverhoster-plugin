@@ -14,4 +14,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LegacyTaskMigration.LegacyTaskMigration
+  `LegacyTaskMigration` in `LegacyTaskMigration.java`.
+LegacyTaskMigration.migrate
+  Übernimmt den alten Wert von `migrate`. Ruft `load`, `convert`, `toConfig`.
+LegacyTaskMigration.convert
+  Wandelt um `convert`. Ruft `number`, `ScheduleDef`.
+LegacyTaskMigration.number
+  `number` in `LegacyTaskMigration.java`.
+```
+
 

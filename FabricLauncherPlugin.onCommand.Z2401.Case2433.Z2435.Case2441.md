@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.onCommand.Z2401.Case2433.Z2435.Case2441.Z2443
+  Fortsetzung des Ablaufs ab Zeile 2443.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2433.Z2435`, Quellreihenfolge.

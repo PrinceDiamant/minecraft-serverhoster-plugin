@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.26 ('custom'.equalsIgnoreCase(profile.type))
+  Zeile 26: prüft `('custom'.equalsIgnoreCase(profile.type))`.
+return Z.26 return Paths.get(profile.customJar == null // pro…
+  Zeile 26: Rückgabe `return Paths.get(profile.customJar == null // pro…`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+LaunchPlan.jarName
+  Betrifft das Jar `jarName`. Ruft `fileName`.
+return Z.27 return profile.directory().resolve(jarN…
+  Zeile 27: Rückgabe `return profile.directory().resolve(jarN…`.
+```
+
 - `jarPath` in `src/main/java/de/aichele/childlauncher/LaunchPlan.java`

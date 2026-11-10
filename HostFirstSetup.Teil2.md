@@ -21,4 +21,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.decodeWorldNames
+  Dekodiert `decodeWorldNames`. Ruft `safeWorldName`.
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+HostFirstSetup.requireRoot
+  Verlangt `requireRoot`.
+HostFirstSetup.worldDirectories
+  Betrifft die Welt `worldDirectories`. Ruft `safeWorldName`, `addIfDirectory`.
+HostFirstSetup.addIfDirectory
+  Fügt hinzu `addIfDirectory`. Ruft `safeWorldName`.
+HostFirstSetup.safeWorldName
+  Prüft die Pfadgrenze `safeWorldName`.
+HostFirstSetup.protectedPath
+  `protectedPath` in `HostFirstSetup.java`.
+HostFirstSetup.protectedByAny
+  `protectedByAny` in `HostFirstSetup.java`. Ruft `protectedPath`.
+```
+
 

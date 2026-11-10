@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1844 (m.find())
+  Zeile 1844: prüft `(m.find())`.
+for Z.1846 (String n : m.group(1).split(','))
+  Zeile 1846: Schleife `(String n : m.group(1).split(','))`.
+if Z.1846 (!n.isEmpty())
+  Zeile 1846: prüft `(!n.isEmpty())`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.trackPlayers`, Quellreihenfolge.

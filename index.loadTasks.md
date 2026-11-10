@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+index.loadTasks.Calls212
+  Weitere eigene Aufrufe ab Zeile 212.
+index.loadTasks.Calls212.2
+  Seite `index.loadTasks.Calls212.2`.
+```
+
 - `loadTasks` in `src/main/resources/web/index.html`

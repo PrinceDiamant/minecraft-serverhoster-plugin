@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2630 (c.serverProperties != null)
+  Zeile 2630: prüft `(c.serverProperties != null)`.
+FabricLauncherPlugin.forcedProperties
+  Erzwingt `forcedProperties`. Ruft `effectiveBindAddress`.
+FabricLauncherPlugin.hostBindAddress
+  Betrifft den Host `hostBindAddress`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.writeProperties`, Quellreihenfolge.

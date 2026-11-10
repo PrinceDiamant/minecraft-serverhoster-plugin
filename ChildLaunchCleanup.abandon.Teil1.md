@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.15 (process == null)
+  Zeile 15: prüft `(process == null)`.
+return Z.15 return new Result(true, 0, 'no process');
+  Zeile 15: Rückgabe `return new Result(true, 0, 'no process');`.
+try Z.18
+  Zeile 18: Versuch. Der Fehlerpfad geht in catch.
+catch Z.20 (IOException e)
+  Zeile 20: fängt (IOException e).
+```
+
 - Fortsetzung von `ChildLaunchCleanup.abandon`, Quellreihenfolge.

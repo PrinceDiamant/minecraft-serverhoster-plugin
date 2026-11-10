@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.56 (String line : data.split('/n', -1))
+  Zeile 56: Schleife `(String line : data.split('/n', -1))`.
+if Z.57 (!levelOk(line, lv) // (!needle.isEmpty() && !lin…
+  Zeile 57: prüft `(!levelOk(line, lv) // (!needle.isEmpty() && !lin…`.
+LogQuery.levelOk
+  `levelOk` in `LogQuery.java`. Ruft `isError`, `isWarn`.
+if Z.59 (keep.size() ) limit)
+  Zeile 59: prüft `(keep.size() ) limit)`.
+```
+
 - Fortsetzung von `LogQuery.query.Teil2`, Quellreihenfolge.

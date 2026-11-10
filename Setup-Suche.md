@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupRecovery
+  Baut aus einem Treffer wieder eine lauffähige Anlage.
+SetupDiscovery
+  Sucht Serverdateien und baut daraus einen Candidate.
+```
+
 

@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.requestRestart(String)
+  Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

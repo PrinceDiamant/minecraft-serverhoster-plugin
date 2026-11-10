@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.197 (Files.isRegularFile(realBackup.resolve(WHITELIST…
+  Zeile 197: prüft `(Files.isRegularFile(realBackup.resolve(WHITELIST…`.
+HostMinimize.assertEditable
+  Prüft `assertEditable`.
+if Z.200 (Files.isSymbolicLink(created))
+  Zeile 200: prüft `(Files.isSymbolicLink(created))`.
+throw Z.200 throw new SecurityException('refusing symbolic li…
+  Zeile 200: Abbruch `throw new SecurityException('refusing symbolic li…`.
+Schritt Z.201 Files.deleteIfExists(created);
+  Zeile 201: Dateioperation. `Files.deleteIfExists(created);`
+```
+
 - Fortsetzung von `HostMinimize.restore`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.49 (event as CustomEvent(string)).detail === 'backup'
+  Zeile 49: prüft `(event as CustomEvent(string)).detail === 'backup'`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - `onPageChange` in `ui/src/components/BackupWorkflow.tsx`

@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.pathGuardRejectsEscapeAndSymlink.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.pathGuardRejectsEscapeAndSymlink.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `pathGuardRejectsEscapeAndSymlink` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.fromPem
+  `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
+HttpsSupport.resolve
+  Löst auf `resolve`.
+HttpsSupport.password
+  `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+```
+
 - Fortsetzung von `HttpsSupport.build.Z55`, Quellreihenfolge.

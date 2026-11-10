@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2523 (s == null // shuttingDown)
+  Zeile 2523: prüft `(s == null // shuttingDown)`.
+return Z.2523 return;
+  Zeile 2523: Rückgabe `return;`.
+```
+
 - `msg` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

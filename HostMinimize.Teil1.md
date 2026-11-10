@@ -17,4 +17,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.HostMinimize
+  Betrifft den Host `HostMinimize`.
+HostMinimize.newLobbyName()
+  `newLobbyName` in `HostMinimize.java`.
+HostMinimize.newLobbyName(Path)
+  `newLobbyName` in `HostMinimize.java`. Ruft `newLobbyName`.
+HostMinimize.firstSetupProperties
+  `firstSetupProperties` in `HostMinimize.java`.
+HostMinimize.outerProperties
+  `outerProperties` in `HostMinimize.java`.
+HostMinimize.bukkitChanges
+  `bukkitChanges` in `HostMinimize.java`.
+HostMinimize.spigotChanges
+  `spigotChanges` in `HostMinimize.java`.
+HostMinimize.phase
+  Liefert die Phase `phase`. Ruft `worldNameSafe`.
+```
+
 

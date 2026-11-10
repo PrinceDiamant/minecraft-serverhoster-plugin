@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2470 (a.length ( 2)
+  Zeile 2470: prüft `(a.length ( 2)`.
+return Z.2470 return true;
+  Zeile 2470: Rückgabe `return true;`.
+FabricLauncherPlugin.sendCommand(String)
+  Sendet `sendCommand`. Ruft `sendCommand`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

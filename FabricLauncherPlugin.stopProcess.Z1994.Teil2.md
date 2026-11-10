@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2002 (useStdout)
+  Zeile 2002: prüft `(useStdout)`.
+ConsoleBuffer.add
+  Fügt hinzu `add`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994`, Quellreihenfolge.

@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Profiles.one.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Profiles.one.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+Profiles.one.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fallback `type` ist `fabric`, ausgelieferte `config.yml` sagt `vanilla`.
 - Befund: Logikrisiko, sicher. ServerProfile.java:103 Fallback fabric, config.yml:2 type vanilla

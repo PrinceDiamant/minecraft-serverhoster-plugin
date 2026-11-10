@@ -20,4 +20,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.logQueryFiltersFromTheEnd
+  `logQueryFiltersFromTheEnd` in `CoreAdminTest.java`. Ruft `query`. Nur Test.
+CoreAdminTest.checksumMismatch
+  `checksumMismatch` in `CoreAdminTest.java`. Ruft `digest`, `checkHash`. Nur Test.
+CoreAdminTest.selfSignedHandshakeAndPem
+  `selfSignedHandshakeAndPem` in `CoreAdminTest.java`. Ruft `build`, `configure`, `client`. Nur Test.
+CoreAdminTest.pem
+  `pem` in `CoreAdminTest.java`. Nur Test.
+CoreAdminTest.rsaPkcs1
+  `rsaPkcs1` in `CoreAdminTest.java`. Ruft `derValue`. Nur Test.
+CoreAdminTest.derValue
+  `derValue` in `CoreAdminTest.java`. Nur Test.
+CoreAdminTest.probeAndIndexContract
+  `probeAndIndexContract` in `CoreAdminTest.java`. Ruft `snapshot`, `jcmd`, `disk`. Nur Test.
+CoreAdminTest.client
+  `client` in `CoreAdminTest.java`. Nur Test.
+```
+
 

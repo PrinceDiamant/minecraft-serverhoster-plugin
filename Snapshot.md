@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.Snapshot.view
+  Liefert die Sicht `view`.
+HostMemoryProbe.Snapshot.cgroupUsePercent
+  `cgroupUsePercent` in `HostMemoryProbe.java`.
+```
+
 

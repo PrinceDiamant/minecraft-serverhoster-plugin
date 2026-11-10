@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.99
+  Zeile 99: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.onEnable.Teil1.Z98.Z99.Z100
+  Fortsetzung des Ablaufs ab Zeile 100.
+catch Z.108 (Exception e)
+  Zeile 108: fängt (Exception e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable.Teil1.Z98`, Quellreihenfolge.

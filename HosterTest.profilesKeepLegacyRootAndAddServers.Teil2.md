@@ -10,4 +10,9 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+Profiles.load
+  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+```
+
 - Fortsetzung von `HosterTest.profilesKeepLegacyRootAndAddServers`, Quellreihenfolge.

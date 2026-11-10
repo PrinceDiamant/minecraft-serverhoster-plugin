@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.configure
+  `configure` in `RemoteBackupBridge.java`.
+RemoteBackupBridge.openFtp.Z228
+  Fortsetzung des Ablaufs ab Zeile 228.
+```
+
 - `openFtp` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

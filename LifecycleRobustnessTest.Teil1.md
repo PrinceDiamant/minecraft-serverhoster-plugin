@@ -23,4 +23,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.identityRequiresStartInstantAndCommandNotJustPid
+  `identityRequiresStartInstantAndCommandNotJustPid` in `LifecycleRobustnessTest.java`. Ruft `identity`, `ours`. Nur Test.
+LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord
+  Räumt übrige Prozesse ab `reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`. Ruft `identity`, `write`, `read`. Nur Test.
+LifecycleRobustnessTest.reapKillsOnlyAfterGracefulStopFails
+  Räumt übrige Prozesse ab `reapKillsOnlyAfterGracefulStopFails`. Ruft `write`, `identity`, `FakeProcesses`. Nur Test.
+LifecycleRobustnessTest.liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt
+  `liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt` in `LifecycleRobustnessTest.java`. Ruft `testProcess`, `write`, `identity`. Nur Test.
+LifecycleRobustnessTest.symlinkRecordIsRejected
+  `symlinkRecordIsRejected` in `LifecycleRobustnessTest.java`. Ruft `read`, `reap`, `FakeProcesses`. Nur Test.
+LifecycleRobustnessTest.failedStartDrainsProcessThatIgnoresTerm
+  `failedStartDrainsProcessThatIgnoresTerm` in `LifecycleRobustnessTest.java`. Ruft `testProcess`, `abandon`. Nur Test.
+LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop
+  Stoppt `stopWaitsUntilReadyBeforeSendingStop`. Ruft `testProcess`, `stop`. Nur Test.
+LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills
+  Stoppt `stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`. Ruft `testProcess`, `stop`. Nur Test.
+```
+
 

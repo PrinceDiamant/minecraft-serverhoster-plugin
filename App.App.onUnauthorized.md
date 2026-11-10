@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.showLogin
+  Zeigt `showLogin`. Ruft `$`.
+```
+
 - `onUnauthorized` in `ui/src/App.tsx`

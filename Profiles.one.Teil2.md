@@ -19,4 +19,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Profiles.str
+  `str` in `ServerProfile.java`.
+Profiles.list
+  Listet `list`.
+```
+
 - Fortsetzung von `Profiles.one`, Quellreihenfolge.

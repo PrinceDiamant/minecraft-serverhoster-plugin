@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1635 (System.nanoTime() )= nextWaitNotice)
+  Zeile 1635: prüft `(System.nanoTime() )= nextWaitNotice)`.
+ConsoleBuffer.add
+  Fügt hinzu `add`.
+FabricLauncherPlugin.noteTask
+  Merkt `noteTask`.
+Schritt Z.1640 nextWaitNotice = System.nanoTime() + TimeUnit.MIN…
+  Zeile 1640: rechnet Zeit um oder wartet. `nextWaitNotice = System.nanoTime() + TimeUnit.MIN…`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632.Z1633`, Quellreihenfolge.

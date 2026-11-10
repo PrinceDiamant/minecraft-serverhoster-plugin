@@ -14,4 +14,11 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+HostFirstSetup.completeRestart(Path,Path,Path,Set)
+  Schließt ab `completeRestart`. Ruft `completeRestart`. Befund: toter Code (wahrscheinlich).
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+```
+
 - Fortsetzung von `HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby`, Quellreihenfolge.

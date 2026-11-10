@@ -22,4 +22,11 @@ flowchart TD
   style n6 fill:#f88,stroke:#900
 ```
 
+```knoten
+HostMinimize.phase
+  Liefert die Phase `phase`. Ruft `worldNameSafe`.
+HostMinimize.playersBlocked
+  Liefert die Spieler `playersBlocked`. Befund: toter Code (wahrscheinlich).
+```
+
 - Fortsetzung von `HostMinimizeTest.activeRequiresTheConfiguredWorldToBeLoadedAndIdlePauseStaysOff`, Quellreihenfolge.

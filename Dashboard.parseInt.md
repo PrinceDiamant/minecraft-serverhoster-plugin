@@ -22,4 +22,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.928 (s == null // s.isBlank())
+  Zeile 928: prüft `(s == null // s.isBlank())`.
+return Z.928 return fallback;
+  Zeile 928: Rückgabe `return fallback;`.
+try Z.929
+  Zeile 929: Versuch. Der Fehlerpfad geht in catch.
+return Z.929 return Integer.parseInt(s);
+  Zeile 929: Rückgabe `return Integer.parseInt(s);`.
+catch Z.929 (NumberFormatException e)
+  Zeile 929: fängt (NumberFormatException e).
+return Z.929 return fallback;
+  Zeile 929: Rückgabe `return fallback;`.
+```
+
 - `parseInt` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

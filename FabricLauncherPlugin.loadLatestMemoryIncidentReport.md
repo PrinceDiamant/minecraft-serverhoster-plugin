@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.988 (!Files.isDirectory(reports))
+  Zeile 988: prüft `(!Files.isDirectory(reports))`.
+return Z.988 return;
+  Zeile 988: Rückgabe `return;`.
+try Z.989
+  Zeile 989: Versuch. Der Fehlerpfad geht in catch.
+catch Z.996 (IOException e)
+  Zeile 996: fängt (IOException e).
+```
+
 - `loadLatestMemoryIncidentReport` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

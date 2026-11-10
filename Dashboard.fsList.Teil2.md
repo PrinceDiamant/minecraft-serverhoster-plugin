@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+Dashboard.rel
+  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+```
+
 - Fortsetzung von `Dashboard.fsList`, Quellreihenfolge.

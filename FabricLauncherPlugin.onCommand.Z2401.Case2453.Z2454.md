@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.2454
+  Zeile 2454: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.onCommand.Z2401.Case2453.Z2454.Z2455
+  Fortsetzung des Ablaufs ab Zeile 2455.
+catch Z.2466 (IOException e)
+  Zeile 2466: fängt (IOException e).
+catch Z.2467 (SecurityException e)
+  Zeile 2467: fängt (SecurityException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2453`, Quellreihenfolge.

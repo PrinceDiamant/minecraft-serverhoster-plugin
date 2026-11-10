@@ -23,4 +23,21 @@ flowchart TD
   style n7 fill:#f88,stroke:#900
 ```
 
+```knoten
+Schritt Z.253 Files.createDirectories(data);
+  Zeile 253: Dateioperation. `Files.createDirectories(data);`
+Schritt Z.254 Files.createDirectories(root.resolve('world'));
+  Zeile 254: Dateioperation. `Files.createDirectories(root.resolve('world'));`
+Schritt Z.255 Files.writeString(root.resolve('world/level.dat')…
+  Zeile 255: schreibt Text in eine Datei. `Files.writeString(root.resolve('world/level.dat')…`
+Schritt Z.256 Files.writeString(root.resolve('plugins/ServerHos…
+  Zeile 256: schreibt Text in eine Datei. `Files.writeString(root.resolve('plugins/ServerHos…`
+Schritt Z.257 Files.writeString(root.resolve('server.properties…
+  Zeile 257: schreibt Text in eine Datei. `Files.writeString(root.resolve('server.properties…`
+HostFirstSetup.shouldRun
+  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+HostFirstSetup.apply(Path,Path,Path,Path)
+  Wendet an `apply`. Ruft `apply`. Befund: toter Code (wahrscheinlich).
+```
+
 - Fortsetzung von `HostMinimizeTest.firstSetupRefusesCleanupWhenPreparedWorldSelectionWasChanged`, Quellreihenfolge.

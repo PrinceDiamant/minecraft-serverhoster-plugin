@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.967 getConfig().set('memoryProtection.recoverySamples…
+  Zeile 967: liest die Config. `getConfig().set('memoryProtection.recoverySamples…`
+Schritt Z.968 getConfig().set('memoryProtection.recoveryCooldow…
+  Zeile 968: liest die Config. `getConfig().set('memoryProtection.recoveryCooldow…`
+Schritt Z.969 getConfig().set('memoryProtection.policyVersion',…
+  Zeile 969: liest die Config. `getConfig().set('memoryProtection.policyVersion',…`
+FabricLauncherPlugin.saveConfigWritable
+  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.applyCurrentMemorySettings`, Quellreihenfolge.

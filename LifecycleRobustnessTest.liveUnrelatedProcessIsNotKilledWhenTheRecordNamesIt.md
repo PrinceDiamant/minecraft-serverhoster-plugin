@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.testProcess
+  Prüft `testProcess`. Nur Test.
+LifecycleRobustnessTest.liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt.Z90
+  Fortsetzung des Ablaufs ab Zeile 90.
+```
+
 - `liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

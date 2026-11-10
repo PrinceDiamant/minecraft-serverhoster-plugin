@@ -23,4 +23,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths
+  `dashboardRoutesDoNotSwallowApiAssetsOrUnknownPaths` in `CoreAdminTest.java`. Ruft `isDashboardPage`. Nur Test.
+CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses
+  `tracksMinecraftPlayerEventsAndListResponses` in `CoreAdminTest.java`. Ruft `ChildSlot`, `trackPlayers`. Nur Test.
+CoreAdminTest.playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty
+  `playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty` in `CoreAdminTest.java`. Ruft `readPlayerNames`. Nur Test.
+CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed
+  `dashboardPasswordSetupPreservesExistingAndFailsClosed` in `CoreAdminTest.java`. Ruft `read`, `create`. Nur Test.
+CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead
+  `dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead` in `CoreAdminTest.java`. Ruft `readExisting`, `saveFtp`, `load`. Nur Test.
+CoreAdminTest.backupOptionsRejectInvalidPathsAndRetention
+  Sichert `backupOptionsRejectInvalidPathsAndRetention`. Ruft `BackupOptions`. Nur Test.
+CoreAdminTest.backoffCapsAndDoesNotOverflow
+  `backoffCapsAndDoesNotOverflow` in `CoreAdminTest.java`. Ruft `delaySeconds`. Nur Test.
+CoreAdminTest.tickQueryHidesOnlyTheReply
+  `tickQueryHidesOnlyTheReply` in `CoreAdminTest.java`. Ruft `consume`. Nur Test.
+```
+
 

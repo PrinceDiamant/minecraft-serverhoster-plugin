@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.56 return ProcessHandle.of(pid).map(ProcessHandle::i…
+  Zeile 56: Rückgabe `return ProcessHandle.of(pid).map(ProcessHandle::i…`.
+```
+
 - `alive` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:55–57 nur von Tests erreicht

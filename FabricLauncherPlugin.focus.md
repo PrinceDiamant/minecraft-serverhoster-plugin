@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.336 (!focus.equals(id))
+  Zeile 336: prüft `(!focus.equals(id))`.
+throw Z.336 throw new IllegalArgumentException('ServerHoster …
+  Zeile 336: Abbruch `throw new IllegalArgumentException('ServerHoster …`.
+```
+
 - `focus` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, prüfen. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:335–337 kein Produktionsaufruf im Aufrufgraph; Name kommt in UI, Config oder anderem Text vor

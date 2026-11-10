@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.591 (!request.has(key))
+  Zeile 591: prüft `(!request.has(key))`.
+return Z.591 return fallback;
+  Zeile 591: Rückgabe `return fallback;`.
+if Z.592 (!request.get(key).isJsonPrimitive() // !request.…
+  Zeile 592: prüft `(!request.get(key).isJsonPrimitive() // !request.…`.
+throw Z.593 throw new IllegalArgumentException(key + ' muss T…
+  Zeile 593: Abbruch `throw new IllegalArgumentException(key + ' muss T…`.
+return Z.594 return request.get(key).getAsString();
+  Zeile 594: Rückgabe `return request.get(key).getAsString();`.
+```
+
 - `optionalString` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

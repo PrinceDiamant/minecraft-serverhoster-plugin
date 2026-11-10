@@ -23,4 +23,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.warnPlainFtp
+  Warnt `warnPlainFtp`.
+RemoteBackupBridge.RemoteBackupBridge
+  `RemoteBackupBridge` in `RemoteBackupBridge.java`.
+RemoteBackupBridge.test
+  Prüft `test`. Ruft `connect`, `enterBaseDirectory`.
+RemoteBackupBridge.list
+  Listet `list`. Ruft `safeId`, `connect`, `enterDirectory`.
+RemoteBackupBridge.archive
+  Packt `archive`. Ruft `open`, `safeId`, `connect`.
+RemoteBackupBridge.download
+  Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
+RemoteBackupBridge.delete
+  Löscht `delete`. Ruft `safeId`, `named`, `connect`.
+RemoteBackupBridge.unsupportedAuthTls
+  `unsupportedAuthTls` in `RemoteBackupBridge.java`.
+```
+
 

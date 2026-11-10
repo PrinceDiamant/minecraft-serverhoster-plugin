@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.82 (collectors == null)
+  Zeile 82: prüft `(collectors == null)`.
+return Z.82 return gc;
+  Zeile 82: Rückgabe `return gc;`.
+MemoryTelemetry.gcView.Z83
+  Fortsetzung des Ablaufs ab Zeile 83.
+return Z.91 return gc;
+  Zeile 91: Rückgabe `return gc;`.
+```
+
 - `gcView` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

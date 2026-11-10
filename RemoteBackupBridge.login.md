@@ -22,4 +22,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.245 (!client.login(username, password == null ? '' : …
+  Zeile 245: prüft `(!client.login(username, password == null ? '' : …`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+throw Z.245 throw replyError(client, 'login');
+  Zeile 245: Abbruch `throw replyError(client, 'login');`.
+if Z.246 (!client.setFileType(FTP.BINARY_FILE_TYPE))
+  Zeile 246: prüft `(!client.setFileType(FTP.BINARY_FILE_TYPE))`.
+throw Z.246 throw replyError(client, 'set binary tr…
+  Zeile 246: Abbruch `throw replyError(client, 'set binary tr…`.
+```
+
 - `login` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

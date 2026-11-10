@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.103 !value
+  Zeile 103: prüft `!value`.
+return Z.103 return 'Noch nicht ausgeführt';
+  Zeile 103: Rückgabe `return 'Noch nicht ausgeführt';`.
+return Z.105 return Number.isNaN(time.getTime()) ? value : tim…
+  Zeile 105: Rückgabe `return Number.isNaN(time.getTime()) ? value : tim…`.
+```
+
 - `dateLabel` in `ui/src/components/TaskWorkflow.tsx`

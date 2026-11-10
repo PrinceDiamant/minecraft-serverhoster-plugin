@@ -36,4 +36,31 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.root
+  Liefert die Wurzel `root`. Ruft `guard`, `root`.
+Dashboard.safe
+  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+Dashboard.rel
+  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+Dashboard.fsList
+  `fsList` in `Dashboard.java`. Ruft `safe`, `json`, `rel`.
+Dashboard.fsRead
+  `fsRead` in `Dashboard.java`. Ruft `safe`, `json`, `text`.
+Dashboard.fsDownload
+  `fsDownload` in `Dashboard.java`. Ruft `safe`, `json`.
+Dashboard.fsWrite
+  `fsWrite` in `Dashboard.java`. Ruft `safe`, `json`, `readBodyText`.
+Dashboard.fsUpload
+  `fsUpload` in `Dashboard.java`. Ruft `safe`, `json`, `rel`.
+Dashboard.fsRename
+  `fsRename` in `Dashboard.java`. Ruft `readBodyText`, `safe`, `root`.
+Dashboard.fsMkdir
+  `fsMkdir` in `Dashboard.java`. Ruft `safe`, `json`.
+Dashboard.fsDelete
+  `fsDelete` in `Dashboard.java`. Ruft `readBodyText`, `safe`, `root`.
+Dashboard.logs
+  `logs` in `Dashboard.java`. Ruft `parseInt`, `query`, `safe`.
+```
+
 

@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2224 (!path.isAbsolute())
+  Zeile 2224: prüft `(!path.isAbsolute())`.
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+return Z.2225 return path.toAbsolutePath().normalize();
+  Zeile 2225: Rückgabe `return path.toAbsolutePath().normalize();`.
+```
+
 - `configuredPath` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

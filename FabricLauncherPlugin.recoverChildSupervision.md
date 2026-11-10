@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2027 (shuttingDown)
+  Zeile 2027: prüft `(shuttingDown)`.
+return Z.2027 return;
+  Zeile 2027: Rückgabe `return;`.
+FabricLauncherPlugin.recoverChildSupervision.Z2028
+  Fortsetzung des Ablaufs ab Zeile 2028.
+```
+
 - `recoverChildSupervision` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

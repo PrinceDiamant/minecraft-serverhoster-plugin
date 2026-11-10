@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupOptions.BackupOptions
+  Sichert `BackupOptions`.
+Dashboard.requiredInt
+  Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+sync Z.198
+  Zeile 198: synchronisierter Block.
+Schritt Z.200 pl.getConfig().set('backup.paths', options.paths(…
+  Zeile 200: liest die Config. `pl.getConfig().set('backup.paths', options.paths(…`
+Schritt Z.201 pl.getConfig().set('backup.keep', options.keep());
+  Zeile 201: liest die Config. `pl.getConfig().set('backup.keep', options.keep());`
+FabricLauncherPlugin.saveConfigWritable
+  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case188`, Quellreihenfolge.

@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.115 (rootDefaults)
+  Zeile 115: prüft `(rootDefaults)`.
+if Z.116 (flags == null)
+  Zeile 116: prüft `(flags == null)`.
+if Z.117 (args == null)
+  Zeile 117: prüft `(args == null)`.
+Profiles.bool
+  `bool` in `ServerProfile.java`.
+ServerProfile.ServerProfile
+  `ServerProfile` in `ServerProfile.java`.
+Profiles.props
+  `props` in `ServerProfile.java`.
+return Z.120 return new ServerProfile(id, type, mc, …
+  Zeile 120: Rückgabe `return new ServerProfile(id, type, mc, …`.
+```
+
 - Fortsetzung von `Profiles.one`, Quellreihenfolge.

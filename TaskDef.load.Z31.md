@@ -28,4 +28,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.31 (Object item : list)
+  Zeile 31: Schleife `(Object item : list)`.
+if Z.32 (!(item instanceof Map(?, ?) map))
+  Zeile 32: prüft `(!(item instanceof Map(?, ?) map))`.
+TaskDef.str
+  `str` in `TaskDef.java`.
+TaskDef.TaskDef
+  `TaskDef` in `TaskDef.java`. Ruft `normZone`, `normAction`.
+```
+
 - Fortsetzung von `TaskDef.load`, Quellreihenfolge.

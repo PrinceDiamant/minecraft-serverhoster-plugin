@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.29 Runtime runtime = Runtime.getRuntime();
+  Zeile 29: fragt die JVM-Laufzeit. `Runtime runtime = Runtime.getRuntime();`
+return Z.31 return new Heap(committed - runtime.freeMemory(),…
+  Zeile 31: Rückgabe `return new Heap(committed - runtime.freeMemory(),…`.
+```
+
 - `current` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

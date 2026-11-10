@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.934
+  Zeile 934: Versuch. Der Fehlerpfad geht in catch.
+Dashboard.sendBytes
+  Sendet `sendBytes`.
+```
+
 - `serveIndex` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

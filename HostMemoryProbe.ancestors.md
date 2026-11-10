@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.114 (p != null && p.startsWith(root))
+  Zeile 114: Schleife `(p != null && p.startsWith(root))`.
+if Z.116 (p.equals(root))
+  Zeile 116: prüft `(p.equals(root))`.
+if Z.119 (!out.contains(root))
+  Zeile 119: prüft `(!out.contains(root))`.
+return Z.120 return out;
+  Zeile 120: Rückgabe `return out;`.
+```
+
 - `ancestors` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

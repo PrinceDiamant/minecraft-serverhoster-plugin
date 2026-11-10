@@ -25,4 +25,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.267 (hasControlCharacter(path))
+  Zeile 267: prüft `(hasControlCharacter(path))`.
+RemoteBackupBridge.hasControlCharacter
+  Prüft `hasControlCharacter`.
+throw Z.267 throw new IOException('backup.remote.directory is…
+  Zeile 267: Abbruch `throw new IOException('backup.remote.directory is…`.
+if Z.268 (path.startsWith('/') && !client.changeWorkingDir…
+  Zeile 268: prüft `(path.startsWith('/') && !client.changeWorkingDir…`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+throw Z.268 throw replyError(client, 'change to FTP…
+  Zeile 268: Abbruch `throw replyError(client, 'change to FTP…`.
+RemoteBackupBridge.enterBaseDirectory.Z269
+  Fortsetzung des Ablaufs ab Zeile 269.
+```
+
 - `enterBaseDirectory` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

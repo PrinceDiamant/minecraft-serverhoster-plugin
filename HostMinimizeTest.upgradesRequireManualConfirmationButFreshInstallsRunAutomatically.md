@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimizeTest.upgradesRequireManualConfirmationButFreshInstallsRunAutomatically.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.upgradesRequireManualConfirmationButFreshInstallsRunAutomatically.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `upgradesRequireManualConfirmationButFreshInstallsRunAutomatically` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
 - Auslöser: Test

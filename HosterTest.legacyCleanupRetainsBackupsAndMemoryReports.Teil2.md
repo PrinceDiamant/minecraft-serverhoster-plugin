@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.672 assertEquals('report', Files.readString(reports.r…
+  Zeile 672: liest Text aus einer Datei. `assertEquals('report', Files.readString(reports.r…`
+Schritt Z.673 assertTrue(Files.isDirectory(oldData));
+  Zeile 673: Dateioperation. `assertTrue(Files.isDirectory(oldData));`
+```
+
 - Fortsetzung von `HosterTest.legacyCleanupRetainsBackupsAndMemoryReports`, Quellreihenfolge.

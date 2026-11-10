@@ -21,4 +21,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.59 (it.hasNext())
+  Zeile 59: Schleife `(it.hasNext())`.
+if Z.61 (files ) maxEntries)
+  Zeile 61: prüft `(files ) maxEntries)`.
+if Z.62 (Files.isSymbolicLink(p) // Files.isDirectory(p))
+  Zeile 62: prüft `(Files.isSymbolicLink(p) // Files.isDirectory(p))`.
+try Z.64
+  Zeile 64: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.64 bytes += Files.size(p);
+  Zeile 64: Dateioperation. `bytes += Files.size(p);`
+catch Z.64 (IOException ignored)
+  Zeile 64: fängt (IOException ignored).
+```
+
 - Fortsetzung von `ProcessProbe.disk.Z57`, Quellreihenfolge.

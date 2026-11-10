@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.109 return window.dashboardUi?.confirm(( title: 'Zeit…
+  Zeile 109: Rückgabe `return window.dashboardUi?.confirm(( title: 'Zeit…`.
+```
+
 - `askBeforeDelete` in `ui/src/components/TaskWorkflow.tsx`

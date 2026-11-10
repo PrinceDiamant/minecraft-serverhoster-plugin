@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.191 (Files.isSymbolicLink(marker))
+  Zeile 191: prüft `(Files.isSymbolicLink(marker))`.
+throw Z.191 throw new SecurityException('host setup marker mu…
+  Zeile 191: Abbruch `throw new SecurityException('host setup marker mu…`.
+if Z.192 (!Files.isRegularFile(marker, LinkOption.NOFOLLOW…
+  Zeile 192: prüft `(!Files.isRegularFile(marker, LinkOption.NOFOLLOW…`.
+return Z.192 return Map.of();
+  Zeile 192: Rückgabe `return Map.of();`.
+HostMinimize.readState
+  Liest `readState`.
+return Z.193 return HostMinimize.readState(Files.rea…
+  Zeile 193: Rückgabe `return HostMinimize.readState(Files.rea…`.
+```
+
 - `readState` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

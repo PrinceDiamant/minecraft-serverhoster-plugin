@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1077 (childXmx ( 0)
+  Zeile 1077: prüft `(childXmx ( 0)`.
+if Z.1078 (memoryBudgetWarnings.add('invalid-xmx:' + profil…
+  Zeile 1078: prüft `(memoryBudgetWarnings.add('invalid-xmx:' + profil…`.
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.warnHeapBudget.Z1070.Teil1`, Quellreihenfolge.

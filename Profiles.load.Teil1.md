@@ -16,4 +16,15 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+Profiles.one
+  Fallback `type` ist `fabric`, ausgelieferte `config.yml` sagt `vanilla`. Befund: Logikrisiko (sicher).
+Profiles.str
+  `str` in `ServerProfile.java`.
+if Z.69 (!'default'.equals(rootId))
+  Zeile 69: prüft `(!'default'.equals(rootId))`.
+Profiles.copyId
+  Kopiert `copyId`. Ruft `ServerProfile`.
+```
+
 - Fortsetzung von `Profiles.load`, Quellreihenfolge.

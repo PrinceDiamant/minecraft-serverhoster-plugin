@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ProfileMerge.inherit.Calls7149
+  Weitere eigene Aufrufe ab Zeile 7149.
+ProfileMerge.inherit.Calls7524
+  Weitere eigene Aufrufe ab Zeile 7524.
+return Z.168 return new ServerProfile(child.id, nvl(…
+  Zeile 168: Rückgabe `return new ServerProfile(child.id, nvl(…`.
+```
+
 - `inherit` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RuntimeLimits.boundedSeconds
+  Begrenzt `boundedSeconds`.
+Schritt Z.222 String config = Files.readString(Path.of('src/mai…
+  Zeile 222: liest Text aus einer Datei. `String config = Files.readString(Path.of('src/mai…`
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.invalidMemoryThresholdDisablesAutoStopWithoutRewritingHeap`, Quellreihenfolge.

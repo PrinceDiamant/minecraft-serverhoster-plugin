@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1890 (slot.wantRunning && !shuttingDown && slot.schedu…
+  Zeile 1890: prüft `(slot.wantRunning && !shuttingDown && slot.schedu…`.
+FabricLauncherPlugin.scheduleRestart
+  Plant `scheduleRestart`. Ruft `maxAttempts`, `mayRetry`, `notifyNtfy`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.watch`, Quellreihenfolge.

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.120 return //bERROR/b/Exception/FATAL/.test(l)?'E'://…
+  Zeile 120: Rückgabe `return //bERROR/b/Exception/FATAL/.test(l)?'E'://…`.
+```
+
 - `cls` in `src/main/resources/web/index.html`

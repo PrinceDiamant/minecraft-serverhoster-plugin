@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryProtectionPolicy.sample.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+MemoryProtectionPolicy.sample.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+MemoryProtectionPolicy.sample.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `sample` in `src/main/java/de/aichele/childlauncher/MemoryProtectionPolicy.java`

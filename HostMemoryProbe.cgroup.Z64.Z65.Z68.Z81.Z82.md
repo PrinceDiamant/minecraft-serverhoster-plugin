@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.82 (Path base : List.of(root.resolve('memo…
+  Zeile 82: Schleife `(Path base : List.of(root.resolve('memo…`.
+HostMemoryProbe.resolve
+  Löst auf `resolve`.
+HostMemoryProbe.cgroup.Z64.Z65.Z68.Z81.Z82.Z84
+  Fortsetzung des Ablaufs ab Zeile 84.
+```
+
 - Fortsetzung von `HostMemoryProbe.cgroup.Z64.Z65.Z68.Z81`, Quellreihenfolge.

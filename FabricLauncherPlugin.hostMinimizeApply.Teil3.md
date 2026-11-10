@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.hostMinimizeView
+  Betrifft den Host `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
+return Z.2316 return view;
+  Zeile 2316: Rückgabe `return view;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply`, Quellreihenfolge.

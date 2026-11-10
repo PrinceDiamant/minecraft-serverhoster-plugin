@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.completeRestart(Path,Path,Path,Set,List).Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.completeRestart(Path,Path,Path,Set,List).Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.completeRestart(Path,Path,Path,Set,List).Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.completeRestart(Path,Path,Path,Set,List).Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `completeRestart` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

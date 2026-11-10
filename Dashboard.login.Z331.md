@@ -25,4 +25,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.331 (current != null && MessageDigest.isEqual(pw.getB…
+  Zeile 331: prüft `(current != null && MessageDigest.isEqual(pw.getB…`.
+Dashboard.createSession
+  Legt an `createSession`. Ruft `cookie`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+try Z.338
+  Zeile 338: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.338 Thread.sleep(800);
+  Zeile 338: wartet. `Thread.sleep(800);`
+catch Z.338 (InterruptedException ignored)
+  Zeile 338: fängt (InterruptedException ignored).
+if Z.339 (n )= 5)
+  Zeile 339: prüft `(n )= 5)`.
+```
+
 - Fortsetzung von `Dashboard.login`, Quellreihenfolge.

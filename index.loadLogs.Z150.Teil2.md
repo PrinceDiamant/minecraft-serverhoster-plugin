@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.loadLog
+  Lädt `loadLog`. Ruft `$`, `api`, `renderLog`.
+```
+
 - Fortsetzung von `index.loadLogs.Z150`, Quellreihenfolge.

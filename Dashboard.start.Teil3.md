@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.68 return t;
+  Zeile 68: Rückgabe `return t;`.
+Dashboard.handle
+  Ein HTTP-Kontext `/`, verzweigt nach Methode und Pfad.
+```
+
 - Fortsetzung von `Dashboard.start`, Quellreihenfolge.

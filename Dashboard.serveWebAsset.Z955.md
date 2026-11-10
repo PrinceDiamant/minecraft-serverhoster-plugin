@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.955
+  Zeile 955: Versuch. Der Fehlerpfad geht in catch.
+if Z.956 (in == null)
+  Zeile 956: prüft `(in == null)`.
+Dashboard.send
+  Sendet `send`. Ruft `sendBytes`.
+return Z.958 return;
+  Zeile 958: Rückgabe `return;`.
+Dashboard.sendBytes
+  Sendet `sendBytes`.
+```
+
 - Fortsetzung von `Dashboard.serveWebAsset`, Quellreihenfolge.

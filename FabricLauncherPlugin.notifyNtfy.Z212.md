@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.212
+  Zeile 212: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.notifyNtfy.Z212.Z213
+  Fortsetzung des Ablaufs ab Zeile 213.
+catch Z.221 (RejectedExecutionException e)
+  Zeile 221: fängt (RejectedExecutionException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.notifyNtfy`, Quellreihenfolge.

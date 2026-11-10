@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.208 return p.isAbsolute() ? p : base.resolve(p);
+  Zeile 208: Rückgabe `return p.isAbsolute() ? p : base.resolve(p);`.
+```
+
 - `resolve` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

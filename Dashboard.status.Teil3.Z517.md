@@ -20,4 +20,19 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+if Z.517 (pid ) 0)
+  Zeile 517: prüft `(pid ) 0)`.
+Dashboard.cpu
+  Liest `/proc/<pid>/stat` und teilt durch 100. Befund: Logikrisiko (prüfen).
+Dashboard.rssMb
+  `rssMb` in `Dashboard.java`.
+Dashboard.procField
+  `procField` in `Dashboard.java`.
+FabricLauncherPlugin.maybeQueryChildTick
+  Führt nur aus, wenn die Sperrzeit um ist `maybeQueryChildTick`. Ruft `slot`, `running`, `send`.
+if Z.520 (System.currentTimeMillis() - slot.tickAt ( 60_00…
+  Zeile 520: prüft `(System.currentTimeMillis() - slot.tickAt ( 60_00…`.
+```
+
 - Fortsetzung von `Dashboard.status.Teil3`, Quellreihenfolge.

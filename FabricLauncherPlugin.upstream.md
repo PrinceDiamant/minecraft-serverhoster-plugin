@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.863 return upstream;
+  Zeile 863: Rückgabe `return upstream;`.
+```
+
 - `upstream` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:863–863 kein Produktionsaufruf im Aufrufgraph

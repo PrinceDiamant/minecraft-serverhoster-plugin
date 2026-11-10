@@ -23,4 +23,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.84 (Path p : ancestors(dir, base))
+  Zeile 84: Schleife `(Path p : ancestors(dir, base))`.
+HostMemoryProbe.ancestors
+  `ancestors` in `HostMemoryProbe.java`.
+HostMemoryProbe.number
+  `number` in `HostMemoryProbe.java`.
+if Z.87 (limit ) 0 && limit ( (1L (( 60) && current )= 0)
+  Zeile 87: prüft `(limit ) 0 && limit ( (1L (( 60) && current )= 0)`.
+return Z.90 return new Cgroup('v1', current / MB, limit / MB,…
+  Zeile 90: Rückgabe `return new Cgroup('v1', current / MB, limit / MB,…`.
+```
+
 - Fortsetzung von `HostMemoryProbe.cgroup.Z64.Z65.Z68.Z81.Z82`, Quellreihenfolge.

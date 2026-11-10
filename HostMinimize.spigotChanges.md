@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.88 return values;
+  Zeile 88: Rückgabe `return values;`.
+```
+
 - `spigotChanges` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

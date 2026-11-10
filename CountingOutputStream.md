@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.CountingOutputStream.CountingOutputStream
+  `CountingOutputStream` in `RemoteBackupBridge.java`.
+RemoteBackupBridge.CountingOutputStream.write(int)
+  Schreibt `write`.
+RemoteBackupBridge.CountingOutputStream.write(byteArray,int,int)
+  Schreibt `write`.
+RemoteBackupBridge.CountingOutputStream.count
+  Zählt `count`.
+```
+
 

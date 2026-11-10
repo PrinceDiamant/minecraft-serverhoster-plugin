@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PathGuard.open
+  Öffnet `open`. Ruft `PathGuard`.
+FabricLauncherPlugin.workDir(String)
+  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+return Z.813 return PathGuard.open(pl.workDir(sid));
+  Zeile 813: Rückgabe `return PathGuard.open(pl.workDir(sid));`.
+```
+
 - `guard` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

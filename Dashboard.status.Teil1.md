@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+ChildSlot.pid
+  Liefert die Prozessnummer `pid`.
+FabricLauncherPlugin.setupRequired
+  `setupRequired` in `FabricLauncherPlugin.java`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+```
+
 - Fortsetzung von `Dashboard.status`, Quellreihenfolge.

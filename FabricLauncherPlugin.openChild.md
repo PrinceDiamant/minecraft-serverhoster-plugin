@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1713 (!slot(id).wantRunning)
+  Zeile 1713: prüft `(!slot(id).wantRunning)`.
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+return Z.1713 return;
+  Zeile 1713: Rückgabe `return;`.
+FabricLauncherPlugin.openChild.Z1714
+  Fortsetzung des Ablaufs ab Zeile 1714.
+```
+
 - `openChild` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

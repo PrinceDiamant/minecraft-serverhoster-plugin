@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.ls
+  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+```
+
 - Fortsetzung von `index.saveFile`, Quellreihenfolge.

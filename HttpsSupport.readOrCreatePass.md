@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.readOrCreatePass.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HttpsSupport.readOrCreatePass.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `readOrCreatePass` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

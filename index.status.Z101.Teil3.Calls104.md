@@ -19,4 +19,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.esc
+  Maskiert HTML `esc`.
+index.lifecycleLabel
+  `lifecycleLabel` in `index.html`.
+index.fmtUp
+  Formatiert `fmtUp`.
+```
+
 - Fortsetzung von `index.status.Z101.Teil3`, Quellreihenfolge.

@@ -16,4 +16,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ProfileMerge.ProfileMerge
+  `ProfileMerge` in `ServerProfile.java`.
+ProfileMerge.inherit
+  `inherit` in `ServerProfile.java`. Ruft `ServerProfile`, `nvl`, `safeId`.
+ProfileMerge.mergeProps
+  Mischt `mergeProps`.
+ProfileMerge.nvl
+  `nvl` in `ServerProfile.java`.
+ProfileMerge.safeId
+  Prüft die Pfadgrenze `safeId`.
+```
+
 

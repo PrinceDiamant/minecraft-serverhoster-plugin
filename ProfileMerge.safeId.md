@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.193 return id.replaceAll('(^A-Za-z0-9._-)', '_');
+  Zeile 193: Rückgabe `return id.replaceAll('(^A-Za-z0-9._-)', '_');`.
+```
+
 - `safeId` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

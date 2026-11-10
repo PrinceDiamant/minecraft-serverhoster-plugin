@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerHosterSettings.ServerHosterSettings
+  `ServerHosterSettings` in `ServerHosterSettings.java`. Ruft `maxAttempts`, `enumValue`, `hasUnsafeHostCharacter`.
+ServerHosterSettings.apply
+  Wendet an `apply`.
+ServerHosterSettings.from
+  `from` in `ServerHosterSettings.java`. Ruft `ServerHosterSettings`.
+```
+
 - Fortsetzung von `HosterTest.settingsValidateAndKeepRemoteCredentialsOutOfDashboardView`, Quellreihenfolge.

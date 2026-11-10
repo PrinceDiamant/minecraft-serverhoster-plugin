@@ -16,5 +16,14 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+Schritt Z.267 Map(String, Object) flat = getConfig().getValues(…
+  Zeile 267: liest die Config. `Map(String, Object) flat = getConfig().getValues(…`
+Profiles.load
+  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+```
+
 - `Profiles.load`, danach nur `getFirst()`.
 - Befund: angemeldet aber nicht umgesetzt, sicher. FabricLauncherPlugin.java:266–272 getFirst verwirft servers.*

@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.159 (Map.Entry(String, byte()) entry : file…
+  Zeile 159: Schleife `(Map.Entry(String, byte()) entry : file…`.
+if Z.160 (!entry.getKey().startsWith(prefix))
+  Zeile 160: prüft `(!entry.getKey().startsWith(prefix))`.
+if Z.162 (name.contains('/'))
+  Zeile 162: prüft `(name.contains('/'))`.
+```
+
 - Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117.Case154.Z156`, Quellreihenfolge.

@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.928 (maxBytes ( 100_000)
+  Zeile 928: prüft `(maxBytes ( 100_000)`.
+FabricLauncherPlugin.warnOnce
+  Warnt `warnOnce`.
+if Z.933 (lastTelemetryWriteAt != 0 && now - lastTelemetry…
+  Zeile 933: prüft `(lastTelemetryWriteAt != 0 && now - lastTelemetry…`.
+return Z.933 return;
+  Zeile 933: Rückgabe `return;`.
+FabricLauncherPlugin.maybeWriteTelemetry.Teil2.Z935
+  Fortsetzung des Ablaufs ab Zeile 935.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.maybeWriteTelemetry`, Quellreihenfolge.

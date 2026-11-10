@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.873 (cached != null && at != null && now - at ( 60_00…
+  Zeile 873: prüft `(cached != null && at != null && now - at ( 60_00…`.
+return Z.873 return cached;
+  Zeile 873: Rückgabe `return cached;`.
+ProcessProbe.disk
+  Liest die Platte `disk`.
+FabricLauncherPlugin.workDir(String)
+  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+return Z.876 return fresh;
+  Zeile 876: Rückgabe `return fresh;`.
+```
+
 - `diskCached` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

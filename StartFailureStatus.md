@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+StartFailureStatus.StartFailureStatus
+  Startet `StartFailureStatus`.
+StartFailureStatus.text
+  Antwortet mit Text `text`.
+```
+
 

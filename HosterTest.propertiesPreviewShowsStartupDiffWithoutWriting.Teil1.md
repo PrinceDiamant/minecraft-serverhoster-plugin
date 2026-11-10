@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.156 Files.writeString(properties, original);
+  Zeile 156: schreibt Text in eine Datei. `Files.writeString(properties, original);`
+PropertiesFile.preview
+  Zeigt die Vorschau `preview`.
+```
+
 - Fortsetzung von `HosterTest.propertiesPreviewShowsStartupDiffWithoutWriting`, Quellreihenfolge.

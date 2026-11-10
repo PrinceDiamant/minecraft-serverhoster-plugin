@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.138 action === 'delete' // action === 'reset'
+  Zeile 138: prüft `action === 'delete' // action === 'reset'`.
+if Z.148 !accepted
+  Zeile 148: prüft `!accepted`.
+return Z.148 return;
+  Zeile 148: Rückgabe `return;`.
+if Z.150 action === 'import' && !candidate?.legacyVersion
+  Zeile 150: prüft `action === 'import' && !candidate?.legacyVersion`.
+if Z.156 !accepted
+  Zeile 156: prüft `!accepted`.
+return Z.156 return;
+  Zeile 156: Rückgabe `return;`.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.finish.Z135.Teil1`, Quellreihenfolge.

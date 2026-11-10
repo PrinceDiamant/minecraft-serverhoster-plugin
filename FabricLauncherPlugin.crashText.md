@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CrashIndex.read
+  Liest `read`. Ruft `open`, `resolve`, `query`.
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+return Z.857 return CrashIndex.read(profile(id).dire…
+  Zeile 857: Rückgabe `return CrashIndex.read(profile(id).dire…`.
+```
+
 - `crashText` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

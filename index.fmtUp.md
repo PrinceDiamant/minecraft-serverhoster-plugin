@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.90 return (d?d+'d ':'')+h+'h '+m+'m'
+  Zeile 90: Rückgabe `return (d?d+'d ':'')+h+'h '+m+'m'`.
+```
+
 - `fmtUp` in `src/main/resources/web/index.html`

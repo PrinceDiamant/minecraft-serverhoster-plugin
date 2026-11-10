@@ -29,4 +29,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.startAsync
+  Startet `startAsync`. Ruft `msg`, `slot`, `invalidateRestarts`.
+FabricLauncherPlugin.openChild
+  Öffnet `openChild`. Ruft `slot`, `running`, `msg`.
+FabricLauncherPlugin.launch
+  Startet den Prozess `launch`. Ruft `running`, `directory`, `copyPlayerFiles`.
+FabricLauncherPlugin.armWatch
+  Hängt die Überwachung an `armWatch`. Ruft `watch`.
+FabricLauncherPlugin.armPipe
+  Hängt die Überwachung an `armPipe`. Ruft `pipe`.
+FabricLauncherPlugin.consolePrefix
+  Liefert die Konsole `consolePrefix`.
+FabricLauncherPlugin.processRecord
+  `processRecord` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.rememberProcess
+  Merkt sich den Prozess `rememberProcess`. Ruft `write`, `processRecord`, `directory`.
+FabricLauncherPlugin.reapLeftover
+  Räumt übrige Prozesse ab `reapLeftover`. Ruft `reap`, `processRecord`.
+FabricLauncherPlugin.abandonFailedStart
+  Bricht den fehlgeschlagenen Start ab `abandonFailedStart`. Ruft `abandon`, `deleteIfMatch`, `processRecord`.
+```
+
 - `startAsync` reicht an `launch`: Dateien, Prozess, Pipes, Watch.

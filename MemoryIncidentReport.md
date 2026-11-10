@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryIncidentReport.MemoryIncidentReport
+  Betrifft den Speicher `MemoryIncidentReport`.
+MemoryIncidentReport.write
+  Schreibt `write`. Ruft `cgroupUsePercent`.
+```
+
 

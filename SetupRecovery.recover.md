@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupRecovery.recover.Z34
+  Fortsetzung des Ablaufs ab Zeile 34.
+return Z.81 return List.copyOf(results);
+  Zeile 81: Rückgabe `return List.copyOf(results);`.
+```
+
 - `recover` in `src/main/java/de/aichele/childlauncher/SetupRecovery.java`

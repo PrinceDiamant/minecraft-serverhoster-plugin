@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostHeapTune.apply.Z34
+  Fortsetzung des Ablaufs ab Zeile 34.
+return Z.53 return List.copyOf(results);
+  Zeile 53: Rückgabe `return List.copyOf(results);`.
+```
+
 - `apply` in `src/main/java/de/aichele/childlauncher/HostHeapTune.java`

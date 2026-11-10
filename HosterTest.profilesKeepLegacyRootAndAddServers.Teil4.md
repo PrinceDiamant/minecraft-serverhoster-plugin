@@ -13,4 +13,11 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+Profiles.portClash
+  Wird vom Plugin-Kern nicht ausgewertet. Befund: angemeldet aber nicht umgesetzt (wahrscheinlich).
+Profiles.load
+  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+```
+
 - Fortsetzung von `HosterTest.profilesKeepLegacyRootAndAddServers`, Quellreihenfolge.

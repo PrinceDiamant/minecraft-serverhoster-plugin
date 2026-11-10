@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.26
+  Zeile 26: Versuch. Der Fehlerpfad geht in catch.
+CrashIndex.list.Z26.Z27
+  Fortsetzung des Ablaufs ab Zeile 27.
+```
+
 - Fortsetzung von `CrashIndex.list`, Quellreihenfolge.

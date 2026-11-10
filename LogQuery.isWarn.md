@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.74 return line.contains('WARN');
+  Zeile 74: Rückgabe `return line.contains('WARN');`.
+```
+
 - `isWarn` in `src/main/java/de/aichele/childlauncher/LogQuery.java`

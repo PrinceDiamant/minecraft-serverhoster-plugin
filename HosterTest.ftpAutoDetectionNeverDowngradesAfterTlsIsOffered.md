@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.ftpAutoDetectionNeverDowngradesAfterTlsIsOffered.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.ftpAutoDetectionNeverDowngradesAfterTlsIsOffered.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `ftpAutoDetectionNeverDowngradesAfterTlsIsOffered` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

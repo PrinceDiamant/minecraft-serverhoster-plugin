@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.72
+  Zeile 72: Versuch. Der Fehlerpfad geht in catch.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+catch Z.76 cause
+  Zeile 76: fängt cause.
+finally Z.72
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `BackupWorkflow.BackupWorkflow.createBackup`, Quellreihenfolge.

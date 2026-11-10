@@ -30,4 +30,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.160 (live == null // !live.alive())
+  Zeile 160: prüft `(live == null // !live.alive())`.
+try Z.161
+  Zeile 161: Versuch. Der Fehlerpfad geht in catch.
+if Z.162 (!Files.isSymbolicLink(file))
+  Zeile 162: prüft `(!Files.isSymbolicLink(file))`.
+Schritt Z.162 Files.deleteIfExists(file);
+  Zeile 162: Dateioperation. `Files.deleteIfExists(file);`
+catch Z.163 (IOException e)
+  Zeile 163: fängt (IOException e).
+return Z.164 return new ReapResult(Kind.INVALID_RECORD, 'stale…
+  Zeile 164: Rückgabe `return new ReapResult(Kind.INVALID_RECORD, 'stale…`.
+return Z.166 return new ReapResult(Kind.CLEARED, 'pid ' + iden…
+  Zeile 166: Rückgabe `return new ReapResult(Kind.CLEARED, 'pid ' + iden…`.
+if Z.168 (!ours(identity, live, selfPid))
+  Zeile 168: prüft `(!ours(identity, live, selfPid))`.
+ChildProcessRecord.ours
+  Prüft, ob es der eigene Prozess ist `ours`. Ruft `samePath`, `looksLikeJava`, `fileName`.
+return Z.169 return new ReapResult(Kind.REFUSED, 'pid ' + iden…
+  Zeile 169: Rückgabe `return new ReapResult(Kind.REFUSED, 'pid ' + iden…`.
+```
+
 - Fortsetzung von `ChildProcessRecord.reap`, Quellreihenfolge.

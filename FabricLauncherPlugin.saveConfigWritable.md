@@ -14,4 +14,11 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+sync Z.245
+  Zeile 245: synchronisierter Block.
+FabricLauncherPlugin.makeWritable
+  Setzt POSIX `rwxrwxrwx` für Ordner und `rw-rw-rw-` für Dateien. Befund: Logikrisiko (sicher).
+```
+
 - `saveConfigWritable` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

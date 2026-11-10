@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.90 (!control.isClosed())
+  Zeile 90: Schleife `(!control.isClosed())`.
+RemoteBackupBridgeTest.StubFtpServer.serve.Z90.Z91
+  Fortsetzung des Ablaufs ab Zeile 91.
+```
+
 - Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serve`, Quellreihenfolge.

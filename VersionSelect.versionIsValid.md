@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.42 return type === 'custom' ? !!version.trim() : ver…
+  Zeile 42: Rückgabe `return type === 'custom' ? !!version.trim() : ver…`.
+```
+
 - `versionIsValid` in `ui/src/components/VersionSelect.tsx`

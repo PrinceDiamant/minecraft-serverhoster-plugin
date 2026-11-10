@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.completeRestart(Path,Path,Path,Set,List)
+  Schließt ab `completeRestart`. Ruft `readState`, `requireRoot`, `lobbyNameSafe`.
+return Z.117 return completeRestart(root, marker, ch…
+  Zeile 117: Rückgabe `return completeRestart(root, marker, ch…`.
+```
+
 - `completeRestart` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostFirstSetup.java:116–118 nur von Tests erreicht

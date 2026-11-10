@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1245 (pid (= 0)
+  Zeile 1245: prüft `(pid (= 0)`.
+return Z.1247 return;
+  Zeile 1247: Rückgabe `return;`.
+ProcessProbe.snapshot
+  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+for Z.1251 (String key : List.of('rssMb', 'hwmMb',…
+  Zeile 1251: Schleife `(String key : List.of('rssMb', 'hwmMb',…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.addProcessDiagnostics`, Quellreihenfolge.

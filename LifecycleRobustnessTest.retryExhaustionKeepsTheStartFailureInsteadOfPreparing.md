@@ -15,5 +15,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+StartFailureStatus.text
+  Antwortet mit Text `text`.
+```
+
 - `retryExhaustionKeepsTheStartFailureInsteadOfPreparing` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

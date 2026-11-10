@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.148 files
+  Zeile 148: Schleife `files`.
+try Z.148
+  Zeile 148: Versuch. Der Fehlerpfad geht in catch.
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+catch Z.149 e
+  Zeile 149: fängt e.
+if Z.149 String(e.message).includes('existiert')&&await wi…
+  Zeile 149: prüft `String(e.message).includes('existiert')&&await wi…`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+```
+
 - Fortsetzung von `index.upload`, Quellreihenfolge.

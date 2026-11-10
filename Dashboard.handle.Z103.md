@@ -28,4 +28,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.103
+  Zeile 103: Versuch. Der Fehlerpfad geht in catch.
+Dashboard.handle.Z103.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.handle.Z103.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.handle.Z103.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.handle.Z103.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.handle.Z103.Teil5
+  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.handle.Z103.Teil6
+  Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.handle.Z103.Teil7
+  Abschnitt 7 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.handle.Z103.Catch103
+  Fehlerpfade ab Zeile 103.
+finally Z.103
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `Dashboard.handle`, Quellreihenfolge.

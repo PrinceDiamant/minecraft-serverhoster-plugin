@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.parseJsonObject
+  Wertet aus `parseJsonObject`.
+Dashboard.readBodyText
+  Liest `readBodyText`.
+Dashboard.requiredString
+  Liest verpflichtend `requiredString`.
+Dashboard.optionalString
+  Liest optional `optionalString`.
+Dashboard.hostMinimize.Z576
+  Fortsetzung des Ablaufs ab Zeile 576.
+```
+
 - `hostMinimize` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

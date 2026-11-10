@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.259 (String line : Files.readAllLines(prope…
+  Zeile 259: Schleife `(String line : Files.readAllLines(prope…`.
+if Z.261 (!trimmed.startsWith('level-name='))
+  Zeile 261: prüft `(!trimmed.startsWith('level-name='))`.
+if Z.263 (safeWorldName(name) && !names.contains(name))
+  Zeile 263: prüft `(safeWorldName(name) && !names.contains(name))`.
+HostFirstSetup.safeWorldName
+  Prüft die Pfadgrenze `safeWorldName`.
+```
+
 - Fortsetzung von `HostFirstSetup.readLevelNames`, Quellreihenfolge.

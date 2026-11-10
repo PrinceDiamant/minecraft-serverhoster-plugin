@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskWorkflow.newId
+  `newId` in `TaskWorkflow.tsx`.
+TaskWorkflow.newDraft
+  `newDraft` in `TaskWorkflow.tsx`. Ruft `newId`.
+TaskWorkflow.draftFrom
+  Baut einen Entwurf `draftFrom`.
+TaskWorkflow.describeSchedule
+  Beschreibt `describeSchedule`.
+TaskWorkflow.dateLabel
+  `dateLabel` in `TaskWorkflow.tsx`.
+TaskWorkflow.askBeforeDelete
+  Fragt nach `askBeforeDelete`.
+TaskWorkflow.TaskWorkflow
+  `TaskWorkflow` in `TaskWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `newDraft`.
+```
+
 

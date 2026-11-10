@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.51 return line.contains('Done (');
+  Zeile 51: Rückgabe `return line.contains('Done (');`.
+```
+
 - `isReadyLine` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.113 (Path segment : root.relativize(resolve…
+  Zeile 113: Schleife `(Path segment : root.relativize(resolve…`.
+if Z.115 (Files.isSymbolicLink(current))
+  Zeile 115: prüft `(Files.isSymbolicLink(current))`.
+throw Z.116 throw new IllegalArgumentException('Serverordner …
+  Zeile 116: Abbruch `throw new IllegalArgumentException('Serverordner …`.
+return Z.118 return resolved;
+  Zeile 118: Rückgabe `return resolved;`.
+```
+
 - Fortsetzung von `SetupDiscovery.resolveNewDirectory`, Quellreihenfolge.

@@ -29,4 +29,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostLobbyRuntime.apply
+  Wendet an `apply`. Ruft `worldNameSafe`.
+FabricLauncherPlugin.applyLobbyRules.name
+  `name` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.applyLobbyRules.spawnFlags
+  `spawnFlags` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.applyLobbyRules.keepSpawnInMemory
+  `keepSpawnInMemory` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.applyLobbyRules.ruleOff
+  `ruleOff` in `FabricLauncherPlugin.java`.
+if Z.2386 (changed ) 0)
+  Zeile 2386: prüft `(changed ) 0)`.
+```
+
 - `applyLobbyRules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

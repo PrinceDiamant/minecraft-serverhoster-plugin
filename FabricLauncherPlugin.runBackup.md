@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+FabricLauncherPlugin.runBackup.Z1360
+  Fortsetzung des Ablaufs ab Zeile 1360.
+```
+
 - `runBackup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

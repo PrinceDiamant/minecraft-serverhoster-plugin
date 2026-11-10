@@ -23,4 +23,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+case Z.2412 'task'
+  Zeile 2412: Zweig `'task'`.
+FabricLauncherPlugin.onCommand.Z2401.Case2412
+  Rumpf dieses switch-Zweigs ab Zeile 2412.
+case Z.2417 'backup'
+  Zeile 2417: Zweig `'backup'`.
+FabricLauncherPlugin.onCommand.Z2401.Case2417
+  Rumpf dieses switch-Zweigs ab Zeile 2417.
+case Z.2429 'versions'
+  Zeile 2429: Zweig `'versions'`.
+FabricLauncherPlugin.onCommand.Z2401.Case2429
+  Rumpf dieses switch-Zweigs ab Zeile 2429.
+case Z.2433 'host'
+  Zeile 2433: Zweig `'host'`.
+FabricLauncherPlugin.onCommand.Z2401.Case2433
+  Rumpf dieses switch-Zweigs ab Zeile 2433.
+case Z.2448 'plan'
+  Zeile 2448: Zweig `'plan'`.
+FabricLauncherPlugin.planText
+  Zeigt den Startplan `planText`. Ruft `text`, `javaBin`, `profile`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

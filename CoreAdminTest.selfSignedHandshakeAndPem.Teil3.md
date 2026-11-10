@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.300
+  Zeile 300: Versuch. Der Fehlerpfad geht in catch.
+CoreAdminTest.pem
+  `pem` in `CoreAdminTest.java`. Nur Test.
+HttpsSupport.fromPem
+  `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
+```
+
 - Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`, Quellreihenfolge.

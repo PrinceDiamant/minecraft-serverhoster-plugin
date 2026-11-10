@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.280 !globalThis.crypto?.getRandomValues
+  Zeile 280: prüft `!globalThis.crypto?.getRandomValues`.
+return Z.282 return;
+  Zeile 282: Rückgabe `return;`.
+```
+
 - `generatePassword` in `ui/src/App.tsx`

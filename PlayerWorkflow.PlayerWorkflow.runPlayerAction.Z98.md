@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.98
+  Zeile 98: Versuch. Der Fehlerpfad geht in catch.
+PlayerWorkflow.sendCommand
+  Sendet `sendCommand`. Ruft `dashboardRequest`, `jsonBody`.
+for Z.102 (1200, 3500, 7000)
+  Zeile 102: Schleife `(1200, 3500, 7000)`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+catch Z.103 cause
+  Zeile 103: fängt cause.
+finally Z.98
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `PlayerWorkflow.PlayerWorkflow.runPlayerAction`, Quellreihenfolge.

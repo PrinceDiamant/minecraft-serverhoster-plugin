@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+Schritt Z.2169 String configured = getConfig().getString('workin…
+  Zeile 2169: liest die Config. `String configured = getConfig().getString('workin…`
+if Z.2171 (!child.isAbsolute())
+  Zeile 2171: prüft `(!child.isAbsolute())`.
+for Z.2173 (ServerProfile profile : profiles)
+  Zeile 2173: Schleife `(ServerProfile profile : profiles)`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostProtectedPaths`, Quellreihenfolge.

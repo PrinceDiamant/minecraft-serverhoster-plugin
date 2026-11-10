@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2274 (slot.running())
+  Zeile 2274: prüft `(slot.running())`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+FabricLauncherPlugin.stopBlocking
+  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+FabricLauncherPlugin.hostMinimizeApply.Teil1.Z2274.Z2276
+  Fortsetzung des Ablaufs ab Zeile 2276.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply.Teil1`, Quellreihenfolge.

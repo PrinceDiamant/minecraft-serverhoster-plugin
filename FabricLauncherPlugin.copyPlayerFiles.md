@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.copyPlayerFiles.Z2595
+  Fortsetzung des Ablaufs ab Zeile 2595.
+```
+
 - `copyPlayerFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

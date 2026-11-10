@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.12 (ScheduleDef.Action action : schedule.a…
+  Zeile 12: Schleife `(ScheduleDef.Action action : schedule.a…`.
+```
+
 - `run` in `src/main/java/de/aichele/childlauncher/ScheduleExecution.java`

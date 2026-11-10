@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.Session.close.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+RemoteBackupBridge.Session.close.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `close` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

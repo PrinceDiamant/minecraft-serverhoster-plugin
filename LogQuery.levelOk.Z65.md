@@ -19,4 +19,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.65 return switch (level) ( case 'error' -) isError(l…
+  Zeile 65: Rückgabe `return switch (level) ( case 'error' -) isError(l…`.
+LogQuery.isError
+  Prüft `isError`.
+LogQuery.isWarn
+  Prüft `isWarn`.
+```
+
 - Fortsetzung von `LogQuery.levelOk`, Quellreihenfolge.

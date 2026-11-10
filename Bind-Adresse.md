@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.hostBindAddress
+  Betrifft den Host `hostBindAddress`.
+FabricLauncherPlugin.effectiveBindAddress
+  Liefert den wirksamen Wert `effectiveBindAddress`.
+FabricLauncherPlugin.childBindAddress
+  Betrifft den Child `childBindAddress`. Ruft `effectiveBindAddress`, `hostBindAddress`.
+```
+
 

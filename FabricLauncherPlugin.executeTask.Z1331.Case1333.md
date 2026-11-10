@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+FabricLauncherPlugin.stopBlocking
+  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.executeTask.Z1331`, Quellreihenfolge.

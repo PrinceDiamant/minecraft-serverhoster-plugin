@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.focusSlot
+  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+return Z.2249 return view;
+  Zeile 2249: Rückgabe `return view;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeView`, Quellreihenfolge.

@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.161 (Files.isSymbolicLink(target) // !Files.isDirecto…
+  Zeile 161: prüft `(Files.isSymbolicLink(target) // !Files.isDirecto…`.
+return Z.161 return false;
+  Zeile 161: Rückgabe `return false;`.
+if Z.163 (!real.startsWith(root) // real.equals(root))
+  Zeile 163: prüft `(!real.startsWith(root) // real.equals(root))`.
+return Z.163 return false;
+  Zeile 163: Rückgabe `return false;`.
+return Z.164 return !SKIP.contains(real.getFileName().toString…
+  Zeile 164: Rückgabe `return !SKIP.contains(real.getFileName().toString…`.
+```
+
 - `isSafeArchiveTarget` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

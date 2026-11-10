@@ -21,4 +21,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryTelemetry.read.Z47
+  Fortsetzung des Ablaufs ab Zeile 47.
+MemoryTelemetry.number
+  `number` in `MemoryTelemetry.java`.
+ProcessProbe.snapshot
+  `snapshot` in `ProcessProbe.java`. Ruft `kb`.
+MemoryTelemetry.Heap.current
+  `current` in `MemoryTelemetry.java`.
+GcDiagnostics.snapshot()
+  `snapshot` in `GcDiagnostics.java`. Ruft `snapshot`.
+return Z.53 return new Reading(Heap.current(), host…
+  Zeile 53: Rückgabe `return new Reading(Heap.current(), host…`.
+```
+
 - `read` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

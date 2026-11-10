@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.readBodyText
+  Liest `readBodyText`.
+return Z.983 return e.get(JsonParser.parseString(rea…
+  Zeile 983: Rückgabe `return e.get(JsonParser.parseString(rea…`.
+```
+
 - `body` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

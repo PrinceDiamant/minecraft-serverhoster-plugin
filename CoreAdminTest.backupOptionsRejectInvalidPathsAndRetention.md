@@ -21,5 +21,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupOptions.BackupOptions
+  Sichert `BackupOptions`.
+```
+
 - `backupOptionsRejectInvalidPathsAndRetention` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

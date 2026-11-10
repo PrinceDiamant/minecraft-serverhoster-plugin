@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.587 Path root = Files.createTempDirectory('serverhost…
+  Zeile 587: Dateioperation. `Path root = Files.createTempDirectory('serverhost…`
+Schritt Z.588 Path pendingDelete = Files.createDirectory(root.r…
+  Zeile 588: Dateioperation. `Path pendingDelete = Files.createDirectory(root.r…`
+Schritt Z.589 Files.writeString(pendingDelete.resolve('server.p…
+  Zeile 589: schreibt Text in eine Datei. `Files.writeString(pendingDelete.resolve('server.p…`
+Schritt Z.590 Path pendingReset = Files.createDirectory(root.re…
+  Zeile 590: Dateioperation. `Path pendingReset = Files.createDirectory(root.re…`
+Schritt Z.591 Files.writeString(pendingReset.resolve('server.pr…
+  Zeile 591: schreibt Text in eine Datei. `Files.writeString(pendingReset.resolve('server.pr…`
+SetupRecovery.recover
+  Hebt hängende Zustände auf `recover`.
+```
+
 - Fortsetzung von `HosterTest.setupRecoveryFinishesOnlyConfirmedDeleteAndArchivesReset`, Quellreihenfolge.

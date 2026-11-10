@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.Snapshot.view
+  Liefert die Sicht `view`.
+HostMemoryProbe.Snapshot.cgroupUsePercent
+  `cgroupUsePercent` in `HostMemoryProbe.java`.
+MemoryProtectionPolicy.emergencyStopStarted
+  `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+return Z.917 return view;
+  Zeile 917: Rückgabe `return view;`.
+```
+
 - `hostMemoryView` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

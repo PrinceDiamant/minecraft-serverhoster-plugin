@@ -24,4 +24,25 @@ flowchart TD
   style n4 fill:#f88,stroke:#900
 ```
 
+```knoten
+case Z.255 'GET /api/backup'
+  Zeile 255: Zweig `'GET /api/backup'`.
+Dashboard.handle.Z103.Teil7.Z141.Case255
+  Rumpf dieses switch-Zweigs ab Zeile 255.
+case Z.262 'GET /api/backup/download'
+  Zeile 262: Zweig `'GET /api/backup/download'`.
+Dashboard.backupDownload
+  Sichert `backupDownload`. Ruft `backupFiles`, `downloadBackup`. Befund: Logikrisiko (sicher).
+case Z.263 'POST /api/backup'
+  Zeile 263: Zweig `'POST /api/backup'`.
+Dashboard.handle.Z103.Teil7.Z141.Case263
+  Rumpf dieses switch-Zweigs ab Zeile 263.
+case Z.264 'POST /api/backup/delete'
+  Zeile 264: Zweig `'POST /api/backup/delete'`.
+Dashboard.backupMutate
+  Sichert `backupMutate`. Ruft `readBodyText`, `json`, `restoreBackup`.
+case Z.265 'POST /api/backup/restore'
+  Zeile 265: Zweig `'POST /api/backup/restore'`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.

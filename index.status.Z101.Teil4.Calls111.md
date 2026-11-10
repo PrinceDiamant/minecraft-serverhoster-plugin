@@ -19,4 +19,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.status.mb
+  `mb` in `index.html`. Ruft `n`.
+index.esc
+  Maskiert HTML `esc`.
+```
+
 - Fortsetzung von `index.status.Z101.Teil4`, Quellreihenfolge.

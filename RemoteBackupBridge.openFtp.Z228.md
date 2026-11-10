@@ -23,4 +23,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.228
+  Zeile 228: Versuch. Der Fehlerpfad geht in catch.
+RemoteBackupBridge.connectControl
+  Verbindet `connectControl`. Ruft `replyError`.
+RemoteBackupBridge.warnPlainFtp
+  Warnt `warnPlainFtp`.
+RemoteBackupBridge.login
+  Meldet an `login`. Ruft `replyError`.
+return Z.232 return new Session(client, false);
+  Zeile 232: Rückgabe `return new Session(client, false);`.
+catch Z.233 (IOException / RuntimeExcepti…
+  Zeile 233: fängt (IOException / RuntimeExcepti….
+RemoteBackupBridge.disconnectAfterFailure
+  Trennt `disconnectAfterFailure`. Ruft `disconnect`.
+throw Z.235 throw e;
+  Zeile 235: Abbruch `throw e;`.
+```
+
 - Fortsetzung von `RemoteBackupBridge.openFtp`, Quellreihenfolge.

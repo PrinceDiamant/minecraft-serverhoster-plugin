@@ -31,4 +31,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWizard.SetupWizard.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+SetupWizard.SetupWizard.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+SetupWizard.SetupWizard.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+SetupWizard.SetupWizard.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+SetupWizard.SetupWizard.chooseAction
+  Wählt `chooseAction`.
+SetupWizard.SetupWizard.chooseCandidate
+  Wählt `chooseCandidate`.
+SetupWizard.SetupWizard.next
+  Geht zum nächsten Schritt `next`. Ruft `versionIsValid`.
+SetupWizard.SetupWizard.finish
+  Schließt ab `finish`. Ruft `saveBackupSettings`, `createSchedule`, `dashboardRequest`.
+SetupWizard.SetupWizard.runFirstSetup
+  Führt aus `runFirstSetup`. Ruft `dashboardRequest`, `jsonBody`.
+```
+
 - `SetupWizard` in `ui/src/components/SetupWizard.tsx`

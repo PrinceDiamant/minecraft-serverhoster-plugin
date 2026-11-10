@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.Action.toConfig
+  `toConfig` in `ScheduleDef.java`.
+ScheduleDef.Action.Action
+  `Action` in `ScheduleDef.java`.
+```
+
 

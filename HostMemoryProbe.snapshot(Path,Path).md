@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.meminfo
+  `meminfo` in `HostMemoryProbe.java`.
+HostMemoryProbe.cgroup
+  `cgroup` in `HostMemoryProbe.java`. Ruft `resolve`, `ancestors`, `number`.
+return Z.42 return new Snapshot(host.getOrDefault('MemAvailab…
+  Zeile 42: Rückgabe `return new Snapshot(host.getOrDefault('MemAvailab…`.
+```
+
 - `snapshot` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

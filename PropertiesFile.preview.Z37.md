@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.37 (f != null && Files.exists(f))
+  Zeile 37: prüft `(f != null && Files.exists(f))`.
+if Z.38 (!Files.isRegularFile(f))
+  Zeile 38: prüft `(!Files.isRegularFile(f))`.
+throw Z.38 throw new IOException('server.properties is not a…
+  Zeile 38: Abbruch `throw new IOException('server.properties is not a…`.
+PropertiesFile.preview.Z37.Z39
+  Fortsetzung des Ablaufs ab Zeile 39.
+```
+
 - Fortsetzung von `PropertiesFile.preview`, Quellreihenfolge.

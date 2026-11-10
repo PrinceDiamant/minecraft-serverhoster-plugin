@@ -16,4 +16,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LogQuery.LogQuery
+  `LogQuery` in `LogQuery.java`.
+LogQuery.query
+  Fragt ab `query`. Ruft `levelOk`.
+LogQuery.levelOk
+  `levelOk` in `LogQuery.java`. Ruft `isError`, `isWarn`.
+LogQuery.isError
+  Prüft `isError`.
+LogQuery.isWarn
+  Prüft `isWarn`.
+```
+
 

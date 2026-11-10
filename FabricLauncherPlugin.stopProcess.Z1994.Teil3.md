@@ -23,4 +23,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2004 (!useStdout)
+  Zeile 2004: prüft `(!useStdout)`.
+RuntimeLimits.boundedSeconds
+  Begrenzt `boundedSeconds`.
+FabricLauncherPlugin.warnOnce
+  Warnt `warnOnce`.
+if Z.2010 (!useStdout)
+  Zeile 2010: prüft `(!useStdout)`.
+FabricLauncherPlugin.stopProcess.Z1994.Teil3.Z2011
+  Fortsetzung des Ablaufs ab Zeile 2011.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.stopProcess.Z1994`, Quellreihenfolge.

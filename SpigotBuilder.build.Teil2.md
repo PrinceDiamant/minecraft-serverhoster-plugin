@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.36 Files.createDirectories(work);
+  Zeile 36: Dateioperation. `Files.createDirectories(work);`
+if Z.37 (!commandExists('git'))
+  Zeile 37: prüft `(!commandExists('git'))`.
+SpigotBuilder.commandExists
+  `commandExists` in `SpigotBuilder.java`.
+throw Z.37 throw new IOException('git missing; BuildTools ne…
+  Zeile 37: Abbruch `throw new IOException('git missing; BuildTools ne…`.
+SpigotBuilder.command
+  `command` in `SpigotBuilder.java`. Ruft `assertRev`.
+Schritt Z.40 Process p = new ProcessBuilder(cmd).directory(wor…
+  Zeile 40: baut einen Prozess. `Process p = new ProcessBuilder(cmd).directory(wor…`
+```
+
 - Fortsetzung von `SpigotBuilder.build`, Quellreihenfolge.

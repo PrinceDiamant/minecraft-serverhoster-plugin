@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.57 selected && !active.current
+  Zeile 57: prüft `selected && !active.current`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - `onPageChange` in `ui/src/components/PlayerWorkflow.tsx`

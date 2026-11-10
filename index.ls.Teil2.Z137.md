@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.137 d.entries
+  Zeile 137: Schleife `d.entries`.
+index.jp
+  Baut einen Pfad `jp`.
+index.esc
+  Maskiert HTML `esc`.
+index.fmtSize
+  Formatiert `fmtSize`.
+```
+
 - Fortsetzung von `index.ls.Teil2`, Quellreihenfolge.

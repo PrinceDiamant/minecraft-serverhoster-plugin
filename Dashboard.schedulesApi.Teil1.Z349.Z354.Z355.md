@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.355
+  Zeile 355: synchronisierter Block.
+FabricLauncherPlugin.schedules
+  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+if Z.358 (schedules.size() )= ScheduleDef.MAX_SCHEDULES)
+  Zeile 358: prüft `(schedules.size() )= ScheduleDef.MAX_SCHEDULES)`.
+throw Z.359 throw new IllegalArgumentException('Zu viele Zeit…
+  Zeile 359: Abbruch `throw new IllegalArgumentException('Zu viele Zeit…`.
+if Z.360 (schedules.stream().anyMatch(item -) item.id().eq…
+  Zeile 360: prüft `(schedules.stream().anyMatch(item -) item.id().eq…`.
+throw Z.361 throw new IllegalArgumentException('Schedule-ID e…
+  Zeile 361: Abbruch `throw new IllegalArgumentException('Schedule-ID e…`.
+FabricLauncherPlugin.saveSchedules
+  Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+```
+
 - Fortsetzung von `Dashboard.schedulesApi.Teil1.Z349.Z354`, Quellreihenfolge.

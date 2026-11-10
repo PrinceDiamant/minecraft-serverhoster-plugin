@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.61 return URLEncoder.encode(value == null ? '' : val…
+  Zeile 61: Rückgabe `return URLEncoder.encode(value == null ? '' : val…`.
+```
+
 - `encodeHeader` in `src/main/java/de/aichele/childlauncher/NtfyNotifier.java`

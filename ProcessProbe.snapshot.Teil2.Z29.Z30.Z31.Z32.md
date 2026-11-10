@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.32 (l.startsWith('VmHWM:'))
+  Zeile 32: prüft `(l.startsWith('VmHWM:'))`.
+ProcessProbe.kb
+  `kb` in `ProcessProbe.java`.
+ProcessProbe.snapshot.Teil2.Z29.Z30.Z31.Z32.Z33
+  Fortsetzung des Ablaufs ab Zeile 33.
+```
+
 - Fortsetzung von `ProcessProbe.snapshot.Teil2.Z29.Z30.Z31`, Quellreihenfolge.

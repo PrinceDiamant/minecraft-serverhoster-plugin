@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.markScheduleRun.Z1547
+  Fortsetzung des Ablaufs ab Zeile 1547.
+return Z.1560 return null;
+  Zeile 1560: Rückgabe `return null;`.
+```
+
 - `markScheduleRun` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

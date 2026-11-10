@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RestartPolicy.migrateLegacyUnlimited
+  Übernimmt den alten Wert von `migrateLegacyUnlimited`.
+FabricLauncherPlugin.migrateLegacyRestartPolicy
+  Übernimmt den alten Wert von `migrateLegacyRestartPolicy`. Ruft `migrateLegacyUnlimited`.
+if Z.186 (migratedUnlimited)
+  Zeile 186: prüft `(migratedUnlimited)`.
+if Z.188 (changed)
+  Zeile 188: prüft `(changed)`.
+FabricLauncherPlugin.saveConfigWritable
+  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+```
+
 - `migrateRestartPolicy` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

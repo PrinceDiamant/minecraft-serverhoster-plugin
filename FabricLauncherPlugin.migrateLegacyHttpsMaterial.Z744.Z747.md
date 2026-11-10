@@ -17,4 +17,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.747 ('pem'.equalsIgnoreCase(mode))
+  Zeile 747: prüft `('pem'.equalsIgnoreCase(mode))`.
+FabricLauncherPlugin.migrateHttpsFile
+  Übernimmt den alten Wert von `migrateHttpsFile`. Ruft `copyLegacyFile`.
+throw Z.752 throw new IOException('Unsupported legacy dashboa…
+  Zeile 752: Abbruch `throw new IOException('Unsupported legacy dashboa…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.migrateLegacyHttpsMaterial.Z744`, Quellreihenfolge.

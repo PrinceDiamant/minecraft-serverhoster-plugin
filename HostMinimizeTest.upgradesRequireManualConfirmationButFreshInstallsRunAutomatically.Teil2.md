@@ -17,4 +17,15 @@ flowchart TD
   style n4 fill:#f88,stroke:#900
 ```
 
+```knoten
+HostFirstSetup.apply(Path,Path,Path,Path)
+  Wendet an `apply`. Ruft `apply`. Befund: toter Code (wahrscheinlich).
+HostFirstSetup.requestManual
+  Fordert an `requestManual`. Ruft `readState`, `writeMarker`.
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+HostFirstSetup.shouldRun
+  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+```
+
 - Fortsetzung von `HostMinimizeTest.upgradesRequireManualConfirmationButFreshInstallsRunAutomatically`, Quellreihenfolge.

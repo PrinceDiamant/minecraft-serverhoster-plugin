@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.2584 (JsonElement e : arr)
+  Zeile 2584: Schleife `(JsonElement e : arr)`.
+if Z.2586 (loaderWrapped)
+  Zeile 2586: prüft `(loaderWrapped)`.
+if Z.2587 (o.get('stable').getAsBoolean())
+  Zeile 2587: prüft `(o.get('stable').getAsBoolean())`.
+return Z.2587 return o.get('version').getAsString();
+  Zeile 2587: Rückgabe `return o.get('version').getAsString();`.
+return Z.2590 return (loaderWrapped ? o.getAsJsonObject('loader…
+  Zeile 2590: Rückgabe `return (loaderWrapped ? o.getAsJsonObject('loader…`.
+```
+
 - `firstStable` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

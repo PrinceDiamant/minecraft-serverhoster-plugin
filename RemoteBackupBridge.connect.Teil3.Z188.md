@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.188
+  Zeile 188: Versuch. Der Fehlerpfad geht in catch.
+RemoteBackupBridge.connect.Teil3.Z188.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+RemoteBackupBridge.connect.Teil3.Z188.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+catch Z.201 (IOException / RuntimeExcepti…
+  Zeile 201: fängt (IOException / RuntimeExcepti….
+RemoteBackupBridge.disconnectAfterFailure
+  Trennt `disconnectAfterFailure`. Ruft `disconnect`.
+throw Z.203 throw e;
+  Zeile 203: Abbruch `throw e;`.
+```
+
 - Fortsetzung von `RemoteBackupBridge.connect.Teil3`, Quellreihenfolge.

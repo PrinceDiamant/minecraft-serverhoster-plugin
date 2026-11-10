@@ -35,4 +35,29 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1368 (remoteBackupSelected())
+  Zeile 1368: prüft `(remoteBackupSelected())`.
+FabricLauncherPlugin.remoteBackupSelected
+  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.backupCredentials
+  Sichert `backupCredentials`. Ruft `load`.
+RemoteBackupBridge.archive
+  Packt `archive`. Ruft `open`, `safeId`, `connect`.
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+FabricLauncherPlugin.remoteBackupSettings
+  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+if Z.1375 (!r.db().isBlank() && !'ok'.equals(r.db()))
+  Zeile 1375: prüft `(!r.db().isBlank() && !'ok'.equals(r.db()))`.
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+BackupBridge.archive
+  Packt `archive`. Ruft `open`, `safeId`, `resolve`.
+if Z.1380 (!r.db().isBlank() && !'ok'.equals(r.db()))
+  Zeile 1380: prüft `(!r.db().isBlank() && !'ok'.equals(r.db()))`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runBackup.Z1360.Z1362`, Quellreihenfolge.

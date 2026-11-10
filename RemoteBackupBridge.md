@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Session
+  FTP-Sitzung der Fern-Brücke. close schließt den Client.
+CountingOutputStream
+  Zählt die Bytes, die ins Backup geschrieben werden.
+RemoteBackupBridge.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+RemoteBackupBridge.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+RemoteBackupBridge.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.Action.toConfig
+  `toConfig` in `ScheduleDef.java`.
+return Z.104 return result;
+  Zeile 104: Rückgabe `return result;`.
+```
+
 - `toConfig` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

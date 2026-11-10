@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.585 (!request.has(key) // !request.get(key).isJsonPri…
+  Zeile 585: prüft `(!request.has(key) // !request.get(key).isJsonPri…`.
+throw Z.586 throw new IllegalArgumentException(key + ' muss T…
+  Zeile 586: Abbruch `throw new IllegalArgumentException(key + ' muss T…`.
+return Z.587 return request.get(key).getAsString();
+  Zeile 587: Rückgabe `return request.get(key).getAsString();`.
+```
+
 - `requiredString` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

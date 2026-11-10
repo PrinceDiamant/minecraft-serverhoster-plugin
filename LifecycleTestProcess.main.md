@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleTestProcess.main.Z11
+  Fortsetzung des Ablaufs ab Zeile 11.
+```
+
 - `main` in `src/test/java/de/aichele/childlauncher/LifecycleTestProcess.java`
 - Auslöser: Test

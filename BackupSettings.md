@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSettings.loadBackupSettings
+  Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+BackupSettings.saveBackupSettings
+  Speichert `saveBackupSettings`. Ruft `dashboardRequest`, `jsonBody`.
+BackupSettings.BackupSettings
+  Sichert `BackupSettings`.
+```
+
 

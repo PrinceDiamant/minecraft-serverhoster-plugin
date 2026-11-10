@@ -23,4 +23,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.662 Files.createDirectories(backups);
+  Zeile 662: Dateioperation. `Files.createDirectories(backups);`
+Schritt Z.663 Files.createDirectories(reports);
+  Zeile 663: Dateioperation. `Files.createDirectories(reports);`
+Schritt Z.664 Files.writeString(oldData.resolve('config.yml'), …
+  Zeile 664: schreibt Text in eine Datei. `Files.writeString(oldData.resolve('config.yml'), …`
+Schritt Z.665 Files.writeString(backups.resolve('backup.zip'), …
+  Zeile 665: schreibt Text in eine Datei. `Files.writeString(backups.resolve('backup.zip'), …`
+Schritt Z.666 Files.writeString(reports.resolve('incident.log')…
+  Zeile 666: schreibt Text in eine Datei. `Files.writeString(reports.resolve('incident.log')…`
+FabricLauncherPlugin.cleanupLegacyDirectory
+  Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
+Schritt Z.670 assertFalse(Files.exists(oldData.resolve('config.…
+  Zeile 670: Dateioperation. `assertFalse(Files.exists(oldData.resolve('config.…`
+Schritt Z.671 assertEquals('backup', Files.readString(backups.r…
+  Zeile 671: liest Text aus einer Datei. `assertEquals('backup', Files.readString(backups.r…`
+```
+
 - Fortsetzung von `HosterTest.legacyCleanupRetainsBackupsAndMemoryReports`, Quellreihenfolge.

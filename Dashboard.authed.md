@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.token
+  `token` in `Dashboard.java`.
+if Z.489 (exp == null)
+  Zeile 489: prüft `(exp == null)`.
+return Z.489 return false;
+  Zeile 489: Rückgabe `return false;`.
+if Z.490 (exp ( System.currentTimeMillis())
+  Zeile 490: prüft `(exp ( System.currentTimeMillis())`.
+return Z.490 return false;
+  Zeile 490: Rückgabe `return false;`.
+return Z.491 return true;
+  Zeile 491: Rückgabe `return true;`.
+```
+
 - `authed` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

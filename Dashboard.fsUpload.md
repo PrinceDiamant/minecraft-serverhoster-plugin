@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.fsUpload.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.fsUpload.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.fsUpload.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `fsUpload` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

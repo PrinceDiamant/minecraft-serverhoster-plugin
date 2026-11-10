@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.204 !accepted
+  Zeile 204: prüft `!accepted`.
+return Z.204 return;
+  Zeile 204: Rückgabe `return;`.
+SetupWorkflow.SetupWorkflow.hostAction.Z206
+  Fortsetzung des Ablaufs ab Zeile 206.
+```
+
 - `hostAction` in `ui/src/components/SetupWorkflow.tsx`

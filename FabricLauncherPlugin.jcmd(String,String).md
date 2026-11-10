@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ProcessProbe.jcmd(long,String)
+  `jcmd` in `ProcessProbe.java`. Ruft `jcmd`.
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+ChildSlot.pid
+  Liefert die Prozessnummer `pid`.
+return Z.1267 return ProcessProbe.jcmd(slot(id).pid()…
+  Zeile 1267: Rückgabe `return ProcessProbe.jcmd(slot(id).pid()…`.
+```
+
 - `jcmd` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

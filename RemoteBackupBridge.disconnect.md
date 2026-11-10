@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.320 (client.isConnected())
+  Zeile 320: prüft `(client.isConnected())`.
+```
+
 - `disconnect` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

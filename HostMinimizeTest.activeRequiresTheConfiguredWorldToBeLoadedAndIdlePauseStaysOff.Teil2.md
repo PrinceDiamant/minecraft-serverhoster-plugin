@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.108 Files.writeString(properties, 'level-name=serverh…
+  Zeile 108: schreibt Text in eine Datei. `Files.writeString(properties, 'level-name=serverh…`
+HostMinimize.clearIdlePause
+  Leert `clearIdlePause`. Ruft `lobbyNameSafe`.
+Schritt Z.110 assertTrue(Files.readString(properties).contains(…
+  Zeile 110: liest Text aus einer Datei. `assertTrue(Files.readString(properties).contains(…`
+```
+
 - Fortsetzung von `HostMinimizeTest.activeRequiresTheConfiguredWorldToBeLoadedAndIdlePauseStaysOff`, Quellreihenfolge.

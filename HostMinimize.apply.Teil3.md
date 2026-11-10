@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.assertEditable
+  Prüft `assertEditable`.
+if Z.168 (!backupDirectory.toAbsolutePath().normalize().st…
+  Zeile 168: prüft `(!backupDirectory.toAbsolutePath().normalize().st…`.
+throw Z.169 throw new SecurityException('host minimization ba…
+  Zeile 169: Abbruch `throw new SecurityException('host minimization ba…`.
+Schritt Z.170 Files.createDirectories(backupDirectory);
+  Zeile 170: Dateioperation. `Files.createDirectories(backupDirectory);`
+if Z.171 (!whitelistExisted)
+  Zeile 171: prüft `(!whitelistExisted)`.
+Schritt Z.171 Files.writeString(backupDirectory.resolve(WHITELI…
+  Zeile 171: schreibt Text in eine Datei. `Files.writeString(backupDirectory.resolve(WHITELI…`
+```
+
 - Fortsetzung von `HostMinimize.apply`, Quellreihenfolge.

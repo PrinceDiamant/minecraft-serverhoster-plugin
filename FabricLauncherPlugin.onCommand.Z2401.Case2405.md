@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.focusSlot
+  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+ChildSlot.pid
+  Liefert die Prozessnummer `pid`.
+ChildSlot.uptimeMillis
+  Liefert die Laufzeit `uptimeMillis`. Ruft `running`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

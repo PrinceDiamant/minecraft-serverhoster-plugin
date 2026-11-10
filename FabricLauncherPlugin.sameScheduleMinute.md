@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1564 (schedule.lastRun() (= 0)
+  Zeile 1564: prüft `(schedule.lastRun() (= 0)`.
+return Z.1564 return false;
+  Zeile 1564: Rückgabe `return false;`.
+return Z.1570 return previous.equals(current);
+  Zeile 1570: Rückgabe `return previous.equals(current);`.
+```
+
 - `sameScheduleMinute` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

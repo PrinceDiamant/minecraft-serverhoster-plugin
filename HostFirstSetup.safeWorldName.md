@@ -22,4 +22,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.233 (name == null // name.isBlank() // name.equals('.…
+  Zeile 233: prüft `(name == null // name.isBlank() // name.equals('.…`.
+return Z.234 return false;
+  Zeile 234: Rückgabe `return false;`.
+try Z.235
+  Zeile 235: Versuch. Der Fehlerpfad geht in catch.
+return Z.237 return !path.isAbsolute() && path.getNameCount() …
+  Zeile 237: Rückgabe `return !path.isAbsolute() && path.getNameCount() …`.
+catch Z.238 (RuntimeException e)
+  Zeile 238: fängt (RuntimeException e).
+return Z.239 return false;
+  Zeile 239: Rückgabe `return false;`.
+```
+
 - `safeWorldName` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

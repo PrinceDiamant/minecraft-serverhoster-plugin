@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.restartSingle.Z1965
+  Fortsetzung des Ablaufs ab Zeile 1965.
+```
+
 - `restartSingle` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

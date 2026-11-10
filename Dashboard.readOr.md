@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.972 return Files.exists(f) ? Files.readString(f, Stan…
+  Zeile 972: Rückgabe `return Files.exists(f) ? Files.readString(f, Stan…`.
+```
+
 - `readOr` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

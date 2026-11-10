@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.97 return Object.entries(routes).find(((, route)) =)…
+  Zeile 97: Rückgabe `return Object.entries(routes).find(((, route)) =)…`.
+```
+
 - `tabFromPath` in `ui/src/App.tsx`

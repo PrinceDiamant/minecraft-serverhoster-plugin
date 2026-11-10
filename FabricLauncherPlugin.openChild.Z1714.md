@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.1714
+  Zeile 1714: synchronisierter Block.
+FabricLauncherPlugin.openChild.Z1714.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.openChild.Z1714.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.openChild`, Quellreihenfolge.

@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimizeTest.firstSetupProtectsConfiguredBackupWorldDirectories
+  `firstSetupProtectsConfiguredBackupWorldDirectories` in `HostMinimizeTest.java`. Ruft `shouldRun`, `apply`. Nur Test.
+HostMinimizeTest.completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby
+  `completedFirstSetupReconcilesMinimizationOnlyForLoadedLobby` in `HostMinimizeTest.java`. Ruft `firstSetupWorld`. Nur Test.
+HostMinimizeTest.upgradesRequireManualConfirmationButFreshInstallsRunAutomatically
+  `upgradesRequireManualConfirmationButFreshInstallsRunAutomatically` in `HostMinimizeTest.java`. Ruft `shouldRun`, `readState`, `requestManual`. Nur Test.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds
+  Betrifft den Heap `heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`. Ruft `lobbyNameSafe`, `apply`, `manageable`. Nur Test.
+HostMinimizeTest.RecordingWorld.spawnFlags
+  `spawnFlags` in `HostMinimizeTest.java`. Nur Test.
+HostMinimizeTest.RecordingWorld.keepSpawnInMemory
+  `keepSpawnInMemory` in `HostMinimizeTest.java`. Nur Test.
+HostMinimizeTest.RecordingWorld.ruleOff
+  `ruleOff` in `HostMinimizeTest.java`. Nur Test.
+```
+
 

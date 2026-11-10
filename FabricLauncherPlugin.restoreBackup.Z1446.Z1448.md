@@ -27,4 +27,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1448
+  Zeile 1448: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.backupCredentials
+  Sichert `backupCredentials`. Ruft `load`.
+try Z.1450
+  Zeile 1450: Versuch. Der Fehlerpfad geht in catch.
+RemoteBackupBridge.download
+  Liefert zum Herunterladen `download`. Ruft `safeId`, `named`, `connect`.
+FabricLauncherPlugin.remoteBackupSettings
+  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+BackupBridge.restoreZip
+  Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+finally Z.1448
+  Läuft danach immer, auch nach einem Fehler.
+Schritt Z.1455 Files.deleteIfExists(temp);
+  Zeile 1455: Dateioperation. `Files.deleteIfExists(temp);`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.restoreBackup.Z1446`, Quellreihenfolge.

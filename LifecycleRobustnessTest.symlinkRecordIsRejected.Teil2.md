@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildProcessRecord.reap
+  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+LifecycleRobustnessTest.FakeProcesses.FakeProcesses
+  `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+Schritt Z.119 assertTrue(Files.isSymbolicLink(link));
+  Zeile 119: Dateioperation. `assertTrue(Files.isSymbolicLink(link));`
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.symlinkRecordIsRejected`, Quellreihenfolge.

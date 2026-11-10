@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.22 ('etext', 'props', 'config') as const
+  Zeile 22: Schleife `('etext', 'props', 'config') as const`.
+if Z.24 !(textarea instanceof HTMLTextAreaElement)
+  Zeile 24: prüft `!(textarea instanceof HTMLTextAreaElement)`.
+throw Z.24 throw new Error('Editor $(id) is missing');
+  Zeile 24: Abbruch `throw new Error('Editor $(id) is missing');`.
+fileEditor.installFileEditors.set
+  Setzt `set`. Ruft `editorFor`, `modeForPath`, `refresh`.
+```
+
 - Fortsetzung von `fileEditor.installFileEditors`, Quellreihenfolge.

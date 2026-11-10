@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.136 shutdownHook = new Thread(() -) ( shuttingDown = …
+  Zeile 136: `shutdownHook = new Thread(() -) ( shuttingDown = …`
+for Z.138 (ChildSlot s : slots.values())
+  Zeile 138: Schleife `(ChildSlot s : slots.values())`.
+FabricLauncherPlugin.invalidateRestarts
+  Verwirft `invalidateRestarts`.
+for Z.143 (ChildSlot s : List.copyOf(slots.values…
+  Zeile 143: Schleife `(ChildSlot s : List.copyOf(slots.values…`.
+if Z.143 (s.running() // s.phase == SupervisorHealth.Phase…
+  Zeile 143: prüft `(s.running() // s.phase == SupervisorHealth.Phase…`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+FabricLauncherPlugin.stopProcess
+  Stoppt `stopProcess`. Ruft `add`, `boundedSeconds`, `warnOnce`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable.Teil3`, Quellreihenfolge.

@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.normalizeSans
+  Vereinheitlicht `normalizeSans`.
+if Z.96 (!Files.isExecutable(keytool))
+  Zeile 96: prüft `(!Files.isExecutable(keytool))`.
+throw Z.96 throw new IOException('keytool missing: ' + keyto…
+  Zeile 96: Abbruch `throw new IOException('keytool missing: ' + keyto…`.
+Schritt Z.103 Process p = new ProcessBuilder(cmd).redirectError…
+  Zeile 103: baut einen Prozess. `Process p = new ProcessBuilder(cmd).redirectError…`
+if Z.105 (!p.waitFor(60, TimeUnit.SECONDS))
+  Zeile 105: prüft `(!p.waitFor(60, TimeUnit.SECONDS))`.
+throw Z.105 throw new IOException('keytool timeout');
+  Zeile 105: Abbruch `throw new IOException('keytool timeout');`.
+```
+
 - Fortsetzung von `HttpsSupport.ensureSelfSigned`, Quellreihenfolge.

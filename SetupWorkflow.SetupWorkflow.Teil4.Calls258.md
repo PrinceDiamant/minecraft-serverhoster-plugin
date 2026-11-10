@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+SetupWorkflow.SetupWorkflow.cleanupLegacy
+  Räumt auf `cleanupLegacy`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+SetupWorkflow.SetupWorkflow.submit
+  Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
+VersionSelect.versionIsValid
+  `versionIsValid` in `VersionSelect.tsx`.
+```
+
 - Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`, Quellreihenfolge.

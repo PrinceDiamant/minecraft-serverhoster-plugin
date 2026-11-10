@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.160 !draft
+  Zeile 160: prüft `!draft`.
+return Z.160 return;
+  Zeile 160: Rückgabe `return;`.
+TaskWorkflow.TaskWorkflow.saveDraft.Z163
+  Fortsetzung des Ablaufs ab Zeile 163.
+```
+
 - `saveDraft` in `ui/src/components/TaskWorkflow.tsx`

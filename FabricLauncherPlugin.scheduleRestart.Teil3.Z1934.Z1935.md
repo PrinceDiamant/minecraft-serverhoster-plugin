@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1935 exec.submit(() -) ( boolean failed = false; try (…
+  Zeile 1935: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( boolean failed = false; try (…`
+FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil3.Z1934`, Quellreihenfolge.

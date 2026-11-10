@@ -17,4 +17,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.187 document.getElementById('app')?.classList.contain…
+  Zeile 187: prüft `document.getElementById('app')?.classList.contain…`.
+App.tabFromPath
+  Wechselt den Tab `tabFromPath`.
+App.App.navigateTo
+  Wechselt die Route `navigateTo`. Ruft `tab`.
+```
+
 - `onPopState` in `ui/src/App.tsx`

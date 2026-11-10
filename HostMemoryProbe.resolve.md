@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.103 (normalizedPath.startsWith('/'))
+  Zeile 103: Schleife `(normalizedPath.startsWith('/'))`.
+if Z.105 (relative.isAbsolute() // relative.startsWith('..…
+  Zeile 105: prüft `(relative.isAbsolute() // relative.startsWith('..…`.
+return Z.105 return root;
+  Zeile 105: Rückgabe `return root;`.
+return Z.107 return result.startsWith(root.normalize()) ? resu…
+  Zeile 107: Rückgabe `return result.startsWith(root.normalize()) ? resu…`.
+```
+
 - `resolve` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

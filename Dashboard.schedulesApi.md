@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.schedulesApi.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.schedulesApi.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.schedulesApi.Aufrufe
+  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+```
+
 - `schedulesApi` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

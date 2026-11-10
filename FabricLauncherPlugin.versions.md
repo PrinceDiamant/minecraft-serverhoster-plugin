@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1272 (at != null && now - at ( 600_000 && versionCache…
+  Zeile 1272: prüft `(at != null && now - at ( 600_000 && versionCache…`.
+return Z.1272 return versionCache.get(type);
+  Zeile 1272: Rückgabe `return versionCache.get(type);`.
+VersionCatalog.fetch
+  Holt `fetch`. Ruft `vanilla`, `getJson`, `fabric`.
+return Z.1275 return list;
+  Zeile 1275: Rückgabe `return list;`.
+```
+
 - `versions` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

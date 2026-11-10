@@ -13,6 +13,7 @@
   - Ebene 4: 845
   - Ebene 5: 558
   - Ebene 6: 157
+- Hover: Block `knoten` unter jedem Flowchart. Plugin `mermaid-knoten-hover` legt den Satz auf den Block.
 - Ungeprüfte Aussagen:
   - Dashboard.handle: 1 eigene Aufrufe nur in Dashboard.handle.Aufrufe
   - Dashboard.schedulesApi: 4 eigene Aufrufe nur in Dashboard.schedulesApi.Aufrufe

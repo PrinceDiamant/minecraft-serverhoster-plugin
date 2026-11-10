@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.173 (path.equals(root))
+  Zeile 173: prüft `(path.equals(root))`.
+return Z.173 return false;
+  Zeile 173: Rückgabe `return false;`.
+if Z.174 (!path.startsWith(root))
+  Zeile 174: prüft `(!path.startsWith(root))`.
+return Z.174 return true;
+  Zeile 174: Rückgabe `return true;`.
+return Z.176 return relative.getNameCount() ) 0 && !SKIP.conta…
+  Zeile 176: Rückgabe `return relative.getNameCount() ) 0 && !SKIP.conta…`.
+```
+
 - `isAllowedConfiguredDirectory` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

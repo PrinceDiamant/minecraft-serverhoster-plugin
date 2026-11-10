@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+ChildSlot.msptHistory
+  Liefert die Tickzeiten `msptHistory`.
+return Z.867 return slot(id).msptHistory();
+  Zeile 867: Rückgabe `return slot(id).msptHistory();`.
+```
+
 - `msptHistory` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, prüfen. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:867–867 kein Produktionsaufruf im Aufrufgraph; Name kommt in UI, Config oder anderem Text vor

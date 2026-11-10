@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostHeapTune.apply
+  Wendet an `apply`.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.manageable
+  `manageable` in `HostMinimizeTest.java`. Nur Test.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.get
+  Liefert `get`. Nur Test.
+HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds.set
+  Setzt `set`. Nur Test.
+```
+
 - Fortsetzung von `HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`, Quellreihenfolge.

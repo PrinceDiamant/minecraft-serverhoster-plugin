@@ -27,4 +27,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskWorkflow.TaskWorkflow.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+TaskWorkflow.TaskWorkflow.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+TaskWorkflow.TaskWorkflow.onPageChange
+  Reagiert `onPageChange`. Ruft `refresh`.
+TaskWorkflow.TaskWorkflow.saveDraft
+  Speichert `saveDraft`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+TaskWorkflow.TaskWorkflow.toggleSchedule
+  Schaltet um `toggleSchedule`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+TaskWorkflow.TaskWorkflow.runSchedule
+  Führt aus `runSchedule`. Ruft `dashboardRequest`, `refresh`.
+TaskWorkflow.TaskWorkflow.deleteSchedule
+  Löscht `deleteSchedule`. Ruft `askBeforeDelete`, `dashboardRequest`, `refresh`.
+TaskWorkflow.TaskWorkflow.runLegacyTask
+  Führt aus `runLegacyTask`. Ruft `dashboardRequest`, `refresh`.
+TaskWorkflow.TaskWorkflow.updateDraft
+  Aktualisiert `updateDraft`.
+```
+
 - `TaskWorkflow` in `ui/src/components/TaskWorkflow.tsx`

@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWizard.SetupWizard
+  `SetupWizard` in `SetupWizard.tsx`. Ruft `loadBackupSettings`, `chooseAction`, `chooseCandidate`.
+```
+
 

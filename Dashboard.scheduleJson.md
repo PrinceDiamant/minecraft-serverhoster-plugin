@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.toJson
+  `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+FabricLauncherPlugin.taskLast
+  `taskLast` in `FabricLauncherPlugin.java`.
+Dashboard.scheduleJson.Z460
+  Fortsetzung des Ablaufs ab Zeile 460.
+return Z.471 return result;
+  Zeile 471: Rückgabe `return result;`.
+```
+
 - `scheduleJson` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2673 return e == null // e.isJsonNull() ? null : e.get…
+  Zeile 2673: Rückgabe `return e == null // e.isJsonNull() ? null : e.get…`.
+```
+
 - `str` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

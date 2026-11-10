@@ -14,5 +14,12 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+ChildProcessRecord.observe
+  Liest den lebenden Prozess `observe`. Befund: toter Code (wahrscheinlich).
+return Z.47 return ProcessHandle.of(pid).map(ChildP…
+  Zeile 47: Rückgabe `return ProcessHandle.of(pid).map(ChildP…`.
+```
+
 - `find` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:46–48 nur von Tests erreicht

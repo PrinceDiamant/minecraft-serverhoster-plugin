@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.91 (event as CustomEvent(string)).detail === 'setup'
+  Zeile 91: prüft `(event as CustomEvent(string)).detail === 'setup'`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - `onPageChange` in `ui/src/components/SetupWorkflow.tsx`

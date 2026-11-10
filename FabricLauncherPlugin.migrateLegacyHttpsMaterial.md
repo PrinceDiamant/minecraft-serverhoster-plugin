@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.741 (!old.getBoolean('dashboard.https.enabled', false…
+  Zeile 741: prüft `(!old.getBoolean('dashboard.https.enabled', false…`.
+return Z.741 return;
+  Zeile 741: Rückgabe `return;`.
+FabricLauncherPlugin.migrateLegacyHttpsMaterial.Z744
+  Fortsetzung des Ablaufs ab Zeile 744.
+```
+
 - `migrateLegacyHttpsMaterial` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

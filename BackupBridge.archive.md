@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.archive.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+BackupBridge.archive.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+BackupBridge.archive.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `archive` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

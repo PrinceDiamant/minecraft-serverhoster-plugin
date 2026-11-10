@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SpigotBuilder.command
+  `command` in `SpigotBuilder.java`. Ruft `assertRev`.
+SpigotBuilder.assertRev
+  Prüft `assertRev`.
+```
+
 - `spigotCommandIsArgv` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

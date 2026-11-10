@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+if Z.17 !result.ok
+  Zeile 17: prüft `!result.ok`.
+throw Z.17 throw new Error('Der Child-Server läuft nicht ode…
+  Zeile 17: Abbruch `throw new Error('Der Child-Server läuft nicht ode…`.
+```
+
 - `sendCommand` in `ui/src/components/PlayerWorkflow.tsx`

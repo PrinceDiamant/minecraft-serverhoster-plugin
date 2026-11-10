@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.restore
+  Stellt wieder her `restore`. Ruft `assertEditable`.
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+FabricLauncherPlugin.hostProtectedPaths
+  Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
+FabricLauncherPlugin.restoreHostHeap
+  Stellt wieder her `restoreHostHeap`. Ruft `hotspot`.
+FabricLauncherPlugin.hostMinimizeStateFile
+  Betrifft den Host `hostMinimizeStateFile`.
+FabricLauncherPlugin.hostMinimizeView
+  Betrifft den Host `hostMinimizeView`. Ruft `readHostMinimizeState`, `configuredHostWorld`, `preview`.
+return Z.2333 return view;
+  Zeile 2333: Rückgabe `return view;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeRollback`, Quellreihenfolge.

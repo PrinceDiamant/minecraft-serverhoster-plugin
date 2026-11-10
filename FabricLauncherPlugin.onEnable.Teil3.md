@@ -22,4 +22,21 @@ flowchart TD
   style n4 fill:#f88,stroke:#900
 ```
 
+```knoten
+FabricLauncherPlugin.recoverPendingSetupDirectories
+  Hebt hängende Zustände auf `recoverPendingSetupDirectories`. Ruft `recover`, `getWorldRoot`, `cleanupLegacyDirectory`.
+FabricLauncherPlugin.loadMemoryRecoveryState
+  Lädt `loadMemoryRecoveryState`. Ruft `memoryRecoveryFile`.
+FabricLauncherPlugin.loadLatestMemoryIncidentReport
+  Lädt `loadLatestMemoryIncidentReport`.
+FabricLauncherPlugin.sampleHostMemory
+  Ein Sample auf `ServerhosterPlugin-Memory`. Befund: Altlast (sicher).
+FabricLauncherPlugin.onEnable.Teil3.Z128
+  Fortsetzung des Ablaufs ab Zeile 128.
+RuntimeLimits.boundedSeconds
+  Begrenzt `boundedSeconds`.
+FabricLauncherPlugin.onEnable.Teil3.Z136
+  Fortsetzung des Ablaufs ab Zeile 136.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable`, Quellreihenfolge.

@@ -22,4 +22,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.parseJsonObject
+  Wertet aus `parseJsonObject`.
+Dashboard.readBodyText
+  Liest `readBodyText`.
+if Z.778 (!request.has('autoRestartEnabled') // !request.g…
+  Zeile 778: prüft `(!request.has('autoRestartEnabled') // !request.g…`.
+throw Z.780 throw new IllegalArgumentException('autoRestartEn…
+  Zeile 780: Abbruch `throw new IllegalArgumentException('autoRestartEn…`.
+Dashboard.saveSettings.Teil1.Calls42317
+  Weitere eigene Aufrufe ab Zeile 42317.
+Dashboard.saveSettings.Teil1.Calls42744
+  Weitere eigene Aufrufe ab Zeile 42744.
+FabricLauncherPlugin.saveSettings
+  Speichert `saveSettings`. Ruft `apply`, `saveConfigWritable`.
+```
+
 - Fortsetzung von `Dashboard.saveSettings`, Quellreihenfolge.

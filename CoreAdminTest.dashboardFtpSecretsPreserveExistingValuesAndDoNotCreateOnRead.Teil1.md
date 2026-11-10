@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSecrets.readExisting
+  Liest `readExisting`. Ruft `load`.
+Schritt Z.86 assertFalse(Files.exists(tmp.resolve('secrets.yml…
+  Zeile 86: Dateioperation. `assertFalse(Files.exists(tmp.resolve('secrets.yml…`
+Schritt Z.87 Files.writeString(tmp.resolve('secrets.yml'), 'no…
+  Zeile 87: schreibt Text in eine Datei. `Files.writeString(tmp.resolve('secrets.yml'), 'no…`
+BackupSecrets.saveFtp
+  Speichert `saveFtp`. Ruft `load`, `restrict`.
+```
+
 - Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`, Quellreihenfolge.

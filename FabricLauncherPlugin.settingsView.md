@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerHosterSettings.from
+  `from` in `ServerHosterSettings.java`. Ruft `ServerHosterSettings`.
+ServerHosterSettings.view
+  Liefert die Sicht `view`.
+return Z.253 return ServerHosterSettings.from(getCon…
+  Zeile 253: Rückgabe `return ServerHosterSettings.from(getCon…`.
+```
+
 - `settingsView` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.284 return ex.getRemoteAddress().getAddress().getHost…
+  Zeile 284: Rückgabe `return ex.getRemoteAddress().getAddress().getHost…`.
+```
+
 - `ip` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

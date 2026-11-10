@@ -26,4 +26,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.asMap
+  `asMap` in `ScheduleDef.java`.
+if Z.120 (map == null)
+  Zeile 120: prüft `(map == null)`.
+throw Z.120 throw new IllegalArgumentException('Ungültiger Ze…
+  Zeile 120: Abbruch `throw new IllegalArgumentException('Ungültiger Ze…`.
+if Z.122 (!(rawActions instanceof List(?) actionList))
+  Zeile 122: prüft `(!(rawActions instanceof List(?) actionList))`.
+throw Z.122 throw new IllegalArgumentException('Aktionen fehl…
+  Zeile 122: Abbruch `throw new IllegalArgumentException('Aktionen fehl…`.
+if Z.123 (actionList.size() ) MAX_ACTIONS)
+  Zeile 123: prüft `(actionList.size() ) MAX_ACTIONS)`.
+throw Z.123 throw new IllegalArgumentException('Zu viele Akti…
+  Zeile 123: Abbruch `throw new IllegalArgumentException('Zu viele Akti…`.
+ScheduleDef.load.Z118.Teil1.Z125
+  Fortsetzung des Ablaufs ab Zeile 125.
+```
+
 - Fortsetzung von `ScheduleDef.load.Z118`, Quellreihenfolge.

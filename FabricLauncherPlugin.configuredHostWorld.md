@@ -25,4 +25,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+if Z.2261 (!Files.isRegularFile(properties, LinkOption.NOFO…
+  Zeile 2261: prüft `(!Files.isRegularFile(properties, LinkOption.NOFO…`.
+return Z.2262 return '';
+  Zeile 2262: Rückgabe `return '';`.
+for Z.2264 (String line : Files.readAllLines(prope…
+  Zeile 2264: Schleife `(String line : Files.readAllLines(prope…`.
+if Z.2265 (line.startsWith('level-name='))
+  Zeile 2265: prüft `(line.startsWith('level-name='))`.
+HostMinimize.worldNameSafe
+  Betrifft die Welt `worldNameSafe`.
+return Z.2267 return HostMinimize.worldNameSafe(level…
+  Zeile 2267: Rückgabe `return HostMinimize.worldNameSafe(level…`.
+```
+
 - `configuredHostWorld` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

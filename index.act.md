@@ -22,4 +22,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.116 actionPending
+  Zeile 116: prüft `actionPending`.
+return Z.116 return;
+  Zeile 116: Rückgabe `return;`.
+for Z.116 ('child-start','child-restart','child-s…
+  Zeile 116: Schleife `('child-start','child-restart','child-s…`.
+index.$
+  `$` in `index.html`.
+index.act.Z117
+  Fortsetzung des Ablaufs ab Zeile 117.
+```
+
 - `act` in `src/main/resources/web/index.html`

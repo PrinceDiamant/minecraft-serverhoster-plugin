@@ -26,4 +26,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.memoryRecoveryFile
+  Betrifft den Speicher `memoryRecoveryFile`.
+if Z.976 (!Files.exists(state))
+  Zeile 976: prüft `(!Files.exists(state))`.
+return Z.976 return;
+  Zeile 976: Rückgabe `return;`.
+try Z.977
+  Zeile 977: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.978 recoveryBlockedSince = Long.parseLong(Files.readS…
+  Zeile 978: Dateioperation. `recoveryBlockedSince = Long.parseLong(Files.readS…`
+if Z.979 (recoveryBlockedSince (= 0)
+  Zeile 979: prüft `(recoveryBlockedSince (= 0)`.
+throw Z.979 throw new NumberFormatException('timestamp must b…
+  Zeile 979: Abbruch `throw new NumberFormatException('timestamp must b…`.
+catch Z.980 (IOException / NumberFormatEx…
+  Zeile 980: fängt (IOException / NumberFormatEx….
+```
+
 - `loadMemoryRecoveryState` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

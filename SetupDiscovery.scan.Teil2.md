@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.47 (Files.isRegularFile(propertiesPath, LinkOption.N…
+  Zeile 47: prüft `(Files.isRegularFile(propertiesPath, LinkOption.N…`.
+try Z.48
+  Zeile 48: Versuch. Der Fehlerpfad geht in catch.
+SetupDiscovery.scan.Teil2.Z54
+  Fortsetzung des Ablaufs ab Zeile 54.
+SetupDiscovery.scan.Teil2.Z62
+  Fortsetzung des Ablaufs ab Zeile 62.
+```
+
 - Fortsetzung von `SetupDiscovery.scan`, Quellreihenfolge.

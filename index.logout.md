@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.post
+  Sendet POST `post`. Ruft `api`.
+index.showLogin
+  Zeigt `showLogin`. Ruft `$`.
+```
+
 - `logout` in `src/main/resources/web/index.html`

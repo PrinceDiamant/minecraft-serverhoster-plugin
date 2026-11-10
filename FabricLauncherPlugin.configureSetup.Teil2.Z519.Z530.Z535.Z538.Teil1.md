@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.findSetupCandidate
+  Sucht `findSetupCandidate`. Ruft `scan`.
+if Z.541 (!expected.equals(confirm))
+  Zeile 541: prüft `(!expected.equals(confirm))`.
+throw Z.541 throw new IllegalArgumentException('Die Archivier…
+  Zeile 541: Abbruch `throw new IllegalArgumentException('Die Archivier…`.
+if Z.542 (!SetupDiscovery.isSafeArchiveTarget(root, candid…
+  Zeile 542: prüft `(!SetupDiscovery.isSafeArchiveTarget(root, candid…`.
+SetupDiscovery.isSafeArchiveTarget
+  Prüft `isSafeArchiveTarget`.
+throw Z.543 throw new IllegalArgumentException('Dieser Ordner…
+  Zeile 543: Abbruch `throw new IllegalArgumentException('Dieser Ordner…`.
+Schritt Z.549 Files.move(candidate.path(), pendingArchive);
+  Zeile 549: Dateioperation. `Files.move(candidate.path(), pendingArchive);`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538`, Quellreihenfolge.

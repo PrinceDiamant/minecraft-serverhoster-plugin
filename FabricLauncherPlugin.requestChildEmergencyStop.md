@@ -17,5 +17,16 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.requestChildEmergencyStop.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.requestChildEmergencyStop.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.requestChildEmergencyStop.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.requestChildEmergencyStop.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Stoppt den Child. Logtext sagt Emergency restart.
 - Befund: Kommentar widerspricht Code, sicher. Z.1175 Emergency restart warning, Z.1197–1199 wantRunning=false und stopBlocking, kein Start

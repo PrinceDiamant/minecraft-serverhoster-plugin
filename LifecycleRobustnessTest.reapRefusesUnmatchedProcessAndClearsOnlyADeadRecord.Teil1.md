@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.identity
+  `identity` in `LifecycleRobustnessTest.java`. Nur Test.
+ChildProcessRecord.write
+  Schreibt `write`. Ruft `safe`.
+ChildProcessRecord.read
+  Liest `read`. Ruft `required`.
+LifecycleRobustnessTest.FakeProcesses.FakeProcesses
+  `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+ChildProcessRecord.reap
+  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`, Quellreihenfolge.

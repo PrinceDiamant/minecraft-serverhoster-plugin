@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.2057
+  Zeile 2057: synchronisierter Block.
+FabricLauncherPlugin.armWatch.Z2057.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.armWatch.Z2057.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.armWatch`, Quellreihenfolge.

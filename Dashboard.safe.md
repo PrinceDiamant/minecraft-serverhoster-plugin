@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.guard
+  Prüft den Zugriff `guard`. Ruft `open`, `workDir`.
+PathGuard.resolve
+  Löst auf `resolve`.
+return Z.815 return guard(sid).resolve(rel);
+  Zeile 815: Rückgabe `return guard(sid).resolve(rel);`.
+```
+
 - `safe` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

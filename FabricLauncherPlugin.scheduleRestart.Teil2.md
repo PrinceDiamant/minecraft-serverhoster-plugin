@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.scheduleRestart.Teil2.Z1916
+  Fortsetzung des Ablaufs ab Zeile 1916.
+if Z.1925 (!slot.restartQueued.compareAndSet(false, true))
+  Zeile 1925: prüft `(!slot.restartQueued.compareAndSet(false, true))`.
+return Z.1925 return;
+  Zeile 1925: Rückgabe `return;`.
+Schritt Z.1927 long base = getConfig().getLong('autoRestart.init…
+  Zeile 1927: liest die Config. `long base = getConfig().getLong('autoRestart.init…`
+Schritt Z.1928 long cap = getConfig().getLong('autoRestart.maxDe…
+  Zeile 1928: liest die Config. `long cap = getConfig().getLong('autoRestart.maxDe…`
+RestartBackoff.delaySeconds
+  Rechnet die Wartezeit `delaySeconds`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.scheduleRestart`, Quellreihenfolge.

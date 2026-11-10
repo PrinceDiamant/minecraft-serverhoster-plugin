@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge
+  Packt ein lokales Zip und stellt es wieder her.
+BackupOptions
+  Optionen eines Backup-Laufs.
+BackupSecrets
+  Zugangsdaten für das Fern-Backup.
+RemoteBackupBridge
+  Lädt das Backup per FTP oder FTPS hoch und herunter.
+```
+
 

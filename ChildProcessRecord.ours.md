@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildProcessRecord.ours.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ChildProcessRecord.ours.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `ours` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`

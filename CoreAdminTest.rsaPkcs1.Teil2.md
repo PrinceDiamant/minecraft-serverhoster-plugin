@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.329 return java.util.Arrays.copyOfRange(pkcs8, key.co…
+  Zeile 329: Rückgabe `return java.util.Arrays.copyOfRange(pkcs8, key.co…`.
+```
+
 - Fortsetzung von `CoreAdminTest.rsaPkcs1`, Quellreihenfolge.

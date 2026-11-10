@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.77 (String kind : List.of('monsters', 'ani…
+  Zeile 77: Schleife `(String kind : List.of('monsters', 'ani…`.
+return Z.80 return values;
+  Zeile 80: Rückgabe `return values;`.
+```
+
 - `bukkitChanges` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

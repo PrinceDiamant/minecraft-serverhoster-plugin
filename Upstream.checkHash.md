@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.56 (algo == null // expectedHex == null // expectedH…
+  Zeile 56: prüft `(algo == null // expectedHex == null // expectedH…`.
+return Z.56 return;
+  Zeile 56: Rückgabe `return;`.
+Upstream.digest
+  `digest` in `Upstream.java`.
+if Z.58 (!expectedHex.equalsIgnoreCase(got))
+  Zeile 58: prüft `(!expectedHex.equalsIgnoreCase(got))`.
+throw Z.58 throw new IOException('checksum mismatch (' + alg…
+  Zeile 58: Abbruch `throw new IOException('checksum mismatch (' + alg…`.
+```
+
 - `checkHash` in `src/main/java/de/aichele/childlauncher/Upstream.java`

@@ -22,4 +22,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.59 type === 'custom'
+  Zeile 59: prüft `type === 'custom'`.
+return Z.60 return (label)Minecraft-Version(input value=(valu…
+  Zeile 60: Rückgabe `return (label)Minecraft-Version(input value=(valu…`.
+return Z.65 return (div) (label)Minecraft-Version (select val…
+  Zeile 65: Rückgabe `return (div) (label)Minecraft-Version (select val…`.
+```
+
 - `VersionSelect` in `ui/src/components/VersionSelect.tsx`

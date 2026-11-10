@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.78 return new HttpsSupport.Spec( c.getString('dashbo…
+  Zeile 78: Rückgabe `return new HttpsSupport.Spec( c.getString('dashbo…`.
+```
+
 - `httpsSpec` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

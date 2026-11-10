@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.33 return root.relativize(p).toString().replace('//'…
+  Zeile 33: Rückgabe `return root.relativize(p).toString().replace('//'…`.
+```
+
 - `relativize` in `src/main/java/de/aichele/childlauncher/PathGuard.java`

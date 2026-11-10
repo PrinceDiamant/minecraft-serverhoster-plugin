@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.dashboardDistinguishesLifecycleAndRestartCancellation.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `dashboardDistinguishesLifecycleAndRestartCancellation` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

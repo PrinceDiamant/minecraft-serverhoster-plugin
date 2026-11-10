@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.readHostMinimizeState
+  Liest `readHostMinimizeState`. Ruft `hostMinimizeStateFile`, `readState`.
+FabricLauncherPlugin.configuredHostWorld
+  Liest den konfigurierten Wert `configuredHostWorld`. Ruft `getWorldRoot`, `worldNameSafe`.
+HostMinimize.preview
+  Zeigt die Vorschau `preview`. Ruft `assertRoot`, `readProperties`, `outerProperties`.
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+FabricLauncherPlugin.hostProtectedPaths
+  Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeView`, Quellreihenfolge.

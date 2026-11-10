@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.writeMemoryIncidentReport.Teil3.Z1229
+  Fortsetzung des Ablaufs ab Zeile 1229.
+sync Z.1239
+  Zeile 1239: synchronisierter Block.
+MemoryIncidentReport.write
+  Schreibt `write`. Ruft `cgroupUsePercent`.
+return Z.1241 return MemoryIncidentReport.write(getDa…
+  Zeile 1241: Rückgabe `return MemoryIncidentReport.write(getDa…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.writeMemoryIncidentReport`, Quellreihenfolge.

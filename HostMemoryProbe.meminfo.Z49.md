@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.49
+  Zeile 49: Versuch. Der Fehlerpfad geht in catch.
+HostMemoryProbe.meminfo.Z49.Z50
+  Fortsetzung des Ablaufs ab Zeile 50.
+catch Z.59 (IOException ignored)
+  Zeile 59: fängt (IOException ignored).
+```
+
 - Fortsetzung von `HostMemoryProbe.meminfo`, Quellreihenfolge.

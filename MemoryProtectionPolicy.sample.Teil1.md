@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.23 (!Double.isFinite(usagePercent) // usagePercent (…
+  Zeile 23: prüft `(!Double.isFinite(usagePercent) // usagePercent (…`.
+return Z.26 return recoveryBlockedSince ) 0 && elapsedRecover…
+  Zeile 26: Rückgabe `return recoveryBlockedSince ) 0 && elapsedRecover…`.
+```
+
 - Fortsetzung von `MemoryProtectionPolicy.sample`, Quellreihenfolge.

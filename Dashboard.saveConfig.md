@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.saveConfig.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.saveConfig.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+Dashboard.saveConfig.Aufrufe
+  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+```
+
 - `saveConfig` in `src/main/java/de/aichele/childlauncher/Dashboard.java`
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

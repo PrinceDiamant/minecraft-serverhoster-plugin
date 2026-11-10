@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+GcDiagnostics.snapshot(List)
+  `snapshot` in `GcDiagnostics.java`.
+return Z.17 return snapshot(ManagementFactory.getGa…
+  Zeile 17: Rückgabe `return snapshot(ManagementFactory.getGa…`.
+```
+
 - `snapshot` in `src/main/java/de/aichele/childlauncher/GcDiagnostics.java`

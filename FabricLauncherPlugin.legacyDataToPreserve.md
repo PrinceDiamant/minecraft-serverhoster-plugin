@@ -21,4 +21,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.addLegacyDataToPreserve
+  Fügt hinzu `addLegacyDataToPreserve`.
+Schritt Z.432 String configuredBackup = getConfig().getString('…
+  Zeile 432: liest die Config. `String configuredBackup = getConfig().getString('…`
+FabricLauncherPlugin.legacyDataToPreserve.Z433
+  Fortsetzung des Ablaufs ab Zeile 433.
+return Z.440 return Set.copyOf(preserved);
+  Zeile 440: Rückgabe `return Set.copyOf(preserved);`.
+```
+
 - `legacyDataToPreserve` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

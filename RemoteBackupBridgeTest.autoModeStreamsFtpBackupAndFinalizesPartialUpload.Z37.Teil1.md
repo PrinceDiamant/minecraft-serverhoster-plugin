@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridgeTest.StubFtpServer.port
+  Prüft oder liefert den Port `port`. Nur Test.
+RemoteBackupBridge.archive
+  Packt `archive`. Ruft `open`, `safeId`, `connect`.
+RemoteBackupBridge.list
+  Listet `list`. Ruft `safeId`, `connect`, `enterDirectory`.
+```
+
 - Fortsetzung von `RemoteBackupBridgeTest.autoModeStreamsFtpBackupAndFinalizesPartialUpload.Z37`, Quellreihenfolge.

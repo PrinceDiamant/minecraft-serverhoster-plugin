@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.39 (String line : Files.readAllLines(f, St…
+  Zeile 39: Schleife `(String line : Files.readAllLines(f, St…`.
+if Z.41 (trimmed.isEmpty() // trimmed.startsWith('') // t…
+  Zeile 41: prüft `(trimmed.isEmpty() // trimmed.startsWith('') // t…`.
+```
+
 - Fortsetzung von `PropertiesFile.preview.Z37`, Quellreihenfolge.

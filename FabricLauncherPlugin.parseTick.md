@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TickQueryFilter.consume
+  Filtert `consume`.
+if Z.1831 (hide && slot.ticks.tickAt != before)
+  Zeile 1831: prüft `(hide && slot.ticks.tickAt != before)`.
+ChildSlot.pushMspt
+  Schiebt einen Wert in `pushMspt`.
+return Z.1837 return hide;
+  Zeile 1837: Rückgabe `return hide;`.
+```
+
 - `parseTick` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

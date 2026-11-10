@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.apply(Path,Path,Path,Path,List).Teil4.Z94
+  Fortsetzung des Ablaufs ab Zeile 94.
+HostFirstSetup.encodeWorldNames
+  Kodiert `encodeWorldNames`.
+HostFirstSetup.writeMarker(Path,String,String,int,String)
+  Schreibt `writeMarker`.
+for Z.104 (PluginJar pluginJar : pluginJars)
+  Zeile 104: Schleife `(PluginJar pluginJar : pluginJars)`.
+HostFirstSetup.movePluginJar
+  Verschiebt `movePluginJar`.
+```
+
 - Fortsetzung von `HostFirstSetup.apply(Path,Path,Path,Path,List)`, Quellreihenfolge.

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.1345 return taskLast.getOrDefault(id, '');
+  Zeile 1345: Rückgabe `return taskLast.getOrDefault(id, '');`.
+```
+
 - `taskLast` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

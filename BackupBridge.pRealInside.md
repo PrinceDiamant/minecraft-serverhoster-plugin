@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PathGuard.root
+  Liefert die Wurzel `root`.
+return Z.184 return p.toRealPath().startsWith(guard.…
+  Zeile 184: Rückgabe `return p.toRealPath().startsWith(guard.…`.
+```
+
 - `pRealInside` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

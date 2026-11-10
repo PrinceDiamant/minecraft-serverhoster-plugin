@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.47 (String part : expr.split(','))
+  Zeile 47: Schleife `(String part : expr.split(','))`.
+CronExpr.field.Z47.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CronExpr.field.Z47.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `CronExpr.field`, Quellreihenfolge.

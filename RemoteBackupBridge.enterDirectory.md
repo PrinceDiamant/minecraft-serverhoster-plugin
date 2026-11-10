@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.enterBaseDirectory
+  Wechselt hinein `enterBaseDirectory`. Ruft `hasControlCharacter`, `replyError`.
+if Z.259 (!client.changeWorkingDirectory(server))
+  Zeile 259: prüft `(!client.changeWorkingDirectory(server))`.
+if Z.261 (!client.changeWorkingDirectory(server))
+  Zeile 261: prüft `(!client.changeWorkingDirectory(server))`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+throw Z.261 throw replyError(client, 'create or ent…
+  Zeile 261: Abbruch `throw replyError(client, 'create or ent…`.
+```
+
 - `enterDirectory` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

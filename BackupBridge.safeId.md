@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.119 return s.isBlank() ? 'server' : s;
+  Zeile 119: Rückgabe `return s.isBlank() ? 'server' : s;`.
+```
+
 - `safeId` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

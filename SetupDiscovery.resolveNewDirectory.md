@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.resolveNewDirectory.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+SetupDiscovery.resolveNewDirectory.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `resolveNewDirectory` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

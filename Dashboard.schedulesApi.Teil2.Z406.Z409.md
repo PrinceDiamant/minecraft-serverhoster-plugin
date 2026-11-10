@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.409
+  Zeile 409: synchronisierter Block.
+FabricLauncherPlugin.schedules
+  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+Dashboard.scheduleIndex
+  Plant `scheduleIndex`.
+ScheduleDef.withLastRun
+  Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
+FabricLauncherPlugin.saveSchedules
+  Speichert `saveSchedules`. Ruft `toConfig`, `saveConfigWritable`.
+```
+
 - Fortsetzung von `Dashboard.schedulesApi.Teil2.Z406`, Quellreihenfolge.

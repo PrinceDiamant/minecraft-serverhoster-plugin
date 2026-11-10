@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.configureSetup.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.configureSetup.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.configureSetup.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.configureSetup.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `configureSetup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

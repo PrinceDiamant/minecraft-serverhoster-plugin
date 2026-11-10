@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.947 String contentType = switch (path.substring(path.…
+  Zeile 947: `String contentType = switch (path.substring(path.…`
+```
+
 - Fortsetzung von `Dashboard.serveWebAsset`, Quellreihenfolge.

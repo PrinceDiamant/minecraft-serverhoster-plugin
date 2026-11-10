@@ -30,4 +30,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.safeId
+  Prüft die Pfadgrenze `safeId`.
+if Z.153 (!BackupBridge.named(safe, name))
+  Zeile 153: prüft `(!BackupBridge.named(safe, name))`.
+BackupBridge.named
+  `named` in `BackupBridge.java`.
+throw Z.153 throw new IllegalArgumentException('backup name');
+  Zeile 153: Abbruch `throw new IllegalArgumentException('backup name');`.
+try Z.154
+  Zeile 154: Versuch. Der Fehlerpfad geht in catch.
+RemoteBackupBridge.connect
+  Verbindet `connect`. Ruft `validateCredentials`, `openFtps`, `openFtp`.
+RemoteBackupBridge.enterDirectory
+  Wechselt hinein `enterDirectory`. Ruft `enterBaseDirectory`, `replyError`.
+if Z.156 (!session.client().retrieveFile(name, output))
+  Zeile 156: prüft `(!session.client().retrieveFile(name, output))`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+throw Z.156 throw replyError(session.client(), 'dow…
+  Zeile 156: Abbruch `throw replyError(session.client(), 'dow…`.
+```
+
 - `download` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

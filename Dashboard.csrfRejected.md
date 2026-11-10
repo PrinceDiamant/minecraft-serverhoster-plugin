@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.563 return method != null && !Set.of('GET', 'HEAD', '…
+  Zeile 563: Rückgabe `return method != null && !Set.of('GET', 'HEAD', '…`.
+```
+
 - `csrfRejected` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

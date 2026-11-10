@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1074 (!willRun)
+  Zeile 1074: prüft `(!willRun)`.
+FabricLauncherPlugin.parseMemoryBytes
+  Wertet aus `parseMemoryBytes`.
+FabricLauncherPlugin.warnHeapBudget.Z1070.Teil1.Z1077
+  Fortsetzung des Ablaufs ab Zeile 1077.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.warnHeapBudget.Z1070`, Quellreihenfolge.

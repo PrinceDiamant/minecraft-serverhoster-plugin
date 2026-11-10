@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.1196 (ChildSlot slot : List.copyOf(slots.val…
+  Zeile 1196: Schleife `(ChildSlot slot : List.copyOf(slots.val…`.
+FabricLauncherPlugin.stopBlocking
+  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`, Quellreihenfolge.

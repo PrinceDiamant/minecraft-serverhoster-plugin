@@ -12,4 +12,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog
+  Liest Vanilla, Fabric und Paper und vergleicht Versionen.
+Upstream
+  HTTP-Abruf der Versionslisten.
+FabricLauncherPlugin.versions
+  `versions` in `FabricLauncherPlugin.java`. Ruft `fetch`.
+FabricLauncherPlugin.firstStable
+  `firstStable` in `FabricLauncherPlugin.java`.
+```
+
 

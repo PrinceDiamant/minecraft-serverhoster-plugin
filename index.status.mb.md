@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.status.n
+  `n` in `index.html`.
+```
+
 - `mb` in `src/main/resources/web/index.html`

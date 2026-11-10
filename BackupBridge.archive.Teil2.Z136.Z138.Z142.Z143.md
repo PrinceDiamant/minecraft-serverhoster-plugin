@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.143
+  Zeile 143: Versuch. Der Fehlerpfad geht in catch.
+BackupBridge.archive.Teil2.Z136.Z138.Z142.Z143.Z144
+  Fortsetzung des Ablaufs ab Zeile 144.
+```
+
 - Fortsetzung von `BackupBridge.archive.Teil2.Z136.Z138.Z142`, Quellreihenfolge.

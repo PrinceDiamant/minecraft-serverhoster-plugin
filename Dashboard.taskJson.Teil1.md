@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.taskNext
+  `taskNext` in `FabricLauncherPlugin.java`. Ruft `next`.
+FabricLauncherPlugin.taskLast
+  `taskLast` in `FabricLauncherPlugin.java`.
+```
+
 - Fortsetzung von `Dashboard.taskJson`, Quellreihenfolge.

@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.110 step === 1
+  Zeile 110: prüft `step === 1`.
+if Z.111 !path
+  Zeile 111: prüft `!path`.
+return Z.113 return;
+  Zeile 113: Rückgabe `return;`.
+if Z.115 action !== 'import' && (!versionIsValid(type, mcV…
+  Zeile 115: prüft `action !== 'import' && (!versionIsValid(type, mcV…`.
+VersionSelect.versionIsValid
+  `versionIsValid` in `VersionSelect.tsx`.
+return Z.118 return;
+  Zeile 118: Rückgabe `return;`.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.next`, Quellreihenfolge.

@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - Fortsetzung von `BackupWorkflow.BackupWorkflow`, Quellreihenfolge.

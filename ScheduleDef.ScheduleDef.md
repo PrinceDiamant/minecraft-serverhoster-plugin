@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.ScheduleDef.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ScheduleDef.ScheduleDef.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `ScheduleDef` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

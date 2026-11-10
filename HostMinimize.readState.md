@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.301 (text == null)
+  Zeile 301: prüft `(text == null)`.
+return Z.301 return values;
+  Zeile 301: Rückgabe `return values;`.
+for Z.302 (String line : text.split('/n'))
+  Zeile 302: Schleife `(String line : text.split('/n'))`.
+if Z.304 (eq ) 0)
+  Zeile 304: prüft `(eq ) 0)`.
+return Z.306 return values;
+  Zeile 306: Rückgabe `return values;`.
+```
+
 - `readState` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

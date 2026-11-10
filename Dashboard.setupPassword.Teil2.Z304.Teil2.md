@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.createSession
+  Legt an `createSession`. Ruft `cookie`.
+```
+
 - Fortsetzung von `Dashboard.setupPassword.Teil2.Z304`, Quellreihenfolge.

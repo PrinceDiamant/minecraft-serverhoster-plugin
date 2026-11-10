@@ -26,4 +26,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.readBodyText
+  Liest `readBodyText`.
+Dashboard.safe
+  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+if Z.894 (from.equals(root(sid)))
+  Zeile 894: prüft `(from.equals(root(sid)))`.
+Dashboard.root
+  Liefert die Wurzel `root`. Ruft `guard`, `root`.
+throw Z.894 throw new SecurityException('Wurzelordner kann ni…
+  Zeile 894: Abbruch `throw new SecurityException('Wurzelordner kann ni…`.
+if Z.895 (Files.exists(to))
+  Zeile 895: prüft `(Files.exists(to))`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.895 return;
+  Zeile 895: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.fsRename`, Quellreihenfolge.

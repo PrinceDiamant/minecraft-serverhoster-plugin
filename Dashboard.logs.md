@@ -24,4 +24,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.920 (name.contains('/') // name.contains('//') // nam…
+  Zeile 920: prüft `(name.contains('/') // name.contains('//') // nam…`.
+throw Z.920 throw new SecurityException('Pfad außerhalb des S…
+  Zeile 920: Abbruch `throw new SecurityException('Pfad außerhalb des S…`.
+Dashboard.parseInt
+  Wertet aus `parseInt`.
+LogQuery.query
+  Fragt ab `query`. Ruft `levelOk`.
+Dashboard.safe
+  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - `logs` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

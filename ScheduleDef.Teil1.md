@@ -22,4 +22,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ScheduleDef.ScheduleDef
+  Plant `ScheduleDef`. Ruft `validateInterval`.
+ScheduleDef.cron
+  `cron` in `ScheduleDef.java`.
+ScheduleDef.withEnabled
+  Liefert eine Kopie mit `withEnabled`. Ruft `ScheduleDef`.
+ScheduleDef.withLastRun
+  Liefert eine Kopie mit `withLastRun`. Ruft `ScheduleDef`.
+ScheduleDef.toConfig
+  `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+ScheduleDef.toJson
+  `toJson` in `ScheduleDef.java`. Ruft `toConfig`, `cron`.
+ScheduleDef.load
+  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+ScheduleDef.validateInterval
+  Prüft `validateInterval`.
+```
+
 

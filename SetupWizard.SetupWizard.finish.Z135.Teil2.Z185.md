@@ -16,4 +16,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.185 action !== 'import'
+  Zeile 185: prüft `action !== 'import'`.
+BackupSettings.saveBackupSettings
+  Speichert `saveBackupSettings`. Ruft `dashboardRequest`, `jsonBody`.
+if Z.187 backupSettings.backupStorage === 'remote'
+  Zeile 187: prüft `backupSettings.backupStorage === 'remote'`.
+SetupWizard.finish.createSchedule
+  Legt an `createSchedule`. Ruft `dashboardRequest`, `jsonBody`.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.finish.Z135.Teil2`, Quellreihenfolge.

@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.93 (String k : flat.keySet())
+  Zeile 93: Schleife `(String k : flat.keySet())`.
+if Z.94 (!k.startsWith('servers.'))
+  Zeile 94: prüft `(!k.startsWith('servers.'))`.
+return Z.99 return ids;
+  Zeile 99: Rückgabe `return ids;`.
+```
+
 - `serverIds` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

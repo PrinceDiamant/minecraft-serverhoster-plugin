@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.refreshHostMinimize
+  Lädt neu `refreshHostMinimize`. Ruft `readHostMinimizeState`, `worldNameSafe`, `apply`.
+FabricLauncherPlugin.applyLobbyRules
+  Wendet an `applyLobbyRules`. Ruft `apply`, `name`, `spawnFlags`.
+```
+
 

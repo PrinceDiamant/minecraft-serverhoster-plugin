@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.279 Path dir = Files.createDirectories(tmp.resolve('t…
+  Zeile 279: Dateioperation. `Path dir = Files.createDirectories(tmp.resolve('t…`
+HttpsSupport.build
+  Baut `build`. Ruft `fromKeystore`, `ensureSelfSigned`, `password`.
+Schritt Z.282 assertTrue(Files.isRegularFile(dir.resolve('dashb…
+  Zeile 282: Dateioperation. `assertTrue(Files.isRegularFile(dir.resolve('dashb…`
+HttpsSupport.configure
+  `configure` in `HttpsSupport.java`. Ruft `configure`.
+```
+
 - Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`, Quellreihenfolge.

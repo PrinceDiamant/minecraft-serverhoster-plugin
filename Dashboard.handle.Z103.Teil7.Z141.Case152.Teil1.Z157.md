@@ -25,4 +25,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+switch Z.157 (a)
+  Zeile 157: Verzweigung nach `(a)`.
+case Z.158 'start'
+  Zeile 158: Zweig `'start'`.
+FabricLauncherPlugin.requestStart(String)
+  Fordert an `requestStart`. Ruft `startAsync`.
+case Z.159 'stop'
+  Zeile 159: Zweig `'stop'`.
+FabricLauncherPlugin.requestStop(String)
+  Fordert an `requestStop`. Ruft `slot`, `stopBlocking`.
+case Z.160 'restart'
+  Zeile 160: Zweig `'restart'`.
+FabricLauncherPlugin.requestRestart(String)
+  Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+case Z.161 default
+  Zeile 161: Zweig `default`.
+Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1.Z157.Case161
+  Rumpf dieses switch-Zweigs ab Zeile 161.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1`, Quellreihenfolge.

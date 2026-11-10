@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.guard
+  Prüft den Zugriff `guard`. Ruft `open`, `workDir`.
+PathGuard.root
+  Liefert die Wurzel `root`.
+return Z.814 return guard(sid).root();
+  Zeile 814: Rückgabe `return guard(sid).root();`.
+```
+
 - `root` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

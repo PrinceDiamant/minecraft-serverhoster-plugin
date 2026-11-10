@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2156 return getDataFolder().toPath().resolve('host-fir…
+  Zeile 2156: Rückgabe `return getDataFolder().toPath().resolve('host-fir…`.
+```
+
 - `hostFirstSetupMarker` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

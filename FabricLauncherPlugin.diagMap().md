@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.diagMap(String)
+  Sammelt die Diagnose `diagMap`. Ruft `slot`, `pid`, `running`.
+return Z.879 return diagMap(focus);
+  Zeile 879: Rückgabe `return diagMap(focus);`.
+```
+
 - `diagMap` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

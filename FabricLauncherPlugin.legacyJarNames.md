@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.489 (!Files.isDirectory(plugins, LinkOption.NOFOLLOW_…
+  Zeile 489: prüft `(!Files.isDirectory(plugins, LinkOption.NOFOLLOW_…`.
+return Z.489 return List.of();
+  Zeile 489: Rückgabe `return List.of();`.
+FabricLauncherPlugin.legacyJarNames.Z490
+  Fortsetzung des Ablaufs ab Zeile 490.
+return Z.498 return List.copyOf(jars);
+  Zeile 498: Rückgabe `return List.copyOf(jars);`.
+```
+
 - `legacyJarNames` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

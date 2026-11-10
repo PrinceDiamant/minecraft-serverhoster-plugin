@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.289 (Files.isSymbolicLink(file))
+  Zeile 289: prüft `(Files.isSymbolicLink(file))`.
+throw Z.289 throw new SecurityException('refusing symbolic li…
+  Zeile 289: Abbruch `throw new SecurityException('refusing symbolic li…`.
+```
+
 - `assertNotSymlink` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

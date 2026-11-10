@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.206
+  Zeile 206: Versuch. Der Fehlerpfad geht in catch.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+catch Z.213 cause
+  Zeile 213: fängt cause.
+finally Z.206
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `SetupWorkflow.SetupWorkflow.hostAction`, Quellreihenfolge.

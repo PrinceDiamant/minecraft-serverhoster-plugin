@@ -16,5 +16,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.81 (ServerProfile p : profiles)
+  Zeile 81: Schleife `(ServerProfile p : profiles)`.
+if Z.81 (p.port == port)
+  Zeile 81: prüft `(p.port == port)`.
+return Z.82 return n ) 1;
+  Zeile 82: Rückgabe `return n ) 1;`.
+```
+
 - Wird vom Plugin-Kern nicht ausgewertet.
 - Befund: angemeldet aber nicht umgesetzt, wahrscheinlich. ServerProfile.java:79, nur Tests rufen Profiles.portClash

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LogQuery.query.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LogQuery.query.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `query` in `src/main/java/de/aichele/childlauncher/LogQuery.java`

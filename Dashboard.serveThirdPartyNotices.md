@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.966
+  Zeile 966: Versuch. Der Fehlerpfad geht in catch.
+if Z.967 (in == null)
+  Zeile 967: prüft `(in == null)`.
+throw Z.967 throw new IOException('Bundled third-party notice…
+  Zeile 967: Abbruch `throw new IOException('Bundled third-party notice…`.
+Dashboard.send
+  Sendet `send`. Ruft `sendBytes`.
+```
+
 - `serveThirdPartyNotices` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

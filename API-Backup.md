@@ -14,4 +14,13 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+Dashboard.backupJson
+  Sichert `backupJson`.
+Dashboard.backupDownload
+  Sichert `backupDownload`. Ruft `backupFiles`, `downloadBackup`. Befund: Logikrisiko (sicher).
+Dashboard.backupMutate
+  Sichert `backupMutate`. Ruft `readBodyText`, `json`, `restoreBackup`.
+```
+
 

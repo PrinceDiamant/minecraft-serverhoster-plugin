@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.snapshot(Path,Path)
+  `snapshot` in `HostMemoryProbe.java`. Ruft `meminfo`, `cgroup`.
+return Z.37 return snapshot(Path.of('/proc'), Path.…
+  Zeile 37: Rückgabe `return snapshot(Path.of('/proc'), Path.…`.
+```
+
 - `snapshot` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

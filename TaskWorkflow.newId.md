@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.65 return globalThis.crypto?.randomUUID?.().replaceA…
+  Zeile 65: Rückgabe `return globalThis.crypto?.randomUUID?.().replaceA…`.
+```
+
 - `newId` in `ui/src/components/TaskWorkflow.tsx`

@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.assertRoot
+  Prüft `assertRoot`.
+HostMinimize.readProperties
+  Liest `readProperties`.
+for Z.139 (var entry : outerProperties().entrySet…
+  Zeile 139: Schleife `(var entry : outerProperties().entrySet…`.
+HostMinimize.outerProperties
+  `outerProperties` in `HostMinimize.java`.
+for Z.141 (var entry : bukkitChanges().entrySet())
+  Zeile 141: Schleife `(var entry : bukkitChanges().entrySet())`.
+HostMinimize.bukkitChanges
+  `bukkitChanges` in `HostMinimize.java`.
+```
+
 - Fortsetzung von `HostMinimize.preview`, Quellreihenfolge.

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.sendBytes
+  Sendet `sendBytes`.
+```
+
 - `text` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

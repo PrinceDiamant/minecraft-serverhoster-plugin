@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.133
+  Zeile 133: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.134 List(String) lines = Files.readAllLines(path);
+  Zeile 134: Dateioperation. `List(String) lines = Files.readAllLines(path);`
+HostMemoryProbe.keyValues.Z133.Z135
+  Fortsetzung des Ablaufs ab Zeile 135.
+catch Z.141 (IOException ignored)
+  Zeile 141: fängt (IOException ignored).
+```
+
 - Fortsetzung von `HostMemoryProbe.keyValues`, Quellreihenfolge.

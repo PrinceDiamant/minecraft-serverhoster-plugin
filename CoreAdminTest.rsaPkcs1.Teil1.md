@@ -24,4 +24,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.derValue
+  `derValue` in `CoreAdminTest.java`. Nur Test.
+if Z.323 (sequence.tag != 0x30 // sequence.end != pkcs8.le…
+  Zeile 323: prüft `(sequence.tag != 0x30 // sequence.end != pkcs8.le…`.
+throw Z.323 throw new IllegalArgumentException('Invalid PKCS8…
+  Zeile 323: Abbruch `throw new IllegalArgumentException('Invalid PKCS8…`.
+if Z.327 (algorithm.tag != 0x30 // key.tag != 0x04 // key.…
+  Zeile 327: prüft `(algorithm.tag != 0x30 // key.tag != 0x04 // key.…`.
+throw Z.328 throw new IllegalArgumentException('Invalid RSA P…
+  Zeile 328: Abbruch `throw new IllegalArgumentException('Invalid RSA P…`.
+```
+
 - Fortsetzung von `CoreAdminTest.rsaPkcs1`, Quellreihenfolge.

@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.42
+  Zeile 42: Versuch. Der Fehlerpfad geht in catch.
+while Z.43 ((line = in.readLine()) != null)
+  Zeile 43: Schleife `((line = in.readLine()) != null)`.
+catch Z.44 (IOException ignored)
+  Zeile 44: fängt (IOException ignored).
+if Z.48 (!p.waitFor(45, TimeUnit.MINUTES))
+  Zeile 48: prüft `(!p.waitFor(45, TimeUnit.MINUTES))`.
+throw Z.48 throw new IOException('BuildTools timeout');
+  Zeile 48: Abbruch `throw new IOException('BuildTools timeout');`.
+```
+
 - Fortsetzung von `SpigotBuilder.build`, Quellreihenfolge.

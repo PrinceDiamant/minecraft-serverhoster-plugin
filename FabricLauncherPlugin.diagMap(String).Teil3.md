@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.hostMemoryView
+  Betrifft den Host `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
+return Z.908 return m;
+  Zeile 908: Rückgabe `return m;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.diagMap(String)`, Quellreihenfolge.

@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 

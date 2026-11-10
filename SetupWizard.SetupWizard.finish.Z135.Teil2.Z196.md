@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.196 action === 'import'
+  Zeile 196: prüft `action === 'import'`.
+SetupWizard.SetupWizard.finish.Z135.Teil2.Z196.Z197
+  Fortsetzung des Ablaufs ab Zeile 197.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.finish.Z135.Teil2`, Quellreihenfolge.

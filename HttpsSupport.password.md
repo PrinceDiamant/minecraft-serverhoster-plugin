@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.66 (store.isBlank())
+  Zeile 66: prüft `(store.isBlank())`.
+HttpsSupport.readOrCreatePass
+  Liest `readOrCreatePass`.
+if Z.67 (key.isBlank())
+  Zeile 67: prüft `(key.isBlank())`.
+return Z.68 return new char()() ( store.toCharArray(), key.to…
+  Zeile 68: Rückgabe `return new char()() ( store.toCharArray(), key.to…`.
+```
+
 - `password` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.33 return 'serverhoster-lobby-' + UUID.randomUUID().…
+  Zeile 33: Rückgabe `return 'serverhoster-lobby-' + UUID.randomUUID().…`.
+```
+
 - `newLobbyName` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

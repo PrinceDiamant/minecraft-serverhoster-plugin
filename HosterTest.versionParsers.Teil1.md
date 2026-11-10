@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog.vanilla
+  `vanilla` in `VersionCatalog.java`. Ruft `str`.
+VersionCatalog.fabric
+  `fabric` in `VersionCatalog.java`. Ruft `str`.
+VersionCatalog.paper
+  `paper` in `VersionCatalog.java`.
+VersionCatalog.spigot
+  `spigot` in `VersionCatalog.java`. Ruft `compare`.
+```
+
 - Fortsetzung von `HosterTest.versionParsers`, Quellreihenfolge.

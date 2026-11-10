@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.markManualScheduleRun.Z1584
+  Fortsetzung des Ablaufs ab Zeile 1584.
+throw Z.1597 throw new IllegalArgumentException('Zeitplan nich…
+  Zeile 1597: Abbruch `throw new IllegalArgumentException('Zeitplan nich…`.
+```
+
 - `markManualScheduleRun` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

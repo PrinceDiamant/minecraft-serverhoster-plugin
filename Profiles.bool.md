@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.150 (v instanceof Boolean b)
+  Zeile 150: prüft `(v instanceof Boolean b)`.
+return Z.150 return b;
+  Zeile 150: Rückgabe `return b;`.
+if Z.151 (v == null)
+  Zeile 151: prüft `(v == null)`.
+return Z.151 return fallback;
+  Zeile 151: Rückgabe `return fallback;`.
+return Z.152 return Boolean.parseBoolean(String.valueOf(v));
+  Zeile 152: Rückgabe `return Boolean.parseBoolean(String.valueOf(v));`.
+```
+
 - `bool` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

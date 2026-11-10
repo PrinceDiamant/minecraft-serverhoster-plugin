@@ -22,4 +22,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.249 (Path protectedPath : protectedPaths)
+  Zeile 249: Schleife `(Path protectedPath : protectedPaths)`.
+if Z.251 (protectedPath(path, absolute) // Files.exists(ab…
+  Zeile 251: prüft `(protectedPath(path, absolute) // Files.exists(ab…`.
+HostFirstSetup.protectedPath
+  `protectedPath` in `HostFirstSetup.java`.
+return Z.252 return true;
+  Zeile 252: Rückgabe `return true;`.
+return Z.254 return false;
+  Zeile 254: Rückgabe `return false;`.
+```
+
 - `protectedByAny` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

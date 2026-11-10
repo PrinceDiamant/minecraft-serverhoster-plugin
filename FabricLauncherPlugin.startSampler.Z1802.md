@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1802 getServer().getScheduler().runTaskTimer(this, () …
+  Zeile 1802: hängt einen Lauf an den Server-Tick. `getServer().getScheduler().runTaskTimer(this, () …`
+if Z.1804 (tickStart != 0)
+  Zeile 1804: prüft `(tickStart != 0)`.
+FabricLauncherPlugin.startSampler.Z1802.Z1806
+  Fortsetzung des Ablaufs ab Zeile 1806.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.startSampler`, Quellreihenfolge.

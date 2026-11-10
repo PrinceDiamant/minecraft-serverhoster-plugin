@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.2426 exec.submit(() -) ( try ( msg(s, 'Restored ' + re…
+  Zeile 2426: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( try ( msg(s, 'Restored ' + re…`
+try Z.2426
+  Zeile 2426: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.msg
+  Sendet eine Chat-Zeile `msg`.
+FabricLauncherPlugin.restoreBackup
+  Stellt wieder her `restoreBackup`. Ruft `slot`, `running`, `remoteBackupSelected`.
+catch Z.2426 (Exception e)
+  Zeile 2426: fängt (Exception e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2417.Z2418.Z2421.Z2424`, Quellreihenfolge.

@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SupervisorHealth.SupervisorHealth
+  `SupervisorHealth` in `SupervisorHealth.java`.
+SupervisorHealth.dashboardState
+  `dashboardState` in `SupervisorHealth.java`.
+SupervisorHealth.assess
+  Bewertet `assess`.
+```
+
 

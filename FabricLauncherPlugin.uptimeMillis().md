@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.focusSlot
+  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+ChildSlot.uptimeMillis
+  Liefert die Laufzeit `uptimeMillis`. Ruft `running`.
+return Z.308 return focusSlot().uptimeMillis();
+  Zeile 308: Rückgabe `return focusSlot().uptimeMillis();`.
+```
+
 - `uptimeMillis` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:308–308 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

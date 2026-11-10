@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+index.$
+  `$` in `index.html`.
+index.esc
+  Maskiert HTML `esc`.
+if Z.151 prev&&fs.some(e=)e.name===prev)
+  Zeile 151: prüft `prev&&fs.some(e=)e.name===prev)`.
+if Z.151 fs.some(e=)e.name==='latest.log')
+  Zeile 151: prüft `fs.some(e=)e.name==='latest.log')`.
+```
+
 - Fortsetzung von `index.loadLogs.Z150`, Quellreihenfolge.

@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.694 (String n : List.of('whitelist', 'ops',…
+  Zeile 694: Schleife `(String n : List.of('whitelist', 'ops',…`.
+FabricLauncherPlugin.workDir(String)
+  `workDir` in `FabricLauncherPlugin.java`. Ruft `profile`, `directory`.
+Dashboard.readPlayerNames
+  Liest `readPlayerNames`.
+FabricLauncherPlugin.players(String)
+  Liefert die Spieler `players`. Ruft `slot`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - `players` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

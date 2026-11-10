@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.178 !accepted
+  Zeile 178: prüft `!accepted`.
+return Z.178 return;
+  Zeile 178: Rückgabe `return;`.
+SetupWorkflow.SetupWorkflow.cleanupLegacy.Z181
+  Fortsetzung des Ablaufs ab Zeile 181.
+```
+
 - `cleanupLegacy` in `ui/src/components/SetupWorkflow.tsx`

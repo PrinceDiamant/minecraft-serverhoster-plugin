@@ -21,4 +21,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.cleanupLegacyDirectory.preVisitDirectory
+  `preVisitDirectory` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.cleanupLegacyDirectory.visitFile
+  `visitFile` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.cleanupLegacyDirectory.postVisitDirectory
+  Sendet POST `postVisitDirectory`.
+```
+
 - `cleanupLegacyDirectory` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

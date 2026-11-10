@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog.compare.Z81
+  Fortsetzung des Ablaufs ab Zeile 81.
+return Z.91 return 0;
+  Zeile 91: Rückgabe `return 0;`.
+```
+
 - `compare` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

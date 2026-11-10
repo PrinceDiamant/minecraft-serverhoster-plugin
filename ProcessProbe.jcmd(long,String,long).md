@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ProcessProbe.jcmd(long,String,long).Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ProcessProbe.jcmd(long,String,long).Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+ProcessProbe.jcmd(long,String,long).Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `jcmd` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

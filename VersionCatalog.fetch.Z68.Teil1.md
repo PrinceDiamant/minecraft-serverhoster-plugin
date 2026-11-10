@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog.vanilla
+  `vanilla` in `VersionCatalog.java`. Ruft `str`.
+Upstream.getJson
+  Liefert `getJson`.
+VersionCatalog.fabric
+  `fabric` in `VersionCatalog.java`. Ruft `str`.
+VersionCatalog.paper
+  `paper` in `VersionCatalog.java`.
+VersionCatalog.spigot
+  `spigot` in `VersionCatalog.java`. Ruft `compare`.
+Upstream.getText
+  Liefert `getText`.
+```
+
 - Fortsetzung von `VersionCatalog.fetch.Z68`, Quellreihenfolge.

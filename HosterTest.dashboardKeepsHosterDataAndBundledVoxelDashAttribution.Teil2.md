@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.190
+  Zeile 190: Versuch. Der Fehlerpfad geht in catch.
+```
+
 - Fortsetzung von `HosterTest.dashboardKeepsHosterDataAndBundledVoxelDashAttribution`, Quellreihenfolge.

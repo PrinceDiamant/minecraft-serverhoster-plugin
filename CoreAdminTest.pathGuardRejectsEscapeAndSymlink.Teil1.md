@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.240 Path root = Files.createDirectories(tmp.resolve('…
+  Zeile 240: Dateioperation. `Path root = Files.createDirectories(tmp.resolve('…`
+PathGuard.open
+  Öffnet `open`. Ruft `PathGuard`.
+PathGuard.resolve
+  Löst auf `resolve`.
+PathGuard.root
+  Liefert die Wurzel `root`.
+Schritt Z.245 Path outside = Files.createDirectories(tmp.resolv…
+  Zeile 245: Dateioperation. `Path outside = Files.createDirectories(tmp.resolv…`
+```
+
 - Fortsetzung von `CoreAdminTest.pathGuardRejectsEscapeAndSymlink`, Quellreihenfolge.

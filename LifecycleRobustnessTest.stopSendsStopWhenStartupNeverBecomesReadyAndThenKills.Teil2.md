@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.173 (process.isAlive() && System.nanoTime()…
+  Zeile 173: Schleife `(process.isAlive() && System.nanoTime()…`.
+Schritt Z.173 Thread.sleep(50);
+  Zeile 173: wartet. `Thread.sleep(50);`
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.stopSendsStopWhenStartupNeverBecomesReadyAndThenKills`, Quellreihenfolge.

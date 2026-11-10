@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RestartPolicy.RestartPolicy
+  `RestartPolicy` in `RestartPolicy.java`.
+RestartPolicy.maxAttempts
+  Begrenzt nach oben `maxAttempts`.
+RestartPolicy.mayRetry
+  `mayRetry` in `RestartPolicy.java`.
+RestartPolicy.migrateLegacyUnlimited
+  Übernimmt den alten Wert von `migrateLegacyUnlimited`.
+```
+
 

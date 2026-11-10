@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.256
+  Zeile 256: synchronisierter Block.
+ServerHosterSettings.apply
+  Wendet an `apply`.
+FabricLauncherPlugin.saveConfigWritable
+  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+```
+
 - `saveSettings` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

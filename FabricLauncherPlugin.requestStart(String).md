@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.startAsync
+  Startet `startAsync`. Ruft `msg`, `slot`, `invalidateRestarts`.
+```
+
 - `requestStart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

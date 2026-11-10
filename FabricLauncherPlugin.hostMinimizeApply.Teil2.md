@@ -21,4 +21,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.newLobbyName()
+  `newLobbyName` in `HostMinimize.java`.
+HostMinimize.apply
+  Wendet an `apply`. Ruft `assertRoot`, `assertEditable`, `update`.
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+HostHeapTune.apply
+  Wendet an `apply`.
+HostHeapTune.hotspot
+  `hotspot` in `HostHeapTune.java`. Ruft `manageable`, `get`, `set`.
+FabricLauncherPlugin.hostMinimizeApply.Teil2.Z2292
+  Fortsetzung des Ablaufs ab Zeile 2292.
+FabricLauncherPlugin.hostMinimizeApply.Teil2.Z2302
+  Fortsetzung des Ablaufs ab Zeile 2302.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply`, Quellreihenfolge.

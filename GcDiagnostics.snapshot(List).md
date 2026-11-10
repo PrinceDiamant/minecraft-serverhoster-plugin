@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.22 (beans == null)
+  Zeile 22: prüft `(beans == null)`.
+return Z.22 return List.of();
+  Zeile 22: Rückgabe `return List.of();`.
+GcDiagnostics.snapshot(List).Z23
+  Fortsetzung des Ablaufs ab Zeile 23.
+return Z.32 return List.copyOf(out);
+  Zeile 32: Rückgabe `return List.copyOf(out);`.
+```
+
 - `snapshot` in `src/main/java/de/aichele/childlauncher/GcDiagnostics.java`

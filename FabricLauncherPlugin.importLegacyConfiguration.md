@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.importLegacyConfiguration.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.importLegacyConfiguration.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.importLegacyConfiguration.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.importLegacyConfiguration.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.importLegacyConfiguration.Teil5
+  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `importLegacyConfiguration` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

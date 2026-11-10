@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.525 return m;
+  Zeile 525: Rückgabe `return m;`.
+```
+
 - Fortsetzung von `Dashboard.status`, Quellreihenfolge.

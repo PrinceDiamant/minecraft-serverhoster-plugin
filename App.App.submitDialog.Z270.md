@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.270 dialog.kind === 'prompt'
+  Zeile 270: prüft `dialog.kind === 'prompt'`.
+if Z.272 prompt.requiredValue && dialogValue !== prompt.re…
+  Zeile 272: prüft `prompt.requiredValue && dialogValue !== prompt.re…`.
+return Z.272 return;
+  Zeile 272: Rückgabe `return;`.
+App.App.closeDialog
+  Schließt `closeDialog`.
+return Z.274 return;
+  Zeile 274: Rückgabe `return;`.
+```
+
 - Fortsetzung von `App.App.submitDialog`, Quellreihenfolge.

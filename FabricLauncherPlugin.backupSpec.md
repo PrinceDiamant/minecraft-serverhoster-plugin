@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1486 FileConfiguration c = getConfig();
+  Zeile 1486: liest die Config. `FileConfiguration c = getConfig();`
+if Z.1489 (!path.isAbsolute())
+  Zeile 1489: prüft `(!path.isAbsolute())`.
+return Z.1490 return new BackupBridge.Spec(path.toString(), c.g…
+  Zeile 1490: Rückgabe `return new BackupBridge.Spec(path.toString(), c.g…`.
+```
+
 - `backupSpec` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

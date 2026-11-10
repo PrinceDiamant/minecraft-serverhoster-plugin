@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.95 (target.getParent() != null)
+  Zeile 95: prüft `(target.getParent() != null)`.
+Schritt Z.95 Files.createDirectories(target.getParent());
+  Zeile 95: Dateioperation. `Files.createDirectories(target.getParent());`
+BackupBridge.restoreZip.Z84.Z87.Teil2.Z96
+  Fortsetzung des Ablaufs ab Zeile 96.
+```
+
 - Fortsetzung von `BackupBridge.restoreZip.Z84.Z87`, Quellreihenfolge.

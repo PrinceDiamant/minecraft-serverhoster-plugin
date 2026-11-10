@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerProfile.ServerProfile
+  `ServerProfile` in `ServerProfile.java`.
+return Z.125 return new ServerProfile(id, p.type, p.…
+  Zeile 125: Rückgabe `return new ServerProfile(id, p.type, p.…`.
+```
+
 - `copyId` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

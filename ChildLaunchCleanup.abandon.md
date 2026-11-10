@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildLaunchCleanup.abandon.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ChildLaunchCleanup.abandon.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `abandon` in `src/main/java/de/aichele/childlauncher/ChildLaunchCleanup.java`

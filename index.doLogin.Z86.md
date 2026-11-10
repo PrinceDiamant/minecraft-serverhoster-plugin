@@ -16,4 +16,13 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+if Z.86 r.ok
+  Zeile 86: prüft `r.ok`.
+index.$
+  `$` in `index.html`.
+index.start
+  Browser-Timer 3000 ms für `status`. Befund: doppelte Implementierung (sicher).
+```
+
 - Fortsetzung von `index.doLogin`, Quellreihenfolge.

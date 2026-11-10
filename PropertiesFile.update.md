@@ -25,4 +25,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.20 List(String) lines = Files.exists(f) ? new ArrayL…
+  Zeile 20: Dateioperation. `List(String) lines = Files.exists(f) ? new ArrayL…`
+PropertiesFile.update.Z22
+  Fortsetzung des Ablaufs ab Zeile 22.
+for Z.30 (var e : force.entrySet())
+  Zeile 30: Schleife `(var e : force.entrySet())`.
+if Z.30 (!seen.contains(e.getKey()))
+  Zeile 30: prüft `(!seen.contains(e.getKey()))`.
+for Z.31 (var e : defaults.entrySet())
+  Zeile 31: Schleife `(var e : defaults.entrySet())`.
+if Z.31 (!seen.contains(e.getKey()))
+  Zeile 31: prüft `(!seen.contains(e.getKey()))`.
+Schritt Z.32 Files.write(f, lines, StandardCharsets.UTF_8);
+  Zeile 32: Dateioperation. `Files.write(f, lines, StandardCharsets.UTF_8);`
+```
+
 - `update` in `src/main/java/de/aichele/childlauncher/PropertiesFile.java`

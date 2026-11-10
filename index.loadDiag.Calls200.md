@@ -19,4 +19,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.loadDiag.row
+  Baut eine Tabellenzeile `row`. Ruft `esc`.
+index.loadDiag.metric
+  Formatiert einen Messwert `metric`.
+```
+
 - Fortsetzung von `index.loadDiag`, Quellreihenfolge.

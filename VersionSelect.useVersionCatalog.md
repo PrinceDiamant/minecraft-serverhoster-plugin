@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+return Z.33 return ( versions: current?.versions ?? (), loadi…
+  Zeile 33: Rückgabe `return ( versions: current?.versions ?? (), loadi…`.
+```
+
 - `useVersionCatalog` in `ui/src/components/VersionSelect.tsx`

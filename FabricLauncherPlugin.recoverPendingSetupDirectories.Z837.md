@@ -29,4 +29,29 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.837
+  Zeile 837: Versuch. Der Fehlerpfad geht in catch.
+SetupRecovery.recover
+  Hebt hängende Zustände auf `recover`.
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+FabricLauncherPlugin.cleanupLegacyDirectory
+  Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
+for Z.840 (SetupRecovery.Result result : recovere…
+  Zeile 840: Schleife `(SetupRecovery.Result result : recovere…`.
+switch Z.841 (result.action())
+  Zeile 841: Verzweigung nach `(result.action())`.
+case Z.842 RESTORED
+  Zeile 842: Zweig `RESTORED`.
+case Z.843 DELETED
+  Zeile 843: Zweig `DELETED`.
+case Z.844 ARCHIVED
+  Zeile 844: Zweig `ARCHIVED`.
+case Z.845 PRESERVED
+  Zeile 845: Zweig `PRESERVED`.
+catch Z.848 (IOException e)
+  Zeile 848: fängt (IOException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.recoverPendingSetupDirectories`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.146 (event as CustomEvent(string)).detail === 'tasks'
+  Zeile 146: prüft `(event as CustomEvent(string)).detail === 'tasks'`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - `onPageChange` in `ui/src/components/TaskWorkflow.tsx`

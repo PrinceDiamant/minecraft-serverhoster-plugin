@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.567 return Set.of('/', '/index.html', '/dashboard', '…
+  Zeile 567: Rückgabe `return Set.of('/', '/index.html', '/dashboard', '…`.
+```
+
 - `isDashboardPage` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

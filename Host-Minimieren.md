@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize
+  Phase active oder staged, Spieler blockieren, anwenden oder zurücknehmen.
+HostHeapTune
+  Setzt die JVM-Flags für den verkleinerten Host.
+HostLobbyRuntime
+  Hält die Lobby-Welt, während der Child läuft.
+Host-Minimieren.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+Host-Minimieren.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 

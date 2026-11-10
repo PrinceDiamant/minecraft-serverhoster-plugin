@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LegacyTaskMigration.convert.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LegacyTaskMigration.convert.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+LegacyTaskMigration.convert.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `convert` in `src/main/java/de/aichele/childlauncher/LegacyTaskMigration.java`

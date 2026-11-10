@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog.compare
+  Vergleicht `compare`. Ruft `num`.
+```
+
 - Fortsetzung von `HosterTest.versionParsers`, Quellreihenfolge.

@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.52 (fields(1).matches('//d(1,2)') && fields(4).equal…
+  Zeile 52: prüft `(fields(1).matches('//d(1,2)') && fields(4).equal…`.
+LegacyTaskMigration.number
+  `number` in `LegacyTaskMigration.java`.
+if Z.54 (hour ( 0)
+  Zeile 54: prüft `(hour ( 0)`.
+return Z.54 return null;
+  Zeile 54: Rückgabe `return null;`.
+LegacyTaskMigration.convert.Teil2.Z48.Z52.Z58
+  Fortsetzung des Ablaufs ab Zeile 58.
+```
+
 - Fortsetzung von `LegacyTaskMigration.convert.Teil2.Z48`, Quellreihenfolge.

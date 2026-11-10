@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LaunchPlan.argv(String,ServerProfile)
+  `argv` in `LaunchPlan.java`. Ruft `argv`, `jarPath`.
+return Z.53 return String.join(' ', argv(javaBin, p…
+  Zeile 53: Rückgabe `return String.join(' ', argv(javaBin, p…`.
+```
+
 - `text` in `src/main/java/de/aichele/childlauncher/LaunchPlan.java`

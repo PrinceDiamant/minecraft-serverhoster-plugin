@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+index.post
+  Sendet POST `post`. Ruft `api`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+if Z.131 w==='props'
+  Zeile 131: prüft `w==='props'`.
+index.loadPropertiesPreview
+  Lädt `loadPropertiesPreview`. Ruft `api`, `$`, `esc`.
+```
+
 - `saveTxt` in `src/main/resources/web/index.html`

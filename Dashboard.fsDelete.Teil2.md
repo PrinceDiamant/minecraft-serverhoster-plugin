@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.info(String,String)
+  Schreibt eine Infozeile `info`. Ruft `slot`.
+Dashboard.rel
+  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - Fortsetzung von `Dashboard.fsDelete`, Quellreihenfolge.

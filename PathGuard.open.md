@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.15 Files.createDirectories(workDir);
+  Zeile 15: Dateioperation. `Files.createDirectories(workDir);`
+PathGuard.PathGuard
+  Liefert den Pfad `PathGuard`.
+return Z.16 return new PathGuard(workDir.toRealPath…
+  Zeile 16: Rückgabe `return new PathGuard(workDir.toRealPath…`.
+```
+
 - `open` in `src/main/java/de/aichele/childlauncher/PathGuard.java`

@@ -28,4 +28,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1415 (remoteBackupSelected())
+  Zeile 1415: prüft `(remoteBackupSelected())`.
+FabricLauncherPlugin.remoteBackupSelected
+  `remoteBackupSelected` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.backupCredentials
+  Sichert `backupCredentials`. Ruft `load`.
+RemoteBackupBridge.list
+  Listet `list`. Ruft `safeId`, `connect`, `enterDirectory`.
+FabricLauncherPlugin.remoteBackupSettings
+  `remoteBackupSettings` in `FabricLauncherPlugin.java`.
+return Z.1417 return RemoteBackupBridge.list(remoteBa…
+  Zeile 1417: Rückgabe `return RemoteBackupBridge.list(remoteBa…`.
+BackupBridge.list
+  Listet `list`. Ruft `directory`, `safeId`, `named`.
+FabricLauncherPlugin.backupSpec
+  Sichert `backupSpec`.
+return Z.1419 return BackupBridge.list(backupSpec(), …
+  Zeile 1419: Rückgabe `return BackupBridge.list(backupSpec(), …`.
+```
+
 - `backupFiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

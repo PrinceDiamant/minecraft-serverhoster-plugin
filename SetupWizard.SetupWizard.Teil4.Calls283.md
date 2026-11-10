@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWizard.SetupWizard.chooseAction
+  Wählt `chooseAction`.
+SetupWizard.SetupWizard.chooseCandidate
+  Wählt `chooseCandidate`.
+VersionSelect.VersionSelect
+  `VersionSelect` in `VersionSelect.tsx`.
+BackupSettings.BackupSettings
+  Sichert `BackupSettings`.
+BackupSettings.saveBackupSettings
+  Speichert `saveBackupSettings`. Ruft `dashboardRequest`, `jsonBody`.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.Teil4`, Quellreihenfolge.

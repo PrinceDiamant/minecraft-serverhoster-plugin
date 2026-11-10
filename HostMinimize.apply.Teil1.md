@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.assertRoot
+  Prüft `assertRoot`.
+HostMinimize.assertEditable
+  Prüft `assertEditable`.
+if Z.155 (!Files.isRegularFile(properties, LinkOption.NOFO…
+  Zeile 155: prüft `(!Files.isRegularFile(properties, LinkOption.NOFO…`.
+throw Z.156 throw new IOException('Outer server.properties mu…
+  Zeile 156: Abbruch `throw new IOException('Outer server.properties mu…`.
+if Z.159 (Files.exists(root.resolve('bukkit.yml'), LinkOpt…
+  Zeile 159: prüft `(Files.exists(root.resolve('bukkit.yml'), LinkOpt…`.
+```
+
 - Fortsetzung von `HostMinimize.apply`, Quellreihenfolge.

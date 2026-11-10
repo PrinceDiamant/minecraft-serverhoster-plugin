@@ -19,4 +19,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.pushChartValue
+  Schiebt einen Wert in `pushChartValue`.
+```
+
 - Fortsetzung von `index.updateCharts`, Quellreihenfolge.

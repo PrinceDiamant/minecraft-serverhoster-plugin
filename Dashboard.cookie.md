@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.91 return 'FLS=' + token + '; Path=/; Max-Age=' + ma…
+  Zeile 91: Rückgabe `return 'FLS=' + token + '; Path=/; Max-Age=' + ma…`.
+```
+
 - `cookie` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.127 return value instanceof Number number ? number.lo…
+  Zeile 127: Rückgabe `return value instanceof Number number ? number.lo…`.
+```
+
 - `number` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

@@ -24,4 +24,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1649
+  Zeile 1649: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.runScheduledBackup.Z1632.Z1643.Z1649.Z1650
+  Fortsetzung des Ablaufs ab Zeile 1650.
+FabricLauncherPlugin.runBackup
+  Führt aus `runBackup`. Ruft `slot`, `running`, `send`.
+finally Z.1649
+  Läuft danach immer, auch nach einem Fehler.
+if Z.1662 (!target.running())
+  Zeile 1662: prüft `(!target.running())`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+if Z.1663 (restartAfter && !shuttingDown)
+  Zeile 1663: prüft `(restartAfter && !shuttingDown)`.
+FabricLauncherPlugin.startAsync
+  Startet `startAsync`. Ruft `msg`, `slot`, `invalidateRestarts`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632.Z1643`, Quellreihenfolge.

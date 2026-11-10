@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.59
+  Zeile 59: Versuch. Der Fehlerpfad geht in catch.
+BackupSettings.saveBackupSettings
+  Speichert `saveBackupSettings`. Ruft `dashboardRequest`, `jsonBody`.
+BackupSettings.loadBackupSettings
+  Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+catch Z.66 cause
+  Zeile 66: fängt cause.
+finally Z.59
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `SettingsWorkflow.SettingsWorkflow.save`, Quellreihenfolge.

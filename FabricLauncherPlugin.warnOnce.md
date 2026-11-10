@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2148 (memoryBudgetWarnings.add(key))
+  Zeile 2148: prüft `(memoryBudgetWarnings.add(key))`.
+```
+
 - `warnOnce` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.safe
+  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+Schritt Z.903 Files.createDirectories(d);
+  Zeile 903: Dateioperation. `Files.createDirectories(d);`
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - `fsMkdir` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

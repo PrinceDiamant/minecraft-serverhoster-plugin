@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.896 Files.move(from, to);
+  Zeile 896: Dateioperation. `Files.move(from, to);`
+FabricLauncherPlugin.info(String,String)
+  Schreibt eine Infozeile `info`. Ruft `slot`.
+Dashboard.rel
+  Rechnet den relativen Pfad `rel`. Ruft `guard`, `relativize`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+```
+
 - Fortsetzung von `Dashboard.fsRename`, Quellreihenfolge.

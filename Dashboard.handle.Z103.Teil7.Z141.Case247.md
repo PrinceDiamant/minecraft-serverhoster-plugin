@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.text
+  Antwortet mit Text `text`. Ruft `sendBytes`.
+FabricLauncherPlugin.planText
+  Zeigt den Startplan `planText`. Ruft `text`, `javaBin`, `profile`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.

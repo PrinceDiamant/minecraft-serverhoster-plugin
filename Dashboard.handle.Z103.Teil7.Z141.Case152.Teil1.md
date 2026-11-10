@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.154 ((a.equals('start') // a.equals('restart')) && !p…
+  Zeile 154: prüft `((a.equals('start') // a.equals('restart')) && !p…`.
+FabricLauncherPlugin.dashboardStartBlockReason
+  `dashboardStartBlockReason` in `FabricLauncherPlugin.java`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.155 return;
+  Zeile 155: Rückgabe `return;`.
+Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1.Z157
+  Fortsetzung des Ablaufs ab Zeile 157.
+FabricLauncherPlugin.info(String,String)
+  Schreibt eine Infozeile `info`. Ruft `slot`.
+Dashboard.ip
+  `ip` in `Dashboard.java`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case152`, Quellreihenfolge.

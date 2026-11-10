@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.hasServerFiles
+  Prüft `hasServerFiles`.
+return Z.168 return !Files.isSymbolicLink(path) && F…
+  Zeile 168: Rückgabe `return !Files.isSymbolicLink(path) && F…`.
+```
+
 - `isServerDirectory` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

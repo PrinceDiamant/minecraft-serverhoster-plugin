@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskWorkflow.TaskWorkflow.runLegacyTask.Z228
+  Fortsetzung des Ablaufs ab Zeile 228.
+```
+
 - `runLegacyTask` in `ui/src/components/TaskWorkflow.tsx`

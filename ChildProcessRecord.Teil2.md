@@ -15,4 +15,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildProcessRecord.waitUntilDead
+  Wartet `waitUntilDead`.
+ChildProcessRecord.looksLikeJava
+  `looksLikeJava` in `ChildProcessRecord.java`. Ruft `fileName`.
+ChildProcessRecord.samePath
+  Vergleicht `samePath`.
+ChildProcessRecord.fileName
+  Liefert die Datei `fileName`.
+ChildProcessRecord.required
+  Liest verpflichtend `required`.
+ChildProcessRecord.safe
+  Prüft die Pfadgrenze `safe`.
+```
+
 

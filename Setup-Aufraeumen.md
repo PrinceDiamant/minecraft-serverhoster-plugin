@@ -20,4 +20,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.cleanupLegacyFiles
+  Räumt auf `cleanupLegacyFiles`. Ruft `legacyJarNames`, `legacyDataToPreserve`, `cleanupLegacyDirectory`.
+FabricLauncherPlugin.legacyDataToPreserve
+  `legacyDataToPreserve` in `FabricLauncherPlugin.java`. Ruft `addLegacyDataToPreserve`.
+FabricLauncherPlugin.addLegacyDataToPreserve
+  Fügt hinzu `addLegacyDataToPreserve`.
+FabricLauncherPlugin.cleanupLegacyDirectory
+  Räumt auf `cleanupLegacyDirectory`. Ruft `preVisitDirectory`, `visitFile`, `postVisitDirectory`.
+FabricLauncherPlugin.legacyJarNames
+  `legacyJarNames` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.copyLegacyFile
+  Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+FabricLauncherPlugin.rejectSymbolicLinkSegments
+  `rejectSymbolicLinkSegments` in `FabricLauncherPlugin.java`.
+```
+
 

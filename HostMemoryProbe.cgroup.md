@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.cgroup.Z64
+  Fortsetzung des Ablaufs ab Zeile 64.
+HostMemoryProbe.Cgroup.unavailable
+  `unavailable` in `HostMemoryProbe.java`.
+return Z.98 return Cgroup.unavailable();
+  Zeile 98: Rückgabe `return Cgroup.unavailable();`.
+```
+
 - `cgroup` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

@@ -13,6 +13,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 ```mermaid
 stateDiagram-v2
   [*] --> auto_authorized: frisch, Z.42

@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.295 (csrfRejected('POST', ex.getRequestHeaders().getF…
+  Zeile 295: prüft `(csrfRejected('POST', ex.getRequestHeaders().getF…`.
+Dashboard.csrfRejected
+  `csrfRejected` in `Dashboard.java`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.296 return;
+  Zeile 296: Rückgabe `return;`.
+Dashboard.ip
+  `ip` in `Dashboard.java`.
+```
+
 - Fortsetzung von `Dashboard.setupPassword`, Quellreihenfolge.

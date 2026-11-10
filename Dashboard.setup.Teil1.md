@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.parseJsonObject
+  Wertet aus `parseJsonObject`.
+Dashboard.readBodyText
+  Liest `readBodyText`.
+Dashboard.requiredString
+  Liest verpflichtend `requiredString`.
+Dashboard.optionalString
+  Liest optional `optionalString`.
+```
+
 - Fortsetzung von `Dashboard.setup`, Quellreihenfolge.

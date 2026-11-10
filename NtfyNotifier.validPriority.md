@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.66 return switch (value) ( case '1', '2', '3', '4', …
+  Zeile 66: Rückgabe `return switch (value) ( case '1', '2', '3', '4', …`.
+```
+
 - `validPriority` in `src/main/java/de/aichele/childlauncher/NtfyNotifier.java`

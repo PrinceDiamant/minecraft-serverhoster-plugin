@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CronExpr.normZone
+  `normZone` in `CronExpr.java`.
+CronExpr.normAction
+  `normAction` in `CronExpr.java`.
+```
+
 - `TaskDef` in `src/main/java/de/aichele/childlauncher/TaskDef.java`

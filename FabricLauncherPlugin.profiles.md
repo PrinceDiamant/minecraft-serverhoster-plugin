@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.290 return profiles;
+  Zeile 290: Rückgabe `return profiles;`.
+```
+
 - `profiles` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:290–290 kein Produktionsaufruf im Aufrufgraph

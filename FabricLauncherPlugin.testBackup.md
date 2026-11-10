@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.backupSpec
+  Sichert `backupSpec`.
+FabricLauncherPlugin.testBackup.Z1396
+  Fortsetzung des Ablaufs ab Zeile 1396.
+if Z.1407 (spec.dbEnabled())
+  Zeile 1407: prüft `(spec.dbEnabled())`.
+BackupBridge.test
+  Prüft `test`. Ruft `connect`, `ensureTable`, `table`.
+return Z.1411 return transport;
+  Zeile 1411: Rückgabe `return transport;`.
+```
+
 - `testBackup` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

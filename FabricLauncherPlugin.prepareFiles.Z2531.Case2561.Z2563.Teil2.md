@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Upstream.download(String,Path,String,String)
+  Liefert zum Herunterladen `download`. Ruft `checkHash`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2561.Z2563`, Quellreihenfolge.

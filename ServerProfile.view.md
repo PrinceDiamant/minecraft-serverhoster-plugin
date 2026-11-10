@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+return Z.58 return m;
+  Zeile 58: Rückgabe `return m;`.
+```
+
 - `view` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ServerProfile.java:54–59 kein Produktionsaufruf im Aufrufgraph

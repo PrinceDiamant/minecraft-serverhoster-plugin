@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.apply.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostMinimize.apply.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HostMinimize.apply.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+HostMinimize.apply.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `apply` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

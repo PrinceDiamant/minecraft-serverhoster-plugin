@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+FabricLauncherPlugin.scheduleRestart.Teil3.Z1934
+  Fortsetzung des Ablaufs ab Zeile 1934.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.scheduleRestart`, Quellreihenfolge.

@@ -13,4 +13,13 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+App.tabFromPath
+  Wechselt den Tab `tabFromPath`.
+App.readLegacyDashboard
+  Ersetzt Legacy-Abschnitte und löscht vier `load…`-Aufrufe aus dem Script. Befund: doppelte Implementierung (sicher).
+App.App
+  `App` in `App.tsx`. Ruft `tabFromPath`, `dashboardRequest`, `showDialog`.
+```
+
 - `App` liest das Legacy-HTML und hängt Workflows ein.

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.160 a.length)CHART_HISTORY_LIMIT
+  Zeile 160: prüft `a.length)CHART_HISTORY_LIMIT`.
+```
+
 - `pushChartValue` in `src/main/resources/web/index.html`

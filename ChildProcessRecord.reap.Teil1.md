@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.155 (file == null // !Files.exists(file))
+  Zeile 155: prüft `(file == null // !Files.exists(file))`.
+return Z.155 return new ReapResult(Kind.NO_RECORD, 'no record'…
+  Zeile 155: Rückgabe `return new ReapResult(Kind.NO_RECORD, 'no record'…`.
+ChildProcessRecord.read
+  Liest `read`. Ruft `required`.
+if Z.157 (loaded.identity() == null)
+  Zeile 157: prüft `(loaded.identity() == null)`.
+return Z.157 return new ReapResult(Kind.INVALID_RECORD, loaded…
+  Zeile 157: Rückgabe `return new ReapResult(Kind.INVALID_RECORD, loaded…`.
+```
+
 - Fortsetzung von `ChildProcessRecord.reap`, Quellreihenfolge.

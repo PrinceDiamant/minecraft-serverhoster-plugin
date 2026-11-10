@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.132 (var e : flat.entrySet())
+  Zeile 132: Schleife `(var e : flat.entrySet())`.
+if Z.132 (e.getKey().startsWith(p))
+  Zeile 132: prüft `(e.getKey().startsWith(p))`.
+return Z.133 return m;
+  Zeile 133: Rückgabe `return m;`.
+```
+
 - `props` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

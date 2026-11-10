@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.935
+  Zeile 935: Versuch. Der Fehlerpfad geht in catch.
+MemoryTelemetry.line
+  `line` in `MemoryTelemetry.java`. Ruft `usedMiB`, `committedMiB`, `maxMiB`.
+MemoryTelemetry.appendRotated
+  Hängt an `appendRotated`.
+catch Z.939 (IOException e)
+  Zeile 939: fängt (IOException e).
+FabricLauncherPlugin.warnOnce
+  Warnt `warnOnce`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.maybeWriteTelemetry.Teil2`, Quellreihenfolge.

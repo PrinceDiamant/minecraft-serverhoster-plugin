@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.27 (converted == null // schedules.size() )= Schedul…
+  Zeile 27: prüft `(converted == null // schedules.size() )= Schedul…`.
+ScheduleDef.toConfig
+  `toConfig` in `ScheduleDef.java`. Ruft `toConfig`.
+```
+
 - Fortsetzung von `LegacyTaskMigration.migrate.Z19`, Quellreihenfolge.

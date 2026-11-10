@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.status.Z101
+  Fortsetzung des Ablaufs ab Zeile 101.
+index.status.n
+  `n` in `index.html`.
+index.status.mb
+  `mb` in `index.html`. Ruft `n`.
+```
+
 - `status` in `src/main/resources/web/index.html`

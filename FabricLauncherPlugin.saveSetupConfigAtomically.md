@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.627 (Files.isSymbolicLink(configFile) // Files.isSymb…
+  Zeile 627: prüft `(Files.isSymbolicLink(configFile) // Files.isSymb…`.
+throw Z.628 throw new SecurityException('Setup config files m…
+  Zeile 628: Abbruch `throw new SecurityException('Setup config files m…`.
+FabricLauncherPlugin.saveSetupConfigAtomically.Z629
+  Fortsetzung des Ablaufs ab Zeile 629.
+```
+
 - `saveSetupConfigAtomically` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

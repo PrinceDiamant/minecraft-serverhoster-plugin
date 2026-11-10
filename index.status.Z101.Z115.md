@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.115 generation===statusGeneration
+  Zeile 115: prüft `generation===statusGeneration`.
+index.status.Z101.Z115.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+index.status.Z101.Z115.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `index.status.Z101`, Quellreihenfolge.

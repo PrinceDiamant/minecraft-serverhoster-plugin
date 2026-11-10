@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+switch Z.2401 (a(0).toLowerCase(Locale.ROOT))
+  Zeile 2401: Verzweigung nach `(a(0).toLowerCase(Locale.ROOT))`.
+FabricLauncherPlugin.onCommand.Z2401.Cases2402
+  Weitere switch-Zweige ab Zeile 2402.
+FabricLauncherPlugin.onCommand.Z2401.Cases2412
+  Weitere switch-Zweige ab Zeile 2412.
+FabricLauncherPlugin.onCommand.Z2401.Cases2449
+  Weitere switch-Zweige ab Zeile 2449.
+FabricLauncherPlugin.onCommand.Z2401.Cases2489
+  Weitere switch-Zweige ab Zeile 2489.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand`, Quellreihenfolge.

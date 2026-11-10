@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.isWindows
+  Prüft `isWindows`.
+return Z.2670 return Paths.get(System.getProperty('ja…
+  Zeile 2670: Rückgabe `return Paths.get(System.getProperty('ja…`.
+```
+
 - `javaBin` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

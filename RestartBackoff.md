@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RestartBackoff.RestartBackoff
+  `RestartBackoff` in `RestartBackoff.java`.
+RestartBackoff.delaySeconds
+  Rechnet die Wartezeit `delaySeconds`.
+```
+
 

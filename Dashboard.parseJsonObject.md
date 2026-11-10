@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.448
+  Zeile 448: Versuch. Der Fehlerpfad geht in catch.
+if Z.450 (value.isJsonObject())
+  Zeile 450: prüft `(value.isJsonObject())`.
+return Z.450 return value.getAsJsonObject();
+  Zeile 450: Rückgabe `return value.getAsJsonObject();`.
+catch Z.451 (JsonParseException / Illegal…
+  Zeile 451: fängt (JsonParseException / Illegal….
+throw Z.452 throw new IllegalArgumentException('Ungültiger JS…
+  Zeile 452: Abbruch `throw new IllegalArgumentException('Ungültiger JS…`.
+throw Z.454 throw new IllegalArgumentException('JSON-Objekt e…
+  Zeile 454: Abbruch `throw new IllegalArgumentException('JSON-Objekt e…`.
+```
+
 - `parseJsonObject` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

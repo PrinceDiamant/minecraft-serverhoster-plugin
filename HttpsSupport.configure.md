@@ -13,4 +13,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.configure.configure
+  `configure` in `HttpsSupport.java`.
+```
+
 - `configure` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

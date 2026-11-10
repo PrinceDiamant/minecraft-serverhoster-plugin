@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.2140
+  Zeile 2140: Versuch. Der Fehlerpfad geht in catch.
+ChildProcessRecord.deleteIfMatch
+  Löscht `deleteIfMatch`. Ruft `read`.
+FabricLauncherPlugin.processRecord
+  `processRecord` in `FabricLauncherPlugin.java`.
+catch Z.2142 (IOException e)
+  Zeile 2142: fängt (IOException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.abandonFailedStart`, Quellreihenfolge.

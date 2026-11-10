@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CrashIndex.CrashIndex
+  Betrifft Crash-Reports `CrashIndex`.
+CrashIndex.list
+  Listet `list`. Ruft `open`, `resolve`.
+CrashIndex.read
+  Liest `read`. Ruft `open`, `resolve`, `query`.
+```
+
 

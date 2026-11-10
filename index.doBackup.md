@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.post
+  Sendet POST `post`. Ruft `api`.
+index.$
+  `$` in `index.html`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+index.loadBackup
+  Lädt `loadBackup`. Ruft `api`, `$`, `esc`.
+```
+
 - `doBackup` in `src/main/resources/web/index.html`

@@ -16,5 +16,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1498 (shuttingDown)
+  Zeile 1498: prüft `(shuttingDown)`.
+return Z.1498 return;
+  Zeile 1498: Rückgabe `return;`.
+FabricLauncherPlugin.fireDueTasks.Z1499
+  Fortsetzung des Ablaufs ab Zeile 1499.
+```
+
 - `fireDueTasks` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: Altlast, sicher. FabricLauncherPlugin.java:151 und config.yml:93 Kommentar Deprecated

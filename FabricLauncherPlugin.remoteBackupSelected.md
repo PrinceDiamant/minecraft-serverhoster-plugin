@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1465 String storage = getConfig().getString('backup.st…
+  Zeile 1465: liest die Config. `String storage = getConfig().getString('backup.st…`
+if Z.1466 (storage == null)
+  Zeile 1466: prüft `(storage == null)`.
+return Z.1467 return switch (storage.trim().toLowerCase(Locale.…
+  Zeile 1467: Rückgabe `return switch (storage.trim().toLowerCase(Locale.…`.
+```
+
 - `remoteBackupSelected` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.38 (String segment : backupDirectory.repla…
+  Zeile 38: Schleife `(String segment : backupDirectory.repla…`.
+if Z.39 ('..'.equals(segment))
+  Zeile 39: prüft `('..'.equals(segment))`.
+throw Z.39 throw new IllegalArgumentException('FTP directory…
+  Zeile 39: Abbruch `throw new IllegalArgumentException('FTP directory…`.
+if Z.40 ('remote'.equals(backupStorage) && backupHost.isB…
+  Zeile 40: prüft `('remote'.equals(backupStorage) && backupHost.isB…`.
+throw Z.41 throw new IllegalArgumentException('FTP host is r…
+  Zeile 41: Abbruch `throw new IllegalArgumentException('FTP host is r…`.
+```
+
 - Fortsetzung von `ServerHosterSettings.ServerHosterSettings`, Quellreihenfolge.

@@ -12,6 +12,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildStopSequence.ChildStopSequence
+  Betrifft den Child `ChildStopSequence`.
+ChildStopSequence.stop
+  Stoppt `stop`. Ruft `signal`.
+ChildStopSequence.signal
+  `signal` in `ChildStopSequence.java`.
+```
+
 ```mermaid
 stateDiagram-v2
   [*] --> CLEAN: sauber Z.51

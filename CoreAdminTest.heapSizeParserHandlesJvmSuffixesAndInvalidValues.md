@@ -19,5 +19,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.parseMemoryBytes
+  Wertet aus `parseMemoryBytes`.
+```
+
 - `heapSizeParserHandlesJvmSuffixesAndInvalidValues` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

@@ -12,4 +12,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.34 options.body && typeof options.body === 'string'
+  Zeile 34: prüft `options.body && typeof options.body === 'string'`.
+if Z.50 response.status === 401 && startedAuthenticated
+  Zeile 50: prüft `response.status === 401 && startedAuthenticated`.
+```
+
 - Fortsetzung von `hostApi.dashboardRequest`, Quellreihenfolge.

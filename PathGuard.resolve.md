@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PathGuard.resolve.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+PathGuard.resolve.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `resolve` in `src/main/java/de/aichele/childlauncher/PathGuard.java`

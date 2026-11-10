@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.93
+  Zeile 93: Versuch. Der Fehlerpfad geht in catch.
+catch Z.95 (org.bukkit.configuration.Inv…
+  Zeile 95: fängt (org.bukkit.configuration.Inv….
+throw Z.96 throw new IOException('Legacy ServerHoster config…
+  Zeile 96: Abbruch `throw new IOException('Legacy ServerHoster config…`.
+return Z.98 return config;
+  Zeile 98: Rückgabe `return config;`.
+```
+
 - `loadLegacyConfig` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

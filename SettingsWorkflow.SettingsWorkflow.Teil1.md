@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSettings.loadBackupSettings
+  Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+```
+
 - Fortsetzung von `SettingsWorkflow.SettingsWorkflow`, Quellreihenfolge.

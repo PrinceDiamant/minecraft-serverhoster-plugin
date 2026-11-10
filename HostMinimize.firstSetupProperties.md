@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.45 (!LOBBY_NAME.matcher(worldName).matches())
+  Zeile 45: prüft `(!LOBBY_NAME.matcher(worldName).matches())`.
+throw Z.45 throw new IllegalArgumentException('unsafe lobby …
+  Zeile 45: Abbruch `throw new IllegalArgumentException('unsafe lobby …`.
+return Z.52 return values;
+  Zeile 52: Rückgabe `return values;`.
+```
+
 - `firstSetupProperties` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

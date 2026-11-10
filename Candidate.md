@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.Candidate.view
+  Liefert die Sicht `view`.
+```
+
 

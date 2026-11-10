@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.cpu.Z667
+  Fortsetzung des Ablaufs ab Zeile 667.
+```
+
 - Liest `/proc/<pid>/stat` und teilt durch 100.
 - Befund: Logikrisiko, prüfen. Dashboard.java:676 Kommentar CLK_TCK=100, Division durch 100

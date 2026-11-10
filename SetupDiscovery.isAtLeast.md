@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.isAtLeast.Z145
+  Fortsetzung des Ablaufs ab Zeile 145.
+```
+
 - `isAtLeast` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.api.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+index.api.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `api` in `src/main/resources/web/index.html`

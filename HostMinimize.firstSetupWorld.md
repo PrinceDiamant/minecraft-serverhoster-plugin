@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.97 ('done'.equals(setupStatus) && lobbyNameSafe(setu…
+  Zeile 97: prüft `('done'.equals(setupStatus) && lobbyNameSafe(setu…`.
+HostMinimize.lobbyNameSafe
+  `lobbyNameSafe` in `HostMinimize.java`.
+return Z.98 return setupWorld;
+  Zeile 98: Rückgabe `return setupWorld;`.
+return Z.99 return existing;
+  Zeile 99: Rückgabe `return existing;`.
+```
+
 - `firstSetupWorld` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

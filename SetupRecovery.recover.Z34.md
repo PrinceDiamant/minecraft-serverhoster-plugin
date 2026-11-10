@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.34
+  Zeile 34: Versuch. Der Fehlerpfad geht in catch.
+SetupRecovery.recover.Z34.Z36
+  Fortsetzung des Ablaufs ab Zeile 36.
+```
+
 - Fortsetzung von `SetupRecovery.recover`, Quellreihenfolge.

@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.resolveNewDirectory
+  Löst auf `resolveNewDirectory`.
+FabricLauncherPlugin.applySetupProfile
+  Wendet an `applySetupProfile`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530.Z535.Z538`, Quellreihenfolge.

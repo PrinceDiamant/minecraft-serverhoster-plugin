@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.833 return getDataFolder().toPath().toAbsolutePath().…
+  Zeile 833: Rückgabe `return getDataFolder().toPath().toAbsolutePath().…`.
+```
+
 - `getWorldRoot` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -15,4 +15,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CronExpr.field
+  `field` in `CronExpr.java`.
+return Z.43 return field(expr, cron, 0, 7) // (cron…
+  Zeile 43: Rückgabe `return field(expr, cron, 0, 7) // (cron…`.
+```
+
 - `dow` in `src/main/java/de/aichele/childlauncher/CronExpr.java`

@@ -19,5 +19,18 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.689
+  Zeile 689: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.690 Files.createSymbolicLink(link, target);
+  Zeile 690: Dateioperation. `Files.createSymbolicLink(link, target);`
+return Z.691 return true;
+  Zeile 691: Rückgabe `return true;`.
+catch Z.692 (UnsupportedOperationExceptio…
+  Zeile 692: fängt (UnsupportedOperationExceptio….
+return Z.693 return false;
+  Zeile 693: Rückgabe `return false;`.
+```
+
 - `tryCreateSymbolicLink` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

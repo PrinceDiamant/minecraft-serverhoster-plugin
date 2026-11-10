@@ -35,5 +35,18 @@ flowchart TD
   style n9 fill:#f88,stroke:#900
 ```
 
+```knoten
+return Z.45 return new Inspector() ( @Override public Observe…
+  Zeile 45: Rückgabe `return new Inspector() ( @Override public Observe…`.
+ChildProcessRecord.liveInspector.find
+  Sucht `find`. Ruft `observe`. Befund: toter Code (wahrscheinlich).
+ChildProcessRecord.liveInspector.destroy
+  Zerstört `destroy`. Befund: toter Code (wahrscheinlich).
+ChildProcessRecord.liveInspector.destroyForcibly
+  Zerstört `destroyForcibly`. Befund: toter Code (wahrscheinlich).
+ChildProcessRecord.liveInspector.alive
+  Sagt, ob der Prozess lebt `alive`. Befund: toter Code (wahrscheinlich).
+```
+
 - `liveInspector` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:44–59 nur von Tests erreicht

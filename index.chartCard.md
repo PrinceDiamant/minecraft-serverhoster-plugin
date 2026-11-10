@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.chartCard.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+index.chartCard.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+index.chartCard.y
+  `y` in `index.html`.
+index.chartCard.x
+  `x` in `index.html`.
+```
+
 - `chartCard` in `src/main/resources/web/index.html`

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.App.navigateTo
+  Wechselt die Route `navigateTo`. Ruft `tab`.
+App.tabFromPath
+  Wechselt den Tab `tabFromPath`.
+```
+
 - `onStarted` in `ui/src/App.tsx`

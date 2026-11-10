@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+Schritt Z.2616 Files.createDirectories(wd);
+  Zeile 2616: Dateioperation. `Files.createDirectories(wd);`
+FabricLauncherPlugin.updateProperties
+  Aktualisiert `updateProperties`. Ruft `update`.
+FabricLauncherPlugin.syncPropertiesEdit
+  Gleicht ab `syncPropertiesEdit`. Ruft `profile`, `configPrefix`, `parseValue`.
+```
+
 - `setChildProperty` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

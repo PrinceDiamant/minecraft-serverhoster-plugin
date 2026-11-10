@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.63
+  Zeile 63: Versuch. Der Fehlerpfad geht in catch.
+while Z.66 ((n = in.read(buf)) ) 0)
+  Zeile 66: Schleife `((n = in.read(buf)) ) 0)`.
+return Z.68 return HexFormat.of().formatHex(md.digest());
+  Zeile 68: Rückgabe `return HexFormat.of().formatHex(md.digest());`.
+```
+
 - `digest` in `src/main/java/de/aichele/childlauncher/Upstream.java`

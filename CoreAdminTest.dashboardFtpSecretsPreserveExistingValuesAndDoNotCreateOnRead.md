@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

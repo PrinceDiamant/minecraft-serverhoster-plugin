@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryProtectionPolicy.finishRecovery
+  Schließt ab `finishRecovery`.
+MemoryProtectionPolicy.emergencyStopStarted
+  `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+MemoryProtectionPolicy.sample
+  Misst `sample`.
+MemoryProtectionPolicy.startEmergencyStop
+  Startet `startEmergencyStop`.
+```
+
 - Fortsetzung von `HosterTest.memoryProtectionWaitsForSustainedPressureAndStableRecovery`, Quellreihenfolge.

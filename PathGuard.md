@@ -14,4 +14,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PathGuard.PathGuard
+  Liefert den Pfad `PathGuard`.
+PathGuard.open
+  Öffnet `open`. Ruft `PathGuard`.
+PathGuard.root
+  Liefert die Wurzel `root`.
+PathGuard.resolve
+  Löst auf `resolve`.
+PathGuard.relativize
+  `relativize` in `PathGuard.java`.
+```
+
 

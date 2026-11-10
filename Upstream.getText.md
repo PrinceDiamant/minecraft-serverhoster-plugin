@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.33 (r.statusCode() / 100 != 2)
+  Zeile 33: prüft `(r.statusCode() / 100 != 2)`.
+throw Z.33 throw new IOException('HTTP ' + r.statusCode() + …
+  Zeile 33: Abbruch `throw new IOException('HTTP ' + r.statusCode() + …`.
+return Z.34 return r.body();
+  Zeile 34: Rückgabe `return r.body();`.
+```
+
 - `getText` in `src/main/java/de/aichele/childlauncher/Upstream.java`

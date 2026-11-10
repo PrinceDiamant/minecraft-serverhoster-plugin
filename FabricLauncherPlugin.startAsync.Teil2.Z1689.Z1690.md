@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1690 exec.submit(() -) ( try ( openChild(s, id); ) cat…
+  Zeile 1690: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( try ( openChild(s, id); ) cat…`
+FabricLauncherPlugin.startAsync.Teil2.Z1689.Z1690.Z1691
+  Fortsetzung des Ablaufs ab Zeile 1691.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.startAsync.Teil2.Z1689`, Quellreihenfolge.

@@ -14,4 +14,13 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+HostFirstSetup.apply(Path,Path,Path,Path)
+  Wendet an `apply`. Ruft `apply`. Befund: toter Code (wahrscheinlich).
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+Schritt Z.221 assertEquals('level-name=child-server/nserver-por…
+  Zeile 221: `assertEquals('level-name=child-server/nserver-por…`
+```
+
 - Fortsetzung von `HostMinimizeTest.firstSetupRetriesPendingStateAndRejectsProtectedWorlds`, Quellreihenfolge.

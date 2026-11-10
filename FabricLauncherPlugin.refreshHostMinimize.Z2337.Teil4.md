@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2366 (active)
+  Zeile 2366: prüft `(active)`.
+FabricLauncherPlugin.applyLobbyRules
+  Wendet an `applyLobbyRules`. Ruft `apply`, `name`, `spawnFlags`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.refreshHostMinimize.Z2337`, Quellreihenfolge.

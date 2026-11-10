@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.editorFor
+  Liefert den Editor `editorFor`. Ruft `get`.
+fileEditor.modeForPath
+  `modeForPath` in `fileEditor.ts`.
+```
+
 - `setPath` in `ui/src/lib/fileEditor.ts`

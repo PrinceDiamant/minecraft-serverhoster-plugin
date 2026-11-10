@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildStopSequence.stop.Z21
+  Fortsetzung des Ablaufs ab Zeile 21.
+```
+
 - `stop` in `src/main/java/de/aichele/childlauncher/ChildStopSequence.java`

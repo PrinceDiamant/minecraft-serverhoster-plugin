@@ -19,4 +19,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LaunchPlan.jarName
+  Betrifft das Jar `jarName`. Ruft `fileName`.
+LaunchPlan.jarPath
+  Betrifft das Jar `jarPath`. Ruft `directory`, `jarName`.
+HosterTest.profile
+  `profile` in `HosterTest.java`. Ruft `ServerProfile`. Nur Test.
+```
+
 - Fortsetzung von `HosterTest.launchPlanDropsDeadFlagAndNamesJars`, Quellreihenfolge.

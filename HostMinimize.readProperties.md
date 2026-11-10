@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.270 (!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…
+  Zeile 270: prüft `(!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…`.
+return Z.270 return current;
+  Zeile 270: Rückgabe `return current;`.
+HostMinimize.readProperties.Z271
+  Fortsetzung des Ablaufs ab Zeile 271.
+return Z.278 return current;
+  Zeile 278: Rückgabe `return current;`.
+```
+
 - `readProperties` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

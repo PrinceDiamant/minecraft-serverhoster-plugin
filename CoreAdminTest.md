@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 

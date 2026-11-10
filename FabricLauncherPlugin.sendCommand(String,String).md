@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.317 (c.startsWith('/'))
+  Zeile 317: prüft `(c.startsWith('/'))`.
+FabricLauncherPlugin.send
+  Sendet `send`. Ruft `running`.
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+return Z.317 return send(slot(id), c);
+  Zeile 317: Rückgabe `return send(slot(id), c);`.
+```
+
 - `sendCommand` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

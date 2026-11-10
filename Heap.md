@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryTelemetry.Heap.current
+  `current` in `MemoryTelemetry.java`.
+MemoryTelemetry.Heap.usedMiB
+  `usedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+MemoryTelemetry.Heap.committedMiB
+  `committedMiB` in `MemoryTelemetry.java`. Ruft `mib`.
+MemoryTelemetry.Heap.maxMiB
+  Begrenzt nach oben `maxMiB`. Ruft `mib`.
+```
+
 

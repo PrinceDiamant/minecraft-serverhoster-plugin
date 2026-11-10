@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2518 (a.length == 2 && a(0).equalsIgnoreCase('versions…
+  Zeile 2518: prüft `(a.length == 2 && a(0).equalsIgnoreCase('versions…`.
+return Z.2518 return List.of('fabric', 'paper', 'vanilla', 'spi…
+  Zeile 2518: Rückgabe `return List.of('fabric', 'paper', 'vanilla', 'spi…`.
+return Z.2519 return List.of();
+  Zeile 2519: Rückgabe `return List.of();`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onTabComplete`, Quellreihenfolge.

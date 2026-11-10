@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskWorkflow.TaskWorkflow.toggleSchedule.Z183
+  Fortsetzung des Ablaufs ab Zeile 183.
+```
+
 - `toggleSchedule` in `ui/src/components/TaskWorkflow.tsx`

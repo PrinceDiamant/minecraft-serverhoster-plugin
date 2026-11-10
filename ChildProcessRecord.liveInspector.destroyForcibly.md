@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.53 ProcessHandle.of(pid).ifPresent(ProcessHandle::de…
+  Zeile 53: fragt den Prozess ab. `ProcessHandle.of(pid).ifPresent(ProcessHandle::de…`
+```
+
 - `destroyForcibly` in `src/main/java/de/aichele/childlauncher/ChildProcessRecord.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/ChildProcessRecord.java:52–54 nur von Tests erreicht

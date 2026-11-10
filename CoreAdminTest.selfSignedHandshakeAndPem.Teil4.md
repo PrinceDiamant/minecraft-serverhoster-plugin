@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.rsaPkcs1
+  `rsaPkcs1` in `CoreAdminTest.java`. Ruft `derValue`. Nur Test.
+CoreAdminTest.pem
+  `pem` in `CoreAdminTest.java`. Nur Test.
+HttpsSupport.loadKey
+  Lädt `loadKey`. Ruft `pemBlock`, `wrapPkcs1`.
+HttpsSupport.normalizeSans
+  Vereinheitlicht `normalizeSans`.
+```
+
 - Fortsetzung von `CoreAdminTest.selfSignedHandshakeAndPem`, Quellreihenfolge.

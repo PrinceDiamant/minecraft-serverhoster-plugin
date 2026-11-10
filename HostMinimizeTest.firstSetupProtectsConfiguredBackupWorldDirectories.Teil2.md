@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.apply(Path,Path,Path,Path,List)
+  Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
+Schritt Z.286 assertEquals('backup', Files.readString(backup.re…
+  Zeile 286: liest Text aus einer Datei. `assertEquals('backup', Files.readString(backup.re…`
+```
+
 - Fortsetzung von `HostMinimizeTest.firstSetupProtectsConfiguredBackupWorldDirectories`, Quellreihenfolge.

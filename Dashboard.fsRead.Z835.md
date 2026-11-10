@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.835 (f.toString().endsWith('.gz'))
+  Zeile 835: prüft `(f.toString().endsWith('.gz'))`.
+Dashboard.fsRead.Z835.Z836
+  Fortsetzung des Ablaufs ab Zeile 836.
+return Z.842 return;
+  Zeile 842: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.fsRead`, Quellreihenfolge.

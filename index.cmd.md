@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.post
+  Sendet POST `post`. Ruft `api`.
+if Z.125 !r.ok
+  Zeile 125: prüft `!r.ok`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+if Z.125 cur!=='console'
+  Zeile 125: prüft `cur!=='console'`.
+```
+
 - `cmd` in `src/main/resources/web/index.html`

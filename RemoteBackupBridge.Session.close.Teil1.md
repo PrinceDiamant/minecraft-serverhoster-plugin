@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.35 (!client.isConnected())
+  Zeile 35: prüft `(!client.isConnected())`.
+return Z.35 return;
+  Zeile 35: Rückgabe `return;`.
+try Z.37
+  Zeile 37: Versuch. Der Fehlerpfad geht in catch.
+if Z.39 (!FTPReply.isPositiveCompletion(client.getReplyCo…
+  Zeile 39: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+catch Z.40 (IOException e)
+  Zeile 40: fängt (IOException e).
+```
+
 - Fortsetzung von `RemoteBackupBridge.Session.close`, Quellreihenfolge.

@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.App.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+App.App.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+App.App.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+App.App.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+App.App.Innere
+  Innere Funktionen dieses Blocks.
+```
+
 - `App` in `ui/src/App.tsx`

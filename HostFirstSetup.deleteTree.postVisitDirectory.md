@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.318 (error != null)
+  Zeile 318: prüft `(error != null)`.
+throw Z.318 throw error;
+  Zeile 318: Abbruch `throw error;`.
+Schritt Z.319 Files.delete(directory);
+  Zeile 319: Dateioperation. `Files.delete(directory);`
+return Z.320 return FileVisitResult.CONTINUE;
+  Zeile 320: Rückgabe `return FileVisitResult.CONTINUE;`.
+```
+
 - `postVisitDirectory` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

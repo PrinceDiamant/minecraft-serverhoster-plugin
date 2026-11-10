@@ -23,4 +23,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.57 return new Options() ( private final HotSpotDiagn…
+  Zeile 57: Rückgabe `return new Options() ( private final HotSpotDiagn…`.
+HostHeapTune.hotspot.manageable
+  `manageable` in `HostHeapTune.java`.
+HostHeapTune.hotspot.get
+  Liefert `get`.
+HostHeapTune.hotspot.set
+  Setzt `set`.
+```
+
 - `hotspot` in `src/main/java/de/aichele/childlauncher/HostHeapTune.java`

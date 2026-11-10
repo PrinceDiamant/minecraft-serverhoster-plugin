@@ -22,4 +22,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.22 long startupDeadline = System.nanoTime() + TimeUn…
+  Zeile 22: `long startupDeadline = System.nanoTime() + TimeUn…`
+while Z.23 (process.isAlive() && !ready.getAsBoole…
+  Zeile 23: Schleife `(process.isAlive() && !ready.getAsBoole…`.
+Schritt Z.24 process.waitFor(Math.max(1, pollMillis), TimeUnit…
+  Zeile 24: `process.waitFor(Math.max(1, pollMillis), TimeUnit…`
+if Z.25 (!ready.getAsBoolean() && process.isAlive())
+  Zeile 25: prüft `(!ready.getAsBoolean() && process.isAlive())`.
+Schritt Z.28 long deadline = System.nanoTime() + TimeUnit.SECO…
+  Zeile 28: rechnet Zeit um oder wartet. `long deadline = System.nanoTime() + TimeUnit.SECO…`
+ChildStopSequence.stop.Z21.Teil1.Z31
+  Fortsetzung des Ablaufs ab Zeile 31.
+ChildStopSequence.stop.Z21.Teil1.Z47
+  Fortsetzung des Ablaufs ab Zeile 47.
+```
+
 - Fortsetzung von `ChildStopSequence.stop.Z21`, Quellreihenfolge.

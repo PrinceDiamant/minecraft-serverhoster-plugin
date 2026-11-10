@@ -23,4 +23,27 @@ flowchart TD
   style n2 fill:#f88,stroke:#900
 ```
 
+```knoten
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+FabricLauncherPlugin.upstream
+  Holt Daten vom Netz `upstream`. Befund: toter Code (wahrscheinlich).
+FabricLauncherPlugin.dashboardTls
+  `dashboardTls` in `FabricLauncherPlugin.java`. Ruft `tls`.
+FabricLauncherPlugin.runningPluginJar
+  Sagt, ob der Prozess läuft `runningPluginJar`.
+FabricLauncherPlugin.hostProtectedPaths
+  Betrifft den Host `hostProtectedPaths`. Ruft `getWorldRoot`, `directory`.
+FabricLauncherPlugin.configuredPath
+  Liest den konfigurierten Wert `configuredPath`. Ruft `getWorldRoot`.
+FabricLauncherPlugin.configuredHostWorld
+  Liest den konfigurierten Wert `configuredHostWorld`. Ruft `getWorldRoot`, `worldNameSafe`.
+FabricLauncherPlugin.javaBin
+  Liefert das Java-Binary `javaBin`. Ruft `isWindows`.
+FabricLauncherPlugin.str
+  `str` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.isWindows
+  Prüft `isWindows`.
+```
+
 

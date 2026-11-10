@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.68 return JSON.stringify(value);
+  Zeile 68: Rückgabe `return JSON.stringify(value);`.
+```
+
 - `jsonBody` in `ui/src/lib/hostApi.ts`

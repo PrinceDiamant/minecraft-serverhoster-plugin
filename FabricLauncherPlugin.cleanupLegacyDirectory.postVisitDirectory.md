@@ -26,4 +26,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.474 (error != null)
+  Zeile 474: prüft `(error != null)`.
+throw Z.474 throw error;
+  Zeile 474: Abbruch `throw error;`.
+if Z.476 (normalized.equals(root) && normalizedPreserved.s…
+  Zeile 476: prüft `(normalized.equals(root) && normalizedPreserved.s…`.
+return Z.478 return java.nio.file.FileVisitResult.CONTINUE;
+  Zeile 478: Rückgabe `return java.nio.file.FileVisitResult.CONTINUE;`.
+if Z.479 (normalizedPreserved.stream().noneMatch(path -) p…
+  Zeile 479: prüft `(normalizedPreserved.stream().noneMatch(path -) p…`.
+Schritt Z.481 Files.delete(dir);
+  Zeile 481: Dateioperation. `Files.delete(dir);`
+return Z.482 return java.nio.file.FileVisitResult.CONTINUE;
+  Zeile 482: Rückgabe `return java.nio.file.FileVisitResult.CONTINUE;`.
+```
+
 - `postVisitDirectory` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.271 (String line : Files.readAllLines(file))
+  Zeile 271: Schleife `(String line : Files.readAllLines(file))`.
+if Z.273 (trimmed.isEmpty() // trimmed.startsWith('') // t…
+  Zeile 273: prüft `(trimmed.isEmpty() // trimmed.startsWith('') // t…`.
+if Z.275 (eq ( 0)
+  Zeile 275: prüft `(eq ( 0)`.
+```
+
 - Fortsetzung von `HostMinimize.readProperties`, Quellreihenfolge.

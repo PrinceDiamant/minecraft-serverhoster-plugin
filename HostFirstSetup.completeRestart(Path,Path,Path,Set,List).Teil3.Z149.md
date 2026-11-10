@@ -29,4 +29,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.149 (Path world : worlds)
+  Zeile 149: Schleife `(Path world : worlds)`.
+if Z.151 (name.equals(lobby) // name.equals(lobby + '_neth…
+  Zeile 151: prüft `(name.equals(lobby) // name.equals(lobby + '_neth…`.
+if Z.152 (protectedPath(world, data) // protectedPath(worl…
+  Zeile 152: prüft `(protectedPath(world, data) // protectedPath(worl…`.
+HostFirstSetup.protectedPath
+  `protectedPath` in `HostFirstSetup.java`.
+HostFirstSetup.protectedByAny
+  `protectedByAny` in `HostFirstSetup.java`. Ruft `protectedPath`.
+throw Z.154 throw new SecurityException('refusing to remove p…
+  Zeile 154: Abbruch `throw new SecurityException('refusing to remove p…`.
+if Z.155 (Files.isSymbolicLink(world) // loadedWorlds.cont…
+  Zeile 155: prüft `(Files.isSymbolicLink(world) // loadedWorlds.cont…`.
+throw Z.156 throw new SecurityException('refusing to remove l…
+  Zeile 156: Abbruch `throw new SecurityException('refusing to remove l…`.
+```
+
 - Fortsetzung von `HostFirstSetup.completeRestart(Path,Path,Path,Set,List).Teil3`, Quellreihenfolge.

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.170 return names.stream().map(name -) Base64.getUrlEn…
+  Zeile 170: Rückgabe `return names.stream().map(name -) Base64.getUrlEn…`.
+```
+
 - `encodeWorldNames` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

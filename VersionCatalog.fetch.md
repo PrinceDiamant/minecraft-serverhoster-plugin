@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+VersionCatalog.fetch.Z68
+  Fortsetzung des Ablaufs ab Zeile 68.
+```
+
 - `fetch` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

@@ -15,4 +15,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.formatBindAddress
+  Formatiert `formatBindAddress`.
+```
+
 - Fortsetzung von `HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden`, Quellreihenfolge.

@@ -11,6 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.startSampler.Z1802
+  Fortsetzung des Ablaufs ab Zeile 1802.
+```
+
 ```mermaid
 sequenceDiagram
   participant Main as Server-Thread

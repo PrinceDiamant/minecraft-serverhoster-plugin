@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ConsoleBuffer.ConsoleBuffer
+  Liefert die Konsole `ConsoleBuffer`.
+```
+
 - `ChildSlot` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

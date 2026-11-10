@@ -27,4 +27,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1691
+  Zeile 1691: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.openChild
+  Öffnet `openChild`. Ruft `slot`, `running`, `msg`.
+catch Z.1693 (Exception e)
+  Zeile 1693: fängt (Exception e).
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+StartFailureStatus.text
+  Antwortet mit Text `text`.
+if Z.1696 (failedSlot.phase == SupervisorHealth.Phase.PREPA…
+  Zeile 1696: prüft `(failedSlot.phase == SupervisorHealth.Phase.PREPA…`.
+FabricLauncherPlugin.msg
+  Sendet eine Chat-Zeile `msg`.
+FabricLauncherPlugin.scheduleRestart
+  Plant `scheduleRestart`. Ruft `maxAttempts`, `mayRetry`, `notifyNtfy`.
+finally Z.1691
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.startAsync.Teil2.Z1689.Z1690`, Quellreihenfolge.

@@ -17,5 +17,16 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.profilesKeepLegacyRootAndAddServers.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.profilesKeepLegacyRootAndAddServers.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.profilesKeepLegacyRootAndAddServers.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.profilesKeepLegacyRootAndAddServers.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `profilesKeepLegacyRootAndAddServers` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

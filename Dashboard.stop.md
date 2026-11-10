@@ -14,4 +14,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.95 (server != null)
+  Zeile 95: prüft `(server != null)`.
+if Z.96 (pool != null)
+  Zeile 96: prüft `(pool != null)`.
+```
+
 - `stop` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

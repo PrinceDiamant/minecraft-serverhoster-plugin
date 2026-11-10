@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.62
+  Zeile 62: Versuch. Der Fehlerpfad geht in catch.
+SetupDiscovery.scan.Teil2.Z62.Z64
+  Fortsetzung des Ablaufs ab Zeile 64.
+```
+
 - Fortsetzung von `SetupDiscovery.scan.Teil2`, Quellreihenfolge.

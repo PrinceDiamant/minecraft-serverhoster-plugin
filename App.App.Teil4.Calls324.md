@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.App.savePassword
+  Speichert `savePassword`. Ruft `dashboardRequest`, `jsonBody`, `start`.
+index.doLogin
+  Führt aus `doLogin`. Ruft `$`, `start`.
+App.App.navigateTo
+  Wechselt die Route `navigateTo`. Ruft `tab`.
+index.logout
+  Meldet ab `logout`. Ruft `post`, `showLogin`.
+App.App.closeDialog
+  Schließt `closeDialog`.
+```
+
 - Fortsetzung von `App.App.Teil4`, Quellreihenfolge.

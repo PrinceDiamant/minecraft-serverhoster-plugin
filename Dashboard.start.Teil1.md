@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+DashboardPassword.read
+  Liest `read`.
+Dashboard.passwordFile
+  `passwordFile` in `Dashboard.java`.
+FabricLauncherPlugin.setupRequired
+  `setupRequired` in `FabricLauncherPlugin.java`.
+if Z.46 (password == null)
+  Zeile 46: prüft `(password == null)`.
+```
+
 - Fortsetzung von `Dashboard.start`, Quellreihenfolge.

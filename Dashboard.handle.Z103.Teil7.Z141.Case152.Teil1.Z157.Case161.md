@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.161 return;
+  Zeile 161: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case152.Teil1.Z157`, Quellreihenfolge.

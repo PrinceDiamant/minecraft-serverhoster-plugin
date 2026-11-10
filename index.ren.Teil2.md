@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.144 ep===p//ep.startsWith(p+'/')
+  Zeile 144: prüft `ep===p//ep.startsWith(p+'/')`.
+index.$
+  `$` in `index.html`.
+fileEditor.installFileEditors.setPath
+  Setzt `setPath`. Ruft `editorFor`, `modeForPath`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+index.ls
+  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+```
+
 - Fortsetzung von `index.ren`, Quellreihenfolge.

@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1786 (ChildSlot.isReadyLine(line))
+  Zeile 1786: prüft `(ChildSlot.isReadyLine(line))`.
+ChildSlot.isReadyLine
+  Prüft `isReadyLine`.
+if Z.1788 (slot.stopRequested)
+  Zeile 1788: prüft `(slot.stopRequested)`.
+FabricLauncherPlugin.stopBlocking
+  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.pipe.Z1778.Z1780`, Quellreihenfolge.

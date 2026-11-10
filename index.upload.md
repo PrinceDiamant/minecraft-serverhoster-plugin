@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.upload.Z148
+  Fortsetzung des Ablaufs ab Zeile 148.
+index.$
+  `$` in `index.html`.
+index.ls
+  Listet das Verzeichnis `ls`. Ruft `api`, `esc`, `jp`.
+```
+
 - `upload` in `src/main/resources/web/index.html`

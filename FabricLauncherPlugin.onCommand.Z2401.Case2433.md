@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2434 (a.length ( 2)
+  Zeile 2434: prüft `(a.length ( 2)`.
+return Z.2434 return true;
+  Zeile 2434: Rückgabe `return true;`.
+FabricLauncherPlugin.onCommand.Z2401.Case2433.Z2435
+  Fortsetzung des Ablaufs ab Zeile 2435.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

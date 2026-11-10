@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.78 return switch (interval) ( case HOURLY -) interva…
+  Zeile 78: Rückgabe `return switch (interval) ( case HOURLY -) interva…`.
+```
+
 - `cron` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

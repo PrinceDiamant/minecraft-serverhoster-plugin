@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ConsoleBuffer.add.Z15
+  Fortsetzung des Ablaufs ab Zeile 15.
+```
+
 - `add` in `src/main/java/de/aichele/childlauncher/ConsoleBuffer.java`

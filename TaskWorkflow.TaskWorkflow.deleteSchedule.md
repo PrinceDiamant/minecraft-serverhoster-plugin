@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.211 !await askBeforeDelete(schedule.name)
+  Zeile 211: prüft `!await askBeforeDelete(schedule.name)`.
+TaskWorkflow.askBeforeDelete
+  Fragt nach `askBeforeDelete`.
+return Z.211 return;
+  Zeile 211: Rückgabe `return;`.
+TaskWorkflow.TaskWorkflow.deleteSchedule.Z214
+  Fortsetzung des Ablaufs ab Zeile 214.
+```
+
 - `deleteSchedule` in `ui/src/components/TaskWorkflow.tsx`

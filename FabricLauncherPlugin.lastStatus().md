@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.focusSlot
+  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+return Z.310 return focusSlot().lastStatus;
+  Zeile 310: Rückgabe `return focusSlot().lastStatus;`.
+```
+
 - `lastStatus` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:310–310 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

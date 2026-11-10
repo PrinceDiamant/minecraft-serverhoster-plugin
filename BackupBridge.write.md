@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.174 (file.getFileName().toString().equals('session.lo…
+  Zeile 174: prüft `(file.getFileName().toString().equals('session.lo…`.
+return Z.175 return 0;
+  Zeile 175: Rückgabe `return 0;`.
+try Z.178
+  Zeile 178: Versuch. Der Fehlerpfad geht in catch.
+return Z.180 return 1;
+  Zeile 180: Rückgabe `return 1;`.
+```
+
 - `write` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

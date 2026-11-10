@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1150
+  Zeile 1150: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.memoryRecoveryFile
+  Betrifft den Speicher `memoryRecoveryFile`.
+catch Z.1153 (IOException e)
+  Zeile 1153: fängt (IOException e).
+MemoryProtectionPolicy.resetCriticalSamples
+  Setzt zurück `resetCriticalSamples`.
+return Z.1156 return;
+  Zeile 1156: Rückgabe `return;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop.Teil1`, Quellreihenfolge.

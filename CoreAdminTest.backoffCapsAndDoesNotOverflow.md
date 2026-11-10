@@ -19,5 +19,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RestartBackoff.delaySeconds
+  Rechnet die Wartezeit `delaySeconds`.
+```
+
 - `backoffCapsAndDoesNotOverflow` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

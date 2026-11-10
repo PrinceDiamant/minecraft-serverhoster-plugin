@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1148 (memoryProtectionPolicy.emergencyStopStarted())
+  Zeile 1148: prüft `(memoryProtectionPolicy.emergencyStopStarted())`.
+MemoryProtectionPolicy.emergencyStopStarted
+  `emergencyStopStarted` in `MemoryProtectionPolicy.java`.
+return Z.1148 return;
+  Zeile 1148: Rückgabe `return;`.
+FabricLauncherPlugin.requestChildEmergencyStop.Teil1.Z1150
+  Fortsetzung des Ablaufs ab Zeile 1150.
+MemoryProtectionPolicy.startEmergencyStop
+  Startet `startEmergencyStop`.
+HostMemoryProbe.Snapshot.cgroupUsePercent
+  `cgroupUsePercent` in `HostMemoryProbe.java`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.requestChildEmergencyStop`, Quellreihenfolge.

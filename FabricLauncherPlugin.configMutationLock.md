@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.263 return configMutationLock;
+  Zeile 263: Rückgabe `return configMutationLock;`.
+```
+
 - `configMutationLock` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ChildSlot.ChildSlot
+  Betrifft den Child `ChildSlot`. Ruft `ConsoleBuffer`.
+return Z.300 return slots.computeIfAbsent(key, k -) …
+  Zeile 300: Rückgabe `return slots.computeIfAbsent(key, k -) …`.
+```
+
 - `slot` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

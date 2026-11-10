@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ProcessProbe.snapshot.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ProcessProbe.snapshot.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+ProcessProbe.snapshot.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `snapshot` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

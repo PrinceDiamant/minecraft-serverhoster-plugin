@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.App.closeDialog
+  Schließt `closeDialog`.
+```
+
 - Fortsetzung von `App.App.Teil4`, Quellreihenfolge.

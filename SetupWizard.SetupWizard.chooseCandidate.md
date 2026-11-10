@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.101 chosen?.configured
+  Zeile 101: prüft `chosen?.configured`.
+```
+
 - `chooseCandidate` in `ui/src/components/SetupWizard.tsx`

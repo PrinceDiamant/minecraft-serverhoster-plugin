@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.231 (TaskDef t : pl.tasks())
+  Zeile 231: Schleife `(TaskDef t : pl.tasks())`.
+FabricLauncherPlugin.tasks
+  `tasks` in `FabricLauncherPlugin.java`. Ruft `load`.
+if Z.231 (t.id.equals(id))
+  Zeile 231: prüft `(t.id.equals(id))`.
+if Z.232 (found == null)
+  Zeile 232: prüft `(found == null)`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.232 return;
+  Zeile 232: Rückgabe `return;`.
+FabricLauncherPlugin.runTask
+  Führt aus `runTask`. Ruft `executeTask`, `noteTask`, `notifyNtfy`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case228`, Quellreihenfolge.

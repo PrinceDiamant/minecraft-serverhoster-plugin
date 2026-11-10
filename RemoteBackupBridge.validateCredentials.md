@@ -22,4 +22,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.298 (username == null // username.isBlank())
+  Zeile 298: prüft `(username == null // username.isBlank())`.
+throw Z.298 throw new IOException('backup FTP username is req…
+  Zeile 298: Abbruch `throw new IOException('backup FTP username is req…`.
+if Z.299 (hasControlCharacter(username) // hasControlChara…
+  Zeile 299: prüft `(hasControlCharacter(username) // hasControlChara…`.
+RemoteBackupBridge.hasControlCharacter
+  Prüft `hasControlCharacter`.
+throw Z.300 throw new IOException('FTP credentials cannot con…
+  Zeile 300: Abbruch `throw new IOException('FTP credentials cannot con…`.
+```
+
 - `validateCredentials` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

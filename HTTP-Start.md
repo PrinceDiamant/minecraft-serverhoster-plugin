@@ -17,4 +17,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.Dashboard
+  `Dashboard` in `Dashboard.java`.
+Dashboard.start
+  Startet `start`. Ruft `read`, `passwordFile`, `setupRequired`.
+Dashboard.tls
+  `tls` in `Dashboard.java`.
+Dashboard.httpsSpec
+  `httpsSpec` in `Dashboard.java`.
+Dashboard.cookie
+  `cookie` in `Dashboard.java`.
+Dashboard.stop
+  Stoppt `stop`.
+Dashboard.passwordFile
+  `passwordFile` in `Dashboard.java`.
+```
+
 

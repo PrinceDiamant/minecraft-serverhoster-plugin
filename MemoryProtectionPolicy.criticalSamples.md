@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.48 return criticalSamples;
+  Zeile 48: Rückgabe `return criticalSamples;`.
+```
+
 - `criticalSamples` in `src/main/java/de/aichele/childlauncher/MemoryProtectionPolicy.java`

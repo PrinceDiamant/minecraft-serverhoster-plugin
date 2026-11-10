@@ -35,4 +35,31 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1728
+  Zeile 1728: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.launch.Z1728.Z1728
+  Fortsetzung des Ablaufs ab Zeile 1728.
+if Z.1766 (stopAfterStart)
+  Zeile 1766: prüft `(stopAfterStart)`.
+FabricLauncherPlugin.stopProcess
+  Stoppt `stopProcess`. Ruft `add`, `boundedSeconds`, `warnOnce`.
+return Z.1767 return true;
+  Zeile 1767: Rückgabe `return true;`.
+catch Z.1768 (Exception e)
+  Zeile 1768: fängt (Exception e).
+if Z.1769 (started != null)
+  Zeile 1769: prüft `(started != null)`.
+FabricLauncherPlugin.abandonFailedStart
+  Bricht den fehlgeschlagenen Start ab `abandonFailedStart`. Ruft `abandon`, `deleteIfMatch`, `processRecord`.
+if Z.1770 (e instanceof InterruptedException)
+  Zeile 1770: prüft `(e instanceof InterruptedException)`.
+throw Z.1771 throw e;
+  Zeile 1771: Abbruch `throw e;`.
+finally Z.1728
+  Läuft danach immer, auch nach einem Fehler.
+if Z.1773 (claimed && started == null && slot.phase == Supe…
+  Zeile 1773: prüft `(claimed && started == null && slot.phase == Supe…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.launch`, Quellreihenfolge.

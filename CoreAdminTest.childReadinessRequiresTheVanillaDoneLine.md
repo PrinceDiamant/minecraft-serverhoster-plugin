@@ -15,5 +15,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildSlot.isReadyLine
+  Prüft `isReadyLine`.
+```
+
 - `childReadinessRequiresTheVanillaDoneLine` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

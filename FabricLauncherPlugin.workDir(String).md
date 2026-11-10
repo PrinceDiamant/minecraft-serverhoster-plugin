@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+return Z.860 return profile(id).directory();
+  Zeile 860: Rückgabe `return profile(id).directory();`.
+```
+
 - `workDir` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

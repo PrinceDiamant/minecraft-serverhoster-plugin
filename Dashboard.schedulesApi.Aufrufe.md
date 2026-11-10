@@ -15,5 +15,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.configMutationLock
+  `configMutationLock` in `FabricLauncherPlugin.java`.
+```
+
 - Fortsetzung von `Dashboard.schedulesApi`, Quellreihenfolge.
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

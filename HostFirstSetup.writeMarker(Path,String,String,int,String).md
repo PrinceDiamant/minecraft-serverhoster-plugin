@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.writeMarker(Path,String,String,int,String).Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostFirstSetup.writeMarker(Path,String,String,int,String).Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `writeMarker` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

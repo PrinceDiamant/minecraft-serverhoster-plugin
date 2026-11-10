@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.readLegacyDashboard.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+App.readLegacyDashboard.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Ersetzt Legacy-Abschnitte und löscht vier `load…`-Aufrufe aus dem Script.
 - Befund: doppelte Implementierung, sicher. App.tsx:100–141 entfernt loadPlayers/loadSetup/loadBackup/loadTasks

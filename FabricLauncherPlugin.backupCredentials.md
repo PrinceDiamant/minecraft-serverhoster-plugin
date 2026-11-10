@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSecrets.load
+  Lädt `load`. Ruft `restrict`.
+return Z.1482 return BackupSecrets.load(getDataFolder…
+  Zeile 1482: Rückgabe `return BackupSecrets.load(getDataFolder…`.
+```
+
 - `backupCredentials` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -17,5 +17,16 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.selfSignedHandshakeAndPem.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.selfSignedHandshakeAndPem.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.selfSignedHandshakeAndPem.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.selfSignedHandshakeAndPem.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `selfSignedHandshakeAndPem` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

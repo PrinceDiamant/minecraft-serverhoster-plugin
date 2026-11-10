@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SupervisorHealth.dashboardState
+  `dashboardState` in `SupervisorHealth.java`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+ChildSlot.uptimeMillis
+  Liefert die Laufzeit `uptimeMillis`. Ruft `running`.
+Dashboard.formatBindAddress
+  Formatiert `formatBindAddress`.
+FabricLauncherPlugin.childBindAddress
+  Betrifft den Child `childBindAddress`. Ruft `effectiveBindAddress`, `hostBindAddress`.
+```
+
 - Fortsetzung von `Dashboard.status`, Quellreihenfolge.

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.worldDirectories.Z208
+  Fortsetzung des Ablaufs ab Zeile 208.
+HostFirstSetup.worldDirectories.Z214
+  Fortsetzung des Ablaufs ab Zeile 214.
+return Z.222 return worlds;
+  Zeile 222: Rückgabe `return worlds;`.
+```
+
 - `worldDirectories` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

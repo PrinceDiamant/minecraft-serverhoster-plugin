@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LegacyTaskMigration.convert.Teil2.Z48
+  Fortsetzung des Ablaufs ab Zeile 48.
+if Z.70 (id.isBlank() // !Character.isLetterOrDigit(id.ch…
+  Zeile 70: prüft `(id.isBlank() // !Character.isLetterOrDigit(id.ch…`.
+for Z.73 (int suffix = 2; ids.contains(id); suff…
+  Zeile 73: Schleife `(int suffix = 2; ids.contains(id); suff…`.
+```
+
 - Fortsetzung von `LegacyTaskMigration.convert`, Quellreihenfolge.

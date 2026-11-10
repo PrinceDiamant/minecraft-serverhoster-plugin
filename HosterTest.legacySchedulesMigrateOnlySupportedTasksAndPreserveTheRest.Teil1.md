@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LegacyTaskMigration.migrate
+  Übernimmt den alten Wert von `migrate`. Ruft `load`, `convert`, `toConfig`.
+ScheduleDef.load
+  Lädt `load`. Ruft `asMap`, `Action`, `string`.
+```
+
 - Fortsetzung von `HosterTest.legacySchedulesMigrateOnlySupportedTasksAndPreserveTheRest`, Quellreihenfolge.

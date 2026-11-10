@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.128 (!Files.isRegularFile(ks))
+  Zeile 128: prüft `(!Files.isRegularFile(ks))`.
+throw Z.128 throw new IOException('Keystore not found: ' + ks…
+  Zeile 128: Abbruch `throw new IOException('Keystore not found: ' + ks…`.
+try Z.131
+  Zeile 131: Versuch. Der Fehlerpfad geht in catch.
+return Z.136 return ctx;
+  Zeile 136: Rückgabe `return ctx;`.
+```
+
 - `fromKeystore` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

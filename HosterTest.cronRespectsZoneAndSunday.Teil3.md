@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CronExpr.next
+  Geht zum nächsten Schritt `next`. Ruft `matches`, `field`.
+```
+
 - Fortsetzung von `HosterTest.cronRespectsZoneAndSunday`, Quellreihenfolge.

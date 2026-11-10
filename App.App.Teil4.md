@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.App.Teil4.Calls324
+  Weitere eigene Aufrufe ab Zeile 324.
+App.App.Teil4.Calls443
+  Weitere eigene Aufrufe ab Zeile 443.
+return Z.317 return ( () (section id='login' classNa…
+  Zeile 317: Rückgabe `return ( () (section id='login' classNa…`.
+```
+
 - Fortsetzung von `App.App`, Quellreihenfolge.

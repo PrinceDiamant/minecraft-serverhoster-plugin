@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HosterTest.bindAddressInheritsHostUnlessExplicitlyOverridden.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `bindAddressInheritsHostUnlessExplicitlyOverridden` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

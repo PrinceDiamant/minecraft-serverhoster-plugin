@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2161 (source == null)
+  Zeile 2161: prüft `(source == null)`.
+throw Z.2161 throw new IOException('Could not identify the run…
+  Zeile 2161: Abbruch `throw new IOException('Could not identify the run…`.
+return Z.2162 return Path.of(source.getLocation().toURI()).toAb…
+  Zeile 2162: Rückgabe `return Path.of(source.getLocation().toURI()).toAb…`.
+```
+
 - `runningPluginJar` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

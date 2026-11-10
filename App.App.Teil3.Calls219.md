@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+App.App.showDialog
+  Zeigt `showDialog`.
+App.App.navigateTo
+  Wechselt die Route `navigateTo`. Ruft `tab`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+fileEditor.installFileEditors
+  Hängt ein `installFileEditors`. Ruft `set`.
+PlayerWorkflow.PlayerWorkflow
+  `PlayerWorkflow` in `PlayerWorkflow.tsx`. Ruft `dashboardRequest`, `refresh`, `runPlayerAction`.
+```
+
 - Fortsetzung von `App.App.Teil3`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.send
+  Sendet `send`. Ruft `running`.
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.executeTask.Z1331`, Quellreihenfolge.

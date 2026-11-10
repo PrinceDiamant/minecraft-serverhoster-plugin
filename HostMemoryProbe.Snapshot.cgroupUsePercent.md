@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.31 return cgroupLimitMb ) 0 && cgroupCurrentMb )= 0 …
+  Zeile 31: Rückgabe `return cgroupLimitMb ) 0 && cgroupCurrentMb )= 0 …`.
+```
+
 - `cgroupUsePercent` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

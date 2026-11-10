@@ -10,4 +10,9 @@ flowchart TD
   style n1 fill:#f88,stroke:#900
 ```
 
+```knoten
+BackupWorkflow.BackupWorkflow
+  Sichert `BackupWorkflow`. Ruft `dashboardRequest`, `refresh`, `testTarget`. Befund: Altlast (sicher).
+```
+
 

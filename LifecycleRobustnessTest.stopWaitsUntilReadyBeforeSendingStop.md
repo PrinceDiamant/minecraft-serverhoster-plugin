@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+LifecycleRobustnessTest.stopWaitsUntilReadyBeforeSendingStop.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `stopWaitsUntilReadyBeforeSendingStop` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

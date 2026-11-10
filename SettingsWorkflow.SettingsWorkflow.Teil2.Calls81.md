@@ -19,4 +19,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+SettingsWorkflow.SettingsWorkflow.save
+  Speichert `save`. Ruft `saveBackupSettings`, `loadBackupSettings`.
+SettingsWorkflow.SettingsWorkflow.update
+  Aktualisiert `update`.
+```
+
 - Fortsetzung von `SettingsWorkflow.SettingsWorkflow.Teil2`, Quellreihenfolge.

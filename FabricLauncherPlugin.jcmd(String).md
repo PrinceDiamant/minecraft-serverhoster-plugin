@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.jcmd(String,String)
+  `jcmd` in `FabricLauncherPlugin.java`. Ruft `jcmd`, `slot`, `pid`.
+return Z.1266 return jcmd(focus, command);
+  Zeile 1266: Rückgabe `return jcmd(focus, command);`.
+```
+
 - `jcmd` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.351
+  Zeile 351: Versuch. Der Fehlerpfad geht in catch.
+return Z.352 return Math.max(0, Integer.parseInt(value == null…
+  Zeile 352: Rückgabe `return Math.max(0, Integer.parseInt(value == null…`.
+catch Z.353 (NumberFormatException e)
+  Zeile 353: fängt (NumberFormatException e).
+return Z.354 return 0;
+  Zeile 354: Rückgabe `return 0;`.
+```
+
 - `parseCount` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

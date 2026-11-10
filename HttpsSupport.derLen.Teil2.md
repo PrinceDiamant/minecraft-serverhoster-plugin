@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.193 return out;
+  Zeile 193: Rückgabe `return out;`.
+```
+
 - Fortsetzung von `HttpsSupport.derLen`, Quellreihenfolge.

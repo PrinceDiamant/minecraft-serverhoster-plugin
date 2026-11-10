@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.153 (!valid)
+  Zeile 153: prüft `(!valid)`.
+throw Z.153 throw new IllegalArgumentException('Ungültige Int…
+  Zeile 153: Abbruch `throw new IllegalArgumentException('Ungültige Int…`.
+```
+
 - `validateInterval` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

@@ -19,5 +19,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+NtfyNotifier.target
+  `target` in `NtfyNotifier.java`.
+```
+
 - `ntfyRequiresHttpsAndConstructsTopicEndpoint` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

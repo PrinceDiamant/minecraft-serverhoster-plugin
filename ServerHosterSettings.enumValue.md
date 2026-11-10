@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.88 (value == null)
+  Zeile 88: prüft `(value == null)`.
+throw Z.88 throw new IllegalArgumentException(key + ' is req…
+  Zeile 88: Abbruch `throw new IllegalArgumentException(key + ' is req…`.
+for Z.90 (String candidate : accepted)
+  Zeile 90: Schleife `(String candidate : accepted)`.
+if Z.91 (candidate.equalsIgnoreCase(normalized))
+  Zeile 91: prüft `(candidate.equalsIgnoreCase(normalized))`.
+return Z.91 return candidate;
+  Zeile 91: Rückgabe `return candidate;`.
+throw Z.92 throw new IllegalArgumentException('Invalid value…
+  Zeile 92: Abbruch `throw new IllegalArgumentException('Invalid value…`.
+```
+
 - `enumValue` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

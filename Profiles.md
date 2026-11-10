@@ -34,4 +34,31 @@ flowchart TD
   style n6 fill:#f88,stroke:#900
 ```
 
+```knoten
+Profiles.Profiles
+  Liefert die Profile `Profiles`.
+Profiles.load
+  Lädt `load`. Ruft `one`, `str`, `copyId`. Befund: angemeldet aber nicht umgesetzt (sicher).
+Profiles.portClash
+  Wird vom Plugin-Kern nicht ausgewertet. Befund: angemeldet aber nicht umgesetzt (wahrscheinlich).
+Profiles.focus
+  Wird vom Plugin-Kern nicht für die laufende Auswahl benutzt. Befund: angemeldet aber nicht umgesetzt (wahrscheinlich).
+Profiles.serverIds
+  `serverIds` in `ServerProfile.java`.
+Profiles.one
+  Fallback `type` ist `fabric`, ausgelieferte `config.yml` sagt `vanilla`. Befund: Logikrisiko (sicher).
+Profiles.copyId
+  Kopiert `copyId`. Ruft `ServerProfile`.
+Profiles.props
+  `props` in `ServerProfile.java`.
+Profiles.str
+  `str` in `ServerProfile.java`.
+Profiles.num
+  `num` in `ServerProfile.java`.
+Profiles.bool
+  `bool` in `ServerProfile.java`.
+Profiles.list
+  Listet `list`.
+```
+
 

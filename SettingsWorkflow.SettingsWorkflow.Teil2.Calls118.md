@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SettingsWorkflow.SettingsWorkflow.update
+  Aktualisiert `update`.
+BackupSettings.BackupSettings
+  Sichert `BackupSettings`.
+```
+
 - Fortsetzung von `SettingsWorkflow.SettingsWorkflow.Teil2`, Quellreihenfolge.

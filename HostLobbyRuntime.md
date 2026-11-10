@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostLobbyRuntime.HostLobbyRuntime
+  Betrifft den Host `HostLobbyRuntime`.
+HostLobbyRuntime.apply
+  Wendet an `apply`. Ruft `worldNameSafe`.
+```
+
 

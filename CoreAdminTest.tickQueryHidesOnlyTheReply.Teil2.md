@@ -13,4 +13,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TickQueryFilter.consume
+  Filtert `consume`.
+```
+
 - Fortsetzung von `CoreAdminTest.tickQueryHidesOnlyTheReply`, Quellreihenfolge.

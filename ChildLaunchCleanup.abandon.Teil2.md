@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.27
+  Zeile 27: Versuch. Der Fehlerpfad geht in catch.
+catch Z.29 (IOException e)
+  Zeile 29: fängt (IOException e).
+ChildLaunchCleanup.abandon.Teil2.Z34
+  Fortsetzung des Ablaufs ab Zeile 34.
+```
+
 - Fortsetzung von `ChildLaunchCleanup.abandon`, Quellreihenfolge.

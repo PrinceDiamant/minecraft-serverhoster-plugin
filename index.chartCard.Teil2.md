@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.chartCard.x
+  `x` in `index.html`.
+index.chartCard.y
+  `y` in `index.html`.
+return Z.191 return '(article class='chart-card')(div class='c…
+  Zeile 191: Rückgabe `return '(article class='chart-card')(div class='c…`.
+```
+
 - Fortsetzung von `index.chartCard`, Quellreihenfolge.

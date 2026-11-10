@@ -21,4 +21,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+if Z.2346 (Files.isRegularFile(properties, LinkOption.NOFOL…
+  Zeile 2346: prüft `(Files.isRegularFile(properties, LinkOption.NOFOL…`.
+for Z.2347 (String line : Files.readAllLines(prope…
+  Zeile 2347: Schleife `(String line : Files.readAllLines(prope…`.
+if Z.2348 (line.startsWith('level-name='))
+  Zeile 2348: prüft `(line.startsWith('level-name='))`.
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+FabricLauncherPlugin.hostFirstSetupMarker
+  Betrifft den Host `hostFirstSetupMarker`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.refreshHostMinimize.Z2337`, Quellreihenfolge.

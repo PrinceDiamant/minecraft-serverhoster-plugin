@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.92 return s.setupRequired?'Einrichtung erforderlich'…
+  Zeile 92: Rückgabe `return s.setupRequired?'Einrichtung erforderlich'…`.
+```
+
 - `lifecycleLabel` in `src/main/resources/web/index.html`

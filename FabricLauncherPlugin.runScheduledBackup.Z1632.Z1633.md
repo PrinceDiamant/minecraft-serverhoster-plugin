@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.1633 (target.running() && !target.onlinePlay…
+  Zeile 1633: Schleife `(target.running() && !target.onlinePlay…`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+if Z.1634 (shuttingDown)
+  Zeile 1634: prüft `(shuttingDown)`.
+throw Z.1634 throw new InterruptedException('plugin is shuttin…
+  Zeile 1634: Abbruch `throw new InterruptedException('plugin is shuttin…`.
+FabricLauncherPlugin.runScheduledBackup.Z1632.Z1633.Z1635
+  Fortsetzung des Ablaufs ab Zeile 1635.
+Schritt Z.1642 Thread.sleep(TimeUnit.SECONDS.toMillis(30));
+  Zeile 1642: wartet. `Thread.sleep(TimeUnit.SECONDS.toMillis(30));`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runScheduledBackup.Z1632`, Quellreihenfolge.

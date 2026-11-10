@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWizard.SetupWizard.next.Z110
+  Fortsetzung des Ablaufs ab Zeile 110.
+if Z.121 step === 2 && (!backupSettings // (schedule && !/…
+  Zeile 121: prüft `step === 2 && (!backupSettings // (schedule && !/…`.
+return Z.123 return;
+  Zeile 123: Rückgabe `return;`.
+if Z.125 step === 3 && ntfy.enabled && (!ntfy.server.trim(…
+  Zeile 125: prüft `step === 3 && ntfy.enabled && (!ntfy.server.trim(…`.
+return Z.127 return;
+  Zeile 127: Rückgabe `return;`.
+```
+
 - `next` in `ui/src/components/SetupWizard.tsx`

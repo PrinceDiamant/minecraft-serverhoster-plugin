@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.117
+  Zeile 117: Versuch. Der Fehlerpfad geht in catch.
+index.post
+  Sendet POST `post`. Ruft `api`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+finally Z.117
+  Läuft danach immer, auch nach einem Fehler.
+index.status
+  Liefert den Status `status`. Ruft `api`, `updateChildActions`, `$`.
+```
+
 - Fortsetzung von `index.act`, Quellreihenfolge.

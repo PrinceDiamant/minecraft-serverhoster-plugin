@@ -25,4 +25,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.519 (action.equals('import'))
+  Zeile 519: prüft `(action.equals('import'))`.
+SetupDiscovery.scan
+  Durchsucht `scan`. Ruft `legacyPluginVersion`, `isAtLeast`, `loadLegacyConfig`.
+if Z.524 (!candidate.legacyConfigured() // candidate.profi…
+  Zeile 524: prüft `(!candidate.legacyConfigured() // candidate.profi…`.
+throw Z.525 throw new IllegalArgumentException('Für diesen Or…
+  Zeile 525: Abbruch `throw new IllegalArgumentException('Für diesen Or…`.
+if Z.526 (candidate.legacyVersion() == null && !'IMPORT 1.…
+  Zeile 526: prüft `(candidate.legacyVersion() == null && !'IMPORT 1.…`.
+throw Z.527 throw new IllegalArgumentException('Die alte Plug…
+  Zeile 527: Abbruch `throw new IllegalArgumentException('Die alte Plug…`.
+FabricLauncherPlugin.importLegacyConfiguration
+  Importiert `importLegacyConfiguration`. Ruft `loadLegacyConfig`, `directory`, `migrateLegacySecrets`.
+FabricLauncherPlugin.configureSetup.Teil2.Z519.Z530
+  Fortsetzung des Ablaufs ab Zeile 530.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.configureSetup.Teil2`, Quellreihenfolge.

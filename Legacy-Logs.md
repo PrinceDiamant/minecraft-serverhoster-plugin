@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.loadLogs
+  Lädt `loadLogs`. Ruft `api`, `$`, `esc`.
+index.loadLog
+  Lädt `loadLog`. Ruft `$`, `api`, `renderLog`.
+index.renderLog
+  Zeichnet `renderLog`. Ruft `$`, `cls`.
+```
+
 

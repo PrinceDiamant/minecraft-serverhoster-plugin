@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.836
+  Zeile 836: Versuch. Der Fehlerpfad geht in catch.
+if Z.839 (b.length ) MAX_TEXT)
+  Zeile 839: prüft `(b.length ) MAX_TEXT)`.
+Dashboard.text
+  Antwortet mit Text `text`. Ruft `sendBytes`.
+```
+
 - Fortsetzung von `Dashboard.fsRead.Z835`, Quellreihenfolge.

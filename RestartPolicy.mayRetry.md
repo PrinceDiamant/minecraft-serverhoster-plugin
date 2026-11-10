@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.26 return scheduledAttempts ( maximumAttempts;
+  Zeile 26: Rückgabe `return scheduledAttempts ( maximumAttempts;`.
+```
+
 - `mayRetry` in `src/main/java/de/aichele/childlauncher/RestartPolicy.java`

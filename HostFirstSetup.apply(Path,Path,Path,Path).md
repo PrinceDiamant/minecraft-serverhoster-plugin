@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.apply(Path,Path,Path,Path,List)
+  Wendet an `apply`. Ruft `readState`, `requireRoot`, `otherPluginJars`.
+return Z.59 return apply(root, marker, childDirecto…
+  Zeile 59: Rückgabe `return apply(root, marker, childDirecto…`.
+```
+
 - `apply` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostFirstSetup.java:58–60 nur von Tests erreicht

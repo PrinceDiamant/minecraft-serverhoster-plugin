@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.117 action === 'delete'
+  Zeile 117: prüft `action === 'delete'`.
+if Z.126 !accepted
+  Zeile 126: prüft `!accepted`.
+return Z.126 return;
+  Zeile 126: Rückgabe `return;`.
+SetupWorkflow.SetupWorkflow.submit.Z100.Teil1.Z106.Z117.Z128
+  Fortsetzung des Ablaufs ab Zeile 128.
+```
+
 - Fortsetzung von `SetupWorkflow.SetupWorkflow.submit.Z100.Teil1.Z106`, Quellreihenfolge.

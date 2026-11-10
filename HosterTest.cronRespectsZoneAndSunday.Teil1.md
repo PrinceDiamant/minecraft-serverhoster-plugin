@@ -15,4 +15,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CronExpr.matches
+  `matches` in `CronExpr.java`. Ruft `field`, `dow`.
+```
+
 - Fortsetzung von `HosterTest.cronRespectsZoneAndSunday`, Quellreihenfolge.

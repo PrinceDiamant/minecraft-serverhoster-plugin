@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupRecovery.SetupRecovery
+  `SetupRecovery` in `SetupRecovery.java`.
+SetupRecovery.recover
+  Hebt hängende Zustände auf `recover`.
+```
+
 

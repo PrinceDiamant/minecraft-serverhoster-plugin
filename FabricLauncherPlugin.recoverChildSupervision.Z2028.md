@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.2028 (ChildSlot slot : List.copyOf(slots.val…
+  Zeile 2028: Schleife `(ChildSlot slot : List.copyOf(slots.val…`.
+SupervisorHealth.assess
+  Bewertet `assess`.
+FabricLauncherPlugin.recoverChildSupervision.Z2028.Z2034
+  Fortsetzung des Ablaufs ab Zeile 2034.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.recoverChildSupervision`, Quellreihenfolge.

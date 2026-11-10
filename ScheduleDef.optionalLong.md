@@ -40,4 +40,33 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.196 (value == null)
+  Zeile 196: prüft `(value == null)`.
+return Z.196 return fallback;
+  Zeile 196: Rückgabe `return fallback;`.
+if Z.197 (value instanceof Number number)
+  Zeile 197: prüft `(value instanceof Number number)`.
+try Z.198
+  Zeile 198: Versuch. Der Fehlerpfad geht in catch.
+return Z.199 return new BigDecimal(number.toString()).longValu…
+  Zeile 199: Rückgabe `return new BigDecimal(number.toString()).longValu…`.
+catch Z.200 (ArithmeticException / Number…
+  Zeile 200: fängt (ArithmeticException / Number….
+throw Z.201 throw new IllegalArgumentException('Ungültige Zah…
+  Zeile 201: Abbruch `throw new IllegalArgumentException('Ungültige Zah…`.
+if Z.204 (value instanceof String text)
+  Zeile 204: prüft `(value instanceof String text)`.
+try Z.205
+  Zeile 205: Versuch. Der Fehlerpfad geht in catch.
+return Z.206 return Long.parseLong(text);
+  Zeile 206: Rückgabe `return Long.parseLong(text);`.
+catch Z.207 (NumberFormatException e)
+  Zeile 207: fängt (NumberFormatException e).
+throw Z.208 throw new IllegalArgumentException('Ungültige Zah…
+  Zeile 208: Abbruch `throw new IllegalArgumentException('Ungültige Zah…`.
+throw Z.211 throw new IllegalArgumentException('Ungültige Zah…
+  Zeile 211: Abbruch `throw new IllegalArgumentException('Ungültige Zah…`.
+```
+
 - `optionalLong` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

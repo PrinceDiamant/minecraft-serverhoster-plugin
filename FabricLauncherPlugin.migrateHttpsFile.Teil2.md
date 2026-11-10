@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.768 (!Files.exists(source, LinkOption.NOFOLLOW_LINKS))
+  Zeile 768: prüft `(!Files.exists(source, LinkOption.NOFOLLOW_LINKS))`.
+if Z.769 (required)
+  Zeile 769: prüft `(required)`.
+throw Z.769 throw new IOException('Required legacy dashboard …
+  Zeile 769: Abbruch `throw new IOException('Required legacy dashboard …`.
+return Z.770 return;
+  Zeile 770: Rückgabe `return;`.
+FabricLauncherPlugin.copyLegacyFile
+  Kopiert `copyLegacyFile`. Ruft `rejectSymbolicLinkSegments`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.migrateHttpsFile`, Quellreihenfolge.

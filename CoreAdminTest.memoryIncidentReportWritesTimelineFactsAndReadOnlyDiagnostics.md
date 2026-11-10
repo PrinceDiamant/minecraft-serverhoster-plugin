@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryIncidentReport.write
+  Schreibt `write`. Ruft `cgroupUsePercent`.
+Schritt Z.203 String text = Files.readString(report);
+  Zeile 203: liest Text aus einer Datei. `String text = Files.readString(report);`
+Schritt Z.208 assertTrue(text.contains('(Spigot jcmd GC.heap_in…
+  Zeile 208: fragt jcmd. `assertTrue(text.contains('(Spigot jcmd GC.heap_in…`
+```
+
 - `memoryIncidentReportWritesTimelineFactsAndReadOnlyDiagnostics` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

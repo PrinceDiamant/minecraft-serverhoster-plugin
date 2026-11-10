@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+return Z.49 return running() ? System.currentTimeMi…
+  Zeile 49: Rückgabe `return running() ? System.currentTimeMi…`.
+```
+
 - `uptimeMillis` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

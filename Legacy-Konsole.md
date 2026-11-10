@@ -17,4 +17,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.cls
+  Leert die Konsole `cls`.
+index.addLine
+  Fügt hinzu `addLine`. Ruft `$`, `cls`.
+index.scrollCon
+  Scrollt die Konsole `scrollCon`. Ruft `$`.
+index.stream
+  Hält den Strom offen `stream`. Ruft `$`, `addLine`, `api`.
+index.cmd
+  Sendet einen Befehl `cmd`. Ruft `post`, `toast`.
+index.sendCmd
+  Sendet `sendCmd`. Ruft `$`, `cmd`.
+```
+
 

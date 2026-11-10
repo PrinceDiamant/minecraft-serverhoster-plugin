@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskWorkflow.TaskWorkflow.deleteSchedule
+  Löscht `deleteSchedule`. Ruft `askBeforeDelete`, `dashboardRequest`, `refresh`.
+TaskWorkflow.TaskWorkflow.runSchedule
+  Führt aus `runSchedule`. Ruft `dashboardRequest`, `refresh`.
+TaskWorkflow.dateLabel
+  `dateLabel` in `TaskWorkflow.tsx`.
+TaskWorkflow.TaskWorkflow.runLegacyTask
+  Führt aus `runLegacyTask`. Ruft `dashboardRequest`, `refresh`.
+```
+
 - Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`, Quellreihenfolge.

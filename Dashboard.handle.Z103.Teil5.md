@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.121 (!authed(ex))
+  Zeile 121: prüft `(!authed(ex))`.
+Dashboard.authed
+  `authed` in `Dashboard.java`. Ruft `token`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.121 return;
+  Zeile 121: Rückgabe `return;`.
+if Z.122 (pl.setupRequired() && !path.equals('/api/status'…
+  Zeile 122: prüft `(pl.setupRequired() && !path.equals('/api/status'…`.
+FabricLauncherPlugin.setupRequired
+  `setupRequired` in `FabricLauncherPlugin.java`.
+return Z.129 return;
+  Zeile 129: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103`, Quellreihenfolge.

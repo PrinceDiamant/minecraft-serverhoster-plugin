@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.readBodyText
+  Liest `readBodyText`.
+if Z.625 (!name.equals(confirm))
+  Zeile 625: prüft `(!name.equals(confirm))`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.625 return;
+  Zeile 625: Rückgabe `return;`.
+Dashboard.backupMutate.Z626
+  Fortsetzung des Ablaufs ab Zeile 626.
+```
+
 - `backupMutate` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.76
+  Zeile 76: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.77 process.descendants().forEach(force ? ProcessHand…
+  Zeile 77: `process.descendants().forEach(force ? ProcessHand…`
+catch Z.78 (RuntimeException e)
+  Zeile 78: fängt (RuntimeException e).
+```
+
 - `signal` in `src/main/java/de/aichele/childlauncher/ChildStopSequence.java`

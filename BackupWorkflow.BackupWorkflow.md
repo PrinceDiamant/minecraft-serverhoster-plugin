@@ -23,5 +23,22 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupWorkflow.BackupWorkflow.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+BackupWorkflow.BackupWorkflow.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+BackupWorkflow.BackupWorkflow.onPageChange
+  Reagiert `onPageChange`. Ruft `refresh`.
+BackupWorkflow.BackupWorkflow.onServerChange
+  Reagiert `onServerChange`. Ruft `refresh`.
+BackupWorkflow.BackupWorkflow.createBackup
+  Legt an `createBackup`. Ruft `dashboardRequest`, `refresh`.
+BackupWorkflow.BackupWorkflow.testTarget
+  Prüft `testTarget`. Ruft `dashboardRequest`.
+BackupWorkflow.BackupWorkflow.mutateBackup
+  `mutateBackup` in `BackupWorkflow.tsx`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+```
+
 - `BackupWorkflow` in `ui/src/components/BackupWorkflow.tsx`
 - Befund: Altlast, sicher. BackupWorkflow.tsx:214 server= aus #srv; index.html hat nur CSS #srv

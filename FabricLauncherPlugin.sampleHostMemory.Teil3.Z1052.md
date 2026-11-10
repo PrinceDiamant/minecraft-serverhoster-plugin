@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1052 (decision == MemoryProtectionPolicy.Decision.RELE…
+  Zeile 1052: prüft `(decision == MemoryProtectionPolicy.Decision.RELE…`.
+FabricLauncherPlugin.clearMemoryRecoveryState
+  Leert `clearMemoryRecoveryState`. Ruft `memoryRecoveryFile`, `finishRecovery`.
+FabricLauncherPlugin.resumeConfiguredAutoStart
+  Setzt fort `resumeConfiguredAutoStart`. Ruft `notifyNtfy`, `startAsync`.
+return Z.1056 return;
+  Zeile 1056: Rückgabe `return;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.sampleHostMemory.Teil3`, Quellreihenfolge.

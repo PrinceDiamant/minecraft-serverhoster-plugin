@@ -15,5 +15,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.367 (int i = 0; i ( 50; i++)
+  Zeile 367: Schleife `(int i = 0; i ( 50; i++)`.
+VersionCatalog.vanilla
+  `vanilla` in `VersionCatalog.java`. Ruft `str`.
+```
+
 - `versionCatalogCanIncludeMoreThanFortyReleases` in `src/test/java/de/aichele/childlauncher/HosterTest.java`
 - Auslöser: Test

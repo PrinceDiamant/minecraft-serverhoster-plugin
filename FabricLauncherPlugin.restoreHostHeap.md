@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2207 (encoded == null // encoded.isBlank())
+  Zeile 2207: prüft `(encoded == null // encoded.isBlank())`.
+return Z.2207 return;
+  Zeile 2207: Rückgabe `return;`.
+HostHeapTune.hotspot
+  `hotspot` in `HostHeapTune.java`. Ruft `manageable`, `get`, `set`.
+FabricLauncherPlugin.restoreHostHeap.Z2209
+  Fortsetzung des Ablaufs ab Zeile 2209.
+```
+
 - `restoreHostHeap` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.connectControl
+  Verbindet `connectControl`. Ruft `replyError`.
+RemoteBackupBridge.login
+  Meldet an `login`. Ruft `replyError`.
+if Z.215 (!FTPReply.isPositiveCompletion(client.getReplyCo…
+  Zeile 215: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
+RemoteBackupBridge.replyError
+  Antwortet `replyError`.
+throw Z.215 throw replyError(client, 'set FTPS prot…
+  Zeile 215: Abbruch `throw replyError(client, 'set FTPS prot…`.
+if Z.217 (!FTPReply.isPositiveCompletion(client.getReplyCo…
+  Zeile 217: prüft `(!FTPReply.isPositiveCompletion(client.getReplyCo…`.
+throw Z.217 throw replyError(client, 'enable protec…
+  Zeile 217: Abbruch `throw replyError(client, 'enable protec…`.
+```
+
 - Fortsetzung von `RemoteBackupBridge.openFtps.Z211`, Quellreihenfolge.

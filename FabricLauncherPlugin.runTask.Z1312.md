@@ -25,4 +25,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1312
+  Zeile 1312: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.executeTask
+  Führt aus `executeTask`. Ruft `startAsync`, `slot`, `stopBlocking`.
+FabricLauncherPlugin.noteTask
+  Merkt `noteTask`.
+catch Z.1315 (InterruptedException e)
+  Zeile 1315: fängt (InterruptedException e).
+catch Z.1319 (Exception e)
+  Zeile 1319: fängt (Exception e).
+if Z.1322 (!'backup'.equals(task.action))
+  Zeile 1322: prüft `(!'backup'.equals(task.action))`.
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.runTask`, Quellreihenfolge.

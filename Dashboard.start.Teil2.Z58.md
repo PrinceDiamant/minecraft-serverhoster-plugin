@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.58 (pl.getConfig().getBoolean('dashboard.https.enabl…
+  Zeile 58: prüft `(pl.getConfig().getBoolean('dashboard.https.enabl…`.
+HttpsSupport.build
+  Baut `build`. Ruft `fromKeystore`, `ensureSelfSigned`, `password`.
+Dashboard.httpsSpec
+  `httpsSpec` in `Dashboard.java`.
+HttpsSupport.configure
+  `configure` in `HttpsSupport.java`. Ruft `configure`.
+Schritt Z.65 server = HttpServer.create(addr, 32);
+  Zeile 65: betrifft den HTTP-Server. `server = HttpServer.create(addr, 32);`
+```
+
 - Fortsetzung von `Dashboard.start.Teil2`, Quellreihenfolge.

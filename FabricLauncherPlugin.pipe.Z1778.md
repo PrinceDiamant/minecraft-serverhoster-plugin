@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1778
+  Zeile 1778: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.pipe.Z1778.Z1780
+  Fortsetzung des Ablaufs ab Zeile 1780.
+catch Z.1791 (IOException e)
+  Zeile 1791: fängt (IOException e).
+finally Z.1778
+  Läuft danach immer, auch nach einem Fehler.
+if Z.1795 (slot.pipeGeneration.get() == generation)
+  Zeile 1795: prüft `(slot.pipeGeneration.get() == generation)`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.pipe`, Quellreihenfolge.

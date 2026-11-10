@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMemoryProbe.keyValues.Z133
+  Fortsetzung des Ablaufs ab Zeile 133.
+return Z.142 return out;
+  Zeile 142: Rückgabe `return out;`.
+```
+
 - `keyValues` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

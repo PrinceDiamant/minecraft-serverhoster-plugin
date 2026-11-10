@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1536
+  Zeile 1536: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.markScheduleRun
+  Merkt `markScheduleRun`. Ruft `schedules`, `sameScheduleMinute`, `withLastRun`.
+if Z.1538 (started == null)
+  Zeile 1538: prüft `(started == null)`.
+FabricLauncherPlugin.runSchedule
+  Führt aus `runSchedule`. Ruft `noteTask`, `run`, `TaskDef`.
+catch Z.1540 (RuntimeException e)
+  Zeile 1540: fängt (RuntimeException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.fireDueSchedules.Z1525`, Quellreihenfolge.

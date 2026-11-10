@@ -20,4 +20,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.fromPem
+  `fromPem` in `HttpsSupport.java`. Ruft `loadKey`.
+HttpsSupport.loadKey
+  Lädt `loadKey`. Ruft `pemBlock`, `wrapPkcs1`.
+HttpsSupport.pemBlock
+  `pemBlock` in `HttpsSupport.java`.
+HttpsSupport.wrapPkcs1
+  Hüllt ein `wrapPkcs1`. Ruft `concat`, `derLen`.
+HttpsSupport.derLen
+  `derLen` in `HttpsSupport.java`.
+HttpsSupport.concat
+  `concat` in `HttpsSupport.java`.
+HttpsSupport.resolve
+  Löst auf `resolve`.
+```
+
 

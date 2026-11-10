@@ -12,4 +12,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup
+  Status des Markers: pending, preparing, requested, auto-authorized, manual-required, restart-required, done.
+FabricLauncherPlugin.hostFirstSetupMarker
+  Betrifft den Host `hostFirstSetupMarker`.
+FabricLauncherPlugin.hostFirstSetupRequest
+  Betrifft den Host `hostFirstSetupRequest`. Ruft `requestManual`, `hostFirstSetupMarker`.
+```
+
 - Marker-Status steuert, ob der Host beim Start Welten umbaut.

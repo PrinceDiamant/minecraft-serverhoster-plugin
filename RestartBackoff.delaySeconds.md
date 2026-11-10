@@ -22,4 +22,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.8 (base ( 0)
+  Zeile 8: prüft `(base ( 0)`.
+if Z.9 (cap ( 0)
+  Zeile 9: prüft `(cap ( 0)`.
+if Z.11 (shift )= 1 && base ) (Long.MAX_VALUE )) shift))
+  Zeile 11: prüft `(shift )= 1 && base ) (Long.MAX_VALUE )) shift))`.
+return Z.11 return cap;
+  Zeile 11: Rückgabe `return cap;`.
+return Z.13 return Math.min(cap, raw);
+  Zeile 13: Rückgabe `return Math.min(cap, raw);`.
+```
+
 - `delaySeconds` in `src/main/java/de/aichele/childlauncher/RestartBackoff.java`

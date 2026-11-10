@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.226 (failure != null)
+  Zeile 226: prüft `(failure != null)`.
+throw Z.226 throw failure;
+  Zeile 226: Abbruch `throw failure;`.
+```
+
 - `close` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
 - Auslöser: Test

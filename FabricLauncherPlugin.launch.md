@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.launch.Z1728
+  Fortsetzung des Ablaufs ab Zeile 1728.
+```
+
 - `launch` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.343
+  Zeile 343: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.344 Files.move(temporary, marker, StandardCopyOption.…
+  Zeile 344: Dateioperation. `Files.move(temporary, marker, StandardCopyOption.…`
+catch Z.345 (AtomicMoveNotSupportedExcept…
+  Zeile 345: fängt (AtomicMoveNotSupportedExcept….
+Schritt Z.346 Files.move(temporary, marker, StandardCopyOption.…
+  Zeile 346: Dateioperation. `Files.move(temporary, marker, StandardCopyOption.…`
+```
+
 - Fortsetzung von `HostFirstSetup.writeMarker(Path,String,String,int,String)`, Quellreihenfolge.

@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupDiscovery.legacyPluginVersion
+  `legacyPluginVersion` in `SetupDiscovery.java`.
+SetupDiscovery.isAtLeast
+  Prüft `isAtLeast`.
+SetupDiscovery.loadLegacyConfig
+  Lädt `loadLegacyConfig`.
+```
+
 - Fortsetzung von `SetupDiscovery.scan`, Quellreihenfolge.

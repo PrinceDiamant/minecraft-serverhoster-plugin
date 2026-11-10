@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+index.chartCard
+  Zeichnet das Diagramm `chartCard`. Ruft `x`, `y`.
+```
+
 - Fortsetzung von `index.updateCharts`, Quellreihenfolge.

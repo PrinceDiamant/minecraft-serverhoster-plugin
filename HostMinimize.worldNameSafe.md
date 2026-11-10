@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.314 return name != null && !name.isBlank() && !'.'.eq…
+  Zeile 314: Rückgabe `return name != null && !name.isBlank() && !'.'.eq…`.
+```
+
 - `worldNameSafe` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

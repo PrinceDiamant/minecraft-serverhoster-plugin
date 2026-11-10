@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2415 (found == null)
+  Zeile 2415: prüft `(found == null)`.
+FabricLauncherPlugin.runTask
+  Führt aus `runTask`. Ruft `executeTask`, `noteTask`, `notifyNtfy`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2412`, Quellreihenfolge.

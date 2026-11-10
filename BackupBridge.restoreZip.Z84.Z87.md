@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.87 (en.hasMoreElements())
+  Zeile 87: Schleife `(en.hasMoreElements())`.
+BackupBridge.restoreZip.Z84.Z87.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+BackupBridge.restoreZip.Z84.Z87.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `BackupBridge.restoreZip.Z84`, Quellreihenfolge.

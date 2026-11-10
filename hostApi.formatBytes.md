@@ -26,4 +26,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.72 bytes ( 1024
+  Zeile 72: prüft `bytes ( 1024`.
+return Z.72 return '$(bytes) B';
+  Zeile 72: Rückgabe `return '$(bytes) B';`.
+if Z.73 bytes ( 1024 ** 2
+  Zeile 73: prüft `bytes ( 1024 ** 2`.
+return Z.73 return '$((bytes / 1024).toFixed(1)) KB';
+  Zeile 73: Rückgabe `return '$((bytes / 1024).toFixed(1)) KB';`.
+if Z.74 bytes ( 1024 ** 3
+  Zeile 74: prüft `bytes ( 1024 ** 3`.
+return Z.74 return '$((bytes / 1024 ** 2).toFixed(1)) MB';
+  Zeile 74: Rückgabe `return '$((bytes / 1024 ** 2).toFixed(1)) MB';`.
+return Z.75 return '$((bytes / 1024 ** 3).toFixed(2)) GB';
+  Zeile 75: Rückgabe `return '$((bytes / 1024 ** 3).toFixed(2)) GB';`.
+```
+
 - `formatBytes` in `ui/src/lib/hostApi.ts`

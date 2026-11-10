@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.30 return result;
+  Zeile 30: Rückgabe `return result;`.
+```
+
 - `view` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

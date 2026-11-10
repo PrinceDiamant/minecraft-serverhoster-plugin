@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskDef.TaskDef
+  `TaskDef` in `TaskDef.java`. Ruft `normZone`, `normAction`.
+TaskDef.load
+  Lädt `load`. Ruft `str`, `TaskDef`.
+TaskDef.str
+  `str` in `TaskDef.java`.
+```
+
 

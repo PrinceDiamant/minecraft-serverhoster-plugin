@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSecrets.load
+  Lädt `load`. Ruft `restrict`.
+if Z.100 (Files.getFileStore(tmp).supportsFileAttributeVie…
+  Zeile 100: prüft `(Files.getFileStore(tmp).supportsFileAttributeVie…`.
+```
+
 - Fortsetzung von `CoreAdminTest.dashboardFtpSecretsPreserveExistingValuesAndDoNotCreateOnRead`, Quellreihenfolge.

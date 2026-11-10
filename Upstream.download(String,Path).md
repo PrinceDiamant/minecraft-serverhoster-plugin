@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Upstream.download(String,Path,String,String)
+  Liefert zum Herunterladen `download`. Ruft `checkHash`.
+```
+
 - `download` in `src/main/java/de/aichele/childlauncher/Upstream.java`

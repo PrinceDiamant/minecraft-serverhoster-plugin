@@ -19,6 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+index.status
+  Liefert den Status `status`. Ruft `api`, `updateChildActions`, `$`.
+index.stream
+  Hält den Strom offen `stream`. Ruft `$`, `addLine`, `api`.
+index.tab
+  Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+```
+
 ```mermaid
 sequenceDiagram
   participant Browser

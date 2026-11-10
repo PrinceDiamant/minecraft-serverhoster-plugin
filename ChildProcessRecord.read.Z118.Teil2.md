@@ -20,4 +20,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.126 (int i = 1; i ( lines.size(); i++)
+  Zeile 126: Schleife `(int i = 1; i ( lines.size(); i++)`.
+if Z.129 (eq (= 0)
+  Zeile 129: prüft `(eq (= 0)`.
+return Z.129 return new Loaded(null, 'process record line is m…
+  Zeile 129: Rückgabe `return new Loaded(null, 'process record line is m…`.
+ChildProcessRecord.required
+  Liest verpflichtend `required`.
+```
+
 - Fortsetzung von `ChildProcessRecord.read.Z118`, Quellreihenfolge.

@@ -22,4 +22,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.directory
+  `directory` in `BackupBridge.java`.
+if Z.45 (!Files.isDirectory(dir))
+  Zeile 45: prüft `(!Files.isDirectory(dir))`.
+return Z.45 return List.of();
+  Zeile 45: Rückgabe `return List.of();`.
+BackupBridge.safeId
+  Prüft die Pfadgrenze `safeId`.
+BackupBridge.list.Z48
+  Fortsetzung des Ablaufs ab Zeile 48.
+return Z.56 return out;
+  Zeile 56: Rückgabe `return out;`.
+```
+
 - `list` in `src/main/java/de/aichele/childlauncher/BackupBridge.java`

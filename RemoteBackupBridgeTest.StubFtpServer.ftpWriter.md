@@ -15,5 +15,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.213 return new PrintWriter(new OutputStreamWriter(str…
+  Zeile 213: Rückgabe `return new PrintWriter(new OutputStreamWriter(str…`.
+RemoteBackupBridgeTest.StubFtpServer.ftpWriter.println
+  `println` in `RemoteBackupBridgeTest.java`. Nur Test.
+```
+
 - `ftpWriter` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
 - Auslöser: Test

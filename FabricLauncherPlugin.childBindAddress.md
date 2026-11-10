@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.effectiveBindAddress
+  Liefert den wirksamen Wert `effectiveBindAddress`.
+FabricLauncherPlugin.hostBindAddress
+  Betrifft den Host `hostBindAddress`.
+return Z.286 return effectiveBindAddress(profile.ser…
+  Zeile 286: Rückgabe `return effectiveBindAddress(profile.ser…`.
+```
+
 - `childBindAddress` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

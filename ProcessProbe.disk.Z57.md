@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.57
+  Zeile 57: Versuch. Der Fehlerpfad geht in catch.
+ProcessProbe.disk.Z57.Z59
+  Fortsetzung des Ablaufs ab Zeile 59.
+catch Z.66 (IOException ignored)
+  Zeile 66: fängt (IOException ignored).
+```
+
 - Fortsetzung von `ProcessProbe.disk`, Quellreihenfolge.

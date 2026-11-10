@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.975
+  Zeile 975: Versuch. Der Fehlerpfad geht in catch.
+if Z.977 (b.length ) MAX_TEXT)
+  Zeile 977: prüft `(b.length ) MAX_TEXT)`.
+throw Z.977 throw new IOException('Zu groß (max 2 MB)');
+  Zeile 977: Abbruch `throw new IOException('Zu groß (max 2 MB)');`.
+return Z.978 return new String(b, StandardCharsets.UTF_8);
+  Zeile 978: Rückgabe `return new String(b, StandardCharsets.UTF_8);`.
+```
+
 - `readBodyText` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

@@ -17,4 +17,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.115 ('child-start','child-restart','child-s…
+  Zeile 115: Schleife `('child-start','child-restart','child-s…`.
+index.$
+  `$` in `index.html`.
+```
+
 - Fortsetzung von `index.status.Z101.Z115`, Quellreihenfolge.

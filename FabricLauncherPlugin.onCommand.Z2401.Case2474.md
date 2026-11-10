@@ -18,4 +18,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2475 (a.length ( 4 // !a(1).equalsIgnoreCase('set'))
+  Zeile 2475: prüft `(a.length ( 4 // !a(1).equalsIgnoreCase('set'))`.
+return Z.2475 return true;
+  Zeile 2475: Rückgabe `return true;`.
+FabricLauncherPlugin.parseValue
+  Wertet aus `parseValue`.
+FabricLauncherPlugin.saveConfigWritable
+  Speichert `saveConfigWritable`. Ruft `makeWritable`.
+Schritt Z.2479 s.sendMessage('config.yml: ' + a(2) + ' = ' + get…
+  Zeile 2479: `s.sendMessage('config.yml: ' + a(2) + ' = ' + get…`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

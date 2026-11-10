@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.336 return count;
+  Zeile 336: Rückgabe `return count;`.
+```
+
 - `count` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

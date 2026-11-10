@@ -15,4 +15,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.lobbyNameSafe
+  `lobbyNameSafe` in `HostMinimize.java`.
+HostLobbyRuntime.apply
+  Wendet an `apply`. Ruft `worldNameSafe`.
+```
+
 - Fortsetzung von `HostMinimizeTest.heapTuneNeverRequestsXmxAndLobbyRulesIgnoreOtherWorlds`, Quellreihenfolge.

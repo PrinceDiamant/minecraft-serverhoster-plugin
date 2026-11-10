@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.197
+  Zeile 197: Versuch. Der Fehlerpfad geht in catch.
+BackupSettings.loadBackupSettings
+  Lädt `loadBackupSettings`. Ruft `dashboardRequest`.
+BackupSettings.saveBackupSettings
+  Speichert `saveBackupSettings`. Ruft `dashboardRequest`, `jsonBody`.
+SetupWizard.finish.createSchedule
+  Legt an `createSchedule`. Ruft `dashboardRequest`, `jsonBody`.
+catch Z.212 cause
+  Zeile 212: fängt cause.
+```
+
 - Fortsetzung von `SetupWizard.SetupWizard.finish.Z135.Teil2.Z196`, Quellreihenfolge.

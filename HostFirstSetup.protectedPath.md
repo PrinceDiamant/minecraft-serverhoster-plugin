@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.244 return protectedPath != null && (path.equals(prot…
+  Zeile 244: Rückgabe `return protectedPath != null && (path.equals(prot…`.
+```
+
 - `protectedPath` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

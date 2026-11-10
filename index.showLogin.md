@@ -15,4 +15,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+if Z.84 es
+  Zeile 84: prüft `es`.
+```
+
 - `showLogin` in `src/main/resources/web/index.html`

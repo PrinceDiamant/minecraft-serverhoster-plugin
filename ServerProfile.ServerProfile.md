@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerProfile.ServerProfile.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+ServerProfile.ServerProfile.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `ServerProfile` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

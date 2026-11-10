@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+LogQuery.levelOk.Z65
+  Fortsetzung des Ablaufs ab Zeile 65.
+```
+
 - `levelOk` in `src/main/java/de/aichele/childlauncher/LogQuery.java`

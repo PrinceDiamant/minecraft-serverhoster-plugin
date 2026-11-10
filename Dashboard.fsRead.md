@@ -24,4 +24,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.safe
+  Prüft die Pfadgrenze `safe`. Ruft `guard`, `resolve`.
+if Z.834 (!Files.isRegularFile(f))
+  Zeile 834: prüft `(!Files.isRegularFile(f))`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.834 return;
+  Zeile 834: Rückgabe `return;`.
+Dashboard.fsRead.Z835
+  Fortsetzung des Ablaufs ab Zeile 835.
+Dashboard.fsRead.Z844
+  Fortsetzung des Ablaufs ab Zeile 844.
+Dashboard.text
+  Antwortet mit Text `text`. Ruft `sendBytes`.
+```
+
 - `fsRead` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

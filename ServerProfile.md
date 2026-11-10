@@ -13,4 +13,13 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+ServerProfile.ServerProfile
+  `ServerProfile` in `ServerProfile.java`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+ServerProfile.view
+  Liefert die Sicht `view`. Ruft `directory`. Befund: toter Code (wahrscheinlich).
+```
+
 

@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.143 (var entry : spigotChanges().entrySet())
+  Zeile 143: Schleife `(var entry : spigotChanges().entrySet())`.
+HostMinimize.spigotChanges
+  `spigotChanges` in `HostMinimize.java`.
+HostMinimize.preservedNotes
+  `preservedNotes` in `HostMinimize.java`.
+return Z.146 return new Preview(List.copyOf(changes)…
+  Zeile 146: Rückgabe `return new Preview(List.copyOf(changes)…`.
+```
+
 - Fortsetzung von `HostMinimize.preview`, Quellreihenfolge.

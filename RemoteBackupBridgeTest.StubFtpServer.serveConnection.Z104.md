@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.104
+  Zeile 104: Versuch. Der Fehlerpfad geht in catch.
+RemoteBackupBridgeTest.StubFtpServer.ftpWriter
+  `ftpWriter` in `RemoteBackupBridgeTest.java`. Ruft `println`. Nur Test.
+RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113
+  Fortsetzung des Ablaufs ab Zeile 113.
+if Z.208 (data != null)
+  Zeile 208: prüft `(data != null)`.
+```
+
 - Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection`, Quellreihenfolge.

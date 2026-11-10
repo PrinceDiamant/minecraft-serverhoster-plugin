@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.269 !dialog
+  Zeile 269: prüft `!dialog`.
+return Z.269 return;
+  Zeile 269: Rückgabe `return;`.
+App.App.submitDialog.Z270
+  Fortsetzung des Ablaufs ab Zeile 270.
+App.App.closeDialog
+  Schließt `closeDialog`.
+```
+
 - `submitDialog` in `ui/src/App.tsx`

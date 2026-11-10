@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ConsoleBuffer.add
+  Fügt hinzu `add`.
+FabricLauncherPlugin.rememberProcess
+  Merkt sich den Prozess `rememberProcess`. Ruft `write`, `processRecord`, `directory`.
+FabricLauncherPlugin.armPipe
+  Hängt die Überwachung an `armPipe`. Ruft `pipe`.
+FabricLauncherPlugin.consolePrefix
+  Liefert die Konsole `consolePrefix`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.launch.Z1728.Z1728`, Quellreihenfolge.

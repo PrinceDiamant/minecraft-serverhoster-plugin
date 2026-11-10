@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.fromPem.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HttpsSupport.fromPem.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `fromPem` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

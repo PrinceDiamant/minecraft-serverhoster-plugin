@@ -19,4 +19,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+DashboardPassword.read
+  Liest `read`.
+DashboardPassword.create
+  Legt an `create`.
+Schritt Z.73 assertFalse(Files.exists(file));
+  Zeile 73: Dateioperation. `assertFalse(Files.exists(file));`
+```
+
 - Fortsetzung von `CoreAdminTest.dashboardPasswordSetupPreservesExistingAndFailsClosed`, Quellreihenfolge.

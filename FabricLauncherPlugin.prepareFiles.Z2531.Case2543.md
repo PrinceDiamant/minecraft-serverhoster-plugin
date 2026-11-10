@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.isWindows
+  Prüft `isWindows`.
+SpigotBuilder.build
+  Baut `build`. Ruft `assertRev`, `download`, `commandExists`.
+return Z.2545 return SpigotBuilder.build(upstream, ge…
+  Zeile 2545: Rückgabe `return SpigotBuilder.build(upstream, ge…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531`, Quellreihenfolge.

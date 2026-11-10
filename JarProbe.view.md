@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.34 return m;
+  Zeile 34: Rückgabe `return m;`.
+```
+
 - `view` in `src/main/java/de/aichele/childlauncher/JarProbe.java`

@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.normalizeSans.Z116
+  Fortsetzung des Ablaufs ab Zeile 116.
+if Z.123 (out.isEmpty())
+  Zeile 123: prüft `(out.isEmpty())`.
+return Z.124 return out;
+  Zeile 124: Rückgabe `return out;`.
+```
+
 - `normalizeSans` in `src/main/java/de/aichele/childlauncher/HttpsSupport.java`

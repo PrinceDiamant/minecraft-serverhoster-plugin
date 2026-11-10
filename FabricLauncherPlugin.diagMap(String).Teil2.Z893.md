@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.893 (reading != null)
+  Zeile 893: prüft `(reading != null)`.
+MemoryTelemetry.gcView
+  `gcView` in `MemoryTelemetry.java`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.diagMap(String).Teil2`, Quellreihenfolge.

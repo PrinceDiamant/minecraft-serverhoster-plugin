@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.309 return alive ? observed : null;
+  Zeile 309: Rückgabe `return alive ? observed : null;`.
+```
+
 - `find` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

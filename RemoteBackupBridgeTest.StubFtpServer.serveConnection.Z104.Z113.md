@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.113 ((line = input.readLine()) != null)
+  Zeile 113: Schleife `((line = input.readLine()) != null)`.
+RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104.Z113.Z117
+  Fortsetzung des Ablaufs ab Zeile 117.
+```
+
 - Fortsetzung von `RemoteBackupBridgeTest.StubFtpServer.serveConnection.Z104`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1068 long outerXmx = Runtime.getRuntime().maxMemory();
+  Zeile 1068: fragt die JVM-Laufzeit. `long outerXmx = Runtime.getRuntime().maxMemory();`
+FabricLauncherPlugin.warnHeapBudget.Z1070
+  Fortsetzung des Ablaufs ab Zeile 1070.
+```
+
 - `warnHeapBudget` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

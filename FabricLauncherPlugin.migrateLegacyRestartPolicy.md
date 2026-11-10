@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RestartPolicy.migrateLegacyUnlimited
+  Übernimmt den alten Wert von `migrateLegacyUnlimited`.
+if Z.195 (migratedUnlimited)
+  Zeile 195: prüft `(migratedUnlimited)`.
+if Z.198 (changed)
+  Zeile 198: prüft `(changed)`.
+return Z.199 return changed // migratedUnlimited;
+  Zeile 199: Rückgabe `return changed // migratedUnlimited;`.
+```
+
 - `migrateLegacyRestartPolicy` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

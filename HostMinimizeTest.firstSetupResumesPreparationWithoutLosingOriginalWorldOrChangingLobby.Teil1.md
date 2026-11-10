@@ -21,4 +21,19 @@ flowchart TD
   style n6 fill:#f88,stroke:#900
 ```
 
+```knoten
+Schritt Z.229 Files.createDirectories(data);
+  Zeile 229: Dateioperation. `Files.createDirectories(data);`
+Schritt Z.230 Files.createDirectories(root.resolve('old-world_n…
+  Zeile 230: Dateioperation. `Files.createDirectories(root.resolve('old-world_n…`
+Schritt Z.231 Files.writeString(root.resolve('plugins/ServerHos…
+  Zeile 231: schreibt Text in eine Datei. `Files.writeString(root.resolve('plugins/ServerHos…`
+Schritt Z.232 Files.writeString(root.resolve('server.properties…
+  Zeile 232: schreibt Text in eine Datei. `Files.writeString(root.resolve('server.properties…`
+HostFirstSetup.shouldRun
+  Entscheidet, ob `shouldRun`. Ruft `readState`, `writeMarker`. Befund: Altlast (wahrscheinlich).
+HostFirstSetup.apply(Path,Path,Path,Path)
+  Wendet an `apply`. Ruft `apply`. Befund: toter Code (wahrscheinlich).
+```
+
 - Fortsetzung von `HostMinimizeTest.firstSetupResumesPreparationWithoutLosingOriginalWorldOrChangingLobby`, Quellreihenfolge.

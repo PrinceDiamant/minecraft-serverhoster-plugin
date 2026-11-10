@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.122 return List.of( 'Does not delete worlds, plugins,…
+  Zeile 122: Rückgabe `return List.of( 'Does not delete worlds, plugins,…`.
+```
+
 - `preservedNotes` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

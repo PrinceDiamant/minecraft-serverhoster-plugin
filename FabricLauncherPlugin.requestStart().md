@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.requestStart(String)
+  Fordert an `requestStart`. Ruft `startAsync`.
+```
+
 - `requestStart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:318–318 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

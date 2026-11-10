@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.367 return profiles.isEmpty() // profiles.get(0).id.e…
+  Zeile 367: Rückgabe `return profiles.isEmpty() // profiles.get(0).id.e…`.
+```
+
 - `configPrefix` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

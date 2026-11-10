@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.176 (encoded == null // encoded.isBlank())
+  Zeile 176: prüft `(encoded == null // encoded.isBlank())`.
+throw Z.176 throw new IOException('Missing previous host worl…
+  Zeile 176: Abbruch `throw new IOException('Missing previous host worl…`.
+HostFirstSetup.decodeWorldNames.Z178
+  Fortsetzung des Ablaufs ab Zeile 178.
+return Z.187 return names;
+  Zeile 187: Rückgabe `return names;`.
+```
+
 - `decodeWorldNames` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

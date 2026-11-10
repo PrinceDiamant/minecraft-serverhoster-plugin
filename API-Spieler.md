@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.players
+  Liefert die Spieler `players`. Ruft `workDir`, `readPlayerNames`, `players`.
+Dashboard.readPlayerNames
+  Liest `readPlayerNames`.
+```
+
 

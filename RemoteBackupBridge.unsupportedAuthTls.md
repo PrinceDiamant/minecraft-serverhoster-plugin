@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.171 return replyCode == 500 // replyCode == 501 // re…
+  Zeile 171: Rückgabe `return replyCode == 500 // replyCode == 501 // re…`.
+```
+
 - `unsupportedAuthTls` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

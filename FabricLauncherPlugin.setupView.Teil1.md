@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+SetupDiscovery.scan
+  Durchsucht `scan`. Ruft `legacyPluginVersion`, `isAtLeast`, `loadLegacyConfig`.
+SetupDiscovery.Candidate.view
+  Liefert die Sicht `view`.
+FabricLauncherPlugin.legacyJarNames
+  `legacyJarNames` in `FabricLauncherPlugin.java`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.setupView`, Quellreihenfolge.

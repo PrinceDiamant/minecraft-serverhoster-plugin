@@ -17,4 +17,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimize.assertEditable
+  Prüft `assertEditable`.
+HostMinimize.assertRoot
+  Prüft `assertRoot`.
+HostMinimize.readProperties
+  Liest `readProperties`.
+HostMinimize.updateYaml
+  Aktualisiert `updateYaml`. Ruft `assertNotSymlink`.
+HostMinimize.assertNotSymlink
+  Prüft `assertNotSymlink`.
+HostMinimize.stateText
+  Liefert den Zustand `stateText`.
+HostMinimize.readState
+  Liest `readState`.
+HostMinimize.lobbyNameSafe
+  `lobbyNameSafe` in `HostMinimize.java`.
+```
+
 

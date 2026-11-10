@@ -18,4 +18,19 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+FabricLauncherPlugin.hostMemoryView
+  Betrifft den Host `hostMemoryView`. Ruft `view`, `cgroupUsePercent`, `emergencyStopStarted`.
+FabricLauncherPlugin.maybeWriteTelemetry
+  Führt nur aus, wenn die Sperrzeit um ist `maybeWriteTelemetry`. Ruft `boundedSeconds`, `warnOnce`, `line`.
+FabricLauncherPlugin.sampleHostMemory
+  Ein Sample auf `ServerhosterPlugin-Memory`. Befund: Altlast (sicher).
+FabricLauncherPlugin.warnHeapBudget
+  Warnt `warnHeapBudget`. Ruft `parseMemoryBytes`, `notifyNtfy`.
+FabricLauncherPlugin.parseMemoryBytes
+  Wertet aus `parseMemoryBytes`.
+FabricLauncherPlugin.addProcessDiagnostics
+  Fügt hinzu `addProcessDiagnostics`. Ruft `snapshot`, `jcmd`.
+```
+
 

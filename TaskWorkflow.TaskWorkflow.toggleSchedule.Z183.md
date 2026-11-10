@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.183
+  Zeile 183: Versuch. Der Fehlerpfad geht in catch.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+catch Z.189 cause
+  Zeile 189: fängt cause.
+finally Z.183
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `TaskWorkflow.TaskWorkflow.toggleSchedule`, Quellreihenfolge.

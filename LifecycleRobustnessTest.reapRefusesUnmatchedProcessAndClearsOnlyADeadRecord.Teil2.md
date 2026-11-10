@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.66 assertTrue(Files.exists(file));
+  Zeile 66: Dateioperation. `assertTrue(Files.exists(file));`
+LifecycleRobustnessTest.FakeProcesses.FakeProcesses
+  `FakeProcesses` in `LifecycleRobustnessTest.java`. Nur Test.
+ChildProcessRecord.reap
+  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+Schritt Z.71 assertFalse(Files.exists(file));
+  Zeile 71: Dateioperation. `assertFalse(Files.exists(file));`
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.reapRefusesUnmatchedProcessAndClearsOnlyADeadRecord`, Quellreihenfolge.

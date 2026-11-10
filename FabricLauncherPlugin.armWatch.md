@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.armWatch.Z2057
+  Fortsetzung des Ablaufs ab Zeile 2057.
+```
+
 - `armWatch` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

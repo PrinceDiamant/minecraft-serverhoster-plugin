@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Setup-Dialog
+  Die Einrichtungsschritte, die der Kern selbst ausführt.
+Setup-Aufraeumen
+  Räumt Dateien und Reste nach der Einrichtung weg.
+Setup-Import
+  Übernimmt Daten aus einer alten FabricLauncher-Anlage.
+```
+
 - Einrichtung, Aufräumen und Import der alten FabricLauncher-Daten.

@@ -23,4 +23,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ConsoleBuffer.add
+  Fügt hinzu `add`.
+try Z.1883
+  Zeile 1883: Versuch. Der Fehlerpfad geht in catch.
+if Z.1884 (ChildProcessRecord.deleteIfMatch(processRecord()…
+  Zeile 1884: prüft `(ChildProcessRecord.deleteIfMatch(processRecord()…`.
+ChildProcessRecord.deleteIfMatch
+  Löscht `deleteIfMatch`. Ruft `read`.
+FabricLauncherPlugin.processRecord
+  `processRecord` in `FabricLauncherPlugin.java`.
+catch Z.1886 (IOException e)
+  Zeile 1886: fängt (IOException e).
+if Z.1889 (up )= getConfig().getLong('autoRestart.resetAfte…
+  Zeile 1889: prüft `(up )= getConfig().getLong('autoRestart.resetAfte…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.watch`, Quellreihenfolge.

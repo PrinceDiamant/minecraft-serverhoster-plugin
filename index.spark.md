@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.157 a.length(2
+  Zeile 157: prüft `a.length(2`.
+return Z.157 return '';
+  Zeile 157: Rückgabe `return '';`.
+return Z.159 return '(svg width='$(w)' height='$(h)' viewBox='…
+  Zeile 159: Rückgabe `return '(svg width='$(w)' height='$(h)' viewBox='…`.
+```
+
 - `spark` in `src/main/resources/web/index.html`

@@ -31,4 +31,27 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.40 settings.backupStorage === 'remote'
+  Zeile 40: prüft `settings.backupStorage === 'remote'`.
+if Z.41 !credentials.username.trim()
+  Zeile 41: prüft `!credentials.username.trim()`.
+throw Z.41 throw new Error('Bitte gib den FTP-Benutzernamen …
+  Zeile 41: Abbruch `throw new Error('Bitte gib den FTP-Benutzernamen …`.
+if Z.42 !credentials.password && !credentials.passwordSet
+  Zeile 42: prüft `!credentials.password && !credentials.passwordSet`.
+throw Z.42 throw new Error('Bitte gib das FTP-Passwort ein.'…
+  Zeile 42: Abbruch `throw new Error('Bitte gib das FTP-Passwort ein.'…`.
+if Z.43 location.protocol !== 'https:' // settings.backup…
+  Zeile 43: prüft `location.protocol !== 'https:' // settings.backup…`.
+if Z.49 !accepted
+  Zeile 49: prüft `!accepted`.
+throw Z.49 throw new Error('Speichern abgebrochen.');
+  Zeile 49: Abbruch `throw new Error('Speichern abgebrochen.');`.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+```
+
 - Fortsetzung von `BackupSettings.saveBackupSettings`, Quellreihenfolge.

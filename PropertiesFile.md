@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PropertiesFile.PropertiesFile
+  `PropertiesFile` in `PropertiesFile.java`.
+PropertiesFile.update
+  Aktualisiert `update`.
+PropertiesFile.preview
+  Zeigt die Vorschau `preview`.
+```
+
 

@@ -21,4 +21,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.671 getConfig().set('type', type);
+  Zeile 671: liest die Config. `getConfig().set('type', type);`
+Schritt Z.672 getConfig().set('mcVersion', mcVersion);
+  Zeile 672: liest die Config. `getConfig().set('mcVersion', mcVersion);`
+Schritt Z.673 getConfig().set('port', port);
+  Zeile 673: liest die Config. `getConfig().set('port', port);`
+Schritt Z.674 getConfig().set('workingDir', directory.toString(…
+  Zeile 674: liest die Config. `getConfig().set('workingDir', directory.toString(…`
+Schritt Z.675 getConfig().set('autoStart', true);
+  Zeile 675: liest die Config. `getConfig().set('autoStart', true);`
+Schritt Z.676 getConfig().set('serverProperties', Map.of());
+  Zeile 676: liest die Config. `getConfig().set('serverProperties', Map.of());`
+```
+
 - `applySetupProfile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

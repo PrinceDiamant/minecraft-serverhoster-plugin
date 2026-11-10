@@ -14,4 +14,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.142 window.dashboardEditors
+  Zeile 142: prüft `window.dashboardEditors`.
+index.$
+  `$` in `index.html`.
+```
+
 - Fortsetzung von `index.openFile`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ProcessProbe.jcmd(long,String,long)
+  `jcmd` in `ProcessProbe.java`. Ruft `abbreviate`.
+return Z.71 return jcmd(pid, command, 20);
+  Zeile 71: Rückgabe `return jcmd(pid, command, 20);`.
+```
+
 - `jcmd` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+kein eigener Aufruf
+  In diesem Stück gibt es keinen weiteren eigenen Aufruf.
+```
+
 - `FakeProcesses` in `src/test/java/de/aichele/childlauncher/LifecycleRobustnessTest.java`
 - Auslöser: Test

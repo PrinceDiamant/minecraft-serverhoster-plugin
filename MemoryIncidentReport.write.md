@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryIncidentReport.write.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+MemoryIncidentReport.write.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `write` in `src/main/java/de/aichele/childlauncher/MemoryIncidentReport.java`

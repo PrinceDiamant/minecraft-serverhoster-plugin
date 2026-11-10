@@ -22,4 +22,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.ip
+  `ip` in `Dashboard.java`.
+if Z.328 (until != null && until ) now)
+  Zeile 328: prüft `(until != null && until ) now)`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+return Z.328 return;
+  Zeile 328: Rückgabe `return;`.
+Dashboard.body
+  `body` in `Dashboard.java`. Ruft `readBodyText`.
+Dashboard.login.Z331
+  Fortsetzung des Ablaufs ab Zeile 331.
+```
+
 - `login` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

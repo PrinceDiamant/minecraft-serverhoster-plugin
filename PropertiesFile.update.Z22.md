@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.22 (int i = 0; i ( lines.size(); i++)
+  Zeile 22: Schleife `(int i = 0; i ( lines.size(); i++)`.
+if Z.24 (t.isEmpty() // t.startsWith('') // t.startsWith(…
+  Zeile 24: prüft `(t.isEmpty() // t.startsWith('') // t.startsWith(…`.
+if Z.28 (force.containsKey(k))
+  Zeile 28: prüft `(force.containsKey(k))`.
+```
+
 - Fortsetzung von `PropertiesFile.update`, Quellreihenfolge.

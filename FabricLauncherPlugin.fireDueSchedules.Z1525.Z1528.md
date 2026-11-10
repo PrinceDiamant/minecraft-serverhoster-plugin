@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1528
+  Zeile 1528: Versuch. Der Fehlerpfad geht in catch.
+if Z.1530 (!CronExpr.matches(schedule.cron(), now))
+  Zeile 1530: prüft `(!CronExpr.matches(schedule.cron(), now))`.
+CronExpr.matches
+  `matches` in `CronExpr.java`. Ruft `field`, `dow`.
+ScheduleDef.cron
+  `cron` in `ScheduleDef.java`.
+catch Z.1531 (RuntimeException e)
+  Zeile 1531: fängt (RuntimeException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.fireDueSchedules.Z1525`, Quellreihenfolge.

@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.196
+  Zeile 196: Versuch. Der Fehlerpfad geht in catch.
+BackupBridge.connect
+  Verbindet `connect`.
+BackupBridge.table
+  `table` in `BackupBridge.java`.
+BackupBridge.ensureTable
+  Stellt sicher `ensureTable`.
+BackupBridge.insert.Z196.Z199
+  Fortsetzung des Ablaufs ab Zeile 199.
+```
+
 - Fortsetzung von `BackupBridge.insert`, Quellreihenfolge.

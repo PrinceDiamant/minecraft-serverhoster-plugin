@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.18 (mc == null // !mc.matches('(0-9A-Za-z)(0-9A-Za-z…
+  Zeile 18: prüft `(mc == null // !mc.matches('(0-9A-Za-z)(0-9A-Za-z…`.
+throw Z.18 throw new IllegalArgumentException('mcVersion');
+  Zeile 18: Abbruch `throw new IllegalArgumentException('mcVersion');`.
+```
+
 - `assertRev` in `src/main/java/de/aichele/childlauncher/SpigotBuilder.java`

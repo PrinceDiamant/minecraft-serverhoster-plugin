@@ -14,4 +14,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.52 (username == null // password == null // token ==…
+  Zeile 52: prüft `(username == null // password == null // token ==…`.
+throw Z.53 throw new IOException('FTP and ntfy credentials i…
+  Zeile 53: Abbruch `throw new IOException('FTP and ntfy credentials i…`.
+return Z.54 return new Credentials(username, password, token);
+  Zeile 54: Rückgabe `return new Credentials(username, password, token);`.
+```
+
 - Fortsetzung von `BackupSecrets.load`, Quellreihenfolge.

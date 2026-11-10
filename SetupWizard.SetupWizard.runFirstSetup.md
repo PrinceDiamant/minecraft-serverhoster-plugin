@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.251 !accepted
+  Zeile 251: prüft `!accepted`.
+return Z.251 return;
+  Zeile 251: Rückgabe `return;`.
+SetupWizard.SetupWizard.runFirstSetup.Z254
+  Fortsetzung des Ablaufs ab Zeile 254.
+```
+
 - `runFirstSetup` in `ui/src/components/SetupWizard.tsx`

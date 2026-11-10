@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.25
+  Zeile 25: synchronisierter Block.
+return Z.25 return new ArrayList()(lines);
+  Zeile 25: Rückgabe `return new ArrayList()(lines);`.
+```
+
 - `subscribe` in `src/main/java/de/aichele/childlauncher/ConsoleBuffer.java`

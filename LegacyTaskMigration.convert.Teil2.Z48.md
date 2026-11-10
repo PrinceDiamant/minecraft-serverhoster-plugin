@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.48 (fields(1).equals('*') && fields(4).equals('*'))
+  Zeile 48: prüft `(fields(1).equals('*') && fields(4).equals('*'))`.
+LegacyTaskMigration.convert.Teil2.Z48.Z52
+  Fortsetzung des Ablaufs ab Zeile 52.
+```
+
 - Fortsetzung von `LegacyTaskMigration.convert.Teil2`, Quellreihenfolge.

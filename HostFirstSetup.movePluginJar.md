@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.300
+  Zeile 300: Versuch. Der Fehlerpfad geht in catch.
+Schritt Z.301 Files.move(pluginJar.source(), pluginJar.disabled…
+  Zeile 301: Dateioperation. `Files.move(pluginJar.source(), pluginJar.disabled…`
+catch Z.302 (AtomicMoveNotSupportedExcept…
+  Zeile 302: fängt (AtomicMoveNotSupportedExcept….
+Schritt Z.303 Files.move(pluginJar.source(), pluginJar.disabled…
+  Zeile 303: Dateioperation. `Files.move(pluginJar.source(), pluginJar.disabled…`
+```
+
 - `movePluginJar` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

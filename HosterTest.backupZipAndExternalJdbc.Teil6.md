@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.list
+  Listet `list`. Ruft `directory`, `safeId`, `named`.
+BackupBridge.file
+  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+```
+
 - Fortsetzung von `HosterTest.backupZipAndExternalJdbc`, Quellreihenfolge.

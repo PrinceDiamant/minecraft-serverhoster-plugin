@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.49 (p.isEmpty())
+  Zeile 49: prüft `(p.isEmpty())`.
+if Z.53 (slash )= 0)
+  Zeile 53: prüft `(slash )= 0)`.
+if Z.54 (step (= 0)
+  Zeile 54: prüft `(step (= 0)`.
+throw Z.54 throw new IllegalArgumentException('cron step');
+  Zeile 54: Abbruch `throw new IllegalArgumentException('cron step');`.
+```
+
 - Fortsetzung von `CronExpr.field.Z47`, Quellreihenfolge.

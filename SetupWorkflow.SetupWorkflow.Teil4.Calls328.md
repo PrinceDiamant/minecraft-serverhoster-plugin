@@ -19,4 +19,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SetupWorkflow.SetupWorkflow.submit
+  Gibt ab `submit`. Ruft `versionIsValid`, `dashboardRequest`, `jsonBody`.
+VersionSelect.versionIsValid
+  `versionIsValid` in `VersionSelect.tsx`.
+VersionSelect.VersionSelect
+  `VersionSelect` in `VersionSelect.tsx`.
+```
+
 - Fortsetzung von `SetupWorkflow.SetupWorkflow.Teil4`, Quellreihenfolge.

@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.89 (Files.getFileStore(path).supportsFileAttributeVi…
+  Zeile 89: prüft `(Files.getFileStore(path).supportsFileAttributeVi…`.
+Schritt Z.90 Files.setPosixFilePermissions(path, Set.of(PosixF…
+  Zeile 90: setzt POSIX-Dateirechte. `Files.setPosixFilePermissions(path, Set.of(PosixF…`
+```
+
 - `restrict` in `src/main/java/de/aichele/childlauncher/BackupSecrets.java`

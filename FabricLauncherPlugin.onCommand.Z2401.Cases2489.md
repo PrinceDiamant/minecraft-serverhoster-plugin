@@ -17,4 +17,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+case Z.2489 'diag'
+  Zeile 2489: Zweig `'diag'`.
+FabricLauncherPlugin.onCommand.Z2401.Case2489
+  Rumpf dieses switch-Zweigs ab Zeile 2489.
+case Z.2495 'threaddump', 'heap', 'flags'
+  Zeile 2495: Zweig `'threaddump', 'heap', 'flags'`.
+FabricLauncherPlugin.onCommand.Z2401.Case2495
+  Rumpf dieses switch-Zweigs ab Zeile 2495.
+case Z.2505 default
+  Zeile 2505: Zweig `default`.
+return Z.2505 return false;
+  Zeile 2505: Rückgabe `return false;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401`, Quellreihenfolge.

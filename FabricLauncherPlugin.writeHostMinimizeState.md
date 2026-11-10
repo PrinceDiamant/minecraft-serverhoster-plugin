@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.hostMinimizeStateFile
+  Betrifft den Host `hostMinimizeStateFile`.
+if Z.2192 (Files.isSymbolicLink(file))
+  Zeile 2192: prüft `(Files.isSymbolicLink(file))`.
+throw Z.2192 throw new SecurityException('host minimization st…
+  Zeile 2192: Abbruch `throw new SecurityException('host minimization st…`.
+HostMinimize.stateText
+  Liefert den Zustand `stateText`.
+```
+
 - `writeHostMinimizeState` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

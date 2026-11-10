@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.75 return tls;
+  Zeile 75: Rückgabe `return tls;`.
+```
+
 - `tls` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

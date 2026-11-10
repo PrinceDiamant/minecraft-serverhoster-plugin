@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.47 return p != null && p.isAlive();
+  Zeile 47: Rückgabe `return p != null && p.isAlive();`.
+```
+
 - `running` in `src/main/java/de/aichele/childlauncher/ChildSlot.java`

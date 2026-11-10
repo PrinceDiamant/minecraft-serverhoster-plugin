@@ -19,4 +19,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+TaskWorkflow.TaskWorkflow.updateDraft
+  Aktualisiert `updateDraft`.
+```
+
 - Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`, Quellreihenfolge.

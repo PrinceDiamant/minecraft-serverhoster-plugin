@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.unsupportedAuthTls
+  `unsupportedAuthTls` in `RemoteBackupBridge.java`.
+```
+
 - Fortsetzung von `HosterTest.ftpAutoDetectionNeverDowngradesAfterTlsIsOffered`, Quellreihenfolge.

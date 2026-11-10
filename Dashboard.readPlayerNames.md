@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.703 (Files.notExists(file))
+  Zeile 703: prüft `(Files.notExists(file))`.
+return Z.703 return List.of();
+  Zeile 703: Rückgabe `return List.of();`.
+Dashboard.readPlayerNames.Z704
+  Fortsetzung des Ablaufs ab Zeile 704.
+```
+
 - `readPlayerNames` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

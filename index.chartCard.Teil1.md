@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.177 all.length(2
+  Zeile 177: prüft `all.length(2`.
+return Z.177 return '(article class='chart-card')(div class='c…
+  Zeile 177: Rückgabe `return '(article class='chart-card')(div class='c…`.
+```
+
 - Fortsetzung von `index.chartCard`, Quellreihenfolge.

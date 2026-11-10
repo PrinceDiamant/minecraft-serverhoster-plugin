@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+while Z.1780 ((line = r.readLine()) != null)
+  Zeile 1780: Schleife `((line = r.readLine()) != null)`.
+FabricLauncherPlugin.pipe.Z1778.Z1780.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.pipe.Z1778.Z1780.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.pipe.Z1778`, Quellreihenfolge.

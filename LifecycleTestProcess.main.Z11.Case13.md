@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+leer
+  Keine weiteren Knoten.
+```
+
 - Fortsetzung von `LifecycleTestProcess.main.Z11`, Quellreihenfolge.

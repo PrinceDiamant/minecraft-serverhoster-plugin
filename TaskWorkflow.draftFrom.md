@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.82 return ( id: schedule.id, name: schedule.name, en…
+  Zeile 82: Rückgabe `return ( id: schedule.id, name: schedule.name, en…`.
+```
+
 - `draftFrom` in `ui/src/components/TaskWorkflow.tsx`

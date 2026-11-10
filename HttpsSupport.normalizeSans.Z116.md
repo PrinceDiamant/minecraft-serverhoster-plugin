@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.116 (sans != null)
+  Zeile 116: prüft `(sans != null)`.
+HttpsSupport.normalizeSans.Z116.Z116
+  Fortsetzung des Ablaufs ab Zeile 116.
+```
+
 - Fortsetzung von `HttpsSupport.normalizeSans`, Quellreihenfolge.

@@ -26,4 +26,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.349 (path.equals('/api/schedules'))
+  Zeile 349: prüft `(path.equals('/api/schedules'))`.
+if Z.350 (method.equals('GET'))
+  Zeile 350: prüft `(method.equals('GET'))`.
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+FabricLauncherPlugin.schedules
+  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+Dashboard.scheduleJson
+  Plant `scheduleJson`. Ruft `toJson`, `taskLast`, `next`.
+return Z.352 return;
+  Zeile 352: Rückgabe `return;`.
+Dashboard.schedulesApi.Teil1.Z349.Z354
+  Fortsetzung des Ablaufs ab Zeile 354.
+return Z.369 return;
+  Zeile 369: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.schedulesApi.Teil1`, Quellreihenfolge.

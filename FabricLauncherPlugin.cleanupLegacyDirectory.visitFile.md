@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.467 (normalizedPreserved.stream().noneMatch(path -) p…
+  Zeile 467: prüft `(normalizedPreserved.stream().noneMatch(path -) p…`.
+Schritt Z.469 Files.delete(file);
+  Zeile 469: Dateioperation. `Files.delete(file);`
+return Z.470 return java.nio.file.FileVisitResult.CONTINUE;
+  Zeile 470: Rückgabe `return java.nio.file.FileVisitResult.CONTINUE;`.
+```
+
 - `visitFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

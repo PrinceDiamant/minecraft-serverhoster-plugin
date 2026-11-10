@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.migrateLegacyRestartPolicy
+  Übernimmt den alten Wert von `migrateLegacyRestartPolicy`. Ruft `migrateLegacyUnlimited`.
+```
+
 - Fortsetzung von `HosterTest.restartPolicyMigrationChangesOnlyThe2_0_0UnlimitedDefault`, Quellreihenfolge.

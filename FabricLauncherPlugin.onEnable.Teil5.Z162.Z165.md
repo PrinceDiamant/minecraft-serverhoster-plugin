@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.165 (hostFirstSetupBlocked)
+  Zeile 165: prüft `(hostFirstSetupBlocked)`.
+FabricLauncherPlugin.onEnable.Teil5.Z162.Z165.Z167
+  Fortsetzung des Ablaufs ab Zeile 167.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable.Teil5.Z162`, Quellreihenfolge.

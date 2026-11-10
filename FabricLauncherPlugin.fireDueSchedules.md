@@ -25,4 +25,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1517 (shuttingDown)
+  Zeile 1517: prüft `(shuttingDown)`.
+return Z.1517 return;
+  Zeile 1517: Rückgabe `return;`.
+try Z.1519
+  Zeile 1519: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.schedules
+  `schedules` in `FabricLauncherPlugin.java`. Ruft `load`.
+catch Z.1521 (RuntimeException e)
+  Zeile 1521: fängt (RuntimeException e).
+return Z.1523 return;
+  Zeile 1523: Rückgabe `return;`.
+FabricLauncherPlugin.fireDueSchedules.Z1525
+  Fortsetzung des Ablaufs ab Zeile 1525.
+```
+
 - `fireDueSchedules` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

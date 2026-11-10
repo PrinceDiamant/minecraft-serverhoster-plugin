@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.844 (Files.size(f) ) MAX_TEXT)
+  Zeile 844: prüft `(Files.size(f) ) MAX_TEXT)`.
+Schritt Z.846 long size = Files.size(f);
+  Zeile 846: Dateioperation. `long size = Files.size(f);`
+try Z.847
+  Zeile 847: Versuch. Der Fehlerpfad geht in catch.
+Dashboard.text
+  Antwortet mit Text `text`. Ruft `sendBytes`.
+return Z.851 return;
+  Zeile 851: Rückgabe `return;`.
+```
+
 - Fortsetzung von `Dashboard.fsRead`, Quellreihenfolge.

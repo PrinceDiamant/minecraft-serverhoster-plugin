@@ -1,0 +1,9 @@
+{
+  "id": "mermaid-knoten-hover",
+  "name": "Mermaid Knoten Hover",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Zeigt die Erklärung unter einem Flowchart, wenn der Mauszeiger auf dem Block steht.",
+  "author": "ServerHoster",
+  "isDesktopOnly": false
+}

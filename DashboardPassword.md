@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+DashboardPassword.DashboardPassword
+  `DashboardPassword` in `DashboardPassword.java`.
+DashboardPassword.read
+  Liest `read`.
+DashboardPassword.create
+  Legt an `create`.
+```
+
 

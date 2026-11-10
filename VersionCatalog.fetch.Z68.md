@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.68 return switch (t) ( case 'vanilla' -) vanilla(up.…
+  Zeile 68: Rückgabe `return switch (t) ( case 'vanilla' -) vanilla(up.…`.
+VersionCatalog.fetch.Z68.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+VersionCatalog.fetch.Z68.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `VersionCatalog.fetch`, Quellreihenfolge.

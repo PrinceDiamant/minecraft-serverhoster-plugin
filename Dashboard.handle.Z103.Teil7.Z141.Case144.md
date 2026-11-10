@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.json
+  Antwortet mit JSON `json`. Ruft `sendBytes`.
+FabricLauncherPlugin.console(String)
+  Liefert die Konsole `console`. Ruft `slot`.
+ConsoleBuffer.snapshot
+  `snapshot` in `ConsoleBuffer.java`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141`, Quellreihenfolge.

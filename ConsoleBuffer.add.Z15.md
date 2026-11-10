@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.15
+  Zeile 15: synchronisierter Block.
+while Z.17 (lines.size() ) cap)
+  Zeile 17: Schleife `(lines.size() ) cap)`.
+for Z.18 (Consumer(String) l : listeners)
+  Zeile 18: Schleife `(Consumer(String) l : listeners)`.
+try Z.18
+  Zeile 18: Versuch. Der Fehlerpfad geht in catch.
+catch Z.18 (Exception ignored)
+  Zeile 18: fängt (Exception ignored).
+```
+
 - Fortsetzung von `ConsoleBuffer.add`, Quellreihenfolge.

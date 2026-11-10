@@ -25,4 +25,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Upstream.getJson
+  Liefert `getJson`.
+for Z.2566 (JsonElement e : man.getAsJsonArray('ve…
+  Zeile 2566: Schleife `(JsonElement e : man.getAsJsonArray('ve…`.
+if Z.2566 (mc.equals(str(e.getAsJsonObject(), 'id')))
+  Zeile 2566: prüft `(mc.equals(str(e.getAsJsonObject(), 'id')))`.
+FabricLauncherPlugin.str
+  `str` in `FabricLauncherPlugin.java`.
+if Z.2567 (url == null)
+  Zeile 2567: prüft `(url == null)`.
+throw Z.2567 throw new IOException('Version ' + mc + ' not in …
+  Zeile 2567: Abbruch `throw new IOException('Version ' + mc + ' not in …`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2561.Z2563`, Quellreihenfolge.

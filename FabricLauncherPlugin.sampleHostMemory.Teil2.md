@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RuntimeLimits.memory
+  Betrifft den Speicher `memory`. Ruft `percent`.
+FabricLauncherPlugin.warnOnce
+  Warnt `warnOnce`.
+if Z.1036 (use )= 0)
+  Zeile 1036: prüft `(use )= 0)`.
+FabricLauncherPlugin.warnHeapBudget
+  Warnt `warnHeapBudget`. Ruft `parseMemoryBytes`, `notifyNtfy`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.sampleHostMemory`, Quellreihenfolge.

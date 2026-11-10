@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.73 Path temporary = Files.createTempFile(directory, …
+  Zeile 73: Dateioperation. `Path temporary = Files.createTempFile(directory, …`
+BackupSecrets.saveFtp.Teil2.Z74
+  Fortsetzung des Ablaufs ab Zeile 74.
+```
+
 - Fortsetzung von `BackupSecrets.saveFtp`, Quellreihenfolge.

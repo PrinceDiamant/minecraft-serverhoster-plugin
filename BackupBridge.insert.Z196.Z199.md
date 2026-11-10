@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.199
+  Zeile 199: Versuch. Der Fehlerpfad geht in catch.
+```
+
 - Fortsetzung von `BackupBridge.insert.Z196`, Quellreihenfolge.

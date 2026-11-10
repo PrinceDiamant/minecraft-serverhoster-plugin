@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.40 (!truncated)
+  Zeile 40: prüft `(!truncated)`.
+Schritt Z.40 data = Files.readString(file, StandardCharsets.UT…
+  Zeile 40: liest Text aus einer Datei. `data = Files.readString(file, StandardCharsets.UT…`
+LogQuery.query.Teil1.Z31.Z40.Z42
+  Fortsetzung des Ablaufs ab Zeile 42.
+```
+
 - Fortsetzung von `LogQuery.query.Teil1.Z31`, Quellreihenfolge.

@@ -15,4 +15,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+index.doLogin.Z86
+  Fortsetzung des Ablaufs ab Zeile 86.
+```
+
 - `doLogin` in `src/main/resources/web/index.html`

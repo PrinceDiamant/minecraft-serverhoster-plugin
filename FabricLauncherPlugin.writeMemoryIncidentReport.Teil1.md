@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.1206 Runtime runtime = Runtime.getRuntime();
+  Zeile 1206: fragt die JVM-Laufzeit. `Runtime runtime = Runtime.getRuntime();`
+```
+
 - Fortsetzung von `FabricLauncherPlugin.writeMemoryIncidentReport`, Quellreihenfolge.

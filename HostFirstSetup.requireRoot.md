@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.197 (root == null // Files.isSymbolicLink(root) // !F…
+  Zeile 197: prüft `(root == null // Files.isSymbolicLink(root) // !F…`.
+throw Z.198 throw new SecurityException('server root must be …
+  Zeile 198: Abbruch `throw new SecurityException('server root must be …`.
+if Z.200 (real.getNameCount() ( 2 // 'LiteStorage'.equalsI…
+  Zeile 200: prüft `(real.getNameCount() ( 2 // 'LiteStorage'.equalsI…`.
+throw Z.202 throw new SecurityException('refusing to prepare …
+  Zeile 202: Abbruch `throw new SecurityException('refusing to prepare …`.
+```
+
 - `requireRoot` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

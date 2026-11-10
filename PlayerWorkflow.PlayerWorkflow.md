@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PlayerWorkflow.PlayerWorkflow.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+PlayerWorkflow.PlayerWorkflow.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+PlayerWorkflow.PlayerWorkflow.onPageChange
+  Reagiert `onPageChange`. Ruft `refresh`.
+PlayerWorkflow.PlayerWorkflow.onVisibilityChange
+  Reagiert `onVisibilityChange`. Ruft `refresh`.
+PlayerWorkflow.PlayerWorkflow.runPlayerAction
+  Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
+```
+
 - `PlayerWorkflow` in `ui/src/components/PlayerWorkflow.tsx`

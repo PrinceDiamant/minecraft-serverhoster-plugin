@@ -29,4 +29,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.36 !options.paths.length // options.paths.some((path…
+  Zeile 36: prüft `!options.paths.length // options.paths.some((path…`.
+throw Z.37 throw new Error('Bitte mindestens einen Backup-Pf…
+  Zeile 37: Abbruch `throw new Error('Bitte mindestens einen Backup-Pf…`.
+if Z.38 !Number.isInteger(options.keep) // options.keep (…
+  Zeile 38: prüft `!Number.isInteger(options.keep) // options.keep (…`.
+throw Z.39 throw new Error('Die Anzahl der Backups muss zwis…
+  Zeile 39: Abbruch `throw new Error('Die Anzahl der Backups muss zwis…`.
+BackupSettings.saveBackupSettings.Z40
+  Fortsetzung des Ablaufs ab Zeile 40.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+```
+
 - `saveBackupSettings` in `ui/src/components/BackupSettings.tsx`

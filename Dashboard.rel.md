@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.guard
+  Prüft den Zugriff `guard`. Ruft `open`, `workDir`.
+PathGuard.relativize
+  `relativize` in `PathGuard.java`.
+return Z.816 return guard(sid).relativize(p);
+  Zeile 816: Rückgabe `return guard(sid).relativize(p);`.
+```
+
 - `rel` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

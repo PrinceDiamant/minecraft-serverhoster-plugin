@@ -28,4 +28,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.30 (state.shuttingDown())
+  Zeile 30: prüft `(state.shuttingDown())`.
+return Z.30 return Action.NONE;
+  Zeile 30: Rückgabe `return Action.NONE;`.
+if Z.31 (state.phase() == Phase.PREPARING // (state.launc…
+  Zeile 31: prüft `(state.phase() == Phase.PREPARING // (state.launc…`.
+return Z.32 return Action.NONE;
+  Zeile 32: Rückgabe `return Action.NONE;`.
+SupervisorHealth.assess.Z33
+  Fortsetzung des Ablaufs ab Zeile 33.
+if Z.43 (state.phase() == Phase.STOPPING // state.stopReq…
+  Zeile 43: prüft `(state.phase() == Phase.STOPPING // state.stopReq…`.
+return Z.44 return Action.NONE;
+  Zeile 44: Rückgabe `return Action.NONE;`.
+return Z.45 return Action.SCHEDULE_RESTART;
+  Zeile 45: Rückgabe `return Action.SCHEDULE_RESTART;`.
+```
+
 - `assess` in `src/main/java/de/aichele/childlauncher/SupervisorHealth.java`

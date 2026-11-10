@@ -26,4 +26,25 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.2302
+  Zeile 2302: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.writeHostMinimizeState
+  Schreibt `writeHostMinimizeState`. Ruft `hostMinimizeStateFile`, `stateText`.
+FabricLauncherPlugin.heapPrevious
+  Betrifft den Heap `heapPrevious`.
+catch Z.2304 (IOException e)
+  Zeile 2304: fängt (IOException e).
+try Z.2305
+  Zeile 2305: Versuch. Der Fehlerpfad geht in catch.
+HostMinimize.restore
+  Stellt wieder her `restore`. Ruft `assertEditable`.
+FabricLauncherPlugin.getWorldRoot
+  Liefert `getWorldRoot`.
+catch Z.2307 (IOException restoreError)
+  Zeile 2307: fängt (IOException restoreError).
+throw Z.2310 throw e;
+  Zeile 2310: Abbruch `throw e;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeApply.Teil2`, Quellreihenfolge.

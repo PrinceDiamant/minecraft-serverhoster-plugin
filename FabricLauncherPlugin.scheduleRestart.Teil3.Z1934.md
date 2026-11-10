@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+try Z.1934
+  Zeile 1934: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.scheduleRestart.Teil3.Z1934.Z1935
+  Fortsetzung des Ablaufs ab Zeile 1935.
+catch Z.1959 (RejectedExecutionException e)
+  Zeile 1959: fängt (RejectedExecutionException e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.scheduleRestart.Teil3`, Quellreihenfolge.

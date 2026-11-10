@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.recoverPendingSetupDirectories.Z837
+  Fortsetzung des Ablaufs ab Zeile 837.
+```
+
 - `recoverPendingSetupDirectories` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.104 return digits.isEmpty() ? -1 : Long.parseLong(dig…
+  Zeile 104: Rückgabe `return digits.isEmpty() ? -1 : Long.parseLong(dig…`.
+```
+
 - `kb` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

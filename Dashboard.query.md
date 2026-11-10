@@ -21,4 +21,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.988 (raw == null)
+  Zeile 988: prüft `(raw == null)`.
+return Z.988 return m;
+  Zeile 988: Rückgabe `return m;`.
+for Z.989 (String kv : raw.split('&'))
+  Zeile 989: Schleife `(String kv : raw.split('&'))`.
+if Z.991 (i ) 0)
+  Zeile 991: prüft `(i ) 0)`.
+return Z.993 return m;
+  Zeile 993: Rückgabe `return m;`.
+```
+
 - `query` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

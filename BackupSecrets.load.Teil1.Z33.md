@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.33 (!Files.exists(path))
+  Zeile 33: prüft `(!Files.exists(path))`.
+Schritt Z.34 Files.createFile(path);
+  Zeile 34: Dateioperation. `Files.createFile(path);`
+BackupSecrets.restrict
+  `restrict` in `BackupSecrets.java`.
+```
+
 - Fortsetzung von `BackupSecrets.load.Teil1`, Quellreihenfolge.

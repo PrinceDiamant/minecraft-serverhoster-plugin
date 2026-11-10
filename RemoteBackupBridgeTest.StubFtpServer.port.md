@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.87 return control.getLocalPort();
+  Zeile 87: Rückgabe `return control.getLocalPort();`.
+```
+
 - `port` in `src/test/java/de/aichele/childlauncher/RemoteBackupBridgeTest.java`
 - Auslöser: Test

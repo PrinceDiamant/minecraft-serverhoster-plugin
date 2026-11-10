@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2608 return v;
+  Zeile 2608: Rückgabe `return v;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.parseValue`, Quellreihenfolge.

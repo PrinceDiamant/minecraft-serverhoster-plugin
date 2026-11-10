@@ -25,4 +25,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.102 !path
+  Zeile 102: prüft `!path`.
+throw Z.102 throw new Error('Bitte zuerst einen Serverordner …
+  Zeile 102: Abbruch `throw new Error('Bitte zuerst einen Serverordner …`.
+if Z.103 action !== 'import' && !versionIsValid(type, mcVe…
+  Zeile 103: prüft `action !== 'import' && !versionIsValid(type, mcVe…`.
+VersionSelect.versionIsValid
+  `versionIsValid` in `VersionSelect.tsx`.
+throw Z.104 throw new Error('Bitte eine verfügbare Minecraft-…
+  Zeile 104: Abbruch `throw new Error('Bitte eine verfügbare Minecraft-…`.
+SetupWorkflow.SetupWorkflow.submit.Z100.Teil1.Z106
+  Fortsetzung des Ablaufs ab Zeile 106.
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+```
+
 - Fortsetzung von `SetupWorkflow.SetupWorkflow.submit.Z100`, Quellreihenfolge.

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2381 return world.getName();
+  Zeile 2381: Rückgabe `return world.getName();`.
+```
+
 - `name` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

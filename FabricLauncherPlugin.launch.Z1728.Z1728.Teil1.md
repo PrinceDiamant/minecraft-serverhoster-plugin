@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1730 (slot.running())
+  Zeile 1730: prüft `(slot.running())`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+throw Z.1730 throw new IllegalStateException('already running'…
+  Zeile 1730: Abbruch `throw new IllegalStateException('already running'…`.
+ServerProfile.directory
+  `directory` in `ServerProfile.java`.
+Schritt Z.1735 Files.createDirectories(wd);
+  Zeile 1735: Dateioperation. `Files.createDirectories(wd);`
+FabricLauncherPlugin.copyPlayerFiles
+  Kopiert `copyPlayerFiles`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.launch.Z1728.Z1728`, Quellreihenfolge.

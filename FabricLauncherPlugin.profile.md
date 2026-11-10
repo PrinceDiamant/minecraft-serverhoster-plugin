@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.293 (ServerProfile p : profiles)
+  Zeile 293: Schleife `(ServerProfile p : profiles)`.
+if Z.293 (p.id.equals(key))
+  Zeile 293: prüft `(p.id.equals(key))`.
+return Z.293 return p;
+  Zeile 293: Rückgabe `return p;`.
+throw Z.294 throw new IllegalArgumentException('unknown serve…
+  Zeile 294: Abbruch `throw new IllegalArgumentException('unknown serve…`.
+```
+
 - `profile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.164 return value == null ? fallback : String.valueOf(…
+  Zeile 164: Rückgabe `return value == null ? fallback : String.valueOf(…`.
+```
+
 - `string` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

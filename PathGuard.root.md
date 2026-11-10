@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.19 return root;
+  Zeile 19: Rückgabe `return root;`.
+```
+
 - `root` in `src/main/java/de/aichele/childlauncher/PathGuard.java`

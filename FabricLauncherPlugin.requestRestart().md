@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.requestRestart(String)
+  Fordert an `requestRestart`. Ruft `slot`, `stopBlocking`, `reloadProfiles`.
+```
+
 - `requestRestart` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, sicher. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:320–320 kein Aufruf, kein Treffer in plugin.yml/UI/Strings

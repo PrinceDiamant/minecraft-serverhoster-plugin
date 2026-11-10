@@ -27,4 +27,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.181 (String marker : List.of('server.proper…
+  Zeile 181: Schleife `(String marker : List.of('server.proper…`.
+if Z.182 (Files.isRegularFile(path.resolve(marker), LinkOp…
+  Zeile 182: prüft `(Files.isRegularFile(path.resolve(marker), LinkOp…`.
+return Z.182 return true;
+  Zeile 182: Rückgabe `return true;`.
+try Z.184
+  Zeile 184: Versuch. Der Fehlerpfad geht in catch.
+for Z.185 (Path entry : entries)
+  Zeile 185: Schleife `(Path entry : entries)`.
+if Z.186 (!Files.isSymbolicLink(entry) && Files.isRegularF…
+  Zeile 186: prüft `(!Files.isSymbolicLink(entry) && Files.isRegularF…`.
+return Z.186 return true;
+  Zeile 186: Rückgabe `return true;`.
+return Z.187 return false;
+  Zeile 187: Rückgabe `return false;`.
+```
+
 - `hasServerFiles` in `src/main/java/de/aichele/childlauncher/SetupDiscovery.java`

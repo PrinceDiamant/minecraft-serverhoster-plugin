@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.tickQueryHidesOnlyTheReply.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.tickQueryHidesOnlyTheReply.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `tickQueryHidesOnlyTheReply` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

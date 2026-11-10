@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.107 return s.length() ) 500 ? s.substring(0, 500) : s;
+  Zeile 107: Rückgabe `return s.length() ) 500 ? s.substring(0, 500) : s;`.
+```
+
 - `abbreviate` in `src/main/java/de/aichele/childlauncher/ProcessProbe.java`

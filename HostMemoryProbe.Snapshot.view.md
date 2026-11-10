@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.27 return out;
+  Zeile 27: Rückgabe `return out;`.
+```
+
 - `view` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

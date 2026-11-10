@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.43 return v == null ? fallback : String.valueOf(v);
+  Zeile 43: Rückgabe `return v == null ? fallback : String.valueOf(v);`.
+```
+
 - `str` in `src/main/java/de/aichele/childlauncher/TaskDef.java`

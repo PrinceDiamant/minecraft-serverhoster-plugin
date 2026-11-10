@@ -17,4 +17,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildProcessRecord.required
+  Liest verpflichtend `required`.
+return Z.136 return new Loaded(new Identity(pid, sta…
+  Zeile 136: Rückgabe `return new Loaded(new Identity(pid, sta…`.
+```
+
 - Fortsetzung von `ChildProcessRecord.read.Z118`, Quellreihenfolge.

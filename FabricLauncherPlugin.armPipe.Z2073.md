@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+sync Z.2073
+  Zeile 2073: synchronisierter Block.
+FabricLauncherPlugin.armPipe.Z2073.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+FabricLauncherPlugin.armPipe.Z2073.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.armPipe`, Quellreihenfolge.

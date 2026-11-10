@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.ntfySettings
+  `ntfySettings` in `FabricLauncherPlugin.java`.
+if Z.211 (!settings.enabled() // settings.topic() == null …
+  Zeile 211: prüft `(!settings.enabled() // settings.topic() == null …`.
+return Z.211 return;
+  Zeile 211: Rückgabe `return;`.
+FabricLauncherPlugin.notifyNtfy.Z212
+  Fortsetzung des Ablaufs ab Zeile 212.
+```
+
 - `notifyNtfy` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.101 return value.chars().anyMatch(Character::isISOCon…
+  Zeile 101: Rückgabe `return value.chars().anyMatch(Character::isISOCon…`.
+```
+
 - `containsControlCharacter` in `src/main/java/de/aichele/childlauncher/ServerHosterSettings.java`

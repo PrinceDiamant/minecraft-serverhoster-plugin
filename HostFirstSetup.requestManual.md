@@ -23,4 +23,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.50 (!MANUAL_CONFIRM.equals(confirm))
+  Zeile 50: prüft `(!MANUAL_CONFIRM.equals(confirm))`.
+throw Z.51 throw new IllegalArgumentException('Die Bestätigu…
+  Zeile 51: Abbruch `throw new IllegalArgumentException('Die Bestätigu…`.
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+if Z.53 (!'manual-required'.equals(state.get('status')))
+  Zeile 53: prüft `(!'manual-required'.equals(state.get('status')))`.
+throw Z.54 throw new IllegalStateException('Das Host-Grundse…
+  Zeile 54: Abbruch `throw new IllegalStateException('Das Host-Grundse…`.
+HostFirstSetup.writeMarker(Path,String,String)
+  Schreibt `writeMarker`. Ruft `writeMarker`.
+```
+
 - `requestManual` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`

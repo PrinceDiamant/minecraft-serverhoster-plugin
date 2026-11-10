@@ -22,4 +22,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2455 (a.length ( 2)
+  Zeile 2455: prüft `(a.length ( 2)`.
+FabricLauncherPlugin.crashFiles
+  Betrifft Crash-Reports `crashFiles`. Ruft `list`, `profile`, `directory`.
+if Z.2457 (files.isEmpty())
+  Zeile 2457: prüft `(files.isEmpty())`.
+for Z.2458 (String f : files)
+  Zeile 2458: Schleife `(String f : files)`.
+FabricLauncherPlugin.crashText
+  Betrifft Crash-Reports `crashText`. Ruft `read`, `profile`, `directory`.
+for Z.2463 (int i = 0; i ( n; i++)
+  Zeile 2463: Schleife `(int i = 0; i ( n; i++)`.
+if Z.2464 (lines.length ) n)
+  Zeile 2464: prüft `(lines.length ) n)`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2453.Z2454`, Quellreihenfolge.

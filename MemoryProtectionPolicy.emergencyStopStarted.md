@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.56 return emergencyStopStarted;
+  Zeile 56: Rückgabe `return emergencyStopStarted;`.
+```
+
 - `emergencyStopStarted` in `src/main/java/de/aichele/childlauncher/MemoryProtectionPolicy.java`

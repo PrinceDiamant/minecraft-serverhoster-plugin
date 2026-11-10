@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.94 return s.chars().allMatch(Character::isDigit) && …
+  Zeile 94: Rückgabe `return s.chars().allMatch(Character::isDigit) && …`.
+```
+
 - `num` in `src/main/java/de/aichele/childlauncher/VersionCatalog.java`

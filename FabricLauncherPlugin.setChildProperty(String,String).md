@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.setChildProperty(String,String,String)
+  Setzt `setChildProperty`. Ruft `profile`, `directory`, `updateProperties`.
+```
+
 - `setChildProperty` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

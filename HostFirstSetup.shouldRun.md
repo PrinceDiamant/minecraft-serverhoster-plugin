@@ -32,5 +32,26 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.32 (Files.isSymbolicLink(marker))
+  Zeile 32: prüft `(Files.isSymbolicLink(marker))`.
+throw Z.32 throw new SecurityException('host setup marker mu…
+  Zeile 32: Abbruch `throw new SecurityException('host setup marker mu…`.
+HostFirstSetup.shouldRun.Z33
+  Fortsetzung des Ablaufs ab Zeile 33.
+if Z.39 (Files.exists(marker, LinkOption.NOFOLLOW_LINKS))
+  Zeile 39: prüft `(Files.exists(marker, LinkOption.NOFOLLOW_LINKS))`.
+throw Z.40 throw new IOException('host setup marker is not a…
+  Zeile 40: Abbruch `throw new IOException('host setup marker is not a…`.
+if Z.41 (freshInstall)
+  Zeile 41: prüft `(freshInstall)`.
+HostFirstSetup.writeMarker(Path,String,String)
+  Schreibt `writeMarker`. Ruft `writeMarker`.
+return Z.43 return true;
+  Zeile 43: Rückgabe `return true;`.
+return Z.46 return false;
+  Zeile 46: Rückgabe `return false;`.
+```
+
 - `shouldRun` in `src/main/java/de/aichele/childlauncher/HostFirstSetup.java`
 - Befund: Altlast, wahrscheinlich. HostFirstSetup.java:35 akzeptiert pending; Schreibstelle nur HostMinimizeTest.java:216

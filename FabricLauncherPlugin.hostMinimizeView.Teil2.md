@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.readState
+  Liest `readState`. Ruft `readState`.
+FabricLauncherPlugin.hostFirstSetupMarker
+  Betrifft den Host `hostFirstSetupMarker`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostMinimizeView`, Quellreihenfolge.

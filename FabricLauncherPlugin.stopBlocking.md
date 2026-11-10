@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.invalidateRestarts
+  Verwirft `invalidateRestarts`.
+FabricLauncherPlugin.stopBlocking.Z1985
+  Fortsetzung des Ablaufs ab Zeile 1985.
+```
+
 - `stopBlocking` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

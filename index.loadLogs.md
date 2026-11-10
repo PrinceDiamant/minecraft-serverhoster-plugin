@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+index.loadLogs.Z150
+  Fortsetzung des Ablaufs ab Zeile 150.
+```
+
 - `loadLogs` in `src/main/resources/web/index.html`

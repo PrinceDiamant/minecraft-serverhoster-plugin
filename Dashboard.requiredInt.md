@@ -18,4 +18,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.requiredLong
+  Liest verpflichtend `requiredLong`.
+if Z.798 (value ( Integer.MIN_VALUE // value ) Integer.MAX…
+  Zeile 798: prüft `(value ( Integer.MIN_VALUE // value ) Integer.MAX…`.
+throw Z.799 throw new IllegalArgumentException(key + ' liegt …
+  Zeile 799: Abbruch `throw new IllegalArgumentException(key + ' liegt …`.
+return Z.800 return (int) value;
+  Zeile 800: Rückgabe `return (int) value;`.
+```
+
 - `requiredInt` in `src/main/java/de/aichele/childlauncher/Dashboard.java`

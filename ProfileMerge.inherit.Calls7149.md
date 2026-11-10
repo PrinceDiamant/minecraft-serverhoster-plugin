@@ -19,4 +19,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ServerProfile.ServerProfile
+  `ServerProfile` in `ServerProfile.java`.
+ProfileMerge.nvl
+  `nvl` in `ServerProfile.java`.
+```
+
 - Fortsetzung von `ProfileMerge.inherit`, Quellreihenfolge.

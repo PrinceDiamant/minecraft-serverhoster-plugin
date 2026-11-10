@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.68 (fields(1).isEmpty())
+  Zeile 68: prüft `(fields(1).isEmpty())`.
+HostMemoryProbe.resolve
+  Löst auf `resolve`.
+HostMemoryProbe.cgroup.Z64.Z65.Z68.Z70
+  Fortsetzung des Ablaufs ab Zeile 70.
+HostMemoryProbe.cgroup.Z64.Z65.Z68.Z81
+  Fortsetzung des Ablaufs ab Zeile 81.
+```
+
 - Fortsetzung von `HostMemoryProbe.cgroup.Z64.Z65`, Quellreihenfolge.

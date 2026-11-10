@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+SpigotBuilder.assertRev
+  Prüft `assertRev`.
+return Z.23 return List.of(javaBin, '-jar', buildTools.toStri…
+  Zeile 23: Rückgabe `return List.of(javaBin, '-jar', buildTools.toStri…`.
+```
+
 - `command` in `src/main/java/de/aichele/childlauncher/SpigotBuilder.java`

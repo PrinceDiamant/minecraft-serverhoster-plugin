@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.noteTask
+  Merkt `noteTask`.
+FabricLauncherPlugin.runSchedule.Z1602
+  Fortsetzung des Ablaufs ab Zeile 1602.
+FabricLauncherPlugin.runSchedule.Aufrufe
+  Eigene Aufrufe, die der Parser nicht in den gezeichneten Ablauf gesetzt hat.
+```
+
 - `runSchedule` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - ungeprüft: Ablaufparser oder nachgetragene Aufrufe, siehe [[bericht]].

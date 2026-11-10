@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.85 assertFalse(Files.exists(file));
+  Zeile 85: Dateioperation. `assertFalse(Files.exists(file));`
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.reapKillsOnlyAfterGracefulStopFails`, Quellreihenfolge.

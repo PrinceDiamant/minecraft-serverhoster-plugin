@@ -21,5 +21,20 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby.Teil3
+  Abschnitt 3 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby.Teil4
+  Abschnitt 4 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby.Teil5
+  Abschnitt 5 dieses Ablaufs, in Quellreihenfolge.
+HostMinimizeTest.firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby.Teil6
+  Abschnitt 6 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `firstSetupClearsOnlyOuterWorldsAndCreatesTheVoidLobby` in `src/test/java/de/aichele/childlauncher/HostMinimizeTest.java`
 - Auslöser: Test

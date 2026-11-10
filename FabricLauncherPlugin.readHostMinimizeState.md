@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.hostMinimizeStateFile
+  Betrifft den Host `hostMinimizeStateFile`.
+if Z.2185 (!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…
+  Zeile 2185: prüft `(!Files.isRegularFile(file, LinkOption.NOFOLLOW_L…`.
+return Z.2185 return Map.of();
+  Zeile 2185: Rückgabe `return Map.of();`.
+HostMinimize.readState
+  Liest `readState`.
+return Z.2186 return HostMinimize.readState(Files.rea…
+  Zeile 2186: Rückgabe `return HostMinimize.readState(Files.rea…`.
+```
+
 - `readHostMinimizeState` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

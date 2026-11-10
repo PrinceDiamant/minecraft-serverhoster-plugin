@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+JarProbe.view
+  Liefert die Sicht `view`.
+JarProbe.inspect
+  `inspect` in `JarProbe.java`. Ruft `jarPath`, `jarName`.
+FabricLauncherPlugin.profile
+  `profile` in `FabricLauncherPlugin.java`.
+return Z.854 return JarProbe.view(JarProbe.inspect(p…
+  Zeile 854: Rückgabe `return JarProbe.view(JarProbe.inspect(p…`.
+```
+
 - `jarView` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

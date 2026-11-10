@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.focusSlot
+  Liefert oder setzt den Fokus `focusSlot`. Ruft `slot`.
+ChildSlot.msptHistory
+  Liefert die Tickzeiten `msptHistory`.
+return Z.866 return focusSlot().msptHistory();
+  Zeile 866: Rückgabe `return focusSlot().msptHistory();`.
+```
+
 - `msptHistory` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, prüfen. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:866–866 kein Produktionsaufruf im Aufrufgraph; Name kommt in UI, Config oder anderem Text vor

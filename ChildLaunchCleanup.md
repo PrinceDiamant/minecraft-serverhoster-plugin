@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+ChildLaunchCleanup.ChildLaunchCleanup
+  Betrifft den Child `ChildLaunchCleanup`.
+ChildLaunchCleanup.abandon
+  Bricht den fehlgeschlagenen Start ab `abandon`.
+```
+
 

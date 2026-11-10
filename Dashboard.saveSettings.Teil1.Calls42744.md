@@ -15,4 +15,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.requiredString
+  Liest verpflichtend `requiredString`.
+Dashboard.requiredInt
+  Liest verpflichtend `requiredInt`. Ruft `requiredLong`.
+```
+
 - Fortsetzung von `Dashboard.saveSettings.Teil1`, Quellreihenfolge.

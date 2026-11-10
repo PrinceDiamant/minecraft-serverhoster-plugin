@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.2152 return getDataFolder().toPath().resolve('host-min…
+  Zeile 2152: Rückgabe `return getDataFolder().toPath().resolve('host-min…`.
+```
+
 - `hostMinimizeStateFile` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

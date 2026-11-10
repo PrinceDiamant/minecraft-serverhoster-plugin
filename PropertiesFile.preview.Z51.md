@@ -11,4 +11,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.51 (var entry : effective.entrySet())
+  Zeile 51: Schleife `(var entry : effective.entrySet())`.
+if Z.55 (!isForced && present)
+  Zeile 55: prüft `(!isForced && present)`.
+```
+
 - Fortsetzung von `PropertiesFile.preview`, Quellreihenfolge.

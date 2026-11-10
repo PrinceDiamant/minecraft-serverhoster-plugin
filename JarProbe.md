@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+JarProbe.JarProbe
+  Betrifft das Jar `JarProbe`.
+JarProbe.inspect
+  `inspect` in `JarProbe.java`. Ruft `jarPath`, `jarName`.
+JarProbe.view
+  Liefert die Sicht `view`.
+JarProbe.text
+  Antwortet mit Text `text`.
+```
+
 

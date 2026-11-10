@@ -17,4 +17,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.2174 String backup = getConfig().getString('backup.dir…
+  Zeile 2174: liest die Config. `String backup = getConfig().getString('backup.dir…`
+if Z.2175 (backup != null && !backup.isBlank())
+  Zeile 2175: prüft `(backup != null && !backup.isBlank())`.
+if Z.2177 (!backupPath.isAbsolute())
+  Zeile 2177: prüft `(!backupPath.isAbsolute())`.
+return Z.2180 return paths;
+  Zeile 2180: Rückgabe `return paths;`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.hostProtectedPaths`, Quellreihenfolge.

@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.runTask
+  Führt aus `runTask`. Ruft `executeTask`, `noteTask`, `notifyNtfy`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.fireDueTasks.Z1499`, Quellreihenfolge.

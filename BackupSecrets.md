@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupSecrets.BackupSecrets
+  Sichert `BackupSecrets`.
+BackupSecrets.readExisting
+  Liest `readExisting`. Ruft `load`.
+BackupSecrets.load
+  Lädt `load`. Ruft `restrict`.
+BackupSecrets.saveFtp
+  Speichert `saveFtp`. Ruft `load`, `restrict`.
+BackupSecrets.restrict
+  `restrict` in `BackupSecrets.java`.
+```
+
 

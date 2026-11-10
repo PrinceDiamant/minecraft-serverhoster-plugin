@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.2439 exec.submit(() -) ( try ( msg(s, String.valueOf(h…
+  Zeile 2439: legt die Arbeit auf den Pool ServerhosterPlugin. `exec.submit(() -) ( try ( msg(s, String.valueOf(h…`
+try Z.2439
+  Zeile 2439: Versuch. Der Fehlerpfad geht in catch.
+FabricLauncherPlugin.msg
+  Sendet eine Chat-Zeile `msg`.
+FabricLauncherPlugin.hostMinimizeApply
+  Betrifft den Host `hostMinimizeApply`. Ruft `focusSlot`, `running`, `stopBlocking`.
+catch Z.2439 (Exception e)
+  Zeile 2439: fängt (Exception e).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onCommand.Z2401.Case2433.Z2435.Case2437`, Quellreihenfolge.

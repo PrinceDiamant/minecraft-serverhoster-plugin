@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.trackPlayers
+  Führt mit `trackPlayers`.
+```
+
 - Fortsetzung von `CoreAdminTest.tracksMinecraftPlayerEventsAndListResponses`, Quellreihenfolge.

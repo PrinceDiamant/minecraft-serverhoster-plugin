@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+RemoteBackupBridge.warnPlainFtp
+  Warnt `warnPlainFtp`.
+RemoteBackupBridge.login
+  Meldet an `login`. Ruft `replyError`.
+return Z.200 return new Session(probe, false);
+  Zeile 200: Rückgabe `return new Session(probe, false);`.
+```
+
 - Fortsetzung von `RemoteBackupBridge.connect.Teil3.Z188`, Quellreihenfolge.

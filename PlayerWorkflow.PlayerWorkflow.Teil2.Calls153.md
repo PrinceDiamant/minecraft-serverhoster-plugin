@@ -19,4 +19,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PlayerWorkflow.PlayerWorkflow.runPlayerAction
+  Führt aus `runPlayerAction`. Ruft `sendCommand`, `refresh`.
+PlayerWorkflow.sendCommand
+  Sendet `sendCommand`. Ruft `dashboardRequest`, `jsonBody`.
+```
+
 - Fortsetzung von `PlayerWorkflow.PlayerWorkflow.Teil2`, Quellreihenfolge.

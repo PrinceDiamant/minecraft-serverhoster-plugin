@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.tls
+  `tls` in `Dashboard.java`.
+return Z.864 return dashboard != null && dashboard.t…
+  Zeile 864: Rückgabe `return dashboard != null && dashboard.t…`.
+```
+
 - `dashboardTls` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

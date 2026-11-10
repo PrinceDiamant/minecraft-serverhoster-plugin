@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.203 FileConfiguration c = getConfig();
+  Zeile 203: liest die Config. `FileConfiguration c = getConfig();`
+return Z.204 return new NtfyNotifier.Settings(c.getBoolean('no…
+  Zeile 204: Rückgabe `return new NtfyNotifier.Settings(c.getBoolean('no…`.
+```
+
 - `ntfySettings` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

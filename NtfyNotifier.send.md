@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+NtfyNotifier.send.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+NtfyNotifier.send.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `send` in `src/main/java/de/aichele/childlauncher/NtfyNotifier.java`

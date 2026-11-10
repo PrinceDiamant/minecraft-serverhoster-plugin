@@ -34,4 +34,29 @@ flowchart TD
   style n11 fill:#f88,stroke:#900
 ```
 
+```knoten
+index.$
+  `$` in `index.html`.
+index.toast
+  Zeigt eine Meldung `toast`. Ruft `$`.
+index.scoped
+  Gibt `path` unverändert zurück. Befund: Altlast (sicher).
+index.api
+  Sendet einen Dashboard-Request `api`. Ruft `scoped`, `showLogin`, `toast`.
+index.post
+  Sendet POST `post`. Ruft `api`.
+index.esc
+  Maskiert HTML `esc`.
+index.showLogin
+  Zeigt `showLogin`. Ruft `$`.
+index.doLogin
+  Führt aus `doLogin`. Ruft `$`, `start`.
+index.logout
+  Meldet ab `logout`. Ruft `post`, `showLogin`.
+index.tab
+  Wechselt den Tab `tab`. Ruft `$`, `loadTxt`, `loadPropertiesPreview`.
+index.start
+  Browser-Timer 3000 ms für `status`. Befund: doppelte Implementierung (sicher).
+```
+
 

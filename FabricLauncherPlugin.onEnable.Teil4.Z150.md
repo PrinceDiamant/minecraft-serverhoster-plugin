@@ -19,4 +19,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.150 (every ) 0)
+  Zeile 150: prüft `(every ) 0)`.
+Schritt Z.150 sched.scheduleAtFixedRate(() -) ( for (ChildSlot …
+  Zeile 150: startet einen festen Timer. `sched.scheduleAtFixedRate(() -) ( for (ChildSlot …`
+for Z.150 (ChildSlot s : slots.values())
+  Zeile 150: Schleife `(ChildSlot s : slots.values())`.
+if Z.150 (s.running())
+  Zeile 150: prüft `(s.running())`.
+ChildSlot.running
+  Sagt, ob der Prozess läuft `running`.
+FabricLauncherPlugin.send
+  Sendet `send`. Ruft `running`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable.Teil4`, Quellreihenfolge.

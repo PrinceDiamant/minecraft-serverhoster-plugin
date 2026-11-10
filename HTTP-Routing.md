@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.handle
+  Ein HTTP-Kontext `/`, verzweigt nach Methode und Pfad.
+Dashboard.isDashboardPage
+  Prüft `isDashboardPage`.
+Dashboard.serveIndex
+  Liefert `serveIndex`. Ruft `sendBytes`.
+Dashboard.serveWebAsset
+  Liefert `serveWebAsset`. Ruft `send`, `sendBytes`.
+Dashboard.serveThirdPartyNotices
+  Liefert `serveThirdPartyNotices`. Ruft `send`.
+```
+
 

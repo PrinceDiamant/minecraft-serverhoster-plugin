@@ -12,4 +12,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+GcDiagnostics.GcDiagnostics
+  `GcDiagnostics` in `GcDiagnostics.java`.
+GcDiagnostics.snapshot()
+  `snapshot` in `GcDiagnostics.java`. Ruft `snapshot`.
+GcDiagnostics.snapshot(List)
+  `snapshot` in `GcDiagnostics.java`.
+```
+
 

@@ -22,4 +22,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.parseJsonObject
+  Wertet aus `parseJsonObject`.
+Dashboard.readBodyText
+  Liest `readBodyText`.
+if Z.190 (!request.has('paths') // !request.get('paths').i…
+  Zeile 190: prüft `(!request.has('paths') // !request.get('paths').i…`.
+throw Z.191 throw new IllegalArgumentException('Backup-Pfade …
+  Zeile 191: Abbruch `throw new IllegalArgumentException('Backup-Pfade …`.
+for Z.193 (JsonElement element : request.getAsJso…
+  Zeile 193: Schleife `(JsonElement element : request.getAsJso…`.
+if Z.194 (!element.isJsonPrimitive() // !element.getAsJson…
+  Zeile 194: prüft `(!element.isJsonPrimitive() // !element.getAsJson…`.
+throw Z.195 throw new IllegalArgumentException('Backup-Pfade …
+  Zeile 195: Abbruch `throw new IllegalArgumentException('Backup-Pfade …`.
+```
+
 - Fortsetzung von `Dashboard.handle.Z103.Teil7.Z141.Case188`, Quellreihenfolge.

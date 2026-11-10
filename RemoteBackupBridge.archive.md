@@ -15,4 +15,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+PathGuard.open
+  Öffnet `open`. Ruft `PathGuard`.
+BackupBridge.safeId
+  Prüft die Pfadgrenze `safeId`.
+RemoteBackupBridge.archive.Z92
+  Fortsetzung des Ablaufs ab Zeile 92.
+```
+
 - `archive` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

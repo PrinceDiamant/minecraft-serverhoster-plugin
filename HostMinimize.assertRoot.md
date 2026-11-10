@@ -26,4 +26,21 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.254 (protectedPaths.isEmpty())
+  Zeile 254: prüft `(protectedPaths.isEmpty())`.
+throw Z.254 throw new SecurityException('protected paths are …
+  Zeile 254: Abbruch `throw new SecurityException('protected paths are …`.
+if Z.255 (!Files.isDirectory(root))
+  Zeile 255: prüft `(!Files.isDirectory(root))`.
+throw Z.255 throw new IOException('server root is not a direc…
+  Zeile 255: Abbruch `throw new IOException('server root is not a direc…`.
+if Z.256 (Files.isSymbolicLink(root))
+  Zeile 256: prüft `(Files.isSymbolicLink(root))`.
+throw Z.256 throw new SecurityException('server root must not…
+  Zeile 256: Abbruch `throw new SecurityException('server root must not…`.
+HostMinimize.assertRoot.Z257
+  Fortsetzung des Ablaufs ab Zeile 257.
+```
+
 - `assertRoot` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

@@ -23,4 +23,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+BackupBridge.BackupBridge
+  Sichert `BackupBridge`.
+BackupBridge.list
+  Listet `list`. Ruft `directory`, `safeId`, `named`.
+BackupBridge.file
+  Liefert die Datei `file`. Ruft `safeId`, `named`, `directory`.
+BackupBridge.delete
+  Löscht `delete`. Ruft `file`.
+BackupBridge.restore
+  Stellt wieder her `restore`. Ruft `file`, `restoreZip`.
+BackupBridge.restoreZip
+  Stellt wieder her `restoreZip`. Ruft `open`, `resolve`.
+BackupBridge.directory
+  `directory` in `BackupBridge.java`.
+BackupBridge.safeId
+  Prüft die Pfadgrenze `safeId`.
+```
+
 

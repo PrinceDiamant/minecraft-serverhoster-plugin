@@ -12,4 +12,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+NtfyNotifier
+  HTTP-Aufruf an ntfy.
+FabricLauncherPlugin.ntfySettings
+  `ntfySettings` in `FabricLauncherPlugin.java`.
+FabricLauncherPlugin.notifyNtfy
+  Meldet `notifyNtfy`. Ruft `ntfySettings`, `backupCredentials`, `send`.
+```
+
 

@@ -27,4 +27,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.143 (v instanceof Number n)
+  Zeile 143: prüft `(v instanceof Number n)`.
+return Z.143 return n.intValue();
+  Zeile 143: Rückgabe `return n.intValue();`.
+if Z.144 (v == null)
+  Zeile 144: prüft `(v == null)`.
+return Z.144 return fallback;
+  Zeile 144: Rückgabe `return fallback;`.
+try Z.145
+  Zeile 145: Versuch. Der Fehlerpfad geht in catch.
+return Z.145 return Integer.parseInt(String.valueOf(v).trim());
+  Zeile 145: Rückgabe `return Integer.parseInt(String.valueOf(v).trim());`.
+catch Z.145 (NumberFormatException e)
+  Zeile 145: fängt (NumberFormatException e).
+return Z.145 return fallback;
+  Zeile 145: Rückgabe `return fallback;`.
+```
+
 - `num` in `src/main/java/de/aichele/childlauncher/ServerProfile.java`

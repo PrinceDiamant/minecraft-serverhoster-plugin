@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.277 return address == null ? '' : address.trim();
+  Zeile 277: Rückgabe `return address == null ? '' : address.trim();`.
+```
+
 - `hostBindAddress` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

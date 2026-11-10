@@ -11,4 +11,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.refreshHostMinimize.Z2337
+  Fortsetzung des Ablaufs ab Zeile 2337.
+```
+
 - `refreshHostMinimize` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

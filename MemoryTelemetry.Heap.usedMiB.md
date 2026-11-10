@@ -13,4 +13,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+MemoryTelemetry.mib
+  `mib` in `MemoryTelemetry.java`.
+return Z.34 return mib(usedBytes);
+  Zeile 34: Rückgabe `return mib(usedBytes);`.
+```
+
 - `usedMiB` in `src/main/java/de/aichele/childlauncher/MemoryTelemetry.java`

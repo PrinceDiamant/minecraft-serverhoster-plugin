@@ -12,4 +12,11 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.2554 (pick == null)
+  Zeile 2554: prüft `(pick == null)`.
+Upstream.download(String,Path,String,String)
+  Liefert zum Herunterladen `download`. Ruft `checkHash`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549`, Quellreihenfolge.

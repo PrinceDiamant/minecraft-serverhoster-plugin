@@ -14,4 +14,13 @@ flowchart TD
   style n3 fill:#f88,stroke:#900
 ```
 
+```knoten
+BackupBridge.table
+  `table` in `BackupBridge.java`.
+BackupBridge.connect
+  Verbindet `connect`.
+BackupBridge.count
+  Zählt `count`. Ruft `connect`, `table`. Befund: toter Code (wahrscheinlich).
+```
+
 

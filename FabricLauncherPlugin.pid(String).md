@@ -15,5 +15,14 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.slot
+  `slot` in `FabricLauncherPlugin.java`. Ruft `profile`, `ChildSlot`.
+ChildSlot.pid
+  Liefert die Prozessnummer `pid`.
+return Z.307 return slot(id).pid();
+  Zeile 307: Rückgabe `return slot(id).pid();`.
+```
+
 - `pid` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
 - Befund: toter Code, prüfen. src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:307–307 kein Produktionsaufruf im Aufrufgraph; Name kommt in UI, Config oder anderem Text vor

@@ -22,4 +22,21 @@ flowchart TD
   style n5 fill:#f88,stroke:#900
 ```
 
+```knoten
+try Z.90
+  Zeile 90: Versuch. Der Fehlerpfad geht in catch.
+ChildProcessRecord.write
+  Schreibt `write`. Ruft `safe`.
+LifecycleRobustnessTest.identity
+  `identity` in `LifecycleRobustnessTest.java`. Nur Test.
+ChildProcessRecord.reap
+  Räumt übrige Prozesse ab `reap`. Ruft `read`, `ours`, `waitUntilDead`.
+ChildProcessRecord.liveInspector
+  `liveInspector` in `ChildProcessRecord.java`. Ruft `find`, `destroy`, `destroyForcibly`. Befund: toter Code (wahrscheinlich).
+Schritt Z.98 assertTrue(Files.exists(file));
+  Zeile 98: Dateioperation. `assertTrue(Files.exists(file));`
+finally Z.90
+  Läuft danach immer, auch nach einem Fehler.
+```
+
 - Fortsetzung von `LifecycleRobustnessTest.liveUnrelatedProcessIsNotKilledWhenTheRecordNamesIt`, Quellreihenfolge.

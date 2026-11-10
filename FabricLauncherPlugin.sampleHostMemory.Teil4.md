@@ -21,4 +21,19 @@ flowchart TD
   style n6 fill:#f88,stroke:#900
 ```
 
+```knoten
+if Z.1058 (decision == MemoryProtectionPolicy.Decision.RELE…
+  Zeile 1058: prüft `(decision == MemoryProtectionPolicy.Decision.RELE…`.
+FabricLauncherPlugin.clearMemoryRecoveryState
+  Leert `clearMemoryRecoveryState`. Ruft `memoryRecoveryFile`, `finishRecovery`.
+FabricLauncherPlugin.resumeConfiguredAutoStart
+  Setzt fort `resumeConfiguredAutoStart`. Ruft `notifyNtfy`, `startAsync`.
+return Z.1061 return;
+  Zeile 1061: Rückgabe `return;`.
+if Z.1063 (decision == MemoryProtectionPolicy.Decision.STOP…
+  Zeile 1063: prüft `(decision == MemoryProtectionPolicy.Decision.STOP…`.
+FabricLauncherPlugin.requestChildEmergencyStop
+  Stoppt den Child. Logtext sagt Emergency restart. Befund: Kommentar widerspricht Code (sicher).
+```
+
 - Fortsetzung von `FabricLauncherPlugin.sampleHostMemory`, Quellreihenfolge.

@@ -20,4 +20,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.141 (data == null // Files.isSymbolicLink(data) // !F…
+  Zeile 141: prüft `(data == null // Files.isSymbolicLink(data) // !F…`.
+throw Z.144 throw new SecurityException('host setup marker mu…
+  Zeile 144: Abbruch `throw new SecurityException('host setup marker mu…`.
+Schritt Z.146 Path realChild = Files.exists(child) ? child.toRe…
+  Zeile 146: Dateioperation. `Path realChild = Files.exists(child) ? child.toRe…`
+HostFirstSetup.worldDirectories
+  Betrifft die Welt `worldDirectories`. Ruft `safeWorldName`, `addIfDirectory`.
+HostFirstSetup.decodeWorldNames
+  Dekodiert `decodeWorldNames`. Ruft `safeWorldName`.
+HostFirstSetup.completeRestart(Path,Path,Path,Set,List).Teil3.Z149
+  Fortsetzung des Ablaufs ab Zeile 149.
+```
+
 - Fortsetzung von `HostFirstSetup.completeRestart(Path,Path,Path,Set,List)`, Quellreihenfolge.

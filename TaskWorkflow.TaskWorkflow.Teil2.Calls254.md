@@ -19,4 +19,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+fileEditor.installFileEditors.refresh
+  Lädt neu `refresh`. Ruft `editorFor`.
+TaskWorkflow.newDraft
+  `newDraft` in `TaskWorkflow.tsx`. Ruft `newId`.
+TaskWorkflow.describeSchedule
+  Beschreibt `describeSchedule`.
+TaskWorkflow.TaskWorkflow.toggleSchedule
+  Schaltet um `toggleSchedule`. Ruft `dashboardRequest`, `jsonBody`, `refresh`.
+TaskWorkflow.draftFrom
+  Baut einen Entwurf `draftFrom`.
+```
+
 - Fortsetzung von `TaskWorkflow.TaskWorkflow.Teil2`, Quellreihenfolge.

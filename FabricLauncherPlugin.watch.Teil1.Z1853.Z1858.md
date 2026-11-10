@@ -15,4 +15,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.1858 (!p.isAlive())
+  Zeile 1858: prüft `(!p.isAlive())`.
+try Z.1859
+  Zeile 1859: Versuch. Der Fehlerpfad geht in catch.
+catch Z.1862 (IllegalThreadStateException …
+  Zeile 1862: fängt (IllegalThreadStateException ….
+FabricLauncherPlugin.watch.Teil1.Z1853.Z1858.Z1863
+  Fortsetzung des Ablaufs ab Zeile 1863.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.watch.Teil1.Z1853`, Quellreihenfolge.

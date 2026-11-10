@@ -17,4 +17,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+hostApi.dashboardRequest
+  `dashboardRequest` in `hostApi.ts`.
+hostApi.jsonBody
+  Antwortet mit JSON `jsonBody`.
+hostApi.formatBytes
+  Formatiert `formatBytes`.
+fileEditor.modeForPath
+  `modeForPath` in `fileEditor.ts`.
+fileEditor.installFileEditors
+  Hängt ein `installFileEditors`. Ruft `set`.
+```
+
 

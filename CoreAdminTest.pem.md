@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.318 return '-----BEGIN ' + label + '-----/n' + encode…
+  Zeile 318: Rückgabe `return '-----BEGIN ' + label + '-----/n' + encode…`.
+```
+
 - `pem` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

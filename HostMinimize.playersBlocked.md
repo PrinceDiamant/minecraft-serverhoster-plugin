@@ -11,5 +11,10 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+return Z.103 return 'staged'.equals(status) // 'active'.equals…
+  Zeile 103: Rückgabe `return 'staged'.equals(status) // 'active'.equals…`.
+```
+
 - `playersBlocked` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`
 - Befund: toter Code, wahrscheinlich. src/main/java/de/aichele/childlauncher/HostMinimize.java:102–104 nur von Tests erreicht

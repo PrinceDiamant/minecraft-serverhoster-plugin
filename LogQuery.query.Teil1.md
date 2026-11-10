@@ -20,4 +20,17 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.23 (!Files.isRegularFile(file))
+  Zeile 23: prüft `(!Files.isRegularFile(file))`.
+throw Z.23 throw new NoSuchFileException(file.getFileName().…
+  Zeile 23: Abbruch `throw new NoSuchFileException(file.getFileName().…`.
+if Z.24 (limit (= 0)
+  Zeile 24: prüft `(limit (= 0)`.
+if Z.26 (maxBytes ( 4096)
+  Zeile 26: prüft `(maxBytes ( 4096)`.
+LogQuery.query.Teil1.Z31
+  Fortsetzung des Ablaufs ab Zeile 31.
+```
+
 - Fortsetzung von `LogQuery.query`, Quellreihenfolge.

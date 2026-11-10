@@ -18,4 +18,23 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HostFirstSetup.readLevelNames
+  Liest `readLevelNames`. Ruft `safeWorldName`.
+HostFirstSetup.otherPluginJars
+  `otherPluginJars` in `HostFirstSetup.java`.
+HostFirstSetup.movePluginJar
+  Verschiebt `movePluginJar`.
+HostFirstSetup.deleteTree
+  Löscht `deleteTree`. Ruft `visitFile`, `postVisitDirectory`.
+HostFirstSetup.writeMarker(Path,String,String)
+  Schreibt `writeMarker`. Ruft `writeMarker`.
+HostFirstSetup.writeMarker(Path,String,String,int)
+  Schreibt `writeMarker`. Ruft `writeMarker`.
+HostFirstSetup.writeMarker(Path,String,String,int,String)
+  Schreibt `writeMarker`.
+HostFirstSetup.parseCount
+  Wertet aus `parseCount`.
+```
+
 

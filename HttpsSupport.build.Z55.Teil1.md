@@ -19,4 +19,15 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+HttpsSupport.fromKeystore
+  `fromKeystore` in `HttpsSupport.java`.
+HttpsSupport.ensureSelfSigned
+  Stellt sicher `ensureSelfSigned`. Ruft `resolve`, `password`, `normalizeSans`.
+HttpsSupport.password
+  `password` in `HttpsSupport.java`. Ruft `readOrCreatePass`.
+HttpsSupport.resolve
+  Löst auf `resolve`.
+```
+
 - Fortsetzung von `HttpsSupport.build.Z55`, Quellreihenfolge.

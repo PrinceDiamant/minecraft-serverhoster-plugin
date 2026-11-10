@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.105 Files.writeString(file, line + '/n', StandardChar…
+  Zeile 105: schreibt Text in eine Datei. `Files.writeString(file, line + '/n', StandardChar…`
+```
+
 - Fortsetzung von `MemoryTelemetry.appendRotated`, Quellreihenfolge.

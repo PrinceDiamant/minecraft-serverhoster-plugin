@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+for Z.228 (ChildSlot s : slots.values())
+  Zeile 228: Schleife `(ChildSlot s : slots.values())`.
+for Z.229 (ChildSlot s : List.copyOf(slots.values…
+  Zeile 229: Schleife `(ChildSlot s : List.copyOf(slots.values…`.
+FabricLauncherPlugin.stopBlocking
+  Stoppt `stopBlocking`. Ruft `invalidateRestarts`, `running`, `stopProcess`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onDisable`, Quellreihenfolge.

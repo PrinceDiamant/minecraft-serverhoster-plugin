@@ -13,4 +13,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+FabricLauncherPlugin.refreshHostMinimize
+  Lädt neu `refreshHostMinimize`. Ruft `readHostMinimizeState`, `worldNameSafe`, `apply`.
+FabricLauncherPlugin.ntfySettings
+  `ntfySettings` in `FabricLauncherPlugin.java`.
+if Z.177 (ntfy.enabled() && (ntfy.topic() == null // ntfy.…
+  Zeile 177: prüft `(ntfy.enabled() && (ntfy.topic() == null // ntfy.…`.
+```
+
 - Fortsetzung von `FabricLauncherPlugin.onEnable`, Quellreihenfolge.

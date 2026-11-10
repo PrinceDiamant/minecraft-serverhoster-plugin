@@ -16,4 +16,13 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+if Z.68 !accepted
+  Zeile 68: prüft `!accepted`.
+return Z.68 return;
+  Zeile 68: Rückgabe `return;`.
+BackupWorkflow.BackupWorkflow.createBackup.Z72
+  Fortsetzung des Ablaufs ab Zeile 72.
+```
+
 - `createBackup` in `ui/src/components/BackupWorkflow.tsx`

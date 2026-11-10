@@ -13,5 +13,12 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+CoreAdminTest.logQueryFiltersFromTheEnd.Teil1
+  Abschnitt 1 dieses Ablaufs, in Quellreihenfolge.
+CoreAdminTest.logQueryFiltersFromTheEnd.Teil2
+  Abschnitt 2 dieses Ablaufs, in Quellreihenfolge.
+```
+
 - `logQueryFiltersFromTheEnd` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
 - Auslöser: Test

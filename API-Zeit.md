@@ -18,4 +18,19 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Dashboard.schedulesApi
+  `schedulesApi` in `Dashboard.java`. Ruft `json`, `schedules`, `scheduleJson`.
+Dashboard.parseSchedule
+  Wertet aus `parseSchedule`. Ruft `load`.
+Dashboard.parseJsonObject
+  Wertet aus `parseJsonObject`.
+Dashboard.scheduleJson
+  Plant `scheduleJson`. Ruft `toJson`, `taskLast`, `next`.
+Dashboard.scheduleIndex
+  Plant `scheduleIndex`.
+Dashboard.taskJson
+  `taskJson` in `Dashboard.java`. Ruft `taskNext`, `taskLast`.
+```
+
 

@@ -9,4 +9,9 @@ flowchart TD
   classDef befund fill:#f88
 ```
 
+```knoten
+Schritt Z.583 assertFalse(Files.exists(pendingReset));
+  Zeile 583: Dateioperation. `assertFalse(Files.exists(pendingReset));`
+```
+
 - Fortsetzung von `HosterTest.setupRecoveryRollsBackPendingDirectoriesBeforeSetupCompletes`, Quellreihenfolge.
