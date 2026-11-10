@@ -245,8 +245,11 @@ class CleanupRegressionTest {
         assertTrue(config.contains("servers"));
         assertEquals("old", config.getString("focusServer"));
 
-        boolean changed = ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.4.2");
-        assertFalse(changed, "same version must not rewrite pluginVersion or restart defaults");
+        boolean unchanged = ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.4.2");
+        assertFalse(unchanged, "same version must not rewrite pluginVersion or restart defaults");
+        assertEquals(5, config.getInt("autoRestart.maxAttempts"));
+        assertTrue(ServerHosterPlugin.migrateLegacyRestartPolicy(config, "2.4.3"));
+        assertEquals("2.4.3", config.getString("metadata.pluginVersion"));
         assertEquals(5, config.getInt("autoRestart.maxAttempts"));
 
         // Mirror the startup drop performed by migrateRestartPolicy() for retired keys.
@@ -262,7 +265,7 @@ class CleanupRegressionTest {
         assertFalse(reloaded.contains("tasks"));
         assertFalse(reloaded.contains("servers"));
         assertFalse(reloaded.contains("focusServer"));
-        assertEquals("2.4.2", reloaded.getString("metadata.pluginVersion"));
+        assertEquals("2.4.3", reloaded.getString("metadata.pluginVersion"));
         assertEquals(2, reloaded.getInt("metadata.schemaVersion"));
         assertEquals("pending", reloaded.getString("metadata.migrationState"));
         assertEquals(1, reloaded.getInt("backup.scheduleDefaultVersion"));

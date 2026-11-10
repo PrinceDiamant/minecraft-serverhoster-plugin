@@ -1,5 +1,22 @@
 # Release notes
 
+## ServerHoster 2.4.3
+
+- Make `/api/setup` return a consistent `required`/`completed` pair from one
+  snapshot of `setupRequired`, so a concurrent setup finish cannot tear the
+  flags.
+- Keep the incomplete SetupWorkflow form as a transition/safety path; the
+  SetupWizard remains the onboarding UI while setup is required.
+- Share RSS and thread reads between the dashboard status path and
+  `ProcessProbe`. Child CPU sampling stays in the dashboard (delta state).
+- Upgrade from 2.4.2 by replacing the plugin jar.
+
+Testing limitations: no live Spigot host or browser E2E in the release
+environment. Automated regressions cover setup snapshot consistency, wizard
+completion notify/reload contracts, ProcessProbe RSS/threads, and the 2.4.2
+upgrade fixture. A separate manual Spigot check of 2.4.2/PR #4 is not a
+substitute for live verification of 2.4.3.
+
 ## ServerHoster 2.4.2
 
 - Extract the active dashboard markup and script into separate source files.

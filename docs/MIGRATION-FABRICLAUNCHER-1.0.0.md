@@ -1,4 +1,9 @@
-# Upgrade von ServerHoster 2.4.1 auf 2.4.2
+# Upgrade von ServerHoster 2.4.2 auf 2.4.3
+
+Das Plugin-Jar ersetzen; Konfiguration und Child-Ordner bleiben erhalten.
+`/api/setup` liefert `required` und `completed` aus demselben Snapshot.
+
+## Vorheriges Upgrade: 2.4.1 auf 2.4.2
 
 Das Plugin-Jar ersetzen; Konfiguration und Child-Ordner bleiben erhalten.
 

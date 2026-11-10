@@ -64,7 +64,7 @@ serverProperties: {}
 consoleBufferLines: 4000
 # Web dashboard (JDK HTTP server, optional TLS). Password: plugins/ServerhosterPlugin/dashboard-password.txt
 metadata:
-  pluginVersion: 2.4.2
+  pluginVersion: 2.4.3
 dashboard:
   enabled: true
   port: 2064
