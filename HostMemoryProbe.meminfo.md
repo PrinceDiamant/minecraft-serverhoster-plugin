@@ -1,0 +1,16 @@
+[[00 Start]] › [[Host-Betrieb]] › [[Speicher-Messung]] › [[HostMemoryProbe]] › [[HostMemoryProbe.meminfo]]
+
+# HostMemoryProbe.meminfo
+
+`HostMemoryProbe.meminfo(Path path)` [src/main/java/de/aichele/childlauncher/HostMemoryProbe.java:47–61](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/HostMemoryProbe.java#L47-L61)
+
+```mermaid
+flowchart TD
+  n1["HostMemoryProbe.meminfo.Z49"]:::internal-link
+  n2["return Z.60 return out;"]
+  n1 --> n2
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `meminfo` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

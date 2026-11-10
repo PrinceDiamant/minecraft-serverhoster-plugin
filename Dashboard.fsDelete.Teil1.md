@@ -1,0 +1,30 @@
+[[00 Start]] › [[Dashboard-HTTP]] › [[API-Dateien]] › [[Dashboard.fsDelete]] › [[Dashboard.fsDelete.Teil1]]
+
+# Dashboard.fsDelete.Teil1
+
+```mermaid
+flowchart TD
+  n1["Dashboard.readBodyText"]:::internal-link
+  n2["Dashboard.safe"]:::internal-link
+  n3["if Z.911 (p.equals(root(sid)))"]
+  n4["Dashboard.root"]:::internal-link
+  n5["throw Z.911 throw new SecurityException('Wurzelordner kann ni…"]
+  n6["if Z.912 (!o.has('confirm') // !o.get('confirm').getAsStri…"]
+  n7["Dashboard.json"]:::internal-link
+  n8["return Z.912 return;"]
+  n9["Schritt Z.913 Files.delete(p);"]
+  n1 --> n2
+  n3 -->|"Z.911"| n4
+  n4 -->|"ja"| n5
+  n2 --> n3
+  n7 --> n8
+  n6 -->|"ja"| n7
+  n5 --> n6
+  n4 --> n6
+  n8 --> n9
+  n6 --> n9
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `Dashboard.fsDelete`, Quellreihenfolge.

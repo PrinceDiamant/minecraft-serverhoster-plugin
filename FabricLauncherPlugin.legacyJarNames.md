@@ -1,0 +1,21 @@
+[[00 Start]] › [[Plugin-Kern]] › [[Setup]] › [[Setup-Aufraeumen]] › [[FabricLauncherPlugin.legacyJarNames]]
+
+# FabricLauncherPlugin.legacyJarNames
+
+`FabricLauncherPlugin.legacyJarNames(Path plugins)` [src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:487–499](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java#L487-L499)
+
+```mermaid
+flowchart TD
+  n1["if Z.489 (!Files.isDirectory(plugins, LinkOption.NOFOLLOW_…"]
+  n2["return Z.489 return List.of();"]
+  n3["FabricLauncherPlugin.legacyJarNames.Z490"]:::internal-link
+  n4["return Z.498 return List.copyOf(jars);"]
+  n1 -->|"ja"| n2
+  n2 --> n3
+  n1 --> n3
+  n3 --> n4
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `legacyJarNames` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`

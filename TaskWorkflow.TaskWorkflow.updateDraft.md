@@ -1,0 +1,14 @@
+[[00 Start]] › [[Dashboard-UI]] › [[UI-Workflows]] › [[TaskWorkflow]] › [[TaskWorkflow.TaskWorkflow]] › [[TaskWorkflow.TaskWorkflow.updateDraft]]
+
+# TaskWorkflow.TaskWorkflow.updateDraft
+
+`TaskWorkflow.updateDraft(update: Partial<ScheduleDraft>)` [ui/src/components/TaskWorkflow.tsx:239–241](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/ui/src/components/TaskWorkflow.tsx#L239-L241)
+
+```mermaid
+flowchart TD
+  n1["kein eigener Aufruf"]
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `updateDraft` in `ui/src/components/TaskWorkflow.tsx`

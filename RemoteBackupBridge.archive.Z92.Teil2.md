@@ -1,0 +1,26 @@
+[[00 Start]] › [[Backup]] › [[Backup-Bruecken]] › [[RemoteBackupBridge]] › [[RemoteBackupBridge.Teil1]] › [[RemoteBackupBridge.archive]] › [[RemoteBackupBridge.archive.Z92.Teil2]]
+
+# RemoteBackupBridge.archive.Z92.Teil2
+
+```mermaid
+flowchart TD
+  n1["RemoteBackupBridge.retain"]:::internal-link
+  n2["RemoteBackupBridge.remotePath"]:::internal-link
+  n3["if Z.142 (backup.dbEnabled())"]
+  n4["try Z.143"]
+  n5["BackupBridge.insert"]:::internal-link
+  n6["catch Z.144 (Exception e)"]
+  n7["return Z.146 return new Result(id, remotePath, bytes, sha, db,…"]
+  n1 --> n2
+  n4 --> n5
+  n4 -->|"Fehler"| n6
+  n3 -->|"ja"| n4
+  n2 --> n3
+  n5 --> n7
+  n6 --> n7
+  n3 --> n7
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `RemoteBackupBridge.archive.Z92`, Quellreihenfolge.

@@ -1,0 +1,18 @@
+[[00 Start]] › [[Host-Betrieb]] › [[Speicher-Messung]] › [[HostMemoryProbe]] › [[HostMemoryProbe.snapshot(Path,Path)]]
+
+# HostMemoryProbe.snapshot(Path,Path)
+
+`HostMemoryProbe.snapshot(Path proc, Path cgroupRoot)` [src/main/java/de/aichele/childlauncher/HostMemoryProbe.java:39–45](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/HostMemoryProbe.java#L39-L45)
+
+```mermaid
+flowchart TD
+  n1["HostMemoryProbe.meminfo"]:::internal-link
+  n2["HostMemoryProbe.cgroup"]:::internal-link
+  n3["return Z.42 return new Snapshot(host.getOrDefault('MemAvailab…"]
+  n1 --> n2
+  n2 --> n3
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `snapshot` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

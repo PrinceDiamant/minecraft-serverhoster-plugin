@@ -1,0 +1,31 @@
+[[00 Start]] › [[Child-Prozess]] › [[Prozess-Bausteine]] › [[SupervisorHealth]] › [[SupervisorHealth.assess]]
+
+# SupervisorHealth.assess
+
+`SupervisorHealth.assess(State state)` [src/main/java/de/aichele/childlauncher/SupervisorHealth.java:29–46](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/SupervisorHealth.java#L29-L46)
+
+```mermaid
+flowchart TD
+  n1["if Z.30 (state.shuttingDown())"]
+  n2["return Z.30 return Action.NONE;"]
+  n3["if Z.31 (state.phase() == Phase.PREPARING // (state.launc…"]
+  n4["return Z.32 return Action.NONE;"]
+  n5["SupervisorHealth.assess.Z33"]:::internal-link
+  n6["if Z.43 (state.phase() == Phase.STOPPING // state.stopReq…"]
+  n7["return Z.44 return Action.NONE;"]
+  n8["return Z.45 return Action.SCHEDULE_RESTART;"]
+  n1 -->|"ja"| n2
+  n3 -->|"ja"| n4
+  n2 --> n3
+  n1 --> n3
+  n4 --> n5
+  n3 --> n5
+  n6 -->|"ja"| n7
+  n5 --> n6
+  n7 --> n8
+  n6 --> n8
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `assess` in `src/main/java/de/aichele/childlauncher/SupervisorHealth.java`

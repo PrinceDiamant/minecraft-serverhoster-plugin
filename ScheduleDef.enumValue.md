@@ -1,0 +1,20 @@
+[[00 Start]] › [[Zeitplaene]] › [[Plan-Klassen]] › [[ScheduleDef]] › [[ScheduleDef.Teil2]] › [[ScheduleDef.enumValue]]
+
+# ScheduleDef.enumValue
+
+`ScheduleDef.enumValue(String value, Class<T> type)` [src/main/java/de/aichele/childlauncher/ScheduleDef.java:214–220](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/ScheduleDef.java#L214-L220)
+
+```mermaid
+flowchart TD
+  n1["try Z.215"]
+  n2["return Z.216 return Enum.valueOf(type, value.toUpperCase(Local…"]
+  n3["catch Z.217 (IllegalArgumentException e)"]
+  n4["throw Z.218 throw new IllegalArgumentException('Ungültiger We…"]
+  n1 --> n2
+  n1 -->|"Fehler"| n3
+  n3 --> n4
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `enumValue` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

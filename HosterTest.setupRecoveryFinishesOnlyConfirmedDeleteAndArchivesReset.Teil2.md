@@ -1,0 +1,16 @@
+[[00 Start]] › [[Tests]] › [[HosterTest]] › [[HosterTest.Teil4]] › [[HosterTest.setupRecoveryFinishesOnlyConfirmedDeleteAndArchivesReset]] › [[HosterTest.setupRecoveryFinishesOnlyConfirmedDeleteAndArchivesReset.Teil2]]
+
+# HosterTest.setupRecoveryFinishesOnlyConfirmedDeleteAndArchivesReset.Teil2
+
+```mermaid
+flowchart TD
+  n1["Schritt Z.602 assertEquals('preserve this child', Files.readStr…"]
+  n2["Schritt Z.603 assertFalse(Files.exists(pendingDelete));"]
+  n3["Schritt Z.604 assertFalse(Files.exists(pendingReset));"]
+  n1 --> n2
+  n2 --> n3
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `HosterTest.setupRecoveryFinishesOnlyConfirmedDeleteAndArchivesReset`, Quellreihenfolge.

@@ -1,0 +1,27 @@
+[[00 Start]] › [[Host-Betrieb]] › [[Speicher-Messung]] › [[HostMemoryProbe]] › [[HostMemoryProbe.number]]
+
+# HostMemoryProbe.number
+
+`HostMemoryProbe.number(Path path)` [src/main/java/de/aichele/childlauncher/HostMemoryProbe.java:123–129](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/HostMemoryProbe.java#L123-L129)
+
+```mermaid
+flowchart TD
+  n1["try Z.124"]
+  n2["Schritt Z.125 String value = Files.readString(path).trim();"]
+  n3["if Z.126 (value.isEmpty() // value.equals('max'))"]
+  n4["return Z.126 return -1;"]
+  n5["return Z.127 return Long.parseLong(value);"]
+  n6["catch Z.128 (IOException / NumberFormatEx…"]
+  n7["return Z.128 return -1;"]
+  n3 -->|"ja"| n4
+  n2 --> n3
+  n4 --> n5
+  n3 --> n5
+  n1 --> n2
+  n1 -->|"Fehler"| n6
+  n6 --> n7
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `number` in `src/main/java/de/aichele/childlauncher/HostMemoryProbe.java`

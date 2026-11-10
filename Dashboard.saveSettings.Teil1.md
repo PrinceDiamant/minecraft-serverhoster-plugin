@@ -1,0 +1,25 @@
+[[00 Start]] › [[Dashboard-HTTP]] › [[API-Setup]] › [[Dashboard.saveSettings]] › [[Dashboard.saveSettings.Teil1]]
+
+# Dashboard.saveSettings.Teil1
+
+```mermaid
+flowchart TD
+  n1["Dashboard.parseJsonObject"]:::internal-link
+  n2["Dashboard.readBodyText"]:::internal-link
+  n3["if Z.778 (!request.has('autoRestartEnabled') // !request.g…"]
+  n4["throw Z.780 throw new IllegalArgumentException('autoRestartEn…"]
+  n5["Dashboard.saveSettings.Teil1.Calls42317"]:::internal-link
+  n6["Dashboard.saveSettings.Teil1.Calls42744"]:::internal-link
+  n7["FabricLauncherPlugin.saveSettings"]:::internal-link
+  n1 -->|"Z.777"| n2
+  n3 -->|"ja"| n4
+  n2 --> n3
+  n5 -->|"weiter"| n6
+  n4 --> n5
+  n3 --> n5
+  n6 --> n7
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `Dashboard.saveSettings`, Quellreihenfolge.

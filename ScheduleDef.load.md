@@ -1,0 +1,36 @@
+[[00 Start]] › [[Zeitplaene]] › [[Plan-Klassen]] › [[ScheduleDef]] › [[ScheduleDef.Teil1]] › [[ScheduleDef.load]]
+
+# ScheduleDef.load
+
+`ScheduleDef.load(Object raw)` [src/main/java/de/aichele/childlauncher/ScheduleDef.java:113–145](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/ScheduleDef.java#L113-L145)
+
+```mermaid
+flowchart TD
+  n1["if Z.114 (raw == null)"]
+  n2["return Z.114 return List.of();"]
+  n3["if Z.115 (!(raw instanceof List(?) list))"]
+  n4["throw Z.115 throw new IllegalArgumentException('schedules mus…"]
+  n5["if Z.116 (list.size() ) MAX_SCHEDULES)"]
+  n6["throw Z.116 throw new IllegalArgumentException('Zu viele Zeit…"]
+  n7["ScheduleDef.load.Z118"]:::internal-link
+  n8["if Z.142 (schedules.stream().map(ScheduleDef::id).distinct…"]
+  n9["throw Z.143 throw new IllegalArgumentException('Schedule-IDs …"]
+  n10["return Z.144 return List.copyOf(schedules);"]
+  n1 -->|"ja"| n2
+  n3 -->|"ja"| n4
+  n2 --> n3
+  n1 --> n3
+  n5 -->|"ja"| n6
+  n4 --> n5
+  n3 --> n5
+  n6 --> n7
+  n5 --> n7
+  n8 -->|"ja"| n9
+  n7 --> n8
+  n9 --> n10
+  n8 --> n10
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `load` in `src/main/java/de/aichele/childlauncher/ScheduleDef.java`

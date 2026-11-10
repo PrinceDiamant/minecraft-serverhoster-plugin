@@ -1,0 +1,29 @@
+[[00 Start]] › [[Dashboard-HTTP]] › [[API-Zeit]] › [[Dashboard.schedulesApi]] › [[Dashboard.schedulesApi.Teil2.Z384]]
+
+# Dashboard.schedulesApi.Teil2.Z384
+
+```mermaid
+flowchart TD
+  n1["if Z.384 (parts.length == 2 && parts(1).equals('toggle') &…"]
+  n2["Dashboard.parseJsonObject"]:::internal-link
+  n3["Dashboard.readBodyText"]:::internal-link
+  n4["if Z.386 (!request.has('enabled') // !request.get('enabled…"]
+  n5["throw Z.388 throw new IllegalArgumentException('enabled muss …"]
+  n6["Dashboard.schedulesApi.Teil2.Z384.Z390"]:::internal-link
+  n7["Dashboard.json"]:::internal-link
+  n8["ScheduleDef.toJson"]:::internal-link
+  n9["return Z.399 return;"]
+  n2 -->|"Z.385"| n3
+  n4 -->|"ja"| n5
+  n3 --> n4
+  n5 --> n6
+  n4 --> n6
+  n7 -->|"Z.398"| n8
+  n6 --> n7
+  n8 --> n9
+  n1 -->|"ja"| n2
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `Dashboard.schedulesApi.Teil2`, Quellreihenfolge.

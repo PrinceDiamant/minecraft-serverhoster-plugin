@@ -1,0 +1,25 @@
+[[00 Start]] › [[Backup]] › [[Backup-Bruecken]] › [[RemoteBackupBridge]] › [[RemoteBackupBridge.Teil3]] › [[RemoteBackupBridge.validateCredentials]]
+
+# RemoteBackupBridge.validateCredentials
+
+`RemoteBackupBridge.validateCredentials(String username, String password)` [src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java:297–302](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java#L297-L302)
+
+```mermaid
+flowchart TD
+  n1["if Z.298 (username == null // username.isBlank())"]
+  n2["throw Z.298 throw new IOException('backup FTP username is req…"]
+  n3["if Z.299 (hasControlCharacter(username) // hasControlChara…"]
+  n4["RemoteBackupBridge.hasControlCharacter"]:::internal-link
+  n5["RemoteBackupBridge.hasControlCharacter"]:::internal-link
+  n6["throw Z.300 throw new IOException('FTP credentials cannot con…"]
+  n1 -->|"ja"| n2
+  n3 -->|"Z.299"| n4
+  n4 -->|"Z.299"| n5
+  n5 -->|"ja"| n6
+  n2 --> n3
+  n1 --> n3
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `validateCredentials` in `src/main/java/de/aichele/childlauncher/RemoteBackupBridge.java`

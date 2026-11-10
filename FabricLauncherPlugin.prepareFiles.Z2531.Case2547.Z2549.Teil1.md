@@ -1,0 +1,23 @@
+[[00 Start]] › [[Plugin-Kern]] › [[Properties]] › [[FabricLauncherPlugin.prepareFiles]] › [[FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549.Teil1]]
+
+# FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549.Teil1
+
+```mermaid
+flowchart TD
+  n1["Upstream.getJson"]:::internal-link
+  n2["if Z.2551 (builds.isEmpty())"]
+  n3["throw Z.2551 throw new IOException('No Paper builds for ' + mc…"]
+  n4["for Z.2553 (JsonElement e : builds)"]
+  n5["if Z.2553 ('STABLE'.equalsIgnoreCase(str(b, 'channel')))"]
+  n6["FabricLauncherPlugin.str"]:::internal-link
+  n2 -->|"ja"| n3
+  n1 --> n2
+  n5 -->|"Z.2553"| n6
+  n4 -->|"wiederholen"| n5
+  n3 --> n4
+  n2 --> n4
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `FabricLauncherPlugin.prepareFiles.Z2531.Case2547.Z2549`, Quellreihenfolge.

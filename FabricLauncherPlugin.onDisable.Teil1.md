@@ -1,0 +1,16 @@
+[[00 Start]] › [[Plugin-Kern]] › [[Lebenszyklus]] › [[FabricLauncherPlugin.onDisable]] › [[FabricLauncherPlugin.onDisable.Teil1]]
+
+# FabricLauncherPlugin.onDisable.Teil1
+
+```mermaid
+flowchart TD
+  n1["for Z.228 (ChildSlot s : slots.values())"]
+  n2["for Z.229 (ChildSlot s : List.copyOf(slots.values…"]
+  n3["FabricLauncherPlugin.stopBlocking"]:::internal-link
+  n2 -->|"wiederholen"| n3
+  n1 --> n2
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `FabricLauncherPlugin.onDisable`, Quellreihenfolge.

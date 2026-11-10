@@ -1,0 +1,27 @@
+[[00 Start]] › [[Tests]] › [[CoreAdminTest]] › [[CoreAdminTest.Teil1]] › [[CoreAdminTest.playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty]]
+
+# CoreAdminTest.playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty
+
+`CoreAdminTest.playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty()` [src/test/java/de/aichele/childlauncher/CoreAdminTest.java:55–64](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/test/java/de/aichele/childlauncher/CoreAdminTest.java#L55-L64)
+
+```mermaid
+flowchart TD
+  n1["Dashboard.readPlayerNames"]:::internal-link
+  n2["Schritt Z.58 Files.writeString(file, '((/'uuid/':/'id/',/'name…"]
+  n3["Dashboard.readPlayerNames"]:::internal-link
+  n4["Schritt Z.60 Files.writeString(file, '(/'name/':/'wrong shape/…"]
+  n5["Dashboard.readPlayerNames"]:::internal-link
+  n6["Schritt Z.62 Files.writeString(file, '((/'uuid/':/'id/'))');"]
+  n7["Dashboard.readPlayerNames"]:::internal-link
+  n1 --> n2
+  n2 --> n3
+  n3 --> n4
+  n4 --> n5
+  n5 --> n6
+  n6 --> n7
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `playerListsReportInvalidJsonInsteadOfPretendingToBeEmpty` in `src/test/java/de/aichele/childlauncher/CoreAdminTest.java`
+- Auslöser: Test

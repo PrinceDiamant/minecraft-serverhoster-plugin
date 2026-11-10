@@ -1,0 +1,23 @@
+[[00 Start]] › [[Host-Betrieb]] › [[Host-Minimieren]] › [[HostMinimize]] › [[HostMinimize.Teil1]] › [[HostMinimize.newLobbyName(Path)]]
+
+# HostMinimize.newLobbyName(Path)
+
+`HostMinimize.newLobbyName(Path root)` [src/main/java/de/aichele/childlauncher/HostMinimize.java:36–42](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/HostMinimize.java#L36-L42)
+
+```mermaid
+flowchart TD
+  n1["for Z.37 (int attempt = 0; attempt ( 8; attempt+…"]
+  n2["HostMinimize.newLobbyName()"]:::internal-link
+  n3["if Z.39 (!Files.exists(root.resolve(name), LinkOption.NOF…"]
+  n4["return Z.39 return name;"]
+  n5["throw Z.41 throw new IOException('Could not choose a lobby n…"]
+  n3 -->|"ja"| n4
+  n2 --> n3
+  n1 -->|"wiederholen"| n2
+  n4 --> n5
+  n3 --> n5
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `newLobbyName` in `src/main/java/de/aichele/childlauncher/HostMinimize.java`

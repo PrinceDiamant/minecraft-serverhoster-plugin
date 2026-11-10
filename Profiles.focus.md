@@ -1,0 +1,24 @@
+[[00 Start]] › [[Server-Anlage]] › [[Profile]] › [[Profiles]] › [[Profiles.focus]]
+
+# Profiles.focus
+
+`Profiles.focus(Map<String, Object> flat, List<ServerProfile> profiles)` [src/main/java/de/aichele/childlauncher/ServerProfile.java:85–89](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/ServerProfile.java#L85-L89)
+
+```mermaid
+flowchart TD
+  n1["Profiles.str"]:::internal-link
+  n2["for Z.87 (ServerProfile p : profiles)"]
+  n3["if Z.87 (p.id.equals(id))"]
+  n4["return Z.87 return id;"]
+  n5["return Z.88 return profiles.get(0).id;"]
+  n3 -->|"ja"| n4
+  n2 -->|"wiederholen"| n3
+  n1 --> n2
+  n4 --> n5
+  n3 --> n5
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Wird vom Plugin-Kern nicht für die laufende Auswahl benutzt.
+- Befund: angemeldet aber nicht umgesetzt, wahrscheinlich. ServerProfile.java:85, nur Tests rufen Profiles.focus

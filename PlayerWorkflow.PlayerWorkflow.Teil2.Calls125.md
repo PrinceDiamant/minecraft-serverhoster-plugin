@@ -1,0 +1,22 @@
+[[00 Start]] › [[Dashboard-UI]] › [[UI-Workflows]] › [[PlayerWorkflow]] › [[PlayerWorkflow.PlayerWorkflow]] › [[PlayerWorkflow.PlayerWorkflow.Teil2.Calls125]]
+
+# PlayerWorkflow.PlayerWorkflow.Teil2.Calls125
+
+```mermaid
+flowchart TD
+  n1["fileEditor.installFileEditors.refresh"]:::internal-link
+  n2["PlayerWorkflow.PlayerWorkflow.runPlayerAction"]:::internal-link
+  n3["PlayerWorkflow.PlayerWorkflow.runPlayerAction"]:::internal-link
+  n4["PlayerWorkflow.PlayerWorkflow.runPlayerAction"]:::internal-link
+  n5["PlayerWorkflow.PlayerWorkflow.runPlayerAction"]:::internal-link
+  n6["PlayerWorkflow.PlayerWorkflow.runPlayerAction"]:::internal-link
+  n1 -->|"Z.141"| n2
+  n2 -->|"Z.149"| n3
+  n3 -->|"Z.150"| n4
+  n4 -->|"Z.151"| n5
+  n5 -->|"Z.152"| n6
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- Fortsetzung von `PlayerWorkflow.PlayerWorkflow.Teil2`, Quellreihenfolge.

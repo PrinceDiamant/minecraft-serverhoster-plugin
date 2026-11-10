@@ -1,0 +1,19 @@
+[[00 Start]] › [[Plugin-Kern]] › [[Setup]] › [[Setup-Dialog]] › [[FabricLauncherPlugin.saveSetupConfigAtomically]]
+
+# FabricLauncherPlugin.saveSetupConfigAtomically
+
+`FabricLauncherPlugin.saveSetupConfigAtomically()` [src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java:624–641](https://github.com/Sciddie/minecraft-serverhoster-plugin/blob/95b02b953b0b4c23673e900e021a7c3c844aa37d/src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java#L624-L641)
+
+```mermaid
+flowchart TD
+  n1["if Z.627 (Files.isSymbolicLink(configFile) // Files.isSymb…"]
+  n2["throw Z.628 throw new SecurityException('Setup config files m…"]
+  n3["FabricLauncherPlugin.saveSetupConfigAtomically.Z629"]:::internal-link
+  n1 -->|"ja"| n2
+  n2 --> n3
+  n1 --> n3
+  classDef internal-link fill:#ddeeff,stroke:#4488cc
+  classDef befund fill:#f88
+```
+
+- `saveSetupConfigAtomically` in `src/main/java/de/aichele/childlauncher/FabricLauncherPlugin.java`
