@@ -18,3 +18,17 @@
   color: var(--link-color);
   cursor: pointer;
 }
+
+/* The label sits above the box and swallows the pointer. Let it fall through to the box. */
+.markdown-preview-view svg g.node .nodeLabel,
+.markdown-rendered svg g.node .nodeLabel,
+.markdown-preview-view svg g.node foreignObject,
+.markdown-rendered svg g.node foreignObject {
+  pointer-events: none;
+}
+
+.markdown-preview-view svg g.node,
+.markdown-rendered svg g.node {
+  pointer-events: all;
+  cursor: help;
+}
