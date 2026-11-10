@@ -1990,7 +1990,6 @@ a.btn:hover {
   font-size: 12px;
 }
 
-.legacy-task-section,
 .schedule-actions-editor {
   display: grid;
   gap: 12px;

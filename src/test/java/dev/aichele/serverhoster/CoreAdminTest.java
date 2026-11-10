@@ -380,6 +380,11 @@ class CoreAdminTest {
         assertFalse(script.contains("/api/tasks"));
         assertFalse(script.contains("function loadPlayers("));
         assertFalse(script.contains("function loadBackup("));
+        assertFalse(script.contains("function loadTasks("));
+        assertFalse(script.contains("function scoped("));
+        assertTrue(script.contains("'X-FL':'1'") || script.contains("\"X-FL\":\"1\"") || script.contains("'X-FL':"));
+        assertFalse(Files.exists(Path.of("ui/src/legacyDashboard.ts")));
+        assertFalse(Files.exists(Path.of("src/main/java/dev/aichele/serverhoster/TaskDef.java")));
     }
 
     private static HttpClient client(Path keystore, char[] pass) throws Exception {

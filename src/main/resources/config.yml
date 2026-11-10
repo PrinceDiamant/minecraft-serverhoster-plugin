@@ -64,9 +64,7 @@ serverProperties: {}
 consoleBufferLines: 4000
 # Web dashboard (JDK HTTP server, optional TLS). Password: plugins/ServerhosterPlugin/dashboard-password.txt
 metadata:
-  schemaVersion: 2
   pluginVersion: 2.4.2
-  migrationState: pending
 dashboard:
   enabled: true
   port: 2064
@@ -93,7 +91,6 @@ schedules: []
 # database.* is an external JDBC target. Nothing is installed locally; driverJar is loaded on use.
 # For FTP/FTPS, set storage: remote and configure remote.*. Credentials belong in the local secrets.yml file.
 backup:
-  scheduleDefaultVersion: 1
   storage: local
   directory: ""
   paths:

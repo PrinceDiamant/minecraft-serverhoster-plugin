@@ -52,13 +52,30 @@ class HosterTest {
         assertThrows(java.io.IOException.class, () -> NtfyNotifier.target("https://ntfy.sh", "topic/name"));
     }
 
-    @Test void defaultDailyBackupUsesServerLocalTime() throws Exception {
-        TaskDef configured = TaskDef.load(List.of(Map.of(
-                "id", "daily-backup", "enabled", true, "cron", "0 5 * * *",
-                "timezone", "local", "action", "backup"))).get(0);
-        assertEquals("0 5 * * *", configured.cron);
-        assertEquals(ZoneId.systemDefault().getId(), configured.timezone);
-        assertEquals("backup", configured.action);
+    @Test void schedulesDefaultBlankTimezoneToServerLocalZone() {
+        ScheduleDef schedule = new ScheduleDef(
+                "daily_backup",
+                "Daily backup",
+                true,
+                ScheduleDef.Interval.DAILY,
+                5,
+                0,
+                " ",
+                0,
+                List.of(new ScheduleDef.Action("backup", "backup", "")));
+        assertEquals("0 5 * * *", schedule.cron());
+        assertEquals(ZoneId.systemDefault().getId(), schedule.timezone());
+        assertEquals("backup", schedule.actions().getFirst().type());
+    }
+
+    @Test void shippedConfigDropsUnreadLegacyKeys() throws Exception {
+        String yml = Files.readString(Path.of("src/main/resources/config.yml"));
+        assertTrue(yml.contains("pluginVersion:"));
+        assertFalse(yml.contains("schemaVersion:"));
+        assertFalse(yml.contains("migrationState:"));
+        assertFalse(yml.contains("scheduleDefaultVersion:"));
+        assertFalse(yml.contains("\ntasks:"));
+        assertFalse(yml.contains("\nservers:"));
     }
 
     @Test void singleSlotIsTheDefault() throws Exception {
@@ -212,13 +229,26 @@ class HosterTest {
         assertEquals(berlin.plusDays(1).withSecond(0).withNano(0), CronExpr.next("0 4 * * *", berlin));
     }
 
-    @Test void tasksParse() {
-        List<TaskDef> tasks = TaskDef.load(List.of(Map.of("id", "save", "enabled", true, "cron", "*/15 * * * *", "timezone", "Europe/Berlin", "action", "command", "command", "save-all", "server", "default")));
-        assertEquals(1, tasks.size());
-        assertEquals("save", tasks.get(0).id);
-        assertEquals("Europe/Berlin", tasks.get(0).timezone);
-        assertTrue(tasks.get(0).enabled);
-        assertTrue(TaskDef.load(null).isEmpty());
+    @Test void scheduleBackupIdsStayStableForStatusMessages() {
+        ScheduleDef schedule = new ScheduleDef(
+                "weekly_backup",
+                "Sunday backup",
+                true,
+                ScheduleDef.Interval.WEEKLY,
+                0,
+                5 * 60 + 30,
+                "Europe/Berlin",
+                0,
+                List.of(
+                        new ScheduleDef.Action("warn", "command", "say Backup in 5 Minuten"),
+                        new ScheduleDef.Action("backup", "backup", "")
+                ));
+        String backupId = schedule.id() + "-" + schedule.actions().stream()
+                .filter(action -> action.type().equals("backup"))
+                .findFirst()
+                .orElseThrow()
+                .id();
+        assertEquals("weekly_backup-backup", backupId);
     }
 
     @Test void schedulesValidateVoxelDashIntervalsAndKeepOrderedActions() {
@@ -390,7 +420,7 @@ class HosterTest {
                 assertFalse(zip.stream().anyMatch(entry -> entry.getName().startsWith("escape/")));
             }
         }
-        assertEquals(1, BackupBridge.count(spec));
+        assertEquals(1, jdbcBackupRows(spec));
         try (var z = new java.util.zip.ZipFile(r.path())) {
             assertNotNull(z.getEntry("world/level.dat"));
             assertNull(z.getEntry("world/session.lock"));
@@ -402,7 +432,7 @@ class HosterTest {
             int n = 0; for (var ignored : ds) n++;
             assertEquals(2, n);
         }
-        assertEquals(3, BackupBridge.count(spec));
+        assertEquals(3, jdbcBackupRows(spec));
         assertThrows(IllegalArgumentException.class, () -> BackupBridge.table(new BackupBridge.Spec("", List.of(), 1, false, "", "", "", "", "", "bad-name;drop")));
         List<BackupBridge.Entry> listed = BackupBridge.list(spec, "default");
         assertEquals(2, listed.size());
@@ -666,6 +696,16 @@ class HosterTest {
             return true;
         } catch (UnsupportedOperationException | java.io.IOException e) {
             return false;
+        }
+    }
+
+    private static int jdbcBackupRows(BackupBridge.Spec spec) throws Exception {
+        Class.forName(spec.driverClass());
+        try (var connection = java.sql.DriverManager.getConnection(spec.jdbcUrl(), spec.user(), spec.password());
+             var result = connection.createStatement().executeQuery(
+                     "SELECT COUNT(*) FROM " + BackupBridge.table(spec))) {
+            result.next();
+            return result.getInt(1);
         }
     }
 }

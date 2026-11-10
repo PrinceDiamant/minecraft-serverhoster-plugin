@@ -44,8 +44,8 @@ geladen oder gebaut, wenn sie noch fehlen.
    im Log ausgegeben. Vor der Passwortvergabe sind Verwaltungsfunktionen
    gesperrt. Bestehende Dashboard-Passwörter bleiben unverändert. Solange
    die Einrichtung nicht abgeschlossen ist, öffnet sich das Onboarding
-   automatisch. Wähle je nach Situation einen neuen Child, einen erkannten
-   vorhandenen Child oder einen unterstützten Import. Der Assistent fragt
+   automatisch. Wähle je nach Situation einen neuen Child oder einen erkannten
+   vorhandenen Child-Ordner (einbinden, archivieren oder löschen). Der Assistent fragt
    nach Backupziel, zu sichernden Pfaden, optionalem Backup-Zeitplan, ntfy
    und der Host-Minimierung und zeigt vor dem Speichern
    eine Zusammenfassung. Vor der Bestätigung startet kein Child automatisch.
@@ -107,8 +107,8 @@ Schlüssel, Secrets und Passwortdateien gehören nicht in die Versionsverwaltung
   unverschlüsseltes FTP übertragen Zugangsdaten ungeschützt; FTPS und
   Dashboard-HTTPS sind empfohlen. AUTO kann auf FTP zurückfallen.
 - Das Testen des Backupziels im Onboarding speichert die Backup-Einstellungen
-  bereits vor Abschluss der übrigen Einrichtung. Bei Legacy-Importen ist der
-  Zieltest nach dem Import unter „Backups“ verfügbar.
+  bereits vor Abschluss der übrigen Einrichtung. Beim Einbinden vorhandener
+  Child-Ordner ist der Zieltest nach dem Speichern unter „Backups“ verfügbar.
 - Stunden-, Tages- und Wochenpläne unterstützen geordnete Befehls- und
   Backup-Aktionen. Die Pläne werden in `config.yml` gespeichert.
 - ntfy ist optional und bleibt deaktiviert, solange es nicht ausdrücklich

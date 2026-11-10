@@ -12,6 +12,13 @@ Mods oder Plugins.
 
 ## ServerHoster 2.4.1
 
+- Ausführungsstatus von Zeitplänen (laufen, warten, Fehler) bleibt im
+  Dashboard sichtbar.
+- Relative Custom-JAR-Pfade werden aus dem Child-Arbeitsverzeichnis aufgelöst.
+- Upgrade von 2.4.0 durch Austausch des Plugin-Jars.
+
+## ServerHoster 2.4.0
+
 - Upgrade von 2.3.2 bleibt der Austausch des Jars im Ordner
   `plugins/ServerhosterPlugin/`.
 - Die alte Aufgabenliste entfällt. Zeitpläne im Dashboard bleiben.

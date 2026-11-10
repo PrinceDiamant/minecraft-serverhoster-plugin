@@ -456,9 +456,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
         getConfig().set("workingDir", root.relativize(childDirectory).toString().replace('\\', '/'));
         getConfig().set("setup.completed", true);
         getConfig().set("servers", null);
-        getConfig().set("metadata.schemaVersion", 2);
         getConfig().set("metadata.pluginVersion", getDescription().getVersion());
-        getConfig().set("metadata.migrationState", "complete");
         try {
             saveSetupConfigAtomically();
         } catch (IOException | RuntimeException e) {
@@ -1253,9 +1251,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
             ScheduleExecution.run(schedule, action -> {
                 status.update("running", "");
                 if (action.type().equals("backup")) {
-                    TaskDef task = new TaskDef(schedule.id() + "-" + action.id(), true, "", schedule.timezone(),
-                            "backup", "", "");
-                    runScheduledBackup(task, focus, status);
+                    runScheduledBackup(schedule.id() + "-" + action.id(), focus, status);
                 } else {
                     ChildSlot target = slot(focus);
                     if (!send(target, action.command().startsWith("/") ? action.command().substring(1) : action.command()))
@@ -1277,7 +1273,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
         }
     }
 
-    private void runScheduledBackup(TaskDef task, String id, ScheduleRunTracker.Run status) throws Exception {
+    private void runScheduledBackup(String backupId, String id, ScheduleRunTracker.Run status) throws Exception {
         ChildSlot target = slot(id);
         long nextWaitNotice = 0;
         while (true) {
@@ -1285,7 +1281,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
                 if (shuttingDown) throw new InterruptedException("plugin is shutting down");
                 status.update("waiting", "");
                 if (System.nanoTime() >= nextWaitNotice) {
-                    String message = "Scheduled backup " + task.id + " is waiting for the child to become empty.";
+                    String message = "Scheduled backup " + backupId + " is waiting for the child to become empty.";
                     target.console.add("[ServerhosterPlugin] " + message);
                     getLogger().info(message);
                     nextWaitNotice = System.nanoTime() + TimeUnit.MINUTES.toNanos(1);
@@ -1411,7 +1407,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
                 slot.lastStatus = "running";
                 slot.phase = SupervisorHealth.Phase.RUNNING;
                 rememberProcess(p, profile, jar);
-                armPipe(slot, p, consolePrefix(profile));
+                armPipe(slot, p, consolePrefix());
                 armWatch(slot, p, false);
                 stopAfterStart = !slot.wantRunning || slot.stopRequested || shuttingDown;
             }
@@ -1690,12 +1686,12 @@ public final class ServerHosterPlugin extends JavaPlugin {
                 }
                 case REATTACH_PIPE -> {
                     getLogger().warning("Reattaching child console pipe for " + slot.id);
-                    armPipe(slot, process, consolePrefix(slot.profile));
+                    armPipe(slot, process, consolePrefix());
                 }
                 case REATTACH_BOTH -> {
                     getLogger().warning("Reattaching child watcher and console pipe for " + slot.id);
                     armWatch(slot, process, false);
-                    armPipe(slot, process, consolePrefix(slot.profile));
+                    armPipe(slot, process, consolePrefix());
                 }
                 case SCHEDULE_RESTART -> {
                     getLogger().warning("No child watcher is attached after " + slot.id + " exited; scheduling restart.");
@@ -1745,10 +1741,8 @@ public final class ServerHosterPlugin extends JavaPlugin {
         }
     }
 
-    private String consolePrefix(ServerProfile profile) {
-        String base = getConfig().getString("logPrefix", "[Child] ");
-        if (profile == null) return base;
-        return !"default".equals(profile.id) && profiles.size() > 1 ? "[" + profile.id + "] " : base;
+    private String consolePrefix() {
+        return getConfig().getString("logPrefix", "[Child] ");
     }
 
     private Path processRecord() {

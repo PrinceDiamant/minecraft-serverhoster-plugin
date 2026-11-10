@@ -2,7 +2,6 @@ package dev.aichele.serverhoster;
 
 import java.time.DayOfWeek;
 import java.time.ZonedDateTime;
-import java.util.Locale;
 
 /** Five-field cron: minute hour day-of-month month day-of-week. DOM and DOW both set means either may match. */
 final class CronExpr {
@@ -65,13 +64,5 @@ final class CronExpr {
             if (value >= from && value <= to && (value - from) % step == 0) return true;
         }
         return false;
-    }
-
-    static String normZone(String zone) {
-        return zone == null || zone.isBlank() ? "UTC" : zone.trim();
-    }
-
-    static String normAction(String action) {
-        return action == null ? "" : action.toLowerCase(Locale.ROOT).trim();
     }
 }

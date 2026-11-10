@@ -14,7 +14,6 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -236,12 +235,5 @@ final class BackupBridge {
         }
         Class.forName(spec.driverClass);
         return DriverManager.getConnection(spec.jdbcUrl, props);
-    }
-
-    static int count(Spec spec) throws Exception {
-        try (Connection c = connect(spec); ResultSet rs = c.createStatement().executeQuery("SELECT COUNT(*) FROM " + table(spec))) {
-            rs.next();
-            return rs.getInt(1);
-        }
     }
 }

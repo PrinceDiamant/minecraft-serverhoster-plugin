@@ -35,9 +35,7 @@ final class Upstream {
     }
 
     JsonElement getJson(String url) throws Exception {
-        HttpResponse<String> r = http.send(HttpRequest.newBuilder(URI.create(url)).header("User-Agent", userAgent).timeout(Duration.ofSeconds(60)).GET().build(), HttpResponse.BodyHandlers.ofString());
-        if (r.statusCode() / 100 != 2) throw new IOException("HTTP " + r.statusCode() + " for " + url);
-        return JsonParser.parseString(r.body());
+        return JsonParser.parseString(getText(url));
     }
 
     void download(String url, Path target) throws Exception { download(url, target, null, null); }

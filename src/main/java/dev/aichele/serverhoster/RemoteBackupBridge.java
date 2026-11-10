@@ -8,7 +8,6 @@ import org.apache.commons.net.ftp.FTPSClient;
 
 import java.io.FilterOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,7 +22,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.function.Consumer;
-import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 final class RemoteBackupBridge {

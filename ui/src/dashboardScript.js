@@ -5,8 +5,7 @@ let cur='status',es=null,cwd='',logLines=[],stTimer=null,srvName='child',actionP
 const chartHistory={cpuHost:[],cpuChild:[],rssHost:[],rssChild:[],cgroup:[],mspt:[]};
 const CHART_HISTORY_LIMIT=60;
 function toast(m,bad){const t=$('toast');t.textContent=m;t.style.borderColor=bad?'var(--r)':'var(--b)';t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',4000)}
-function scoped(path){return path}
-async function api(path,opt={}){path=scoped(path);opt.headers=Object.assign({'X-FL':'1'},opt.headers||{});opt.credentials='same-origin';const r=await fetch(path,opt);
+async function api(path,opt={}){opt.headers=Object.assign({'X-FL':'1'},opt.headers||{});opt.credentials='same-origin';const r=await fetch(path,opt);
  if(r.status===401){showLogin();throw new Error('Nicht angemeldet')}
  const ct=r.headers.get('content-type')||'';const d=ct.includes('json')?await r.json():await r.text();
  if(!r.ok){const m=(d&&d.error)||d||r.status;toast('Fehler: '+m,true);throw new Error(m)}return d}
