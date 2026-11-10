@@ -27,6 +27,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
     private final Object childGate = new Object();
     private final Object configMutationLock = new Object();
     private final Set<String> activeSchedules = ConcurrentHashMap.newKeySet();
+    private final ScheduleRunTracker scheduleRuns = new ScheduleRunTracker();
     private record NtfySetup(boolean enabled, String server, String topic) {}
     volatile String lastBackup = "";
     private final Map<String, ProcessProbe.Disk> diskCaches = new ConcurrentHashMap<>();
@@ -1002,6 +1003,9 @@ public final class ServerHosterPlugin extends JavaPlugin {
         }
     }
 
+    ScheduleRunTracker.Status scheduleStatus(String id) { return scheduleRuns.status(id); }
+    void forgetScheduleStatus(String id) { scheduleRuns.remove(id); }
+
     void saveSchedules(List<ScheduleDef> schedules) {
         if (schedules.size() > ScheduleDef.MAX_SCHEDULES)
             throw new IllegalArgumentException("Zu viele Zeitpläne");
@@ -1169,7 +1173,15 @@ public final class ServerHosterPlugin extends JavaPlugin {
             try {
                 ScheduleDef started = markScheduleRun(schedule.id(), now.toInstant().toEpochMilli());
                 if (started == null) activeSchedules.remove(schedule.id());
-                else exec.submit(() -> runSchedule(started));
+                else {
+                    ScheduleRunTracker.Run run = scheduleRuns.start(started.id());
+                    try {
+                        exec.submit(() -> runSchedule(started, run));
+                    } catch (RuntimeException e) {
+                        run.update("failed", e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage());
+                        throw e;
+                    }
+                }
             } catch (RuntimeException e) {
                 activeSchedules.remove(schedule.id());
                 getLogger().log(Level.SEVERE, "Schedule " + schedule.id() + " could not be started", e);
@@ -1207,7 +1219,13 @@ public final class ServerHosterPlugin extends JavaPlugin {
         if (!activeSchedules.add(id)) throw new IllegalStateException("Zeitplan läuft bereits: " + id);
         try {
             ScheduleDef run = markManualScheduleRun(id, System.currentTimeMillis());
-            exec.submit(() -> runSchedule(run));
+            ScheduleRunTracker.Run status = scheduleRuns.start(id);
+            try {
+                exec.submit(() -> runSchedule(run, status));
+            } catch (RuntimeException e) {
+                status.update("failed", e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage());
+                throw e;
+            }
         } catch (RuntimeException e) {
             activeSchedules.remove(id);
             throw e;
@@ -1230,13 +1248,14 @@ public final class ServerHosterPlugin extends JavaPlugin {
         throw new IllegalArgumentException("Zeitplan nicht gefunden: " + id);
     }
 
-    private void runSchedule(ScheduleDef schedule) {
+    private void runSchedule(ScheduleDef schedule, ScheduleRunTracker.Run status) {
         try {
             ScheduleExecution.run(schedule, action -> {
+                status.update("running", "");
                 if (action.type().equals("backup")) {
                     TaskDef task = new TaskDef(schedule.id() + "-" + action.id(), true, "", schedule.timezone(),
                             "backup", "", "");
-                    runScheduledBackup(task, focus);
+                    runScheduledBackup(task, focus, status);
                 } else {
                     ChildSlot target = slot(focus);
                     if (!send(target, action.command().startsWith("/") ? action.command().substring(1) : action.command()))
@@ -1244,10 +1263,13 @@ public final class ServerHosterPlugin extends JavaPlugin {
                     target.console.add("[ServerHoster] schedule " + schedule.id() + " sent " + action.command());
                 }
             });
+            status.update("success", "");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
+            status.update("interrupted", "");
             getLogger().log(Level.WARNING, "Schedule " + schedule.id() + " interrupted", e);
         } catch (Exception e) {
+            status.update("failed", e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage());
             getLogger().log(Level.WARNING, "Schedule " + schedule.id() + " failed", e);
             notifyNtfy("ServerHoster: Aufgabenfehler", "Zeitplan " + schedule.id() + " ist fehlgeschlagen. Details stehen im Spigot-Log.", "4");
         } finally {
@@ -1255,12 +1277,13 @@ public final class ServerHosterPlugin extends JavaPlugin {
         }
     }
 
-    private void runScheduledBackup(TaskDef task, String id) throws Exception {
+    private void runScheduledBackup(TaskDef task, String id, ScheduleRunTracker.Run status) throws Exception {
         ChildSlot target = slot(id);
         long nextWaitNotice = 0;
         while (true) {
             while (target.running() && !target.onlinePlayers.isEmpty()) {
                 if (shuttingDown) throw new InterruptedException("plugin is shutting down");
+                status.update("waiting", "");
                 if (System.nanoTime() >= nextWaitNotice) {
                     String message = "Scheduled backup " + task.id + " is waiting for the child to become empty.";
                     target.console.add("[ServerhosterPlugin] " + message);
@@ -1272,6 +1295,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
 
             synchronized (target.backupLock) {
                 if (target.running() && !target.onlinePlayers.isEmpty()) continue;
+                status.update("running", "");
                 boolean wasRunning = target.running();
                 boolean restartAfter = wasRunning && target.wantRunning;
                 try {
@@ -2194,7 +2218,7 @@ public final class ServerHosterPlugin extends JavaPlugin {
                 return jar;
             }
             case "custom": {
-                Path jar = Paths.get(c.customJar);
+                Path jar = LaunchPlan.jarPath(c);
                 if (!Files.exists(jar)) throw new FileNotFoundException("Custom jar not found: " + jar);
                 return jar;
             }

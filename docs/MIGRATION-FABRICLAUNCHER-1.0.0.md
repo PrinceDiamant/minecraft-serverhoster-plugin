@@ -1,4 +1,11 @@
-# Upgrade von ServerHoster 2.3.2 auf 2.4.0
+# Upgrade von ServerHoster 2.4.0 auf 2.4.1
+
+Das Plugin-Jar ersetzen; Konfiguration und Child-Ordner bleiben erhalten.
+Bei `type: custom` werden relative `customJar`-Pfade jetzt wie dokumentiert
+vom Child-Ordner aus aufgelöst. Wurde bisher ein relativer Pfad absichtlich
+vom Host-Ordner aus angegeben, muss er entsprechend angepasst werden.
+
+## Vorheriges Upgrade: 2.3.2 auf 2.4.0
 
 Das Plugin lädt weiter aus `plugins/ServerhosterPlugin/`. Ein Upgrade von
 2.3.2 ist der Austausch des Jars. `config.yml`, Dashboard-Passwort, Secrets

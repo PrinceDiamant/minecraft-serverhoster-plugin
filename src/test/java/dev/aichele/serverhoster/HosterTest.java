@@ -273,6 +273,23 @@ class HosterTest {
         assertEquals(List.of("warn", "backup"), ran);
     }
 
+    @Test void scheduleRunTrackerReportsOutcomesAndDoesNotReviveDeletedRuns() {
+        ScheduleRunTracker tracker = new ScheduleRunTracker();
+        assertEquals(new ScheduleRunTracker.Status("unknown", ""), tracker.status("backup"));
+        ScheduleRunTracker.Run run = tracker.start("backup");
+        assertEquals("running", tracker.status("backup").state());
+        run.update("waiting", "");
+        assertEquals("waiting", tracker.status("backup").state());
+        run.update("failed", "backup failed");
+        assertEquals(new ScheduleRunTracker.Status("failed", "backup failed"), tracker.status("backup"));
+        tracker.remove("backup");
+        ScheduleRunTracker.Run replacement = tracker.start("backup");
+        run.update("success", "");
+        assertEquals("running", tracker.status("backup").state());
+        replacement.update("success", "");
+        assertEquals("success", tracker.status("backup").state());
+    }
+
     @Test void restartPolicyCapsRetriesAndMigratesOnlyTheOldUnlimitedDefault() {
         assertEquals(5, RestartPolicy.DEFAULT_MAX_ATTEMPTS);
         assertEquals(5, RestartPolicy.maxAttempts(5));
@@ -422,6 +439,23 @@ class HosterTest {
         assertEquals("custom-pack.jar", LaunchPlan.jarName("custom", "26.3", "/opt/jars/custom-pack.jar"));
         assertEquals("server.jar", LaunchPlan.jarName("other", "26.3", null));
         assertTrue(LaunchPlan.jarPath(profile("paper", "26.3", null, List.of(), List.of(), dir.toString())).endsWith("paper-26.3.jar"));
+    }
+
+    @Test void customJarPathsResolveAgainstChildAndPreserveAbsolutePaths() throws Exception {
+        Path dir = Files.createDirectories(tmp.resolve("custom-child"));
+        Path jar = dir.resolve("server.jar");
+        Files.writeString(jar, "test jar");
+        ServerProfile relative = profile("custom", "26.3", "server.jar", List.of(), List.of(), dir.toString());
+        assertEquals(jar, LaunchPlan.jarPath(relative));
+        assertEquals(jar.toString(), LaunchPlan.argv("java", relative).get(5));
+        assertTrue(JarProbe.inspect(relative).regular());
+        ServerProfile nested = profile("custom", "26.3", "jars/server.jar", List.of(), List.of(), dir.toString());
+        assertEquals(dir.resolve("jars").resolve("server.jar"), LaunchPlan.jarPath(nested));
+        ServerProfile blank = profile("custom", "26.3", "", List.of(), List.of(), dir.toString());
+        assertEquals(jar, LaunchPlan.jarPath(blank));
+        Path absolute = tmp.resolve("external.jar").toAbsolutePath();
+        ServerProfile external = profile("custom", "26.3", absolute.toString(), List.of(), List.of(), dir.toString());
+        assertEquals(absolute, LaunchPlan.jarPath(external));
     }
 
     @Test void jarProbeStatsRegularFileAndSkipsSymlink() throws Exception {

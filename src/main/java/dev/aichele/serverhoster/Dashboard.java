@@ -347,6 +347,7 @@ final class Dashboard {
                         throw new IllegalArgumentException("Schedule-ID existiert bereits");
                     schedules.add(schedule);
                     pl.saveSchedules(schedules);
+                    pl.forgetScheduleStatus(schedule.id());
                 }
                 json(ex, 201, schedule.toJson());
                 return;
@@ -407,6 +408,7 @@ final class Dashboard {
                 List<ScheduleDef> schedules = new ArrayList<>(pl.schedules());
                 schedules.remove(scheduleIndex(schedules, id));
                 pl.saveSchedules(schedules);
+                pl.forgetScheduleStatus(id);
             }
             json(ex, 200, Map.of("ok", true, "id", id));
             return;
@@ -444,6 +446,9 @@ final class Dashboard {
         Map<String, Object> result = schedule.toJson();
         result.put("last", schedule.lastRun() > 0
                 ? java.time.Instant.ofEpochMilli(schedule.lastRun()).toString() : "");
+        ScheduleRunTracker.Status status = pl.scheduleStatus(schedule.id());
+        result.put("lastStatus", status.state());
+        result.put("lastMessage", status.message());
         if (schedule.enabled()) {
             try {
                 java.time.ZonedDateTime next = CronExpr.next(schedule.cron(),

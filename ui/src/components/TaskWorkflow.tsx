@@ -34,6 +34,8 @@ interface Schedule {
   cron: string;
   next: string;
   last: string;
+  lastStatus: "unknown" | "running" | "waiting" | "success" | "failed" | "interrupted";
+  lastMessage: string;
 }
 
 interface ScheduleDraft {
@@ -93,6 +95,17 @@ function dateLabel(value: string): string {
   return Number.isNaN(time.getTime()) ? value : time.toLocaleString("de-DE");
 }
 
+function statusLabel(schedule: Schedule): string {
+  switch (schedule.lastStatus) {
+    case "running": return "Läuft";
+    case "waiting": return "Wartet auf leeren Child";
+    case "success": return "Erfolgreich";
+    case "failed": return `Fehlgeschlagen: ${schedule.lastMessage}`;
+    case "interrupted": return "Unterbrochen";
+    default: return schedule.lastRun ? "Ergebnis nicht verfügbar" : "";
+  }
+}
+
 function askBeforeDelete(name: string): Promise<boolean> {
   return window.dashboardUi?.confirm({
     title: "Zeitplan löschen?",
@@ -130,6 +143,14 @@ export default function TaskWorkflow() {
     window.addEventListener("dashboard:tab", onPageChange);
     return () => window.removeEventListener("dashboard:tab", onPageChange);
   }, [refresh]);
+
+  useEffect(() => {
+    if (!schedules.some((schedule) => schedule.lastStatus === "running" || schedule.lastStatus === "waiting")) return;
+    const timer = window.setInterval(() => {
+      if (!document.hidden && !document.getElementById("t-tasks")?.classList.contains("hide")) void refresh();
+    }, 2000);
+    return () => window.clearInterval(timer);
+  }, [refresh, schedules]);
 
   const visibleSchedules = useMemo(
     () => schedules.filter((schedule) => (
@@ -232,7 +253,7 @@ export default function TaskWorkflow() {
         <Sliders size={19} />
         <div>
           <strong>Zeitpläne werden in config.yml gespeichert</strong>
-          <p>Dashboard-Zeitpläne und der rohe Konfigurationseditor verwenden dieselbe Konfiguration. Bestehende Aufgaben aus der alten tasks-Liste werden unten weiterhin angezeigt.</p>
+          <p>Dashboard-Zeitpläne und der rohe Konfigurationseditor verwenden dieselbe Konfiguration.</p>
         </div>
         <button className="btn" onClick={() => window.dashboardUi?.navigate("config")} type="button">
           config.yml öffnen
@@ -307,7 +328,7 @@ export default function TaskWorkflow() {
               </div>
               <div className="task-details-grid">
                 <div><span><Clock size={15} /> Nächster Lauf</span><strong>{schedule.next ? dateLabel(schedule.next) : schedule.enabled ? "Kein Lauf geplant" : "Pausiert"}</strong></div>
-                <div><span><ArrowClockwise size={15} /> Letzter Lauf</span><strong>{schedule.last ? dateLabel(schedule.last) : schedule.lastRun ? dateLabel(new Date(schedule.lastRun).toISOString()) : "Noch nicht ausgeführt"}</strong></div>
+                <div><span><ArrowClockwise size={15} /> Letzter Lauf</span><strong>{schedule.last ? dateLabel(schedule.last) : schedule.lastRun ? dateLabel(new Date(schedule.lastRun).toISOString()) : "Noch nicht ausgeführt"}</strong>{statusLabel(schedule) && <span>{statusLabel(schedule)}</span>}</div>
                 <div><span>Cron-Ausdruck</span><code>{schedule.cron}</code></div>
               </div>
             </article>

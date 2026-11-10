@@ -23,7 +23,10 @@ final class LaunchPlan {
     }
 
     static Path jarPath(ServerProfile profile) {
-        if ("custom".equalsIgnoreCase(profile.type)) return Paths.get(profile.customJar == null || profile.customJar.isBlank() ? "server.jar" : profile.customJar);
+        if ("custom".equalsIgnoreCase(profile.type)) {
+            Path custom = Paths.get(profile.customJar == null || profile.customJar.isBlank() ? "server.jar" : profile.customJar);
+            return (custom.isAbsolute() ? custom : profile.directory().resolve(custom)).normalize();
+        }
         return profile.directory().resolve(jarName(profile.type, profile.mcVersion, profile.customJar));
     }
 

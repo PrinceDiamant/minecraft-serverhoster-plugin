@@ -1,4 +1,4 @@
-# ServerHoster 2.4.0 – Betrieb und Konfiguration
+# ServerHoster 2.4.1 – Betrieb und Konfiguration
 
 ServerHoster ist ein Spigot-26.3-Plugin für Java 25. Es verwaltet genau einen
 separaten Child-Serverprozess und stellt ein Web-Dashboard bereit. Das Plugin
@@ -22,6 +22,9 @@ Vanilla, Fabric, Paper, Spigot und ein eigenes Server-Jar. Typabhängige
 Artefakte werden erst bei einem ausdrücklichen Child-Start geladen oder gebaut.
 Ein eingebundener Child wird nicht automatisch verändert. Zeitpläne werden
 ebenfalls im Dashboard verwaltet und in `config.yml` gespeichert.
+Der Zeitpunkt des letzten Zeitplanstarts bleibt nach einem Host-Neustart erhalten;
+das Ergebnis des Laufs ist nur bis zum Host-Neustart verfügbar. Während ein
+Backup auf einen leeren Child wartet, zeigt das Dashboard diesen Zustand an.
 
 ## Konfiguration
 
@@ -38,7 +41,7 @@ gemeldet, nicht stillschweigend ersetzt.
 | `workingDir` | `./child-server` | Child-Ordner, relativ zum Spigot-Arbeitsverzeichnis oder absolut. |
 | `port` | `2063` | Spielport des Childs; muss vom Hoster freigegeben sein. |
 | `serverIp` | `""` | Leer übernimmt die `server-ip` des Spigot-Hosts; ein nicht leerer Wert überschreibt sie. |
-| `customJar` | `server.jar` | Jar-Pfad bei `type: custom`. |
+| `customJar` | `server.jar` | Jar-Pfad bei `type: custom`; relative Pfade beziehen sich auf `workingDir`, absolute bleiben unverändert. |
 | `memory.xms` / `memory.xmx` | `2G` / `5G` | Initialer und maximaler Child-Heap. Native Speicheranteile und der äußere Server brauchen zusätzliche Reserve. |
 | `jvmFlags` | `-XX:+UseG1GC` | Zusätzliche JVM-Optionen. |
 | `serverArgs` | `[]` | Zusätzliche Server-Argumente nach `nogui`. |

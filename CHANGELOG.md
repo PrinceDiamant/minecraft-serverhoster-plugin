@@ -1,5 +1,14 @@
 # Release notes
 
+## ServerHoster 2.4.1
+
+- Restore dashboard visibility of schedule execution, waiting and failure
+  states. The last execution time remains stored across host restarts; its
+  result is available until the host restarts.
+- Resolve relative custom JAR paths from the child working directory for
+  startup, diagnostics and launch previews.
+- Remove the obsolete dashboard claim that legacy tasks are still displayed.
+
 ## ServerHoster 2.4.0
 
 - Keep the 2.3.2 upgrade path: replace the jar. The data folder stays
