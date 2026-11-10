@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.aichele</groupId><artifactId>serverhoster</artifactId><version>2.3.2</version>
+  <groupId>dev.aichele</groupId><artifactId>serverhoster</artifactId><version>2.3.2</version>
   <properties><maven.compiler.release>25</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>
   <repositories><repository><id>spigot</id><url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url></repository></repositories>
   <dependencies>
@@ -73,11 +73,11 @@
               <relocations>
                 <relocation>
                   <pattern>org.apache.commons.net</pattern>
-                  <shadedPattern>de.aichele.serverhoster.internal.commons.net</shadedPattern>
+                  <shadedPattern>dev.aichele.serverhoster.internal.commons.net</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>org.apache.commons.io</pattern>
-                  <shadedPattern>de.aichele.serverhoster.internal.commons.io</shadedPattern>
+                  <shadedPattern>dev.aichele.serverhoster.internal.commons.io</shadedPattern>
                 </relocation>
               </relocations>
               <transformers>

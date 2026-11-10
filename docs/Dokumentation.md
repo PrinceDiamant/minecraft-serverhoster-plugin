@@ -134,9 +134,8 @@ Konsolenbefehle und Child-Dateiverwaltung ermöglicht.
 
 `/child` ist der Befehlsstamm (Berechtigung `serverhoster.admin`, standardmäßig
 OP). Verfügbar sind u.a. Start, Stop, Neustart, Status, Konsolenbefehle,
-Konfigurations-/Property-Änderungen, Diagnose, Backup, Aufgabenliste und
-manuelles Ausführen eines Tasks. Zeitpläne werden primär über das Dashboard
-erstellt und bearbeitet.
+Konfigurations-/Property-Änderungen, Diagnose und Backup. Zeitpläne werden
+über das Dashboard erstellt und bearbeitet.
 
 ## Zeitpläne und Backups
 

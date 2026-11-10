@@ -8,7 +8,6 @@ import {
   Play,
   Plus,
   Sliders,
-  TerminalWindow,
   Trash,
 } from "@phosphor-icons/react";
 import { dashboardRequest, jsonBody } from "../lib/hostApi";
@@ -46,17 +45,6 @@ interface ScheduleDraft {
   timeValue: number;
   timezone: string;
   actions: ScheduleAction[];
-}
-
-interface LegacyTask {
-  id: string;
-  enabled: boolean;
-  cron: string;
-  timezone: string;
-  action: string;
-  command: string;
-  next: string;
-  last: string;
 }
 
 const weekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
@@ -116,7 +104,6 @@ function askBeforeDelete(name: string): Promise<boolean> {
 
 export default function TaskWorkflow() {
   const [schedules, setSchedules] = useState<Schedule[]>([]);
-  const [legacyTasks, setLegacyTasks] = useState<LegacyTask[]>([]);
   const [loading, setLoading] = useState(false);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [error, setError] = useState("");
@@ -127,12 +114,7 @@ export default function TaskWorkflow() {
     setLoading(true);
     setError("");
     try {
-      const [scheduleList, taskList] = await Promise.all([
-        dashboardRequest<Schedule[]>("/api/schedules"),
-        dashboardRequest<LegacyTask[]>("/api/tasks"),
-      ]);
-      setSchedules(scheduleList);
-      setLegacyTasks(taskList);
+      setSchedules(await dashboardRequest<Schedule[]>("/api/schedules"));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Aufgaben konnten nicht geladen werden.");
     } finally {
@@ -217,20 +199,6 @@ export default function TaskWorkflow() {
       await refresh();
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Zeitplan konnte nicht gelöscht werden.");
-    } finally {
-      setBusyId(null);
-    }
-  };
-
-  const runLegacyTask = async (task: LegacyTask) => {
-    setBusyId(task.id);
-    setError("");
-    try {
-      await dashboardRequest(`/api/tasks/run?id=${encodeURIComponent(task.id)}`, { method: "POST" });
-      window.dashboardUi?.notify(`Konfigurationsaufgabe „${task.id}“ wurde gestartet.`);
-      await refresh();
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Aufgabe konnte nicht gestartet werden.");
     } finally {
       setBusyId(null);
     }
@@ -345,31 +313,6 @@ export default function TaskWorkflow() {
             </article>
           ))}
         </div>
-      )}
-
-      {legacyTasks.length > 0 && (
-        <section className="legacy-task-section">
-          <div className="workflow-section-heading">
-            <div><h3>Aufgaben aus der alten Konfiguration</h3><p>Diese bestehenden Tasks werden weiterhin nach ihrer config.yml-Regel ausgeführt.</p></div>
-          </div>
-          <div className="task-card-list">
-            {legacyTasks.map((task) => (
-              <article className={`task-card${task.enabled ? "" : " is-paused"}`} key={task.id}>
-                <div className="task-card-main">
-                  <div className="task-status-icon"><TerminalWindow size={20} /></div>
-                  <div className="task-card-copy">
-                    <div className="task-title-row"><h3>{task.id}</h3><span className={`status-badge ${task.enabled ? "is-active" : "is-paused"}`}>{task.enabled ? "Aktiv" : "Pausiert"}</span></div>
-                    <p>{task.cron} <span>·</span> {task.timezone}</p>
-                    <div className="task-action-label">{task.action === "backup" ? "Backup erstellen" : task.action === "command" ? task.command : task.action}</div>
-                  </div>
-                  <div className="task-card-actions">
-                    <button className="btn pri" disabled={busyId === task.id} onClick={() => void runLegacyTask(task)} type="button"><Play size={15} weight="fill" /> Jetzt ausführen</button>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
       )}
 
       {draft && (
