@@ -58,6 +58,7 @@ code {
 }
 
 .diagram {
+  position: relative;
   margin: 0.6rem 0 1rem;
   padding: 0.4rem;
   background: var(--card);
@@ -67,7 +68,14 @@ code {
 
 .diagram svg { max-width: 100%; height: auto; }
 
-.diagram svg g.node { cursor: pointer; }
+.hit {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  cursor: pointer;
+  background: transparent;
+  text-decoration: none;
+}
 
 .err {
   color: #7a1f1f;

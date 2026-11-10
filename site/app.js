@@ -8,7 +8,7 @@
 
   mermaid.initialize({
     startOnLoad: false,
-    securityLevel: "loose",
+    securityLevel: "strict",
     theme: "neutral",
     flowchart: { htmlLabels: true, useMaxWidth: true, wrappingWidth: 800 }
   });
@@ -25,6 +25,9 @@
   }
 
   function bind(section) {
+    section.querySelectorAll(".hit").forEach(function (hit) { hit.remove(); });
+    section.querySelectorAll("svg title").forEach(function (title) { title.remove(); });
+    section.querySelectorAll("svg [title]").forEach(function (el) { el.removeAttribute("title"); });
     const holder = section.querySelector(".tips");
     if (!holder) return;
     let tips = {};
@@ -36,10 +39,41 @@
       const tip = byLabel.get(text);
       if (!tip) return;
       node.setAttribute("data-label", text);
+      node.removeAttribute("title");
       nodeTips.set(node, tip);
-      const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
-      title.textContent = norm(tip.replace(/<[^>]+>/g, " "));
-      node.insertBefore(title, node.firstChild);
+      const hit = document.createElement(window.PAGES[text] ? "a" : "span");
+      hit.className = "hit";
+      hit.setAttribute("data-label", text);
+      if (window.PAGES[text]) hit.setAttribute("href", "#/" + encodeURIComponent(text));
+      hit.addEventListener("mouseenter", function () { show(node); });
+      hit.addEventListener("mouseleave", function (e) {
+        if (e.relatedTarget && tipEl.contains(e.relatedTarget)) return;
+        scheduleHide();
+      });
+      section.appendChild(hit);
+      placeHit(section, node, hit);
+    });
+  }
+
+  function placeHit(section, node, hit) {
+    const r = node.getBoundingClientRect();
+    const s = section.getBoundingClientRect();
+    const style = getComputedStyle(section);
+    const borderLeft = parseFloat(style.borderLeftWidth) || 0;
+    const borderTop = parseFloat(style.borderTopWidth) || 0;
+    hit.style.left = (r.left - s.left - borderLeft + section.scrollLeft) + "px";
+    hit.style.top = (r.top - s.top - borderTop + section.scrollTop) + "px";
+    hit.style.width = Math.max(r.width, 1) + "px";
+    hit.style.height = Math.max(r.height, 1) + "px";
+  }
+
+  function placeHits() {
+    pageEl.querySelectorAll("section.diagram").forEach(function (section) {
+      section.querySelectorAll(".hit").forEach(function (hit) {
+        const label = hit.getAttribute("data-label");
+        const node = section.querySelector('svg g.node[data-label="' + CSS.escape(label) + '"]');
+        if (node) placeHit(section, node, hit);
+      });
     });
   }
 
@@ -75,40 +109,10 @@
     }, 450);
   }
 
-  document.addEventListener("mouseover", function (e) {
-    if (tipEl.contains(e.target)) {
-      clearTimeout(hideTimer);
-      return;
-    }
-    const node = e.target.closest ? e.target.closest("svg g.node") : null;
-    if (node && nodeTips.has(node)) {
-      show(node);
-      return;
-    }
-    if (current) scheduleHide();
-  }, true);
-
-  document.addEventListener("mouseout", function (e) {
-    if (tipEl.contains(e.target)) return;
-    const node = e.target.closest ? e.target.closest("svg g.node") : null;
-    if (!node || !nodeTips.has(node)) return;
-    const next = e.relatedTarget;
-    if (next && (node.contains(next) || tipEl.contains(next))) return;
-    scheduleHide();
-  }, true);
-
   tipEl.addEventListener("mouseenter", function () { clearTimeout(hideTimer); });
   tipEl.addEventListener("mouseleave", scheduleHide);
-
-  document.addEventListener("click", function (e) {
-    if (e.target.closest && e.target.closest("#tip")) return;
-    const node = e.target.closest ? e.target.closest("svg g.node") : null;
-    if (!node) return;
-    const text = node.getAttribute("data-label") || labelOf(node);
-    if (!window.PAGES[text]) return;
-    e.preventDefault();
-    location.hash = "#/" + encodeURIComponent(text);
-  }, true);
+  window.addEventListener("resize", placeHits);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeHits);
 
   async function draw(token) {
     const nodes = Array.from(pageEl.querySelectorAll("pre.mermaid"));
@@ -125,6 +129,7 @@
     }
     if (token !== drawToken) return;
     pageEl.querySelectorAll("section.diagram").forEach(bind);
+    placeHits();
   }
 
   function route() {
