@@ -69,18 +69,6 @@ final class Profiles {
         return List.copyOf(out.values());
     }
 
-    static boolean portClash(List<ServerProfile> profiles, int port) {
-        int n = 0;
-        for (ServerProfile p : profiles) if (p.port == port) n++;
-        return n > 1;
-    }
-
-    static String focus(Map<String, Object> flat, List<ServerProfile> profiles) {
-        String id = str(flat, "focusServer", profiles.get(0).id);
-        for (ServerProfile p : profiles) if (p.id.equals(id)) return id;
-        return profiles.get(0).id;
-    }
-
     private static Set<String> serverIds(Map<String, Object> flat) {
         Set<String> ids = new LinkedHashSet<>();
         for (String k : flat.keySet()) {

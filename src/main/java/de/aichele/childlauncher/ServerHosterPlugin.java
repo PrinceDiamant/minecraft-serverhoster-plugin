@@ -324,30 +324,25 @@ public final class ServerHosterPlugin extends JavaPlugin {
     /** Writes managed server.properties keys back into config so the next start keeps the edit. */
     boolean syncPropertiesEdit(String id, java.util.Properties p) {
         ServerProfile pr = profile(id);
-        String prefix = configPrefix(pr);
         boolean changed = false;
         for (String k : p.stringPropertyNames()) {
             String cur = pr.serverProperties.get(k);
             if (cur != null && !p.getProperty(k).equals(cur)) {
-                getConfig().set(prefix + "serverProperties." + k, parseValue(p.getProperty(k)));
+                getConfig().set("serverProperties." + k, parseValue(p.getProperty(k)));
                 changed = true;
             }
         }
         String port = p.getProperty("server-port");
         if (port != null && !port.trim().equals(String.valueOf(pr.port))) {
-            try { getConfig().set(prefix + "port", Integer.parseInt(port.trim())); changed = true; } catch (NumberFormatException ignored) {}
+            try { getConfig().set("port", Integer.parseInt(port.trim())); changed = true; } catch (NumberFormatException ignored) {}
         }
         String ip = p.getProperty("server-ip");
         if (ip != null && !ip.equals(childBindAddress(pr))) {
-            getConfig().set(prefix + "serverIp", ip);
+            getConfig().set("serverIp", ip);
             changed = true;
         }
         if (changed) { saveConfigWritable(); reloadProfiles(); }
         return changed;
-    }
-
-    private String configPrefix(ServerProfile pr) {
-        return profiles.isEmpty() || profiles.get(0).id.equals(pr.id) ? "" : "servers." + pr.id + ".";
     }
 
     boolean setupRequired() { return setupRequired; }

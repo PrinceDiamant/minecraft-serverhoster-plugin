@@ -83,7 +83,6 @@ class HosterTest {
         cfg.put("servers.paper-test.mcVersion", "26.3");
         cfg.put("servers.paper-test.port", 2065);
         cfg.put("servers.paper-test.autoStart", false);
-        cfg.put("focusServer", "paper-test");
         List<ServerProfile> all = Profiles.load(cfg);
         assertEquals(2, all.size());
         ServerProfile fabric = all.get(0);
@@ -96,10 +95,6 @@ class HosterTest {
         assertEquals("-XX:+UseG1GC", paper.jvmFlags.get(0));
         assertTrue(paper.directory().endsWith("child-paper-test"));
         assertEquals("hi", paper.serverProperties.get("motd"));
-        assertEquals("paper-test", Profiles.focus(cfg, all));
-        assertFalse(Profiles.portClash(all, 2063));
-        cfg.put("servers.paper-test.port", 2063);
-        assertTrue(Profiles.portClash(Profiles.load(cfg), 2063));
     }
 
     @Test void defaultsKeepVanillaGameplayAndNeverPauseWhenEmpty() throws Exception {
