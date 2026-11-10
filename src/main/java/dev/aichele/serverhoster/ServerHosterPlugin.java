@@ -367,11 +367,17 @@ public final class ServerHosterPlugin extends JavaPlugin {
                 "server", getConfig().getString("notifications.ntfy.server", "https://ntfy.sh"),
                 "topic", getConfig().getString("notifications.ntfy.topic", ""));
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("required", setupRequired);
-        result.put("completed", !setupRequired);
+        // Snapshot once: setupRequired is volatile and can flip while configureSetup finishes.
+        putSetupCompletion(result, setupRequired);
         result.put("candidates", candidates);
         result.put("ntfy", ntfy);
         return result;
+    }
+
+    /** Writes a consistent required/completed pair from one boolean snapshot. */
+    static void putSetupCompletion(Map<String, Object> result, boolean required) {
+        result.put("required", required);
+        result.put("completed", !required);
     }
 
     static void cleanupLegacyDirectory(Path oldData) throws IOException {

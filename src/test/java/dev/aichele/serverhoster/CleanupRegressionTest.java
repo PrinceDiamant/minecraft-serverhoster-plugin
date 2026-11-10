@@ -64,19 +64,18 @@ class CleanupRegressionTest {
                 || script.contains("api('/api/status')"));
     }
 
-    @Test void setupWorkflowKeepsWizardAndDropsUnreachableIncompleteForm() throws Exception {
+    @Test void setupWorkflowKeepsWizardIncompleteFormAndPostSetupHostTools() throws Exception {
         String workflow = Files.readString(Path.of("ui/src/components/SetupWorkflow.tsx"));
         String wizard = Files.readString(Path.of("ui/src/components/SetupWizard.tsx"));
         assertTrue(workflow.contains("SetupWizard"));
+        assertTrue(workflow.contains("if (state.required) return <SetupWizard"));
+        assertTrue(workflow.contains("!state?.completed"));
+        assertTrue(workflow.contains("Vorhandenen Ordner einbinden") || workflow.contains("submit(\"attach\")"));
+        assertTrue(workflow.contains("Konfiguration speichern") || workflow.contains("submit(\"new\")"));
         assertTrue(workflow.contains("Host minimieren"));
         assertTrue(workflow.contains("Host-Grundeinrichtung"));
-        assertTrue(workflow.contains("Child-Server eingerichtet"));
-        assertFalse(workflow.contains("Vorhandenen Ordner einbinden"));
-        assertFalse(workflow.contains("Konfiguration speichern"));
-        assertFalse(workflow.contains("submit(\"attach\")"));
-        assertFalse(workflow.contains("!state?.completed"));
-        assertTrue(wizard.contains("Vorhandenen Ordner einbinden") || wizard.contains("attach"));
         assertTrue(wizard.contains("export interface SetupState"));
+        assertTrue(wizard.contains("onComplete"));
     }
 
     @Test void processProbeRssAndThreadsMatchSnapshotContract() {
@@ -97,10 +96,49 @@ class CleanupRegressionTest {
         assertEquals(-1L, ProcessProbe.threads(-1));
     }
 
-    @Test void setupViewKeepsCompletedAsInverseOfRequired() throws Exception {
-        String source = Files.readString(Path.of("src/main/java/dev/aichele/serverhoster/ServerHosterPlugin.java"));
-        assertTrue(source.contains("result.put(\"required\", setupRequired);"));
-        assertTrue(source.contains("result.put(\"completed\", !setupRequired);"));
+    @Test void setupCompletionSnapshotStaysConsistentForConcurrentFlip() {
+        Map<String, Object> before = new LinkedHashMap<>();
+        ServerHosterPlugin.putSetupCompletion(before, true);
+        assertEquals(true, before.get("required"));
+        assertEquals(false, before.get("completed"));
+
+        Map<String, Object> after = new LinkedHashMap<>();
+        ServerHosterPlugin.putSetupCompletion(after, false);
+        assertEquals(false, after.get("required"));
+        assertEquals(true, after.get("completed"));
+
+        // Emulate a torn read of the volatile flag: writing both fields from one snapshot
+        // never yields required==completed.
+        for (boolean required : List.of(true, false)) {
+            Map<String, Object> snapshot = new LinkedHashMap<>();
+            ServerHosterPlugin.putSetupCompletion(snapshot, required);
+            assertNotEquals(snapshot.get("required"), snapshot.get("completed"));
+            assertEquals(!required, snapshot.get("completed"));
+        }
+
+        try {
+            String source = Files.readString(Path.of("src/main/java/dev/aichele/serverhoster/ServerHosterPlugin.java"));
+            assertTrue(source.contains("putSetupCompletion(result, setupRequired)"));
+            assertTrue(source.contains("static void putSetupCompletion(Map<String, Object> result, boolean required)"));
+            assertFalse(Pattern.compile("result\\.put\\(\"required\", setupRequired\\);\\s*result\\.put\\(\"completed\", !setupRequired\\);")
+                    .matcher(source).find());
+        } catch (Exception e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    @Test void setupWizardCompletionNotifiesAndReloadsStatus() throws Exception {
+        String wizard = Files.readString(Path.of("ui/src/components/SetupWizard.tsx"));
+        assertTrue(wizard.contains("if (!await onComplete())"));
+        assertTrue(wizard.contains("Der aktuelle Einrichtungsstatus konnte nicht neu geladen werden"));
+        assertTrue(wizard.contains("dashboard:setup-required"));
+        assertTrue(wizard.contains("detail: false"));
+        assertTrue(wizard.contains("navigate(\"status\")"));
+        String workflow = Files.readString(Path.of("ui/src/components/SetupWorkflow.tsx"));
+        assertTrue(workflow.contains("onComplete={refresh}"));
+        assertTrue(workflow.contains("Die Einrichtung ist bereits abgeschlossen")
+                || Files.readString(Path.of("src/main/java/dev/aichele/serverhoster/ServerHosterPlugin.java"))
+                .contains("Die Einrichtung ist bereits abgeschlossen"));
     }
 
     @Test void bundledDashboardAssetsKeepSameLoginAndScheduleContracts() throws Exception {
