@@ -606,8 +606,7 @@ final class Dashboard {
         BackupBridge.Entry entry = pl.backupFiles(sid).stream()
                 .filter(file -> file.name().equals(name)).findFirst()
                 .orElseThrow(() -> new java.io.FileNotFoundException("backup not found"));
-        ex.getResponseHeaders().set("Content-Type", "application/octet-stream");
-        ex.getResponseHeaders().set("Content-Disposition", "attachment; filename=\"" + name.replaceAll("[\"\\\\\\r\\n]", "_") + "\"");
+        attachmentHeaders(ex, name);
         ex.sendResponseHeaders(200, Math.max(0, entry.bytes()));
         try (OutputStream os = ex.getResponseBody()) { pl.downloadBackup(sid, name, os); }
     }
@@ -836,10 +835,19 @@ final class Dashboard {
     private void fsDownload(HttpExchange ex, Map<String, String> q, String sid) throws IOException {
         Path f = safe(sid, q.get("path"));
         if (!Files.isRegularFile(f)) { json(ex, 404, Map.of("error", "Keine Datei")); return; }
-        ex.getResponseHeaders().set("Content-Type", "application/octet-stream");
-        ex.getResponseHeaders().set("Content-Disposition", "attachment; filename=\"" + f.getFileName().toString().replaceAll("[\"\\\\\\r\\n]", "_") + "\"");
+        attachmentHeaders(ex, f.getFileName().toString());
         ex.sendResponseHeaders(200, Files.size(f));
         try (OutputStream os = ex.getResponseBody()) { Files.copy(f, os); }
+    }
+
+    private static void attachmentHeaders(HttpExchange ex, String fileName) {
+        ex.getResponseHeaders().set("Content-Type", "application/octet-stream");
+        ex.getResponseHeaders().set("Content-Disposition", contentDisposition(fileName));
+    }
+
+    // Quotes, backslashes and line breaks would break out of the quoted header value.
+    static String contentDisposition(String fileName) {
+        return "attachment; filename=\"" + fileName.replaceAll("[\"\\\\\\r\\n]", "_") + "\"";
     }
 
     private void fsWrite(HttpExchange ex, Map<String, String> q, String sid) throws IOException {
